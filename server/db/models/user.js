@@ -24,8 +24,12 @@ const User = db.define('user', {
       return () => this.getDataValue('salt')
     }
   },
-  googleId: {
+  accountAddress: {
     type: Sequelize.STRING
+  },
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   }
 })
 
