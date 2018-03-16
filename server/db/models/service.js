@@ -11,7 +11,7 @@ const Service = db.define('service', {
     allowNull: false
   },
   categories: {
-    type: Sequelize.ENUM('Childcare', 'Pet', 'Home Maintanance', 'Food', 'Products')
+    type: Sequelize.ENUM('Childcare', 'Pet', 'Home Maintenance', 'Food', 'Professional', 'Misc', 'Products')
   }
 })
 
