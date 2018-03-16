@@ -6,6 +6,10 @@ const Service = db.define('service', {
     type: Sequelize.STRING,
     allowNull: false
   },
+  description: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   categories: {
     type: Sequelize.ENUM('Childcare', 'Pet', 'Home Maintanance', 'Food', 'Products')
   }

@@ -24,7 +24,7 @@ const User = db.define('user', {
       return () => this.getDataValue('salt')
     }
   },
-  ethAddress: {
+  accountAddress: {
     type: Sequelize.STRING
   },
   isAdmin: {

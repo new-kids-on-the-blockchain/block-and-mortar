@@ -7,9 +7,13 @@ const Service = require('./service')
  *
  *    BlogPost.belongsTo(User)
  */
+Service.belongsTo(User)
 User.hasMany(Service)
 
-Contract.belongsTo(User, {as: 'initiator'})
+Contract.belongsTo(User, {as: 'user1'})
+Contract.belongsTo(User, {as: 'user2'})
+Contract.belongsTo(Service, {as: 'user1Service'})
+Contract.belongsTo(Service, {as: 'user2Service'})
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
