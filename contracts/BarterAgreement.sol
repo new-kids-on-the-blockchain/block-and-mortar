@@ -1,66 +1,59 @@
 pragma solidity ^0.4.18;
 
-// ask jon about where we should be storing our contracts
-// should we have a return single contract function?
-// what is external view returns?
-// can we ever get all agreements?
-// how are we going to call getAgreement?
-// how do we return the agreement no matter what?
-
-  contract BarterAgreement {
+contract BarterAgreement {
+    Agreement[] agreements;
 
     struct Agreement {
       uint userOne;
       uint userTwo;
-      bytes32 userOneService;
-      bytes32 userTwoService;
+      string userOneService;
+      string userTwoService;
       bool userOneReceivedService;
       bool userTwoReceivedService;
-      bool completed
+      bool completed;
     }
 
-    uint numAgreements;
-
-    // b/c we need a dynamic array (not sure of the size) this function maps each agreement created to a diff place in memory
-    mapping(uint => Agreement) agreements;
-
-    function newAgreement(uint userOne, uint userTwo, bytes32 userOneService,   bytes32 userTwoService) returns (uint agreementID) { agreementID = numAgreements++;
-    Agreement a = agreements[agreementID];
-      a.userOne = userOne;
-      a.userTwo = userTwo;
-      a.userOneService = userOneService;
-      a.userTwoService = userTwoService;
-      a.userOneReceivedService = false;
-      a.userTwoReceivedService = false;
-      completed = false;
+    // create a new agreement
+    function newAgreement(uint userOne, uint userTwo, string userOneService, string userTwoService) returns (uint id) {
+      id = agreements.push(Agreement(userOne, userTwo, userOneService, userTwoService, false, false, false)) - 1;
+      return id;
     }
 
-    function updateAgreement(uint user, uint agreementID)
-      Agreement a = agreements[agreementID];
-      if (a.userOne == user)
-        a.userOneReceivedService = true;
-      else if (a.userTwo == user)
-        a.userTwoReceivedService = true;
-      if (a.userOneReceivedService && a.userTwoReceivedService)
-        a.completed = true;
-    }
-
-    function getAgreement(uint agreementID) external view returns (
-      uint userOne;
-      uint userTwo;
-      bytes32 userOneService;
-      bytes32 userTwoService;
-      bool userOneReceivedService;
-      bool userTwoReceivedService;
+    // we can't return a struct so we can to return each data value one by one
+    function getAgreement(uint agreementID) public view returns (
+      uint userOne,
+      uint userTwo,
+      string userOneService,
+      string userTwoService,
+      bool userOneReceivedService,
+      bool userTwoReceivedService,
       bool completed
     ) {
-      Agreement a = agreements[agreementID];
-        a.userOne = userOne;
-        a.userTwo = userTwo;
-        a.userOneService = userOneService;
-        a.userTwoService = userTwoService;
-        a.userOneReceivedService = userOneReceivedService;
-        a.userTwoReceivedService = userTwoReceivedService;
-        completed = completed;
+      Agreement storage agreement = agreements[agreementID];
+        return (
+        agreement.userOne,
+        agreement.userTwo,
+        agreement.userOneService,
+        agreement.userTwoService,
+        agreement.userOneReceivedService,
+        agreement.userTwoReceivedService,
+        agreement.completed);}
+
+    // a fxn that returns the length of the agreements arr so that we can return all of agreements in for loop on the front end:
+    function getAgreementLength() returns (uint length) {
+      return agreements.length;
+    }
+
+    // update and return the agreement
+    function updateAgreement(uint user, uint agreementIdx) public returns (uint id) {
+      Agreement storage agreement = agreements[agreementIdx];
+      if (agreement.userOne == user)
+        agreement.userOneReceivedService = true;
+      else if (agreement.userTwo == user)
+        agreement.userTwoReceivedService = true;
+      if (agreement.userOneReceivedService && agreement.userTwoReceivedService)
+        agreement.completed = true;
+      getAgreement(agreementIdx);
     }
   }
+
