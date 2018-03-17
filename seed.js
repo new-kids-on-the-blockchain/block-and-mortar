@@ -31,8 +31,8 @@ async function seed () {
 
   const contract = await Promise.all([
     Contract.create({agreementId: null, status: 'Initiated', user1Id: 1, user2Id: 2, user1ServiceId: null, user2ServiceId: 8}),
-    Contract.create({agreementId: '000fsdfhekjh32345', status: 'User2Accepted', user1Id: 1, user2Id: 3, user1ServiceId: 1, user2ServiceId: 3}),
-    Contract.create({agreementId: '00645gdfheu536ggd', status: 'User1Accepted',user1Id: 4, user2Id: 6, user1ServiceId: 4, user2ServiceId: 6}),
+    Contract.create({agreementId: '000fsdfhekjh32345', status: 'Pending', user1Id: 1, user2Id: 3, user1ServiceId: 1, user2ServiceId: 3}),
+    Contract.create({agreementId: '00645gdfheu536ggd', status: 'Accepted',user1Id: 4, user2Id: 6, user1ServiceId: 4, user2ServiceId: 6}),
     Contract.create({agreementId: null, status: 'Rejected',user1Id: 2, user2Id: 6, user1ServiceId: 4, user2ServiceId: 6}),
     Contract.create({agreementId: '0sdjflo32irjfw46', status: 'Completed',user1Id: 1, user2Id: 3, user1ServiceId: 7, user2ServiceId: 9})
   ])

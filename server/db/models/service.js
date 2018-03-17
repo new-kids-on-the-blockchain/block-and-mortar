@@ -21,16 +21,16 @@ const Service = db.define('service', {
 })
 
 //HOOKS
-Service.beforeUpdate((serviceInstance) => {
-  return Contract.findbyId({
-    where: serviceInstance.id
-  }).then(contract => {
-    console.log('FoundContract', contract.dataValues)
-    if (contract.status === 'Completed') {
-      serviceInstance.isAvailable = false
-    }
-  }).catch(Error)
-})
+// Service.beforeUpdate((service) => {
+//   return Contract.findbyId({
+//     where: service.id
+//   }).then(contract => {
+//     console.log('FoundContract', contract.dataValues)
+//     if (contract.status === 'Completed') {
+//       service.isAvailable = false
+//     }
+//   }).catch(Error)
+// })
 
 module.exports = Service
 //can i use contracts model here?
