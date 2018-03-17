@@ -7,7 +7,7 @@ const Contract = db.define('contract', {
     allowNull: true
   },
   status: {
-    type: Sequelize.ENUM('Initiated', 'Accepted', 'Rejected', 'Completed')
+    type: Sequelize.ENUM('Initiated', 'User2Accepted', 'User1Accepted', 'Rejected', 'Completed')
   }
 })
 
