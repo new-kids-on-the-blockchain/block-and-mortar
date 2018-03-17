@@ -1,5 +1,7 @@
 pragma solidity ^0.4.18;
 
+// checked syntax in remix
+
 contract BarterAgreement {
     Agreement[] agreements;
 
