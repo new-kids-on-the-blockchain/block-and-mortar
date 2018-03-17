@@ -4,7 +4,7 @@ const db = require('../db');
 const Contract = db.define('contract', {
   agreementId: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
   },
   status: {
     type: Sequelize.ENUM('Initiated', 'Accepted', 'Rejected', 'Completed')

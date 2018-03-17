@@ -81,7 +81,8 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client"
+    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
+    "seed": "node ./seed.js"
   },
   "jest": {
     "collectCoverageFrom": [
