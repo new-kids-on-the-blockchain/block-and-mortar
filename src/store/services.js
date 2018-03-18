@@ -14,7 +14,7 @@ const GET_SERVICES = 'GET_SERVICES';
 /**
  * ACTION CREATORS
  */
-const getServices = services => ({type:GET_SERVICES, services})
+const getServices = services => ({type: GET_SERVICES, services})
 
 /**
  * THUNK CREATORS
