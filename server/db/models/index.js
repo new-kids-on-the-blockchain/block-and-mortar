@@ -15,6 +15,8 @@ Contract.belongsTo(User, {as: 'user2'})
 Contract.belongsTo(Service, {as: 'user1Service'})
 Contract.belongsTo(Service, {as: 'user2Service'})
 
+
+
 /**
  * We'll export all of our models here, so that any time a module needs a model,
  * we can just require it from 'db/models'
