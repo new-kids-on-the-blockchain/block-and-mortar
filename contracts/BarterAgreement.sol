@@ -6,8 +6,8 @@ contract BarterAgreement {
     Agreement[] agreements;
 
     struct Agreement {
-      uint userOne;
-      uint userTwo;
+      address userOne;
+      address userTwo;
       string userOneService;
       string userTwoService;
       bool userOneReceivedService;
@@ -15,22 +15,23 @@ contract BarterAgreement {
       bool completed;
     }
 
-    // create a new agreement
-    function newAgreement(uint userOne, uint userTwo, string userOneService, string userTwoService) returns (uint id) {
+    // create a new agreement - right now we are creating the contract and passing in user one and user two as arguments. the two users, however, are touching the contract to corroborate services received.
+    function newAgreement(address userOne, address userTwo, string userOneService, string userTwoService) returns (uint id) {
       id = agreements.push(Agreement(userOne, userTwo, userOneService, userTwoService, false, false, false)) - 1;
       return id;
     }
-
+    //this might be returning correctly because we're accessing the storage vs. the interaction itself
     // we can't return a struct so we can to return each data value one by one
     function getAgreement(uint agreementID) public view returns (
-      uint userOne,
-      uint userTwo,
+      address userOne,
+      address userTwo,
       string userOneService,
       string userTwoService,
       bool userOneReceivedService,
       bool userTwoReceivedService,
       bool completed
-    ) {
+    )
+    {
       Agreement storage agreement = agreements[agreementID];
         return (
         agreement.userOne,
@@ -47,11 +48,11 @@ contract BarterAgreement {
     }
 
     // update and return the agreement
-    function updateAgreement(uint user, uint agreementIdx) public returns (uint id) {
+    function updateAgreement(uint agreementIdx) public returns (uint id) {
       Agreement storage agreement = agreements[agreementIdx];
-      if (agreement.userOne == user)
+      if (agreement.userOne == msg.sender)
         agreement.userOneReceivedService = true;
-      else if (agreement.userTwo == user)
+      else if (agreement.userTwo == msg.sender)
         agreement.userTwoReceivedService = true;
       if (agreement.userOneReceivedService && agreement.userTwoReceivedService)
         agreement.completed = true;

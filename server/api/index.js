@@ -2,6 +2,7 @@ const router = require('express').Router()
 module.exports = router
 
 router.use('/users', require('./users'))
+router.use('/web3', require('./web3'))
 router.use('/services', require('./services'))
 router.use('/contracts', require('./contracts'))
 

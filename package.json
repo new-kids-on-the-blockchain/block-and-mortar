@@ -16,7 +16,6 @@
     "cross-spawn": "4.0.2",
     "css-loader": "0.26.0",
     "detect-port": "1.0.1",
-    "dotenv": "2.0.0",
     "eslint": "3.8.1",
     "eslint-config-react-app": "^0.5.0",
     "eslint-loader": "1.6.0",
@@ -79,7 +78,8 @@
     "sequelize": "^4.37.0",
     "socket.io": "^2.0.4",
     "toposort": "^1.0.6",
-    "toposort-class": "^1.0.1"
+    "toposort-class": "^1.0.1",
+    "upath": "^1.0.4"
   },
   "scripts": {
     "start": "concurrently \"npm run start-server\" \"npm run client\"",
