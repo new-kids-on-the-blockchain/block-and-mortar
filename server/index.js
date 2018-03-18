@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8080
 const app = express()
 const socketio = require('socket.io')
 module.exports = app
-
+const cors = require('cors');
 /**
  * In your development environment, you can keep all of your
  * app's secret API keys in a file called `secrets.js`, in your project
@@ -22,6 +22,7 @@ module.exports = app
  * Node process on process.env
  */
 if (process.env.NODE_ENV !== 'production') require('../secrets')
+
 
 // passport registration
 passport.serializeUser((user, done) => done(null, user.id))
@@ -38,6 +39,12 @@ const createApp = () => {
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: true }))
 
+  //middleware for having two ports
+  app.use(cors())
+  app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+  }))
   // compression middleware
   app.use(compression())
 

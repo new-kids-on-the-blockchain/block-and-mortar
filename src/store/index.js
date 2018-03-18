@@ -5,9 +5,10 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import web3 from './web3'
 import contract from './contract'
 import accounts from './accounts'
+import services from './services'
 
 
-export const reducer = combineReducers({ web3, contract, accounts })
+export const reducer = combineReducers({ web3, contract, accounts, services })
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})
@@ -16,3 +17,4 @@ const store = createStore(reducer, middleware)
 
 export default store
 export * from './web3'
+export * from './services'

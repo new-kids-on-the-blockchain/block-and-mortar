@@ -2,6 +2,9 @@ const router = require('express').Router()
 const {Service} = require('../db/models')
 module.exports = router
 
+
+
+
 router.get('/', (req, res, next) => {
   Service.findAll()
     .then(services => res.json(services))
