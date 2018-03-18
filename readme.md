@@ -1,8 +1,8 @@
-# Boilerplate
+# Barter Block
 
 ### Description
 
-This boilerplate serves as a starting point for developers who wish to combine Truffle, Web3.js, React, Redux, react-redux, and webpack.
+Allows communities to trade goods and services directly, without currency, using the Ethereum blockchain and a React dApp.
 
 ## Setup
 
