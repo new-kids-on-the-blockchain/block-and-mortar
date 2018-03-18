@@ -22,7 +22,9 @@ class AllServices extends Component {
       <div>
       <ul>
       {this.props.services && this.props.services.map((service, ind) => {
-        return (<li key={ind}>{service.name}</li>)
+        return (
+          <li key={ind}>{service.name}</li>
+        )
       })}
      </ul>
       </div>
