@@ -1,5 +1,5 @@
-const db = require('./server/db')
-const {User, Service, Contract} = require('./server/db/models')
+const db = require('../server/db')
+const {User, Service, Agreement} = require('../server/db/models')
 
 async function seed () {
   await db.sync({force: true})
@@ -28,19 +28,17 @@ async function seed () {
     Service.create({name: 'Cat sitting', description: 'I can watch your cat over a weekend, I have a veterinary degree.', category: 'Pet', userId: 3, isAvailable: true})
   ])
 
-
-  const contract = await Promise.all([
-    Contract.create({agreementId: null, status: 'Initiated', user1Id: 1, user2Id: 2, user1ServiceId: null, user2ServiceId: 8}),
-    Contract.create({agreementId: '000fsdfhekjh32345', status: 'Pending', user1Id: 1, user2Id: 3, user1ServiceId: 1, user2ServiceId: 3}),
-    Contract.create({agreementId: '00645gdfheu536ggd', status: 'Accepted',user1Id: 4, user2Id: 6, user1ServiceId: 4, user2ServiceId: 6}),
-    Contract.create({agreementId: null, status: 'Rejected',user1Id: 2, user2Id: 6, user1ServiceId: 4, user2ServiceId: 6}),
-    Contract.create({agreementId: '0sdjflo32irjfw46', status: 'Completed',user1Id: 1, user2Id: 3, user1ServiceId: 7, user2ServiceId: 9})
+  const agreement = await Promise.all([
+    Agreement.create({agreementId: null, status: 'Initiated', RequestorId: 1, RequesteeId: 2, RequestorServiceId: null, RequesteeServiceId: 8}),
+    Agreement.create({agreementId: '000fsdfhekjh32345', status: 'Accepted', RequestorId: 1, RequesteeId: 3, RequestorServiceId: 1, RequesteeServiceId: 3}),
+    Agreement.create({agreementId: '00645gdfheu536ggd', status: 'Completed',RequestorId: 4, RequesteeId: 6, RequestorServiceId: 4, RequesteeServiceId: 6}),
+    Agreement.create({agreementId: null, status: 'Rejected', RequestorId: 2, RequesteeId: 6, RequestorServiceId: 4, RequesteeServiceId: 6})
   ])
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${services.length} services`)
-  console.log(`seeded ${contract.length} contracts`)
+  console.log(`seeded ${agreement.length} agreements`)
   console.log(`seeded successfully`)
 }
 

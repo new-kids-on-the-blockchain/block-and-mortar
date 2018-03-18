@@ -1,5 +1,5 @@
 const User = require('./user')
-const Contract = require('./contract')
+const Agreement = require('./Agreement')
 const Service = require('./service')
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -10,10 +10,12 @@ const Service = require('./service')
 Service.belongsTo(User)
 User.hasMany(Service)
 
-Contract.belongsTo(User, {as: 'user1'})
-Contract.belongsTo(User, {as: 'user2'})
-Contract.belongsTo(Service, {as: 'user1Service'})
-Contract.belongsTo(Service, {as: 'user2Service'})
+Agreement.belongsTo(User, {as: 'Requestor'})
+Agreement.belongsTo(User, {as: 'Requestee'})
+Agreement.belongsTo(Service, {as: 'RequestorService'})
+Agreement.belongsTo(Service, {as: 'RequesteeService'})
+
+
 
 
 
@@ -25,6 +27,6 @@ Contract.belongsTo(Service, {as: 'user2Service'})
  */
 module.exports = {
   User,
-  Contract,
+  Agreement,
   Service
 }
