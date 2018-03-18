@@ -20,7 +20,7 @@ contract BarterAgreement {
       id = agreements.push(Agreement(userOne, userTwo, userOneService, userTwoService, false, false, false)) - 1;
       return id;
     }
-
+    //this might be returning correctly because we're accessing the storage vs. the interaction itself
     // we can't return a struct so we can to return each data value one by one
     function getAgreement(uint agreementID) public view returns (
       address userOne,
