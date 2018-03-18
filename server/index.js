@@ -39,7 +39,7 @@ const createApp = () => {
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: true }))
 
-  //middleware for having two ports
+  //middleware for having two ports for frontend and express
   app.use(cors())
   app.use(cors({
     origin: 'http://localhost:3000',

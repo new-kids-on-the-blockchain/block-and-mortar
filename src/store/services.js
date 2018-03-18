@@ -1,6 +1,5 @@
 import axios from "axios";
 const baseURL = 'http://localhost:8080/api'
-const headers = {'Access-Control-Allow-Origin': '*'}
 
 /**
  * INITIAL STATE
@@ -22,7 +21,7 @@ const getServices = services => ({type:GET_SERVICES, services})
  */
 export function fetchServices() {
   return function thunk(dispatch) {
-    return axios.get('/services', {baseURL, headers})
+    return axios.get('/services', {baseURL})
       .then(res => res.data)
       .then(services => dispatch(getServices(services)))
       .catch(err => console.log(err))
