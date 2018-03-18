@@ -30,7 +30,8 @@ contract BarterAgreement {
       bool userOneReceivedService,
       bool userTwoReceivedService,
       bool completed
-    ) {
+    )
+    {
       Agreement storage agreement = agreements[agreementID];
         return (
         agreement.userOne,

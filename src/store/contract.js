@@ -1,9 +1,9 @@
-import SimpleStorageContract from '../../build/contracts/SimpleStorage.json';
+import BarterAgreement from '../../build/contracts/BarterAgreement.json';
 
 /**
  * INITIAL STATE
  */
-const defaultContract = {}
+const currentContract = {}
 
 /**
  * ACTION TYPES
@@ -18,17 +18,23 @@ const setContract = contract => ({type: GET_CONTRACT, contract})
 /**
  * THUNK CREATORS
  */
-export const fetchContract = web3  => {
+export const fetchContract = (web3, id)  => {
   const contract = require('truffle-contract');
-  const simpleStorage = contract(SimpleStorageContract);
-  simpleStorage.setProvider(web3.currentProvider)
-  return dispatch => simpleStorage.deployed().then(contract => dispatch(setContract(contract)))
+  const barterAgreement = contract(BarterAgreement);
+  barterAgreement.setProvider(web3.currentProvider)
+  return dispatch => barterAgreement.deployed()
+    .then(contract => {
+      return contract.getAgreement(id)
+    })
+    .then(returnedContract => {
+      dispatch(setContract(returnedContract))
+    })
 }
 
 /**
  * REDUCER
  */
-export default function (state = defaultContract, action) {
+export default function (state = currentContract, action) {
   switch (action.type) {
     case GET_CONTRACT:
       return action.contract;
