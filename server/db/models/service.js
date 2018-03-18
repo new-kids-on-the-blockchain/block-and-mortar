@@ -10,8 +10,12 @@ const Service = db.define('service', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  categories: {
+  category: {
     type: Sequelize.ENUM('Childcare', 'Pet', 'Home Maintenance', 'Food', 'Professional', 'Misc', 'Products')
+  },
+  isAvailable: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: true
   }
 })
 
