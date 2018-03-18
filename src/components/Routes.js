@@ -1,9 +1,10 @@
 import React from 'react'
 import {Route, Switch, Router} from 'react-router-dom'
-import history from '../history';
-import SimpleStorage from './SimpleStorage';
+import history from '../history'
+import SimpleStorage from './SimpleStorage'
 import AllServices from './AllServices'
-import MyAgreements from './MyAgreements';
+import MyAgreements from './MyAgreements'
+import AllUsers from './AllUsers'
 
 const Routes = () =>
   <Router history={history}>
@@ -15,6 +16,7 @@ const Routes = () =>
           <Route exact path='/' component={SimpleStorage} />
           <Route exact path='/services' component={AllServices} />
           <Route exact path='/agreements' component={MyAgreements} />
+          <Route exact path='/users' component={AllUsers} />
         </Switch>
       </div>
   </Router>

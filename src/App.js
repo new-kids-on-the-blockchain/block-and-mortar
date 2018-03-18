@@ -55,7 +55,7 @@ function mapDispatchToProps(dispatch){
     },
     getAccounts: function (web3){
       return dispatch(fetchAccounts(web3));
-    }
+    },
   }
 }
 

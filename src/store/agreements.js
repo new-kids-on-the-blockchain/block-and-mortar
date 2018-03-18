@@ -21,7 +21,7 @@ const getAgreements = agreements => ({type: GET_AGREEMENTS, agreements})
  */
 export function fetchAgreements() {
   return function thunk(dispatch) {
-    return axios.get('/api/agreements', {baseURL})
+    return axios.get('/agreements', {baseURL})
       .then(res => res.data)
       .then(agreements => dispatch(getAgreements(agreements)))
       .catch(err => console.log(err))

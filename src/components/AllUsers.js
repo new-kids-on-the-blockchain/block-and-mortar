@@ -6,8 +6,8 @@ import { fetchUsers } from '../store';
 
 class AllUsers extends Component {
 
-  componentDidMount(){
-    console.log('All users rendering')
+  componentDidMount(props){
+    console.log('IN USERS COMPONENT')
     this.props.handleFetchUsers();
   }
 
@@ -18,7 +18,7 @@ class AllUsers extends Component {
       <ul>
       {this.props.users && this.props.users.map(user => {
         return (
-          <li key={user.id}>{user.userName}</li>
+          <li key={user.id}>{user.email}</li>
         )
       })}
      </ul>
@@ -39,7 +39,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
     return {
         handleFetchUsers() {
-            dispatch(fetchUsers) 
+            dispatch(fetchUsers()) 
         }
     }
 }
