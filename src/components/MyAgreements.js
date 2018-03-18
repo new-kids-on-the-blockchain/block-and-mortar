@@ -18,7 +18,9 @@ class MyAgreements extends Component {
       <ul>
       {this.props.agreements && this.props.agreements.map(agreement => {
         return (
-          <li key={agreement.id}>{agreement.status}</li>
+          <li key={agreement.id}>
+          {agreement.status}
+          </li>
         )
       })}
      </ul>
