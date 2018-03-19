@@ -29,7 +29,7 @@ const User = db.define('user', {
     }
   },
   accountAddress: {
-    type: Sequelize.STRING
+    type: Sequelize.TEXT
   },
   isAdmin: {
     type: Sequelize.BOOLEAN,
