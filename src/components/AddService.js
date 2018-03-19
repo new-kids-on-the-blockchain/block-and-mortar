@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { postService } from "../store";
+import { postService, fetchContract, fetchWeb3 } from "../store";
+const web3 = require("web3")
 
 class AddService extends Component {
   constructor() {
@@ -16,7 +17,10 @@ class AddService extends Component {
   }
 
   componentDidMount() {
-    
+    const web3obj = this.props.handleFetchWeb3()
+    this.props.handleFetchContract(web3obj)
+    console.log('CONTRACT HERE', this.props.contract)
+
   }
 
   handleChange = event => {
@@ -64,13 +68,21 @@ class AddService extends Component {
 }
 
 const mapState = (state) => {
-  contract: state.contract //redux
+  return {
+    contract: state.contract //redux
+  }
 }
 
 const mapDispatch = (dispatch, ownProps) => {
   return {
     addService: function(service) {
       dispatch(postService(service, ownProps))
+    },
+    handleFetchContract: function(){
+      dispatch(fetchContract(web3))
+    },
+    handleFetchWeb3: function(){
+      dispatch(fetchWeb3())
     }
   }
 }
