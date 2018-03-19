@@ -6,6 +6,9 @@ const web3 = require("web3")
 class AddService extends Component {
   constructor() {
     super();
+    this.props.handleFetchWeb3()
+    this.props.handleFetchContract()
+    
     this.state ={
       name: 'hi',
       description: 'hi',
@@ -16,12 +19,16 @@ class AddService extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const web3obj = this.props.handleFetchWeb3()
-    this.props.handleFetchContract(web3obj)
+    this.props.contract && this.props.handleFetchContract(web3obj)
     console.log('CONTRACT HERE', this.props.contract)
 
   }
+  // componentWillUpdate(nextProps, nextState){
+  //  console.log(nextProps, "next props")
+  //  console.log(nextState, "nextState")
+  // }
 
   handleChange = event => {
     const form = event.target.parentNode;
@@ -38,8 +45,9 @@ class AddService extends Component {
 
   render() {
     const {name, description, category, isAvailable, price} = this.state
-    console.log('CONTRACT HERE', this.props.contract)
+    console.log(this.props.contract, "!!!!!!!!!")
     return (
+      this.props.contract && 
       <div>
         <h2>CREATE A SERVICE</h2>
         <form onSubmit={this.handleSubmit}>

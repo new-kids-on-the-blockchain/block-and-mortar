@@ -21,7 +21,7 @@ const setContract = contract => ({type: GET_CONTRACT, contract})
 export const fetchContract = web3  => {
   const contract = require('truffle-contract');
   console.log(web3, "WEB 3")
-  console.log(web3.currentProvider, "WEB 3!!!!")
+  console.log(web3.currentProvider, "WEB 3 PROVIDER!!!!")
   const agreementStorage = contract(BarterAgreement);
   agreementStorage.setProvider(web3.currentProvider)
   return dispatch => agreementStorage.deployed().then(contract => dispatch(setContract(contract)))
