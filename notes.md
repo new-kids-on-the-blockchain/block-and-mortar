@@ -1,14 +1,34 @@
 //These are the steps and commands to test our contract in the truffle console
-1) ganache-cli
+1) ganache-cli --mnemonic MNEMONIC_GOES_HERE
 2) truffle compile
 3) truffle migrate --reset
-4) npm start?
+  (only use --reset to run all migrations from the beginning; not to add on new agreements)
+4) npm start
 5) truffle console
 
 var barterAgreement = BarterAgreement.at(BarterAgreement.address)
 
-barterAgreement.newAgreement(0xda9b1a939350dc7198165ff84c43ce77a723ef73, 0xed562f879d4c35304fd9db80155de44513ac35f9, 'Apples and Oranges', 'One hour of dog walking')
+barterAgreement.newAgreement(0xbddae5ebde94256d38ea339e0a7a928bcaf3c61e, 0xcbd14b623d49fd1cad0fa4a805f37b469526c5f6, '1 Copy of Die Hard', '1 Christmas Tree')
 
 barterAgreement.getAgreement(0)
 
+barterAgreement.getAgreementLength()
+
 barterAgreement.updateAgreement(0)
+
+
+//STRUCT
+//Buyer address
+//Seller address
+//Cost
+//Service Received (bool)
+
+//Seller creates product/service - create smart contract
+//Buyer requests - create (or update) smart contract
+//Seller accepts? - touching the smart contract again
+//Buyer receives - money is transferred to seller
+
+//Facilitating communication between
+//Stretch - add in escrow
+
+//write this in a way that will impact front-end minimally
