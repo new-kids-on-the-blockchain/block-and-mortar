@@ -7,25 +7,19 @@ const Agreement = db.define('agreement', {
     allowNull: true
   },
   status: {
-    type: Sequelize.ENUM('Initiated', 'Pending', 'Accepted', 'Rejected', 'Completed'),
+    type: Sequelize.ENUM('Initiated', 'Accepted', 'Rejected', 'Completed'),
     defaultValue: 'Initiated'
   }
 }, {
   hooks: {
     beforeUpdate: function(agreement) {
       if (agreement.status === "Accepted") {
-        const updatedRequestorService = agreement.getRequestorService()
-          .then(service => {
-            service.update({isAvailable: false})
-          })
-        const updatedRequesteeService =  agreement.getRequesteeService()
+        return agreement.getService()
           .then(service => service.update({isAvailable: false}))
-        return Promise.all([updatedRequestorService, updatedRequesteeService])
       }
     }
   }
-}
-)
+})
 
 module.exports = Agreement;
 

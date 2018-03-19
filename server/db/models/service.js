@@ -18,6 +18,12 @@ const Service = db.define('service', {
   isAvailable: {
     type: Sequelize.BOOLEAN,
     defaultValue: true
+  },
+  price: {
+    type: Sequelize.FLOAT,
+    validate: {
+      min: 0
+    }
   }
 })
 
