@@ -1,5 +1,5 @@
 const User = require('./user')
-const Agreement = require('./Agreement')
+const Agreement = require('./agreement')
 const Service = require('./service')
 /**
  * If we had any associations to make, this would be a great place to put them!
