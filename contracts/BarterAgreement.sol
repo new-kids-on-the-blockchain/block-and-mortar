@@ -6,14 +6,14 @@ contract BarterAgreement {
     Agreement[] agreements;
 
     struct Agreement {
-      uint agreementId
+      uint agreementId;
       address owner;
       address buyer;
       uint256 price;
       bool received;
     }
 
-    address public seller
+    address public seller;
 
     // create a new agreement
     function newAgreement(uint256 price) returns (uint agreementId) {
