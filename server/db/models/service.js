@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 const Agreement = require('./agreement')
+const User = require('./user')
 
 const Service = db.define('service', {
   name: {
@@ -20,17 +21,6 @@ const Service = db.define('service', {
   }
 })
 
-//HOOKS
-// Service.beforeUpdate((service) => {
-//   return Contract.findbyId({
-//     where: service.id
-//   }).then(contract => {
-//     console.log('FoundContract', contract.dataValues)
-//     if (contract.status === 'Completed') {
-//       service.isAvailable = false
-//     }
-//   }).catch(Error)
-// })
+
 
 module.exports = Service
-//can i use contracts model here?
