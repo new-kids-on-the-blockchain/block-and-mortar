@@ -1,51 +1,46 @@
 import React, { Component } from 'react'
+import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchServiceById } from '../store';
-import { NavLink } from 'react-router-dom';
-
-
+import { fetchServices, fetchUsers } from '../store'
 
 class SingleService extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-    }
+  componentDidMount() {
+    this.props.handleFetchServices()
   }
-
-  componentDidMount(){
-    console.log('Single service rendering', this.props.match.params.id)
-    this.props.fetchServiceById(this.props.match.params.id);
-  }
-
-  render(){
-    console.log(this.props.services)
-    const {services} = this.props
-    return(
+  render() {
+    const service = this.props.singleService
+    const users = this.props.users
+    if (!service) return <div />
+    console.log(users, "USERS!!!!")
+    return (
       <div>
-      <ul>
-      {services && services.map((service, ind) => {
-        return (
-          <NavLink to={`/services/${service.id}`}>
-          <li key={ind}>{service.name}</li>
-          </NavLink>
-        )
-      })}
-     </ul>
+
+        <h1>{service.name} </h1>
+        <h4>Description: {service.description} </h4>
+        <h4>Category: {service.category} </h4>
+        <h4>Date created: {service.createdAt}</h4>
+        <h4>Offered By: {service.user.userName}</h4>
+        <Link to="/services"><button>Back to Services</button></Link>
+        <button>Purchase</button>
+
       </div>
+
     )
   }
+
 }
 
-/**
- * CONTAINER
- */
-const mapState = (state) => {
-  return {
-    service: state.service
+const mapStateToProps = ({ services, users }, ownProps) => ({
+  singleService: services.find(
+    service => +service.id === +ownProps.match.params.id
+  ),
+  users
+})
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  handleFetchServices() {
+    dispatch(fetchServices())
   }
-}
+})
 
-const mapDispatch = { fetchServiceById }
-
-
-export default connect(mapState, mapDispatch)(SingleService)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SingleService))
