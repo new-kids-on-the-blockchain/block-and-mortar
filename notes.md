@@ -8,7 +8,9 @@
 
 var barterAgreement = BarterAgreement.at(BarterAgreement.address)
 
+
 barterAgreement.newAgreement(0xbddae5ebde94256d38ea339e0a7a928bcaf3c61e, 0xcbd14b623d49fd1cad0fa4a805f37b469526c5f6, '1 Copy of Die Hard', '1 Christmas Tree')
+
 
 barterAgreement.getAgreement(0)
 
