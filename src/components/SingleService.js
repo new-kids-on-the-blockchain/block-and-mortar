@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchServices } from '../store';
+import { fetchServiceById } from '../store';
 import { NavLink } from 'react-router-dom';
 
 
 
-class AllServices extends Component {
+class SingleService extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -13,8 +13,8 @@ class AllServices extends Component {
   }
 
   componentDidMount(){
-    console.log('All services rendering')
-    this.props.fetchServices();
+    console.log('Single service rendering', this.props.match.params.id)
+    this.props.fetchServiceById(this.props.match.params.id);
   }
 
   render(){
@@ -41,11 +41,11 @@ class AllServices extends Component {
  */
 const mapState = (state) => {
   return {
-    services: state.services
+    service: state.service
   }
 }
 
-const mapDispatch = { fetchServices }
+const mapDispatch = { fetchServiceById }
 
 
-export default connect(mapState, mapDispatch)(AllServices)
+export default connect(mapState, mapDispatch)(SingleService)
