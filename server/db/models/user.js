@@ -28,14 +28,19 @@ const User = db.define('user', {
       return () => this.getDataValue('salt')
     }
   },
-  accountAddress: {
-    type: Sequelize.TEXT
-  },
-  isAdmin: {
-    type: Sequelize.BOOLEAN,
-    defaultValue: false
+  // accountAddress: {
+  //   type: Sequelize.TEXT
+  // },
+  // isAdmin: {
+  //   type: Sequelize.BOOLEAN,
+  //   defaultValue: false
+  // },
+  imageURL: {
+    type: Sequelize.STRING,
+    defaultValue: 'https://thesocietypages.org/socimages/files/2009/05/vimeo.jpg'
   }
 })
+
 
 module.exports = User
 
