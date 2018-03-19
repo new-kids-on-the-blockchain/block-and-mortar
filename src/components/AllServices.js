@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchServices } from '../store';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -18,12 +19,15 @@ class AllServices extends Component {
 
   render(){
     console.log(this.props.services)
+    const {services} = this.props
     return(
       <div>
       <ul>
-      {this.props.services && this.props.services.map((service, ind) => {
+      {services && services.map((service, ind) => {
         return (
+          <NavLink to={`/services/${service.id}`}>
           <li key={ind}>{service.name}</li>
+          </NavLink>
         )
       })}
      </ul>
