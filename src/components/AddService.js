@@ -15,6 +15,10 @@ class AddService extends Component {
     }
   }
 
+  componentDidMount() {
+    
+  }
+
   handleChange = event => {
     const form = event.target.parentNode;
     this.setState({
@@ -30,6 +34,7 @@ class AddService extends Component {
 
   render() {
     const {name, description, category, isAvailable, price} = this.state
+    console.log('CONTRACT HERE', this.props.contract)
     return (
       <div>
         <h2>CREATE A SERVICE</h2>
@@ -59,7 +64,7 @@ class AddService extends Component {
 }
 
 const mapState = (state) => {
-  contracts: state.contracts //redux
+  contract: state.contract //redux
 }
 
 const mapDispatch = (dispatch, ownProps) => {
@@ -71,4 +76,4 @@ const mapDispatch = (dispatch, ownProps) => {
 }
 
 
-export default connect(null, mapDispatch)(AddService)
+export default connect(mapState, mapDispatch)(AddService)
