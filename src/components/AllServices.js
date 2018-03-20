@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchServices } from '../store';
-import { NavLink } from 'react-router-dom';
+import { fetchServices } from '../store'
+import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
@@ -17,21 +18,22 @@ class AllServices extends Component {
     this.props.fetchServices();
   }
 
-  render(){
+  render() {
 
     const {services} = this.props
-    return(
+    return (
       <div>
       <ul>
       {services && services.map((service, ind) => {
         return (
           <NavLink to={`/services/${service.id}`}>
-          <li key={ind}>{service.name}</li>
+          <li key={service.id}>{service.name}</li>
           </NavLink>
         )
       })}
      </ul>
-      </div>
+     <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
+     </div>
     )
   }
 }

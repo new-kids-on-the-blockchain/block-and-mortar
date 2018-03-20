@@ -6,12 +6,11 @@ class AddService extends Component {
   constructor() {
     super();
     this.state = {
-      name: "hi",
-      description: "hi",
-      category: "Misc",
-       //isAvailable: true,
-      price: "1 eth",
-      userId: "1"
+      name: "",
+      description: "",
+      category: "",
+      price: "",
+      userId: ""
     };
   }
 
@@ -40,23 +39,35 @@ class AddService extends Component {
           <h3> Name: </h3>
           <input value={name} name="serviceName" onChange={this.handleChange} />
           <h3> Category: </h3>
-          <input
-            value={category}
-            name="serviceCategory"
-            onChange={this.handleChange}
-          />
-          <h3> Price: </h3>
+          <select onChange={this.handleChage} name="category">
+            <option value='Childcare'>Childcare</option>
+            <option value='Pet'>Pet</option>
+            <option value='Home Maintenance'>Home Maintenance</option>
+            <option value='Food'>Food</option>
+            <option value='Misc'>Misc</option>
+            <option value='Professional'>Misc</option>
+            <option value='Products'>Misc</option>
+          </select>
+          <h3> Price (ether) </h3>
           <input
             value={price}
             name="servicePrice"
+            type="number"
+            min="0"
+            max="100"
+            step="0.0001"
             onChange={this.handleChange}
           />
           <h3> Description: </h3>
-          <input
-            value={description}
-            name="serviceDescription"
-            onChange={this.handleChange}
-          />
+          <label>Description:
+          <textarea
+          onChange={this.handleChange}
+          name="description"
+          rows="1"
+          cols="50"
+          value={description}
+            />
+          </label>
           <button> Submit </button>
         </form>
       </div>
