@@ -7,12 +7,11 @@ class AddService extends Component {
   constructor() {
     super();
     this.state = {
-      name: "hi",
-      description: "hi",
-      category: "Misc",
-       //isAvailable: true,
-      price: "1 eth",
-      userId: "1"
+      name: "",
+      description: "",
+      category: "",
+      price: "",
+      userId: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this)
     // this.makeContract = this.makeContract.bind(this)
@@ -35,14 +34,14 @@ class AddService extends Component {
     //   name: evt.target.serviceName.value,
     //   category: evt.target.serviceCategory.value,
     //   price: evt.target.servicePrice.value,
-    //   description: evt.target.serviceDescription.value 
+    //   description: evt.target.serviceDescription.value
     // }
 
     // const name = evt.target.serviceName.value
     // const category = evt.target.serviceCategory.value
     // const price = evt.target.servicePrice.value
     // const description = evt.target.serviceDescription.value
-    
+
     console.log("IN HANDLE SUBMIT!!!!")
     // console.log(createAgreement, "CREATE AGREEMENT")
     console.log(this.props.web3, "WEB 3!!!!!!#@FRFEWRFAW")
@@ -57,8 +56,8 @@ class AddService extends Component {
     //const num = 1234
     //this.makeContract(num)
 
-   
-   
+
+
   }
 
   // async makeContract(num){
@@ -69,7 +68,7 @@ class AddService extends Component {
   //     console.log(e, 'MAKE CONTRACT FAILEDDDD')
   //   }
   // }
-  
+
   render() {
     const { name, description, category, price } = this.state;
     console.log(this.props.contract, "THIS.PROPS.CONTRACT");
@@ -85,21 +84,36 @@ class AddService extends Component {
           <h3> Name: </h3>
           <input value={name} name="serviceName" />
           <h3> Category: </h3>
-          <input
-            value={category}
-            name="serviceCategory"
-          />
-          <h3> Price: </h3>
+          <select onChange={this.handleChage} name="category">
+            <option value='Childcare'>Childcare</option>
+            <option value='Pet'>Pet</option>
+            <option value='Home Maintenance'>Home Maintenance</option>
+            <option value='Food'>Food</option>
+            <option value='Misc'>Misc</option>
+            <option value='Professional'>Misc</option>
+            <option value='Products'>Misc</option>
+          </select>
+          <h3> Price (ether) </h3>
           <input
             value={price}
             name="servicePrice"
+            type="number"
+            min="0"
+            max="100"
+            step="0.0001"
+            onChange={this.handleChange}
           />
           <h3> Description: </h3>
-          <input
-            value={description}
-            name="serviceDescription"
-          />
-          <button type="submit"> Submit </button>
+          <label>Description:
+          <textarea
+          onChange={this.handleChange}
+          name="description"
+          rows="1"
+          cols="50"
+          value={description}
+            />
+          </label>
+          <button> Submit </button>
         </form>
       </div>
     );
