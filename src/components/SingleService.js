@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchServices, fetchUsers } from '../store'
+import { fetchServices, fetchContract } from '../store'
 
 class SingleService extends Component {
   componentDidMount() {
     this.props.handleFetchServices()
+    this.props.handleFetchContract()
   }
   render() {
     const service = this.props.singleService
     const users = this.props.users
     if (!service) return <div />
+    console.log(users, "USERS!!!!")
+    console.log(this.props.contract, "CONTRACT IN SINGLE SERVICE!!!!!")
     return (
       <div>
 
@@ -28,16 +31,20 @@ class SingleService extends Component {
 
 }
 
-const mapStateToProps = ({ services, users }, ownProps) => ({
+const mapStateToProps = ({ services, users, contract }, ownProps) => ({
   singleService: services.find(
     service => +service.id === +ownProps.match.params.id
   ),
+  contract,
   users
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   handleFetchServices() {
     dispatch(fetchServices())
+  },
+  handleFetchContract(){
+    dispatch(fetchContract())
   }
 })
 
