@@ -8,9 +8,7 @@
 
 var barterAgreement = BarterAgreement.at(BarterAgreement.address)
 
-
-barterAgreement.newAgreement(0xbddae5ebde94256d38ea339e0a7a928bcaf3c61e, 0xcbd14b623d49fd1cad0fa4a805f37b469526c5f6, '1 Copy of Die Hard', '1 Christmas Tree')
-
+barterAgreement.newAgreement(1)
 
 barterAgreement.getAgreement(0)
 
@@ -18,19 +16,4 @@ barterAgreement.getAgreementLength()
 
 barterAgreement.updateAgreement(0)
 
-
-//STRUCT
-//Buyer address
-//Seller address
-//Cost
-//Service Received (bool)
-
-//Seller creates product/service - create smart contract
-//Buyer requests - create (or update) smart contract
-//Seller accepts? - touching the smart contract again
-//Buyer receives - money is transferred to seller
-
-//Facilitating communication between
-//Stretch - add in escrow
-
-//write this in a way that will impact front-end minimally
+barterAgreement.completeAgreement(0)
