@@ -2,10 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchUsers } from '../store';
 
-
-
 class AllUsers extends Component {
-
   componentDidMount(props){
     console.log('IN USERS COMPONENT')
     this.props.handleFetchUsers();
@@ -39,10 +36,9 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
     return {
         handleFetchUsers() {
-            dispatch(fetchUsers()) 
+            dispatch(fetchUsers())
         }
     }
 }
-
 
 export default connect(mapState, mapDispatch)(AllUsers)
