@@ -14,7 +14,6 @@ class AllServices extends Component {
   }
 
   componentDidMount(){
-    console.log('All services rendering')
     this.props.fetchServices();
   }
 
@@ -26,8 +25,8 @@ class AllServices extends Component {
       <ul>
       {services && services.map((service, ind) => {
         return (
-          <NavLink to={`/services/${service.id}`}>
-          <li key={service.id}>{service.name}</li>
+          <NavLink key={service.id} to={`/services/${service.id}`}>
+          <li key={ind}>{service.name}</li>
           </NavLink>
         )
       })}

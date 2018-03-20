@@ -2,10 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchAgreements } from '../store';
 
-
-
 class MyAgreements extends Component {
-
   componentDidMount(){
     console.log('All agreements rendering')
     this.props.handleFetchAgreements();
@@ -45,6 +42,5 @@ const mapDispatch = (dispatch) => {
         }
     }
 }
-
 
 export default connect(mapState, mapDispatch)(MyAgreements)
