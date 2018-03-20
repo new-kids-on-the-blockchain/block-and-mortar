@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 const Agreement = require('./agreement')
-const User = require('./user')
 
 const Service = db.define('service', {
   name: {
@@ -24,9 +23,20 @@ const Service = db.define('service', {
     validate: {
       min: 0
     }
-  }
-})
-
-
+  },
+  status: {
+    type: Sequelize.ENUM('Posted', 'Pending', 'Completed'),
+    defaultValue: 'Posted'
+    }
+},
+{
+    hooks: {
+      afterUpdate: function(service) {
+        if (service.status === 'Pending') {
+            service.isAvailable = false;
+        }
+      }
+    }
+  })
 
 module.exports = Service

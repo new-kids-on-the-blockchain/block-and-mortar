@@ -24,7 +24,6 @@ class SingleService extends Component {
         <h4>Offered By: {service.user.userName}</h4>
         <Link to="/services"><button>Back to Services</button></Link>
         <button>Purchase</button>
-
       </div>
 
     )
