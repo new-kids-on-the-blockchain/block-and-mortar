@@ -16,7 +16,7 @@ const getUsers = users => ({type: GET_USERS, users})
  */
 export function fetchUsers() {
   return function thunk(dispatch) {
-    return axios.get('/api/users', {baseURL})
+    return axios.get('/users', {baseURL})
       .then(res => res.data)
       .then(users => dispatch(getUsers(users)))
       .catch(err => console.log(err))

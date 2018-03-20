@@ -20,7 +20,7 @@ const editService = service => ({type: EDIT_SERVICE, service})
  */
 export function fetchServices() {
   return function thunk(dispatch) {
-    return axios.get('/api/services', {baseURL})
+    return axios.get('/services', {baseURL})
       .then(res => res.data)
       .then(services => dispatch(getServices(services)))
       .catch(err => console.log(err))
@@ -29,7 +29,7 @@ export function fetchServices() {
 
 export function postService(service, ownProps) {
   return function thunk(dispatch) {
-    return axios.post('/api/services', service, {baseURL})
+    return axios.post('/services', service, {baseURL})
     .then(res => addServiceAndRedirect(res.data, ownProps, dispatch))
     .catch(err => console.log(err, "failed to post service"))
   }
@@ -37,7 +37,7 @@ export function postService(service, ownProps) {
 
 export function updateService(service, ownProps) {
   return function thunk(dispatch) {
-    return axios.put(`/api/services/${service.id}`, service, {baseURL})
+    return axios.put(`/services/${service.id}`, service, {baseURL})
     .then(res => editServiceAndRedirect(res.data, ownProps, dispatch))
     .catch(err => console.log(err, "failed to update service"))
   }
