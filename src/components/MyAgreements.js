@@ -41,7 +41,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
     return {
         handleFetchAgreements() {
-            dispatch(fetchAgreements()) 
+            dispatch(fetchAgreements())
         }
     }
 }
