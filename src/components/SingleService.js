@@ -11,7 +11,6 @@ class SingleService extends Component {
     const service = this.props.singleService
     const users = this.props.users
     if (!service) return <div />
-    console.log(users, "USERS!!!!")
     return (
       <div>
 
@@ -22,7 +21,6 @@ class SingleService extends Component {
         <h4>Offered By: {service.user.userName}</h4>
         <Link to="/services"><button>Back to Services</button></Link>
         <button>Purchase</button>
-
       </div>
 
     )

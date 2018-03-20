@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 
-// tested
+
 router.post('/', (req, res, next) => {
   Service.create(req.body)
     .then(service => Service.findById(service.id, {include: [{ all: true }]}))
@@ -24,7 +24,7 @@ router.get('/:id', (req, res, next) => {
     .catch(next)
 })
 
-// tested
+
 router.put("/:id", (req, res, next) => {
   Service.findById(req.params.id)
     .then(service => service.update(req.body))
