@@ -1,5 +1,6 @@
 import BarterAgreement from '../../build/contracts/BarterAgreement.json';
 
+
 /**
  * INITIAL STATE
  */
