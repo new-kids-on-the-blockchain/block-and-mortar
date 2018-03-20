@@ -2,11 +2,6 @@ import axios from 'axios';
 const baseURL = 'http://localhost:8080/api'
 
 /**
- * INITIAL STATE
- */
-const defaultUsers = []
-
-/**
  * ACTION TYPES
  */
 const GET_USERS = 'GET_USERS';
@@ -21,7 +16,7 @@ const getUsers = users => ({type: GET_USERS, users})
  */
 export function fetchUsers() {
   return function thunk(dispatch) {
-    return axios.get('/users', {baseURL})
+    return axios.get('/api/users', {baseURL})
       .then(res => res.data)
       .then(users => dispatch(getUsers(users)))
       .catch(err => console.log(err))
@@ -31,11 +26,11 @@ export function fetchUsers() {
 /**
  * REDUCER
  */
-export default function reducer(state = defaultUsers, action) {
+export default function reducer(users = [], action) {
   switch (action.type) {
     case GET_USERS:
       return action.users
     default:
-      return state
+      return users
   }
 }

@@ -28,15 +28,16 @@ const Service = db.define('service', {
     type: Sequelize.ENUM('Posted', 'Pending', 'Completed'),
     defaultValue: 'Posted'
     }
-},
-{
-    hooks: {
-      afterUpdate: function(service) {
-        if (service.status === 'Pending') {
-            service.isAvailable = false;
-        }
-      }
-    }
-  })
+}
+// {
+//     hooks: {
+//       afterUpdate: function(service) {
+//         if (service.status === 'Pending') {
+//             service.isAvailable = false;
+//         }
+//       }
+//     }
+  // }
+)
 
 module.exports = Service
