@@ -22,7 +22,7 @@ class SingleService extends Component {
         <h4>Date created: {service.createdAt}</h4>
         <h4>Offered By: {service.user.userName}</h4>
         <Link to="/services"><button>Back to Services</button></Link>
-        {service.isAvailable ? <button>Purchase</button> : <button>Complete Agreement</button>}
+        {service.isAvailable && service.status !== 'Pending' ? <button>Purchase</button> : <button>Complete Agreement</button>}
       </div>
     )
   }
