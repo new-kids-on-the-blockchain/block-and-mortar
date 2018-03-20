@@ -5,9 +5,6 @@ import { postService } from "../store";
 class AddService extends Component {
   constructor() {
     super();
-    //this.props.handleFetchWeb3()
-    //this.props.handleFetchContract()
-
     this.state = {
       name: "hi",
       description: "hi",
@@ -17,36 +14,6 @@ class AddService extends Component {
       userId: "1"
     };
   }
-
-  // componentWillMount() {
-  //   this.collectBlockchainInfo();
-  // }
-
-  // async collectBlockchainInfo() {
-  //   // Get network provider, web3, and truffle contract instance and store them on state.
-  //   try {
-  //     const { web3 } = await this.props.getWeb3();
-  //     console.log(web3, "APP.JS Web3");
-  //     this.props.getContract(web3);
-  //     console.log("MIDDLE OF ASYNC GET CONTRACT APP.JS");
-  //     this.props.getAccounts(web3);
-  //   } catch (e) {
-  //     console.log(e, 'AWAIT collectBlockchainInfo DIDN"T WORK');
-  //   }
-  // }
-
-  // componentWillMount() {
-  //   console.log('COMPONENT WILL MOUNT')
-  //   const web3obj = this.props.handleFetchWeb3()
-  //   console.log('COMPONENT WILL MOUNT WEB3Obj', web3obj)
-  //   this.props.contract && this.props.handleFetchContract(web3obj)
-  //   console.log('CONTRACT HERE', this.props.contract)
-  // }
-
-  // componentWillUpdate(nextProps, nextState){
-  //  console.log(nextProps, "next props")
-  //  console.log(nextState, "nextState")
-  // }
 
   handleChange = event => {
     const form = event.target.parentNode;
