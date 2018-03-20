@@ -13,6 +13,9 @@ class AddService extends Component {
       price: "1 eth",
       userId: "1"
     };
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.newAgreementAsync = this.newAgreementAsync.bind(this)
   }
 
   handleChange = event => {
@@ -23,10 +26,28 @@ class AddService extends Component {
       price: form.servicePrice.value,
       description: form.serviceDescription.value
     });
-    console.log("HANDLE CHANGE", this.state);
+    //console.log("HANDLE CHANGE", this.state);
   };
 
-  handleSubmit() {}
+  handleSubmit(evt) {
+    console.log('HANDLE SUBMIT')
+    const num = Number(5)
+    this.newAgreementAsync(num);
+    console.log('HANDLE SUBMIT ASYNC DONE')
+  }
+
+  async newAgreementAsync(price) {
+    // Get network provider, web3, and truffle contract instance and store them on state.
+    try {
+      await this.props.contract.newAgreement(price);
+      const contract = this.props.contract
+      console.log(contract, 'NEW CONTRACT MADE!!')
+      //this.props.getContract(web3);
+      //this.props.getAccounts(web3);
+    } catch (e) {
+      console.log(e, 'AWAIT newAgreementAsync DIDN"T WORK');
+    }
+  }
 
   render() {
     const { name, description, category, price } = this.state;

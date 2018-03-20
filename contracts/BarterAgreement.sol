@@ -3,6 +3,7 @@ pragma solidity ^0.4.18;
 contract BarterAgreement {
     Agreement[] agreements;
     // storage Agreement[] agreements; //"Storage" was causing errors
+    //event console(address sender)
 
     struct Agreement {
         address owner;
