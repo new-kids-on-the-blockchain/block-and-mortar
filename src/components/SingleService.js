@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchServices, fetchUsers, fetchContract } from '../store'
+import { fetchServices, fetchContract } from '../store'
 
 class SingleService extends Component {
   componentDidMount() {

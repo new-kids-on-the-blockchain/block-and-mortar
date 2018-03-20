@@ -1,30 +1,48 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { postService, fetchContract, fetchWeb3 } from "../store";
-const web3 = require("web3")
+import { postService } from "../store";
 
 class AddService extends Component {
   constructor() {
     super();
-    this.props.handleFetchWeb3()
-    this.props.handleFetchContract()
-    
-    this.state ={
-      name: 'hi',
-      description: 'hi',
-      category: 'Misc',
-      isAvailable: true,
-      price: '1 eth',
-      userId: '1'
-    }
+    //this.props.handleFetchWeb3()
+    //this.props.handleFetchContract()
+
+    this.state = {
+      name: "hi",
+      description: "hi",
+      category: "Misc",
+      //isAvailable: true,
+      price: "1 eth",
+      userId: "1"
+    };
   }
 
-  componentWillMount() {
-    const web3obj = this.props.handleFetchWeb3()
-    this.props.contract && this.props.handleFetchContract(web3obj)
-    console.log('CONTRACT HERE', this.props.contract)
+  // componentWillMount() {
+  //   this.collectBlockchainInfo();
+  // }
 
-  }
+  // async collectBlockchainInfo() {
+  //   // Get network provider, web3, and truffle contract instance and store them on state.
+  //   try {
+  //     const { web3 } = await this.props.getWeb3();
+  //     console.log(web3, "APP.JS Web3");
+  //     this.props.getContract(web3);
+  //     console.log("MIDDLE OF ASYNC GET CONTRACT APP.JS");
+  //     this.props.getAccounts(web3);
+  //   } catch (e) {
+  //     console.log(e, 'AWAIT collectBlockchainInfo DIDN"T WORK');
+  //   }
+  // }
+
+  // componentWillMount() {
+  //   console.log('COMPONENT WILL MOUNT')
+  //   const web3obj = this.props.handleFetchWeb3()
+  //   console.log('COMPONENT WILL MOUNT WEB3Obj', web3obj)
+  //   this.props.contract && this.props.handleFetchContract(web3obj)
+  //   console.log('CONTRACT HERE', this.props.contract)
+  // }
+
   // componentWillUpdate(nextProps, nextState){
   //  console.log(nextProps, "next props")
   //  console.log(nextState, "nextState")
@@ -38,16 +56,16 @@ class AddService extends Component {
       price: form.servicePrice.value,
       description: form.serviceDescription.value
     });
-    console.log('HANDLE CHANGE', this.state)
+    console.log("HANDLE CHANGE", this.state);
   };
 
   handleSubmit() {}
 
   render() {
-    const {name, description, category, isAvailable, price} = this.state
-    console.log(this.props.contract, "!!!!!!!!!")
+    const { name, description, category, price } = this.state;
+    console.log(this.props.contract, "THIS.PROPS.CONTRACT");
     return (
-      this.props.contract && 
+      this.props.contract &&
       <div>
         <h2>CREATE A SERVICE</h2>
         <form onSubmit={this.handleSubmit}>
@@ -61,7 +79,11 @@ class AddService extends Component {
             onChange={this.handleChange}
           />
           <h3> Price: </h3>
-          <input value={price} name="servicePrice" onChange={this.handleChange} />
+          <input
+            value={price}
+            name="servicePrice"
+            onChange={this.handleChange}
+          />
           <h3> Description: </h3>
           <input
             value={description}
@@ -75,25 +97,34 @@ class AddService extends Component {
   }
 }
 
-const mapState = (state) => {
+const mapState = state => {
   return {
-    contract: state.contract //redux
-  }
-}
+    web3: state.web3,
+    contract: state.contract,
+    accounts: state.accounts
+  };
+};
 
 const mapDispatch = (dispatch, ownProps) => {
   return {
     addService: function(service) {
       dispatch(postService(service, ownProps))
-    },
-    handleFetchContract: function(){
-      dispatch(fetchContract(web3))
-    },
-    handleFetchWeb3: function(){
-      dispatch(fetchWeb3())
     }
   }
 }
 
+// function mapDispatch(dispatch) {
+//   return {
+//     getWeb3: function() {
+//       return dispatch(fetchWeb3());
+//     },
+//     getContract: function(web3) {
+//       return dispatch(fetchContract(web3));
+//     },
+//     getAccounts: function(web3) {
+//       return dispatch(fetchAccounts(web3));
+//     }
+//   };
+// }
 
-export default connect(mapState, mapDispatch)(AddService)
+export default connect(mapState, mapDispatch)(AddService);
