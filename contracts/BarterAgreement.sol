@@ -51,7 +51,7 @@ contract BarterAgreement {
         agreement.inProgress = true;
     }
 
-    //Complete agreement
+    // Complete agreement
     function completeAgreement(uint id) public {
         Agreement storage agreement = agreements[id];
         require(agreement.buyer == msg.sender);
