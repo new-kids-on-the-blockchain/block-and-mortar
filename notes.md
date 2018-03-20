@@ -11,8 +11,15 @@ var barterAgreement = BarterAgreement.at(BarterAgreement.address)
 
 barterAgreement.newAgreement(0xbddae5ebde94256d38ea339e0a7a928bcaf3c61e, 0xcbd14b623d49fd1cad0fa4a805f37b469526c5f6, '1 Copy of Die Hard', '1 Christmas Tree')
 
-//Claudia local testing
-barterAgreement.newAgreement(0xfbc7e8d69a3409b25f12977865aab26848a68d15, 0x7b7594323591ea48e3398c7f02c3d65431f764d5, '1 Copy of Die Easyyyyy', '1 Christmas Flowerrrrr')
+//Claudia local testing//////
+barterAgreement.newAgreement(0xe586213257405fd50a2c6ece57b519e92a604807, 0xb6f819231d544f55e635ef24a9665ecf3983ac4b, '1 Copy of Die Easyyyyy', '1 Christmas Flowerrrrr')
+
+barterAgreement.newAgreement(5)
+///////
+
+
+
+
 
 barterAgreement.newAgreement(1)
 
