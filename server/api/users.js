@@ -12,3 +12,9 @@ router.get('/', (req, res, next) => {
     .then(users => res.json(users))
     .catch(next)
 })
+
+router.get('/:id', (req, res, next) => {
+  User.findById(req.params.id, { include: [{ all: true }] })
+    .then(service => res.json(service))
+    .catch(next)
+})

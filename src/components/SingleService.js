@@ -11,8 +11,6 @@ class SingleService extends Component {
 
   render() {
     const service = this.props.singleService
-    const users = this.props.users
-    console.log("service is: ", service)
     if (!service) return <div>No service exists at this location</div>
     return (
       <div>
@@ -20,7 +18,9 @@ class SingleService extends Component {
         <h4>Description: {service.description} </h4>
         <h4>Category: {service.category} </h4>
         <h4>Date created: {service.createdAt}</h4>
-        <h4>Offered By: {service.user.userName}</h4>
+        <Link to={`/users/${service.Seller.id}`}>
+          <h4>Offered By: {service.Seller.userName}</h4>
+        </Link>
         <Link to="/services"><button>Back to Services</button></Link>
         { service.isAvailable ? <button>Purchase</button> : <button>Complete Agreement</button> }
       </div>

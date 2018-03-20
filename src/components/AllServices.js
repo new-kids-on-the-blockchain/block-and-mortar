@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { fetchServices } from '../store';
 import { NavLink } from 'react-router-dom';
 
-
-
 class AllServices extends Component {
   constructor(props){
     super(props)
@@ -17,7 +15,6 @@ class AllServices extends Component {
   }
 
   render(){
-
     const {services} = this.props
     return(
       <div>
@@ -46,6 +43,5 @@ const mapState = (state) => {
 }
 
 const mapDispatch = { fetchServices }
-
 
 export default connect(mapState, mapDispatch)(AllServices)
