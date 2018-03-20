@@ -12,14 +12,14 @@ let getWeb3 = new Promise(function(resolve, reject) {
       web3 = new Web3(web3.currentProvider)
 
       results = { web3 }
-
-      console.log('Injected web3 detected.');
+      //web3.eth.getAccounts((accounts) => console.log('!!!!!!', accounts))
+      console.log('Injected web3 detected.', web3.currentProvider);
 
       resolve(results)
     } else {
       // Fallback to localhost if no web3 injection. We've configured this to
       // use the development console's port by default.
-      var provider = new Web3.providers.HttpProvider('http://127.0.0.1:8545')
+      var provider = new Web3.providers.HttpProvider('http://172.16.27.239:8545')
 
       web3 = new Web3(provider)
 
@@ -33,3 +33,6 @@ let getWeb3 = new Promise(function(resolve, reject) {
 })
 
 export default getWeb3
+
+
+//http://127.0.0.1:8545

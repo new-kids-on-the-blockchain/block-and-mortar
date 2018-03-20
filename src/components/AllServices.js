@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchServices } from '../store';
-import { NavLink } from 'react-router-dom';
-
-
+import { fetchServices } from '../store'
+import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class AllServices extends Component {
   constructor(props){
@@ -13,25 +12,24 @@ class AllServices extends Component {
   }
 
   componentDidMount(){
-    console.log('All services rendering')
     this.props.fetchServices();
   }
 
-  render(){
-    console.log(this.props.services)
+  render() {
     const {services} = this.props
-    return(
+    return (
       <div>
       <ul>
       {services && services.map((service, ind) => {
         return (
-          <NavLink to={`/services/${service.id}`}>
+          <NavLink key={service.id} to={`/services/${service.id}`}>
           <li key={ind}>{service.name}</li>
           </NavLink>
         )
       })}
      </ul>
-      </div>
+     <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
+     </div>
     )
   }
 }
@@ -40,12 +38,12 @@ class AllServices extends Component {
  * CONTAINER
  */
 const mapState = (state) => {
+  const availableServices = state.services.filter(service => service.isAvailable === true)
   return {
-    services: state.services
+    services: availableServices
   }
 }
 
 const mapDispatch = { fetchServices }
-
 
 export default connect(mapState, mapDispatch)(AllServices)

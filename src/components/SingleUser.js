@@ -10,38 +10,33 @@ class SingleService extends Component {
   }
 
   render() {
-    const service = this.props.singleService
-    if (!service) return <div>No service exists at this location</div>
+    const user = this.props.singleUser
+    const services = this.props.services
+    console.log("user is: ", user)
+    if (!user) return <div>No user exists at this location</div>
     return (
       <div>
-        <h1>{service.name} </h1>
-        <h4>Description: {service.description} </h4>
-        <h4>Category: {service.category} </h4>
-        <h4>Date created: {service.createdAt}</h4>
-        <Link to={`/users/${service.Seller.id}`}>
-          <h4>Offered By: {service.Seller.userName}</h4>
-        </Link>
+        <h1>{user.name} </h1>
+        <h4>Description: THINGS </h4>
         <Link to="/services"><button>Back to Services</button></Link>
-        { service.isAvailable ? <button>Purchase</button> : <button>Complete Agreement</button> }
       </div>
     )
   }
-
 }
 
 const mapStateToProps = ({ services, users, contract }, ownProps) => ({
-  singleService: services.find(
-    service => +service.id === +ownProps.match.params.id
+  singleUser: users.find(
+    user => +user.id === +ownProps.match.params.id
   ),
   contract,
-  users
+  services
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   handleFetchServices() {
     dispatch(fetchServices())
   },
-  handleFetchContract(){
+  handleFetchContract() {
     dispatch(fetchContract())
   }
 })

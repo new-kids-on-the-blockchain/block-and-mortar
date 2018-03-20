@@ -21,31 +21,31 @@ async function seed () {
   ])
 
   const services = await Promise.all([
-    Service.create({name: 'Cleaning your car', description: 'I will polish your car any weekend!', category: 'Misc', userId: 1, isAvailable: true, price: 0.08}),
-    Service.create({name: 'Babysitting', description: 'I am great with children, I can watch your kids for 3 hours', category: 'Childcare', userId: 2, isAvailable: true, price: 0.1}),
-    Service.create({name: 'Dog walking', description: 'I will walk your dog for 30 mins', category: 'Pet', userId: 3, isAvailable: true, price: 0.05}),
-    Service.create({name: 'Fresh Jam', description: 'I can offer you 3 jars of homemade jams', category: 'Food', userId: 4, isAvailable: false, price: 0.02}),
-    Service.create({name: 'Web Design', description: 'I can build your website', category: 'Professional', userId: 5, isAvailable: true, price: 0.9}),
-    Service.create({name: 'Basil', description: 'I grow fresh basil from my garden', category: 'Food', userId: 6, isAvailable: false, price: 0.05}),
-    Service.create({name: 'Ironing', description: 'I can iron your clothes!', category: 'Misc', userId: 1, isAvailable: true, price: 0.15}),
-    Service.create({name: 'Fixing roof', description: 'I am a professional at roof fixing! Great value!', category: 'Home Maintenance', userId: 2, isAvailable: true, price: 0.3}),
-    Service.create({name: 'Cat sitting', description: 'I can watch your cat over a weekend, I have a veterinary degree.', category: 'Pet', userId: 3, isAvailable: true, price: 0.15}),
-    Service.create({name: 'Root vegetables', description: 'Too many root vegetables in my garden. Let me know if you want to trade!', category: 'Food', userId: 4, isAvailable: true, price: 0.05})
+    Service.create({name: 'Cleaning your car', description: 'I will polish your car any weekend!', category: 'Misc', BuyerId: null, SellerId: 6, isAvailable: true, price: 0.08, status: 'Posted'}),
+    Service.create({name: 'Babysitting', description: 'I am great with children, I can watch your kids for 3 hours', category: 'Childcare', BuyerId: null, SellerId: 6, isAvailable: true, price: 0.1, status: 'Posted'}),
+    Service.create({name: 'Dog walking', description: 'I will walk your dog for 30 mins', category: 'Pet', BuyerId: null, SellerId: 6,  isAvailable: true, price: 0.05, status: 'Posted'}),
+    Service.create({name: 'Fresh Jam', description: 'I can offer you 3 jars of homemade jams', category: 'Food', BuyerId: null, SellerId: 7, isAvailable: true, price: 0.02, status: 'Posted'}),
+    Service.create({name: 'Web Design', description: 'I can build your website', category: 'Professional', BuyerId: 4, SellerId: 7,isAvailable: false, price: 0.9, status: 'Pending'}),
+    Service.create({name: 'Basil', description: 'I grow fresh basil from my garden', category: 'Food', BuyerId: 5, SellerId: 7, isAvailable: false, price: 0.05, status: 'Completed'}),
+    Service.create({name: 'Ironing', description: 'I can iron your clothes!', category: 'Misc', BuyerId: null, SellerId: 7, isAvailable: true, price: 0.15, status: 'Posted'}),
+    Service.create({name: 'Fixing roof', description: 'I am a professional at roof fixing! Great value!', category: 'Home Maintenance', BuyerId: 6, SellerId: 8, isAvailable: false, price: 0.3, status: 'Pending'}),
+    Service.create({name: 'Cat sitting', description: 'I can watch your cat over a weekend, I have a veterinary degree.', category: 'Pet', BuyerId: null, SellerId: 10, isAvailable: true, price: 0.15, status: 'Posted'}),
+    Service.create({name: 'Root vegetables', description: 'Too many root vegetables in my garden. Let me know if you want to trade!', category: 'Food', BuyerId: null, SellerId: 9, isAvailable: true, price: 0.05, status: 'Posted'})
   ])
 
-  const agreement = await Promise.all([
-    Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 1, SellerId: 2, ServiceId: 2}),
-    Agreement.create({agreementId: '000fsdfhekjh32345', status: 'Initiated', BuyerId: 1, SellerId: 4, ServiceId: 4}),
-    Agreement.create({agreementId: '00645gdfheu536ggd', status: 'Initiated', BuyerId: 4, SellerId: 5, ServiceId: 5}),
-    Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 2, SellerId: 6, ServiceId: 6}),
-    Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 3, SellerId: 1, ServiceId: 7}),
-    Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 3, SellerId: 2, ServiceId: 8})
-  ])
+  // const agreement = await Promise.all([
+  //   Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 1, SellerId: 2, ServiceId: 2}),
+  //   Agreement.create({agreementId: '000fsdfhekjh32345', status: 'Initiated', BuyerId: 1, SellerId: 4, ServiceId: 4}),
+  //   Agreement.create({agreementId: '00645gdfheu536ggd', status: 'Initiated', BuyerId: 4, SellerId: 5, ServiceId: 5}),
+  //   Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 2, SellerId: 6, ServiceId: 6}),
+  //   Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 3, SellerId: 1, ServiceId: 7}),
+  //   Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 3, SellerId: 2, ServiceId: 8})
+  // ])
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${services.length} services`)
-  console.log(`seeded ${agreement.length} agreements`)
+  // console.log(`seeded ${agreement.length} agreements`)
   console.log(`seeded successfully`)
 }
 

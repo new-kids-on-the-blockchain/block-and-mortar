@@ -4,9 +4,6 @@ const baseURL = 'http://localhost:8080/api'
 //action type
 const GET_SINGLE_SERVICE = "GET_SINGLE_SERVICE";
 
-//initial state
-const initState = [];
-
 //creators
 export function getServiceById(service) {
   return {
@@ -27,12 +24,12 @@ export function fetchServiceById(id){
 
 
 //reducer
-export default function reducer (state = initState, action){
+export default function reducer (service = {}, action){
     switch (action.type) {
         case GET_SINGLE_SERVICE:
             return action.service;
         default:
-            return state;
+            return service;
     }
 }
 

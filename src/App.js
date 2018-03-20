@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import { fetchWeb3 } from './store/web3'
 import { fetchContract } from './store/contract'
-import { fetchAccounts } from './store/accounts';
+import { fetchAccounts } from './store/accounts'
 import Routes from './components/Routes'
 
 import './css/oswald.css'
@@ -16,7 +16,7 @@ class App extends Component {
     this.collectBlockchainInfo = this.collectBlockchainInfo.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.collectBlockchainInfo()
   }
 

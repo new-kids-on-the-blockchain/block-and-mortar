@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { postService } from "../store";
+import { postService, fetchContract } from "../store";
+import BarterAgreement from '../../build/contracts/BarterAgreement.json';
 
 class AddService extends Component {
   constructor() {
     super();
     this.state = {
-      name: "hi",
-      description: "hi",
-      category: "Misc",
-       //isAvailable: true,
-      price: "1 eth",
-      userId: "1"
+      name: "",
+      description: "",
+      category: "",
+      price: "",
+      userId: ""
     };
-    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.newAgreementAsync = this.newAgreementAsync.bind(this)
+    // this.makeContract = this.makeContract.bind(this)
   }
 
   handleChange = event => {
@@ -30,54 +29,91 @@ class AddService extends Component {
   };
 
   handleSubmit(evt) {
-    console.log('HANDLE SUBMIT')
-    const num = Number(5)
-    this.newAgreementAsync(num);
-    console.log('HANDLE SUBMIT ASYNC DONE')
+    evt.preventDefault()
+    // const formData = {
+    //   name: evt.target.serviceName.value,
+    //   category: evt.target.serviceCategory.value,
+    //   price: evt.target.servicePrice.value,
+    //   description: evt.target.serviceDescription.value
+    // }
+
+    // const name = evt.target.serviceName.value
+    // const category = evt.target.serviceCategory.value
+    // const price = evt.target.servicePrice.value
+    // const description = evt.target.serviceDescription.value
+
+    console.log("IN HANDLE SUBMIT!!!!")
+    // console.log(createAgreement, "CREATE AGREEMENT")
+    console.log(this.props.web3, "WEB 3!!!!!!#@FRFEWRFAW")
+    console.log(this.props.accounts, "ACCOUNTS!!!")
+ const HELLO = this.props.contract.newAgreement(2, {from: this.props.accounts[0]}).then(result => {console.log(result, "RESULTTTTTTTT")}).catch(console.log)
+ //omg thanks jon
+ console.log(HELLO, "OPTIMISTICALLY EXCITED")
+
+ //const GOODBYE = this.props.contract.getAgreement(0).then(gotZero => {console.log(JSON.stringify(gotZero), "HEYYYYYYY")})
+
+//  this.props.contract.getAgreement.call(1)
+
+    //const num = 1234
+    //this.makeContract(num)
+
+
+
   }
 
-  async newAgreementAsync(price) {
-    // Get network provider, web3, and truffle contract instance and store them on state.
-    try {
-      await this.props.contract.newAgreement(price);
-      const contract = this.props.contract
-      console.log(contract, 'NEW CONTRACT MADE!!')
-      //this.props.getContract(web3);
-      //this.props.getAccounts(web3);
-    } catch (e) {
-      console.log(e, 'AWAIT newAgreementAsync DIDN"T WORK');
-    }
-  }
+  // async makeContract(num){
+  //   try {
+  //     await this.props.contract.newAgreement(5)
+  //     this.props.fetchContractAfterAsync()
+  //   } catch (e) {
+  //     console.log(e, 'MAKE CONTRACT FAILEDDDD')
+  //   }
+  // }
 
   render() {
     const { name, description, category, price } = this.state;
     console.log(this.props.contract, "THIS.PROPS.CONTRACT");
     return (
+      // <form onSubmit={this.handleSubmit}>
+      // <button type="submit">Submit</button>
+      // </form>
       this.props.contract &&
       <div>
         <h2>CREATE A SERVICE</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="preview" />
           <h3> Name: </h3>
-          <input value={name} name="serviceName" onChange={this.handleChange} />
+          <input value={name} name="serviceName" />
           <h3> Category: </h3>
-          <input
-            value={category}
-            name="serviceCategory"
-            onChange={this.handleChange}
-          />
-          <h3> Price: </h3>
+          <select onChange={this.handleChage} name="category">
+            <option value='Childcare'>Childcare</option>
+            <option value='Pet'>Pet</option>
+            <option value='Home Maintenance'>Home Maintenance</option>
+            <option value='Food'>Food</option>
+            <option value='Misc'>Misc</option>
+            <option value='Professional'>Misc</option>
+            <option value='Products'>Misc</option>
+          </select>
+          <h3> Price (ether) </h3>
           <input
             value={price}
             name="servicePrice"
+            type="number"
+            min="0"
+            max="100"
+            step="0.0001"
             onChange={this.handleChange}
           />
           <h3> Description: </h3>
-          <input
-            value={description}
-            name="serviceDescription"
-            onChange={this.handleChange}
-          />
+          <label>Description:
+          <textarea
+          onChange={this.handleChange}
+          name="description"
+          rows="1"
+          cols="50"
+          value={description}
+            />
+          </label>
           <button> Submit </button>
         </form>
       </div>
@@ -89,7 +125,8 @@ const mapState = state => {
   return {
     web3: state.web3,
     contract: state.contract,
-    accounts: state.accounts
+    accounts: state.accounts,
+    configuredAccount: state.configuredAccount
   };
 };
 
@@ -97,6 +134,9 @@ const mapDispatch = (dispatch, ownProps) => {
   return {
     addService: function(service) {
       dispatch(postService(service, ownProps))
+    },
+    fetchContractAfterAsync: function(){
+      dispatch(fetchContract())
     }
   }
 }

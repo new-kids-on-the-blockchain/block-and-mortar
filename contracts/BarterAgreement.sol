@@ -1,10 +1,17 @@
 pragma solidity ^0.4.18;
 // checked syntax in remix
 contract BarterAgreement {
+    event AgreementLog(
+        address owner,
+        address buyer,
+        uint256 id,
+        uint256 price,
+        bool completed,
+        bool inProgress
+        );
     Agreement[] agreements;
     // storage Agreement[] agreements; //"Storage" was causing errors
     //event console(address sender)
-
     struct Agreement {
         address owner;
         address buyer;
@@ -12,14 +19,16 @@ contract BarterAgreement {
         bool completed;
         bool inProgress;
     }
-
     // Create a new agreement
-    function newAgreement(uint256 price) public returns (uint) {
-        uint id = agreements.push(Agreement(msg.sender, 0, price, false, false)) - 1;
-        return id;
+    function newAgreement(uint256 price) public {
+        uint id = agreements.push(Agreement(msg.sender, 0x0000, price, false, false))
+        - 1;
+        AgreementLog(msg.sender, 0x0000, id, price, false, false);
+        //capital A agreement returns 1 instead of 0 because it's the next open spot
+        //Agreement invoked would return a new instance of that obj
+        // return id;
+        //explore returning agreements.length instead?
     }
-
-
     // Get existing agreement by ID. We can't return a struct so we can to return each data value one by one
     function getAgreement(uint agreementID) public view returns (
       address owner,
@@ -38,12 +47,10 @@ contract BarterAgreement {
           agreement.inProgress
         );
     }
-
     //Return number of agreements in storage on the blockchain
     function getAgreementLength() public view returns (uint length) {
         return agreements.length;
     }
-
     // Update agreement
     function updateAgreement (uint id) public {
         Agreement storage agreement = agreements[id];
@@ -51,7 +58,6 @@ contract BarterAgreement {
         agreement.buyer = msg.sender;
         agreement.inProgress = true;
     }
-
     //Complete agreement
     function completeAgreement(uint id) public {
         Agreement storage agreement = agreements[id];
@@ -60,21 +66,9 @@ contract BarterAgreement {
         agreement.inProgress = false;
     }
 }
-
-
-
-
-
-
-
-
-
-
 //JON'S
 // contract BarterAgreement {
-
 //   Agreement[] agreements;
-
 //   struct Agreement {
 //     address owner;
 //     address buyer;
@@ -82,7 +76,6 @@ contract BarterAgreement {
 //     bool completed;
 //     bool inProgress;
 //   }
-
 //   function newAgreement(uint256 price) returns (uint) {
 //     uint id = Agreement.push(Agreement(
 //       msg.sender;
@@ -92,14 +85,12 @@ contract BarterAgreement {
 //     )) - 1;
 //     return id;
 //   }
-
 //   function updateAgreement(uint id){
 //     Agreement storage agreement = agreements[id];
 //     require(agreement.completed != true);
 //     agreement.buyer = msg.sender;
 //     agreement.inProgress = true;
 //   }
-
 //   function completeAgreement(uint id){
 //     Agreement storage agreement = agreements[id];
 //     require(agreement.buyer == msg.sender);
@@ -107,22 +98,9 @@ contract BarterAgreement {
 //     agreement.inProgress = false;
 //   }
 // }
-
-
-
-
-
-
-
-
-
-
-
 // checked syntax in remix
-
 // contract BarterAgreement {
 //     Agreement[] agreements;
-
 //     struct Agreement {
 //       uint agreementId;
 //       address owner;
@@ -130,15 +108,12 @@ contract BarterAgreement {
 //       uint256 price;
 //       bool received;
 //     }
-
 //     address public seller;
-
 //     // create a new agreement
 //     function newAgreement(uint256 price) returns (uint agreementId) {
 //       agreementId = agreements.push(Agreement(agreements.length-1, msg.sender, null, price, false)) - 1;
 //       return agreementId;
 //     }
-
 //     // we can't return a struct so we can to return each data value one by one
 //     function getAgreement(uint agreementID) public view returns (
 //       uint agreementId
@@ -157,12 +132,10 @@ contract BarterAgreement {
 //         agreement.received
 //       );
 //     }
-
 //     // a fxn that returns the length of the agreements arr so that we can return all of agreements in for loop on the front end:
 //     function getAgreementLength() returns (uint length) {
 //       return agreements.length;
 //     }
-
 //     // update and return the agreement
 //     function updateAgreement(uint agreementIdx) public returns (uint id) {
 //       Agreement storage agreement = agreements[agreementIdx];
@@ -175,6 +148,3 @@ contract BarterAgreement {
 //       getAgreement(agreementIdx);
 //     }
 //   }
-
-
-
