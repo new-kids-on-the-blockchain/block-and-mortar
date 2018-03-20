@@ -6,6 +6,7 @@ import AllServices from './AllServices'
 import MyAgreements from './MyAgreements'
 import AllUsers from './AllUsers'
 import SingleService from './SingleService'
+import AddService from './AddService'
 
 const Routes = () =>
   <Router history={history}>
@@ -16,6 +17,7 @@ const Routes = () =>
         <Switch>
           <Route exact path='/' component={SimpleStorage} />
           <Route exact path='/services' component={AllServices} />
+          <Route exact path='/services/new' component={AddService} />
           <Route path='/services/:id' component={SingleService} />
           <Route exact path='/agreements' component={MyAgreements} />
           <Route exact path='/users' component={AllUsers} />

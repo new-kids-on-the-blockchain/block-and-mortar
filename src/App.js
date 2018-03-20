@@ -20,13 +20,17 @@ class App extends Component {
     this.collectBlockchainInfo()
   }
 
-  async collectBlockchainInfo() {
+ async collectBlockchainInfo() {
     // Get network provider, web3, and truffle contract instance and store them on state.
-    const { web3 } = await this.props.getWeb3();
-    this.props.getContract(web3);
-    this.props.getAccounts(web3);
+    try {
+      await this.props.getWeb3();
+      const web3 = this.props.web3
+      this.props.getContract(web3);
+      this.props.getAccounts(web3);
+    } catch (e) {
+      console.log(e, 'AWAIT collectBlockchainInfo DIDN"T WORK');
+    }
   }
-
 
   render() {
     return (

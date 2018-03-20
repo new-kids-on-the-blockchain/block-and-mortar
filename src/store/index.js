@@ -21,6 +21,7 @@ const store = createStore(reducer, middleware)
 export default store
 export * from './web3'
 export * from './services'
+export * from './contract'
 export * from './agreements'
 export * from './users'
 export * from './singleService'
