@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { postService } from "../store";
+import { postService, fetchContract } from "../store";
 
 class AddService extends Component {
   constructor() {
@@ -13,8 +13,8 @@ class AddService extends Component {
       price: "1 eth",
       userId: "1"
     };
-    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    // this.makeContract = this.makeContract.bind(this)
   }
 
   handleChange = event => {
@@ -30,16 +30,36 @@ class AddService extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault()
-    const formData = {
-      name: evt.target.serviceName.value,
-      category: evt.target.serviceCategory.value,
-      price: evt.target.servicePrice.value,
-      description: evt.target.serviceDescription.value 
-    }
-    console.log("WE HAVE SUBMITTED (jokes)", formData)
-    console.log(this.props.contract, "INSIDE HANDLE SUBMIT!!!!!!!!!")
+    // const formData = {
+    //   name: evt.target.serviceName.value,
+    //   category: evt.target.serviceCategory.value,
+    //   price: evt.target.servicePrice.value,
+    //   description: evt.target.serviceDescription.value 
+    // }
+
+    // const name = evt.target.serviceName.value
+    // const category = evt.target.serviceCategory.value
+    // const price = evt.target.servicePrice.value
+    // const description = evt.target.serviceDescription.value
+    const createAgreement = this.props.contract.newAgreement(1234, {from: 0xf8aF3B1Ec85b3d671D90cA771318Ee7C0cE7cFbe})
+    //const num = 1234
+    //this.makeContract(num)
+    console.log("IN HANDLE SUBMIT!!!!")
+    console.log(createAgreement, "CREATE AGREEMENT")
+    console.log(this.props.web3, "WEB 3!!!!!!#@FRFEWRFAW")
+   
+   
   }
 
+  // async makeContract(num){
+  //   try {
+  //     await this.props.contract.newAgreement(5)
+  //     this.props.fetchContractAfterAsync()
+  //   } catch (e) {
+  //     console.log(e, 'MAKE CONTRACT FAILEDDDD')
+  //   }
+  // }
+  
   render() {
     const { name, description, category, price } = this.state;
     console.log(this.props.contract, "THIS.PROPS.CONTRACT");
@@ -80,7 +100,8 @@ const mapState = state => {
   return {
     web3: state.web3,
     contract: state.contract,
-    accounts: state.accounts
+    accounts: state.accounts,
+    configuredAccount: state.configuredAccount
   };
 };
 
@@ -88,6 +109,9 @@ const mapDispatch = (dispatch, ownProps) => {
   return {
     addService: function(service) {
       dispatch(postService(service, ownProps))
+    },
+    fetchContractAfterAsync: function(){
+      dispatch(fetchContract())
     }
   }
 }
