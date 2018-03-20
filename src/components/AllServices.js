@@ -17,7 +17,7 @@ class AllServices extends Component {
   }
 
   render(){
-    console.log(this.props.services)
+
     const {services} = this.props
     return(
       <div>
@@ -39,8 +39,9 @@ class AllServices extends Component {
  * CONTAINER
  */
 const mapState = (state) => {
+  const availableServices = state.services.filter(service => service.isAvailable === true)
   return {
-    services: state.services
+    services: availableServices
   }
 }
 
