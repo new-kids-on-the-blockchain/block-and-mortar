@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { postService, fetchContract } from "../store";
+import BarterAgreement from '../../build/contracts/BarterAgreement.json';
 
 class AddService extends Component {
   constructor() {
@@ -41,12 +42,18 @@ class AddService extends Component {
     // const category = evt.target.serviceCategory.value
     // const price = evt.target.servicePrice.value
     // const description = evt.target.serviceDescription.value
-    const createAgreement = this.props.contract.newAgreement(1234, {from: 0xf8aF3B1Ec85b3d671D90cA771318Ee7C0cE7cFbe})
+    
+    console.log("IN HANDLE SUBMIT!!!!")
+    // console.log(createAgreement, "CREATE AGREEMENT")
+    console.log(this.props.web3, "WEB 3!!!!!!#@FRFEWRFAW")
+    console.log(this.props.accounts, "ACCOUNTS!!!")
+ const HELLO = this.props.contract.newAgreement.call(143543)
+ console.log(HELLO, "OPTIMISTICALLY EXCITED")
+//  this.props.contract.getAgreement.call(1)
+
     //const num = 1234
     //this.makeContract(num)
-    console.log("IN HANDLE SUBMIT!!!!")
-    console.log(createAgreement, "CREATE AGREEMENT")
-    console.log(this.props.web3, "WEB 3!!!!!!#@FRFEWRFAW")
+
    
    
   }
