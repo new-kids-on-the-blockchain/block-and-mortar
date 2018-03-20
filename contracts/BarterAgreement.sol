@@ -13,7 +13,8 @@ contract BarterAgreement {
     }
     // Create a new agreement
     function newAgreement(uint256 price) public returns (uint) {
-        uint id = agreements.push(Agreement(msg.sender, 0, price, false, false)) - 1;
+        uint id = agreements.push(Agreement(msg.sender, 0, price, false, false)) 
+        - 1;
         return id;
     }
     // Get existing agreement by ID. We can't return a struct so we can to return each data value one by one

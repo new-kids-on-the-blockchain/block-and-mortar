@@ -47,8 +47,11 @@ class AddService extends Component {
     // console.log(createAgreement, "CREATE AGREEMENT")
     console.log(this.props.web3, "WEB 3!!!!!!#@FRFEWRFAW")
     console.log(this.props.accounts, "ACCOUNTS!!!")
- const HELLO = this.props.contract.newAgreement.call(143543)
+ const HELLO = this.props.contract.newAgreement.call(48234).then(result => {console.log(result.toNumber(), "RESULTTTTTTTT")})
  console.log(HELLO, "OPTIMISTICALLY EXCITED")
+
+ //const GOODBYE = this.props.contract.getAgreement(0).then(gotZero => {console.log(JSON.stringify(gotZero), "HEYYYYYYY")})
+
 //  this.props.contract.getAgreement.call(1)
 
     //const num = 1234
