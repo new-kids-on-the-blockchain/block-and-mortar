@@ -13,7 +13,7 @@ class SingleService extends Component {
     const service = this.props.singleService
     const users = this.props.users
     console.log("service is: ", service)
-    if (!service) return <div>No service exists at this location</div>
+    if (!users) return <div>No service exists at this location</div>
     return (
       <div>
         <h1>{service.name} </h1>
@@ -22,7 +22,7 @@ class SingleService extends Component {
         <h4>Date created: {service.createdAt}</h4>
         <h4>Offered By: {service.user.userName}</h4>
         <Link to="/services"><button>Back to Services</button></Link>
-        { service.isAvailable ? <button>Purchase</button> : <button>Complete Agreement</button> }
+        {service.isAvailable ? <button>Purchase</button> : <button>Complete Agreement</button>}
       </div>
     )
   }
@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   handleFetchServices() {
     dispatch(fetchServices())
   },
-  handleFetchContract(){
+  handleFetchContract() {
     dispatch(fetchContract())
   }
 })

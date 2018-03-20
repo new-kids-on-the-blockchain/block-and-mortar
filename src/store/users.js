@@ -2,11 +2,6 @@ import axios from 'axios';
 const baseURL = 'http://localhost:8080/api'
 
 /**
- * INITIAL STATE
- */
-const defaultUsers = []
-
-/**
  * ACTION TYPES
  */
 const GET_USERS = 'GET_USERS';
@@ -31,11 +26,11 @@ export function fetchUsers() {
 /**
  * REDUCER
  */
-export default function reducer(state = defaultUsers, action) {
+export default function reducer(users = [], action) {
   switch (action.type) {
     case GET_USERS:
       return action.users
     default:
-      return state
+      return users
   }
 }

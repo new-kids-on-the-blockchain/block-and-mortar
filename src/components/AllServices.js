@@ -13,19 +13,18 @@ class AllServices extends Component {
   }
 
   componentDidMount(){
-    console.log('All services rendering')
     this.props.fetchServices();
   }
 
   render(){
-    console.log(this.props.services)
+
     const {services} = this.props
     return(
       <div>
       <ul>
       {services && services.map((service, ind) => {
         return (
-          <NavLink to={`/services/${service.id}`}>
+          <NavLink key={service.id} to={`/services/${service.id}`}>
           <li key={ind}>{service.name}</li>
           </NavLink>
         )
@@ -40,8 +39,9 @@ class AllServices extends Component {
  * CONTAINER
  */
 const mapState = (state) => {
+  const availableServices = state.services.filter(service => service.isAvailable === true)
   return {
-    services: state.services
+    services: availableServices
   }
 }
 
