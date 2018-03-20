@@ -1,6 +1,14 @@
 pragma solidity ^0.4.18;
 // checked syntax in remix
 contract BarterAgreement {
+    event AgreementLog(
+        address owner,
+        address buyer,
+        uint256 id,
+        uint256 price,
+        bool completed,
+        bool inProgress
+        );
     Agreement[] agreements;
     // storage Agreement[] agreements; //"Storage" was causing errors
     //event console(address sender)
@@ -12,10 +20,14 @@ contract BarterAgreement {
         bool inProgress;
     }
     // Create a new agreement
-    function newAgreement(uint256 price) public returns (uint) {
-        uint id = agreements.push(Agreement(msg.sender, 0, price, false, false)) 
+    function newAgreement(uint256 price) public {
+        uint id = agreements.push(Agreement(msg.sender, 0x0000, price, false, false)) 
         - 1;
-        return id;
+        AgreementLog(msg.sender, 0x0000, id, price, false, false);
+        //capital A agreement returns 1 instead of 0 because it's the next open spot
+        //Agreement invoked would return a new instance of that obj
+        // return id;
+        //explore returning agreements.length instead?
     }
     // Get existing agreement by ID. We can't return a struct so we can to return each data value one by one
     function getAgreement(uint agreementID) public view returns (
