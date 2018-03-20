@@ -9,7 +9,7 @@ class AddService extends Component {
       name: "hi",
       description: "hi",
       category: "Misc",
-      //isAvailable: true,
+       //isAvailable: true,
       price: "1 eth",
       userId: "1"
     };
