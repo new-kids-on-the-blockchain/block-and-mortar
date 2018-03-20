@@ -13,6 +13,8 @@ class AddService extends Component {
       price: "1 eth",
       userId: "1"
     };
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange = event => {
@@ -26,38 +28,48 @@ class AddService extends Component {
     console.log("HANDLE CHANGE", this.state);
   };
 
-  handleSubmit() {}
+  handleSubmit(evt) {
+    evt.preventDefault()
+    const formData = {
+      name: evt.target.serviceName.value,
+      category: evt.target.serviceCategory.value,
+      price: evt.target.servicePrice.value,
+      description: evt.target.serviceDescription.value 
+    }
+    console.log("WE HAVE SUBMITTED (jokes)", formData)
+    console.log(this.props.contract, "INSIDE HANDLE SUBMIT!!!!!!!!!")
+  }
 
   render() {
     const { name, description, category, price } = this.state;
     console.log(this.props.contract, "THIS.PROPS.CONTRACT");
     return (
+      // <form onSubmit={this.handleSubmit}>
+      // <button type="submit">Submit</button>
+      // </form>
       this.props.contract &&
       <div>
         <h2>CREATE A SERVICE</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="preview" />
           <h3> Name: </h3>
-          <input value={name} name="serviceName" onChange={this.handleChange} />
+          <input value={name} name="serviceName" />
           <h3> Category: </h3>
           <input
             value={category}
             name="serviceCategory"
-            onChange={this.handleChange}
           />
           <h3> Price: </h3>
           <input
             value={price}
             name="servicePrice"
-            onChange={this.handleChange}
           />
           <h3> Description: </h3>
           <input
             value={description}
             name="serviceDescription"
-            onChange={this.handleChange}
           />
-          <button> Submit </button>
+          <button type="submit"> Submit </button>
         </form>
       </div>
     );
