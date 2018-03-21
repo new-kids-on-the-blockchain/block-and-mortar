@@ -70,7 +70,7 @@ export default function reducer(services = [], action) {
 //helperFunc
 function addServiceAndRedirect(service, ownProps, dispatch) {
   dispatch(addService(service));
-  ownProps.history.push(`/services/${service.id}`);
+  ownProps.history.push('/services');
 }
 
 function editServiceAndRedirect(service, ownProps, dispatch) {
