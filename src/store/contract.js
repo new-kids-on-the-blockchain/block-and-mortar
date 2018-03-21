@@ -1,7 +1,4 @@
 import BarterAgreement from "../../build/contracts/BarterAgreement.json";
-import axios from 'axios'
-const baseURL = 'http://localhost:8080/api'
-
 const contract = require("truffle-contract");
 const agreementStorage = contract(BarterAgreement);
 //this is creating a new instance of BarterAgreement every time
@@ -32,11 +29,7 @@ export const fetchContract = web3 => {
       .then(contract => dispatch(setContract(contract)));
 };
 
-export const postAgreement = agreement => {
-  return function thunk(dispatch) {
-    return axios.post('/agreements', agreement)
-  }
-}
+
 
 /**
  * REDUCER

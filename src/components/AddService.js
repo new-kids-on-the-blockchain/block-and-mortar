@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { postService, fetchContract } from "../store";
+import { postAgreement, postService } from "../store";
 import BarterAgreement from "../../build/contracts/BarterAgreement.json";
+
 
 class AddService extends Component {
   constructor() {
@@ -11,21 +12,21 @@ class AddService extends Component {
       description: "",
       category: "",
       price: 0,
-      userId: ""
+      blockchainContractId: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.makeContract = this.makeContract.bind(this)
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange = event => {
-    const form = event.target.parentNode;
+    const form = event.target.value;
+    console.log(form, 'FFFOORRNNNNNNMMMMM')
     this.setState({
       name: form.serviceName.value,
       category: form.serviceCategory.value,
       price: form.servicePrice.value,
       description: form.serviceDescription.value
     });
-    //console.log("HANDLE CHANGE", this.state);
   };
 
   handleSubmit(evt) {
@@ -33,12 +34,15 @@ class AddService extends Component {
     console.log("IN HANDLE SUBMIT!!!!");
     const { name, category, price, description } = this.state;
 
+    const {postNewAgreement, postNewService} = this.props
+
     const newContract = this.props.contract
       .newAgreement(price, { from: this.props.accounts[0] })
-      .then(result => {
-        console.log(result, "RESULTTTTTTTT");
-        //call thunk post agreement
-        //call thunk post service
+      .then(newAgreement => {
+        postNewAgreement(newAgreement.tx)
+      })
+      .then(() => {
+        postNewService(this.state)
       })
       .catch(console.log);
     //omg thanks jon
@@ -59,7 +63,10 @@ class AddService extends Component {
           <form onSubmit={this.handleSubmit}>
             <div className="preview" />
             <h3> Name: </h3>
-            <input value={name} name="serviceName" />
+            <input
+            value={name}
+            name="serviceName"
+            onChange={this.handleChange}/>
             <h3> Category: </h3>
             <select onChange={this.handleChage} name="category">
               <option value="Childcare">Childcare</option>
@@ -124,9 +131,16 @@ const mapDispatch = (dispatch, ownProps) => {
     addService: function(service) {
       dispatch(postService(service, ownProps));
     },
-    fetchContractAfterAsync: function() {
-      dispatch(fetchContract());
+    postNewAgreement: function(agreement) {
+      dispatch(postAgreement(agreement, ownProps))
+    },
+    postNewService: function(service) {
+      dispatch(postService(service, ownProps))
     }
+    // fetchContractAfterAsync: function() {
+    //   dispatch(fetchContract());
+    // },
+
   };
 };
 
