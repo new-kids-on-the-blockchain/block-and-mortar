@@ -21,7 +21,7 @@ contract BarterAgreement {
     }
     // Create a new agreement
     function newAgreement(uint256 price) public {
-        uint id = agreements.push(Agreement(msg.sender, 0x0000, price, false, false)) 
+        uint id = agreements.push(Agreement(msg.sender, 0x0000, price, false, false))
         - 1;
         AgreementLog(msg.sender, 0x0000, id, price, false, false);
         //capital A agreement returns 1 instead of 0 because it's the next open spot
@@ -57,6 +57,8 @@ contract BarterAgreement {
         require(agreement.completed != true);
         agreement.buyer = msg.sender;
         agreement.inProgress = true;
+
+        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price, agreement.completed, agreement.inProgress);
     }
     //Complete agreement
     function completeAgreement(uint id) public {
@@ -64,6 +66,8 @@ contract BarterAgreement {
         require(agreement.buyer == msg.sender);
         agreement.completed = true;
         agreement.inProgress = false;
+
+        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price,     agreement.completed,     agreement.inProgress);
     }
 }
 //JON'S

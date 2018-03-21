@@ -13,7 +13,7 @@
 // // tested
 // router.post('/', (req, res, next) => {
 //   Agreement.create(req.body)
-//     .then(agreement => Agreement.findById(agreement.id, {include: [{ all: true }]}))
+//     .then(agreement => Agreement.afindById(agreement.id, {include: [{ all: true }]}))
 //     .then(foundAgreement => res.json(foundAgreement))
 //     .catch(next)
 // })

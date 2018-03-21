@@ -11,113 +11,78 @@ class AddService extends Component {
       name: "",
       description: "",
       category: "",
-      price: "",
-      userId: ""
+      price: 0
     };
-    this.handleSubmit = this.handleSubmit.bind(this)
-    // this.makeContract = this.makeContract.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  handleChange = event => {
-    const form = event.target.parentNode;
-    this.setState({
-      name: form.serviceName.value,
-      category: form.serviceCategory.value,
-      price: form.servicePrice.value,
-      description: form.serviceDescription.value
-    });
-    console.log("HANDLE CHANGE", this.state);
-  };
 
   handleSubmit(evt) {
-    evt.preventDefault()
-    // const formData = {
-    //   name: evt.target.serviceName.value,
-    //   category: evt.target.serviceCategory.value,
-    //   price: evt.target.servicePrice.value,
-    //   description: evt.target.serviceDescription.value
-    // }
+    evt.preventDefault();
 
-    // const name = evt.target.serviceName.value
-    // const category = evt.target.serviceCategory.value
-    // const price = evt.target.servicePrice.value
-    // const description = evt.target.serviceDescription.value
+    const formData = {
+      name: evt.target.serviceName.value,
+      category: evt.target.serviceCategory.value,
+      price: evt.target.servicePrice.value,
+      description: evt.target.serviceDescription.value,
+      contractId: null,
+      SellerId: 1 //don't hardcode it later
+    };
 
-    console.log("IN HANDLE SUBMIT!!!!")
-    // console.log(createAgreement, "CREATE AGREEMENT")
-    console.log(this.props.web3, "WEB 3!!!!!!#@FRFEWRFAW")
-    console.log(this.props.accounts, "ACCOUNTS!!!")
- const HELLO = this.props.contract.newAgreement(2, {from: this.props.accounts[0]}).then(result => {console.log(result, "RESULTTTTTTTT")}).catch(console.log)
- //omg thanks jon
- console.log(HELLO, "OPTIMISTICALLY EXCITED")
+    console.log("IN HANDLE SUBMIT!!!!");
+    const price = formData.price;
+    const { postNewService } = this.props;
 
- //const GOODBYE = this.props.contract.getAgreement(0).then(gotZero => {console.log(JSON.stringify(gotZero), "HEYYYYYYY")})
-
-//  this.props.contract.getAgreement.call(1)
-
-    //const num = 1234
-    //this.makeContract(num)
-
-
-
+    const newContract = this.props.contract
+      .newAgreement(price, { from: this.props.accounts[0] })
+      .then(newAgreement => {
+        const contractId = newAgreement.logs[0].args.id.toString()
+        console.log(newAgreement.logs[0].args.id.toString(), "NEW AGREEMENT OBJECT ID!!!");
+        formData.contractId = contractId;
+      })
+      .then(() => {
+        postNewService(formData);
+      })
+      .catch(console.log);
+    //omg thanks jon
+    console.log(newContract, "OPTIMISTICALLY EXCITED");
   }
-
-  // async makeContract(num){
-  //   try {
-  //     await this.props.contract.newAgreement(5)
-  //     this.props.fetchContractAfterAsync()
-  //   } catch (e) {
-  //     console.log(e, 'MAKE CONTRACT FAILEDDDD')
-  //   }
-  // }
 
   render() {
     const { name, description, category, price } = this.state;
-    console.log(this.props.contract, "THIS.PROPS.CONTRACT");
     return (
-      // <form onSubmit={this.handleSubmit}>
-      // <button type="submit">Submit</button>
-      // </form>
-      this.props.contract &&
-      <div>
-        <h2>CREATE A SERVICE</h2>
-        <form onSubmit={this.handleSubmit}>
-          <div className="preview" />
-          <h3> Name: </h3>
-          <input value={name} name="serviceName" />
-          <h3> Category: </h3>
-          <select onChange={this.handleChage} name="category">
-            <option value='Childcare'>Childcare</option>
-            <option value='Pet'>Pet</option>
-            <option value='Home Maintenance'>Home Maintenance</option>
-            <option value='Food'>Food</option>
-            <option value='Misc'>Misc</option>
-            <option value='Professional'>Professional</option>
-            <option value='Products'>Products</option>
-          </select>
-          <h3> Price (ether) </h3>
-          <input
-            value={price}
-            name="servicePrice"
-            type="number"
-            min="0"
-            max="100"
-            step="0.0001"
-            onChange={this.handleChange}
-          />
-          <h3> Description: </h3>
-          <label>Description:
-          <textarea
-          onChange={this.handleChange}
-          name="description"
-          rows="1"
-          cols="50"
-          value={description}
+      this.props.contract && (
+        <div>
+          <h2>CREATE A SERVICE</h2>
+
+          <form onSubmit={this.handleSubmit}>
+            <h3> Name: </h3>
+            <input name="serviceName" />
+            <h3> Category: </h3>
+            <select name="serviceCategory">
+              <option value="Childcare">Childcare</option>
+              <option value="Pet">Pet</option>
+              <option value="Home Maintenance">Home Maintenance</option>
+              <option value="Food" onChange={this.handleChage}>
+                Food
+              </option>
+              <option value="Misc">Misc</option>
+              <option value="Professional">Professional</option>
+              <option value="Products">Products</option>
+            </select>
+            <h3> Price (ether) </h3>
+            <input
+              name="servicePrice"
+              type="number"
+              min="0"
+              max="100"
+              step="0.0001"
             />
-          </label>
-          <button> Submit </button>
-        </form>
-      </div>
+            <h3> Description: </h3>
+            <textarea name="serviceDescription" rows="1" cols="50" />
+            <button> Submit </button>
+          </form>
+        </div>
+      )
     );
   }
 }
@@ -133,27 +98,10 @@ const mapState = state => {
 
 const mapDispatch = (dispatch, ownProps) => {
   return {
-    addService: function(service) {
-      dispatch(postService(service, ownProps))
-    },
-    fetchContractAfterAsync: function(){
-      dispatch(fetchContract())
+    postNewService: function(service) {
+      dispatch(postService(service, ownProps));
     }
-  }
-}
-
-// function mapDispatch(dispatch) {
-//   return {
-//     getWeb3: function() {
-//       return dispatch(fetchWeb3());
-//     },
-//     getContract: function(web3) {
-//       return dispatch(fetchContract(web3));
-//     },
-//     getAccounts: function(web3) {
-//       return dispatch(fetchAccounts(web3));
-//     }
-//   };
-// }
+  };
+};
 
 export default withRouter(connect(mapState, mapDispatch)(AddService));

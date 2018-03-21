@@ -9,6 +9,7 @@ import services from './services'
 import singleService from './singleService'
 import users from './users'
 import currentUser from './currentUser'
+//import agreements from './agreements'
 
 
 export const reducer = combineReducers({ web3, contract, accounts, services, users, singleService, currentUser })
@@ -26,3 +27,4 @@ export * from './services'
 export * from './singleService'
 export * from './users'
 export * from './currentUser'
+//export * from './agreements'
