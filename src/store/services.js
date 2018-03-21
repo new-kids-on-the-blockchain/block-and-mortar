@@ -43,6 +43,14 @@ export function updateService(service, ownProps) {
   }
 }
 
+export function updateCompleteService(service, ownProps) {
+  return function thunk(dispatch) {
+    return axios.put(`/services/${service.id}`, service, {baseURL})
+    .then(res => editServiceAndRedirect(res.data, ownProps, dispatch))
+    .catch(err => console.log(err, "failed to complete service"))
+  }
+}
+
 //HOW TO CALL THE FUNCTION IN THE CONTRACT THAT WE'RE INITIATING
 //DO WE GET A CONTRACT KEY BACK?
 //blockchain(alll data) --> listen for comingback --> post

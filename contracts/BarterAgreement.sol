@@ -58,7 +58,7 @@ contract BarterAgreement {
         agreement.buyer = msg.sender;
         agreement.inProgress = true;
 
-        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price, false, true);
+        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price, agreement.completed, agreement.inProgress);
     }
     //Complete agreement
     function completeAgreement(uint id) public {
@@ -66,6 +66,8 @@ contract BarterAgreement {
         require(agreement.buyer == msg.sender);
         agreement.completed = true;
         agreement.inProgress = false;
+
+        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price,     agreement.completed,     agreement.inProgress);
     }
 }
 //JON'S
