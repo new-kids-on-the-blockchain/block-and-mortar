@@ -6,7 +6,7 @@ const baseURL = 'http://localhost:8080/api'
  */
 const GET_SERVICES = 'GET_SERVICES';
 const ADD_SERVICE = 'ADD_SERVICE';
-const EDIT_SERVICE = 'EDIT_SERVICE'
+const EDIT_SERVICE = 'EDIT_SERVICE';
 
 /**
  * ACTION CREATORS

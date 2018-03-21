@@ -1,44 +1,33 @@
 import React, { Component } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchServices, fetchContract } from '../store'
+// import { fetchCurrentUser } from '../store'
 
-class SingleService extends Component {
-  componentDidMount() {
-    this.props.handleFetchServices()
-    this.props.handleFetchContract()
-  }
+class SingleUser extends Component {
+
+  // componentDidMount() {
+  //   this.props.handleCurrentUser()
+  // }
 
   render() {
-    const user = this.props.singleUser
-    const services = this.props.services
+    const user = this.props.currentUser
+    const boughtServices = this.props.currentUser.Buyer || []
+    const soldServices = this.props.currentUser.Seller || []
     console.log("user is: ", user)
     if (!user) return <div>No user exists at this location</div>
     return (
       <div>
         <h1>{user.name} </h1>
-        <h4>Description: THINGS </h4>
-        <Link to="/services"><button>Back to Services</button></Link>
+        <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
+        <h4>Services Bought</h4>
+        <h4>Services Sold</h4>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ services, users, contract }, ownProps) => ({
-  singleUser: users.find(
-    user => +user.id === +ownProps.match.params.id
-  ),
-  contract,
-  services
+const mapStateToProps = state => ({
+    currentUser: state.currentUser
 })
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  handleFetchServices() {
-    dispatch(fetchServices())
-  },
-  handleFetchContract() {
-    dispatch(fetchContract())
-  }
-})
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SingleService))
+export default withRouter(connect(mapStateToProps, null)(SingleUser))
