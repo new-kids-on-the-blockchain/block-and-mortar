@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchServices } from '../store'
-import { NavLink } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { NavLink, Link, withRouter } from 'react-router-dom'
 
 class AllServices extends Component {
 
@@ -49,4 +48,4 @@ const mapState = (state) => {
 
 const mapDispatch = { fetchServices }
 
-export default connect(mapState, mapDispatch)(AllServices)
+export default withRouter(connect(mapState, mapDispatch)(AllServices))
