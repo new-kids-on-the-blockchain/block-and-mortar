@@ -8,10 +8,11 @@ const Navbar = props => (
     <nav>
         <Link to="/">
           <div>
-            <img src="" alt='logo' />
+            <img src="https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg" alt='logo' />
+            <h1>Barter Block</h1>
           </div>
         </Link>
-        <div className="all-nav">
+        <div>
           <div>
           {/* The navbar will show these links after you log in */}
           <Link to="/home">Home</Link>

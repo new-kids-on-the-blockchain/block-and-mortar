@@ -90,8 +90,8 @@ class AddService extends Component {
             <option value='Home Maintenance'>Home Maintenance</option>
             <option value='Food'>Food</option>
             <option value='Misc'>Misc</option>
-            <option value='Professional'>Misc</option>
-            <option value='Products'>Misc</option>
+            <option value='Professional'>Professional</option>
+            <option value='Products'>Products</option>
           </select>
           <h3> Price (ether) </h3>
           <input

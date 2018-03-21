@@ -1,0 +1,46 @@
+
+img {
+  width: 200px;
+  height: 200px;
+  border:none;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+  color: black;
+  align-items: center;
+}
+
+
+.all-services {
+  justify-content: center;
+  width: 80%;
+}
+
+.list-item {
+  height: 15%;
+  width: 20%;
+  display: block;
+  flex-direction: column;
+  margin: 15px;
+  text-align: center;
+  justify-content: center;
+  border: none;
+  text-decoration: none;
+  color: black;
+}
+
+.service {
+  background-color: #fffdf4;
+  padding: 10px;
+  border: solid 1px #84848496;
+}
+
+.service a {
+  color: #ef7878;
+  margin-top: 1em;
+}
