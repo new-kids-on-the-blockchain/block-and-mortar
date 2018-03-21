@@ -18,13 +18,20 @@ class AllServices extends Component {
     this.props.fetchServices();
   }
 
-  handleClick() {
+  handleClick(event) {
     this.setState({selectedCategory: event.target.value})
   }
 
   render() {
-    const {services} = this.props
-    console.log(this.state, 'this.state')
+    const {services} = this.props;
+    let displayedServices;
+    if (!this.state.selectedCategory || this.state.selectedCategory === "All") {
+      displayedServices = services
+    } else {
+      displayedServices = services.filter(service => service.category === this.state.selectedCategory)
+    }
+
+    console.log('displayedServices', displayedServices)
     if (!services) return <div>Available services in your community loading....</div>
     else return (
       <div>
@@ -32,13 +39,13 @@ class AllServices extends Component {
           <h1>Available Services in Your Community </h1>
           <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
           <div>
-            <button class="btn active" value="All" onclick={this.handleClick}>Show All</button>
-            <button class="btn" value="Goods" onclick={this.handleClick}>Goods</button>
-            <button class="btn" value="Services" onclick={this.handleClick}>Services</button>
+            <button className="btn active" value="All" onClick={this.handleClick}>Show All</button>
+            <button className="btn" value="Goods" onClick={this.handleClick}>Goods</button>
+            <button className="btn" value="Services" onClick={this.handleClick}>Services</button>
           </div>
         </div>
         <div className="container all-services">
-            {services && services.map(service => {
+            {displayedServices && displayedServices.map(service => {
               return (
                 <div className="list-item service" key={service.id}>
                 <NavLink key={service.id} to={`/services/${service.id}`}>
