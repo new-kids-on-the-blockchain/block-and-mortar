@@ -25,7 +25,7 @@ class AddService extends Component {
       price: evt.target.servicePrice.value,
       description: evt.target.serviceDescription.value,
       contractId: null,
-      seller: 1 //don't hardcode it later
+      seller: this.props.currentUser.id //don't hardcode it later
     };
 
     console.log("IN HANDLE SUBMIT!!!!");
@@ -48,6 +48,7 @@ class AddService extends Component {
   }
 
   render() {
+    console.log(this.props.currentUser, 'CURRENT USER')
     const { name, description, category, price } = this.state;
     return (
       this.props.contract && (
@@ -85,7 +86,8 @@ const mapState = state => {
     web3: state.web3,
     contract: state.contract,
     accounts: state.accounts,
-    configuredAccount: state.configuredAccount
+    configuredAccount: state.configuredAccount,
+    currentUser: state.currentUser
   };
 };
 
