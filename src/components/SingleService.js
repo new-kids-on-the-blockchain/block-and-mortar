@@ -54,13 +54,14 @@ class SingleService extends Component {
 
 }
 
-const mapStateToProps = ({ services, users, contract, accounts }, ownProps) => ({
+const mapStateToProps = ({ services, users, contract, accounts, currentUser }, ownProps) => ({
   singleService: services.find(
     service => +service.id === +ownProps.match.params.id
   ),
   contract,
   users,
-  accounts
+  accounts,
+  currentUser
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -74,7 +75,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     evt.preventDefault()
     service.isAvailable = false;
     service.status = "Pending";
-    service.buyer = 2; //DON"T HARDCODE LATER
+    service.buyer = this.props.currentUser.id; //DON"T HARDCODE LATER
     dispatch(updateService(service, ownProps))
   },
   handleCompleteService(evt, service) {
