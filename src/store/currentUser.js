@@ -1,5 +1,6 @@
 import axios from "axios";
-const baseURL = 'http://localhost:8080/api'
+import history from '../history';
+const baseURL = 'http://localhost:8080'
 
 // action types
 const GET_CURRENT_USER = 'GET_CURRENT_USER';
@@ -25,7 +26,7 @@ export default function (currentUser = {}, action) {
 
 // thunks
 export const fetchCurrentUser = id => dispatch => {
-  axios.get(`/users/${id}`, {baseURL})
+  axios.get(`/api/users/${id}`, {baseURL})
   .then(user => dispatch(getCurrentUser(user.data)))
   .catch(err => console.error(`error fetching user id: ${id}`, err))
 }
@@ -47,11 +48,14 @@ export const auth = (email, password, method) => dispatch => {
   .catch(dispatchOrHistoryErr => console.error(dispatchOrHistoryErr))
 }
 
-export const logout = () =>
-  dispatch =>
-    axios.post('/auth/logout')
+  export const logout = () => {
+    console.log('in the thunk')
+    return dispatch =>
+    {axios.post('http://localhost:8080/auth/logout')
       .then(_ => {
-        dispatch(removeUser());
-        history.push('/login')
+        dispatch(removeUser())
+        history.push('/')
       })
-.catch(err => console.log(err))
+      .catch(err => console.log(err))
+    }
+  }

@@ -4,6 +4,7 @@ import { fetchWeb3 } from './store/web3'
 import { fetchContract } from './store/contract'
 import { fetchAccounts } from './store/accounts'
 import Routes from './components/Routes'
+import { withRouter } from 'react-router-dom'
 
 import './css/oswald.css'
 import './css/open-sans.css'
@@ -63,4 +64,4 @@ function mapDispatchToProps(dispatch){
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

@@ -21,7 +21,7 @@
 //   componentWillUpdate(nextProps, nextState){
 //     // checks to see if we've fetched the necessary information from the blockchain
 //     if (!this.state.dirty && nextProps.accounts.length && Object.keys(nextProps.contract).length) {
-//       // nextProps.contract.get.call(nextProps.accounts[0])
+//       nextProps.contract.get.call(nextProps.accounts[0])
 //       .then(result => this.setState({ value: result.c[0], dirty: true }))
 //     }
 //   }
