@@ -2,7 +2,7 @@
 
 ### Description
 
-Allows communities to trade goods and services directly, without currency, using the Ethereum blockchain and a React dApp.
+Allows communities to purchase goods and services with Ether, using the Ethereum blockchain and a React dApp.
 
 ## Setup
 

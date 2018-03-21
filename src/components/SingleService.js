@@ -41,6 +41,7 @@ class SingleService extends Component {
         <h1>{service.name} </h1>
         <h4>Description: {service.description} </h4>
         <h4>Category: {service.category} </h4>
+        <h4>Price: {service.price} Ether</h4>
         <h4>Date created: {service.createdAt}</h4>
         <Link to={`/users/${service.Seller.id}`}>
           <h4>Offered By: {service.Seller.userName}</h4>
