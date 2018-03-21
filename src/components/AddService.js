@@ -25,7 +25,7 @@ class AddService extends Component {
       price: evt.target.servicePrice.value,
       description: evt.target.serviceDescription.value,
       contractId: null,
-      SellerId: 1 //don't hardcode it later
+      seller: 1 //don't hardcode it later
     };
 
     console.log("IN HANDLE SUBMIT!!!!");
@@ -59,15 +59,8 @@ class AddService extends Component {
             <input name="serviceName" />
             <h3> Category: </h3>
             <select name="serviceCategory">
-              <option value="Childcare">Childcare</option>
-              <option value="Pet">Pet</option>
-              <option value="Home Maintenance">Home Maintenance</option>
-              <option value="Food" onChange={this.handleChage}>
-                Food
-              </option>
-              <option value="Misc">Misc</option>
-              <option value="Professional">Professional</option>
-              <option value="Products">Products</option>
+              <option value="Goods">Goods</option>
+              <option value="Services">Services</option>
             </select>
             <h3> Price (ether) </h3>
             <input

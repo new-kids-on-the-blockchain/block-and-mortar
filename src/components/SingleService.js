@@ -74,7 +74,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     evt.preventDefault()
     service.isAvailable = false;
     service.status = "Pending";
-    service.BuyerId = 2; //DON"T HARDCODE LATER
+    service.buyer = 2; //DON"T HARDCODE LATER
     dispatch(updateService(service, ownProps))
   },
   handleCompleteService(evt, service) {
