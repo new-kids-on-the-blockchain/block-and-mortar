@@ -9,6 +9,12 @@ class SingleService extends Component {
     this.props.handleFetchContract()
   }
 
+  handleClick(evt){
+    evt.preventDefault()
+    const updatedAgreement = this.props.contract.updateAgreement(/*get id*/)
+
+  }
+
   render() {
     const service = this.props.singleService
     if (!service) return <div>No service exists at this location</div>

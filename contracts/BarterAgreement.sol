@@ -57,6 +57,8 @@ contract BarterAgreement {
         require(agreement.completed != true);
         agreement.buyer = msg.sender;
         agreement.inProgress = true;
+
+        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price, false, true);
     }
     //Complete agreement
     function completeAgreement(uint id) public {

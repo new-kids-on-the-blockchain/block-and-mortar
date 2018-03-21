@@ -5,6 +5,12 @@ import { postService } from "../store";
 class AddService extends Component {
   constructor() {
     super();
+    this.state = {
+      name: "",
+      description: "",
+      category: "",
+      price: 0
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -16,7 +22,7 @@ class AddService extends Component {
       category: evt.target.serviceCategory.value,
       price: evt.target.servicePrice.value,
       description: evt.target.serviceDescription.value,
-      contractId: null
+      contractId: null,
     };
 
     console.log("IN HANDLE SUBMIT!!!!");
