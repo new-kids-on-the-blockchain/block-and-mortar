@@ -5,11 +5,6 @@ import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 class AllServices extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-    }
-  }
 
   componentDidMount(){
     this.props.fetchServices();
@@ -19,16 +14,24 @@ class AllServices extends Component {
     const {services} = this.props
     return (
       <div>
-      <ul>
-      {services && services.map((service, ind) => {
+      <h1>All Available Services in Your Community </h1>
+      <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
+      <div className="container all-services">
+      {services && services.map((service) => {
         return (
+          <div className="list-item service" key={service.id}>
           <NavLink key={service.id} to={`/services/${service.id}`}>
-          <li key={ind}>{service.name}</li>
+            <img className="thumbnail" src={service.imgUrl} />
+            <div>
+              <div>Name: {service.name}</div>
+              <div>Price: {service.price} ether</div>
+              <div>Category: {service.category}</div>
+            </div>
           </NavLink>
+          </div>
         )
       })}
-     </ul>
-     <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
+     </div>
      </div>
     )
   }
