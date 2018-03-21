@@ -21,25 +21,25 @@ async function seed () {
   ])
 
   const services = await Promise.all([
-    Service.create({name: 'Cleaning your car', description: 'I will polish your car any weekend!', category: 'Misc', BuyerId: null, SellerId: 6, isAvailable: true, price: 0.08, status: 'Posted', imgUrl: 'https://png.pngtree.com/element_origin_min_pic/16/07/04/115779d386cea55.jpg'}),
-    Service.create({name: 'Babysitting', description: 'I am great with children, I can watch your kids for 3 hours', category: 'Childcare', BuyerId: null, SellerId: 6, isAvailable: true, price: 0.1, status: 'Posted', imgUrl: 'http://clipground.com/images/crib-clipart-2.png'}),
-    Service.create({name: 'Dog walking', description: 'I will walk your dog for 30 mins', category: 'Pet', BuyerId: null, SellerId: 6,  isAvailable: true, price: 0.05, status: 'Posted', imgUrl: 'https://rlv.zcache.com/miniature_schnauzer_dog_cartoon_postcard-r7bf8673c5fd3442a878de0df645898f8_vgbaq_8byvr_324.jpg'}),
-    Service.create({name: 'Fresh Jam', description: 'I can offer you 3 jars of homemade jams', category: 'Food', BuyerId: null, SellerId: 7, isAvailable: true, price: 0.02, status: 'Posted', imgUrl: 'http://moziru.com/images/drawn-jam-cartoon-10.jpg'}),
-    Service.create({name: 'Web Design', description: 'I can build your website', category: 'Professional', BuyerId: 4, SellerId: 7,isAvailable: false, price: 0.9, status: 'Pending', imgUrl: 'https://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=48512695'}),
-    Service.create({name: 'Basil', description: 'I grow fresh basil from my garden', category: 'Food', BuyerId: 5, SellerId: 7, isAvailable: false, price: 0.05, status: 'Completed', imgUrl: 'http://www.clker.com/cliparts/U/G/e/U/g/K/plant-in-pot.svg'}),
-    Service.create({name: 'Ironing', description: 'I can iron your clothes!', category: 'Misc', BuyerId: null, SellerId: 7, isAvailable: true, price: 0.15, status: 'Posted', imgUrl: 'https://png.pngtree.com/element_origin_min_pic/17/08/17/2815fc0230aedc29e33e9f5eb3e646dd.jpg'}),
-    Service.create({name: 'Fixing roof', description: 'I am a professional at roof fixing! Great value!', category: 'Home Maintenance', BuyerId: 6, SellerId: 8, isAvailable: false, price: 0.3, status: 'Pending', imgUrl: 'http://www.clker.com/cliparts/6/1/6/6/1333483035815281949My%20House%20Cartoon.svg.hi.png'}),
-    Service.create({name: 'Cat sitting', description: 'I can watch your cat over a weekend, I have a veterinary degree.', category: 'Pet', BuyerId: null, SellerId: 10, isAvailable: true, price: 0.15, status: 'Posted', imgUrl: 'http://www.animalclipart.net/animal_clipart_images/sleepy_cartoon_cat_0515-1004-0101-1102_SMU.jpg'}),
-    Service.create({name: 'Root vegetables', description: 'Too many root vegetables in my garden. Let me know if you want to trade!', category: 'Food', BuyerId: null, SellerId: 9, isAvailable: true, price: 0.05, status: 'Posted', imgUrl: 'http://www.clker.com/cliparts/U/G/e/U/g/K/plant-in-pot.svg'})
+    Service.create({name: 'Cleaning your car', description: 'I will polish your car any weekend!', category: 'Misc', buyer: null, seller: 6, isAvailable: true, price: 0.08, status: 'Posted', imgUrl: 'https://png.pngtree.com/element_origin_min_pic/16/07/04/115779d386cea55.jpg'}),
+    Service.create({name: 'Babysitting', description: 'I am great with children, I can watch your kids for 3 hours', category: 'Childcare', buyer: null, seller: 6, isAvailable: true, price: 0.1, status: 'Posted', imgUrl: 'http://clipground.com/images/crib-clipart-2.png'}),
+    Service.create({name: 'Dog walking', description: 'I will walk your dog for 30 mins', category: 'Pet', buyer: null, seller: 6,  isAvailable: true, price: 0.05, status: 'Posted', imgUrl: 'https://rlv.zcache.com/miniature_schnauzer_dog_cartoon_postcard-r7bf8673c5fd3442a878de0df645898f8_vgbaq_8byvr_324.jpg'}),
+    Service.create({name: 'Fresh Jam', description: 'I can offer you 3 jars of homemade jams', category: 'Food', buyer: null, seller: 7, isAvailable: true, price: 0.02, status: 'Posted', imgUrl: 'http://moziru.com/images/drawn-jam-cartoon-10.jpg'}),
+    Service.create({name: 'Web Design', description: 'I can build your website', category: 'Professional', buyer: 4, seller: 7,isAvailable: false, price: 0.9, status: 'Pending', imgUrl: 'https://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=48512695'}),
+    Service.create({name: 'Basil', description: 'I grow fresh basil from my garden', category: 'Food', buyer: 5, seller: 7, isAvailable: false, price: 0.05, status: 'Completed', imgUrl: 'http://www.clker.com/cliparts/U/G/e/U/g/K/plant-in-pot.svg'}),
+    Service.create({name: 'Ironing', description: 'I can iron your clothes!', category: 'Misc', buyer: null, seller: 7, isAvailable: true, price: 0.15, status: 'Posted', imgUrl: 'https://png.pngtree.com/element_origin_min_pic/17/08/17/2815fc0230aedc29e33e9f5eb3e646dd.jpg'}),
+    Service.create({name: 'Fixing roof', description: 'I am a professional at roof fixing! Great value!', category: 'Home Maintenance', buyer: 6, seller: 8, isAvailable: false, price: 0.3, status: 'Pending', imgUrl: 'http://www.clker.com/cliparts/6/1/6/6/1333483035815281949My%20House%20Cartoon.svg.hi.png'}),
+    Service.create({name: 'Cat sitting', description: 'I can watch your cat over a weekend, I have a veterinary degree.', category: 'Pet', buyer: null, seller: 10, isAvailable: true, price: 0.15, status: 'Posted', imgUrl: 'http://www.animalclipart.net/animal_clipart_images/sleepy_cartoon_cat_0515-1004-0101-1102_SMU.jpg'}),
+    Service.create({name: 'Root vegetables', description: 'Too many root vegetables in my garden. Let me know if you want to trade!', category: 'Food', buyer: null, seller: 9, isAvailable: true, price: 0.05, status: 'Posted', imgUrl: 'http://www.clker.com/cliparts/U/G/e/U/g/K/plant-in-pot.svg'})
   ])
 
   // const agreement = await Promise.all([
-  //   Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 1, SellerId: 2, ServiceId: 2}),
-  //   Agreement.create({agreementId: '000fsdfhekjh32345', status: 'Initiated', BuyerId: 1, SellerId: 4, ServiceId: 4}),
-  //   Agreement.create({agreementId: '00645gdfheu536ggd', status: 'Initiated', BuyerId: 4, SellerId: 5, ServiceId: 5}),
-  //   Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 2, SellerId: 6, ServiceId: 6}),
-  //   Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 3, SellerId: 1, ServiceId: 7}),
-  //   Agreement.create({agreementId: null, status: 'Initiated', BuyerId: 3, SellerId: 2, ServiceId: 8})
+  //   Agreement.create({agreementId: null, status: 'Initiated', buyer: 1, seller: 2, ServiceId: 2}),
+  //   Agreement.create({agreementId: '000fsdfhekjh32345', status: 'Initiated', buyer: 1, seller: 4, ServiceId: 4}),
+  //   Agreement.create({agreementId: '00645gdfheu536ggd', status: 'Initiated', buyer: 4, seller: 5, ServiceId: 5}),
+  //   Agreement.create({agreementId: null, status: 'Initiated', buyer: 2, seller: 6, ServiceId: 6}),
+  //   Agreement.create({agreementId: null, status: 'Initiated', buyer: 3, seller: 1, ServiceId: 7}),
+  //   Agreement.create({agreementId: null, status: 'Initiated', buyer: 3, seller: 2, ServiceId: 8})
   // ])
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!

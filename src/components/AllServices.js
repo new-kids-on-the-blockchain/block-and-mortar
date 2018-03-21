@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchServices } from '../store'
-import { NavLink } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { NavLink, withRouter, Link } from 'react-router-dom'
 
 class AllServices extends Component {
 
@@ -12,26 +11,27 @@ class AllServices extends Component {
 
   render() {
     const {services} = this.props
+    if (!services) return <div>Available services in your community loading....</div>
     return (
       <div>
-      <h1>All Available Services in Your Community </h1>
-      <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
-      <div className="container all-services">
-      {services && services.map((service) => {
-        return (
-          <div className="list-item service" key={service.id}>
-          <NavLink key={service.id} to={`/services/${service.id}`}>
-            <img className="thumbnail" src={service.imgUrl} />
-            <div>
-              <div>Name: {service.name}</div>
-              <div>Price: {service.price} ether</div>
-              <div>Category: {service.category}</div>
+        <h1>Available Services in Your Community </h1>
+        <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
+        <div className="container all-services">
+        {services && services.map((service) => {
+          return (
+            <div className="list-item service" key={service.id}>
+            <NavLink key={service.id} to={`/services/${service.id}`}>
+              <img className="thumbnail" src={service.imgUrl} />
+              <div>
+                <div>Name: {service.name}</div>
+                <div>Price: {service.price} ether</div>
+                <div>Category: {service.category}</div>
+              </div>
+            </NavLink>
             </div>
-          </NavLink>
-          </div>
-        )
-      })}
-     </div>
+          )
+        })}
+      </div>
      </div>
     )
   }
@@ -49,4 +49,4 @@ const mapState = (state) => {
 
 const mapDispatch = { fetchServices }
 
-export default connect(mapState, mapDispatch)(AllServices)
+export default withRouter(connect(mapState, mapDispatch)(AllServices))

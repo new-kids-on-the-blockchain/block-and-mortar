@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
-const Agreement = require('./agreement')
 
 const Service = db.define('service', {
   name: {

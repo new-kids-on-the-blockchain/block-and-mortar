@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { postService, fetchContract } from "../store";
+import { withRouter } from 'react-router-dom'
 import BarterAgreement from '../../build/contracts/BarterAgreement.json';
 
 class AddService extends Component {
@@ -154,4 +155,4 @@ const mapDispatch = (dispatch, ownProps) => {
 //   };
 // }
 
-export default connect(mapState, mapDispatch)(AddService);
+export default withRouter(connect(mapState, mapDispatch)(AddService));
