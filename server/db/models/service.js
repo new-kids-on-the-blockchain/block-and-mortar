@@ -40,7 +40,7 @@ const Service = db.define( "service", {
     defaultValue: 'https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg'
   },
   contractId: {
-    type: Sequelize.TEXT,
+    type: Sequelize.INTEGER,
     defaultValue: null
   }
 }

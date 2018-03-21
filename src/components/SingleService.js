@@ -4,18 +4,23 @@ import { connect } from 'react-redux'
 import { fetchServices, fetchContract } from '../store'
 
 class SingleService extends Component {
+  constructor() {
+    super()
+    this.handleClick = this.handleClick.bind(this)
+  }
   componentDidMount() {
     this.props.handleFetchServices()
     this.props.handleFetchContract()
   }
 
-  handleClick(evt){
+  handleClick(evt) {
     evt.preventDefault()
-    const updatedAgreement = this.props.contract.updateAgreement(/*get id*/)
-
+    const updatedAgreement = this.props.contract.updateAgreement(this.props.singleService.contractId, {from: this.props.accounts[0] })
+    console.log(updatedAgreement, "UPDATED AGREEMENT!!!!!!")
   }
 
   render() {
+    console.log(this.props.singleService, "LOOK HERE!!!!!!! :D")
     const service = this.props.singleService
     if (!service) return <div>No service exists at this location</div>
     return (
@@ -28,26 +33,27 @@ class SingleService extends Component {
           <h4>Offered By: {service.Seller.userName}</h4>
         </Link>
         <Link to="/services"><button>Back to Services</button></Link>
-        { service.isAvailable ? <button>Purchase</button> : <button>Complete Agreement</button> }
+        {service.isAvailable ? <button onClick={this.handleClick}>Purchase</button> : <button>Complete Agreement</button>}
       </div>
     )
   }
 
 }
 
-const mapStateToProps = ({ services, users, contract }, ownProps) => ({
+const mapStateToProps = ({ services, users, contract, accounts }, ownProps) => ({
   singleService: services.find(
     service => +service.id === +ownProps.match.params.id
   ),
   contract,
-  users
+  users,
+  accounts
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   handleFetchServices() {
     dispatch(fetchServices())
   },
-  handleFetchContract(){
+  handleFetchContract() {
     dispatch(fetchContract())
   }
 })
