@@ -24,6 +24,18 @@ router.get('/:id', (req, res, next) => {
     .catch(next)
 })
 
+router.get('/buyer/:buyerId', (req, res, next) => {
+  Service.findAll({where: {sellerId: req.params.sellerId}, include: [{ all: true }]})
+      .then(services => res.send(services))
+      .catch(next)
+})
+
+router.get('/seller/:sellerId', (req, res, next) => {
+    Service.findAll({where: {sellerId: req.params.sellerId}, include: [{ all: true }]})
+      .then(services => res.send(services))
+      .catch(next)
+  })
+
 
 router.put("/:id", (req, res, next) => {
   Service.findById(req.params.id)

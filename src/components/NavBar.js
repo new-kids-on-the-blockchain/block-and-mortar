@@ -9,24 +9,23 @@ const Navbar = props => (
         <Link to="/">
           <div>
             <img src="https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg" alt='logo' />
-            <h1>Barter Block</h1>
+            <h1>Block Party</h1>
           </div>
         </Link>
         <div>
+        {props.isLoggedIn ? (
           <div>
-          {/* The navbar will show these links after you log in */}
           <Link to="/home">Home</Link>
-          <a href="#">
-            Logout
-          </a>
-          <Link to="/services">Available Services</Link>
-          <Link to="">My Transactions</Link>
+          <Link to="/services">All Services</Link>
+          <a href="#" onClick={props.handleClick}>
+          Logout</a>
         </div>
+        ) : (
         <div>
-          {/* The navbar will show these links before you log in */}
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
         </div>
+        )}
        </div>
     </nav>
   </div>
@@ -35,11 +34,11 @@ const Navbar = props => (
 /**
  * CONTAINER
  */
-// const mapState = state => {
-//   return {
-//     isLoggedIn: !!state.currentUser.id,
-//   }
-// }
+const mapState = state => {
+  return {
+    isLoggedIn: !!state.currentUser.id,
+  }
+}
 
 const mapDispatch = dispatch => {
   return {
@@ -49,5 +48,5 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(null, mapDispatch)(Navbar)
+export default connect(mapState, mapDispatch)(Navbar)
 

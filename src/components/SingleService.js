@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchServices, fetchContract, updateService, updateCompleteService } from '../store'
 
@@ -83,6 +83,5 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(updateCompleteService(service, ownProps))
   }
 })
-
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SingleService))
