@@ -31,7 +31,7 @@ class AddService extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
     console.log("IN HANDLE SUBMIT!!!!");
-    const {name, category, price, description} = this.state
+    const { name, category, price, description } = this.state;
 
     const newContract = this.props.contract
       .newAgreement(price, { from: this.props.accounts[0] })
@@ -49,9 +49,13 @@ class AddService extends Component {
     const { name, description, category, price } = this.state;
     console.log(this.props.contract, "THIS.PROPS.CONTRACT");
     return (
+      // <form onSubmit={this.handleSubmit}>
+      // <button type="submit">Submit</button>
+      // </form>
       this.props.contract && (
         <div>
           <h2>CREATE A SERVICE</h2>
+
           <form onSubmit={this.handleSubmit}>
             <div className="preview" />
             <h3> Name: </h3>
@@ -63,8 +67,8 @@ class AddService extends Component {
               <option value="Home Maintenance">Home Maintenance</option>
               <option value="Food">Food</option>
               <option value="Misc">Misc</option>
-              <option value="Professional">Misc</option>
-              <option value="Products">Misc</option>
+              <option value="Professional">Professional</option>
+              <option value="Products">Products</option>
             </select>
             <h3> Price (ether) </h3>
             <input
@@ -76,6 +80,17 @@ class AddService extends Component {
               step="0.0001"
               onChange={this.handleChange}
             />
+            <h3> Description: </h3>
+            <label>
+              Description:
+              <textarea
+                onChange={this.handleChange}
+                name="description"
+                rows="1"
+                cols="50"
+                value={description}
+              />
+            </label>
             <h3> Description: </h3>
             <label>
               Description:

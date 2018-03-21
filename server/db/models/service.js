@@ -2,9 +2,7 @@ const Sequelize = require("sequelize");
 const db = require("../db");
 const Agreement = require("./agreement");
 
-const Service = db.define(
-  "service",
-  {
+const Service = db.define( "service", {
     name: {
       type: Sequelize.STRING,
       allowNull: false
@@ -21,8 +19,7 @@ const Service = db.define(
         "Food",
         "Misc",
         "Professional",
-        "Products"
-      )
+        "Products")
     },
     isAvailable: {
       type: Sequelize.BOOLEAN,
@@ -37,16 +34,20 @@ const Service = db.define(
     status: {
       type: Sequelize.ENUM("Posted", "Pending", "Completed"),
       defaultValue: "Posted"
-    }
+    },
+  imgUrl: {
+    type: Sequelize.STRING,
+    defaultValue: 'https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg'
   }
-  // {
-  //     hooks: {
-  //       afterUpdate: function(service) {
-  //         if (service.status === 'Pending') {
-  //             service.isAvailable = false;
-  //         }
-  //       }
-  //     }
+}
+// {
+//     hooks: {
+//       afterUpdate: function(service) {
+//         if (service.status === 'Pending') {
+//             service.isAvailable = false;
+//         }
+//       }
+//     }
   // }
 );
 

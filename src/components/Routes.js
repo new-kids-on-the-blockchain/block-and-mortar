@@ -14,7 +14,6 @@ const Routes = () =>
       <div>
         <span>
          <NavBar />
-          <h1 id="main-header">Barter Block</h1>
         </span>
         <Switch>
           <Route exact path='/' component={SimpleStorage} />
