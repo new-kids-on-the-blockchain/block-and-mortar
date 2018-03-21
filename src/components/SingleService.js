@@ -16,7 +16,7 @@ class SingleService extends Component {
   handleClick(evt) {
     evt.preventDefault()
     const updatedAgreement = this.props.contract.updateAgreement(this.props.singleService.contractId, {from: this.props.accounts[0] })
-    console.log(updatedAgreement, "UPDATED AGREEMENT!!!!!!")
+    .then(agreementUpdated => {console.log(agreementUpdated.logs[0].args.id.toString(), "AGREEMENT ID")})
   }
 
   render() {
