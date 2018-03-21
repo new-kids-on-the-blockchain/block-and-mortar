@@ -11,7 +11,7 @@ const Service = db.define('service', {
     allowNull: false
   },
   category: {
-    type: Sequelize.ENUM('Childcare', 'Pet', 'Home Maintenance', 'Food', 'Misc', 'Professional', 'Products')
+    type: Sequelize.ENUM('Goods', 'Services')
   },
   isAvailable: {
     type: Sequelize.BOOLEAN,

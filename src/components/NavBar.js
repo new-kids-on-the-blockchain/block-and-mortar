@@ -9,7 +9,7 @@ const Navbar = props => (
         <Link to="/">
           <div>
             <img src="https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg" alt='logo' />
-            <h1>Barter Block</h1>
+            <h1>Block Party</h1>
           </div>
         </Link>
         <div>

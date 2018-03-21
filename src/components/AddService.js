@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { postService, fetchContract } from "../store";
-import { withRouter } from 'react-router-dom'
 import BarterAgreement from '../../build/contracts/BarterAgreement.json';
+import { withRouter } from 'react-router-dom'
 
 class AddService extends Component {
   constructor() {

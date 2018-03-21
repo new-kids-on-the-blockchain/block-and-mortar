@@ -1,6 +1,6 @@
 import axios from "axios";
 import history from '../history';
-const baseURL = 'http://localhost:8080/'
+const baseURL = 'http://localhost:8080'
 
 // action types
 const GET_CURRENT_USER = 'GET_CURRENT_USER';
@@ -48,11 +48,14 @@ export const auth = (email, password, method) => dispatch => {
   .catch(dispatchOrHistoryErr => console.error(dispatchOrHistoryErr))
 }
 
-  export const logout = () =>
-  dispatch =>
-    axios.post('/auth/logout', {baseURL})
+  export const logout = () => {
+    console.log('in the thunk')
+    return dispatch =>
+    {axios.post('http://localhost:8080/auth/logout')
       .then(_ => {
         dispatch(removeUser())
-        history.push('/login')
+        history.push('/')
       })
       .catch(err => console.log(err))
+    }
+  }
