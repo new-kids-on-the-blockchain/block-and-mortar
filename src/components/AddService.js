@@ -23,6 +23,7 @@ class AddService extends Component {
       price: evt.target.servicePrice.value,
       description: evt.target.serviceDescription.value,
       contractId: null,
+      SellerId: 1 //don't hardcode it later
     };
 
     console.log("IN HANDLE SUBMIT!!!!");
@@ -32,8 +33,9 @@ class AddService extends Component {
     const newContract = this.props.contract
       .newAgreement(price, { from: this.props.accounts[0] })
       .then(newAgreement => {
-        console.log(newAgreement.tx, "NEWAGREEMENT!!!");
-        formData.contractId = newAgreement.tx;
+        const contractId = newAgreement.logs[0].args.id.toString()
+        console.log(newAgreement.logs[0].args.id.toString(), "NEW AGREEMENT OBJECT ID!!!");
+        formData.contractId = contractId;
       })
       .then(() => {
         postNewService(formData);
