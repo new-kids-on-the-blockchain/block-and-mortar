@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchServices, fetchContract } from '../store'
+import { fetchServices, fetchContract, updateService } from '../store'
 
 class SingleService extends Component {
   constructor() {
@@ -15,10 +15,13 @@ class SingleService extends Component {
 
   handleClick(evt) {
     evt.preventDefault()
-    const updatedAgreement = this.props.contract.updateAgreement(this.props.singleService.contractId, {from: this.props.accounts[0] })
+    this.props.contract.updateAgreement(this.props.singleService.contractId, {from: this.props.accounts[0] })
     .then(agreementUpdated => {console.log(agreementUpdated.logs[0].args.id.toString(), "AGREEMENT ID")})
+    .then(() => this.props.handleUpdateService(evt, this.props.singleService))
+    .catch(err => console.log('UpdateAgreement failed....'))
   }
 
+  //.logs[0].args.id.toString()
   render() {
     console.log(this.props.singleService, "LOOK HERE!!!!!!! :D")
     const service = this.props.singleService
@@ -55,7 +58,15 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   handleFetchContract() {
     dispatch(fetchContract())
+  },
+  handleUpdateService(evt, service) {
+    evt.preventDefault()
+    service.isAvailable = false;
+    service.status = "Pending";
+    service.BuyerId = 2; //DON"T HARDCODE LATER
+    dispatch(updateService(service, ownProps))
   }
 })
+
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SingleService))
