@@ -23,7 +23,7 @@ export function fetchServices() {
     return axios.get('/services', {baseURL})
       .then(res => res.data)
       .then(services => dispatch(getServices(services)))
-      .catch(err => console.log(err))
+      .catch(err => console.log(err, 'fetchingService thunk failed'))
   }
 }
 
@@ -37,6 +37,7 @@ export function postService(service, ownProps) {
 
 export function updateService(service, ownProps) {
   return function thunk(dispatch) {
+    console.log('THUNKKKKKKK!!!!!!!')
     return axios.put(`/services/${service.id}`, service, {baseURL})
     .then(res => editServiceAndRedirect(res.data, ownProps, dispatch))
     .catch(err => console.log(err, "failed to update service"))
@@ -83,5 +84,5 @@ function addServiceAndRedirect(service, ownProps, dispatch) {
 
 function editServiceAndRedirect(service, ownProps, dispatch) {
   dispatch(editService(service));
-  ownProps.history.push(`/services/${service.id}`);
+  ownProps.history.push('/services');
 }

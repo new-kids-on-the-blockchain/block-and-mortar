@@ -16,15 +16,17 @@ class SingleService extends Component {
   }
 
   handleClick(evt) {
-    evt.preventDefault()
+    //evt.preventDefault()
+    evt.persist()
     this.props.contract.updateAgreement(this.props.singleService.contractId, {from: this.props.accounts[0] })
     .then(agreementUpdated => {console.log(agreementUpdated, "AGREEMENT UPDATED")})
-    .then(() => this.props.handleUpdateService(evt, this.props.singleService))
+    .then(() => this.props.handleUpdateService(evt, this.props.singleService, this.props.currentUser.id))
     .catch(err => console.log('UpdateAgreement failed....'))
   }
 
   handleComplete(evt) {
-    evt.preventDefault()
+    //evt.preventDefault()
+    evt.persist()
     this.props.contract.completeAgreement(this.props.singleService.contractId, {from: this.props.accounts[0] })
     .then(agreementCompleted => {console.log(agreementCompleted, "COMPLETE AGREEMENT")})
     .then(() => this.props.handleCompleteService(evt, this.props.singleService))
@@ -71,11 +73,14 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   handleFetchContract() {
     dispatch(fetchContract())
   },
-  handleUpdateService(evt, service) {
+  handleUpdateService(evt, service, userId) {
     evt.preventDefault()
+    //evt.persist()
     service.isAvailable = false;
     service.status = "Pending";
-    service.buyer = this.props.currentUser.id; //DON"T HARDCODE LATER
+    service.buyer = userId;
+    //service.buyer = this.props.currentUser.id;
+    console.log(this.props, 'THIS PROPSSS')
     dispatch(updateService(service, ownProps))
   },
   handleCompleteService(evt, service) {

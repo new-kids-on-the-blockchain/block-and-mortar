@@ -23,6 +23,7 @@ const setContract = contract => ({ type: GET_CONTRACT, contract });
  */
 export const fetchContract = web3 => {
   web3.currentProvider && agreementStorage.setProvider(web3.currentProvider);
+  console.log(web3.currentProvider, 'CURRENT PROVIDER')
   return dispatch =>
     agreementStorage
       .deployed()
