@@ -61,13 +61,14 @@ contract BarterAgreement {
         AgreementLog(agreement.owner, agreement.buyer, id, agreement.price, agreement.completed, agreement.inProgress);
     }
     //Complete agreement
-    function completeAgreement(uint id) public {
+    function completeAgreement(uint id) public payable {
         Agreement storage agreement = agreements[id];
         require(agreement.buyer == msg.sender);
+        require(msg.value == agreement.price);
+        agreement.owner.transfer(msg.value);
         agreement.completed = true;
         agreement.inProgress = false;
-
-        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price,     agreement.completed,     agreement.inProgress);
+        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price, agreement.completed, agreement.inProgress);
     }
 }
 //JON'S
