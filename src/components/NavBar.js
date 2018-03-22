@@ -17,6 +17,7 @@ const Navbar = props => (
           <div>
           <Link to="/home">Home</Link>
           <Link to="/services">All Services</Link>
+          <Link to="/messages">Inbox</Link>
           <a href="#" onClick={props.handleClick}>
           Logout</a>
         </div>

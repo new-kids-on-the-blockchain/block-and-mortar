@@ -3,7 +3,7 @@ module.exports = router
 
 router.use('/web3', require('./web3'))
 router.use('/services', require('./services'))
-//router.use('/agreements', require('./agreements'))
+router.use('/messages', require('./messages'))
 router.use('/users', require('./users'))
 
 
