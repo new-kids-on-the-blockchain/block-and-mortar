@@ -7,7 +7,11 @@ class AddMessage extends Component {
   constructor() {
     super();
     this.state = {
-      sender: ""
+      sender: "",
+      recipient: "",
+      subject: "",
+      message: "",
+      threadId: 0
     }
   }
 
@@ -17,6 +21,7 @@ class AddMessage extends Component {
       //then add message to thread
     //if it does exist, add message to thread
     evt.preventDefault();
+
     const formData = {
       subject: evt.target.subject.value
     }
