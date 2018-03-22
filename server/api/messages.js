@@ -22,4 +22,3 @@ router.get('/:id', (req, res, next) => {
       .catch(next)
   })
 
-

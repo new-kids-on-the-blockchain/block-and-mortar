@@ -1,5 +1,5 @@
 const db = require('../server/db')
-const {User, Service, Message} = require('../server/db/models')
+const {User, Service, Message, Thread} = require('../server/db/models')
 
 async function seed () {
   await db.sync({force: true})
@@ -39,17 +39,24 @@ async function seed () {
     Service.create({name: 'Burmese artwork', description: 'Moving to Cambridge and need to sell my artwork. Purchased in Myanmar', category: 'Goods', buyer: null, seller: 2, isAvailable: true, price: 0.05, status: 'Posted', imgUrl: 'http://www.craftsy.com/blog/wp-content/uploads/2013/08/nrushdry01-copy.jpg'})
   ])
 
-const message = await Promise.all([
-    Message.create({subject: 'message1', content: 'messsage1 content', sender: 1, recipient: 2}),
-    Message.create({subject: 'message2', content: 'messsage2 content', sender: 2, recipient: 1}),
-    Message.create({subject: 'message3', content: 'messsage3 content', sender: 1, recipient: 2}),
-    Message.create({subject: 'message4', content: 'messsage4 content', sender: 2, recipient: 3}),
-    Message.create({subject: 'message5', content: 'messsage5 content', sender: 3, recipient: 2})
+  const thread = await Promise.all([
+    Thread.create({subject: 'message1', content: 'messsage1 content', InitiatorId: 1, RecipientId: 2}),
+    Thread.create({subject: 'message2', content: 'messsage2 content', InitiatorId: 2, RecipientId: 3}),
   ])
+
+const message = await Promise.all([
+    Message.create({content: 'messsage1 content', sender: 1, threadId: 1}),
+    Message.create({content: 'messsage2 content', sender: 2, threadId: 1}),
+    Message.create({content: 'messsage3 content', sender: 1, threadId: 1}),
+    Message.create({content: 'messsage4 content', sender: 2, threadId: 2}),
+    Message.create({content: 'messsage4 content', sender: 3, threadId: 2}),
+  ])
+
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${services.length} services`)
+  console.log(`seeded ${thread.length} threads`)
   console.log(`seeded ${message.length} messages`)
   console.log(`seeded successfully`)
 }

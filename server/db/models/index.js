@@ -14,7 +14,7 @@ Message.belongsTo(Thread)
 
 Thread.hasMany(Message)
 Thread.belongsTo(User, {as: 'Initiator'})
-Thread.belongsToUser(User, {as: 'Recipient'})
+Thread.belongsTo(User, {as: 'Recipient'})
 
 
 module.exports = {
