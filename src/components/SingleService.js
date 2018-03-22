@@ -16,7 +16,8 @@ class SingleService extends Component {
   }
 
   handleClick(evt) {
-    evt.preventDefault()
+    //evt.preventDefault()
+    evt.persist()
     this.props.contract.updateAgreement(this.props.singleService.contractId, {from: this.props.accounts[0] })
     .then(agreementUpdated => {console.log(agreementUpdated, "AGREEMENT UPDATED")})
     .then(() => this.props.handleUpdateService(evt, this.props.singleService))
