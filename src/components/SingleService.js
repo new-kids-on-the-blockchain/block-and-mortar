@@ -34,23 +34,28 @@ class SingleService extends Component {
   //.logs[0].args.id.toString()
   render() {
     const service = this.props.singleService
+    const currentUser = this.props.currentUser
     if (!service) return <div>No service exists at this location</div>
+
     return (
       <div>
         <h1>{service.name} </h1>
-        <h4>Description: {service.description} </h4>
-        <h4>Category: {service.category} </h4>
-        <h4>Price: {service.price} Ether</h4>
-        <h4>Date created: {service.createdAt}</h4>
+        <h4><b>Description:</b> {service.description} </h4>
+        <h4><b>Category:</b> {service.category} </h4>
+        <h4><b>Price:</b> {service.price} Ether</h4>
+        <h4><b>Date created:</b> {service.createdAt}</h4>
         <Link to={`/users/${service.Seller.id}`}>
-          <h4>Offered By: {service.Seller.userName}</h4>
+          <h4><b>Offered By:</b> {service.Seller.userName}</h4>
         </Link>
         <Link to="/services"><button>Back to Services</button></Link>
 
-        {service.isAvailable ? <button onClick={this.handleClick}>Purchase</button> : <div />}
-        {!service.isAvailable && service.status === "Pending" ? <button onClick={this.handleComplete}>Complete Agreement</button> : <div />}
+        {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Purchase</button> : <div />}
+        {!service.isAvailable && service.status === "Pending" && currentUser.id !== service.Seller.id ? <button onClick={this.handleComplete}>Complete Agreement</button> : <div />}
+
+
+
         {!service.isAvailable && service.status === "Completed" ?
-          <h3>Transaction Completed. Your blockchain contract ID is: {this.props.singleService.contractId}</h3>
+          <h3>Congrats, transaction completed! Your blockchain contract ID is: {this.props.singleService.contractId}</h3>
           : <div />}
 
       </div>
