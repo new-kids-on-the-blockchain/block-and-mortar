@@ -49,7 +49,6 @@ export const auth = (email, password, method) => dispatch => {
 }
 
   export const logout = () => {
-    console.log('in the thunk')
     return dispatch =>
     {axios.post('http://localhost:8080/auth/logout')
       .then(_ => {

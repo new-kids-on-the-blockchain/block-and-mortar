@@ -37,7 +37,6 @@ export function postService(service, ownProps) {
 
 export function updateService(service, ownProps) {
   return function thunk(dispatch) {
-    console.log('THUNKKKKKKK!!!!!!!')
     return axios.put(`/services/${service.id}`, service, {baseURL})
     .then(res => editServiceAndRedirect(res.data, ownProps, dispatch))
     .catch(err => console.log(err, "failed to update service"))

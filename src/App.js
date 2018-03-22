@@ -18,6 +18,7 @@ class App extends Component {
   }
 
   componentWillMount() {
+    //Jon insisted on this
     this.collectBlockchainInfo()
   }
 

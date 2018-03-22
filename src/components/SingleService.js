@@ -17,39 +17,47 @@ class SingleService extends Component {
 
   handleClick(evt) {
     evt.preventDefault()
-    this.props.contract.updateAgreement(this.props.singleService.contractId, {from: this.props.accounts[0] })
-    .then(agreementUpdated => {console.log(agreementUpdated, "AGREEMENT UPDATED")})
-    .then(() => this.props.handleUpdateService(evt, this.props.singleService, this.props.currentUser.id))
-    .catch(err => console.log('UpdateAgreement failed....'))
+    this.props.contract.updateAgreement(this.props.singleService.contractId, { from: this.props.accounts[0] })
+      .then(agreementUpdated => { console.log(agreementUpdated, "AGREEMENT UPDATED") })
+      .then(() => this.props.handleUpdateService(evt, this.props.singleService, this.props.currentUser.id))
+      .catch(err => console.log('agreementUpdated failed....'))
   }
 
   handleComplete(evt) {
     evt.preventDefault()
-    this.props.contract.completeAgreement(this.props.singleService.contractId, {from: this.props.accounts[0] })
-    .then(agreementCompleted => {console.log(agreementCompleted, "COMPLETE AGREEMENT")})
-    .then(() => this.props.handleCompleteService(evt, this.props.singleService))
-    .catch(err => console.log('agreementCompleted failed....'))
+    this.props.contract.completeAgreement(this.props.singleService.contractId, { from: this.props.accounts[0] })
+      .then(agreementCompleted => { console.log(agreementCompleted, "COMPLETE AGREEMENT") })
+      .then(() => this.props.handleCompleteService(evt, this.props.singleService))
+      .catch(err => console.log('agreementCompleted failed....'))
   }
 
   //.logs[0].args.id.toString()
   render() {
-    console.log(this.props.singleService, "LOOK HERE!!!!!!! :D")
     const service = this.props.singleService
+    const currentUser = this.props.currentUser
     if (!service) return <div>No service exists at this location</div>
+
     return (
       <div>
         <h1>{service.name} </h1>
-        <h4>Description: {service.description} </h4>
-        <h4>Category: {service.category} </h4>
-        <h4>Price: {service.price} Ether</h4>
-        <h4>Date created: {service.createdAt}</h4>
+        <h4><b>Description:</b> {service.description} </h4>
+        <h4><b>Category:</b> {service.category} </h4>
+        <h4><b>Price:</b> {service.price} Ether</h4>
+        <h4><b>Date created:</b> {service.createdAt}</h4>
         <Link to={`/users/${service.Seller.id}`}>
-          <h4>Offered By: {service.Seller.userName}</h4>
+          <h4><b>Offered By:</b> {service.Seller.userName}</h4>
         </Link>
         <Link to="/services"><button>Back to Services</button></Link>
-        {service.isAvailable ? <button onClick={this.handleClick}>Purchase</button> : <button onClick={this.handleComplete}>Complete Agreement</button>}
-        {service.status === "Completed" ?  
-        <h3>Transaction Completed. Your blockchain contract ID is: {this.props.singleService.contractId}</h3> : <div />}
+
+        {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Purchase</button> : <div />}
+        {!service.isAvailable && service.status === "Pending" && currentUser.id !== service.Seller.id ? <button onClick={this.handleComplete}>Complete Agreement</button> : <div />}
+
+
+
+        {!service.isAvailable && service.status === "Completed" ?
+          <h3>Congrats, transaction completed! Your blockchain contract ID is: {this.props.singleService.contractId}</h3>
+          : <div />}
+
       </div>
     )
   }
@@ -75,12 +83,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   handleUpdateService(evt, service, userId) {
     evt.preventDefault()
-    //evt.persist()
     service.isAvailable = false;
     service.status = "Pending";
     service.buyer = userId;
-    //service.buyer = this.props.currentUser.id;
-    console.log(this.props, 'THIS PROPSSS')
     dispatch(updateService(service, ownProps))
   },
   handleCompleteService(evt, service) {
