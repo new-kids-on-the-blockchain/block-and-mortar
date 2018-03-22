@@ -8,6 +8,7 @@ import SingleUser from './SingleUser'
 import AllMessages from './AllMessages'
 import SingleMessage from './SingleMessage'
 import AddMessage from './AddMessage'
+import Homepage from './Homepage'
 import { Login, Signup } from './SignUp'
 import NavBar from './NavBar'
 import { me} from '../store'
@@ -27,6 +28,7 @@ class Routes extends Component {
           {/* Routes placed here are available to all visitors */}
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          <Route exact path="/" component={Homepage} />
           {
             isLoggedIn &&
               <Switch>
