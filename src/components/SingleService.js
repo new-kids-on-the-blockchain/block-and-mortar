@@ -48,6 +48,8 @@ class SingleService extends Component {
         </Link>
         <Link to="/services"><button>Back to Services</button></Link>
         {service.isAvailable ? <button onClick={this.handleClick}>Purchase</button> : <button onClick={this.handleComplete}>Complete Agreement</button>}
+        {service.status === "Completed" ?  
+        <h3>Transaction Completed. Your blockchain contract ID is: {this.props.singleService.contractId}</h3> : <div />}
       </div>
     )
   }
