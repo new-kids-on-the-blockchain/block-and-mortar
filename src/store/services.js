@@ -31,7 +31,7 @@ export function postService(service, ownProps) {
   return function thunk(dispatch) {
     return axios.post('/services', service, {baseURL})
     .then(res => addServiceAndRedirect(res.data, ownProps, dispatch))
-    .catch(err => console.log(err, "failed to post service"))
+    .catch(err => console.log(err))
   }
 }
 

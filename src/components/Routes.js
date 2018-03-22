@@ -8,9 +8,10 @@ import SingleUser from './SingleUser'
 import AllMessages from './AllMessages'
 import SingleMessage from './SingleMessage'
 import AddMessage from './AddMessage'
+import Homepage from './Homepage'
 import { Login, Signup } from './SignUp'
 import NavBar from './NavBar'
-import { me} from '../store'
+import { me, fetchServices, fetchWeb3} from '../store'
 
 class Routes extends Component {
 
@@ -27,6 +28,7 @@ class Routes extends Component {
           {/* Routes placed here are available to all visitors */}
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          <Route exact path="/" component={Homepage} />
           {
             isLoggedIn &&
               <Switch>
@@ -60,6 +62,8 @@ const mapDispatch = (dispatch) => {
   return {
     loadInitialData () {
       dispatch(me());
+      dispatch(fetchServices())
+      dispatch(fetchWeb3())
     }
   }
 }
