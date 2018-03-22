@@ -28,7 +28,6 @@ class AddService extends Component {
       seller: this.props.currentUser.id //don't hardcode it later
     };
 
-    console.log("IN HANDLE SUBMIT!!!!");
     const price = formData.price;
     const { postNewService } = this.props;
 
@@ -48,7 +47,6 @@ class AddService extends Component {
   }
 
   render() {
-    console.log(this.props.currentUser, 'CURRENT USER')
     const { name, description, category, price } = this.state;
     return (
       this.props.contract && (
