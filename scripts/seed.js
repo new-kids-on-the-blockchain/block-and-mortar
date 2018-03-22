@@ -1,5 +1,5 @@
 const db = require('../server/db')
-const {User, Service, Agreement} = require('../server/db/models')
+const {User, Service, Message} = require('../server/db/models')
 
 async function seed () {
   await db.sync({force: true})
@@ -39,19 +39,18 @@ async function seed () {
     Service.create({name: 'Burmese artwork', description: 'Moving to Cambridge and need to sell my artwork. Purchased in Myanmar', category: 'Goods', buyer: null, seller: 2, isAvailable: true, price: 0.05, status: 'Posted', imgUrl: 'http://www.craftsy.com/blog/wp-content/uploads/2013/08/nrushdry01-copy.jpg'})
   ])
 
-  // const agreement = await Promise.all([
-  //   Agreement.create({agreementId: null, status: 'Initiated', buyer: 1, seller: 2, ServiceId: 2}),
-  //   Agreement.create({agreementId: '000fsdfhekjh32345', status: 'Initiated', buyer: 1, seller: 4, ServiceId: 4}),
-  //   Agreement.create({agreementId: '00645gdfheu536ggd', status: 'Initiated', buyer: 4, seller: 5, ServiceId: 5}),
-  //   Agreement.create({agreementId: null, status: 'Initiated', buyer: 2, seller: 6, ServiceId: 6}),
-  //   Agreement.create({agreementId: null, status: 'Initiated', buyer: 3, seller: 1, ServiceId: 7}),
-  //   Agreement.create({agreementId: null, status: 'Initiated', buyer: 3, seller: 2, ServiceId: 8})
-  // ])
+const message = await Promise.all([
+    Message.create({subject: 'message1', content: 'messsage1 content', sender: 1, recipient: 2}),
+    Message.create({subject: 'message2', content: 'messsage2 content', sender: 2, recipient: 1}),
+    Message.create({subject: 'message3', content: 'messsage3 content', sender: 1, recipient: 2}),
+    Message.create({subject: 'message4', content: 'messsage4 content', sender: 2, recipient: 3}),
+    Message.create({subject: 'message5', content: 'messsage5 content', sender: 3, recipient: 2})
+  ])
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${services.length} services`)
-  // console.log(`seeded ${agreement.length} agreements`)
+  console.log(`seeded ${message.length} messages`)
   console.log(`seeded successfully`)
 }
 
