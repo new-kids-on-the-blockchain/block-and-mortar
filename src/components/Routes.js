@@ -63,7 +63,6 @@ const mapDispatch = (dispatch) => {
     loadInitialData () {
       dispatch(me());
       dispatch(fetchServices())
-      dispatch(fetchWeb3())
     }
   }
 }
