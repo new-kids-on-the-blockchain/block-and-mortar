@@ -79,10 +79,10 @@ export default function reducer(services = [], action) {
 //helperFunc
 function addServiceAndRedirect(service, ownProps, dispatch) {
   dispatch(addService(service));
-  ownProps.history.push('/services');
+  ownProps.history.push(`/services/${service.id}`);
 }
 
 function editServiceAndRedirect(service, ownProps, dispatch) {
   dispatch(editService(service));
-  ownProps.history.push('/services');
+  ownProps.history.push(`/services/${service.id}`);
 }
