@@ -16,8 +16,7 @@ class SingleService extends Component {
   }
 
   handleClick(evt) {
-    //evt.preventDefault()
-    evt.persist()
+    evt.preventDefault()
     this.props.contract.updateAgreement(this.props.singleService.contractId, {from: this.props.accounts[0] })
     .then(agreementUpdated => {console.log(agreementUpdated, "AGREEMENT UPDATED")})
     .then(() => this.props.handleUpdateService(evt, this.props.singleService, this.props.currentUser.id))
@@ -25,8 +24,7 @@ class SingleService extends Component {
   }
 
   handleComplete(evt) {
-    //evt.preventDefault()
-    evt.persist()
+    evt.preventDefault()
     this.props.contract.completeAgreement(this.props.singleService.contractId, {from: this.props.accounts[0] })
     .then(agreementCompleted => {console.log(agreementCompleted, "COMPLETE AGREEMENT")})
     .then(() => this.props.handleCompleteService(evt, this.props.singleService))
@@ -79,8 +77,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     service.isAvailable = false;
     service.status = "Pending";
     service.buyer = userId;
-    //service.buyer = this.props.currentUser.id;
-    console.log(this.props, 'THIS PROPSSS')
     dispatch(updateService(service, ownProps))
   },
   handleCompleteService(evt, service) {
