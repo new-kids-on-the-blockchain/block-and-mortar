@@ -11,7 +11,7 @@ import AddMessage from './AddMessage'
 import Homepage from './Homepage'
 import { Login, Signup } from './SignUp'
 import NavBar from './NavBar'
-import { me} from '../store'
+import { me, fetchServices} from '../store'
 
 class Routes extends Component {
 
@@ -62,6 +62,7 @@ const mapDispatch = (dispatch) => {
   return {
     loadInitialData () {
       dispatch(me());
+      dispatch(fetchServices())
     }
   }
 }
