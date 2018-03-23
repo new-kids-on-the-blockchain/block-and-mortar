@@ -8,6 +8,7 @@ class SingleService extends Component {
     super()
     this.handleClick = this.handleClick.bind(this)
     this.handleComplete = this.handleComplete.bind(this)
+    this.handleClose = this.handleClose.bind(this)
 
   }
   componentDidMount() {
@@ -31,6 +32,13 @@ class SingleService extends Component {
       .catch(err => console.log('agreementCompleted failed....'))
   }
 
+  handleClose(evt){
+    console.log("HELLOOOOOO")
+    this.props.handleCloseService(evt, this.props.singleService)
+    .catch(err => console.log(err))
+    
+  }
+
   //.logs[0].args.id.toString()
   render() {
     const service = this.props.singleService
@@ -51,6 +59,8 @@ class SingleService extends Component {
         <Link to="/services"><button>Back to Services</button></Link>
 
         {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Purchase</button> : <div />}
+        {service.isAvailable && currentUser.id === service.Seller.id ? <button onClick={this.handleClose}>Close Service</button> : <div />}
+        {!service.isAvailable && service.status === "Pending" && currentUser.id !== service.Buyer.id ? <h3>Transaction in progress. {service.Buyer.userName} has purchased this service.</h3> : <div />}
         {!service.isAvailable && service.status === "Pending" && currentUser.id !== service.Seller.id ? <button onClick={this.handleComplete}>Complete Agreement</button> : <div />}
 
 
@@ -93,6 +103,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     evt.preventDefault()
     service.status = "Completed";
     dispatch(updateCompleteService(service, ownProps))
+  },
+  handleCloseService(evt, service){
+    evt.preventDefault()
+    console.log("IN HANDLE CLOSE", service)
+    service.isAvailable = false;
+    dispatch(updateService(service, ownProps))
   }
 })
 
