@@ -22,9 +22,7 @@ export const fetchWeb3 = ()  =>
   dispatch =>
     getWeb3
     .then(results => {
-      console.log(results, 'THUNK WEB.JS FETCHWEB3 RESULTS')
       dispatch(setWeb3(results.web3))
-      console.log(results.web3, 'THUNK WEB.JS FETCHWEB3 web3 DISPATCHED')
     })
     .catch(() => console.log('error fetching web3'))
 

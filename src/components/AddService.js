@@ -18,7 +18,6 @@ class AddService extends Component {
 
   handleSubmit(evt, currentUser) {
     evt.preventDefault();
-
     const formData = {
       name: evt.target.serviceName.value,
       category: evt.target.serviceCategory.value,
@@ -26,10 +25,9 @@ class AddService extends Component {
       description: evt.target.serviceDescription.value,
       imgUrl: evt.target.imgUrl.value,
       contractId: null,
-      seller: this.props.currentUser.id //don't hardcode it later
+      seller: this.props.currentUser.id
     };
 
-    console.log("IN HANDLE SUBMIT!!!!");
     const price = formData.price;
     const { postNewService } = this.props;
 
@@ -37,19 +35,15 @@ class AddService extends Component {
       .newAgreement(price, { from: this.props.accounts[0] })
       .then(newAgreement => {
         const contractId = newAgreement.logs[0].args.id.toString()
-        console.log(newAgreement.logs[0].args.id.toString(), "NEW AGREEMENT OBJECT ID!!!");
         formData.contractId = contractId;
       })
       .then(() => {
         postNewService(formData);
       })
       .catch(console.log);
-    //omg thanks jon
-    console.log(newContract, "OPTIMISTICALLY EXCITED");
   }
 
   render() {
-    console.log(this.props.currentUser, 'CURRENT USER')
     const currentUser = this.props.currentUser
     const { name, description, category, price } = this.state;
     return (
