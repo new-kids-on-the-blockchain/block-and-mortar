@@ -10,9 +10,10 @@ import singleService from './singleService'
 import users from './users'
 import currentUser from './currentUser'
 import messages from './messages'
+import singleUser from './singleUser'
 
 
-export const reducer = combineReducers({ web3, contract, accounts, services, users, singleService, currentUser, messages })
+export const reducer = combineReducers({ web3, contract, accounts, services, users, singleService, currentUser, messages, singleUser })
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})
@@ -28,3 +29,4 @@ export * from './singleService'
 export * from './users'
 export * from './currentUser'
 export * from './messages'
+export * from './singleUser'
