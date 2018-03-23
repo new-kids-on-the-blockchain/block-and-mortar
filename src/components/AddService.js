@@ -9,9 +9,9 @@ class AddService extends Component {
     super();
     this.state = {
       name: "",
-      description: "",
       category: "",
-      price: 0
+      price: 0,
+      description: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -28,7 +28,6 @@ class AddService extends Component {
       seller: this.props.currentUser.id //don't hardcode it later
     };
 
-    console.log("IN HANDLE SUBMIT!!!!");
     const price = formData.price;
     const { postNewService } = this.props;
 
@@ -48,7 +47,6 @@ class AddService extends Component {
   }
 
   render() {
-    console.log(this.props.currentUser, 'CURRENT USER')
     const { name, description, category, price } = this.state;
     return (
       this.props.contract && (
@@ -56,14 +54,14 @@ class AddService extends Component {
           <h2>CREATE A SERVICE</h2>
 
           <form onSubmit={this.handleSubmit}>
-            <h3> Name: </h3>
+            <h3>Name:</h3>
             <input name="serviceName" />
-            <h3> Category: </h3>
+            <h3>Category:</h3>
             <select name="serviceCategory">
               <option value="Goods">Goods</option>
               <option value="Services">Services</option>
             </select>
-            <h3> Price (ether) </h3>
+            <h3>Price (ether)</h3>
             <input
               name="servicePrice"
               type="number"
