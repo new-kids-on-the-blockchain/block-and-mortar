@@ -49,7 +49,7 @@ class AddService extends Component {
     return (
       this.props.contract && (
         <div>
-          <h2>CREATE A SERVICE</h2>
+          <h2>CREATE A SERVICE!!!!!!</h2>
 
           <form onSubmit={this.handleSubmit}>
             <h3> Name: </h3>

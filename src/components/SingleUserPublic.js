@@ -22,6 +22,7 @@ class SingleUserPublic extends Component {
     const availableServices = soldServices.filter(
       item => item.isAvailable === true
     );
+    const pastServices = soldServices.filter(item => item.isAvailable === false)
     console.log("AVAILABLE SERVICES", availableServices);
     console.log("user is: ", user);
     if (!user) return <div>No user exists at this location</div>;
@@ -40,6 +41,21 @@ class SingleUserPublic extends Component {
                   </Link>
                   <h3>{service.description}</h3>
                   <p>category: {service.category}</p>
+                </li>
+              );
+            })}
+        </ul>
+        <h1> My Past Listing of Transactions: </h1>
+        <ul>
+          {pastServices &&
+            pastServices.map(pastService => {
+              return (
+                <li key={pastService.id}>
+                  <Link to={`/services/${pastService.id}`}>
+                    <h2>{pastService.name}</h2>
+                  </Link>
+                  <h3>{pastService.description}</h3>
+                  <p>category: {pastService.category}</p>
                 </li>
               );
             })}

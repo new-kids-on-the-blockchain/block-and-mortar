@@ -45,6 +45,6 @@ barterAgreement.completeAgreement(0)
 '/assets/avatars/avatars_0010_11-copy.png'
 '/assets/avatars/avatars_0011_12-copy.png'
 '/assets/avatars/avatars_0012_13-copy.png'
-'/assets/avatars/avatars_00013_14-copy.png'
+'/assets/avatars/avatars_0013_14-copy.png'
 '/assets/avatars/avatars_0014_15-copy.png'
 '/assets/avatars/avatars_0015_16-copy.png'
