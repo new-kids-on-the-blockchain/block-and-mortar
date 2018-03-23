@@ -51,7 +51,8 @@ class AddMessage extends Component {
 
 const mapState = state => {
   return {
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
+    messages: messages
   }
 }
 
