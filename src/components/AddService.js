@@ -16,19 +16,18 @@ class AddService extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(evt) {
+  handleSubmit(evt, currentUser) {
     evt.preventDefault();
-
     const formData = {
       name: evt.target.serviceName.value,
       category: evt.target.serviceCategory.value,
       price: evt.target.servicePrice.value,
       description: evt.target.serviceDescription.value,
+      imgUrl: evt.target.imgUrl.value,
       contractId: null,
-      seller: this.props.currentUser.id //don't hardcode it later
+      seller: this.props.currentUser.id
     };
 
-    console.log("IN HANDLE SUBMIT!!!!");
     const price = formData.price;
     const { postNewService } = this.props;
 
@@ -36,19 +35,16 @@ class AddService extends Component {
       .newAgreement(price, { from: this.props.accounts[0] })
       .then(newAgreement => {
         const contractId = newAgreement.logs[0].args.id.toString()
-        console.log(newAgreement.logs[0].args.id.toString(), "NEW AGREEMENT OBJECT ID!!!");
         formData.contractId = contractId;
       })
       .then(() => {
         postNewService(formData);
       })
       .catch(console.log);
-    //omg thanks jon
-    console.log(newContract, "OPTIMISTICALLY EXCITED");
   }
 
   render() {
-    console.log(this.props.currentUser, 'CURRENT USER')
+    const currentUser = this.props.currentUser
     const { name, description, category, price } = this.state;
     return (
       this.props.contract && (
@@ -73,6 +69,8 @@ class AddService extends Component {
             />
             <h3> Description: </h3>
             <textarea name="serviceDescription" rows="1" cols="50" />
+            <h3> Image URL: </h3>
+            <input name="imgUrl" />
             <button> Submit </button>
           </form>
         </div>
