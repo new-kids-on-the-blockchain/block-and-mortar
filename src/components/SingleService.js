@@ -32,11 +32,10 @@ class SingleService extends Component {
       .catch(err => console.log('agreementCompleted failed....'))
   }
 
-  handleClose(evt){
-    console.log("HELLOOOOOO")
+  handleClose(evt) {
     this.props.handleCloseService(evt, this.props.singleService)
-    .catch(err => console.log(err))
-    
+      .catch(err => console.log(err))
+
   }
 
   //.logs[0].args.id.toString()
@@ -60,14 +59,17 @@ class SingleService extends Component {
 
         {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Purchase</button> : <div />}
         {service.isAvailable && currentUser.id === service.Seller.id ? <button onClick={this.handleClose}>Close Service</button> : <div />}
-        {!service.isAvailable && service.status === "Pending" && currentUser.id !== service.Buyer.id ? <h3>Transaction in progress. {service.Buyer.userName} has purchased this service.</h3> : <div />}
-        {!service.isAvailable && service.status === "Pending" && currentUser.id !== service.Seller.id ? <button onClick={this.handleComplete}>Complete Agreement</button> : <div />}
+        {!service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? <h3>You have closed this service.</h3> : <div />}
 
+        {!service.isAvailable && service.status === "Pending" && (currentUser.id === service.Seller.id) ? <h3>Transaction in progress. {service.Buyer.userName} has purchased this service.</h3> : <div />}
 
+        {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? <div><button onClick={this.handleComplete}>Complete Agreement</button> <h3>Transaction in progress. Click Complete Agreement when you have received your goods or services.</h3> </div> : <div />}
 
-        {!service.isAvailable && service.status === "Completed" && currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id ?
+        {!service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? <h3>Service no longer available.</h3> : <div />}
+
+        {!service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ?
           <h3>Congrats, transaction completed! Your blockchain contract ID is: {this.props.singleService.contractId}</h3>
-          : <h3>Service no longer available. </h3>}
+          : <div />}
 
       </div>
     )
@@ -104,7 +106,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     service.status = "Completed";
     dispatch(updateCompleteService(service, ownProps))
   },
-  handleCloseService(evt, service){
+  handleCloseService(evt, service) {
     evt.preventDefault()
     console.log("IN HANDLE CLOSE", service)
     service.isAvailable = false;

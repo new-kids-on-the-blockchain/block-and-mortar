@@ -16,7 +16,7 @@ class AddService extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(evt) {
+  handleSubmit(evt, currentUser) {
     evt.preventDefault();
 
     const formData = {
@@ -50,6 +50,7 @@ class AddService extends Component {
 
   render() {
     console.log(this.props.currentUser, 'CURRENT USER')
+    const currentUser = this.props.currentUser
     const { name, description, category, price } = this.state;
     return (
       this.props.contract && (
