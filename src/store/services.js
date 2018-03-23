@@ -84,5 +84,5 @@ function addServiceAndRedirect(service, ownProps, dispatch) {
 
 function editServiceAndRedirect(service, ownProps, dispatch) {
   dispatch(editService(service));
-  ownProps.history.push('/services');
+  ownProps.history.push(`/services/${service.id}`);
 }
