@@ -31,13 +31,12 @@ export function postService(service, ownProps) {
   return function thunk(dispatch) {
     return axios.post('/services', service, {baseURL})
     .then(res => addServiceAndRedirect(res.data, ownProps, dispatch))
-    .catch(err => console.log(err, "failed to post service"))
+    .catch(err => console.log(err))
   }
 }
 
 export function updateService(service, ownProps) {
   return function thunk(dispatch) {
-    console.log('THUNKKKKKKK!!!!!!!')
     return axios.put(`/services/${service.id}`, service, {baseURL})
     .then(res => editServiceAndRedirect(res.data, ownProps, dispatch))
     .catch(err => console.log(err, "failed to update service"))
@@ -79,7 +78,7 @@ export default function reducer(services = [], action) {
 //helperFunc
 function addServiceAndRedirect(service, ownProps, dispatch) {
   dispatch(addService(service));
-  ownProps.history.push('/services');
+  ownProps.history.push(`/services/${service.id}`);
 }
 
 function editServiceAndRedirect(service, ownProps, dispatch) {
