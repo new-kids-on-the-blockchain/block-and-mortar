@@ -10,6 +10,7 @@ class SingleUser extends Component {
   // }
 
   render() {
+    console.log("SINGLE USER!!", this.props.currentUser)
     const user = this.props.currentUser
     const boughtServices = this.props.currentUser.Buyer || []
     const soldServices = this.props.currentUser.Seller || []
@@ -17,7 +18,7 @@ class SingleUser extends Component {
     if (!user) return <div>No user exists at this location</div>
     return (
       <div>
-        <h1>{user.name} </h1>
+        <h1>Hi!!! {user.userName} </h1>
         <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
         <h4>Services Bought</h4>
         <h4>Services Sold</h4>
@@ -26,8 +27,10 @@ class SingleUser extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => {
+  console.log(state, 'CURRENT USER STATE')
+  return {
     currentUser: state.currentUser
-})
+}}
 
 export default withRouter(connect(mapStateToProps, null)(SingleUser))

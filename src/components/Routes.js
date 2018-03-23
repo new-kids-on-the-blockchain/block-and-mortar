@@ -5,6 +5,7 @@ import AllServices from './AllServices'
 import SingleService from './SingleService'
 import AddService from './AddService'
 import SingleUser from './SingleUser'
+import SingleUserPublic from './SingleUserPublic'
 import AllMessages from './AllMessages'
 import SingleMessage from './SingleMessage'
 import AddMessage from './AddMessage'
@@ -34,6 +35,7 @@ class Routes extends Component {
               <Switch>
                 {/* Routes placed here are only available after logging in */}
                 <Route exact path='/home' component={SingleUser} />
+                <Route path='/users/:id' component={SingleUserPublic} />
                 <Route exact path='/services' component={AllServices} />
                 <Route exact path='/services/new' component={AddService} />
                 <Route exact path='/services/:id' component={SingleService} />

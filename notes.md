@@ -30,3 +30,21 @@ barterAgreement.getAgreementLength()
 barterAgreement.updateAgreement(0)
 
 barterAgreement.completeAgreement(0)
+
+//avatar img list
+'/assets/avatars/avatars_0000_1-copy.png'
+'/assets/avatars/avatars_0001_2-copy.png'
+'/assets/avatars/avatars_0002_3-copy.png'
+'/assets/avatars/avatars_0003_4-copy.png'
+'/assets/avatars/avatars_0004_5-copy.png'
+'/assets/avatars/avatars_0005_6-copy.png'
+'/assets/avatars/avatars_0006_7-copy.png'
+'/assets/avatars/avatars_0007_8-copy.png'
+'/assets/avatars/avatars_0008_9-copy.png'
+'/assets/avatars/avatars_0009_10-copy.png'
+'/assets/avatars/avatars_0010_11-copy.png'
+'/assets/avatars/avatars_0011_12-copy.png'
+'/assets/avatars/avatars_0012_13-copy.png'
+'/assets/avatars/avatars_00013_14-copy.png'
+'/assets/avatars/avatars_0014_15-copy.png'
+'/assets/avatars/avatars_0015_16-copy.png'
