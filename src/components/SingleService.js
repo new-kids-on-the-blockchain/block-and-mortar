@@ -40,6 +40,7 @@ class SingleService extends Component {
     return (
       <div>
         <h1>{service.name} </h1>
+        <img src={service.imgUrl} />
         <h4><b>Description:</b> {service.description} </h4>
         <h4><b>Category:</b> {service.category} </h4>
         <h4><b>Price:</b> {service.price} Ether</h4>
