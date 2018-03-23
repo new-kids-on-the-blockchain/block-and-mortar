@@ -65,9 +65,9 @@ class SingleService extends Component {
 
 
 
-        {!service.isAvailable && service.status === "Completed" ?
+        {!service.isAvailable && service.status === "Completed" && currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id ?
           <h3>Congrats, transaction completed! Your blockchain contract ID is: {this.props.singleService.contractId}</h3>
-          : <div />}
+          : <h3>Service no longer available. </h3>}
 
       </div>
     )
