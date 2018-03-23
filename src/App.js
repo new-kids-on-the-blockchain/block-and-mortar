@@ -6,10 +6,10 @@ import { fetchAccounts } from './store/accounts'
 import Routes from './components/Routes'
 import { withRouter } from 'react-router-dom'
 
-import './css/oswald.css'
-import './css/open-sans.css'
-import './css/pure-min.css'
-import './App.css'
+// import './css/oswald.css'
+// import './css/open-sans.css'
+// import './css/pure-min.css'
+// import './App.css'
 
 class App extends Component {
   constructor(props) {
