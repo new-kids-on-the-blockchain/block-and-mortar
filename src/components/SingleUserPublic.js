@@ -25,9 +25,9 @@ class SingleUserPublic extends Component {
     const pastServices = soldServices.filter(item => item.isAvailable === false)
     console.log("AVAILABLE SERVICES", availableServices);
     console.log("user is: ", user);
-    if (!user) return <div>No user exists at this location</div>;
+    if (!user.id) return <div>No user found</div>;
     return (
-      user ? (
+      user.id ? (
         <div>
           <img alt="profile img" src={user.imageURL} />
           <h1>Hi, I'm {user.userName}!</h1>
