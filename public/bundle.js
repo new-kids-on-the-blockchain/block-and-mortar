@@ -81847,10 +81847,9 @@ var SingleUser = function (_Component) {
           currentUser = _props.currentUser,
           services = _props.services;
 
-      var pendingTransactions = services && services.filter(function (service) {
+      var pendingSoldTransactions = services && services.filter(function (service) {
         return service.Seller.id === currentUser.id && service.status === "Pending";
       });
-
       // const boughtServices = this.props.currentUser.Buyer || []
       // const soldServices = this.props.currentUser.Seller || []
 
@@ -81859,25 +81858,26 @@ var SingleUser = function (_Component) {
         null,
         'No user exists at this location'
       );
+
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
           'h1',
           null,
-          'Hi, ',
+          'Welcome back, ',
           currentUser.userName,
           '! '
         ),
         _react2.default.createElement(
           'h1',
           null,
-          'Your Pending Transactions:'
+          'Transactions to Fulfill:'
         ),
         _react2.default.createElement(
           'ul',
           null,
-          pendingTransactions && pendingTransactions.map(function (transaction) {
+          pendingSoldTransactions && pendingSoldTransactions.map(function (transaction) {
             return _react2.default.createElement(
               'li',
               { key: transaction.id },
@@ -82003,7 +82003,7 @@ var SingleUserPublic = function (_Component) {
         null,
         "No user exists at this location"
       );
-      return _react2.default.createElement(
+      return user ? _react2.default.createElement(
         "div",
         null,
         _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
@@ -82084,6 +82084,10 @@ var SingleUserPublic = function (_Component) {
             );
           })
         )
+      ) : _react2.default.createElement(
+        "h1",
+        null,
+        "No user found."
       );
     }
   }]);

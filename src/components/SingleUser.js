@@ -10,19 +10,19 @@ class SingleUser extends Component {
 
   render() {
     const {currentUser, services} = this.props
-    const pendingTransactions = services && services.filter(service => service.Seller.id === currentUser.id && service.status === "Pending")
-
+    const pendingSoldTransactions = services && services.filter(service => service.Seller.id === currentUser.id && service.status === "Pending")
     // const boughtServices = this.props.currentUser.Buyer || []
     // const soldServices = this.props.currentUser.Seller || []
 
     if (!currentUser) return <div>No user exists at this location</div>
+
     return (
       <div>
-        <h1>Hi, {currentUser.userName}! </h1>
-        <h1>Your Pending Transactions:</h1>
+        <h1>Welcome back, {currentUser.userName}! </h1>
+        <h1>Transactions to Fulfill:</h1>
         <ul>
-          {pendingTransactions &&
-            pendingTransactions.map(transaction => {
+          {pendingSoldTransactions &&
+            pendingSoldTransactions.map(transaction => {
               return (
                 <li key={transaction.id}>
                   <Link to={`/services/${transaction.id}`}>
@@ -34,8 +34,6 @@ class SingleUser extends Component {
               );
             })}
         </ul>
-
-
         <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
       </div>
     )

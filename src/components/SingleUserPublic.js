@@ -27,6 +27,7 @@ class SingleUserPublic extends Component {
     console.log("user is: ", user);
     if (!user) return <div>No user exists at this location</div>;
     return (
+      user ? (
       <div>
         <img alt="profile img" src={user.imageURL} />
         <h1>Hi, I'm {user.userName}!</h1>
@@ -61,7 +62,11 @@ class SingleUserPublic extends Component {
             })}
         </ul>
       </div>
-    );
+          ) : ( <h1>No user found.</h1>
+            
+          )
+
+  )
   }
 }
 
