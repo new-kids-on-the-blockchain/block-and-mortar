@@ -19,7 +19,7 @@ class SingleUser extends Component {
     return (
       <div>
         <h1>Welcome back, {currentUser.userName}! </h1>
-        <h1>Transactions to Fulfill:</h1>
+        <h2>Transactions to Fulfill:</h2>
         <ul>
           {pendingSoldTransactions &&
             pendingSoldTransactions.map(transaction => {

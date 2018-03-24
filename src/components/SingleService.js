@@ -12,7 +12,6 @@ class SingleService extends Component {
 
   }
   componentDidMount() {
-    this.props.handleFetchServiceById(this.props.match.params.id);
     this.props.handleFetchServices()
     this.props.handleFetchContract()
   }
@@ -41,13 +40,14 @@ class SingleService extends Component {
 
   //.logs[0].args.id.toString()
   render() {
-    console.log(this.props.service, "HALP PLEASE WORK COME ON")
-    const service = this.props.service
-    console.log(this.props.service, "SERVICIOOOO")
+    console.log(this.props.singleService, "HALP PLEASE WORK COME ON")
+    const service = this.props.singleService
+    console.log(this.props.services, "SERVICIOOOOS")
     const currentUser = this.props.currentUser
+    console.log(currentUser, "CURRENT USER")
     if (!service) return <div>No service exists at this location</div>
-
     return (
+      this.props.singleService &&
       <div>
         <h1>{service.name} </h1>
         <img src={service.imgUrl} />
@@ -80,11 +80,10 @@ class SingleService extends Component {
 
 }
 
-const mapStateToProps = ({ service, services, users, contract, accounts, currentUser }, ownProps) => ({
-  // singleService: services.find(
-  //   service => +service.id === +ownProps.match.params.id
-  // ),
-  service,
+const mapStateToProps = ({ services, users, contract, accounts, currentUser }, ownProps) => ({
+  singleService: services.find(
+    service => +service.id === +ownProps.match.params.id
+  ),
   contract,
   users,
   accounts,
@@ -92,9 +91,6 @@ const mapStateToProps = ({ service, services, users, contract, accounts, current
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  handleFetchServiceById(id){
-    dispatch(fetchServiceById(id))
-  },
   handleFetchServices() {
     dispatch(fetchServices())
   },

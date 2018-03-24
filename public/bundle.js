@@ -81313,6 +81313,7 @@ var Routes = function (_Component) {
     value: function render() {
       var isLoggedIn = this.props.isLoggedIn;
 
+      console.log(this.props.services, "SERVICES IN ROUTESSSSSS!!!!!");
       return _react2.default.createElement(
         'div',
         null,
@@ -81348,7 +81349,8 @@ var mapState = function mapState(state) {
   return {
     // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
     // Otherwise, state.user will be an empty object, and state.user.id will be falsey
-    isLoggedIn: !!state.currentUser.id
+    isLoggedIn: !!state.currentUser.id,
+    services: state.services
   };
 };
 
@@ -81554,7 +81556,6 @@ var SingleService = function (_Component) {
   _createClass(SingleService, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.props.handleFetchServiceById(this.props.match.params.id);
       this.props.handleFetchServices();
       this.props.handleFetchContract();
     }
@@ -81599,17 +81600,17 @@ var SingleService = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.props.service, "HALP PLEASE WORK COME ON");
-      var service = this.props.service;
-      console.log(this.props.service, "SERVICIOOOO");
+      console.log(this.props.singleService, "HALP PLEASE WORK COME ON");
+      var service = this.props.singleService;
+      console.log(this.props.services, "SERVICIOOOOS");
       var currentUser = this.props.currentUser;
+      console.log(currentUser, "CURRENT USER");
       if (!service) return _react2.default.createElement(
         'div',
         null,
         'No service exists at this location'
       );
-
-      return _react2.default.createElement(
+      return this.props.singleService && _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
@@ -81747,17 +81748,15 @@ var SingleService = function (_Component) {
 }(_react.Component);
 
 var mapStateToProps = function mapStateToProps(_ref, ownProps) {
-  var service = _ref.service,
-      services = _ref.services,
+  var services = _ref.services,
       users = _ref.users,
       contract = _ref.contract,
       accounts = _ref.accounts,
       currentUser = _ref.currentUser;
   return {
-    // singleService: services.find(
-    //   service => +service.id === +ownProps.match.params.id
-    // ),
-    service: service,
+    singleService: services.find(function (service) {
+      return +service.id === +ownProps.match.params.id;
+    }),
     contract: contract,
     users: users,
     accounts: accounts,
@@ -81767,9 +81766,6 @@ var mapStateToProps = function mapStateToProps(_ref, ownProps) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
-    handleFetchServiceById: function handleFetchServiceById(id) {
-      dispatch((0, _store.fetchServiceById)(id));
-    },
     handleFetchServices: function handleFetchServices() {
       dispatch((0, _store.fetchServices)());
     },
@@ -81878,7 +81874,7 @@ var SingleUser = function (_Component) {
           '! '
         ),
         _react2.default.createElement(
-          'h1',
+          'h2',
           null,
           'Transactions to Fulfill:'
         ),
