@@ -29,8 +29,8 @@ class SingleUserPublic extends Component {
     return (
       <div>
         <img alt="profile img" src={user.imageURL} />
-        <h1>HI I'm {user.userName}</h1>
-        <h1> My Listing of Goods & Services: </h1>
+        <h1>Hi, I'm {user.userName}!</h1>
+        <h1>My Available Goods & Services: </h1>
         <ul>
           {availableServices &&
             availableServices.map(service => {
@@ -45,7 +45,7 @@ class SingleUserPublic extends Component {
               );
             })}
         </ul>
-        <h1> My Past Listing of Transactions: </h1>
+        <h1> My Past Transactions: </h1>
         <ul>
           {pastServices &&
             pastServices.map(pastService => {
@@ -55,7 +55,7 @@ class SingleUserPublic extends Component {
                     <h2>{pastService.name}</h2>
                   </Link>
                   <h3>{pastService.description}</h3>
-                  <p>category: {pastService.category}</p>
+                  <p>Category: {pastService.category}</p>
                 </li>
               );
             })}
@@ -74,7 +74,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapStateToDispatch = dispatch => {
   return {
-    handleFetchUserById: function(id) {
+    handleFetchUserById: function (id) {
       dispatch(fetchUserById(id));
     },
     fetchServices

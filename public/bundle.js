@@ -81825,8 +81825,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import { fetchCurrentUser } from '../store'
-
 var SingleUser = function (_Component) {
   _inherits(SingleUser, _Component);
 
@@ -81845,12 +81843,18 @@ var SingleUser = function (_Component) {
     // }
 
     value: function render() {
-      console.log("SINGLE USER!!", this.props.currentUser);
-      var user = this.props.currentUser;
-      var boughtServices = this.props.currentUser.Buyer || [];
-      var soldServices = this.props.currentUser.Seller || [];
-      console.log("user is: ", user);
-      if (!user) return _react2.default.createElement(
+      var _props = this.props,
+          currentUser = _props.currentUser,
+          services = _props.services;
+
+      var pendingTransactions = services && services.filter(function (service) {
+        return service.Seller.id === currentUser.id && service.status === "Pending";
+      });
+
+      // const boughtServices = this.props.currentUser.Buyer || []
+      // const soldServices = this.props.currentUser.Seller || []
+
+      if (!currentUser) return _react2.default.createElement(
         'div',
         null,
         'No user exists at this location'
@@ -81861,9 +81865,45 @@ var SingleUser = function (_Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'Hi!!! ',
-          user.userName,
-          ' '
+          'Hi, ',
+          currentUser.userName,
+          '! '
+        ),
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Your Pending Transactions:'
+        ),
+        _react2.default.createElement(
+          'ul',
+          null,
+          pendingTransactions && pendingTransactions.map(function (transaction) {
+            return _react2.default.createElement(
+              'li',
+              { key: transaction.id },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/services/' + transaction.id },
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  transaction.name
+                )
+              ),
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Buyer: ',
+                transaction.Buyer.userName
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Category: ',
+                transaction.category
+              )
+            );
+          })
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
@@ -81874,16 +81914,6 @@ var SingleUser = function (_Component) {
             { className: 'btn btn-info new' },
             'Add a Service'
           )
-        ),
-        _react2.default.createElement(
-          'h4',
-          null,
-          'Services Bought'
-        ),
-        _react2.default.createElement(
-          'h4',
-          null,
-          'Services Sold'
         )
       );
     }
@@ -81893,9 +81923,9 @@ var SingleUser = function (_Component) {
 }(_react.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
-  console.log(state, 'CURRENT USER STATE');
   return {
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
+    services: state.services
   };
 };
 
@@ -81980,13 +82010,14 @@ var SingleUserPublic = function (_Component) {
         _react2.default.createElement(
           "h1",
           null,
-          "HI I'm ",
-          user.userName
+          "Hi, I'm ",
+          user.userName,
+          "!"
         ),
         _react2.default.createElement(
           "h1",
           null,
-          " My Listing of Goods & Services: "
+          "My Available Goods & Services: "
         ),
         _react2.default.createElement(
           "ul",
@@ -82021,7 +82052,7 @@ var SingleUserPublic = function (_Component) {
         _react2.default.createElement(
           "h1",
           null,
-          " My Past Listing of Transactions: "
+          " My Past Transactions: "
         ),
         _react2.default.createElement(
           "ul",
@@ -82047,7 +82078,7 @@ var SingleUserPublic = function (_Component) {
               _react2.default.createElement(
                 "p",
                 null,
-                "category: ",
+                "Category: ",
                 pastService.category
               )
             );
