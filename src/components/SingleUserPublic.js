@@ -27,41 +27,46 @@ class SingleUserPublic extends Component {
     console.log("user is: ", user);
     if (!user) return <div>No user exists at this location</div>;
     return (
-      <div>
-        <img alt="profile img" src={user.imageURL} />
-        <h1>HI I'm {user.userName}</h1>
-        <h1> My Listing of Goods & Services: </h1>
-        <ul>
-          {availableServices &&
-            availableServices.map(service => {
-              return (
-                <li key={service.id}>
-                  <Link to={`/services/${service.id}`}>
-                    <h2>{service.name}</h2>
-                  </Link>
-                  <h3>{service.description}</h3>
-                  <p>category: {service.category}</p>
-                </li>
-              );
-            })}
-        </ul>
-        <h1> My Past Listing of Transactions: </h1>
-        <ul>
-          {pastServices &&
-            pastServices.map(pastService => {
-              return (
-                <li key={pastService.id}>
-                  <Link to={`/services/${pastService.id}`}>
-                    <h2>{pastService.name}</h2>
-                  </Link>
-                  <h3>{pastService.description}</h3>
-                  <p>category: {pastService.category}</p>
-                </li>
-              );
-            })}
-        </ul>
-      </div>
-    );
+      user ? (
+        <div>
+          <img alt="profile img" src={user.imageURL} />
+          <h1>Hi, I'm {user.userName}!</h1>
+          <h1>My Available Goods & Services: </h1>
+          <ul>
+            {availableServices.length ?
+              (availableServices.map(service => {
+                return (
+                  <li key={service.id}>
+                    <Link to={`/services/${service.id}`}>
+                      <h2>{service.name}</h2>
+                    </Link>
+                    <h3>{service.description}</h3>
+                    <p>Category: {service.category}</p>
+                  </li>
+                );
+              })) : (<h4>No available goods and services.</h4>)}
+          </ul>
+          <h1> My Past Transactions: </h1>
+          <ul>
+            {pastServices.length ?
+              (pastServices.map(pastService => {
+                return (
+                  <li key={pastService.id}>
+                    <Link to={`/services/${pastService.id}`}>
+                      <h2>{pastService.name}</h2>
+                    </Link>
+                    <h3>{pastService.description}</h3>
+                    <p>Category: {pastService.category}</p>
+                  </li>
+                );
+              })) : (<h4>No past transactions.</h4>)}
+          </ul>
+        </div>
+      ) : (<div />
+
+        )
+
+    )
   }
 }
 
@@ -74,7 +79,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapStateToDispatch = dispatch => {
   return {
-    handleFetchUserById: function(id) {
+    handleFetchUserById: function (id) {
       dispatch(fetchUserById(id));
     },
     fetchServices

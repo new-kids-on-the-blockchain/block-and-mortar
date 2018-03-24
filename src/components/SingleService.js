@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchServices, fetchContract, updateService, updateCompleteService } from '../store'
+import { fetchServiceById, fetchServices, fetchContract, updateService, updateCompleteService } from '../store'
 
 class SingleService extends Component {
   constructor() {
@@ -43,8 +43,8 @@ class SingleService extends Component {
     const service = this.props.singleService
     const currentUser = this.props.currentUser
     if (!service) return <div>No service exists at this location</div>
-
     return (
+      this.props.singleService &&
       <div>
         <h1>{service.name} </h1>
         <img src={service.imgUrl} />

@@ -15,7 +15,7 @@ export function getServiceById(service) {
 //thunk
 export function fetchServiceById(id){
     return function thunk(dispatch){
-        return axios.get(`/service/${id}`, {baseURL})
+        return axios.get(`/services/${id}`, {baseURL})
         .then(res => res.data)
         .then(service => dispatch(getServiceById(service)))
         .catch(err => console.log(err));

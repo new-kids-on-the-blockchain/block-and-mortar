@@ -30,7 +30,6 @@ class AllServices extends Component {
       displayedServices = services.filter(service => service.category === this.state.selectedCategory)
     }
 
-    console.log('displayedServices', displayedServices)
     if (!services) return <div>Available services in your community loading....</div>
     else return (
       <div>
