@@ -8,16 +8,16 @@ async function seed () {
   // executed until that promise resolves!
 
   const users = await Promise.all([
-    User.create({userName: 'karl', email: 'karl@email.com', password: '123', accountAddress: '0xcbd14b623d49fd1cad0fa4a805f37b469526c5f6', isAdmin: false}),
-    User.create({userName: 'annabel', email: 'annabel@email.com', password: '123', accountAddress: '0xbddae5ebde94256d38ea339e0a7a928bcaf3c61e', isAdmin: true}),
-    User.create({userName: 'claudia', email: 'claudia@email.com', password: '123', accountAddress: '0x9ae54767568a1467585113f63a38aaf8f52492fe', isAdmin: true}),
-    User.create({userName: 'kait', email: 'kait@email.com', password: '123', accountAddress: '0x3611e401197303a50972c62d9ac419fe77a3a28f', isAdmin: true}),
-    User.create({userName: 'anjali', email: 'anjali@email.com', password: '123', accountAddress: '0xc004b142988348ed21d35b80b2dd1e58a3da06e9', isAdmin: true}),
-    User.create({userName: 'rohit', email: 'rohit@email.com', password: '123', accountAddress: '0x9a5971b15bf5be750eda2a8db3660e0d510e7fc2', isAdmin: false}),
-    User.create({userName: 'esteban', email: 'este@email.com', password: '123', accountAddress: '0x2363935a4aa889c9d9f594c9a85fa680ead942ef', isAdmin: false}),
-    User.create({userName: 'irene', email: 'bob@email.com', password: '123', accountAddress: '0x9fa899e5477a10f13206774d1e88cabafe747de7', isAdmin: false}),
-    User.create({userName: 'leigh', email: 'leigh@email.com', password: '123', accountAddress: '0x103bec78cd3679b723422369643a1e9474702c4a', isAdmin: false}),
-    User.create({userName: 'kate', email: 'kate@gmail.com', password: '123', accountAddress: '0x4cbed4db7330ede5569ea2461304388cd88d697b', isAdmin: false})
+    User.create({userName: 'karl', email: 'karl@email.com', password: '123', accountAddress: '0xcbd14b623d49fd1cad0fa4a805f37b469526c5f6', isAdmin: false, imageURL: '/assets/avatars/avatars_0000_1-copy.png'}),
+    User.create({userName: 'annabel', email: 'annabel@email.com', password: '123', accountAddress: '0xbddae5ebde94256d38ea339e0a7a928bcaf3c61e', isAdmin: true, imageURL: '/assets/avatars/avatars_0003_4-copy.png'}),
+    User.create({userName: 'claudia', email: 'claudia@email.com', password: '123', accountAddress: '0x9ae54767568a1467585113f63a38aaf8f52492fe', isAdmin: true, imageURL: '/assets/avatars/avatars_0010_11-copy.png'}),
+    User.create({userName: 'kait', email: 'kait@email.com', password: '123', accountAddress: '0x3611e401197303a50972c62d9ac419fe77a3a28f', isAdmin: true, imageURL: '/assets/avatars/avatars_0013_14-copy.png'}),
+    User.create({userName: 'anjali', email: 'anjali@email.com', password: '123', accountAddress: '0xc004b142988348ed21d35b80b2dd1e58a3da06e9', isAdmin: true, imageURL: '/assets/avatars/avatars_0011_12-copy.png'}),
+    User.create({userName: 'rohit', email: 'rohit@email.com', password: '123', accountAddress: '0x9a5971b15bf5be750eda2a8db3660e0d510e7fc2', isAdmin: false, imageURL: '/assets/avatars/avatars_0012_13-copy.png'}),
+    User.create({userName: 'esteban', email: 'este@email.com', password: '123', accountAddress: '0x2363935a4aa889c9d9f594c9a85fa680ead942ef', isAdmin: false, imageURL: '/assets/avatars/avatars_0009_10-copy.png'}),
+    User.create({userName: 'irene', email: 'bob@email.com', password: '123', accountAddress: '0x9fa899e5477a10f13206774d1e88cabafe747de7', isAdmin: false, imageURL: '/assets/avatars/avatars_0008_9-copy.png'}),
+    User.create({userName: 'leigh', email: 'leigh@email.com', password: '123', accountAddress: '0x103bec78cd3679b723422369643a1e9474702c4a', isAdmin: false, imageURL: '/assets/avatars/avatars_0006_7-copy.png'}),
+    User.create({userName: 'kate', email: 'kate@gmail.com', password: '123', accountAddress: '0x4cbed4db7330ede5569ea2461304388cd88d697b', isAdmin: false, imageURL: '/assets/avatars/avatars_0004_5-copy.png'})
   ])
 
   const services = await Promise.all([

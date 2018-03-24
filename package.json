@@ -88,13 +88,14 @@
     "webpack": "^4.2.0"
   },
   "scripts": {
-    "build-dev": "webpack -w",
+    "build-dev": "webpack --mode development -w",
     "start": "concurrently \"npm run start-server\" \"npm run client\"",
     "client": "node scripts/start.js",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
     "start-dev": "npm run build-dev & npm run start-server",
     "seed": "node scripts/seed.js",
-    "test": "NODE_ENV='test' mocha ./server/**/*.spec.js ./server/**/**/*.spec.js --compilers js:babel-register"
+    "test": "NODE_ENV='test' mocha ./server/**/*.spec.js ./server/**/**/*.spec.js --compilers js:babel-register",
+    "build-prod": "webpack --mode production"
   },
   "jest": {
     "collectCoverageFrom": [

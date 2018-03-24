@@ -15,6 +15,7 @@ class AddService extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+<<<<<<< HEAD
   componentWillMount() {
     //Jon insisted on this
     this.collectBlockchainInfo()
@@ -32,12 +33,16 @@ class AddService extends Component {
   }
 
   handleSubmit(evt) {
+=======
+  handleSubmit(evt, currentUser) {
+>>>>>>> master
     evt.preventDefault();
     const formData = {
       name: evt.target.serviceName.value,
       category: evt.target.serviceCategory.value,
       price: evt.target.servicePrice.value,
       description: evt.target.serviceDescription.value,
+      imgUrl: evt.target.imgUrl.value ? evt.target.imgUrl.value : "https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg",
       contractId: null,
       seller: this.props.currentUser.id
     };
@@ -58,11 +63,12 @@ class AddService extends Component {
   }
 
   render() {
+    const currentUser = this.props.currentUser
     const { name, description, category, price } = this.state;
     return (
       this.props.contract && (
         <div>
-          <h2>CREATE A SERVICE</h2>
+          <h2>CREATE A SERVICE!!!!!!</h2>
 
           <form onSubmit={this.handleSubmit}>
             <h3> Name: </h3>
@@ -82,6 +88,8 @@ class AddService extends Component {
             />
             <h3> Description: </h3>
             <textarea name="serviceDescription" rows="1" cols="50" />
+            <h3> Image URL: </h3>
+            <input name="imgUrl" />
             <button> Submit </button>
           </form>
         </div>
