@@ -66,7 +66,6 @@ contract BarterAgreement {
     function completeAgreement(uint id) public payable {
         Agreement storage agreement = agreements[id];
         require(agreement.buyer == msg.sender);
-        require(msg.value == agreement.price);
         agreement.owner.transfer(msg.value);
         agreement.completed = true;
         agreement.inProgress = false;
