@@ -33,8 +33,8 @@ class SingleUserPublic extends Component {
           <h1>Hi, I'm {user.userName}!</h1>
           <h1>My Available Goods & Services: </h1>
           <ul>
-            {availableServices &&
-              availableServices.map(service => {
+            {availableServices.length ?
+              (availableServices.map(service => {
                 return (
                   <li key={service.id}>
                     <Link to={`/services/${service.id}`}>
@@ -44,12 +44,12 @@ class SingleUserPublic extends Component {
                     <p>Category: {service.category}</p>
                   </li>
                 );
-              })}
+              })) : (<h4>No available goods and services.</h4>)}
           </ul>
           <h1> My Past Transactions: </h1>
           <ul>
-            {pastServices &&
-              pastServices.map(pastService => {
+            {pastServices.length ?
+              (pastServices.map(pastService => {
                 return (
                   <li key={pastService.id}>
                     <Link to={`/services/${pastService.id}`}>
@@ -59,7 +59,7 @@ class SingleUserPublic extends Component {
                     <p>Category: {pastService.category}</p>
                   </li>
                 );
-              })}
+              })) : (<h4>No past transactions.</h4>)}
           </ul>
         </div>
       ) : (<div />

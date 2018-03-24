@@ -81849,9 +81849,11 @@ var SingleUser = function (_Component) {
       var pendingSoldTransactions = services && services.filter(function (service) {
         return service.Seller.id === currentUser.id && service.status === "Pending";
       });
+      var pendingPurchases = services && services.filter(function (services) {
+        return services.Buyer.id === currentUser.id && services.status === "Pending";
+      });
       // const boughtServices = this.props.currentUser.Buyer || []
       // const soldServices = this.props.currentUser.Seller || []
-      console.log(pendingSoldTransactions, "OAYYOOER");
 
       if (!currentUser) return _react2.default.createElement(
         'div',
@@ -81907,6 +81909,51 @@ var SingleUser = function (_Component) {
             'h4',
             null,
             'You have no transactions to fulfill.'
+          )
+        ),
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Your Pending Purchases:'
+        ),
+        _react2.default.createElement(
+          'ul',
+          null,
+          pendingPurchases.length ? pendingPurchases.map(function (transactions) {
+            return _react2.default.createElement(
+              'li',
+              { key: transactions.id },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/services/' + transactions.id },
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  transactions.name
+                )
+              ),
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Seller: ',
+                transactions.Seller.userName
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Category: ',
+                transactions.category
+              )
+            );
+          }) : _react2.default.createElement(
+            'h4',
+            null,
+            'You have no pending purchases. ',
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/services' },
+              'Go make some!'
+            )
           )
         ),
         _react2.default.createElement(
@@ -82026,7 +82073,7 @@ var SingleUserPublic = function (_Component) {
         _react2.default.createElement(
           "ul",
           null,
-          availableServices && availableServices.map(function (service) {
+          availableServices.length ? availableServices.map(function (service) {
             return _react2.default.createElement(
               "li",
               { key: service.id },
@@ -82051,7 +82098,11 @@ var SingleUserPublic = function (_Component) {
                 service.category
               )
             );
-          })
+          }) : _react2.default.createElement(
+            "h4",
+            null,
+            "No available goods and services."
+          )
         ),
         _react2.default.createElement(
           "h1",
@@ -82061,7 +82112,7 @@ var SingleUserPublic = function (_Component) {
         _react2.default.createElement(
           "ul",
           null,
-          pastServices && pastServices.map(function (pastService) {
+          pastServices.length ? pastServices.map(function (pastService) {
             return _react2.default.createElement(
               "li",
               { key: pastService.id },
@@ -82086,7 +82137,11 @@ var SingleUserPublic = function (_Component) {
                 pastService.category
               )
             );
-          })
+          }) : _react2.default.createElement(
+            "h4",
+            null,
+            "No past transactions."
+          )
         )
       ) : _react2.default.createElement("div", null);
     }
