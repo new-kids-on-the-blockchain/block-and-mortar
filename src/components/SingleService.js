@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchServiceById, fetchServices, fetchContract, updateService, updateCompleteService } from '../store'
+import { fetchWeb3, fetchServiceById, fetchServices, fetchAccounts, fetchContract, updateService, updateCompleteService } from '../store'
 
 class SingleService extends Component {
   constructor() {
@@ -14,6 +14,18 @@ class SingleService extends Component {
   componentDidMount() {
     this.props.handleFetchServices()
     this.props.handleFetchContract()
+    this.collectBlockchainInfo()
+    }
+
+    async collectBlockchainInfo() {
+    // Get network provider, web3, and truffle contract instance and store them on state.
+    try {
+      await this.props.fetchWeb3();
+      const web3 = this.props.web3
+      this.props.fetchAccounts(web3);
+    } catch (e) {
+      console.log(e, 'AWAIT collectBlockchainInfo DIDN"T WORK');
+    }
   }
 
   handleClick(evt) {
@@ -26,7 +38,7 @@ class SingleService extends Component {
 
   handleComplete(evt) {
     evt.preventDefault()
-    this.props.contract.completeAgreement(this.props.singleService.contractId, { from: this.props.accounts[0] })
+    this.props.contract.completeAgreement(this.props.singleService.contractId, { from: this.props.accounts[0], value: this.props.web3.toWei(this.props.singleService.price, 'ether')})
       .then(agreementCompleted => { console.log(agreementCompleted, "COMPLETE AGREEMENT") })
       .then(() => this.props.handleCompleteService(evt, this.props.singleService))
       .catch(err => console.log('agreementCompleted failed....'))
@@ -77,14 +89,15 @@ class SingleService extends Component {
 
 }
 
-const mapStateToProps = ({ services, users, contract, accounts, currentUser }, ownProps) => ({
+const mapStateToProps = ({ web3, services, users, contract, accounts, currentUser }, ownProps) => ({
   singleService: services.find(
     service => +service.id === +ownProps.match.params.id
   ),
   contract,
   users,
   accounts,
-  currentUser
+  currentUser,
+  web3
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -105,6 +118,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     evt.preventDefault()
     service.status = "Completed";
     dispatch(updateCompleteService(service, ownProps))
+  },
+  fetchWeb3: function () {
+    return dispatch(fetchWeb3());
+  },
+  fetchAccounts: function (web3) {
+    return dispatch(fetchAccounts(web3));
   },
   handleCloseService(evt, service) {
     evt.preventDefault()

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { postService, fetchContract } from "../store";
-import BarterAgreement from '../../build/contracts/BarterAgreement.json';
+import { fetchWeb3, postService, fetchAccounts } from "../store";
 import { withRouter } from 'react-router-dom'
 
 class AddService extends Component {
@@ -16,6 +15,23 @@ class AddService extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillMount() {
+    //Jon insisted on this
+    this.collectBlockchainInfo()
+    }
+
+    async collectBlockchainInfo() {
+    // Get network provider, web3, and truffle contract instance and store them on state.
+      try {
+        await this.props.fetchWeb3();
+        const web3 = this.props.web3
+        this.props.fetchAccounts(web3);
+      } catch (e) {
+        console.log(e, 'AWAIT collectBlockchainInfo DIDN"T WORK');
+    }
+  }
+
+
   handleSubmit(evt, currentUser) {
     evt.preventDefault();
     const formData = {
@@ -23,14 +39,14 @@ class AddService extends Component {
       category: evt.target.serviceCategory.value,
       price: evt.target.servicePrice.value,
       description: evt.target.serviceDescription.value,
-      imgUrl: evt.target.imgUrl.value ? evt.target.imgUrl.value : "https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg", 
+      imgUrl: evt.target.imgUrl.value ? evt.target.imgUrl.value : "https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg",
       contractId: null,
       seller: this.props.currentUser.id
     };
 
     const price = formData.price;
     const { postNewService } = this.props;
-
+    console.log("our current account is: ", this.props.accounts[0])
     const newContract = this.props.contract
       .newAgreement(price, { from: this.props.accounts[0] })
       .then(newAgreement => {
@@ -92,8 +108,14 @@ const mapState = state => {
 const mapDispatch = (dispatch, ownProps) => {
   return {
     postNewService: function(service) {
-      dispatch(postService(service, ownProps));
-    }
+      dispatch(postService(service, ownProps))
+    },
+    fetchAccounts: function(web3) {
+      dispatch(fetchAccounts(web3))
+    },
+    fetchWeb3: function () {
+      return dispatch(fetchWeb3());
+    },
   };
 };
 
