@@ -22,7 +22,6 @@ class Routes extends Component {
 
   render () {
     const {isLoggedIn} = this.props;
-    console.log(this.props.services, "SERVICES IN ROUTESSSSSS!!!!!")
     return (
       <div>
         <NavBar />

@@ -80958,7 +80958,6 @@ var AllServices = function (_Component) {
         });
       }
 
-      console.log('displayedServices', displayedServices);
       if (!services) return _react2.default.createElement(
         'div',
         null,
@@ -81313,7 +81312,6 @@ var Routes = function (_Component) {
     value: function render() {
       var isLoggedIn = this.props.isLoggedIn;
 
-      console.log(this.props.services, "SERVICES IN ROUTESSSSSS!!!!!");
       return _react2.default.createElement(
         'div',
         null,
@@ -81600,11 +81598,8 @@ var SingleService = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.props.singleService, "HALP PLEASE WORK COME ON");
       var service = this.props.singleService;
-      console.log(this.props.services, "SERVICIOOOOS");
       var currentUser = this.props.currentUser;
-      console.log(currentUser, "CURRENT USER");
       if (!service) return _react2.default.createElement(
         'div',
         null,

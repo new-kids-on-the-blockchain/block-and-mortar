@@ -40,11 +40,8 @@ class SingleService extends Component {
 
   //.logs[0].args.id.toString()
   render() {
-    console.log(this.props.singleService, "HALP PLEASE WORK COME ON")
     const service = this.props.singleService
-    console.log(this.props.services, "SERVICIOOOOS")
     const currentUser = this.props.currentUser
-    console.log(currentUser, "CURRENT USER")
     if (!service) return <div>No service exists at this location</div>
     return (
       this.props.singleService &&
