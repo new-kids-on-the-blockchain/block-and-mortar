@@ -13,15 +13,16 @@ class SingleUser extends Component {
     const pendingSoldTransactions = services && services.filter(service => service.Seller.id === currentUser.id && service.status === "Pending")
     // const boughtServices = this.props.currentUser.Buyer || []
     // const soldServices = this.props.currentUser.Seller || []
+    console.log(pendingSoldTransactions, "OAYYOOER")
 
     if (!currentUser) return <div>No user exists at this location</div>
 
     return (
       <div>
         <h1>Welcome back, {currentUser.userName}! </h1>
-        <h2>Transactions to Fulfill:</h2>
+        <h1>Transactions to Fulfill:</h1>
         <ul>
-          {pendingSoldTransactions &&
+          {pendingSoldTransactions.length ? (
             pendingSoldTransactions.map(transaction => {
               return (
                 <li key={transaction.id}>
@@ -32,8 +33,9 @@ class SingleUser extends Component {
                   <p>Category: {transaction.category}</p>
                 </li>
               );
-            })}
+            })) : (<h4>You have no transactions to fulfill.</h4>)}
         </ul>
+
         <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
       </div>
     )

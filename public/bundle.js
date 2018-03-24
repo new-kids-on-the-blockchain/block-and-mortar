@@ -81851,6 +81851,7 @@ var SingleUser = function (_Component) {
       });
       // const boughtServices = this.props.currentUser.Buyer || []
       // const soldServices = this.props.currentUser.Seller || []
+      console.log(pendingSoldTransactions, "OAYYOOER");
 
       if (!currentUser) return _react2.default.createElement(
         'div',
@@ -81869,14 +81870,14 @@ var SingleUser = function (_Component) {
           '! '
         ),
         _react2.default.createElement(
-          'h2',
+          'h1',
           null,
           'Transactions to Fulfill:'
         ),
         _react2.default.createElement(
           'ul',
           null,
-          pendingSoldTransactions && pendingSoldTransactions.map(function (transaction) {
+          pendingSoldTransactions.length ? pendingSoldTransactions.map(function (transaction) {
             return _react2.default.createElement(
               'li',
               { key: transaction.id },
@@ -81902,7 +81903,11 @@ var SingleUser = function (_Component) {
                 transaction.category
               )
             );
-          })
+          }) : _react2.default.createElement(
+            'h4',
+            null,
+            'You have no transactions to fulfill.'
+          )
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
