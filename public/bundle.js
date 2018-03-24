@@ -81412,6 +81412,20 @@ var AuthForm = function AuthForm(props) {
         null,
         _react2.default.createElement(
           'label',
+          { htmlFor: 'userName' },
+          _react2.default.createElement(
+            'small',
+            null,
+            'Username'
+          )
+        ),
+        _react2.default.createElement('input', { name: 'userName', type: 'text' })
+      ),
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'label',
           { htmlFor: 'email' },
           _react2.default.createElement(
             'small',
@@ -81478,9 +81492,10 @@ var mapDispatch = function mapDispatch(dispatch) {
     handleSubmit: function handleSubmit(evt) {
       evt.preventDefault();
       var formName = evt.target.name;
+      var userName = evt.target.userName.value;
       var email = evt.target.email.value;
       var password = evt.target.password.value;
-      dispatch((0, _store.auth)(email, password, formName));
+      dispatch((0, _store.auth)(userName, email, password, formName));
     }
   };
 };
@@ -81846,14 +81861,15 @@ var SingleUser = function (_Component) {
           currentUser = _props.currentUser,
           services = _props.services;
 
-      var pendingSoldTransactions = services && services.filter(function (service) {
+      var pendingSells = currentUser && services && services.filter(function (service) {
         return service.Seller.id === currentUser.id && service.status === "Pending";
       });
-      var pendingPurchases = services && services.filter(function (services) {
-        return services.Buyer.id === currentUser.id && services.status === "Pending";
-      });
+      //const pendingPurchases = currentUser && services && services.filter(service => (service.Buyer.id === currentUser.id) && service.status === "Pending")
+
       // const boughtServices = this.props.currentUser.Buyer || []
       // const soldServices = this.props.currentUser.Seller || []
+      console.log(pendingSells, "PENDING SELLS");
+      //console.log(pendingPurchases, "PENDING PURCHASESS")
 
       if (!currentUser) return _react2.default.createElement(
         'div',
@@ -81879,7 +81895,7 @@ var SingleUser = function (_Component) {
         _react2.default.createElement(
           'ul',
           null,
-          pendingSoldTransactions.length ? pendingSoldTransactions.map(function (transaction) {
+          pendingSells.length ? pendingSells.map(function (transaction) {
             return _react2.default.createElement(
               'li',
               { key: transaction.id },
@@ -81901,6 +81917,12 @@ var SingleUser = function (_Component) {
               _react2.default.createElement(
                 'p',
                 null,
+                'Status: ',
+                transaction.status
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
                 'Category: ',
                 transaction.category
               )
@@ -81909,51 +81931,6 @@ var SingleUser = function (_Component) {
             'h4',
             null,
             'You have no transactions to fulfill.'
-          )
-        ),
-        _react2.default.createElement(
-          'h1',
-          null,
-          'Your Pending Purchases:'
-        ),
-        _react2.default.createElement(
-          'ul',
-          null,
-          pendingPurchases.length ? pendingPurchases.map(function (transactions) {
-            return _react2.default.createElement(
-              'li',
-              { key: transactions.id },
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/services/' + transactions.id },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  transactions.name
-                )
-              ),
-              _react2.default.createElement(
-                'h3',
-                null,
-                'Seller: ',
-                transactions.Seller.userName
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                'Category: ',
-                transactions.category
-              )
-            );
-          }) : _react2.default.createElement(
-            'h4',
-            null,
-            'You have no pending purchases. ',
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: '/services' },
-              'Go make some!'
-            )
           )
         ),
         _react2.default.createElement(
@@ -81981,6 +81958,22 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(SingleUser));
+
+// <h1>Your Pending Purchases:</h1>
+// <ul>
+//   {pendingPurchases.length ? (
+//     pendingPurchases.map(transactions => {
+//       return (
+//         <li key={transactions.id}>
+//           <Link to={`/services/${transactions.id}`}>
+//             <h2>{transactions.name}</h2>
+//           </Link>
+//           <h3>Seller: {transactions.Seller.userName}</h3>
+//           <p>Category: {transactions.category}</p>
+//         </li>
+//       );
+//     })) : (<h4>You have no pending purchases. <Link to="/services">Go make some!</Link></h4>)}
+// </ul>
 
 /***/ }),
 
@@ -82462,9 +82455,9 @@ var me = exports.me = function me() {
   };
 };
 
-var auth = exports.auth = function auth(email, password, method) {
+var auth = exports.auth = function auth(userName, email, password, method) {
   return function (dispatch) {
-    _axios2.default.post('/auth/' + method, { email: email, password: password }, { baseURL: baseURL }).then(function (res) {
+    _axios2.default.post('/auth/' + method, { userName: userName, email: email, password: password }, { baseURL: baseURL }).then(function (res) {
       dispatch(getCurrentUser(res.data));
       _history2.default.push('/home');
     }, function (authError) {
