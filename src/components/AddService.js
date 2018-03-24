@@ -15,7 +15,6 @@ class AddService extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-<<<<<<< HEAD
   componentWillMount() {
     //Jon insisted on this
     this.collectBlockchainInfo()
@@ -32,10 +31,8 @@ class AddService extends Component {
     }
   }
 
-  handleSubmit(evt) {
-=======
+
   handleSubmit(evt, currentUser) {
->>>>>>> master
     evt.preventDefault();
     const formData = {
       name: evt.target.serviceName.value,
