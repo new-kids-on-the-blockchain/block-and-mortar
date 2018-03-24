@@ -15,10 +15,11 @@ class SingleUser extends Component {
 
     // const boughtServices = this.props.currentUser.Buyer || []
     // const soldServices = this.props.currentUser.Seller || []
-    console.log(pendingSells, "PENDING SELLS")
+  
     //console.log(pendingPurchases, "PENDING PURCHASESS")
 
     if (!currentUser) return <div>No user exists at this location</div>
+    console.log(pendingSells, "PENDING SELLS")
 
     return (
       <div>

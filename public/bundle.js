@@ -80824,9 +80824,9 @@ var AddService = function (_Component) {
         "div",
         null,
         _react2.default.createElement(
-          "h2",
+          "h1",
           null,
-          "CREATE A SERVICE!!!!!!"
+          "Post a Service"
         ),
         _react2.default.createElement(
           "form",
@@ -81970,7 +81970,7 @@ var SingleUser = function (_Component) {
 
       // const boughtServices = this.props.currentUser.Buyer || []
       // const soldServices = this.props.currentUser.Seller || []
-      console.log(pendingSells, "PENDING SELLS");
+
       //console.log(pendingPurchases, "PENDING PURCHASESS")
 
       if (!currentUser) return _react2.default.createElement(
@@ -81978,6 +81978,7 @@ var SingleUser = function (_Component) {
         null,
         'No user exists at this location'
       );
+      console.log(pendingSells, "PENDING SELLS");
 
       return _react2.default.createElement(
         'div',
