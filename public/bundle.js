@@ -81554,6 +81554,7 @@ var SingleService = function (_Component) {
   _createClass(SingleService, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      this.props.handleFetchServiceById(this.props.match.params.id);
       this.props.handleFetchServices();
       this.props.handleFetchContract();
     }
@@ -81598,7 +81599,9 @@ var SingleService = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var service = this.props.singleService;
+      console.log(this.props.service, "HALP PLEASE WORK COME ON");
+      var service = this.props.service;
+      console.log(this.props.service, "SERVICIOOOO");
       var currentUser = this.props.currentUser;
       if (!service) return _react2.default.createElement(
         'div',
@@ -81744,15 +81747,17 @@ var SingleService = function (_Component) {
 }(_react.Component);
 
 var mapStateToProps = function mapStateToProps(_ref, ownProps) {
-  var services = _ref.services,
+  var service = _ref.service,
+      services = _ref.services,
       users = _ref.users,
       contract = _ref.contract,
       accounts = _ref.accounts,
       currentUser = _ref.currentUser;
   return {
-    singleService: services.find(function (service) {
-      return +service.id === +ownProps.match.params.id;
-    }),
+    // singleService: services.find(
+    //   service => +service.id === +ownProps.match.params.id
+    // ),
+    service: service,
     contract: contract,
     users: users,
     accounts: accounts,
@@ -81762,6 +81767,9 @@ var mapStateToProps = function mapStateToProps(_ref, ownProps) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
+    handleFetchServiceById: function handleFetchServiceById(id) {
+      dispatch((0, _store.fetchServiceById)(id));
+    },
     handleFetchServices: function handleFetchServices() {
       dispatch((0, _store.fetchServices)());
     },
@@ -82043,7 +82051,7 @@ var SingleUserPublic = function (_Component) {
               _react2.default.createElement(
                 "p",
                 null,
-                "category: ",
+                "Category: ",
                 service.category
               )
             );
@@ -82084,11 +82092,7 @@ var SingleUserPublic = function (_Component) {
             );
           })
         )
-      ) : _react2.default.createElement(
-        "h1",
-        null,
-        "No user found."
-      );
+      ) : _react2.default.createElement("div", null);
     }
   }]);
 
@@ -82861,7 +82865,7 @@ function getServiceById(service) {
 //thunk
 function fetchServiceById(id) {
     return function thunk(dispatch) {
-        return _axios2.default.get("/service/" + id, { baseURL: baseURL }).then(function (res) {
+        return _axios2.default.get("/services/" + id, { baseURL: baseURL }).then(function (res) {
             return res.data;
         }).then(function (service) {
             return dispatch(getServiceById(service));

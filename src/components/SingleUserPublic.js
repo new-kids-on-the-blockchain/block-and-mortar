@@ -28,45 +28,45 @@ class SingleUserPublic extends Component {
     if (!user) return <div>No user exists at this location</div>;
     return (
       user ? (
-      <div>
-        <img alt="profile img" src={user.imageURL} />
-        <h1>Hi, I'm {user.userName}!</h1>
-        <h1>My Available Goods & Services: </h1>
-        <ul>
-          {availableServices &&
-            availableServices.map(service => {
-              return (
-                <li key={service.id}>
-                  <Link to={`/services/${service.id}`}>
-                    <h2>{service.name}</h2>
-                  </Link>
-                  <h3>{service.description}</h3>
-                  <p>category: {service.category}</p>
-                </li>
-              );
-            })}
-        </ul>
-        <h1> My Past Transactions: </h1>
-        <ul>
-          {pastServices &&
-            pastServices.map(pastService => {
-              return (
-                <li key={pastService.id}>
-                  <Link to={`/services/${pastService.id}`}>
-                    <h2>{pastService.name}</h2>
-                  </Link>
-                  <h3>{pastService.description}</h3>
-                  <p>Category: {pastService.category}</p>
-                </li>
-              );
-            })}
-        </ul>
-      </div>
-          ) : ( <h1>No user found.</h1>
-            
-          )
+        <div>
+          <img alt="profile img" src={user.imageURL} />
+          <h1>Hi, I'm {user.userName}!</h1>
+          <h1>My Available Goods & Services: </h1>
+          <ul>
+            {availableServices &&
+              availableServices.map(service => {
+                return (
+                  <li key={service.id}>
+                    <Link to={`/services/${service.id}`}>
+                      <h2>{service.name}</h2>
+                    </Link>
+                    <h3>{service.description}</h3>
+                    <p>Category: {service.category}</p>
+                  </li>
+                );
+              })}
+          </ul>
+          <h1> My Past Transactions: </h1>
+          <ul>
+            {pastServices &&
+              pastServices.map(pastService => {
+                return (
+                  <li key={pastService.id}>
+                    <Link to={`/services/${pastService.id}`}>
+                      <h2>{pastService.name}</h2>
+                    </Link>
+                    <h3>{pastService.description}</h3>
+                    <p>Category: {pastService.category}</p>
+                  </li>
+                );
+              })}
+          </ul>
+        </div>
+      ) : (<div />
 
-  )
+        )
+
+    )
   }
 }
 
