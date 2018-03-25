@@ -3,12 +3,11 @@ const {Message} = require('../db/models')
 
 module.exports = router
 
-
-router.get('/', (req, res, next) => {
-  Message.getAllByUser(req.user.id)
-    .then(messages => res.json(messages))
-    .catch(next)
-})
+// router.get('/', (req, res, next) => {
+//   Message.findAll(where: {sender:req.user.id)
+//     .then(messages => res.json(messages))
+//     .catch(next)
+// })
 
 router.post('/', (req, res, next) => {
   Message.create(req.body)
@@ -22,5 +21,4 @@ router.get('/:id', (req, res, next) => {
       .then(message => res.json(message))
       .catch(next)
   })
-
 
