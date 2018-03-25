@@ -57,8 +57,8 @@ class SingleService extends Component {
     if (!service) return <div>No service exists at this location</div>
     return (
       this.props.singleService &&
-      <div>
-        <h1 className="avenir">{service.name} </h1>
+      <div className="avenir">
+        <h1 className="purple">{service.name} </h1>
         <img src={service.imgUrl} />
         <h4><b>Description:</b> {service.description} </h4>
         <h4><b>Category:</b> {service.category} </h4>

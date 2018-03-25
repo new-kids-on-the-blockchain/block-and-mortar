@@ -81014,7 +81014,7 @@ var AllServices = function (_Component) {
         'Available services in your community loading....'
       );else return _react2.default.createElement(
         'div',
-        null,
+        { className: 'avenir' },
         _react2.default.createElement(
           'div',
           null,
@@ -81714,10 +81714,10 @@ var SingleService = function (_Component) {
       );
       return this.props.singleService && _react2.default.createElement(
         'div',
-        null,
+        { className: 'avenir' },
         _react2.default.createElement(
           'h1',
-          { className: 'avenir' },
+          { className: 'purple' },
           service.name,
           ' '
         ),
@@ -81981,17 +81981,17 @@ var SingleUser = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'avenir' },
         _react2.default.createElement(
           'h1',
-          { className: 'avenir' },
+          { className: 'purple' },
           'Welcome back, ',
           currentUser.userName,
           '! '
         ),
         _react2.default.createElement(
           'h2',
-          { className: 'avenir' },
+          null,
           'Transactions to Fulfill:'
         ),
         _react2.default.createElement(
@@ -82151,17 +82151,17 @@ var SingleUserPublic = function (_Component) {
       );
       return user.id ? _react2.default.createElement(
         "div",
-        null,
+        { className: "avenir" },
         _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
         _react2.default.createElement(
           "h1",
-          null,
+          { className: "dark-pink" },
           "Hi, I'm ",
           user.userName,
           "!"
         ),
         _react2.default.createElement(
-          "h1",
+          "h2",
           null,
           "My Available Goods & Services: "
         ),
@@ -82200,7 +82200,7 @@ var SingleUserPublic = function (_Component) {
           )
         ),
         _react2.default.createElement(
-          "h1",
+          "h2",
           null,
           " My Past Transactions: "
         ),

@@ -28,10 +28,10 @@ class SingleUserPublic extends Component {
     if (!user.id) return <div>No user found</div>;
     return (
       user.id ? (
-        <div>
+        <div className="avenir">
           <img alt="profile img" src={user.imageURL} />
-          <h1>Hi, I'm {user.userName}!</h1>
-          <h1>My Available Goods & Services: </h1>
+          <h1 className="dark-pink">Hi, I'm {user.userName}!</h1>
+          <h2>My Available Goods & Services: </h2>
           <ul>
             {availableServices.length ?
               (availableServices.map(service => {
@@ -46,7 +46,7 @@ class SingleUserPublic extends Component {
                 );
               })) : (<h4>No available goods and services.</h4>)}
           </ul>
-          <h1> My Past Transactions: </h1>
+          <h2> My Past Transactions: </h2>
           <ul>
             {pastServices.length ?
               (pastServices.map(pastService => {

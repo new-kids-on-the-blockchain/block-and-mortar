@@ -32,7 +32,7 @@ class AllServices extends Component {
 
     if (!services) return <div>Available services in your community loading....</div>
     else return (
-      <div>
+      <div className="avenir">
         <div>
           <h1 className="avenir purple">Available Services in Your Community </h1>
           <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
