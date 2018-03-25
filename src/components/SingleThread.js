@@ -1,27 +1,21 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 
-//necessary functions need to be imported from store
-
-class SingleThread extends Component {
-  constructor() {
-    super();
-    this.state = {}
-  }
-
-  render() {
-    return (
-      <div>
-       This is a single thread
-      </div>
-    )
-  }
+const SingleThread = (props) => {
+  console.log("current thread in Single Thread: ", props.currentThread)
+  let messages = props.currentThread.messages
+  return (
+    <div>
+      {
+        !props.currentThread.id
+        ? <div>No Conversation Selected</div>
+        : !messages.length
+          ? <div>No Messages in this Conversation</div>
+          : messages.map(message => {
+            return <div key={message.id}>{message.content}</div>
+          })
+      }
+    </div>
+  )
 }
 
-const mapState = state => {
-  return {
-    state: state
-  }
-}
-
-export default connect(mapState)(SingleThread)
+export default SingleThread

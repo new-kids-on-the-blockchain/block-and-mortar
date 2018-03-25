@@ -5,8 +5,7 @@ module.exports = router
 
 // this route gets all threads by a specific user, threads on which they are the initiator and threads on which they are the recipient. for loading of the "inbox" component
 router.get('/', (req, res, next) => {
-  Thread.getAllByUser(req.user.id
-  )
+  Thread.getAllByUser(req.user.id)
     .then(threads => res.json(threads))
     .catch(next)
 })
