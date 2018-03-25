@@ -69,17 +69,17 @@ class SingleService extends Component {
         </Link>
         <Link to="/services"><button>Back to Services</button></Link>
 
-        {service.isAvailable && currentUser.id !== service.seller.id ? <button onClick={this.handleClick}>Purchase</button> : <div />}
-        {service.isAvailable && currentUser.id === service.seller.id ? <button onClick={this.handleClose}>Close Service</button> : <div />}
-        {!service.isAvailable && service.status === "Posted" && currentUser.id === service.seller.id ? <h3>You have closed this service.</h3> : <div />}
+        {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Purchase</button> : <div />}
+        {service.isAvailable && currentUser.id === service.Seller.id ? <button onClick={this.handleClose}>Close Service</button> : <div />}
+        {!service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? <h3>You have closed this service.</h3> : <div />}
 
-        {!service.isAvailable && service.status === "Pending" && (currentUser.id === service.seller.id) ? <h3>Transaction in progress. {service.buyer.userName} has purchased this service.</h3> : <div />}
+        {!service.isAvailable && service.status === "Pending" && (currentUser.id === service.Seller.id) ? <h3>Transaction in progress. {service.Buyer.userName} has purchased this service.</h3> : <div />}
 
-        {!service.isAvailable && service.status === "Pending" && currentUser.id === service.buyer.id ? <div><button onClick={this.handleComplete}>Complete Agreement</button> <h3>Transaction in progress. Click "Complete Agreement" when you have received your goods or services.</h3> </div> : <div />}
+        {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? <div><button onClick={this.handleComplete}>Complete Agreement</button> <h3>Transaction in progress. Click "Complete Agreement" when you have received your goods or services.</h3> </div> : <div />}
 
-        {!service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.seller.id && currentUser.id !== service.buyer.id ? <h3>Service no longer available.</h3> : <div />}
+        {!service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? <h3>Service no longer available.</h3> : <div />}
 
-        {!service.isAvailable && service.status === "Completed" && (currentUser.id === service.seller.id || currentUser.id === service.buyer.id) ?
+        {!service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ?
           <h3>Congrats, transaction completed! Your blockchain contract ID is: {this.props.singleService.contractId}</h3>
           : <div />}
 

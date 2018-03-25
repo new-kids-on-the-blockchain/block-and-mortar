@@ -54,7 +54,7 @@ class SingleUser extends Component {
                   <p>Category: {transaction.category}</p>
                 </li>
               );
-            })) : (<h4>You have no transactions to fulfill.</h4>)}
+            })) : (<p>You have no pending purchases.</p>)}
         </ul>
 
       </div>
@@ -70,19 +70,3 @@ const mapStateToProps = state => {
 }
 
 export default withRouter(connect(mapStateToProps, null)(SingleUser))
-
-// <h1>Your Pending Purchases:</h1>
-// <ul>
-//   {pendingPurchases.length ? (
-//     pendingPurchases.map(transactions => {
-//       return (
-//         <li key={transactions.id}>
-//           <Link to={`/services/${transactions.id}`}>
-//             <h2>{transactions.name}</h2>
-//           </Link>
-//           <h3>Seller: {transactions.Seller.userName}</h3>
-//           <p>Category: {transactions.category}</p>
-//         </li>
-//       );
-//     })) : (<h4>You have no pending purchases. <Link to="/services">Go make some!</Link></h4>)}
-// </ul>
