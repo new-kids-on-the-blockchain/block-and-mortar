@@ -81830,29 +81830,29 @@ var SingleService = function (_Component) {
             'Back to Services'
           )
         ),
-        service.isAvailable && currentUser.id !== service.seller.id ? _react2.default.createElement(
+        service.isAvailable && currentUser.id !== service.Seller.id ? _react2.default.createElement(
           'button',
           { onClick: this.handleClick },
           'Purchase'
         ) : _react2.default.createElement('div', null),
-        service.isAvailable && currentUser.id === service.seller.id ? _react2.default.createElement(
+        service.isAvailable && currentUser.id === service.Seller.id ? _react2.default.createElement(
           'button',
           { onClick: this.handleClose },
           'Close Service'
         ) : _react2.default.createElement('div', null),
-        !service.isAvailable && service.status === "Posted" && currentUser.id === service.seller.id ? _react2.default.createElement(
+        !service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? _react2.default.createElement(
           'h3',
           null,
           'You have closed this service.'
         ) : _react2.default.createElement('div', null),
-        !service.isAvailable && service.status === "Pending" && currentUser.id === service.seller.id ? _react2.default.createElement(
+        !service.isAvailable && service.status === "Pending" && currentUser.id === service.Seller.id ? _react2.default.createElement(
           'h3',
           null,
           'Transaction in progress. ',
-          service.buyer.userName,
+          service.Buyer.userName,
           ' has purchased this service.'
         ) : _react2.default.createElement('div', null),
-        !service.isAvailable && service.status === "Pending" && currentUser.id === service.buyer.id ? _react2.default.createElement(
+        !service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? _react2.default.createElement(
           'div',
           null,
           _react2.default.createElement(
@@ -81868,12 +81868,12 @@ var SingleService = function (_Component) {
           ),
           ' '
         ) : _react2.default.createElement('div', null),
-        !service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.seller.id && currentUser.id !== service.buyer.id ? _react2.default.createElement(
+        !service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? _react2.default.createElement(
           'h3',
           null,
           'Service no longer available.'
         ) : _react2.default.createElement('div', null),
-        !service.isAvailable && service.status === "Completed" && (currentUser.id === service.seller.id || currentUser.id === service.buyer.id) ? _react2.default.createElement(
+        !service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ? _react2.default.createElement(
           'h3',
           null,
           'Congrats, transaction completed! Your blockchain contract ID is: ',
