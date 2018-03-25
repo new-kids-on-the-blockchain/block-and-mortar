@@ -81709,12 +81709,16 @@ var SingleService = function (_Component) {
       var currentUser = this.props.currentUser;
       if (!service) return _react2.default.createElement(
         'div',
-        null,
-        'No service exists at this location'
+        { className: 'avenir dark-red' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          'Oh no! No service exists at this address.'
+        )
       );
       return this.props.singleService && _react2.default.createElement(
         'div',
-        { className: 'avenir' },
+        { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns' },
         _react2.default.createElement(
           'h1',
           { className: 'purple' },
@@ -81723,7 +81727,7 @@ var SingleService = function (_Component) {
         ),
         _react2.default.createElement('img', { src: service.imgUrl }),
         _react2.default.createElement(
-          'h4',
+          'p',
           null,
           _react2.default.createElement(
             'b',
@@ -81735,7 +81739,7 @@ var SingleService = function (_Component) {
           ' '
         ),
         _react2.default.createElement(
-          'h4',
+          'p',
           null,
           _react2.default.createElement(
             'b',
@@ -81747,7 +81751,7 @@ var SingleService = function (_Component) {
           ' '
         ),
         _react2.default.createElement(
-          'h4',
+          'p',
           null,
           _react2.default.createElement(
             'b',
@@ -81759,7 +81763,7 @@ var SingleService = function (_Component) {
           ' Ether'
         ),
         _react2.default.createElement(
-          'h4',
+          'p',
           null,
           _react2.default.createElement(
             'b',
@@ -81773,7 +81777,7 @@ var SingleService = function (_Component) {
           _reactRouterDom.Link,
           { to: '/users/' + service.Seller.id },
           _react2.default.createElement(
-            'h4',
+            'p',
             null,
             _react2.default.createElement(
               'b',
@@ -81974,8 +81978,8 @@ var SingleUser = function (_Component) {
 
       if (!currentUser) return _react2.default.createElement(
         'div',
-        null,
-        'No user exists at this location'
+        { className: 'avenir dark-red' },
+        'Oh no! No user exists at this location'
       );
       console.log(pendingSells, "PENDING SELLS");
 
@@ -82030,7 +82034,7 @@ var SingleUser = function (_Component) {
               )
             );
           }) : _react2.default.createElement(
-            'h4',
+            'p',
             null,
             'You have no transactions to fulfill.'
           )
@@ -82042,7 +82046,7 @@ var SingleUser = function (_Component) {
           _react2.default.createElement(
             'button',
             { className: 'btn btn-info new' },
-            'Add a Service'
+            'Post a Service'
           )
         )
       );
@@ -82146,12 +82150,16 @@ var SingleUserPublic = function (_Component) {
       console.log("user is: ", user);
       if (!user.id) return _react2.default.createElement(
         "div",
-        null,
-        "No user found"
+        { className: "avenir dark-red" },
+        _react2.default.createElement(
+          "h2",
+          null,
+          "Oh no! No user found."
+        )
       );
       return user.id ? _react2.default.createElement(
         "div",
-        { className: "avenir" },
+        { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" },
         _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
         _react2.default.createElement(
           "h1",
@@ -82194,7 +82202,7 @@ var SingleUserPublic = function (_Component) {
               )
             );
           }) : _react2.default.createElement(
-            "h4",
+            "p",
             null,
             "No available goods and services."
           )
@@ -82233,7 +82241,7 @@ var SingleUserPublic = function (_Component) {
               )
             );
           }) : _react2.default.createElement(
-            "h4",
+            "p",
             null,
             "No past transactions."
           )

@@ -18,7 +18,7 @@ class SingleUser extends Component {
   
     //console.log(pendingPurchases, "PENDING PURCHASESS")
 
-    if (!currentUser) return <div>No user exists at this location</div>
+    if (!currentUser) return <div className="avenir dark-red">Oh no! No user exists at this location</div>
     console.log(pendingSells, "PENDING SELLS")
 
     return (
@@ -38,12 +38,12 @@ class SingleUser extends Component {
                   <p>Category: {transaction.category}</p>
                 </li>
               );
-            })) : (<h4>You have no transactions to fulfill.</h4>)}
+            })) : (<p>You have no transactions to fulfill.</p>)}
         </ul>
       
 
 
-        <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
+        <Link to="/services/new"> <button className="btn btn-info new">Post a Service</button></Link>
       </div>
     )
   }

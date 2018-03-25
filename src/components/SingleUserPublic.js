@@ -25,10 +25,10 @@ class SingleUserPublic extends Component {
     const pastServices = soldServices.filter(item => item.isAvailable === false)
     console.log("AVAILABLE SERVICES", availableServices);
     console.log("user is: ", user);
-    if (!user.id) return <div>No user found</div>;
+    if (!user.id) return <div className="avenir dark-red"><h2>Oh no! No user found.</h2></div>;
     return (
       user.id ? (
-        <div className="avenir">
+        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
           <img alt="profile img" src={user.imageURL} />
           <h1 className="dark-pink">Hi, I'm {user.userName}!</h1>
           <h2>My Available Goods & Services: </h2>
@@ -44,7 +44,7 @@ class SingleUserPublic extends Component {
                     <p>Category: {service.category}</p>
                   </li>
                 );
-              })) : (<h4>No available goods and services.</h4>)}
+              })) : (<p>No available goods and services.</p>)}
           </ul>
           <h2> My Past Transactions: </h2>
           <ul>
@@ -59,7 +59,7 @@ class SingleUserPublic extends Component {
                     <p>Category: {pastService.category}</p>
                   </li>
                 );
-              })) : (<h4>No past transactions.</h4>)}
+              })) : (<p>No past transactions.</p>)}
           </ul>
         </div>
       ) : (<div />
