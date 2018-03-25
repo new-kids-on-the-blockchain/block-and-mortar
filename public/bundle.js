@@ -81033,16 +81033,6 @@ var AllServices = function (_Component) {
             'Available Services in Your Community '
           ),
           _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/services/new' },
-            ' ',
-            _react2.default.createElement(
-              'button',
-              { className: 'btn btn-info new' },
-              'Add a Service'
-            )
-          ),
-          _react2.default.createElement(
             'div',
             null,
             _react2.default.createElement(
@@ -81052,6 +81042,16 @@ var AllServices = function (_Component) {
                 'p',
                 { className: 'avenir lh-title ml3' },
                 'Transactions between you and sellers in your community will be facilitated by a "smart contract", a set of rules that govern the exchange of goods and services for ether. Please note that you\'ll incur a small fee every time you write to the blockchain (called "gas"), but the advantage is that the transaction is immutable, public, and xxx. '
+              )
+            ),
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/services/new' },
+              ' ',
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-info new' },
+                'Add a Service'
               )
             ),
             _react2.default.createElement(
@@ -81147,7 +81147,7 @@ exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapSt
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.default = Homepage;
 
@@ -81159,26 +81159,30 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Homepage() {
 
-    return _react2.default.createElement(
-        "div",
-        { className: "avenir" },
+  return _react2.default.createElement(
+    "div",
+    { className: "avenir" },
+    _react2.default.createElement(
+      "h1",
+      null,
+      "Aimed at local communities, xxxx allows for the grassroots sale of goods and services using the Ethereum blockchain. "
+    ),
+    _react2.default.createElement(
+      "div",
+      { className: "avenir flex items-center justify-center pa4 bg-lightest-blue navy" },
+      _react2.default.createElement(
+        "p",
+        { "class": "lh-title ml3" },
+        "Before signing up or logging into xxxx, please make sure you're signed up and logged into your ",
         _react2.default.createElement(
-            "h1",
-            null,
-            "Aimed at local communities, xxxx allows for the grassroots sale of goods and services using the Ethereum blockchain. "
+          "a",
+          { href: "https://metamask.io/" },
+          "Metamask account"
         ),
-        _react2.default.createElement(
-            "p",
-            null,
-            "Before signing up or logging into xxxx, please make sure you're signed up and logged into your ",
-            _react2.default.createElement(
-                "a",
-                { href: "https://metamask.io/" },
-                "Metamask account"
-            ),
-            ". For those of you new to the Ethereum blockchain, Metamask connects you to the Ethereum blockchain. It also acts like a digital wallet and you'll need a bit of ether cryptocurrency to engage with the blockchain. Once you're set up, you will be able to buy or sell goods and services within your local community, an exchange facilitated by a \"smart contract\". What's a smart contract? Sign up and log in to learn more!"
-        )
-    );
+        ". For those of you new to the Ethereum blockchain, Metamask connects you to the Ethereum blockchain. It also acts like a digital wallet and you'll need a bit of ether cryptocurrency to engage with the blockchain. Once you're set up, you will be able to buy or sell goods and services within your local community, an exchange facilitated by a \"smart contract\". What's a smart contract? Sign up and log in to learn more!"
+      )
+    )
+  );
 }
 
 /***/ }),
@@ -82016,7 +82020,7 @@ var SingleUser = function (_Component) {
         { className: 'avenir' },
         _react2.default.createElement(
           'h1',
-          null,
+          { className: 'purple' },
           'Welcome back, ',
           currentUser.userName,
           '! '

@@ -35,13 +35,13 @@ class AllServices extends Component {
       <div className="avenir">
         <div>
           <h1 className="avenir purple">Available Services in Your Community </h1>
-          <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
           <div>
           <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy">
           <p className="avenir lh-title ml3">Transactions between you and sellers in your community will be facilitated by a "smart contract", a set of rules that govern the exchange of goods and services for ether.
 
           Please note that you'll incur a small fee every time you write to the blockchain (called "gas"), but the advantage is that the transaction is immutable, public, and xxx. </p>
           </div>
+          <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
             <button className="btn active" value="All" onClick={this.handleClick}>Show All</button>
             <button className="btn" value="Goods" onClick={this.handleClick}>Goods</button>
             <button className="btn" value="Services" onClick={this.handleClick}>Services</button>

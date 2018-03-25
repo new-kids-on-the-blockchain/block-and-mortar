@@ -20,7 +20,7 @@ class SingleUser extends Component {
 
     return (
       <div className="avenir">
-        <h1>Welcome back, {currentUser.userName}! </h1>
+        <h1 className="purple">Welcome back, {currentUser.userName}! </h1>
         <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
         <h1>Pending Sales</h1>
         <ul>
