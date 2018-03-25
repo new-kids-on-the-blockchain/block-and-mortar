@@ -4,12 +4,10 @@ import { fetchUsers } from '../store';
 
 class AllUsers extends Component {
   componentDidMount(props){
-    console.log('IN USERS COMPONENT')
     this.props.handleFetchUsers();
   }
 
   render(){
-    console.log(this.props.users, "USERS")
     return(
       <div>
       <ul>

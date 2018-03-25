@@ -67,7 +67,7 @@ class AllServices extends Component {
 /**
  * CONTAINER
  */
-const mapState = (state) => {
+const mapState = state => {
   const availableServices = state.services.filter(service => service.isAvailable === true)
   return {
     services: availableServices
