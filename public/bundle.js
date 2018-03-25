@@ -82767,8 +82767,6 @@ var _history2 = _interopRequireDefault(_history);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var baseURL = 'http://localhost:8080';
-
 // action types
 var GET_CURRENT_USER = 'GET_CURRENT_USER';
 var REMOVE_USER = 'REMOVE_USER';
@@ -82789,7 +82787,7 @@ var removeUser = function removeUser(userId) {
 // thunks
 var fetchCurrentUser = exports.fetchCurrentUser = function fetchCurrentUser(id) {
   return function (dispatch) {
-    _axios2.default.get('/api/users/' + id, { baseURL: baseURL }).then(function (user) {
+    _axios2.default.get('/api/users/' + id).then(function (user) {
       return dispatch(getCurrentUser(user.data));
     }).catch(function (err) {
       return console.error('error fetching user id: ' + id, err);
@@ -82799,7 +82797,7 @@ var fetchCurrentUser = exports.fetchCurrentUser = function fetchCurrentUser(id) 
 
 var me = exports.me = function me() {
   return function (dispatch) {
-    _axios2.default.get('/auth/me', { baseURL: baseURL }).then(function (res) {
+    _axios2.default.get('/auth/me').then(function (res) {
       return dispatch(getCurrentUser(res.data));
     }).catch(function (err) {
       return console.log(err);
@@ -82809,7 +82807,7 @@ var me = exports.me = function me() {
 
 var auth = exports.auth = function auth(userName, email, password, method) {
   return function (dispatch) {
-    _axios2.default.post('/auth/' + method, { userName: userName, email: email, password: password }, { baseURL: baseURL }).then(function (res) {
+    _axios2.default.post('/auth/' + method, { userName: userName, email: email, password: password }).then(function (res) {
       dispatch(getCurrentUser(res.data));
       _history2.default.push('/home');
     }, function (authError) {
@@ -82968,6 +82966,15 @@ Object.keys(_singleUser).forEach(function (key) {
     }
   });
 });
+Object.keys(_messages).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _messages[key];
+    }
+  });
+});
 
 var _redux = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
 
@@ -83022,7 +83029,6 @@ exports.default = store;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.fetchMessages = fetchMessages;
 exports.postMessage = postMessage;
 exports.default = reducer;
 
@@ -83034,40 +83040,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-/**
- * ACTION TYPES
- */
-var GET_MESSAGES = 'GET_MESSAGES';
+//ACTION TYPES
 var ADD_MESSAGE = 'ADD_MESSAGE';
 
-/**
- * ACTION CREATORS
- */
-var getMessages = function getMessages(messages) {
-  return { type: GET_MESSAGES, messages: messages };
-};
+//ACTION CREATORS
 var addMessage = function addMessage(message) {
   return { type: ADD_MESSAGE, message: message };
 };
 
-/**
- * THUNK CREATORS
- */
-function fetchMessages() {
-  return function thunk(dispatch) {
-    return _axios2.default.get('/messages').then(function (res) {
-      return res.data;
-    }).then(function (messages) {
-      return dispatch(getMessages(messages));
-    }).catch(function (err) {
-      return console.err('error fetching messages', err);
-    });
-  };
-}
-
+//THUNK CREATORS
 function postMessage(message, ownProps) {
   return function thunk(dispatch) {
-    return _axios2.default.post('/messages', message).then(function (res) {
+    return _axios2.default.post('/api/messages', message).then(function (res) {
       return addMessageAndRedirect(res.data, ownProps, dispatch);
     }).catch(function (err) {
       return console.log(err, "failed to post message");
@@ -83083,8 +83067,6 @@ function reducer() {
   var action = arguments[1];
 
   switch (action.type) {
-    case GET_MESSAGES:
-      return action.messages;
     case ADD_MESSAGE:
       return [].concat(_toConsumableArray(messages), [action.message]);
     default:
@@ -83257,8 +83239,6 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var baseURL = 'http://localhost:8080/api';
-
 //action type
 var GET_SINGLE_SERVICE = "GET_SINGLE_SERVICE";
 
@@ -83273,7 +83253,7 @@ function getServiceById(service) {
 //thunk
 function fetchServiceById(id) {
     return function thunk(dispatch) {
-        return _axios2.default.get("/services/" + id, { baseURL: baseURL }).then(function (res) {
+        return _axios2.default.get("/api/services/" + id).then(function (res) {
             return res.data;
         }).then(function (service) {
             return dispatch(getServiceById(service));
@@ -83321,8 +83301,6 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var baseURL = 'http://localhost:8080/api';
-
 //action type
 var GET_SINGLE_USER = "GET_SINGLE_USER";
 
@@ -83337,7 +83315,7 @@ function getUserById(user) {
 //thunk
 function fetchUserById(id) {
   return function thunk(dispatch) {
-    return _axios2.default.get("/users/" + id, { baseURL: baseURL }).then(function (res) {
+    return _axios2.default.get("/api/users/" + id).then(function (res) {
       return res.data;
     }).then(function (user) {
       return dispatch(getUserById(user));
@@ -83442,8 +83420,6 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var baseURL = 'http://localhost:8080/api';
-
 /**
  * ACTION TYPES
  */
@@ -83461,7 +83437,7 @@ var getUsers = function getUsers(users) {
  */
 function fetchUsers() {
   return function thunk(dispatch) {
-    return _axios2.default.get('/users', { baseURL: baseURL }).then(function (res) {
+    return _axios2.default.get('/api/users').then(function (res) {
       return res.data;
     }).then(function (users) {
       return dispatch(getUsers(users));

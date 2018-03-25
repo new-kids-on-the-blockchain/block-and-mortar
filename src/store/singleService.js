@@ -1,5 +1,4 @@
 import axios from "axios";
-const baseURL = 'http://localhost:8080/api'
 
 //action type
 const GET_SINGLE_SERVICE = "GET_SINGLE_SERVICE";
@@ -15,7 +14,7 @@ export function getServiceById(service) {
 //thunk
 export function fetchServiceById(id){
     return function thunk(dispatch){
-        return axios.get(`/services/${id}`, {baseURL})
+        return axios.get(`/api/services/${id}`)
         .then(res => res.data)
         .then(service => dispatch(getServiceById(service)))
         .catch(err => console.log(err));
