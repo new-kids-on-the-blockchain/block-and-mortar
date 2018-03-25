@@ -58,7 +58,7 @@ class SingleService extends Component {
     return (
       this.props.singleService &&
       <div>
-        <h1>{service.name} </h1>
+        <h1 className="avenir">{service.name} </h1>
         <img src={service.imgUrl} />
         <h4><b>Description:</b> {service.description} </h4>
         <h4><b>Category:</b> {service.category} </h4>

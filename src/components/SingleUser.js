@@ -23,8 +23,8 @@ class SingleUser extends Component {
 
     return (
       <div>
-        <h1>Welcome back, {currentUser.userName}! </h1>
-        <h1>Transactions to Fulfill:</h1>
+        <h1 className="avenir">Welcome back, {currentUser.userName}! </h1>
+        <h2 className="avenir">Transactions to Fulfill:</h2>
         <ul>
           {pendingSells.length ? (
             pendingSells.map(transaction => {

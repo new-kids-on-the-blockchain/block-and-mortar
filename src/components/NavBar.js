@@ -9,7 +9,7 @@ const Navbar = props => (
         <Link to="/">
           <div>
             
-            <h1 className="avenir dark-red f1">Block Party</h1>
+            <h1 className="avenir green f1">Block Party</h1>
           </div>
         </Link>
         <div>

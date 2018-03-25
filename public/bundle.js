@@ -80825,7 +80825,7 @@ var AddService = function (_Component) {
         null,
         _react2.default.createElement(
           "h1",
-          null,
+          { className: "avenir" },
           "Post a Service"
         ),
         _react2.default.createElement(
@@ -81146,7 +81146,7 @@ function Homepage() {
         null,
         _react2.default.createElement(
             "h1",
-            null,
+            { className: "avenir" },
             "Bloque is a social blockchain app that allows users to buy goods and services with Ether in their communities."
         )
     );
@@ -81195,7 +81195,7 @@ var Navbar = function Navbar(props) {
           null,
           _react2.default.createElement(
             'h1',
-            { className: 'avenir dark-red f1' },
+            { className: 'avenir green f1' },
             'Block Party'
           )
         )
@@ -81717,7 +81717,7 @@ var SingleService = function (_Component) {
         null,
         _react2.default.createElement(
           'h1',
-          null,
+          { className: 'avenir' },
           service.name,
           ' '
         ),
@@ -81984,14 +81984,14 @@ var SingleUser = function (_Component) {
         null,
         _react2.default.createElement(
           'h1',
-          null,
+          { className: 'avenir' },
           'Welcome back, ',
           currentUser.userName,
           '! '
         ),
         _react2.default.createElement(
-          'h1',
-          null,
+          'h2',
+          { className: 'avenir' },
           'Transactions to Fulfill:'
         ),
         _react2.default.createElement(
