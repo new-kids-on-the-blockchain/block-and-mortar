@@ -81023,7 +81023,7 @@ var AllServices = function (_Component) {
         'Available services in your community loading....'
       );else return _react2.default.createElement(
         'div',
-        { className: 'avenir' },
+        { className: 'avenir center bg-light-gray pa3 ph5-ns' },
         _react2.default.createElement(
           'div',
           null,
@@ -81751,7 +81751,7 @@ var SingleService = function (_Component) {
       );
       return this.props.singleService && _react2.default.createElement(
         'div',
-        { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns' },
+        { className: 'avenir center bg-light-gray pa3 ph5-ns' },
         _react2.default.createElement(
           'h1',
           { className: 'purple' },
@@ -82017,7 +82017,7 @@ var SingleUser = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'avenir' },
+        { className: 'avenir center bg-light-gray pa3 ph5-ns' },
         _react2.default.createElement(
           'h1',
           { className: 'purple' },
@@ -82237,7 +82237,7 @@ var SingleUserPublic = function (_Component) {
       );
       return user.id ? _react2.default.createElement(
         "div",
-        { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" },
+        { className: "avenir center bg-light-gray pa3 ph5-ns" },
         _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
         _react2.default.createElement(
           "h1",

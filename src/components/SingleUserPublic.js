@@ -28,7 +28,7 @@ class SingleUserPublic extends Component {
     if (!user.id) return <div className="avenir dark-red"><h2>Oh no! No user found.</h2></div>;
     return (
       user.id ? (
-        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
+        <div className="avenir center bg-light-gray pa3 ph5-ns">
           <img alt="profile img" src={user.imageURL} />
           <h1 className="dark-pink">Hi, I'm {user.userName}!</h1>
           <h2>My Available Goods & Services: </h2>

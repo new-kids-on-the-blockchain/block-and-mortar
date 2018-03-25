@@ -32,7 +32,7 @@ class AllServices extends Component {
 
     if (!services) return <div>Available services in your community loading....</div>
     else return (
-      <div className="avenir">
+      <div className="avenir center bg-light-gray pa3 ph5-ns">
         <div>
           <h1 className="avenir purple">Available Services in Your Community </h1>
           <div>
