@@ -82122,9 +82122,9 @@ var SingleUser = function (_Component) {
               )
             );
           }) : _react2.default.createElement(
-            'h4',
+            'p',
             null,
-            'You have no transactions to fulfill.'
+            'You have no pending purchases.'
           )
         )
       );
@@ -82142,22 +82142,6 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(SingleUser));
-
-// <h1>Your Pending Purchases:</h1>
-// <ul>
-//   {pendingPurchases.length ? (
-//     pendingPurchases.map(transactions => {
-//       return (
-//         <li key={transactions.id}>
-//           <Link to={`/services/${transactions.id}`}>
-//             <h2>{transactions.name}</h2>
-//           </Link>
-//           <h3>Seller: {transactions.Seller.userName}</h3>
-//           <p>Category: {transactions.category}</p>
-//         </li>
-//       );
-//     })) : (<h4>You have no pending purchases. <Link to="/services">Go make some!</Link></h4>)}
-// </ul>
 
 /***/ }),
 
