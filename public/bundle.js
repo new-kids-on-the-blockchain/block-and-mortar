@@ -23897,7 +23897,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "/* PAGE */\n\nbody,\n.pure-g [class*=pure-u] {\n  font-family: 'Open Sans', sans-serif;\n  background-color: #DDDDDD\n}\n\nh1, h2, h3 {\n  font-family: 'Oswald', 'Arial Narrow', sans-serif;\n}\n\ncode {\n  display: block;\n  margin: 20px 0 15px 0;\n  padding: 10px;\n  background: #eee;\n}\n\n.container {\n  box-sizing: border-box;\n  width: 100%;\n  padding: 45px 20px;\n}\n\n.pure-button-primary {\n  background-color: #0c1a2b;\n}\n\n.pure-button-primary:hover {\n  background-color: #233e5e;\n}\n\n.pure-form input[type=\"text\"]:focus {\n  border-color: #0c1a2b;\n}\n", ""]);
+exports.push([module.i, "/* PAGE */\n\nbody,\n.pure-g [class*=pure-u] {\n  font-family: 'Open Sans', sans-serif;\n  background-color: #DDDDDD\n}\n\nh1, h2, h3 {\n  font-family: 'Oswald', 'Arial Narrow', sans-serif;\n}\n\ncode {\n  display: block;\n  margin: 20px 0 15px 0;\n  padding: 10px;\n  background: #eee;\n}\n\n.container {\n  box-sizing: border-box;\n  width: 100%;\n  padding: 45px 20px;\n}\n\n.pure-button-primary {\n  background-color: #0c1a2b;\n}\n\n.pure-button-primary:hover {\n  background-color: #233e5e;\n}\n\n.pure-form input[type=\"text\"]:focus {\n  border-color: #0c1a2b;\n}\n\n.allThreads {\n  width: 300px;\n}\n\n.singleThread {\n  padding: 10px;\n  border: solid 1px #000;\n}\n\n.currentThread {\n  padding: 10px;\n}\n\n.message {\n  padding: 10px;\n}\n", ""]);
 
 // exports
 
@@ -81708,7 +81708,11 @@ var AllMessages = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: 'allThreads' },
-          'All Conversations',
+          _react2.default.createElement(
+            'h2',
+            null,
+            'All Conversations'
+          ),
           this.props.threads.map(function (thread) {
             return _react2.default.createElement(
               'div',
@@ -81732,7 +81736,11 @@ var AllMessages = function (_Component) {
             );
           })
         ),
-        _react2.default.createElement(_SingleThread2.default, { currentThread: this.state.currentThread })
+        _react2.default.createElement(
+          'div',
+          { className: 'currentThread' },
+          _react2.default.createElement(_SingleThread2.default, { currentThread: this.state.currentThread })
+        )
       );
     }
   }]);
@@ -82749,7 +82757,7 @@ var SingleThread = function SingleThread(props) {
     ) : messages.map(function (message) {
       return _react2.default.createElement(
         "div",
-        { key: message.id },
+        { className: "message", key: message.id },
         message.content
       );
     })

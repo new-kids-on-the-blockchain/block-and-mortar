@@ -11,7 +11,7 @@ const SingleThread = (props) => {
         : !messages.length
           ? <div>No Messages in this Conversation</div>
           : messages.map(message => {
-            return <div key={message.id}>{message.content}</div>
+            return <div className="message" key={message.id}>{message.content}</div>
           })
       }
     </div>

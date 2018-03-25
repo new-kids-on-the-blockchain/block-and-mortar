@@ -25,7 +25,7 @@ class AllMessages extends Component {
     return (
       <div>
         <div className="allThreads">
-          All Conversations
+          <h2>All Conversations</h2>
           {this.props.threads.map(thread => {
             return (
               <div key={thread.id} className="singleThread" onClick={() => this.setCurrentThread(thread)}>
@@ -39,7 +39,9 @@ class AllMessages extends Component {
             )
           })}
         </div>
-        <SingleThread currentThread={this.state.currentThread} />
+        <div className="currentThread">
+          <SingleThread currentThread={this.state.currentThread} />
+        </div>
       </div>
     )
   }
