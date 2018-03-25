@@ -80737,6 +80737,8 @@ var AddMessage = function (_Component) {
       var formData = {
         subject: evt.target.subject.value
       };
+
+      this.props.postNewMessage(formData);
     }
   }, {
     key: 'render',
@@ -82966,15 +82968,6 @@ Object.keys(_singleUser).forEach(function (key) {
     }
   });
 });
-Object.keys(_messages).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _messages[key];
-    }
-  });
-});
 
 var _redux = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
 
@@ -83109,8 +83102,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var baseURL = 'http://localhost:8080/api';
-
 /**
  * ACTION TYPES
  */
@@ -83136,7 +83127,7 @@ var editService = function editService(service) {
  */
 function fetchServices() {
   return function thunk(dispatch) {
-    return _axios2.default.get('/services', { baseURL: baseURL }).then(function (res) {
+    return _axios2.default.get('/api/services').then(function (res) {
       return res.data;
     }).then(function (services) {
       return dispatch(getServices(services));
@@ -83148,7 +83139,7 @@ function fetchServices() {
 
 function postService(service, ownProps) {
   return function thunk(dispatch) {
-    return _axios2.default.post('/services', service, { baseURL: baseURL }).then(function (res) {
+    return _axios2.default.post('/api/services', service).then(function (res) {
       return addServiceAndRedirect(res.data, ownProps, dispatch);
     }).catch(function (err) {
       return console.log(err);
@@ -83158,7 +83149,7 @@ function postService(service, ownProps) {
 
 function updateService(service, ownProps) {
   return function thunk(dispatch) {
-    return _axios2.default.put('/services/' + service.id, service, { baseURL: baseURL }).then(function (res) {
+    return _axios2.default.put('/api/services/' + service.id, service).then(function (res) {
       return editServiceAndRedirect(res.data, ownProps, dispatch);
     }).catch(function (err) {
       return console.log(err, "failed to update service");
@@ -83168,19 +83159,13 @@ function updateService(service, ownProps) {
 
 function updateCompleteService(service, ownProps) {
   return function thunk(dispatch) {
-    return _axios2.default.put('/services/' + service.id, service, { baseURL: baseURL }).then(function (res) {
+    return _axios2.default.put('/api/services/' + service.id, service).then(function (res) {
       return editServiceAndRedirect(res.data, ownProps, dispatch);
     }).catch(function (err) {
       return console.log(err, "failed to complete service");
     });
   };
 }
-
-//HOW TO CALL THE FUNCTION IN THE CONTRACT THAT WE'RE INITIATING
-//DO WE GET A CONTRACT KEY BACK?
-//blockchain(alll data) --> listen for comingback --> post
-//export function postContract = ()
-
 
 /**
  * REDUCER

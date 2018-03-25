@@ -25,6 +25,8 @@ class AddMessage extends Component {
     const formData = {
       subject: evt.target.subject.value
     }
+
+    this.props.postNewMessage(formData)
   }
 
   render() {

@@ -1,5 +1,4 @@
 import axios from "axios";
-const baseURL = 'http://localhost:8080/api'
 
 /**
  * ACTION TYPES
@@ -20,7 +19,7 @@ const editService = service => ({type: EDIT_SERVICE, service})
  */
 export function fetchServices() {
   return function thunk(dispatch) {
-    return axios.get('/services', {baseURL})
+    return axios.get('/api/services')
       .then(res => res.data)
       .then(services => dispatch(getServices(services)))
       .catch(err => console.log(err, 'fetchingService thunk failed'))
@@ -29,7 +28,7 @@ export function fetchServices() {
 
 export function postService(service, ownProps) {
   return function thunk(dispatch) {
-    return axios.post('/services', service, {baseURL})
+    return axios.post('/api/services', service)
     .then(res => addServiceAndRedirect(res.data, ownProps, dispatch))
     .catch(err => console.log(err))
   }
@@ -37,7 +36,7 @@ export function postService(service, ownProps) {
 
 export function updateService(service, ownProps) {
   return function thunk(dispatch) {
-    return axios.put(`/services/${service.id}`, service, {baseURL})
+    return axios.put(`/api/services/${service.id}`, service)
     .then(res => editServiceAndRedirect(res.data, ownProps, dispatch))
     .catch(err => console.log(err, "failed to update service"))
   }
@@ -45,17 +44,11 @@ export function updateService(service, ownProps) {
 
 export function updateCompleteService(service, ownProps) {
   return function thunk(dispatch) {
-    return axios.put(`/services/${service.id}`, service, {baseURL})
+    return axios.put(`/api/services/${service.id}`, service)
     .then(res => editServiceAndRedirect(res.data, ownProps, dispatch))
     .catch(err => console.log(err, "failed to complete service"))
   }
 }
-
-//HOW TO CALL THE FUNCTION IN THE CONTRACT THAT WE'RE INITIATING
-//DO WE GET A CONTRACT KEY BACK?
-//blockchain(alll data) --> listen for comingback --> post
-//export function postContract = ()
-
 
 /**
  * REDUCER
@@ -72,8 +65,6 @@ export default function reducer(services = [], action) {
       return services
   }
 }
-
-
 
 //helperFunc
 function addServiceAndRedirect(service, ownProps, dispatch) {
