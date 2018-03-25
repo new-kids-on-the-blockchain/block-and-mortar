@@ -34,7 +34,7 @@ class AllServices extends Component {
     else return (
       <div>
         <div>
-          <h1>Available Services in Your Community </h1>
+          <h1 className="avenir purple">Available Services in Your Community </h1>
           <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
           <div>
             <button className="btn active" value="All" onClick={this.handleClick}>Show All</button>

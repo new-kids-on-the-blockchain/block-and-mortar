@@ -81020,7 +81020,7 @@ var AllServices = function (_Component) {
           null,
           _react2.default.createElement(
             'h1',
-            null,
+            { className: 'avenir purple' },
             'Available Services in Your Community '
           ),
           _react2.default.createElement(
@@ -81193,10 +81193,9 @@ var Navbar = function Navbar(props) {
         _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement('img', { src: 'https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg', alt: 'logo' }),
           _react2.default.createElement(
             'h1',
-            null,
+            { className: 'avenir dark-red f1' },
             'Block Party'
           )
         )
@@ -81206,25 +81205,25 @@ var Navbar = function Navbar(props) {
         null,
         props.isLoggedIn ? _react2.default.createElement(
           'div',
-          null,
+          { className: 'dtc v-mid w-75 tr' },
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/home' },
+            { to: '/home', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
             'Home'
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/services' },
+            { to: '/services', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
             'All Services'
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/messages' },
+            { to: '/messages', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
             'Inbox'
           ),
           _react2.default.createElement(
             'a',
-            { href: '#', onClick: props.handleClick },
+            { href: '#', onClick: props.handleClick, className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
             'Logout'
           )
         ) : _react2.default.createElement(
@@ -81232,12 +81231,12 @@ var Navbar = function Navbar(props) {
           null,
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/login' },
+            { to: '/login', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
             'Login'
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/signup' },
+            { to: '/signup', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
             'Sign Up'
           )
         )
