@@ -25,7 +25,7 @@ async function seed () {
     Service.create({name: 'Babysitting', description: 'I am great with children, I can watch your kids for 3 hours', category: 'Services', buyer: null, seller: 6, isAvailable: true, price: 0.1, status: 'Posted', imgUrl: 'http://clipground.com/images/crib-clipart-2.png'}),
     Service.create({name: 'Dog walking', description: 'I will walk your dog for 30 mins', category: 'Services', buyer: null, seller: 6,  isAvailable: true, price: 0.05, status: 'Posted', imgUrl: 'https://rlv.zcache.com/miniature_schnauzer_dog_cartoon_postcard-r7bf8673c5fd3442a878de0df645898f8_vgbaq_8byvr_324.jpg'}),
     Service.create({name: 'Fresh Jam', description: 'I can offer you 3 jars of homemade jams', category: 'Goods', buyer: null, seller: 7, isAvailable: true, price: 0.02, status: 'Posted', imgUrl: 'http://moziru.com/images/drawn-jam-cartoon-10.jpg'}),
-    Service.create({name: 'Web Design', description: 'I can build your website', category: 'Services', buyer: 4, seller: 7,isAvailable: false, price: 0.9, status: 'Pending', imgUrl: 'https://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=48512695'}),
+    Service.create({name: 'Web Design', description: 'I can build your website', category: 'Services', buyer: 4, seller: 7, isAvailable: false, price: 0.9, status: 'Pending', imgUrl: 'https://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=48512695'}),
     Service.create({name: 'Basil', description: 'I grow fresh basil from my garden', category: 'Goods', buyer: 5, seller: 7, isAvailable: false, price: 0.05, status: 'Completed', imgUrl: 'http://www.clker.com/cliparts/U/G/e/U/g/K/plant-in-pot.svg'}),
     Service.create({name: 'Ironing', description: 'I can iron your clothes!', category: 'Services', buyer: null, seller: 7, isAvailable: true, price: 0.15, status: 'Posted', imgUrl: 'https://png.pngtree.com/element_origin_min_pic/17/08/17/2815fc0230aedc29e33e9f5eb3e646dd.jpg'}),
     Service.create({name: 'Fixing roof', description: 'I am a professional at roof fixing! Great value!', category: 'Services', buyer: 6, seller: 8, isAvailable: false, price: 0.3, status: 'Pending', imgUrl: 'http://www.clker.com/cliparts/6/1/6/6/1333483035815281949My%20House%20Cartoon.svg.hi.png'}),
@@ -40,16 +40,16 @@ async function seed () {
   ])
 
   const thread = await Promise.all([
-    Thread.create({subject: 'message1', content: 'messsage1 content', InitiatorId: 1, RecipientId: 2}),
-    Thread.create({subject: 'message2', content: 'messsage2 content', InitiatorId: 2, RecipientId: 3}),
+    Thread.create({buyerId: 6, sellerId: 8, serviceId: 8 }),
+    Thread.create({buyerId: 5, sellerId: 7, serviceId: 6 }),
   ])
 
 const message = await Promise.all([
-    Message.create({content: 'messsage1 content', sender: 1, threadId: 1}),
-    Message.create({content: 'messsage2 content', sender: 2, threadId: 1}),
-    Message.create({content: 'messsage3 content', sender: 1, threadId: 1}),
-    Message.create({content: 'messsage4 content', sender: 2, threadId: 2}),
-    Message.create({content: 'messsage4 content', sender: 3, threadId: 2}),
+    Message.create({content: 'messsage1 content', senderId: 6, threadId: 1}),
+    Message.create({content: 'messsage2 content', senderId: 8, threadId: 1}),
+    Message.create({content: 'messsage3 content', senderId: 6, threadId: 1}),
+    Message.create({content: 'messsage4 content', senderId: 5, threadId: 2}),
+    Message.create({content: 'messsage4 content', senderId: 7, threadId: 2}),
   ])
 
   // Wowzers! We can even `await` on the right-hand side of the assignment operator

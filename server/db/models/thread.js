@@ -11,7 +11,7 @@ const Thread = db.define("thread");
 Thread.getAllByUser = function(userId) {
   return Thread.findAll({
     where: {
-      $or: [{InitiatorId: {$eq: userId} }, { RecipientId: {$eq: userId}}]
+      $or: [{buyerId: {$eq: userId} }, { sellerId: {$eq: userId}}]
     },
     include: [{ all: true }] })
 }

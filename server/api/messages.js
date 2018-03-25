@@ -3,8 +3,9 @@ const {Message} = require('../db/models')
 
 module.exports = router
 
+
 // router.get('/', (req, res, next) => {
-//   Message.findAll(where: {sender:req.user.id)
+//   Message.findAll(where: {sender: req.user.id)}
 //     .then(messages => res.json(messages))
 //     .catch(next)
 // })
@@ -16,6 +17,7 @@ router.post('/', (req, res, next) => {
     .catch(next)
 })
 
+// may not be necessary
 router.get('/:id', (req, res, next) => {
     Message.findById(req.params.id, { include: [{ all: true }] })
       .then(message => res.json(message))

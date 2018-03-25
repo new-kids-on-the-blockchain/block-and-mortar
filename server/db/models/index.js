@@ -9,12 +9,13 @@ Service.belongsTo(User, {as: 'Seller', foreignKey: 'seller'});
 User.hasMany(Service, {as: 'Buyer', foreignKey: 'buyer'});
 User.hasMany(Service, {as: 'Seller', foreignKey: 'seller'});
 
-Message.belongsTo(User, {as: 'Sender', foreignKey: 'sender'});
+Message.belongsTo(User, {as: 'Sender', foreignKey: 'senderId'});
 Message.belongsTo(Thread)
 
 Thread.hasMany(Message)
-Thread.belongsTo(User, {as: 'Initiator'})
-Thread.belongsTo(User, {as: 'Recipient'})
+Thread.belongsTo(User, {as: 'buyer'})
+Thread.belongsTo(User, {as: 'seller'})
+Thread.belongsTo(Service, {as: 'service'})
 
 
 module.exports = {
