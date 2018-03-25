@@ -19,8 +19,8 @@ class SingleUser extends Component {
     if (!currentUser) return <div>No user exists at this location</div>
 
     return (
-      <div>
-        <h1>Welcome back, {currentUser.userName}! </h1>
+      <div className="avenir center bg-light-gray pa3 ph5-ns">
+        <h1 className="purple">Welcome back, {currentUser.userName}! </h1>
         <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
         <h1>Pending Sales</h1>
         <ul>
@@ -36,7 +36,7 @@ class SingleUser extends Component {
                   <p>Category: {transaction.category}</p>
                 </li>
               );
-            })) : (<h4>You have no transactions to fulfill.</h4>)}
+            })) : (<p>You have no transactions to fulfill.</p>)}
         </ul>
 
 

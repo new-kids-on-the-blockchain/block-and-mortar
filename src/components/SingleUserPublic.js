@@ -25,13 +25,13 @@ class SingleUserPublic extends Component {
     const pastServices = soldServices.filter(item => item.isAvailable === false)
     console.log("AVAILABLE SERVICES", availableServices);
     console.log("user is: ", user);
-    if (!user.id) return <div>No user found</div>;
+    if (!user.id) return <div className="avenir dark-red"><h2>Oh no! No user found.</h2></div>;
     return (
       user.id ? (
-        <div>
+        <div className="avenir center bg-light-gray pa3 ph5-ns">
           <img alt="profile img" src={user.imageURL} />
-          <h1>Hi, I'm {user.userName}!</h1>
-          <h1>My Available Goods & Services: </h1>
+          <h1 className="dark-pink">Hi, I'm {user.userName}!</h1>
+          <h2>My Available Goods & Services: </h2>
           <ul>
             {availableServices.length ?
               (availableServices.map(service => {
@@ -44,9 +44,9 @@ class SingleUserPublic extends Component {
                     <p>Category: {service.category}</p>
                   </li>
                 );
-              })) : (<h4>No available goods and services.</h4>)}
+              })) : (<p>No available goods and services.</p>)}
           </ul>
-          <h1> My Past Transactions: </h1>
+          <h2> My Past Transactions: </h2>
           <ul>
             {pastServices.length ?
               (pastServices.map(pastService => {
@@ -59,7 +59,7 @@ class SingleUserPublic extends Component {
                     <p>Category: {pastService.category}</p>
                   </li>
                 );
-              })) : (<h4>No past transactions.</h4>)}
+              })) : (<p>No past transactions.</p>)}
           </ul>
         </div>
       ) : (<div />

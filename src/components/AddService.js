@@ -65,12 +65,12 @@ class AddService extends Component {
     return (
       this.props.contract && (
         <div>
-          <h1>Post a Service</h1>
+          <h1 className="avenir">Post a Service</h1>
+        <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy">
+          <p className="lh-title ml3">Transactions between you and buyers in your community will be facilitated by a "smart contract", a set of rules that govern the exchange of goods and services for ether. When you post a good or service on xxxx, you're kicking off this process and writing to the blockchain! Subsequent interactions between you and your buyers will also be captured on the blockchain.
 
-          <h3>Transactions between you and buyers in your community will be facilitated by a "smart contract", a set of rules that govern the exchange of goods and services for ether. When you post a good or service on xxxx, you're kicking off this process and writing to the blockchain! Subsequent interactions between you and your buyers will also be captured on the blockchain.
-
-          Please note that you'll incur a small fee every time you write to the blockchain (called "gas"), but the advantage is that the transaction is immutable, public, and xxx. </h3>
-
+          Please note that you'll incur a small fee every time you write to the blockchain (called "gas"), but the advantage is that the transaction is immutable, public, and xxx. </p>
+        </div>
           <form onSubmit={this.handleSubmit}>
             <h3> Name: </h3>
             <input name="serviceName" />
