@@ -80829,6 +80829,15 @@ var AddService = function (_Component) {
           "Post a Service"
         ),
         _react2.default.createElement(
+          "div",
+          { className: "avenir flex items-center justify-center pa4 bg-lightest-blue navy" },
+          _react2.default.createElement(
+            "p",
+            { className: "lh-title ml3" },
+            "Transactions between you and buyers in your community will be facilitated by a \"smart contract\", a set of rules that govern the exchange of goods and services for ether. When you post a good or service on xxxx, you're kicking off this process and writing to the blockchain! Subsequent interactions between you and your buyers will also be captured on the blockchain. Please note that you'll incur a small fee every time you write to the blockchain (called \"gas\"), but the advantage is that the transaction is immutable, public, and xxx. "
+          )
+        ),
+        _react2.default.createElement(
           "form",
           { onSubmit: this.handleSubmit },
           _react2.default.createElement(
@@ -81037,6 +81046,15 @@ var AllServices = function (_Component) {
             'div',
             null,
             _react2.default.createElement(
+              'div',
+              { className: 'avenir flex items-center justify-center pa4 bg-lightest-blue navy' },
+              _react2.default.createElement(
+                'p',
+                { className: 'avenir lh-title ml3' },
+                'Transactions between you and sellers in your community will be facilitated by a "smart contract", a set of rules that govern the exchange of goods and services for ether. Please note that you\'ll incur a small fee every time you write to the blockchain (called "gas"), but the advantage is that the transaction is immutable, public, and xxx. '
+              )
+            ),
+            _react2.default.createElement(
               'button',
               { className: 'btn active', value: 'All', onClick: this.handleClick },
               'Show All'
@@ -81143,11 +81161,22 @@ function Homepage() {
 
     return _react2.default.createElement(
         "div",
-        null,
+        { className: "avenir" },
         _react2.default.createElement(
             "h1",
-            { className: "avenir" },
-            "Bloque is a social blockchain app that allows users to buy goods and services with Ether in their communities."
+            null,
+            "Aimed at local communities, xxxx allows for the grassroots sale of goods and services using the Ethereum blockchain. "
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            "Before signing up or logging into xxxx, please make sure you're signed up and logged into your ",
+            _react2.default.createElement(
+                "a",
+                { href: "https://metamask.io/" },
+                "Metamask account"
+            ),
+            ". For those of you new to the Ethereum blockchain, Metamask connects you to the Ethereum blockchain. It also acts like a digital wallet and you'll need a bit of ether cryptocurrency to engage with the blockchain. Once you're set up, you will be able to buy or sell goods and services within your local community, an exchange facilitated by a \"smart contract\". What's a smart contract? Sign up and log in to learn more!"
         )
     );
 }
@@ -81775,7 +81804,7 @@ var SingleService = function (_Component) {
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/users/' + service.Seller.id },
+          { to: '/users/' + service.seller },
           _react2.default.createElement(
             'p',
             null,
@@ -81797,29 +81826,29 @@ var SingleService = function (_Component) {
             'Back to Services'
           )
         ),
-        service.isAvailable && currentUser.id !== service.Seller.id ? _react2.default.createElement(
+        service.isAvailable && currentUser.id !== service.seller.id ? _react2.default.createElement(
           'button',
           { onClick: this.handleClick },
           'Purchase'
         ) : _react2.default.createElement('div', null),
-        service.isAvailable && currentUser.id === service.Seller.id ? _react2.default.createElement(
+        service.isAvailable && currentUser.id === service.seller.id ? _react2.default.createElement(
           'button',
           { onClick: this.handleClose },
           'Close Service'
         ) : _react2.default.createElement('div', null),
-        !service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? _react2.default.createElement(
+        !service.isAvailable && service.status === "Posted" && currentUser.id === service.seller.id ? _react2.default.createElement(
           'h3',
           null,
           'You have closed this service.'
         ) : _react2.default.createElement('div', null),
-        !service.isAvailable && service.status === "Pending" && currentUser.id === service.Seller.id ? _react2.default.createElement(
+        !service.isAvailable && service.status === "Pending" && currentUser.id === service.seller.id ? _react2.default.createElement(
           'h3',
           null,
           'Transaction in progress. ',
-          service.Buyer.userName,
+          service.buyer.userName,
           ' has purchased this service.'
         ) : _react2.default.createElement('div', null),
-        !service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? _react2.default.createElement(
+        !service.isAvailable && service.status === "Pending" && currentUser.id === service.buyer.id ? _react2.default.createElement(
           'div',
           null,
           _react2.default.createElement(
@@ -81831,16 +81860,16 @@ var SingleService = function (_Component) {
           _react2.default.createElement(
             'h3',
             null,
-            'Transaction in progress. Click Complete Agreement when you have received your goods or services.'
+            'Transaction in progress. Click "Complete Agreement" when you have received your goods or services.'
           ),
           ' '
         ) : _react2.default.createElement('div', null),
-        !service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? _react2.default.createElement(
+        !service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.seller.id && currentUser.id !== service.buyer.id ? _react2.default.createElement(
           'h3',
           null,
           'Service no longer available.'
         ) : _react2.default.createElement('div', null),
-        !service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ? _react2.default.createElement(
+        !service.isAvailable && service.status === "Completed" && (currentUser.id === service.seller.id || currentUser.id === service.buyer.id) ? _react2.default.createElement(
           'h3',
           null,
           'Congrats, transaction completed! Your blockchain contract ID is: ',
@@ -81966,42 +81995,51 @@ var SingleUser = function (_Component) {
           currentUser = _props.currentUser,
           services = _props.services;
 
-      var pendingSells = currentUser && services && services.filter(function (service) {
-        return service.Seller.id === currentUser.id && service.status === "Pending";
+      var pendingSales = currentUser && services && services.filter(function (service) {
+        return service.seller === currentUser.id && service.status === "Pending";
       });
-      //const pendingPurchases = currentUser && services && services.filter(service => (service.Buyer.id === currentUser.id) && service.status === "Pending")
+      var pendingPurchases = currentUser && services && services.filter(function (service) {
+        return service.buyer && service.buyer === currentUser.id && service.status === "Pending";
+      });
 
-      // const boughtServices = this.props.currentUser.Buyer || []
-      // const soldServices = this.props.currentUser.Seller || []
-
-      //console.log(pendingPurchases, "PENDING PURCHASESS")
+      console.log(pendingPurchases, "PENDING PURCHASESS");
+      console.log(pendingSales, 'pendingSales');
 
       if (!currentUser) return _react2.default.createElement(
         'div',
-        { className: 'avenir dark-red' },
-        'Oh no! No user exists at this location'
+        null,
+        'No user exists at this location'
       );
-      console.log(pendingSells, "PENDING SELLS");
 
       return _react2.default.createElement(
         'div',
         { className: 'avenir' },
         _react2.default.createElement(
           'h1',
-          { className: 'purple' },
+          null,
           'Welcome back, ',
           currentUser.userName,
           '! '
         ),
         _react2.default.createElement(
-          'h2',
+          _reactRouterDom.Link,
+          { to: '/services/new' },
+          ' ',
+          _react2.default.createElement(
+            'button',
+            { className: 'btn btn-info new' },
+            'Add a Service'
+          )
+        ),
+        _react2.default.createElement(
+          'h1',
           null,
-          'Transactions to Fulfill:'
+          'Pending Sales'
         ),
         _react2.default.createElement(
           'ul',
           null,
-          pendingSells.length ? pendingSells.map(function (transaction) {
+          pendingSales.length ? pendingSales.map(function (transaction) {
             return _react2.default.createElement(
               'li',
               { key: transaction.id },
@@ -82040,13 +82078,49 @@ var SingleUser = function (_Component) {
           )
         ),
         _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/services/new' },
-          ' ',
-          _react2.default.createElement(
-            'button',
-            { className: 'btn btn-info new' },
-            'Post a Service'
+          'h1',
+          null,
+          'Pending Purchases'
+        ),
+        _react2.default.createElement(
+          'ul',
+          null,
+          pendingPurchases.length ? pendingPurchases.map(function (transaction) {
+            return _react2.default.createElement(
+              'li',
+              { key: transaction.id },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/services/' + transaction.id },
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  transaction.name
+                )
+              ),
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Buyer: ',
+                transaction.Buyer.userName
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Status: ',
+                transaction.status
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Category: ',
+                transaction.category
+              )
+            );
+          }) : _react2.default.createElement(
+            'h4',
+            null,
+            'You have no transactions to fulfill.'
           )
         )
       );
