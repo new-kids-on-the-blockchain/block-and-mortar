@@ -10,24 +10,22 @@ class SingleUser extends Component {
 
   render() {
     const { currentUser, services } = this.props
-    const pendingSells = currentUser && services && services.filter(service => (service.Seller.id === currentUser.id) && service.status === "Pending")
-    //const pendingPurchases = currentUser && services && services.filter(service => (service.Buyer.id === currentUser.id) && service.status === "Pending")
+    const pendingSales = currentUser && services && services.filter(service => (service.seller === currentUser.id) && service.status === "Pending")
+    const pendingPurchases = currentUser && services && services.filter(service => service.buyer && (service.buyer=== currentUser.id) && service.status === "Pending")
 
-    // const boughtServices = this.props.currentUser.Buyer || []
-    // const soldServices = this.props.currentUser.Seller || []
-  
-    //console.log(pendingPurchases, "PENDING PURCHASESS")
+    console.log(pendingPurchases, "PENDING PURCHASESS")
+    console.log(pendingSales, 'pendingSales')
 
     if (!currentUser) return <div>No user exists at this location</div>
-    console.log(pendingSells, "PENDING SELLS")
 
     return (
       <div>
         <h1>Welcome back, {currentUser.userName}! </h1>
-        <h1>Transactions to Fulfill:</h1>
+        <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
+        <h1>Pending Sales</h1>
         <ul>
-          {pendingSells.length ? (
-            pendingSells.map(transaction => {
+          {pendingSales.length ? (
+            pendingSales.map(transaction => {
               return (
                 <li key={transaction.id}>
                   <Link to={`/services/${transaction.id}`}>
@@ -40,10 +38,25 @@ class SingleUser extends Component {
               );
             })) : (<h4>You have no transactions to fulfill.</h4>)}
         </ul>
-      
 
 
-        <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
+        <h1>Pending Purchases</h1>
+        <ul>
+          {pendingPurchases.length ? (
+            pendingPurchases.map(transaction => {
+              return (
+                <li key={transaction.id}>
+                  <Link to={`/services/${transaction.id}`}>
+                    <h2>{transaction.name}</h2>
+                  </Link>
+                  <h3>Buyer: {transaction.Buyer.userName}</h3>
+                  <p>Status: {transaction.status}</p>
+                  <p>Category: {transaction.category}</p>
+                </li>
+              );
+            })) : (<h4>You have no transactions to fulfill.</h4>)}
+        </ul>
+
       </div>
     )
   }

@@ -67,6 +67,10 @@ class AddService extends Component {
         <div>
           <h1>Post a Service</h1>
 
+          <h3>Transactions between you and buyers in your community will be facilitated by a "smart contract", a set of rules that govern the exchange of goods and services for ether. When you post a good or service on xxxx, you're kicking off this process and writing to the blockchain! Subsequent interactions between you and your buyers will also be captured on the blockchain.
+
+          Please note that you'll incur a small fee every time you write to the blockchain (called "gas"), but the advantage is that the transaction is immutable, public, and xxx. </h3>
+
           <form onSubmit={this.handleSubmit}>
             <h3> Name: </h3>
             <input name="serviceName" />
