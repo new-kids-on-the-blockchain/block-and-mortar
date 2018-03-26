@@ -46,7 +46,6 @@ class AddService extends Component {
 
     const price = formData.price;
     const { postNewService } = this.props;
-    console.log("our current account is: ", this.props.accounts[0])
     const newContract = this.props.contract
       .newAgreement(price, { from: this.props.accounts[0] })
       .then(newAgreement => {
@@ -83,11 +82,11 @@ class AddService extends Component {
               max="100"
               step="0.0001"
             />
-            <h3> Description: </h3>
+            <h3>Description:</h3>
             <textarea name="serviceDescription" rows="1" cols="50" />
-            <h3> Image URL: </h3>
+            <h3>Image URL:</h3>
             <input name="imgUrl" />
-            <button> Submit </button>
+            <button>Submit</button>
           </form>
         </div>
       )

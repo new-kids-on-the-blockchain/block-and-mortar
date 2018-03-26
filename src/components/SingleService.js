@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchWeb3, fetchServiceById, fetchServices, fetchAccounts, fetchContract, updateService, updateCompleteService } from '../store'
+import { fetchWeb3, fetchServiceById, fetchServices, fetchAccounts, fetchContract, updateService, updateCompleteService, postThread } from '../store'
 
 class SingleService extends Component {
   constructor() {
@@ -9,8 +9,9 @@ class SingleService extends Component {
     this.handleClick = this.handleClick.bind(this)
     this.handleComplete = this.handleComplete.bind(this)
     this.handleClose = this.handleClose.bind(this)
-
+    this.handleMessage = this.handleMessage.bind(this)
   }
+
   componentDidMount() {
     this.props.handleFetchServices()
     this.props.handleFetchContract()
@@ -50,6 +51,15 @@ class SingleService extends Component {
 
   }
 
+  handleMessage(evt) {
+    let thread = {
+      sellerId: this.props.currentUser.id,
+      serviceId: this.props.currentUser.id
+    }
+
+    this.props.postThread(thread)
+  }
+
   //.logs[0].args.id.toString()
   render() {
     const service = this.props.singleService
@@ -68,6 +78,7 @@ class SingleService extends Component {
           <h4><b>Offered By:</b> {service.Seller.userName}</h4>
         </Link>
         <Link to="/services"><button>Back to Services</button></Link>
+        <button onClick={this.handleMessage}>Message</button>
 
         {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Purchase</button> : <div />}
         {service.isAvailable && currentUser.id === service.Seller.id ? <button onClick={this.handleClose}>Close Service</button> : <div />}
@@ -127,9 +138,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   handleCloseService(evt, service) {
     evt.preventDefault()
-    console.log("IN HANDLE CLOSE", service)
     service.isAvailable = false;
     dispatch(updateService(service, ownProps))
+  },
+  postThread: function (thread) {
+    dispatch(postThread(thread, ownProps))
   }
 })
 

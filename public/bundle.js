@@ -81321,57 +81321,46 @@ var AddMessage = function (_Component) {
       message: "",
       threadId: 0
     };
+
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
     return _this;
   }
 
   _createClass(AddMessage, [{
     key: 'handleSubmit',
     value: function handleSubmit(evt) {
-      //we'll have to check if a thread exists
-      //if it doesn't exist, create the thread
-      //then add message to thread
-      //if it does exist, add message to thread
-      evt.preventDefault();
-
-      var formData = {
-        subject: evt.target.subject.value
+      var message = {
+        content: evt.target.content.value,
+        senderId: this.props.currentUser.id,
+        threadId: this.props.currentThread.id
       };
 
-      this.props.postNewMessage(formData);
+      evt.preventDefault();
+      this.props.postNewMessage(message);
     }
   }, {
     key: 'render',
     value: function render() {
-      console.log();
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
           'h2',
           null,
-          'Send New Message'
+          'New Message:'
         ),
         _react2.default.createElement(
           'form',
-          null,
-          _react2.default.createElement(
-            'h3',
-            null,
-            'Subject'
-          ),
-          _react2.default.createElement('input', {
-            name: 'subject',
+          { onSubmit: this.handleSubmit },
+          _react2.default.createElement('textarea', {
+            name: 'content',
             type: 'text'
           }),
           _react2.default.createElement(
-            'h3',
+            'button',
             null,
-            'Message'
-          ),
-          _react2.default.createElement('textarea', {
-            name: 'message',
-            type: 'text'
-          })
+            'Submit'
+          )
         )
       );
     }
@@ -81516,7 +81505,6 @@ var AddService = function (_Component) {
       var price = formData.price;
       var postNewService = this.props.postNewService;
 
-      console.log("our current account is: ", this.props.accounts[0]);
       var newContract = this.props.contract.newAgreement(price, { from: this.props.accounts[0] }).then(function (newAgreement) {
         var contractId = newAgreement.logs[0].args.id.toString();
         formData.contractId = contractId;
@@ -81585,19 +81573,19 @@ var AddService = function (_Component) {
           _react2.default.createElement(
             "h3",
             null,
-            " Description: "
+            "Description:"
           ),
           _react2.default.createElement("textarea", { name: "serviceDescription", rows: "1", cols: "50" }),
           _react2.default.createElement(
             "h3",
             null,
-            " Image URL: "
+            "Image URL:"
           ),
           _react2.default.createElement("input", { name: "imgUrl" }),
           _react2.default.createElement(
             "button",
             null,
-            " Submit "
+            "Submit"
           )
         )
       );
@@ -82425,7 +82413,7 @@ var SingleService = function (_Component) {
     _this.handleClick = _this.handleClick.bind(_this);
     _this.handleComplete = _this.handleComplete.bind(_this);
     _this.handleClose = _this.handleClose.bind(_this);
-
+    _this.handleMessage = _this.handleMessage.bind(_this);
     return _this;
   }
 
@@ -82510,6 +82498,16 @@ var SingleService = function (_Component) {
       this.props.handleCloseService(evt, this.props.singleService).catch(function (err) {
         return console.log(err);
       });
+    }
+  }, {
+    key: 'handleMessage',
+    value: function handleMessage(evt) {
+      var thread = {
+        sellerId: this.props.currentUser.id,
+        serviceId: this.props.currentUser.id
+      };
+
+      this.props.postThread(thread);
     }
 
     //.logs[0].args.id.toString()
@@ -82604,6 +82602,11 @@ var SingleService = function (_Component) {
             null,
             'Back to Services'
           )
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: this.handleMessage },
+          'Message'
         ),
         service.isAvailable && currentUser.id !== service.Seller.id ? _react2.default.createElement(
           'button',
@@ -82709,9 +82712,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
     },
     handleCloseService: function handleCloseService(evt, service) {
       evt.preventDefault();
-      console.log("IN HANDLE CLOSE", service);
       service.isAvailable = false;
       dispatch((0, _store.updateService)(service, ownProps));
+    },
+
+    postThread: function postThread(thread) {
+      dispatch((0, _store.postThread)(thread, ownProps));
     }
   };
 };
@@ -82738,29 +82744,42 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _AddMessage = __webpack_require__(/*! ./AddMessage */ "./src/components/AddMessage.js");
+
+var _AddMessage2 = _interopRequireDefault(_AddMessage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SingleThread = function SingleThread(props) {
-  console.log("current thread in Single Thread: ", props.currentThread);
   var messages = props.currentThread.messages;
+  console.log("current thread in single thread component: ", props.currentThread.id);
   return _react2.default.createElement(
-    "div",
+    'div',
     null,
     !props.currentThread.id ? _react2.default.createElement(
-      "div",
+      'div',
       null,
-      "No Conversation Selected"
+      'No Conversation Selected'
     ) : !messages.length ? _react2.default.createElement(
-      "div",
+      'div',
       null,
-      "No Messages in this Conversation"
-    ) : messages.map(function (message) {
-      return _react2.default.createElement(
-        "div",
-        { className: "message", key: message.id },
-        message.content
-      );
-    })
+      'No Messages in this Conversation'
+    ) : _react2.default.createElement(
+      'div',
+      null,
+      messages.map(function (message) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'message', key: message.id },
+          message.content
+        );
+      }),
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_AddMessage2.default, { currentThread: props.currentThread })
+      )
+    )
   );
 };
 
@@ -83945,6 +83964,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.fetchThreads = fetchThreads;
+exports.postThread = postThread;
 exports.default = reducer;
 
 var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -83955,10 +83975,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //ACTION TYPES
 var GET_THREADS = 'GET_THREADS';
+var ADD_THREAD = 'ADD_THREAD';
 
 //ACTION CREATORS
 var getThreads = function getThreads(threads) {
   return { type: GET_THREADS, threads: threads };
+};
+var addThread = function addThread(thread) {
+  return { type: ADD_THREAD, thread: thread };
 };
 
 //THUNK CREATORS
@@ -83974,6 +83998,17 @@ function fetchThreads() {
   };
 }
 
+function postThread(thread, ownProps) {
+  console.log("this thread is in the thunk:", thread);
+  return function thunk(dispatch) {
+    return _axios2.default.post('/api/threads', thread).then(function (res) {
+      return addThreadAndRedirect(res.data, ownProps, dispatch);
+    }).catch(function (err) {
+      return console.log(err, "failed to post thread");
+    });
+  };
+}
+
 //REDUCER
 function reducer() {
   var threads = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -83982,9 +84017,17 @@ function reducer() {
   switch (action.type) {
     case GET_THREADS:
       return action.threads;
+    case ADD_THREAD:
+      return action.thread;
     default:
       return threads;
   }
+}
+
+//HELPER FUNCTIONS
+function addThreadAndRedirect(thread, ownProps, dispatch) {
+  dispatch(addThread(thread));
+  ownProps.history.push('/messages');
 }
 
 /***/ }),

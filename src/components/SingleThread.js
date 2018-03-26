@@ -1,8 +1,9 @@
 import React from 'react'
+import AddMessage from './AddMessage'
 
 const SingleThread = (props) => {
-  console.log("current thread in Single Thread: ", props.currentThread)
   let messages = props.currentThread.messages
+  console.log("current thread in single thread component: ", props.currentThread.id)
   return (
     <div>
       {
@@ -10,9 +11,14 @@ const SingleThread = (props) => {
         ? <div>No Conversation Selected</div>
         : !messages.length
           ? <div>No Messages in this Conversation</div>
-          : messages.map(message => {
-            return <div className="message" key={message.id}>{message.content}</div>
-          })
+          : <div>
+              {messages.map(message => {
+              return <div className="message" key={message.id}>{message.content}</div>
+              })}
+              <div>
+              <AddMessage currentThread={props.currentThread} />
+              </div>
+            </div>
       }
     </div>
   )
