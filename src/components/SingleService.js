@@ -53,14 +53,13 @@ class SingleService extends Component {
 
   handleMessage(evt) {
     let thread = {
-      sellerId: this.props.currentUser.id,
-      serviceId: this.props.currentUser.id
+      sellerId: this.props.singleService.Seller.id,
+      serviceId: this.props.singleService.id
     }
 
     this.props.postThread(thread)
   }
 
-  //.logs[0].args.id.toString()
   render() {
     const service = this.props.singleService
     const currentUser = this.props.currentUser

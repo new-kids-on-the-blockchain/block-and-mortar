@@ -82503,15 +82503,12 @@ var SingleService = function (_Component) {
     key: 'handleMessage',
     value: function handleMessage(evt) {
       var thread = {
-        sellerId: this.props.currentUser.id,
-        serviceId: this.props.currentUser.id
+        sellerId: this.props.singleService.Seller.id,
+        serviceId: this.props.singleService.id
       };
 
       this.props.postThread(thread);
     }
-
-    //.logs[0].args.id.toString()
-
   }, {
     key: 'render',
     value: function render() {
@@ -84027,7 +84024,7 @@ function reducer() {
 //HELPER FUNCTIONS
 function addThreadAndRedirect(thread, ownProps, dispatch) {
   dispatch(addThread(thread));
-  ownProps.history.push('/messages');
+  ownProps.history.push('/home');
 }
 
 /***/ }),

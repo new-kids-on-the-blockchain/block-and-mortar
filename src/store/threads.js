@@ -42,5 +42,5 @@ export default function reducer(threads = [], action) {
 //HELPER FUNCTIONS
 function addThreadAndRedirect(thread, ownProps, dispatch) {
   dispatch(addThread(thread));
-  ownProps.history.push('/messages');
+  ownProps.history.push('/home');
 }
