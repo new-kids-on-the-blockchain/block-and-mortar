@@ -1,42 +1,42 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { fetchUsers } from '../store';
+// import React, { Component } from 'react'
+// import { connect } from 'react-redux'
+// import { fetchUsers } from '../store';
 
-class AllUsers extends Component {
-  componentDidMount(props){
-    this.props.handleFetchUsers();
-  }
+// class AllUsers extends Component {
+//   componentDidMount(props){
+//     this.props.handleFetchUsers();
+//   }
 
-  render(){
-    return(
-      <div>
-      <ul>
-      {this.props.users && this.props.users.map(user => {
-        return (
-          <li key={user.id}>{user.email}</li>
-        )
-      })}
-     </ul>
-      </div>
-    )
-  }
-}
+//   render(){
+//     return(
+//       <div>
+//       <ul>
+//       {this.props.users && this.props.users.map(user => {
+//         return (
+//           <li key={user.id}>{user.email}</li>
+//         )
+//       })}
+//      </ul>
+//       </div>
+//     )
+//   }
+// }
 
-/**
- * CONTAINER
- */
-const mapState = (state) => {
-  return {
-    users: state.users
-  }
-}
+// /**
+//  * CONTAINER
+//  */
+// const mapState = (state) => {
+//   return {
+//     users: state.users
+//   }
+// }
 
-const mapDispatch = (dispatch) => {
-    return {
-        handleFetchUsers() {
-            dispatch(fetchUsers())
-        }
-    }
-}
+// const mapDispatch = (dispatch) => {
+//     return {
+//         handleFetchUsers() {
+//             dispatch(fetchUsers())
+//         }
+//     }
+// }
 
-export default connect(mapState, mapDispatch)(AllUsers)
+// export default connect(mapState, mapDispatch)(AllUsers)

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchWeb3, fetchServiceById, fetchServices, fetchAccounts, fetchContract, updateService, updateCompleteService, postThread } from '../store'
+import { toDate } from '../../utils'
 
 class SingleService extends Component {
   constructor() {
@@ -68,14 +69,12 @@ class SingleService extends Component {
       this.props.singleService &&
       <div className="avenir center bg-light-gray pa3 ph5-ns">
         <h1 className="purple">{service.name} </h1>
-        <img src={service.imgUrl} />
+        <img alt={service.name} src={service.imgUrl} />
         <p><b>Description:</b> {service.description} </p>
         <p><b>Category:</b> {service.category} </p>
         <p><b>Price:</b> {service.price} Ether</p>
-        <p><b>Date created:</b> {service.createdAt}</p>
-        <Link to={`/users/${service.seller}`}>
-          <p><b>Offered By:</b> {service.Seller.userName}</p>
-        </Link>
+        <p><b>Date Posted:</b> {toDate(service.createdAt)}</p>
+        <p><b>Offered By:</b> <Link to={`/users/${service.seller}`}>{service.Seller.userName}      </Link></p>
         <Link to="/services"><button>Back to Services</button></Link>
         <button onClick={this.handleMessage}>Message</button>
 

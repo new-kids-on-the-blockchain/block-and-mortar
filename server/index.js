@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8080
 const app = express()
 const socketio = require('socket.io')
 module.exports = app
-const cors = require('cors');
+// const cors = require('cors');
 /**
  * In your development environment, you can keep all of your
  * app's secret API keys in a file called `secrets.js`, in your project
@@ -40,11 +40,12 @@ const createApp = () => {
   app.use(bodyParser.urlencoded({ extended: true }))
 
   //middleware for having two ports for frontend and express
-  app.use(cors())
-  app.use(cors({
-    origin: 'http://localhost:3000',
-    credentials: true
-  }))
+  // app.use(cors())
+  // app.use(cors({
+  //   origin: 'http://localhost:3000',
+  //   credentials: true
+  // }))
+
   // compression middleware
   app.use(compression())
 

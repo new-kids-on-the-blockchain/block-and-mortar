@@ -9,13 +9,11 @@ class SingleUserPublic extends Component {
   }
 
   componentDidMount() {
-    console.log("FETCHING USER ID", this.props.match.params.id);
     this.props.handleFetchUserById(this.props.match.params.id);
     this.props.fetchServices();
   }
 
   render() {
-    console.log("SINGLE USER PUBLIC!!", this.props.user);
     const user = this.props.user;
     const boughtServices = this.props.user.Buyer || [];
     const soldServices = this.props.user.Seller || [];
@@ -23,44 +21,48 @@ class SingleUserPublic extends Component {
       item => item.isAvailable === true
     );
     const pastServices = soldServices.filter(item => item.isAvailable === false)
-    console.log("AVAILABLE SERVICES", availableServices);
-    console.log("user is: ", user);
+    const servicesCompleted = pastServices.filter(item => item.status === "Completed")
+    console.log(servicesCompleted, 'servicesCompleted')
+
     if (!user.id) return <div className="avenir dark-red"><h2>Oh no! No user found.</h2></div>;
     return (
       user.id ? (
         <div className="avenir center bg-light-gray pa3 ph5-ns">
           <img alt="profile img" src={user.imageURL} />
           <h1 className="dark-pink">Hi, I'm {user.userName}!</h1>
-          <h2>My Available Goods & Services: </h2>
-          <ul>
+          <h2>My Available Goods & Services for Sale: </h2>
+          <div>
             {availableServices.length ?
               (availableServices.map(service => {
                 return (
-                  <li key={service.id}>
+                  <div key={service.id}>
                     <Link to={`/services/${service.id}`}>
                       <h2>{service.name}</h2>
                     </Link>
-                    <h3>{service.description}</h3>
-                    <p>Category: {service.category}</p>
-                  </li>
+                    <p><b>Description:</b> {service.description}</p>
+                    <p><b>Category:</b> {service.category}</p>
+                  </div>
                 );
               })) : (<p>No available goods and services.</p>)}
-          </ul>
-          <h2> My Past Transactions: </h2>
-          <ul>
+          </div>
+          <h2> Seller History: </h2>
+          <div>
             {pastServices.length ?
-              (pastServices.map(pastService => {
-                return (
-                  <li key={pastService.id}>
-                    <Link to={`/services/${pastService.id}`}>
-                      <h2>{pastService.name}</h2>
-                    </Link>
-                    <h3>{pastService.description}</h3>
-                    <p>Category: {pastService.category}</p>
-                  </li>
-                );
-              })) : (<p>No past transactions.</p>)}
-          </ul>
+             (<h3>{pastServices.length} transactions, {pastServices.length} fulfilled </h3>)
+              // (pastServices.map(pastService => {
+              //   return (
+              //     <li key={pastService.id}>
+              //       <Link to={`/services/${pastService.id}`}>
+              //         <h2>{pastService.name}</h2>
+              //       </Link>
+              //       <h3>{pastService.description}</h3>
+              //       <p>Category: {pastService.category}</p>
+              //       <p>Status: {pastService.status}</p>
+              //     </li>
+                // );
+              // }))
+               : (<p>No past transactions.</p>)}
+          </div>
         </div>
       ) : (<div />
 

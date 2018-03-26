@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { toDate } from '../../utils'
 
 class SingleUser extends Component {
 
@@ -13,9 +14,6 @@ class SingleUser extends Component {
     const pendingSales = currentUser && services && services.filter(service => (service.seller === currentUser.id) && service.status === "Pending")
     const pendingPurchases = currentUser && services && services.filter(service => service.buyer && (service.buyer=== currentUser.id) && service.status === "Pending")
 
-    console.log(pendingPurchases, "PENDING PURCHASESS")
-    console.log(pendingSales, 'pendingSales')
-
     if (!currentUser) return <div>No user exists at this location</div>
 
     return (
@@ -27,14 +25,15 @@ class SingleUser extends Component {
           {pendingSales.length ? (
             pendingSales.map(transaction => {
               return (
-                <li key={transaction.id}>
+                <div> key={transaction.id}>
                   <Link to={`/services/${transaction.id}`}>
                     <h2>{transaction.name}</h2>
                   </Link>
-                  <h3>Buyer: {transaction.Buyer.userName}</h3>
-                  <p>Status: {transaction.status}</p>
-                  <p>Category: {transaction.category}</p>
-                </li>
+                  <p><b>Buyer:</b>{transaction.Buyer.userName}</p>
+                  <p><b>Status:</b> {transaction.status}</p>
+                  <p><b>Category:</b>{transaction.category}</p>
+                  <p><b>Date Posted:</b> {toDate(transaction.createdAt)}</p>
+                </div>
               );
             })) : (<p>You have no transactions to fulfill.</p>)}
         </ul>
@@ -45,14 +44,15 @@ class SingleUser extends Component {
           {pendingPurchases.length ? (
             pendingPurchases.map(transaction => {
               return (
-                <li key={transaction.id}>
+                <div key={transaction.id}>
                   <Link to={`/services/${transaction.id}`}>
                     <h2>{transaction.name}</h2>
                   </Link>
-                  <h3>Buyer: {transaction.Buyer.userName}</h3>
-                  <p>Status: {transaction.status}</p>
-                  <p>Category: {transaction.category}</p>
-                </li>
+                  <p><b>Seller:</b> {transaction.Seller.userName}</p>
+                  <p><b>Status:</b> {transaction.status}</p>
+                  <p><b>Category:</b>{transaction.category}</p>
+                  <p><b>Date Posted:</b> {toDate(transaction.createdAt)}</p>
+                </div>
               );
             })) : (<p>You have no pending purchases.</p>)}
         </ul>
