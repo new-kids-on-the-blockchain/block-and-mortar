@@ -72,7 +72,7 @@ class AddService extends Component {
            </p>
         </div>
         <h2 className="avenir">Post Goods and Services</h2>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className="avenir">
             <h3>Title:</h3>
             <input name="serviceName" placeholder="3 Jars of Artisanal Honey" size="50" />
             <h3>Category:</h3>

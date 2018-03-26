@@ -81560,7 +81560,7 @@ var AddService = function (_Component) {
         ),
         _react2.default.createElement(
           "form",
-          { onSubmit: this.handleSubmit },
+          { onSubmit: this.handleSubmit, className: "avenir" },
           _react2.default.createElement(
             "h3",
             null,
@@ -82144,6 +82144,205 @@ function Homepage() {
 
 /***/ }),
 
+/***/ "./src/components/MyProfile.js":
+/*!*************************************!*\
+  !*** ./src/components/MyProfile.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _store = __webpack_require__(/*! ../store */ "./src/store/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MyProfile = function (_Component) {
+  _inherits(MyProfile, _Component);
+
+  function MyProfile(props) {
+    _classCallCheck(this, MyProfile);
+
+    return _possibleConstructorReturn(this, (MyProfile.__proto__ || Object.getPrototypeOf(MyProfile)).call(this, props));
+  }
+
+  _createClass(MyProfile, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.handleFetchUserById(this.props.currentUser.id);
+      this.props.fetchServices();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var user = this.props.user;
+      console.log(user, "USERRRR");
+      var boughtServices = this.props.user.Buyer || [];
+      var soldServices = this.props.user.Seller || [];
+      var availableServices = soldServices.filter(function (item) {
+        return item.isAvailable === true;
+      });
+      var pastServices = soldServices.filter(function (item) {
+        return item.isAvailable === false;
+      });
+      var servicesCompleted = pastServices.filter(function (item) {
+        return item.status === "Completed";
+      });
+      console.log(servicesCompleted, 'servicesCompleted');
+
+      if (!user.id) return _react2.default.createElement(
+        "div",
+        { className: "avenir dark-red" },
+        _react2.default.createElement(
+          "h2",
+          null,
+          "Oh no! No user found."
+        )
+      );
+      return user.id ? _react2.default.createElement(
+        "div",
+        { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" },
+        _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
+        _react2.default.createElement(
+          "h1",
+          { className: "dark-pink" },
+          "Hi, I'm ",
+          user.userName,
+          "!"
+        ),
+        _react2.default.createElement(
+          "h2",
+          null,
+          "My Available Goods & Services for Sale: "
+        ),
+        _react2.default.createElement(
+          "div",
+          null,
+          availableServices.length ? availableServices.map(function (service) {
+            return _react2.default.createElement(
+              "div",
+              { key: service.id },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: "/services/" + service.id },
+                _react2.default.createElement(
+                  "h2",
+                  null,
+                  service.name
+                )
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                _react2.default.createElement(
+                  "b",
+                  null,
+                  "Description:"
+                ),
+                " ",
+                service.description
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                _react2.default.createElement(
+                  "b",
+                  null,
+                  "Category:"
+                ),
+                " ",
+                service.category
+              )
+            );
+          }) : _react2.default.createElement(
+            "p",
+            null,
+            "No available goods and services."
+          )
+        ),
+        _react2.default.createElement(
+          "h2",
+          null,
+          " Seller History: "
+        ),
+        _react2.default.createElement(
+          "div",
+          null,
+          pastServices.length ? _react2.default.createElement(
+            "h3",
+            null,
+            pastServices.length,
+            " transactions, ",
+            pastServices.length,
+            " fulfilled "
+          ) :
+          // (pastServices.map(pastService => {
+          //   return (
+          //     <li key={pastService.id}>
+          //       <Link to={`/services/${pastService.id}`}>
+          //         <h2>{pastService.name}</h2>
+          //       </Link>
+          //       <h3>{pastService.description}</h3>
+          //       <p>Category: {pastService.category}</p>
+          //       <p>Status: {pastService.status}</p>
+          //     </li>
+          // );
+          // }))
+          _react2.default.createElement(
+            "p",
+            null,
+            "No past transactions."
+          )
+        )
+      ) : _react2.default.createElement("div", null);
+    }
+  }]);
+
+  return MyProfile;
+}(_react.Component);
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  console.log(state, "CURRENT USER STATE PUBLIC");
+  return {
+    user: state.singleUser,
+    currentUser: state.currentUser
+  };
+};
+
+var mapStateToDispatch = function mapStateToDispatch(dispatch) {
+  return {
+    handleFetchUserById: function handleFetchUserById(id) {
+      dispatch((0, _store.fetchUserById)(id));
+    },
+    fetchServices: _store.fetchServices
+  };
+};
+
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapStateToDispatch)(MyProfile));
+
+/***/ }),
+
 /***/ "./src/components/NavBar.js":
 /*!**********************************!*\
   !*** ./src/components/NavBar.js ***!
@@ -82220,6 +82419,11 @@ var Navbar = function Navbar(props) {
             _reactRouterDom.Link,
             { to: '/messages', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
             'Inbox'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/my-profile', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
+            'My Profile'
           ),
           _react2.default.createElement(
             'a',
@@ -82337,6 +82541,10 @@ var _FAQ = __webpack_require__(/*! ./FAQ */ "./src/components/FAQ.js");
 
 var _FAQ2 = _interopRequireDefault(_FAQ);
 
+var _MyProfile = __webpack_require__(/*! ./MyProfile */ "./src/components/MyProfile.js");
+
+var _MyProfile2 = _interopRequireDefault(_MyProfile);
+
 var _store = __webpack_require__(/*! ../store */ "./src/store/index.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -82386,7 +82594,8 @@ var Routes = function (_Component) {
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/services/new', component: _AddService2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/services/:id', component: _SingleService2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/messages', component: _AllMessages2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/messages/new', component: _AddMessage2.default })
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/messages/new', component: _AddMessage2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/my-profile', component: _MyProfile2.default })
           ),
           _react2.default.createElement(_reactRouterDom.Route, { component: _SignUp.Login })
         )
