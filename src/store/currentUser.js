@@ -1,6 +1,5 @@
 import axios from "axios";
 import history from '../history';
-const baseURL = 'http://localhost:8080'
 
 // action types
 const GET_CURRENT_USER = 'GET_CURRENT_USER';
@@ -26,19 +25,19 @@ export default function (currentUser = {}, action) {
 
 // thunks
 export const fetchCurrentUser = id => dispatch => {
-  axios.get(`/api/users/${id}`, {baseURL})
+  axios.get(`/api/users/${id}`)
   .then(user => dispatch(getCurrentUser(user.data)))
   .catch(err => console.error(`error fetching user id: ${id}`, err))
 }
 
 export const me = () => dispatch => {
-  axios.get('/auth/me', {baseURL})
+  axios.get('/auth/me')
   .then(res => dispatch(getCurrentUser(res.data)))
   .catch(err => console.log(err))
 }
 
-export const auth = (userName, email, password, method) => dispatch => {
-  axios.post(`/auth/${method}`, {userName, email, password}, {baseURL})
+export const auth = (userName, password, method) => dispatch => {
+  axios.post(`/auth/${method}`, {userName, password})
   .then(res => {
     dispatch(getCurrentUser(res.data))
     history.push('/home')
