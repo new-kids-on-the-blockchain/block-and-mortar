@@ -68,7 +68,7 @@ class AddService extends Component {
         <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy">
           <p className="lh-title ml3"><b>Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:</b>
           <li>When you click "submit," you are actually writing to the blockchain! A "smart contract" will record all of the important information about your product and sale.</li>
-          <li>Writing to the blockchain incurs a small transaction fee, charged in Ether, which is called "gas."</li>
+          <li>Writing to the blockchain incurs a small transaction fee, charged in ether, which is called "gas."</li>
            </p>
         </div>
         <h2 className="avenir">Post Goods and Services</h2>
@@ -80,7 +80,7 @@ class AddService extends Component {
               <option value="Goods">Goods</option>
               <option value="Services">Services</option>
             </select>
-            <h3>Price (ether)</h3>
+            <h3>Price (ether):</h3>
             <input
               name="servicePrice"
               type="number"

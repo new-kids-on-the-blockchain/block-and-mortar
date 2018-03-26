@@ -72,14 +72,14 @@ class SingleService extends Component {
         <img alt={service.name} src={service.imgUrl} />
         <p><b>Description:</b> {service.description} </p>
         <p><b>Category:</b> {service.category} </p>
-        <p><b>Price:</b> {service.price} Ether</p>
+        <p><b>Price:</b> {service.price} ether</p>
         <p><b>Date Posted:</b> {toDate(service.createdAt)}</p>
         <p><b>Offered By:</b> <Link to={`/users/${service.seller}`}>{service.Seller.userName}      </Link></p>
         <Link to="/services"><button>Back to Services</button></Link>
         <button onClick={this.handleMessage}>Message</button>
 
-        {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Purchase</button> : <div />}
-        {service.isAvailable && currentUser.id === service.Seller.id ? <button onClick={this.handleClose}>Close Service</button> : <div />}
+        {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Place Order</button> : <div />}
+        {service.isAvailable && currentUser.id === service.Seller.id ? <button onClick={this.handleClose}>Remove from Marketplace</button> : <div />}
         {!service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? <h3>You have closed this service.</h3> : <div />}
 
         {!service.isAvailable && service.status === "Pending" && (currentUser.id === service.Seller.id) ? <h3>Transaction in progress. {service.Buyer.userName} has purchased this service.</h3> : <div />}

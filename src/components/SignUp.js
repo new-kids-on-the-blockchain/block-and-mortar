@@ -31,7 +31,7 @@ const AuthForm = props => {
       <div className="avenir lh-title ml3">
         <h2>Get started today: When you join Block & Mortar, you can start buying and selling goods immediately.</h2>
         <p>If you are new to blockchain technology, check out our beginner's guide.</p>
-        <p>If you’re already familiar with Ethereum, be sure to log into your <a href="https://metamask.io/">Metamask account</a>, create an account or log in below, and you’ll be ready to get started.</p>
+        <p>If you're already familiar with Ethereum, be sure to log into your <a href="https://metamask.io/">Metamask account</a>, create an account or log in below, and you’ll be ready to get started.</p>
       </div>
         </div>
       

@@ -81549,7 +81549,7 @@ var AddService = function (_Component) {
             _react2.default.createElement(
               "li",
               null,
-              "Writing to the blockchain incurs a small transaction fee, charged in Ether, which is called \"gas.\""
+              "Writing to the blockchain incurs a small transaction fee, charged in ether, which is called \"gas.\""
             )
           )
         ),
@@ -81589,7 +81589,7 @@ var AddService = function (_Component) {
           _react2.default.createElement(
             "h3",
             null,
-            "Price (ether)"
+            "Price (ether):"
           ),
           _react2.default.createElement("input", {
             name: "servicePrice",
@@ -81855,7 +81855,7 @@ var AllServices = function (_Component) {
       if (!services) return _react2.default.createElement(
         'div',
         null,
-        'Available services in your community loading....'
+        'Loading the Marketplace...'
       );else return _react2.default.createElement(
         'div',
         { className: 'avenir center bg-light-gray pa3 ph5-ns' },
@@ -81865,7 +81865,7 @@ var AllServices = function (_Component) {
           _react2.default.createElement(
             'h1',
             { className: 'avenir purple' },
-            'Available Services in Your Community '
+            'Marketplace'
           ),
           _react2.default.createElement(
             'div',
@@ -81876,7 +81876,17 @@ var AllServices = function (_Component) {
               _react2.default.createElement(
                 'p',
                 { className: 'avenir lh-title ml3' },
-                'Transactions between you and sellers in your community will be facilitated by a "smart contract", a set of rules that govern the exchange of goods and services for ether. Please note that you\'ll incur a small fee every time you write to the blockchain (called "gas"), but the advantage is that the transaction is immutable, public, and xxx. '
+                'When you place an order, you\'ll be charged a small transaction fee ("gas"); however you won\'t be charged the full amount until you\'ve received the order. ',
+                _react2.default.createElement(
+                  'b',
+                  null,
+                  _react2.default.createElement(
+                    'em',
+                    null,
+                    'Please click "Complete Agreement" once your order is fulfilled.'
+                  )
+                ),
+                ' At that time, the funds will be deducted from your digital wallet.'
               )
             ),
             _react2.default.createElement(
@@ -82398,7 +82408,7 @@ var AuthForm = function AuthForm(props) {
         _react2.default.createElement(
           'p',
           null,
-          'If you\u2019re already familiar with Ethereum, be sure to log into your ',
+          'If you\'re already familiar with Ethereum, be sure to log into your ',
           _react2.default.createElement(
             'a',
             { href: 'https://metamask.io/' },
@@ -82648,7 +82658,7 @@ var SingleService = function (_Component) {
           ),
           ' ',
           service.price,
-          ' Ether'
+          ' ether'
         ),
         _react2.default.createElement(
           'p',
@@ -82694,12 +82704,12 @@ var SingleService = function (_Component) {
         service.isAvailable && currentUser.id !== service.Seller.id ? _react2.default.createElement(
           'button',
           { onClick: this.handleClick },
-          'Purchase'
+          'Place Order'
         ) : _react2.default.createElement('div', null),
         service.isAvailable && currentUser.id === service.Seller.id ? _react2.default.createElement(
           'button',
           { onClick: this.handleClose },
-          'Close Service'
+          'Remove from Marketplace'
         ) : _react2.default.createElement('div', null),
         !service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? _react2.default.createElement(
           'h3',
