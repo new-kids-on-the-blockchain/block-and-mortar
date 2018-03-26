@@ -81536,7 +81536,7 @@ var AddService = function (_Component) {
           _react2.default.createElement(
             "p",
             { className: "lh-title ml3" },
-            "Transactions between you and buyers in your community will be facilitated by a \"smart contract,\" a set of rules that govern the exchange of goods and services for ether. When you post a good or service on Block and Mortar, you're kicking off this process and writing to the blockchain! Subsequent interactions between you and your buyers will also be captured on the blockchain. Please note that you'll incur a small fee every time you write to the blockchain (called \"gas\"), but the advantage is that the transaction is immutable, public, and xxx. "
+            "Transactions between you and buyers in your community will be facilitated by a \"smart contract,\" a set of rules that govern the exchange of goods and services for ether. When you post a good or service on Block & Mortar, you're kicking off this process and writing to the blockchain! Subsequent interactions between you and your buyers will also be captured on the blockchain. Please note that you'll incur a small fee every time you write to the blockchain (called \"gas\"), but the advantage is that the transaction is immutable, public, and xxx. "
           )
         ),
         _react2.default.createElement(
@@ -81981,7 +81981,7 @@ function Homepage() {
         _react2.default.createElement(
             "h1",
             null,
-            "Aimed at local communities, Block and Mortar allows for the grassroots sale of goods and services using the Ethereum blockchain. "
+            "Aimed at local communities, Block & Mortar allows for the grassroots sale of goods and services using the Ethereum blockchain. "
         ),
         _react2.default.createElement(
             "div",
@@ -81989,7 +81989,7 @@ function Homepage() {
             _react2.default.createElement(
                 "p",
                 { className: "fl w-third" },
-                "Before signing up or logging into Block and Mortar, please make sure you've signed up and logged into your ",
+                "Before signing up or logging into Block & Mortar, please make sure you've signed up and logged into your ",
                 _react2.default.createElement(
                     "a",
                     { href: "https://metamask.io/" },
@@ -82000,12 +82000,12 @@ function Homepage() {
             _react2.default.createElement(
                 "p",
                 { className: "fl w-third" },
-                "For those of you new to blockchain technology, Metamask connects you to the Ethereum blockchain, a decentralized cryptocurrency platform that serves as a public ledger. Metamask will also be your digital wallet, so you'll need a bit of ether cryptocurrency to engage with your community on Block and Mortar."
+                "For those of you new to blockchain technology, Metamask connects you to the Ethereum blockchain, a decentralized cryptocurrency platform that serves as a public ledger. Metamask will also be your digital wallet, so you'll need a bit of ether cryptocurrency to engage with your community on Block & Mortar."
             ),
             _react2.default.createElement(
                 "p",
                 { className: "fl w-third" },
-                "Once you're set up with Metamask and Block and Mortar, you will be able to buy or sell goods and services within your local community, an exchange codified and facilitated by a \"smart contract.\" Login to learn more!"
+                "Once you're set up with Metamask and Block & Mortar, you will be able to buy or sell goods and services within your local community, an exchange codified and facilitated by a \"smart contract.\" Login to learn more!"
             )
         )
     );
@@ -82055,7 +82055,7 @@ var Navbar = function Navbar(props) {
           _react2.default.createElement(
             'h1',
             { className: 'avenir green f1' },
-            'Block and Mortar'
+            'Block & Mortar'
           )
         )
       ),
@@ -82306,54 +82306,87 @@ var AuthForm = function AuthForm(props) {
 
   return _react2.default.createElement(
     'div',
-    { className: 'form-login' },
+    { className: 'avenir form-login' },
     _react2.default.createElement(
-      'form',
-      { onSubmit: handleSubmit, name: name },
+      'div',
+      { className: 'avenir flex items-center justify-center pa4 bg-lightest-gray navy fl w-30' },
       _react2.default.createElement(
-        'div',
-        null,
+        'form',
+        { onSubmit: handleSubmit, name: name, className: 'avenir lh-title ml3' },
         _react2.default.createElement(
-          'label',
-          { htmlFor: 'userName' },
+          'div',
+          null,
           _react2.default.createElement(
-            'small',
-            null,
-            'Username'
+            'label',
+            { htmlFor: 'userName' },
+            _react2.default.createElement(
+              'large',
+              null,
+              'Username'
+            )
+          ),
+          _react2.default.createElement('input', { name: 'userName', type: 'text' })
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'label',
+            { htmlFor: 'password' },
+            _react2.default.createElement(
+              'large',
+              null,
+              'Password'
+            )
+          ),
+          _react2.default.createElement('input', { name: 'password', type: 'password' })
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'button',
+            { type: 'submit', className: 'btn btn-warning' },
+            displayName
           )
         ),
-        _react2.default.createElement('input', { name: 'userName', type: 'text' })
-      ),
-      _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'label',
-          { htmlFor: 'password' },
-          _react2.default.createElement(
-            'small',
-            null,
-            'Password'
-          )
-        ),
-        _react2.default.createElement('input', { name: 'password', type: 'password' })
-      ),
-      _react2.default.createElement('br', null),
-      _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'button',
-          { type: 'submit', className: 'btn btn-warning' },
-          displayName
+        error && error.response && _react2.default.createElement(
+          'div',
+          null,
+          ' ',
+          error.response.data,
+          ' '
         )
-      ),
-      error && error.response && _react2.default.createElement(
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'avenir flex items-center justify-center pa4 bg-lightest-blue navy fl w-70' },
+      _react2.default.createElement(
         'div',
-        null,
-        ' ',
-        error.response.data,
-        ' '
+        { className: 'avenir lh-title ml3' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          'Get started today: When you join Block & Mortar, you can start buying and selling goods immediately.'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'If you are new to blockchain technology, check out our beginner\'s guide.'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'If you\u2019re already familiar with Ethereum, be sure to log into your ',
+          _react2.default.createElement(
+            'a',
+            { href: 'https://metamask.io/' },
+            'Metamask account'
+          ),
+          ', create an account or log in below, and you\u2019ll be ready to get started.'
+        )
       )
     ),
     _react2.default.createElement('br', null)
