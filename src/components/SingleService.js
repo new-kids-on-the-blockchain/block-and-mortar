@@ -67,7 +67,7 @@ class SingleService extends Component {
     if (!service) return <div className="avenir dark-red"><h2>Oh no! No service exists at this address.</h2></div>
     return (
       this.props.singleService &&
-      <div className="avenir center bg-light-gray pa3 ph5-ns">
+      <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
         <h1 className="purple">{service.name} </h1>
         <img alt={service.name} src={service.imgUrl} />
         <p><b>Description:</b> {service.description} </p>

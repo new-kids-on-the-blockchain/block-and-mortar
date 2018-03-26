@@ -63,7 +63,7 @@ class AddService extends Component {
     const { name, description, category, price } = this.state;
     return (
       this.props.contract && (
-        <div>
+        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
           <h1 className="avenir purple">New Service</h1>
         <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy">
           <p className="lh-title ml3"><b>Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:</b>
@@ -72,7 +72,7 @@ class AddService extends Component {
            </p>
         </div>
         <h2 className="avenir">Post Goods and Services</h2>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className="avenir">
             <h3>Title:</h3>
             <input name="serviceName" placeholder="3 Jars of Artisanal Honey" size="50" />
             <h3>Category:</h3>

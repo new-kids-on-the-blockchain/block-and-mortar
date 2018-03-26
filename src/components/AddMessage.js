@@ -30,7 +30,7 @@ class AddMessage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
         <h2>New Message:</h2>
         <form onSubmit={this.handleSubmit}>
           <textarea
