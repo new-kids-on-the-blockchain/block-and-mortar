@@ -82729,13 +82729,13 @@ var SingleService = function (_Component) {
           _react2.default.createElement(
             'button',
             { onClick: this.handleComplete },
-            'Complete Agreement'
+            'Complete Order'
           ),
           ' ',
           _react2.default.createElement(
             'h3',
             null,
-            'Transaction in progress. Click "Complete Agreement" when you have received your goods or services.'
+            'Order placed successfully. Complete transaction when you have received your goods or services.'
           ),
           ' '
         ) : _react2.default.createElement('div', null),
@@ -82747,7 +82747,7 @@ var SingleService = function (_Component) {
         !service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ? _react2.default.createElement(
           'h3',
           null,
-          'Congrats, transaction completed! Your blockchain contract ID is: ',
+          'Congrats, transaction completed! Your transaction ID on the blockchain is: ',
           this.props.singleService.contractId
         ) : _react2.default.createElement('div', null)
       );

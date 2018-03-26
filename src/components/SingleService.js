@@ -84,12 +84,12 @@ class SingleService extends Component {
 
         {!service.isAvailable && service.status === "Pending" && (currentUser.id === service.Seller.id) ? <h3>Transaction in progress. {service.Buyer.userName} has purchased this service.</h3> : <div />}
 
-        {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? <div><button onClick={this.handleComplete}>Complete Agreement</button> <h3>Transaction in progress. Click "Complete Agreement" when you have received your goods or services.</h3> </div> : <div />}
+        {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? <div><button onClick={this.handleComplete}>Complete Order</button> <h3>Order placed successfully. Complete transaction when you have received your goods or services.</h3> </div> : <div />}
 
         {!service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? <h3>Service no longer available.</h3> : <div />}
 
         {!service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ?
-          <h3>Congrats, transaction completed! Your blockchain contract ID is: {this.props.singleService.contractId}</h3>
+          <h3>Congrats, transaction completed! Your transaction ID on the blockchain is: {this.props.singleService.contractId}</h3>
           : <div />}
 
       </div>
