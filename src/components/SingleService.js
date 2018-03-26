@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchWeb3, fetchServiceById, fetchServices, fetchAccounts, fetchContract, updateService, updateCompleteService } from '../store'
+import { fetchWeb3, fetchServiceById, fetchServices, fetchAccounts, fetchContract, updateService, updateCompleteService, postThread } from '../store'
 import { toDate } from '../../utils'
 
 class SingleService extends Component {
@@ -10,8 +10,9 @@ class SingleService extends Component {
     this.handleClick = this.handleClick.bind(this)
     this.handleComplete = this.handleComplete.bind(this)
     this.handleClose = this.handleClose.bind(this)
-
+    this.handleMessage = this.handleMessage.bind(this)
   }
+
   componentDidMount() {
     this.props.handleFetchServices()
     this.props.handleFetchContract()
@@ -51,8 +52,15 @@ class SingleService extends Component {
 
   }
 
+  handleMessage(evt) {
+    let thread = {
+      sellerId: this.props.singleService.Seller.id,
+      serviceId: this.props.singleService.id
+    }
 
-  //.logs[0].args.id.toString()
+    this.props.postThread(thread)
+  }
+
   render() {
     const service = this.props.singleService
     const currentUser = this.props.currentUser
@@ -68,6 +76,7 @@ class SingleService extends Component {
         <p><b>Date Posted:</b> {toDate(service.createdAt)}</p>
         <p><b>Offered By:</b> <Link to={`/users/${service.seller}`}>{service.Seller.userName}      </Link></p>
         <Link to="/services"><button>Back to Services</button></Link>
+        <button onClick={this.handleMessage}>Message</button>
 
         {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Purchase</button> : <div />}
         {service.isAvailable && currentUser.id === service.Seller.id ? <button onClick={this.handleClose}>Close Service</button> : <div />}
@@ -127,9 +136,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   handleCloseService(evt, service) {
     evt.preventDefault()
-    console.log("IN HANDLE CLOSE", service)
     service.isAvailable = false;
     dispatch(updateService(service, ownProps))
+  },
+  postThread: function (thread) {
+    dispatch(postThread(thread, ownProps))
   }
 })
 

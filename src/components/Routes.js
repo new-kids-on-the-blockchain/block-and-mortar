@@ -7,7 +7,6 @@ import AddService from './AddService'
 import SingleUser from './SingleUser'
 import SingleUserPublic from './SingleUserPublic'
 import AllMessages from './AllMessages'
-import SingleMessage from './SingleMessage'
 import AddMessage from './AddMessage'
 import Homepage from './Homepage'
 import { Login, Signup } from './SignUp'
@@ -41,7 +40,6 @@ class Routes extends Component {
                 <Route exact path='/services/:id' component={SingleService} />
                 <Route exact path='/messages' component={AllMessages} />
                 <Route exact path='/messages/new' component={AddMessage} />
-                <Route exact path='/messages/:id' component={SingleMessage} />
               </Switch>
           }
           {/* Displays our Login component as a fallback */}

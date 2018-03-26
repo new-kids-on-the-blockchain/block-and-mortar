@@ -1,5 +1,5 @@
 const db = require('../server/db')
-const {User, Service, Message} = require('../server/db/models')
+const {User, Service, Message, Thread} = require('../server/db/models')
 
 async function seed () {
   await db.sync({force: true})
@@ -25,7 +25,7 @@ async function seed () {
     Service.create({name: 'Babysitting', description: 'I am great with children, I can watch your kids for 3 hours', category: 'Services', buyer: null, seller: 6, isAvailable: true, price: 0.1, status: 'Posted', imgUrl: 'http://clipground.com/images/crib-clipart-2.png'}),
     Service.create({name: 'Dog walking', description: 'I will walk your dog for 30 mins', category: 'Services', buyer: null, seller: 6,  isAvailable: true, price: 0.05, status: 'Posted', imgUrl: 'https://rlv.zcache.com/miniature_schnauzer_dog_cartoon_postcard-r7bf8673c5fd3442a878de0df645898f8_vgbaq_8byvr_324.jpg'}),
     Service.create({name: 'Fresh Jam', description: 'I can offer you 3 jars of homemade jams', category: 'Goods', buyer: null, seller: 7, isAvailable: true, price: 0.02, status: 'Posted', imgUrl: 'http://moziru.com/images/drawn-jam-cartoon-10.jpg'}),
-    Service.create({name: 'Web Design', description: 'I can build your website', category: 'Services', buyer: 4, seller: 7,isAvailable: false, price: 0.9, status: 'Pending', imgUrl: 'https://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=48512695'}),
+    Service.create({name: 'Web Design', description: 'I can build your website', category: 'Services', buyer: 4, seller: 7, isAvailable: false, price: 0.9, status: 'Pending', imgUrl: 'https://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=48512695'}),
     Service.create({name: 'Basil', description: 'I grow fresh basil from my garden', category: 'Goods', buyer: 5, seller: 7, isAvailable: false, price: 0.05, status: 'Completed', imgUrl: 'http://www.clker.com/cliparts/U/G/e/U/g/K/plant-in-pot.svg'}),
     Service.create({name: 'Ironing', description: 'I can iron your clothes!', category: 'Services', buyer: null, seller: 7, isAvailable: true, price: 0.15, status: 'Posted', imgUrl: 'https://png.pngtree.com/element_origin_min_pic/17/08/17/2815fc0230aedc29e33e9f5eb3e646dd.jpg'}),
     Service.create({name: 'Fixing roof', description: 'I am a professional at roof fixing! Great value!', category: 'Services', buyer: 6, seller: 8, isAvailable: false, price: 0.3, status: 'Pending', imgUrl: 'http://www.clker.com/cliparts/6/1/6/6/1333483035815281949My%20House%20Cartoon.svg.hi.png'}),
@@ -39,17 +39,24 @@ async function seed () {
     Service.create({name: 'Burmese artwork', description: 'Moving to Cambridge and need to sell my artwork. Purchased in Myanmar', category: 'Goods', buyer: null, seller: 2, isAvailable: true, price: 0.05, status: 'Posted', imgUrl: 'http://www.craftsy.com/blog/wp-content/uploads/2013/08/nrushdry01-copy.jpg'})
   ])
 
-const message = await Promise.all([
-    Message.create({subject: 'message1', content: 'messsage1 content', sender: 1, recipient: 2}),
-    Message.create({subject: 'message2', content: 'messsage2 content', sender: 2, recipient: 1}),
-    Message.create({subject: 'message3', content: 'messsage3 content', sender: 1, recipient: 2}),
-    Message.create({subject: 'message4', content: 'messsage4 content', sender: 2, recipient: 3}),
-    Message.create({subject: 'message5', content: 'messsage5 content', sender: 3, recipient: 2})
+  const thread = await Promise.all([
+    Thread.create({buyerId: 6, sellerId: 8, serviceId: 8 }),
+    Thread.create({buyerId: 5, sellerId: 7, serviceId: 6 }),
   ])
+
+const message = await Promise.all([
+    Message.create({content: 'messsage1 content', senderId: 6, threadId: 1}),
+    Message.create({content: 'messsage2 content', senderId: 8, threadId: 1}),
+    Message.create({content: 'messsage3 content', senderId: 6, threadId: 1}),
+    Message.create({content: 'messsage4 content', senderId: 5, threadId: 2}),
+    Message.create({content: 'messsage4 content', senderId: 7, threadId: 2}),
+  ])
+
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${services.length} services`)
+  console.log(`seeded ${thread.length} threads`)
   console.log(`seeded ${message.length} messages`)
   console.log(`seeded successfully`)
 }

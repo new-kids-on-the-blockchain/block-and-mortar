@@ -1,20 +1,12 @@
 import axios from "axios";
 
-/**
- * ACTION TYPES
- */
-const GET_MESSAGES = 'GET_MESSAGES';
+//ACTION TYPES
 const ADD_MESSAGE = 'ADD_MESSAGE';
 
-/**
- * ACTION CREATORS
- */
-const getMessages = messages => ({type: GET_MESSAGES, messages})
+//ACTION CREATORS
 const addMessage = message => ({type: ADD_MESSAGE, message})
 
-/**
- * THUNK CREATORS
- */
+//THUNK CREATORS
 export function fetchMessages() {
   return function thunk(dispatch) {
     return axios.get('/api/messages')
@@ -32,13 +24,9 @@ export function postMessage(message, ownProps) {
   }
 }
 
-/**
- * REDUCER
- */
+//REDUCER
 export default function reducer(messages = [], action) {
   switch (action.type) {
-    case GET_MESSAGES:
-      return action.messages;
     case ADD_MESSAGE:
       return [...messages, action.message]
     default:
@@ -46,7 +34,7 @@ export default function reducer(messages = [], action) {
   }
 }
 
-//helperFunc
+//HELPER FUNCTIONS
 function addMessageAndRedirect(message, ownProps, dispatch) {
   dispatch(addMessage(message));
   ownProps.history.push('/messages');

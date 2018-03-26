@@ -5,6 +5,7 @@ router.use('/web3', require('./web3'))
 router.use('/services', require('./services'))
 router.use('/messages', require('./messages'))
 router.use('/users', require('./users'))
+router.use('/threads', require('./threads'))
 
 
 router.use((req, res, next) => {

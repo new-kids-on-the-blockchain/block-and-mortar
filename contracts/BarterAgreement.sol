@@ -8,10 +8,10 @@ contract BarterAgreement {
         uint256 price,
         bool completed,
         bool inProgress
-        );
+    );
     event PaymentLog(
         uint256 value
-        );
+    );
     Agreement[] agreements;
     // storage Agreement[] agreements; //"Storage" was causing errors
     //event console(address sender)

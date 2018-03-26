@@ -8,9 +8,9 @@ class AddService extends Component {
     super();
     this.state = {
       name: "",
-      description: "",
       category: "",
-      price: 0
+      price: 0,
+      description: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -71,14 +71,14 @@ class AddService extends Component {
           Please note that you'll incur a small fee every time you write to the blockchain (called "gas"), but the advantage is that the transaction is immutable, public, and xxx. </p>
         </div>
           <form onSubmit={this.handleSubmit}>
-            <h3> Name: </h3>
+            <h3>Name:</h3>
             <input name="serviceName" />
-            <h3> Category: </h3>
+            <h3>Category:</h3>
             <select name="serviceCategory">
               <option value="Goods">Goods</option>
               <option value="Services">Services</option>
             </select>
-            <h3> Price (ether) </h3>
+            <h3>Price (ether)</h3>
             <input
               name="servicePrice"
               type="number"
@@ -86,11 +86,11 @@ class AddService extends Component {
               max="100"
               step="0.0001"
             />
-            <h3> Description: </h3>
+            <h3>Description:</h3>
             <textarea name="serviceDescription" rows="1" cols="50" />
-            <h3> Image URL: </h3>
+            <h3>Image URL:</h3>
             <input name="imgUrl" />
-            <button> Submit </button>
+            <button>Submit</button>
           </form>
         </div>
       )

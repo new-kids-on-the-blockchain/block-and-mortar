@@ -30,8 +30,6 @@ export const fetchContract = web3 => {
       .then(contract => dispatch(setContract(contract)));
 };
 
-
-
 /**
  * REDUCER
  */

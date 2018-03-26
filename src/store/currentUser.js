@@ -38,6 +38,7 @@ export const me = () => dispatch => {
 
 export const auth = (userName, password, method) => dispatch => {
   axios.post(`/auth/${method}`, {userName, password})
+
   .then(res => {
     dispatch(getCurrentUser(res.data))
     history.push('/home')

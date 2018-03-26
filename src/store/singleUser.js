@@ -21,7 +21,6 @@ export function fetchUserById(id) {
   }
 }
 
-
 //reducer
 export default function reducer(user = {}, action) {
   switch (action.type) {

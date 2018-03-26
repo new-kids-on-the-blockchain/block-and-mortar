@@ -50,12 +50,6 @@ export function updateCompleteService(service, ownProps) {
   }
 }
 
-//HOW TO CALL THE FUNCTION IN THE CONTRACT THAT WE'RE INITIATING
-//DO WE GET A CONTRACT KEY BACK?
-//blockchain(alll data) --> listen for comingback --> post
-//export function postContract = ()
-
-
 /**
  * REDUCER
  */
@@ -71,8 +65,6 @@ export default function reducer(services = [], action) {
       return services
   }
 }
-
-
 
 //helperFunc
 function addServiceAndRedirect(service, ownProps, dispatch) {
