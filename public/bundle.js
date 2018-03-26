@@ -28211,7 +28211,7 @@ module.exports = camelizeStyleName;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 var isTextNode = __webpack_require__(/*! ./isTextNode */ "./node_modules/fbjs/lib/isTextNode.js");
@@ -28486,7 +28486,7 @@ module.exports = createNodesFromMarkup;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 function makeEmptyFunction(arg) {
@@ -29009,7 +29009,7 @@ module.exports = isTextNode;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  * @typechecks static-only
  */
 
@@ -29121,7 +29121,7 @@ module.exports = performanceNow;
  * LICENSE file in the root directory of this source tree.
  *
  * @typechecks
- * 
+ *
  */
 
 /*eslint-disable no-self-compare */
@@ -31601,7 +31601,7 @@ __webpack_require__.r(__webpack_exports__);
     undefined;
 }(this, (function () {
     'use strict';
-    
+
     var REACT_STATICS = {
         childContextTypes: true,
         contextTypes: true,
@@ -31613,7 +31613,7 @@ __webpack_require__.r(__webpack_exports__);
         propTypes: true,
         type: true
     };
-    
+
     var KNOWN_STATICS = {
         name: true,
         length: true,
@@ -31623,30 +31623,30 @@ __webpack_require__.r(__webpack_exports__);
         arguments: true,
         arity: true
     };
-    
+
     var defineProperty = Object.defineProperty;
     var getOwnPropertyNames = Object.getOwnPropertyNames;
     var getOwnPropertySymbols = Object.getOwnPropertySymbols;
     var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
     var getPrototypeOf = Object.getPrototypeOf;
     var objectPrototype = getPrototypeOf && getPrototypeOf(Object);
-    
+
     return function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
         if (typeof sourceComponent !== 'string') { // don't hoist over string (html) components
-            
+
             if (objectPrototype) {
                 var inheritedComponent = getPrototypeOf(sourceComponent);
                 if (inheritedComponent && inheritedComponent !== objectPrototype) {
                     hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
                 }
             }
-            
+
             var keys = getOwnPropertyNames(sourceComponent);
-            
+
             if (getOwnPropertySymbols) {
                 keys = keys.concat(getOwnPropertySymbols(sourceComponent));
             }
-            
+
             for (var i = 0; i < keys.length; ++i) {
                 var key = keys[i];
                 if (!REACT_STATICS[key] && !KNOWN_STATICS[key] && (!blacklist || !blacklist[key])) {
@@ -31656,10 +31656,10 @@ __webpack_require__.r(__webpack_exports__);
                     } catch (e) {}
                 }
             }
-            
+
             return targetComponent;
         }
-        
+
         return targetComponent;
     };
 })));
@@ -31924,8 +31924,8 @@ module.exports = Array.isArray || function (arr) {
   var PADDING = [6, 1536, 393216, 100663296];
   var SHIFT = [0, 8, 16, 24];
   var RC = [1, 0, 32898, 0, 32906, 2147483648, 2147516416, 2147483648, 32907, 0, 2147483649,
-            0, 2147516545, 2147483648, 32777, 2147483648, 138, 0, 136, 0, 2147516425, 0, 
-            2147483658, 0, 2147516555, 0, 139, 2147483648, 32905, 2147483648, 32771, 
+            0, 2147516545, 2147483648, 32777, 2147483648, 138, 0, 136, 0, 2147516425, 0,
+            2147483658, 0, 2147516555, 0, 139, 2147483648, 32905, 2147483648, 32771,
             2147483648, 32770, 2147483648, 128, 2147483648, 32778, 0, 2147483658, 2147483648,
             2147516545, 2147483648, 32896, 2147483648, 2147483649, 0, 2147516424, 2147483648];
   var BITS = [224, 256, 384, 512];
@@ -32013,9 +32013,9 @@ module.exports = Array.isArray || function (arr) {
     if (notString && message.constructor == root.ArrayBuffer) {
       message = new Uint8Array(message);
     }
-    var length = message.length, blocks = this.blocks, byteCount = this.byteCount, 
+    var length = message.length, blocks = this.blocks, byteCount = this.byteCount,
         blockCount = this.blockCount, index = 0, s = this.s, i, code;
-    
+
     while (index < length) {
       if (this.reset) {
         this.reset = false;
@@ -32084,7 +32084,7 @@ module.exports = Array.isArray || function (arr) {
   Keccak.prototype.toString = Keccak.prototype.hex = function () {
     this.finalize();
 
-    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks, 
+    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks,
         extraBytes = this.extraBytes, i = 0, j = 0;
     var hex = '', block;
     while (j < outputBlocks) {
@@ -32118,7 +32118,7 @@ module.exports = Array.isArray || function (arr) {
   Keccak.prototype.arrayBuffer = function () {
     this.finalize();
 
-    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks, 
+    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks,
         extraBytes = this.extraBytes, i = 0, j = 0;
     var bytes = this.outputBits >> 3;
     var buffer;
@@ -32148,7 +32148,7 @@ module.exports = Array.isArray || function (arr) {
   Keccak.prototype.digest = Keccak.prototype.array = function () {
     this.finalize();
 
-    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks, 
+    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks,
         extraBytes = this.extraBytes, i = 0, j = 0;
     var array = [], offset, block;
     while (j < outputBlocks) {
@@ -32181,9 +32181,9 @@ module.exports = Array.isArray || function (arr) {
   };
 
   var f = function (s) {
-    var h, l, n, c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, 
-        b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, 
-        b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, b33, 
+    var h, l, n, c0, c1, c2, c3, c4, c5, c6, c7, c8, c9,
+        b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17,
+        b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, b33,
         b34, b35, b36, b37, b38, b39, b40, b41, b42, b43, b44, b45, b46, b47, b48, b49;
     for (n = 0;n < 48;n += 2) {
       c0 = s[0] ^ s[10] ^ s[20] ^ s[30] ^ s[40];
@@ -38167,7 +38167,7 @@ module.exports = CSSPropertyOperations;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -39938,7 +39938,7 @@ module.exports = EventPluginHub;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -40923,7 +40923,7 @@ module.exports = HTMLDOMPropertyConfig;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -41136,7 +41136,7 @@ module.exports = LinkedValueUtils;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -41784,7 +41784,7 @@ module.exports = ReactComponentBrowserEnvironment;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -45874,7 +45874,7 @@ module.exports = ReactDOMUnknownPropertyHook;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -46413,7 +46413,7 @@ module.exports = {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -46479,7 +46479,7 @@ module.exports = ReactEmptyComponent;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -46768,7 +46768,7 @@ module.exports = ReactEventListener;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -46874,7 +46874,7 @@ module.exports = ReactHostComponent;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -47143,7 +47143,7 @@ module.exports = ReactInstanceMap;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -47175,7 +47175,7 @@ module.exports = { debugTool: debugTool };
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -48278,7 +48278,7 @@ module.exports = ReactMultiChild;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -48326,7 +48326,7 @@ module.exports = ReactNodeTypes;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -48427,7 +48427,7 @@ module.exports = ReactOwner;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -48460,7 +48460,7 @@ module.exports = ReactPropTypeLocationNames;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -48845,7 +48845,7 @@ module.exports = ReactReconciler;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -49040,7 +49040,7 @@ module.exports = ReactServerRenderingTransaction;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -50216,7 +50216,7 @@ module.exports = SelectEventPlugin;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -51395,7 +51395,7 @@ module.exports = SyntheticWheelEvent;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -51664,7 +51664,7 @@ module.exports = ViewportMetrics;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -51730,7 +51730,7 @@ module.exports = accumulateInto;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -52203,7 +52203,7 @@ module.exports = findDOMNode;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -52286,7 +52286,7 @@ module.exports = flattenChildren;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -52635,7 +52635,7 @@ module.exports = getHostComponentFromComposite;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -53252,7 +53252,7 @@ module.exports = isEventSupported;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -53345,7 +53345,7 @@ module.exports = quoteAttributeValueForBrowser;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -54716,7 +54716,7 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
   selectorFactory, which has the signature:
 
     (dispatch, options) => (nextState, nextOwnProps) => nextFinalProps
-  
+
   connect passes its args to connectAdvanced as options, which will in turn pass them to
   selectorFactory each time a Connect component instance is instantiated or hot reloaded.
 
@@ -55112,7 +55112,7 @@ function wrapMapToPropsConstant(getConstant) {
 // dependsOnOwnProps is used by createMapToPropsProxy to determine whether to pass props as args
 // to the mapToProps function being wrapped. It is also used by makePurePropsSelector to determine
 // whether mapToProps needs to be invoked when props have changed.
-// 
+//
 // A length of one signals that mapToProps does not depend on props from the parent component.
 // A length of zero is assumed to mean mapToProps is getting args via arguments or ...args and
 // therefore not reporting its length accurately..
@@ -55122,16 +55122,16 @@ function getDependsOnOwnProps(mapToProps) {
 
 // Used by whenMapStateToPropsIsFunction and whenMapDispatchToPropsIsFunction,
 // this function wraps mapToProps in a proxy function which does several things:
-// 
+//
 //  * Detects whether the mapToProps function being called depends on props, which
 //    is used by selectorFactory to decide if it should reinvoke on props changes.
-//    
+//
 //  * On first call, handles mapToProps if returns another function, and treats that
 //    new function as the true mapToProps for subsequent calls.
-//    
+//
 //  * On first call, verifies the first result is a plain object, in order to warn
 //    the developer that their mapToProps function is not returning a valid result.
-//    
+//
 function wrapMapToPropsFunc(mapToProps, methodName) {
   return function initProxySelector(dispatch, _ref) {
     var displayName = _ref.displayName;
@@ -57458,7 +57458,7 @@ function pathToRegexp (path, keys, options) {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -57525,7 +57525,7 @@ module.exports = KeyEscapeUtils;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -58135,7 +58135,7 @@ module.exports = ReactChildren;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -58522,7 +58522,7 @@ module.exports = ReactComponentTreeHook;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59085,7 +59085,7 @@ module.exports = ReactElement;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59479,7 +59479,7 @@ module.exports = ReactNoopUpdateQueue;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59539,7 +59539,7 @@ module.exports = factory(isValidElement);
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59586,7 +59586,7 @@ module.exports = '15.6.2';
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59747,7 +59747,7 @@ module.exports = factory(Component, isValidElement, ReactNoopUpdateQueue);
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59796,7 +59796,7 @@ module.exports = getIteratorFn;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59944,7 +59944,7 @@ module.exports = onlyChild;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -63291,7 +63291,7 @@ module.exports = SolidityTypeInt;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file param.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -63310,7 +63310,7 @@ var SolidityParam = function (value, offset) {
 
 /**
  * This method should be used to get length of params's dynamic part
- * 
+ *
  * @method dynamicPartLength
  * @returns {Number} length of dynamic part (in bytes)
  */
@@ -63338,7 +63338,7 @@ SolidityParam.prototype.withOffset = function (offset) {
  * @param {SolidityParam} result of combination
  */
 SolidityParam.prototype.combine = function (param) {
-    return new SolidityParam(this.value + param.value); 
+    return new SolidityParam(this.value + param.value);
 };
 
 /**
@@ -63370,8 +63370,8 @@ SolidityParam.prototype.offsetAsBytes = function () {
  */
 SolidityParam.prototype.staticPart = function () {
     if (!this.isDynamic()) {
-        return this.value; 
-    } 
+        return this.value;
+    }
     return this.offsetAsBytes();
 };
 
@@ -63403,7 +63403,7 @@ SolidityParam.prototype.encode = function () {
  * @returns {String}
  */
 SolidityParam.encodeList = function (params) {
-    
+
     // updating offsets
     var totalOffset = params.length * 32;
     var offsetParams = params.map(function (param) {
@@ -63909,13 +63909,13 @@ if (typeof XMLHttpRequest === 'undefined') {
 
 /**
  * Utils
- * 
+ *
  * @module utils
  */
 
 /**
  * Utility functions
- * 
+ *
  * @class [utils] config
  * @constructor
  */
@@ -63991,7 +63991,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file sha3.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -64065,7 +64065,7 @@ var sha3 = __webpack_require__(/*! ./sha3.js */ "./node_modules/truffle-blockcha
 var utf8 = __webpack_require__(/*! utf8 */ "./node_modules/utf8/utf8.js");
 
 var unitMap = {
-    'noether':      '0',    
+    'noether':      '0',
     'wei':          '1',
     'kwei':         '1000',
     'Kwei':         '1000',
@@ -64446,18 +64446,18 @@ var isAddress = function (address) {
  * @param {String} address the given HEX adress
  * @return {Boolean}
 */
-var isChecksumAddress = function (address) {    
+var isChecksumAddress = function (address) {
     // Check each case
     address = address.replace('0x','');
     var addressHash = sha3(address.toLowerCase());
 
-    for (var i = 0; i < 40; i++ ) { 
+    for (var i = 0; i < 40; i++ ) {
         // the nth letter should be uppercase if the nth digit of casemap is 1
         if ((parseInt(addressHash[i], 16) > 7 && address[i].toUpperCase() !== address[i]) || (parseInt(addressHash[i], 16) <= 7 && address[i].toLowerCase() !== address[i])) {
             return false;
         }
     }
-    return true;    
+    return true;
 };
 
 
@@ -64469,15 +64469,15 @@ var isChecksumAddress = function (address) {
  * @param {String} address the given HEX adress
  * @return {String}
 */
-var toChecksumAddress = function (address) { 
+var toChecksumAddress = function (address) {
     if (typeof address === 'undefined') return '';
 
     address = address.toLowerCase().replace('0x','');
     var addressHash = sha3(address);
     var checksumAddress = '0x';
 
-    for (var i = 0; i < address.length; i++ ) { 
-        // If ith character is 9 to f then make it uppercase 
+    for (var i = 0; i < address.length; i++ ) {
+        // If ith character is 9 to f then make it uppercase
         if (parseInt(addressHash[i], 16) > 7) {
           checksumAddress += address[i].toUpperCase();
         } else {
@@ -64601,7 +64601,7 @@ var isBloom = function (bloom) {
         return false;
     } else if (/^(0x)?[0-9a-f]{512}$/.test(bloom) || /^(0x)?[0-9A-F]{512}$/.test(bloom)) {
         return true;
-    } 
+    }
     return false;
 };
 
@@ -64617,7 +64617,7 @@ var isTopic = function (topic) {
         return false;
     } else if (/^(0x)?[0-9a-f]{64}$/.test(topic) || /^(0x)?[0-9A-F]{64}$/.test(topic)) {
         return true;
-    } 
+    }
     return false;
 };
 
@@ -64852,7 +64852,7 @@ module.exports = Web3;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file allevents.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2014
@@ -64951,7 +64951,7 @@ module.exports = AllSolidityEvents;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file batch.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -64996,7 +64996,7 @@ Batch.prototype.execute = function () {
                 requests[index].callback(null, (requests[index].format ? requests[index].format(result.result) : result.result));
             }
         });
-    }); 
+    });
 };
 
 module.exports = Batch;
@@ -65192,7 +65192,7 @@ var ContractFactory = function (eth, abi) {
      */
     this.new = function () {
         /*jshint maxcomplexity: 7 */
-        
+
         var contract = new Contract(this.eth, this.abi);
 
         // parse arguments
@@ -65349,7 +65349,7 @@ module.exports = ContractFactory;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file errors.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -65400,7 +65400,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file event.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2014
@@ -65471,7 +65471,7 @@ SolidityEvent.prototype.signature = function () {
 
 /**
  * Should be used to encode indexed params and options to one final object
- * 
+ *
  * @method encode
  * @param {Object} indexed
  * @param {Object} options
@@ -65502,7 +65502,7 @@ SolidityEvent.prototype.encode = function (indexed, options) {
         if (value === undefined || value === null) {
             return null;
         }
-        
+
         if (utils.isArray(value)) {
             return value.map(function (v) {
                 return '0x' + coder.encodeParam(i.type, v);
@@ -65524,17 +65524,17 @@ SolidityEvent.prototype.encode = function (indexed, options) {
  * @return {Object} result object with decoded indexed && not indexed params
  */
 SolidityEvent.prototype.decode = function (data) {
- 
+
     data.data = data.data || '';
     data.topics = data.topics || [];
 
     var argTopics = this._anonymous ? data.topics : data.topics.slice(1);
     var indexedData = argTopics.map(function (topics) { return topics.slice(2); }).join("");
-    var indexedParams = coder.decodeParams(this.types(true), indexedData); 
+    var indexedParams = coder.decodeParams(this.types(true), indexedData);
 
     var notIndexedData = data.data.slice(2);
     var notIndexedParams = coder.decodeParams(this.types(false), notIndexedData);
-    
+
     var result = formatters.outputLogFormatter(data);
     result.event = this.displayName();
     result.address = data.address;
@@ -65569,7 +65569,7 @@ SolidityEvent.prototype.execute = function (indexed, options, callback) {
             indexed = {};
         }
     }
-    
+
     var o = this.encode(indexed, options);
     var formatter = this.decode.bind(this);
     return new Filter(this._requestManager, o, watches.eth(), formatter, callback);
@@ -65639,7 +65639,7 @@ var extend = function (web3) {
         }
     };
 
-    ex.formatters = formatters; 
+    ex.formatters = formatters;
     ex.utils = utils;
     ex.Method = Method;
     ex.Property = Property;
@@ -66675,7 +66675,7 @@ module.exports = HttpProvider;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file iban.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -66875,7 +66875,7 @@ Iban.prototype.address = function () {
         var base36 = this._iban.substr(4);
         var asBn = new BigNumber(base36, 36);
         return padLeft(asBn.toString(16), 20);
-    } 
+    }
 
     return '';
 };
@@ -66930,7 +66930,7 @@ var IpcProvider = function (path, net) {
     var _this = this;
     this.responseCallbacks = {};
     this.path = path;
-    
+
     this.connection = net.connect({path: this.path});
 
     this.connection.on('error', function(e){
@@ -66940,7 +66940,7 @@ var IpcProvider = function (path, net) {
 
     this.connection.on('end', function(){
         _this._timeout();
-    }); 
+    });
 
 
     // LISTEN FOR CONNECTION RESPONSES
@@ -66979,7 +66979,7 @@ Will parse the response and make an array out of it.
 IpcProvider.prototype._parseResponse = function(data) {
     var _this = this,
         returnValues = [];
-    
+
     // DE-CHUNKER
     var dechunkedData = data
         .replace(/\}[\n\r]?\{/g,'}|--|{') // }{
@@ -67083,7 +67083,7 @@ IpcProvider.prototype.send = function (payload) {
         try {
             result = JSON.parse(data);
         } catch(e) {
-            throw errors.InvalidResponse(data);                
+            throw errors.InvalidResponse(data);
         }
 
         return result;
@@ -67276,7 +67276,7 @@ Method.prototype.extractCallback = function (args) {
 
 /**
  * Should be called to check if the number of arguments is correct
- * 
+ *
  * @method validateArgs
  * @param {Array} arguments
  * @throws {Error} if it is not
@@ -67289,7 +67289,7 @@ Method.prototype.validateArgs = function (args) {
 
 /**
  * Should be called to format input args of method
- * 
+ *
  * @method formatInput
  * @param {Array}
  * @return {Array}
@@ -67343,7 +67343,7 @@ Method.prototype.attachToObject = function (obj) {
         obj[name[0]] = obj[name[0]] || {};
         obj[name[0]][name[1]] = func;
     } else {
-        obj[name[0]] = func; 
+        obj[name[0]] = func;
     }
 };
 
@@ -67416,8 +67416,8 @@ var DB = function (web3) {
     this._requestManager = web3._requestManager;
 
     var self = this;
-    
-    methods().forEach(function(method) { 
+
+    methods().forEach(function(method) {
         method.attachToObject(self);
         method.setRequestManager(web3._requestManager);
     });
@@ -67861,7 +67861,7 @@ var Net = function (web3) {
 
     var self = this;
 
-    properties().forEach(function(p) { 
+    properties().forEach(function(p) {
         p.attachToObject(self);
         p.setRequestManager(web3._requestManager);
     });
@@ -68031,7 +68031,7 @@ var Shh = function (web3) {
 
     var self = this;
 
-    methods().forEach(function(method) { 
+    methods().forEach(function(method) {
         method.attachToObject(self);
         method.setRequestManager(self._requestManager);
     });
@@ -68041,11 +68041,11 @@ Shh.prototype.filter = function (fil, callback) {
     return new Filter(this._requestManager, fil, watches.shh(), formatters.outputPostFormatter, callback);
 };
 
-var methods = function () { 
+var methods = function () {
 
     var post = new Method({
-        name: 'post', 
-        call: 'shh_post', 
+        name: 'post',
+        call: 'shh_post',
         params: 1,
         inputFormatter: [formatters.inputPostFormatter]
     });
@@ -68394,7 +68394,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file namereg.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -68599,7 +68599,7 @@ module.exports = Property;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file requestmanager.js
  * @author Jeffrey Wilcke <jeff@ethdev.com>
  * @author Marek Kotewicz <marek@ethdev.com>
@@ -68666,7 +68666,7 @@ RequestManager.prototype.sendAsync = function (data, callback) {
         if (err) {
             return callback(err);
         }
-        
+
         if (!Jsonrpc.isValidResponse(result)) {
             return callback(errors.InvalidResponse(result));
         }
@@ -68699,7 +68699,7 @@ RequestManager.prototype.sendBatch = function (data, callback) {
         }
 
         callback(err, results);
-    }); 
+    });
 };
 
 /**
@@ -68803,7 +68803,7 @@ RequestManager.prototype.poll = function () {
     }
 
     var payload = Jsonrpc.toBatchPayload(pollsData);
-    
+
     // map the request id to they poll id
     var pollsIdMap = {};
     payload.forEach(function(load, index){
@@ -68833,7 +68833,7 @@ RequestManager.prototype.poll = function () {
             } else
                 return false;
         }).filter(function (result) {
-            return !!result; 
+            return !!result;
         }).filter(function (result) {
             var valid = Jsonrpc.isValidResponse(result);
             if (!valid) {
@@ -68926,16 +68926,16 @@ var pollSyncing = function(self) {
 
         self.callbacks.forEach(function (callback) {
             if (self.lastSyncState !== sync) {
-                
+
                 // call the callback with true first so the app can stop anything, before receiving the sync data
                 if(!self.lastSyncState && utils.isObject(sync))
                     callback(null, true);
-                
+
                 // call on the next CPU cycle, so the actions of the sync stop can be processes first
                 setTimeout(function() {
                     callback(null, sync);
                 }, 0);
-                
+
                 self.lastSyncState = sync;
             }
         });
@@ -68999,7 +68999,7 @@ module.exports = IsSyncing;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file transfer.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -69018,7 +69018,7 @@ var exchangeAbi = __webpack_require__(/*! ../contracts/SmartExchange.json */ "./
  * @param {Function} callback, callback
  */
 var transfer = function (eth, from, to, value, callback) {
-    var iban = new Iban(to); 
+    var iban = new Iban(to);
     if (!iban.isValid()) {
         throw new Error('invalid iban address');
     }
@@ -69026,7 +69026,7 @@ var transfer = function (eth, from, to, value, callback) {
     if (iban.isDirect()) {
         return transferToAddress(eth, from, iban.address(), value, callback);
     }
-    
+
     if (!callback) {
         var address = eth.icapNamereg().addr(iban.institution());
         return deposit(eth, from, address, value, iban.client());
@@ -69035,7 +69035,7 @@ var transfer = function (eth, from, to, value, callback) {
     eth.icapNamereg().addr(iban.institution(), function (err, address) {
         return deposit(eth, from, address, value, iban.client(), callback);
     });
-    
+
 };
 
 /**
@@ -72132,7 +72132,7 @@ module.exports = SolidityTypeBytes;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file coder.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -72162,7 +72162,7 @@ var SolidityCoder = function (types) {
  *
  * @method _requireType
  * @param {String} type
- * @returns {SolidityType} 
+ * @returns {SolidityType}
  * @throws {Error} throws if no matching type is found
  */
 SolidityCoder.prototype._requireType = function (type) {
@@ -72210,7 +72210,7 @@ SolidityCoder.prototype.encodeParams = function (types, params) {
         return acc + roundedStaticPartLength;
     }, 0);
 
-    var result = this.encodeMultiWithOffset(types, solidityTypes, encodeds, dynamicOffset); 
+    var result = this.encodeMultiWithOffset(types, solidityTypes, encodeds, dynamicOffset);
 
     return result;
 };
@@ -72235,7 +72235,7 @@ SolidityCoder.prototype.encodeMultiWithOffset = function (types, solidityTypes, 
 
         // TODO: figure out nested arrays
     });
-    
+
     types.forEach(function (type, i) {
         if (isDynamic(i)) {
             var e = self.encodeWithOffset(types[i], solidityTypes[i], encodeds[i], dynamicOffset);
@@ -72255,7 +72255,7 @@ SolidityCoder.prototype.encodeWithOffset = function (type, solidityType, encoded
             var nestedName = solidityType.nestedName(type);
             var nestedStaticPartLength = solidityType.staticPartLength(nestedName);
             var result = encoded[0];
-            
+
             (function () {
                 var previousLength = 2; // in int
                 if (solidityType.isDynamicArray(nestedName)) {
@@ -72265,7 +72265,7 @@ SolidityCoder.prototype.encodeWithOffset = function (type, solidityType, encoded
                     }
                 }
             })();
-            
+
             // first element is length, skip it
             (function () {
                 for (var i = 0; i < encoded.length - 1; i++) {
@@ -72276,7 +72276,7 @@ SolidityCoder.prototype.encodeWithOffset = function (type, solidityType, encoded
 
             return result;
         })();
-       
+
     } else if (solidityType.isStaticArray(type)) {
         return (function () {
             var nestedName = solidityType.nestedName(type);
@@ -72289,7 +72289,7 @@ SolidityCoder.prototype.encodeWithOffset = function (type, solidityType, encoded
                     var previousLength = 0; // in int
                     for (var i = 0; i < encoded.length; i++) {
                         // calculate length of previous item
-                        previousLength += +(encoded[i - 1] || [])[0] || 0; 
+                        previousLength += +(encoded[i - 1] || [])[0] || 0;
                         result += f.formatInputInt(offset + i * nestedStaticPartLength + previousLength * 32).encode();
                     }
                 })();
@@ -72332,7 +72332,7 @@ SolidityCoder.prototype.decodeParam = function (type, bytes) {
 SolidityCoder.prototype.decodeParams = function (types, bytes) {
     var solidityTypes = this.getSolidityTypes(types);
     var offsets = this.getOffsets(types, solidityTypes);
-        
+
     return solidityTypes.map(function (solidityType, index) {
         return solidityType.decode(bytes, offsets[index],  types[index], index);
     });
@@ -72342,16 +72342,16 @@ SolidityCoder.prototype.getOffsets = function (types, solidityTypes) {
     var lengths =  solidityTypes.map(function (solidityType, index) {
         return solidityType.staticPartLength(types[index]);
     });
-    
+
     for (var i = 1; i < lengths.length; i++) {
          // sum with length of previous element
-        lengths[i] += lengths[i - 1]; 
+        lengths[i] += lengths[i - 1];
     }
 
     return lengths.map(function (length, index) {
         // remove the current length, so the length is sum of previous elements
         var staticPartLength = solidityTypes[index].staticPartLength(types[index]);
-        return length - staticPartLength; 
+        return length - staticPartLength;
     });
 };
 
@@ -72439,7 +72439,7 @@ module.exports = SolidityTypeDynamicBytes;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file formatters.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -72583,7 +72583,7 @@ var formatOutputUInt = function (param) {
  * @returns {BigNumber} input bytes formatted to real
  */
 var formatOutputReal = function (param) {
-    return formatOutputInt(param).dividedBy(new BigNumber(2).pow(128)); 
+    return formatOutputInt(param).dividedBy(new BigNumber(2).pow(128));
 };
 
 /**
@@ -72594,7 +72594,7 @@ var formatOutputReal = function (param) {
  * @returns {BigNumber} input bytes formatted to ureal
  */
 var formatOutputUReal = function (param) {
-    return formatOutputUInt(param).dividedBy(new BigNumber(2).pow(128)); 
+    return formatOutputUInt(param).dividedBy(new BigNumber(2).pow(128));
 };
 
 /**
@@ -72747,7 +72747,7 @@ module.exports = SolidityTypeInt;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file param.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -72766,7 +72766,7 @@ var SolidityParam = function (value, offset) {
 
 /**
  * This method should be used to get length of params's dynamic part
- * 
+ *
  * @method dynamicPartLength
  * @returns {Number} length of dynamic part (in bytes)
  */
@@ -72794,7 +72794,7 @@ SolidityParam.prototype.withOffset = function (offset) {
  * @param {SolidityParam} result of combination
  */
 SolidityParam.prototype.combine = function (param) {
-    return new SolidityParam(this.value + param.value); 
+    return new SolidityParam(this.value + param.value);
 };
 
 /**
@@ -72826,8 +72826,8 @@ SolidityParam.prototype.offsetAsBytes = function () {
  */
 SolidityParam.prototype.staticPart = function () {
     if (!this.isDynamic()) {
-        return this.value; 
-    } 
+        return this.value;
+    }
     return this.offsetAsBytes();
 };
 
@@ -72859,7 +72859,7 @@ SolidityParam.prototype.encode = function () {
  * @returns {String}
  */
 SolidityParam.encodeList = function (params) {
-    
+
     // updating offsets
     var totalOffset = params.length * 32;
     var offsetParams = params.map(function (param) {
@@ -73012,13 +73012,13 @@ SolidityType.prototype.staticPartLength = function (name) {
 
 /**
  * Should be used to determine if type is dynamic array
- * eg: 
+ * eg:
  * "type[]" => true
  * "type[4]" => false
  *
  * @method isDynamicArray
  * @param {String} name
- * @return {Bool} true if the type is dynamic array 
+ * @return {Bool} true if the type is dynamic array
  */
 SolidityType.prototype.isDynamicArray = function (name) {
     var nestedTypes = this.nestedTypes(name);
@@ -73027,13 +73027,13 @@ SolidityType.prototype.isDynamicArray = function (name) {
 
 /**
  * Should be used to determine if type is static array
- * eg: 
+ * eg:
  * "type[]" => false
  * "type[4]" => true
  *
  * @method isStaticArray
  * @param {String} name
- * @return {Bool} true if the type is static array 
+ * @return {Bool} true if the type is static array
  */
 SolidityType.prototype.isStaticArray = function (name) {
     var nestedTypes = this.nestedTypes(name);
@@ -73042,7 +73042,7 @@ SolidityType.prototype.isStaticArray = function (name) {
 
 /**
  * Should return length of static array
- * eg. 
+ * eg.
  * "int[32]" => 32
  * "int256[14]" => 14
  * "int[2][3]" => 3
@@ -73117,7 +73117,7 @@ SolidityType.prototype.nestedTypes = function (name) {
  * Should be used to encode the value
  *
  * @method encode
- * @param {Object} value 
+ * @param {Object} value
  * @param {String} name
  * @return {String} encoded value
  */
@@ -73131,7 +73131,7 @@ SolidityType.prototype.encode = function (value, name) {
 
             var result = [];
             result.push(f.formatInputInt(length).encode());
-            
+
             value.forEach(function (v) {
                 result.push(self.encode(v, nestedName));
             });
@@ -73207,12 +73207,12 @@ SolidityType.prototype.decode = function (bytes, offset, name) {
             return result;
         })();
     } else if (this.isDynamicType(name)) {
-        
+
         return (function () {
             var dynamicOffset = parseInt('0x' + bytes.substr(offset * 2, 64));      // in bytes
             var length = parseInt('0x' + bytes.substr(dynamicOffset * 2, 64));      // in bytes
             var roundedLength = Math.floor((length + 31) / 32);                     // in int
-        
+
             return self._outputFormatter(new SolidityParam(bytes.substr(dynamicOffset * 2, ( 1 + roundedLength) * 64), 0));
         })();
     }
@@ -73372,13 +73372,13 @@ if (typeof XMLHttpRequest === 'undefined') {
 
 /**
  * Utils
- * 
+ *
  * @module utils
  */
 
 /**
  * Utility functions
- * 
+ *
  * @class [utils] config
  * @constructor
  */
@@ -73454,7 +73454,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file sha3.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -73528,7 +73528,7 @@ var sha3 = __webpack_require__(/*! ./sha3.js */ "./node_modules/web3/lib/utils/s
 var utf8 = __webpack_require__(/*! utf8 */ "./node_modules/utf8/utf8.js");
 
 var unitMap = {
-    'noether':      '0',    
+    'noether':      '0',
     'wei':          '1',
     'kwei':         '1000',
     'Kwei':         '1000',
@@ -73911,18 +73911,18 @@ var isAddress = function (address) {
  * @param {String} address the given HEX adress
  * @return {Boolean}
 */
-var isChecksumAddress = function (address) {    
+var isChecksumAddress = function (address) {
     // Check each case
     address = address.replace('0x','');
     var addressHash = sha3(address.toLowerCase());
 
-    for (var i = 0; i < 40; i++ ) { 
+    for (var i = 0; i < 40; i++ ) {
         // the nth letter should be uppercase if the nth digit of casemap is 1
         if ((parseInt(addressHash[i], 16) > 7 && address[i].toUpperCase() !== address[i]) || (parseInt(addressHash[i], 16) <= 7 && address[i].toLowerCase() !== address[i])) {
             return false;
         }
     }
-    return true;    
+    return true;
 };
 
 
@@ -73934,15 +73934,15 @@ var isChecksumAddress = function (address) {
  * @param {String} address the given HEX adress
  * @return {String}
 */
-var toChecksumAddress = function (address) { 
+var toChecksumAddress = function (address) {
     if (typeof address === 'undefined') return '';
 
     address = address.toLowerCase().replace('0x','');
     var addressHash = sha3(address);
     var checksumAddress = '0x';
 
-    for (var i = 0; i < address.length; i++ ) { 
-        // If ith character is 9 to f then make it uppercase 
+    for (var i = 0; i < address.length; i++ ) {
+        // If ith character is 9 to f then make it uppercase
         if (parseInt(addressHash[i], 16) > 7) {
           checksumAddress += address[i].toUpperCase();
         } else {
@@ -74279,7 +74279,7 @@ module.exports = Web3;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file allevents.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2014
@@ -74378,7 +74378,7 @@ module.exports = AllSolidityEvents;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file batch.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -74423,7 +74423,7 @@ Batch.prototype.execute = function () {
                 requests[index].callback(null, (requests[index].format ? requests[index].format(result.result) : result.result));
             }
         });
-    }); 
+    });
 };
 
 module.exports = Batch;
@@ -74764,7 +74764,7 @@ module.exports = ContractFactory;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file errors.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -74813,7 +74813,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file event.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2014
@@ -74884,7 +74884,7 @@ SolidityEvent.prototype.signature = function () {
 
 /**
  * Should be used to encode indexed params and options to one final object
- * 
+ *
  * @method encode
  * @param {Object} indexed
  * @param {Object} options
@@ -74915,7 +74915,7 @@ SolidityEvent.prototype.encode = function (indexed, options) {
         if (value === undefined || value === null) {
             return null;
         }
-        
+
         if (utils.isArray(value)) {
             return value.map(function (v) {
                 return '0x' + coder.encodeParam(i.type, v);
@@ -74937,17 +74937,17 @@ SolidityEvent.prototype.encode = function (indexed, options) {
  * @return {Object} result object with decoded indexed && not indexed params
  */
 SolidityEvent.prototype.decode = function (data) {
- 
+
     data.data = data.data || '';
     data.topics = data.topics || [];
 
     var argTopics = this._anonymous ? data.topics : data.topics.slice(1);
     var indexedData = argTopics.map(function (topics) { return topics.slice(2); }).join("");
-    var indexedParams = coder.decodeParams(this.types(true), indexedData); 
+    var indexedParams = coder.decodeParams(this.types(true), indexedData);
 
     var notIndexedData = data.data.slice(2);
     var notIndexedParams = coder.decodeParams(this.types(false), notIndexedData);
-    
+
     var result = formatters.outputLogFormatter(data);
     result.event = this.displayName();
     result.address = data.address;
@@ -74982,7 +74982,7 @@ SolidityEvent.prototype.execute = function (indexed, options, callback) {
             indexed = {};
         }
     }
-    
+
     var o = this.encode(indexed, options);
     var formatter = this.decode.bind(this);
     return new Filter(this._requestManager, o, watches.eth(), formatter, callback);
@@ -75052,7 +75052,7 @@ var extend = function (web3) {
         }
     };
 
-    ex.formatters = formatters; 
+    ex.formatters = formatters;
     ex.utils = utils;
     ex.Method = Method;
     ex.Property = Property;
@@ -75332,7 +75332,7 @@ module.exports = Filter;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file formatters.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @author Fabian Vogelsteller <fabian@ethdev.com>
@@ -75399,7 +75399,7 @@ var inputCallFormatter = function (options){
         options[key] = utils.fromDecimal(options[key]);
     });
 
-    return options; 
+    return options;
 };
 
 /**
@@ -75424,12 +75424,12 @@ var inputTransactionFormatter = function (options){
         options[key] = utils.fromDecimal(options[key]);
     });
 
-    return options; 
+    return options;
 };
 
 /**
  * Formats the output of a transaction to its proper values
- * 
+ *
  * @method outputTransactionFormatter
  * @param {Object} tx
  * @returns {Object}
@@ -75448,7 +75448,7 @@ var outputTransactionFormatter = function (tx){
 
 /**
  * Formats the output of a transaction receipt to its proper values
- * 
+ *
  * @method outputTransactionReceiptFormatter
  * @param {Object} receipt
  * @returns {Object}
@@ -75474,7 +75474,7 @@ var outputTransactionReceiptFormatter = function (receipt){
  * Formats the output of a block to its proper values
  *
  * @method outputBlockFormatter
- * @param {Object} block 
+ * @param {Object} block
  * @returns {Object}
 */
 var outputBlockFormatter = function(block) {
@@ -75502,7 +75502,7 @@ var outputBlockFormatter = function(block) {
 
 /**
  * Formats the output of a log
- * 
+ *
  * @method outputLogFormatter
  * @param {Object} log object
  * @returns {Object} log
@@ -75543,7 +75543,7 @@ var inputPostFormatter = function(post) {
         return (topic.indexOf('0x') === 0) ? topic : utils.fromUtf8(topic);
     });
 
-    return post; 
+    return post;
 };
 
 /**
@@ -75739,8 +75739,8 @@ SolidityFunction.prototype.call = function () {
     if (!callback) {
         var output = this._eth.call(payload, defaultBlock);
         return this.unpackOutput(output);
-    } 
-        
+    }
+
     var self = this;
     this._eth.call(payload, defaultBlock, function (error, output) {
         callback(error, self.unpackOutput(output));
@@ -75825,11 +75825,11 @@ SolidityFunction.prototype.request = function () {
     var callback = this.extractCallback(args);
     var payload = this.toPayload(args);
     var format = this.unpackOutput.bind(this);
-    
+
     return {
         method: this._constant ? 'eth_call' : 'eth_sendTransaction',
         callback: callback,
-        params: [payload], 
+        params: [payload],
         format: format
     };
 };
@@ -75971,7 +75971,7 @@ HttpProvider.prototype.send = function (payload) {
     try {
         result = JSON.parse(result);
     } catch(e) {
-        throw errors.InvalidResponse(request.responseText);                
+        throw errors.InvalidResponse(request.responseText);
     }
 
     return result;
@@ -75985,7 +75985,7 @@ HttpProvider.prototype.send = function (payload) {
  * @param {Function} callback triggered on end with (err, result)
  */
 HttpProvider.prototype.sendAsync = function (payload, callback) {
-    var request = this.prepareRequest(true); 
+    var request = this.prepareRequest(true);
 
     request.onreadystatechange = function() {
         if (request.readyState === 4) {
@@ -75995,13 +75995,13 @@ HttpProvider.prototype.sendAsync = function (payload, callback) {
             try {
                 result = JSON.parse(result);
             } catch(e) {
-                error = errors.InvalidResponse(request.responseText);                
+                error = errors.InvalidResponse(request.responseText);
             }
 
             callback(error, result);
         }
     };
-    
+
     try {
         request.send(JSON.stringify(payload));
     } catch(error) {
@@ -76058,7 +76058,7 @@ module.exports = HttpProvider;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file iban.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -76258,7 +76258,7 @@ Iban.prototype.address = function () {
         var base36 = this._iban.substr(4);
         var asBn = new BigNumber(base36, 36);
         return padLeft(asBn.toString(16), 20);
-    } 
+    }
 
     return '';
 };
@@ -76313,7 +76313,7 @@ var IpcProvider = function (path, net) {
     var _this = this;
     this.responseCallbacks = {};
     this.path = path;
-    
+
     this.connection = net.connect({path: this.path});
 
     this.connection.on('error', function(e){
@@ -76323,7 +76323,7 @@ var IpcProvider = function (path, net) {
 
     this.connection.on('end', function(){
         _this._timeout();
-    }); 
+    });
 
 
     // LISTEN FOR CONNECTION RESPONSES
@@ -76362,7 +76362,7 @@ Will parse the response and make an array out of it.
 IpcProvider.prototype._parseResponse = function(data) {
     var _this = this,
         returnValues = [];
-    
+
     // DE-CHUNKER
     var dechunkedData = data
         .replace(/\}[\n\r]?\{/g,'}|--|{') // }{
@@ -76466,7 +76466,7 @@ IpcProvider.prototype.send = function (payload) {
         try {
             result = JSON.parse(data);
         } catch(e) {
-            throw errors.InvalidResponse(data);                
+            throw errors.InvalidResponse(data);
         }
 
         return result;
@@ -76665,7 +76665,7 @@ Method.prototype.extractCallback = function (args) {
 
 /**
  * Should be called to check if the number of arguments is correct
- * 
+ *
  * @method validateArgs
  * @param {Array} arguments
  * @throws {Error} if it is not
@@ -76678,7 +76678,7 @@ Method.prototype.validateArgs = function (args) {
 
 /**
  * Should be called to format input args of method
- * 
+ *
  * @method formatInput
  * @param {Array}
  * @return {Array}
@@ -76732,7 +76732,7 @@ Method.prototype.attachToObject = function (obj) {
         obj[name[0]] = obj[name[0]] || {};
         obj[name[0]][name[1]] = func;
     } else {
-        obj[name[0]] = func; 
+        obj[name[0]] = func;
     }
 };
 
@@ -76805,8 +76805,8 @@ var DB = function (web3) {
     this._requestManager = web3._requestManager;
 
     var self = this;
-    
-    methods().forEach(function(method) { 
+
+    methods().forEach(function(method) {
         method.attachToObject(self);
         method.setRequestManager(web3._requestManager);
     });
@@ -76918,12 +76918,12 @@ function Eth(web3) {
 
     var self = this;
 
-    methods().forEach(function(method) { 
+    methods().forEach(function(method) {
         method.attachToObject(self);
         method.setRequestManager(self._requestManager);
     });
 
-    properties().forEach(function(p) { 
+    properties().forEach(function(p) {
         p.attachToObject(self);
         p.setRequestManager(self._requestManager);
     });
@@ -77239,7 +77239,7 @@ var Net = function (web3) {
 
     var self = this;
 
-    properties().forEach(function(p) { 
+    properties().forEach(function(p) {
         p.attachToObject(self);
         p.setRequestManager(web3._requestManager);
     });
@@ -77401,7 +77401,7 @@ var Shh = function (web3) {
 
     var self = this;
 
-    methods().forEach(function(method) { 
+    methods().forEach(function(method) {
         method.attachToObject(self);
         method.setRequestManager(self._requestManager);
     });
@@ -77411,11 +77411,11 @@ Shh.prototype.filter = function (fil, callback) {
     return new Filter(this._requestManager, fil, watches.shh(), formatters.outputPostFormatter, callback);
 };
 
-var methods = function () { 
+var methods = function () {
 
     var post = new Method({
-        name: 'post', 
-        call: 'shh_post', 
+        name: 'post',
+        call: 'shh_post',
         params: 1,
         inputFormatter: [formatters.inputPostFormatter]
     });
@@ -77607,7 +77607,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file namereg.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -77681,7 +77681,7 @@ Property.prototype.setRequestManager = function (rm) {
 
 /**
  * Should be called to format input args of method
- * 
+ *
  * @method formatInput
  * @param {Array}
  * @return {Array}
@@ -77717,7 +77717,7 @@ Property.prototype.extractCallback = function (args) {
 
 /**
  * Should attach function to method
- * 
+ *
  * @method attachToObject
  * @param {Object}
  * @param {Function}
@@ -77725,7 +77725,7 @@ Property.prototype.extractCallback = function (args) {
 Property.prototype.attachToObject = function (obj) {
     var proto = {
         get: this.buildGet(),
-        enumerable: true 
+        enumerable: true
     };
 
     var names = this.name.split('.');
@@ -77749,7 +77749,7 @@ Property.prototype.buildGet = function () {
     return function get() {
         return property.formatOutput(property.requestManager.send({
             method: property.getter
-        })); 
+        }));
     };
 };
 
@@ -77812,7 +77812,7 @@ module.exports = Property;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file requestmanager.js
  * @author Jeffrey Wilcke <jeff@ethdev.com>
  * @author Marek Kotewicz <marek@ethdev.com>
@@ -77879,7 +77879,7 @@ RequestManager.prototype.sendAsync = function (data, callback) {
         if (err) {
             return callback(err);
         }
-        
+
         if (!Jsonrpc.getInstance().isValidResponse(result)) {
             return callback(errors.InvalidResponse(result));
         }
@@ -77912,7 +77912,7 @@ RequestManager.prototype.sendBatch = function (data, callback) {
         }
 
         callback(err, results);
-    }); 
+    });
 };
 
 /**
@@ -78016,7 +78016,7 @@ RequestManager.prototype.poll = function () {
     }
 
     var payload = Jsonrpc.getInstance().toBatchPayload(pollsData);
-    
+
     // map the request id to they poll id
     var pollsIdMap = {};
     payload.forEach(function(load, index){
@@ -78046,7 +78046,7 @@ RequestManager.prototype.poll = function () {
             } else
                 return false;
         }).filter(function (result) {
-            return !!result; 
+            return !!result;
         }).filter(function (result) {
             var valid = Jsonrpc.getInstance().isValidResponse(result);
             if (!valid) {
@@ -78139,16 +78139,16 @@ var pollSyncing = function(self) {
 
         self.callbacks.forEach(function (callback) {
             if (self.lastSyncState !== sync) {
-                
+
                 // call the callback with true first so the app can stop anything, before receiving the sync data
                 if(!self.lastSyncState && utils.isObject(sync))
                     callback(null, true);
-                
+
                 // call on the next CPU cycle, so the actions of the sync stop can be processes first
                 setTimeout(function() {
                     callback(null, sync);
                 }, 0);
-                
+
                 self.lastSyncState = sync;
             }
         });
@@ -78212,7 +78212,7 @@ module.exports = IsSyncing;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file transfer.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -78231,7 +78231,7 @@ var exchangeAbi = __webpack_require__(/*! ../contracts/SmartExchange.json */ "./
  * @param {Function} callback, callback
  */
 var transfer = function (eth, from, to, value, callback) {
-    var iban = new Iban(to); 
+    var iban = new Iban(to);
     if (!iban.isValid()) {
         throw new Error('invalid iban address');
     }
@@ -78239,7 +78239,7 @@ var transfer = function (eth, from, to, value, callback) {
     if (iban.isDirect()) {
         return transferToAddress(eth, from, iban.address(), value, callback);
     }
-    
+
     if (!callback) {
         var address = eth.icapNamereg().addr(iban.institution());
         return deposit(eth, from, address, value, iban.client());
@@ -78248,7 +78248,7 @@ var transfer = function (eth, from, to, value, callback) {
     eth.icapNamereg().addr(iban.institution(), function (err, address) {
         return deposit(eth, from, address, value, iban.client(), callback);
     });
-    
+
 };
 
 /**
@@ -81983,6 +81983,131 @@ exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapSt
 
 /***/ }),
 
+/***/ "./src/components/FAQ.js":
+/*!*******************************!*\
+  !*** ./src/components/FAQ.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var FAQ = function FAQ(props) {
+  return _react2.default.createElement(
+    "div",
+    { className: "FAQ" },
+    _react2.default.createElement(
+      "h2",
+      null,
+      "Beginner\u2019s Guide to Blockchain"
+    ),
+    _react2.default.createElement(
+      "div",
+      { className: "faq-question" },
+      _react2.default.createElement(
+        "h4",
+        null,
+        "What is the blockchain?"
+      ),
+      _react2.default.createElement(
+        "p",
+        null,
+        "A blockchain is a continuously growing list of records, called blocks, which are linked and secured using cryptography. It is an open, distributed ledger that can record transactions between two parties, and, by design, it is unchangeable. Blockchains are typically managed using a peer-to-peer network that collectively adheres to a set of rules for adding new blocks to the chain."
+      )
+    ),
+    _react2.default.createElement(
+      "div",
+      { className: "faq-question" },
+      _react2.default.createElement(
+        "h4",
+        null,
+        "What is a cryptocurrency?"
+      ),
+      _react2.default.createElement(
+        "p",
+        null,
+        "A cryptocurrency is a digital medium of exchange that uses cryptography to secure its transactions. Cryptocurrencies use decentralized control that works through a blockchain, functioning as a distributed ledger."
+      )
+    ),
+    _react2.default.createElement(
+      "div",
+      { className: "faq-question" },
+      _react2.default.createElement(
+        "h4",
+        null,
+        "Which cryptocurrency do you use?"
+      ),
+      _react2.default.createElement(
+        "p",
+        null,
+        "Block & Mortar is built on the Ethereum blockchain, using \"ether,\" a cryptocurrency, \"wei,\" a smaller denomination of ether, and \"gas,\" a measure of the cost of writing to the blockchain. Ethereum is a decentralized platform that runs smart contracts: applications that run exactly as programmed without any possibility of downtime, censorship, fraud or third-party interference."
+      )
+    ),
+    _react2.default.createElement(
+      "div",
+      { className: "faq-question" },
+      _react2.default.createElement(
+        "h4",
+        null,
+        "What is a digital wallet?"
+      ),
+      _react2.default.createElement(
+        "p",
+        null,
+        "A digital wallet is an electronic address that allows an individual to make electronic transactions. A digital wallet can be linked to a user's bank account, and can be used to make transactions with a variety of cryptocurrencies like bitcoin or ether."
+      )
+    ),
+    _react2.default.createElement(
+      "div",
+      { className: "faq-question" },
+      _react2.default.createElement(
+        "h4",
+        null,
+        "How does this all work? What is a smart contract?"
+      ),
+      _react2.default.createElement(
+        "p",
+        null,
+        "This is how we facilitate transactions...MORE HERE"
+      )
+    ),
+    _react2.default.createElement(
+      "div",
+      { className: "faq-question" },
+      _react2.default.createElement(
+        "h4",
+        null,
+        "Why am I being charged to post a service?"
+      ),
+      _react2.default.createElement(
+        "p",
+        null,
+        "BECAUSE YOU GOTTA"
+      )
+    ),
+    _react2.default.createElement(
+      "h3",
+      null,
+      "Sign up and get started to learn more!"
+    )
+  );
+};
+
+exports.default = FAQ;
+
+/***/ }),
+
 /***/ "./src/components/Homepage.js":
 /*!************************************!*\
   !*** ./src/components/Homepage.js ***!
@@ -82108,6 +82233,11 @@ var Navbar = function Navbar(props) {
             _reactRouterDom.Link,
             { to: '/signup', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
             'Sign Up'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/faq', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
+            'FAQs'
           )
         )
       )
@@ -82198,6 +82328,10 @@ var _NavBar = __webpack_require__(/*! ./NavBar */ "./src/components/NavBar.js");
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
 
+var _FAQ = __webpack_require__(/*! ./FAQ */ "./src/components/FAQ.js");
+
+var _FAQ2 = _interopRequireDefault(_FAQ);
+
 var _store = __webpack_require__(/*! ../store */ "./src/store/index.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -82237,6 +82371,7 @@ var Routes = function (_Component) {
           _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _SignUp.Login }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/signup', component: _SignUp.Signup }),
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Homepage2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/faq', component: _FAQ2.default }),
           isLoggedIn && _react2.default.createElement(
             _reactRouterDom.Switch,
             null,
