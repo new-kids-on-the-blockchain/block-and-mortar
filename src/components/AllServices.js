@@ -37,7 +37,7 @@ class AllServices extends Component {
           <h1 className="avenir purple">Marketplace</h1>
           <div>
           <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy">
-          <p className="avenir lh-title ml3">When you place an order, you'll be charged a small transaction fee ("gas"); however you won't be charged the full amount until you've received the order. <b><em>Please click "Complete Agreement" once your order is fulfilled.</em></b> At that time, the funds will be deducted from your digital wallet.</p>
+          <p className="avenir lh-title ml3">When you place an order, you'll be charged a small transaction fee ("gas"); however you won't be charged the full amount until you've received the order. <br/><b><em>Please click "Complete Agreement" once your order is fulfilled.</em></b> At that time, the funds will be deducted from your digital wallet.</p>
           </div>
           <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
             <button className="btn active" value="All" onClick={this.handleClick}>Show All</button>
