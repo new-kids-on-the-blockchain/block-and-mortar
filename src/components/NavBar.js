@@ -8,8 +8,7 @@ const Navbar = props => (
     <nav>
         <Link to="/">
           <div>
-
-            <h1 className="avenir green f1">Block and Mortar</h1>
+            <h1 className="avenir green f1">Block &amp; Mortar</h1>
           </div>
         </Link>
         <div>

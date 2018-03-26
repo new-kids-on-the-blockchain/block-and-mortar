@@ -6,16 +6,18 @@ import { auth } from '../store'
  * COMPONENT
  */
 const AuthForm = props => {
-  const {name, displayName, handleSubmit, error} = props
+  const { name, displayName, handleSubmit, error } = props
   return (
-    <div className="form-login">
-      <form onSubmit={handleSubmit} name={name}>
-      <div>
-          <label htmlFor="userName"><small>Username</small></label>
+    <div className="avenir form-login">
+
+    <div className="avenir flex items-center justify-center pa4 bg-lightest-gray navy fl w-30">
+    <form onSubmit={handleSubmit} name={name} className="avenir lh-title ml3">
+        <div>
+          <label htmlFor="userName"><large>Username</large></label>
           <input name="userName" type="text" />
         </div>
         <div>
-          <label htmlFor="password"><small>Password</small></label>
+          <label htmlFor="password"><large>Password</large></label>
           <input name="password" type="password" />
         </div>
         <br />
@@ -24,6 +26,15 @@ const AuthForm = props => {
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
+      </div>
+      <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy fl w-70">
+      <div className="avenir lh-title ml3">
+        <h2>Get started today: When you join Block & Mortar, you can start buying and selling goods immediately.</h2>
+        <p>If you are new to blockchain technology, check out our beginner's guide.</p>
+        <p>If you're already familiar with Ethereum, be sure to log into your <a href="https://metamask.io/">Metamask account</a>, create an account or log in below, and you’ll be ready to get started.</p>
+      </div>
+        </div>
+      
       <br />
     </div>
   )
@@ -47,7 +58,7 @@ const mapSignup = state => {
 
 const mapDispatch = dispatch => {
   return {
-    handleSubmit (evt) {
+    handleSubmit(evt) {
       evt.preventDefault()
       const formName = evt.target.name
       const userName = evt.target.userName.value
