@@ -83004,6 +83004,7 @@ var SingleUser = function (_Component) {
                   null,
                   'Category:'
                 ),
+                ' ',
                 transaction.category
               ),
               _react2.default.createElement(
@@ -83075,6 +83076,7 @@ var SingleUser = function (_Component) {
                   null,
                   'Category:'
                 ),
+                ' ',
                 transaction.category
               ),
               _react2.default.createElement(
