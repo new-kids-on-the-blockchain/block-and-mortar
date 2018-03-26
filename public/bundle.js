@@ -81527,8 +81527,8 @@ var AddService = function (_Component) {
         null,
         _react2.default.createElement(
           "h1",
-          { className: "avenir" },
-          "Post a Service"
+          { className: "avenir purple" },
+          "New Service"
         ),
         _react2.default.createElement(
           "div",
@@ -81536,8 +81536,27 @@ var AddService = function (_Component) {
           _react2.default.createElement(
             "p",
             { className: "lh-title ml3" },
-            "Transactions between you and buyers in your community will be facilitated by a \"smart contract,\" a set of rules that govern the exchange of goods and services for ether. When you post a good or service on Block & Mortar, you're kicking off this process and writing to the blockchain! Subsequent interactions between you and your buyers will also be captured on the blockchain. Please note that you'll incur a small fee every time you write to the blockchain (called \"gas\"), but the advantage is that the transaction is immutable, public, and xxx. "
+            _react2.default.createElement(
+              "b",
+              null,
+              "Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "When you click \"submit,\" you are actually writing to the blockchain! A \"smart contract\" will record all of the important information about your product and sale."
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "Writing to the blockchain incurs a small transaction fee, charged in Ether, which is called \"gas.\""
+            )
           )
+        ),
+        _react2.default.createElement(
+          "h2",
+          { className: "avenir" },
+          "Post Goods and Services"
         ),
         _react2.default.createElement(
           "form",
@@ -81545,7 +81564,7 @@ var AddService = function (_Component) {
           _react2.default.createElement(
             "h3",
             null,
-            "Name:"
+            "Title:"
           ),
           _react2.default.createElement("input", { name: "serviceName" }),
           _react2.default.createElement(
@@ -81588,7 +81607,7 @@ var AddService = function (_Component) {
           _react2.default.createElement(
             "h3",
             null,
-            "Image URL:"
+            "Image URL (optional):"
           ),
           _react2.default.createElement("input", { name: "imgUrl" }),
           _react2.default.createElement(

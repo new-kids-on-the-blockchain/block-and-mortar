@@ -64,14 +64,16 @@ class AddService extends Component {
     return (
       this.props.contract && (
         <div>
-          <h1 className="avenir">Post a Service</h1>
+          <h1 className="avenir purple">New Service</h1>
         <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy">
-          <p className="lh-title ml3">Transactions between you and buyers in your community will be facilitated by a "smart contract," a set of rules that govern the exchange of goods and services for ether. When you post a good or service on Block &amp; Mortar, you're kicking off this process and writing to the blockchain! Subsequent interactions between you and your buyers will also be captured on the blockchain.
-
-          Please note that you'll incur a small fee every time you write to the blockchain (called "gas"), but the advantage is that the transaction is immutable, public, and xxx. </p>
+          <p className="lh-title ml3"><b>Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:</b>
+          <li>When you click "submit," you are actually writing to the blockchain! A "smart contract" will record all of the important information about your product and sale.</li>
+          <li>Writing to the blockchain incurs a small transaction fee, charged in Ether, which is called "gas."</li>
+           </p>
         </div>
+        <h2 className="avenir">Post Goods and Services</h2>
           <form onSubmit={this.handleSubmit}>
-            <h3>Name:</h3>
+            <h3>Title:</h3>
             <input name="serviceName" />
             <h3>Category:</h3>
             <select name="serviceCategory">
@@ -88,7 +90,7 @@ class AddService extends Component {
             />
             <h3>Description:</h3>
             <textarea name="serviceDescription" rows="1" cols="50" />
-            <h3>Image URL:</h3>
+            <h3>Image URL (optional):</h3>
             <input name="imgUrl" />
             <button>Submit</button>
           </form>
