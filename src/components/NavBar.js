@@ -8,7 +8,7 @@ const Navbar = props => (
     <nav>
         <Link to="/">
           <div>
-            
+
             <h1 className="avenir green f1">Block and Mortar</h1>
           </div>
         </Link>
@@ -17,6 +17,7 @@ const Navbar = props => (
           <div className="dtc v-mid w-75 tr">
           <Link to="/home" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Home</Link>
           <Link to="/services" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">All Services</Link>
+          <Link to="/faq" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
           <Link to="/messages" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Inbox</Link>
           <a href="#" onClick={props.handleClick} className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">
           Logout</a>
@@ -25,6 +26,7 @@ const Navbar = props => (
         <div>
           <Link to="/login" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Login</Link>
           <Link to="/signup" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Sign Up</Link>
+          <Link to="/faq" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
         </div>
         )}
        </div>
