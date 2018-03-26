@@ -31,7 +31,7 @@ class SingleUser extends Component {
                   </Link>
                   <p><b>Buyer:</b>{transaction.Buyer.userName}</p>
                   <p><b>Status:</b> {transaction.status}</p>
-                  <p><b>Category:</b>{transaction.category}</p>
+                  <p><b>Category:</b> {transaction.category}</p>
                   <p><b>Date Posted:</b> {toDate(transaction.createdAt)}</p>
                 </div>
               );
@@ -50,7 +50,7 @@ class SingleUser extends Component {
                   </Link>
                   <p><b>Seller:</b> {transaction.Seller.userName}</p>
                   <p><b>Status:</b> {transaction.status}</p>
-                  <p><b>Category:</b>{transaction.category}</p>
+                  <p><b>Category:</b> {transaction.category}</p>
                   <p><b>Date Posted:</b> {toDate(transaction.createdAt)}</p>
                 </div>
               );

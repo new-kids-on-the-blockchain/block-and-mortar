@@ -81527,8 +81527,8 @@ var AddService = function (_Component) {
         null,
         _react2.default.createElement(
           "h1",
-          { className: "avenir" },
-          "Post a Service"
+          { className: "avenir purple" },
+          "New Service"
         ),
         _react2.default.createElement(
           "div",
@@ -81536,8 +81536,27 @@ var AddService = function (_Component) {
           _react2.default.createElement(
             "p",
             { className: "lh-title ml3" },
-            "Transactions between you and buyers in your community will be facilitated by a \"smart contract,\" a set of rules that govern the exchange of goods and services for ether. When you post a good or service on Block and Mortar, you're kicking off this process and writing to the blockchain! Subsequent interactions between you and your buyers will also be captured on the blockchain. Please note that you'll incur a small fee every time you write to the blockchain (called \"gas\"), but the advantage is that the transaction is immutable, public, and xxx. "
+            _react2.default.createElement(
+              "b",
+              null,
+              "Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "When you click \"submit,\" you are actually writing to the blockchain! A \"smart contract\" will record all of the important information about your product and sale."
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "Writing to the blockchain incurs a small transaction fee, charged in ether, which is called \"gas.\""
+            )
           )
+        ),
+        _react2.default.createElement(
+          "h2",
+          { className: "avenir" },
+          "Post Goods and Services"
         ),
         _react2.default.createElement(
           "form",
@@ -81545,9 +81564,9 @@ var AddService = function (_Component) {
           _react2.default.createElement(
             "h3",
             null,
-            "Name:"
+            "Title:"
           ),
-          _react2.default.createElement("input", { name: "serviceName" }),
+          _react2.default.createElement("input", { name: "serviceName", placeholder: "3 Jars of Fresh Honey", size: "50" }),
           _react2.default.createElement(
             "h3",
             null,
@@ -81570,27 +81589,28 @@ var AddService = function (_Component) {
           _react2.default.createElement(
             "h3",
             null,
-            "Price (ether)"
+            "Price (ether):"
           ),
           _react2.default.createElement("input", {
             name: "servicePrice",
             type: "number",
             min: "0",
             max: "100",
-            step: "0.0001"
+            step: "0.0001",
+            placeholder: ".004"
           }),
           _react2.default.createElement(
             "h3",
             null,
             "Description:"
           ),
-          _react2.default.createElement("textarea", { name: "serviceDescription", rows: "1", cols: "50" }),
+          _react2.default.createElement("textarea", { name: "serviceDescription", rows: "1", cols: "50", placeholder: "I'm a beekeeper. Only the freshest honey from local bees" }),
           _react2.default.createElement(
             "h3",
             null,
-            "Image URL:"
+            "Image URL (optional):"
           ),
-          _react2.default.createElement("input", { name: "imgUrl" }),
+          _react2.default.createElement("textarea", { name: "imgUrl", rows: "1", cols: "50", placeholder: "https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80" }),
           _react2.default.createElement(
             "button",
             null,
@@ -81836,7 +81856,7 @@ var AllServices = function (_Component) {
       if (!services) return _react2.default.createElement(
         'div',
         null,
-        'Available services in your community loading....'
+        'Loading the Marketplace...'
       );else return _react2.default.createElement(
         'div',
         { className: 'avenir center bg-light-gray pa3 ph5-ns' },
@@ -81846,7 +81866,7 @@ var AllServices = function (_Component) {
           _react2.default.createElement(
             'h1',
             { className: 'avenir purple' },
-            'Available Services in Your Community '
+            'Marketplace'
           ),
           _react2.default.createElement(
             'div',
@@ -81857,7 +81877,18 @@ var AllServices = function (_Component) {
               _react2.default.createElement(
                 'p',
                 { className: 'avenir lh-title ml3' },
-                'Transactions between you and sellers in your community will be facilitated by a "smart contract", a set of rules that govern the exchange of goods and services for ether. Please note that you\'ll incur a small fee every time you write to the blockchain (called "gas"), but the advantage is that the transaction is immutable, public, and xxx. '
+                'When you place an order, you\'ll be charged a small transaction fee ("gas"); however you won\'t be charged the full amount until you\'ve received the order. ',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(
+                  'b',
+                  null,
+                  _react2.default.createElement(
+                    'em',
+                    null,
+                    'Please click "Complete Agreement" once your order is fulfilled.'
+                  )
+                ),
+                ' At that time, the funds will be deducted from your digital wallet.'
               )
             ),
             _react2.default.createElement(
@@ -81981,32 +82012,7 @@ function Homepage() {
         _react2.default.createElement(
             "h1",
             null,
-            "Aimed at local communities, Block and Mortar allows for the grassroots sale of goods and services using the Ethereum blockchain. "
-        ),
-        _react2.default.createElement(
-            "div",
-            { className: "avenir flex items-center justify-center pa4 bg-lightest-blue navy" },
-            _react2.default.createElement(
-                "p",
-                { className: "fl w-third" },
-                "Before signing up or logging into Block and Mortar, please make sure you've signed up and logged into your ",
-                _react2.default.createElement(
-                    "a",
-                    { href: "https://metamask.io/" },
-                    "Metamask account"
-                ),
-                "."
-            ),
-            _react2.default.createElement(
-                "p",
-                { className: "fl w-third" },
-                "For those of you new to blockchain technology, Metamask connects you to the Ethereum blockchain, a decentralized cryptocurrency platform that serves as a public ledger. Metamask will also be your digital wallet, so you'll need a bit of ether cryptocurrency to engage with your community on Block and Mortar."
-            ),
-            _react2.default.createElement(
-                "p",
-                { className: "fl w-third" },
-                "Once you're set up with Metamask and Block and Mortar, you will be able to buy or sell goods and services within your local community, an exchange codified and facilitated by a \"smart contract.\" Login to learn more!"
-            )
+            "Aimed at local communities, Block & Mortar allows for the grassroots sale of goods and services using the Ethereum blockchain. "
         )
     );
 }
@@ -82055,7 +82061,7 @@ var Navbar = function Navbar(props) {
           _react2.default.createElement(
             'h1',
             { className: 'avenir green f1' },
-            'Block and Mortar'
+            'Block & Mortar'
           )
         )
       ),
@@ -82073,7 +82079,12 @@ var Navbar = function Navbar(props) {
           _react2.default.createElement(
             _reactRouterDom.Link,
             { to: '/services', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
-            'All Services'
+            'Marketplace'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/services/new', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
+            'Create a Posting'
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
@@ -82306,54 +82317,87 @@ var AuthForm = function AuthForm(props) {
 
   return _react2.default.createElement(
     'div',
-    { className: 'form-login' },
+    { className: 'avenir form-login' },
     _react2.default.createElement(
-      'form',
-      { onSubmit: handleSubmit, name: name },
+      'div',
+      { className: 'avenir flex items-center justify-center pa4 bg-lightest-gray navy fl w-30' },
       _react2.default.createElement(
-        'div',
-        null,
+        'form',
+        { onSubmit: handleSubmit, name: name, className: 'avenir lh-title ml3' },
         _react2.default.createElement(
-          'label',
-          { htmlFor: 'userName' },
+          'div',
+          null,
           _react2.default.createElement(
-            'small',
-            null,
-            'Username'
+            'label',
+            { htmlFor: 'userName' },
+            _react2.default.createElement(
+              'large',
+              null,
+              'Username'
+            )
+          ),
+          _react2.default.createElement('input', { name: 'userName', type: 'text' })
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'label',
+            { htmlFor: 'password' },
+            _react2.default.createElement(
+              'large',
+              null,
+              'Password'
+            )
+          ),
+          _react2.default.createElement('input', { name: 'password', type: 'password' })
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'button',
+            { type: 'submit', className: 'btn btn-warning' },
+            displayName
           )
         ),
-        _react2.default.createElement('input', { name: 'userName', type: 'text' })
-      ),
-      _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'label',
-          { htmlFor: 'password' },
-          _react2.default.createElement(
-            'small',
-            null,
-            'Password'
-          )
-        ),
-        _react2.default.createElement('input', { name: 'password', type: 'password' })
-      ),
-      _react2.default.createElement('br', null),
-      _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'button',
-          { type: 'submit', className: 'btn btn-warning' },
-          displayName
+        error && error.response && _react2.default.createElement(
+          'div',
+          null,
+          ' ',
+          error.response.data,
+          ' '
         )
-      ),
-      error && error.response && _react2.default.createElement(
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'avenir flex items-center justify-center pa4 bg-lightest-blue navy fl w-70' },
+      _react2.default.createElement(
         'div',
-        null,
-        ' ',
-        error.response.data,
-        ' '
+        { className: 'avenir lh-title ml3' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          'Get started today: When you join Block & Mortar, you can start buying and selling goods immediately.'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'If you are new to blockchain technology, check out our beginner\'s guide.'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'If you\'re already familiar with Ethereum, be sure to log into your ',
+          _react2.default.createElement(
+            'a',
+            { href: 'https://metamask.io/' },
+            'Metamask account'
+          ),
+          ', create an account or log in below, and you\u2019ll be ready to get started.'
+        )
       )
     ),
     _react2.default.createElement('br', null)
@@ -82596,7 +82640,7 @@ var SingleService = function (_Component) {
           ),
           ' ',
           service.price,
-          ' Ether'
+          ' ether'
         ),
         _react2.default.createElement(
           'p',
@@ -82642,12 +82686,12 @@ var SingleService = function (_Component) {
         service.isAvailable && currentUser.id !== service.Seller.id ? _react2.default.createElement(
           'button',
           { onClick: this.handleClick },
-          'Purchase'
+          'Place Order'
         ) : _react2.default.createElement('div', null),
         service.isAvailable && currentUser.id === service.Seller.id ? _react2.default.createElement(
           'button',
           { onClick: this.handleClose },
-          'Close Service'
+          'Remove from Marketplace'
         ) : _react2.default.createElement('div', null),
         !service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? _react2.default.createElement(
           'h3',
@@ -82667,13 +82711,13 @@ var SingleService = function (_Component) {
           _react2.default.createElement(
             'button',
             { onClick: this.handleComplete },
-            'Complete Agreement'
+            'Complete Order'
           ),
           ' ',
           _react2.default.createElement(
             'h3',
             null,
-            'Transaction in progress. Click "Complete Agreement" when you have received your goods or services.'
+            'Order placed successfully. Complete transaction when you have received your goods or services.'
           ),
           ' '
         ) : _react2.default.createElement('div', null),
@@ -82685,7 +82729,7 @@ var SingleService = function (_Component) {
         !service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ? _react2.default.createElement(
           'h3',
           null,
-          'Congrats, transaction completed! Your blockchain contract ID is: ',
+          'Congrats, transaction completed! Your transaction ID on the blockchain is: ',
           this.props.singleService.contractId
         ) : _react2.default.createElement('div', null)
       );
@@ -82960,6 +83004,7 @@ var SingleUser = function (_Component) {
                   null,
                   'Category:'
                 ),
+                ' ',
                 transaction.category
               ),
               _react2.default.createElement(
@@ -83031,6 +83076,7 @@ var SingleUser = function (_Component) {
                   null,
                   'Category:'
                 ),
+                ' ',
                 transaction.category
               ),
               _react2.default.createElement(
