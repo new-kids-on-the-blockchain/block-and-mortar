@@ -81536,7 +81536,7 @@ var AddService = function (_Component) {
           _react2.default.createElement(
             "p",
             { className: "lh-title ml3" },
-            "Transactions between you and buyers in your community will be facilitated by a \"smart contract\", a set of rules that govern the exchange of goods and services for ether. When you post a good or service on xxxx, you're kicking off this process and writing to the blockchain! Subsequent interactions between you and your buyers will also be captured on the blockchain. Please note that you'll incur a small fee every time you write to the blockchain (called \"gas\"), but the advantage is that the transaction is immutable, public, and xxx. "
+            "Transactions between you and buyers in your community will be facilitated by a \"smart contract,\" a set of rules that govern the exchange of goods and services for ether. When you post a good or service on Block and Mortar, you're kicking off this process and writing to the blockchain! Subsequent interactions between you and your buyers will also be captured on the blockchain. Please note that you'll incur a small fee every time you write to the blockchain (called \"gas\"), but the advantage is that the transaction is immutable, public, and xxx. "
           )
         ),
         _react2.default.createElement(
@@ -81981,15 +81981,15 @@ function Homepage() {
         _react2.default.createElement(
             "h1",
             null,
-            "Aimed at local communities, xxxx allows for the grassroots sale of goods and services using the Ethereum blockchain. "
+            "Aimed at local communities, Block and Mortar allows for the grassroots sale of goods and services using the Ethereum blockchain. "
         ),
         _react2.default.createElement(
             "div",
             { className: "avenir flex items-center justify-center pa4 bg-lightest-blue navy" },
             _react2.default.createElement(
                 "p",
-                { className: "lh-title ml3" },
-                "Before signing up or logging into xxxx, please make sure you've signed up and logged into your ",
+                { className: "fl w-third" },
+                "Before signing up or logging into Block and Mortar, please make sure you've signed up and logged into your ",
                 _react2.default.createElement(
                     "a",
                     { href: "https://metamask.io/" },
@@ -81999,13 +81999,13 @@ function Homepage() {
             ),
             _react2.default.createElement(
                 "p",
-                null,
-                "For those of you new to blockchain technology, Metamask connects you to the Ethereum blockchain, a decentralized cryptocurrency platform that serves as a public ledger. Metamask will also be your digital wallet, so you'll need a bit of ether cryptocurrency to engage with your community on xxxxxx."
+                { className: "fl w-third" },
+                "For those of you new to blockchain technology, Metamask connects you to the Ethereum blockchain, a decentralized cryptocurrency platform that serves as a public ledger. Metamask will also be your digital wallet, so you'll need a bit of ether cryptocurrency to engage with your community on Block and Mortar."
             ),
             _react2.default.createElement(
                 "p",
-                null,
-                "Once you're set up with Metamask and xxxx, you will be able to buy or sell goods and services within your local community, an exchange codified and facilitated by a \"smart contract\". Login to learn more!"
+                { className: "fl w-third" },
+                "Once you're set up with Metamask and Block and Mortar, you will be able to buy or sell goods and services within your local community, an exchange codified and facilitated by a \"smart contract.\" Login to learn more!"
             )
         )
     );
@@ -82055,7 +82055,7 @@ var Navbar = function Navbar(props) {
           _react2.default.createElement(
             'h1',
             { className: 'avenir green f1' },
-            'Block Party'
+            'Block and Mortar'
           )
         )
       ),
