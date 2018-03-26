@@ -74,7 +74,7 @@ class AddService extends Component {
         <h2 className="avenir">Post Goods and Services</h2>
           <form onSubmit={this.handleSubmit}>
             <h3>Title:</h3>
-            <input name="serviceName" placeholder="3 Jars of Fresh Honey" size="50" />
+            <input name="serviceName" placeholder="3 Jars of Artisanal Honey" size="50" />
             <h3>Category:</h3>
             <select name="serviceCategory">
               <option value="Goods">Goods</option>
