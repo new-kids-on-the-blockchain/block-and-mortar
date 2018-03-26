@@ -46,7 +46,6 @@ class AddService extends Component {
 
     const price = formData.price;
     const { postNewService } = this.props;
-    console.log("our current account is: ", this.props.accounts[0])
     const newContract = this.props.contract
       .newAgreement(price, { from: this.props.accounts[0] })
       .then(newAgreement => {

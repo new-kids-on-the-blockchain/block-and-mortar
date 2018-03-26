@@ -1,5 +1,4 @@
 import axios from "axios";
-const baseURL = 'http://localhost:8080/api'
 
 /**
  * ACTION TYPES
@@ -18,7 +17,7 @@ const addMessage = message => ({type: ADD_MESSAGE, message})
  */
 export function fetchMessages() {
   return function thunk(dispatch) {
-    return axios.get('/messages', {baseURL})
+    return axios.get('/api/messages')
       .then(res => res.data)
       .then(messages => dispatch(getMessages(messages)))
       .catch(err => console.err('error fetching messages', err))
@@ -27,7 +26,7 @@ export function fetchMessages() {
 
 export function postMessage(message, ownProps) {
   return function thunk(dispatch) {
-    return axios.post('/messages', message, {baseURL})
+    return axios.post('/api/messages', message)
     .then(res => addMessageAndRedirect(res.data, ownProps, dispatch))
     .catch(err => console.log(err, "failed to post message"))
   }
