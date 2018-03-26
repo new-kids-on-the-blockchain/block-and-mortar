@@ -83613,7 +83613,7 @@ var SingleUserPublic = function (_Component) {
             null,
             pastServices.length,
             " transactions, ",
-            pastServices.length,
+            servicesCompleted.length,
             " fulfilled "
           ) :
           // (pastServices.map(pastService => {

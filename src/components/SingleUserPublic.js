@@ -48,7 +48,7 @@ class SingleUserPublic extends Component {
           <h2> Seller History: </h2>
           <div>
             {pastServices.length ?
-             (<h3>{pastServices.length} transactions, {pastServices.length} fulfilled </h3>)
+             (<h3>{pastServices.length} transactions, {servicesCompleted.length} fulfilled </h3>)
               // (pastServices.map(pastService => {
               //   return (
               //     <li key={pastService.id}>
