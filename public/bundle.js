@@ -83541,7 +83541,7 @@ var SingleUserPublic = function (_Component) {
       );
       return user.id ? _react2.default.createElement(
         "div",
-        { className: "mw5 mw7-ns center bg-light-gray pa3 ph5-ns" },
+        { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" },
         _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
         _react2.default.createElement(
           "h1",
