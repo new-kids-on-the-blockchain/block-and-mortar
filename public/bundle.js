@@ -81524,7 +81524,7 @@ var AddService = function (_Component) {
 
       return this.props.contract && _react2.default.createElement(
         "div",
-        { className: "mw5 mw7-ns center bg-light-gray pa3 ph5-ns" },
+        { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" },
         _react2.default.createElement(
           "h1",
           { className: "avenir purple" },
@@ -82947,7 +82947,7 @@ var SingleService = function (_Component) {
       );
       return this.props.singleService && _react2.default.createElement(
         'div',
-        { className: 'mw5 mw7-ns center bg-light-gray pa3 ph5-ns' },
+        { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns' },
         _react2.default.createElement(
           'h1',
           { className: 'purple' },
@@ -83282,7 +83282,7 @@ var SingleUser = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'mw5 mw7-ns center bg-light-gray pa3 ph5-ns' },
+        { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns' },
         _react2.default.createElement(
           'h1',
           { className: 'purple' },
