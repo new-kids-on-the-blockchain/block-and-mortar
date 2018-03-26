@@ -63,18 +63,18 @@ class SingleService extends Component {
   render() {
     const service = this.props.singleService
     const currentUser = this.props.currentUser
-    if (!service) return <div>No service exists at this location</div>
+    if (!service) return <div className="avenir dark-red"><h2>Oh no! No service exists at this address.</h2></div>
     return (
       this.props.singleService &&
-      <div>
-        <h1>{service.name} </h1>
+      <div className="avenir center bg-light-gray pa3 ph5-ns">
+        <h1 className="purple">{service.name} </h1>
         <img src={service.imgUrl} />
-        <h4><b>Description:</b> {service.description} </h4>
-        <h4><b>Category:</b> {service.category} </h4>
-        <h4><b>Price:</b> {service.price} Ether</h4>
-        <h4><b>Date created:</b> {service.createdAt}</h4>
-        <Link to={`/users/${service.Seller.id}`}>
-          <h4><b>Offered By:</b> {service.Seller.userName}</h4>
+        <p><b>Description:</b> {service.description} </p>
+        <p><b>Category:</b> {service.category} </p>
+        <p><b>Price:</b> {service.price} Ether</p>
+        <p><b>Date created:</b> {service.createdAt}</p>
+        <Link to={`/users/${service.seller}`}>
+          <p><b>Offered By:</b> {service.Seller.userName}</p>
         </Link>
         <Link to="/services"><button>Back to Services</button></Link>
         <button onClick={this.handleMessage}>Message</button>
@@ -85,7 +85,7 @@ class SingleService extends Component {
 
         {!service.isAvailable && service.status === "Pending" && (currentUser.id === service.Seller.id) ? <h3>Transaction in progress. {service.Buyer.userName} has purchased this service.</h3> : <div />}
 
-        {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? <div><button onClick={this.handleComplete}>Complete Agreement</button> <h3>Transaction in progress. Click Complete Agreement when you have received your goods or services.</h3> </div> : <div />}
+        {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? <div><button onClick={this.handleComplete}>Complete Agreement</button> <h3>Transaction in progress. Click "Complete Agreement" when you have received your goods or services.</h3> </div> : <div />}
 
         {!service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? <h3>Service no longer available.</h3> : <div />}
 

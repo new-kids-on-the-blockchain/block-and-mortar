@@ -8,23 +8,23 @@ const Navbar = props => (
     <nav>
         <Link to="/">
           <div>
-            <img src="https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg" alt='logo' />
-            <h1>Block Party</h1>
+            
+            <h1 className="avenir green f1">Block Party</h1>
           </div>
         </Link>
         <div>
         {props.isLoggedIn ? (
-          <div>
-          <Link to="/home">Home</Link>
-          <Link to="/services">All Services</Link>
-          <Link to="/messages">Inbox</Link>
-          <a href="#" onClick={props.handleClick}>
+          <div className="dtc v-mid w-75 tr">
+          <Link to="/home" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Home</Link>
+          <Link to="/services" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">All Services</Link>
+          <Link to="/messages" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Inbox</Link>
+          <a href="#" onClick={props.handleClick} className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">
           Logout</a>
         </div>
         ) : (
         <div>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/login" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Login</Link>
+          <Link to="/signup" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Sign Up</Link>
         </div>
         )}
        </div>
