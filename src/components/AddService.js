@@ -74,7 +74,7 @@ class AddService extends Component {
         <h2 className="avenir">Post Goods and Services</h2>
           <form onSubmit={this.handleSubmit}>
             <h3>Title:</h3>
-            <input name="serviceName" />
+            <input name="serviceName" placeholder="3 Jars of Fresh Honey" size="50" />
             <h3>Category:</h3>
             <select name="serviceCategory">
               <option value="Goods">Goods</option>
@@ -87,11 +87,12 @@ class AddService extends Component {
               min="0"
               max="100"
               step="0.0001"
+              placeholder=".004"
             />
             <h3>Description:</h3>
-            <textarea name="serviceDescription" rows="1" cols="50" />
+            <textarea name="serviceDescription" rows="1" cols="50" placeholder="I'm a beekeeper. Only the freshest honey from local bees"/>
             <h3>Image URL (optional):</h3>
-            <input name="imgUrl" />
+            <textarea name="imgUrl" rows="1" cols="50" placeholder="https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80"/>
             <button>Submit</button>
           </form>
         </div>

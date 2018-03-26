@@ -81566,7 +81566,7 @@ var AddService = function (_Component) {
             null,
             "Title:"
           ),
-          _react2.default.createElement("input", { name: "serviceName" }),
+          _react2.default.createElement("input", { name: "serviceName", placeholder: "3 Jars of Fresh Honey", size: "50" }),
           _react2.default.createElement(
             "h3",
             null,
@@ -81596,20 +81596,21 @@ var AddService = function (_Component) {
             type: "number",
             min: "0",
             max: "100",
-            step: "0.0001"
+            step: "0.0001",
+            placeholder: ".004"
           }),
           _react2.default.createElement(
             "h3",
             null,
             "Description:"
           ),
-          _react2.default.createElement("textarea", { name: "serviceDescription", rows: "1", cols: "50" }),
+          _react2.default.createElement("textarea", { name: "serviceDescription", rows: "1", cols: "50", placeholder: "I'm a beekeeper. Only the freshest honey from local bees" }),
           _react2.default.createElement(
             "h3",
             null,
             "Image URL (optional):"
           ),
-          _react2.default.createElement("input", { name: "imgUrl" }),
+          _react2.default.createElement("textarea", { name: "imgUrl", rows: "1", cols: "50", placeholder: "https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80" }),
           _react2.default.createElement(
             "button",
             null,
