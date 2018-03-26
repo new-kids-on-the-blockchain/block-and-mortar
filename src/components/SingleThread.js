@@ -5,7 +5,7 @@ const SingleThread = (props) => {
   let messages = props.currentThread.messages
   console.log("current thread in single thread component: ", props.currentThread.id)
   return (
-    <div>
+    <div className="avenir">
       {
         !props.currentThread.id
         ? <div>No Conversation Selected</div>

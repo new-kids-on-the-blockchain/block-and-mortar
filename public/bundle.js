@@ -82786,7 +82786,7 @@ var SingleThread = function SingleThread(props) {
   console.log("current thread in single thread component: ", props.currentThread.id);
   return _react2.default.createElement(
     'div',
-    null,
+    { className: 'avenir' },
     !props.currentThread.id ? _react2.default.createElement(
       'div',
       null,
