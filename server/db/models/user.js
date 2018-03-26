@@ -5,9 +5,6 @@ const db = require('../db')
 const User = db.define('user', {
   userName: {
     type: Sequelize.STRING,
-  },
-  email: {
-    type: Sequelize.STRING,
     unique: true,
     allowNull: false
   },
@@ -27,9 +24,6 @@ const User = db.define('user', {
       return () => this.getDataValue('salt')
     }
   },
-  // accountAddress: {
-  //   type: Sequelize.TEXT
-  // },
   // isAdmin: {
   //   type: Sequelize.BOOLEAN,
   //   defaultValue: false

@@ -81507,20 +81507,6 @@ var AuthForm = function AuthForm(props) {
         null,
         _react2.default.createElement(
           'label',
-          { htmlFor: 'email' },
-          _react2.default.createElement(
-            'small',
-            null,
-            'Email'
-          )
-        ),
-        _react2.default.createElement('input', { name: 'email', type: 'text' })
-      ),
-      _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'label',
           { htmlFor: 'password' },
           _react2.default.createElement(
             'small',
@@ -81574,9 +81560,8 @@ var mapDispatch = function mapDispatch(dispatch) {
       evt.preventDefault();
       var formName = evt.target.name;
       var userName = evt.target.userName.value;
-      var email = evt.target.email.value;
       var password = evt.target.password.value;
-      dispatch((0, _store.auth)(userName, email, password, formName));
+      dispatch((0, _store.auth)(userName, password, formName));
     }
   };
 };
@@ -82685,9 +82670,9 @@ var me = exports.me = function me() {
   };
 };
 
-var auth = exports.auth = function auth(userName, email, password, method) {
+var auth = exports.auth = function auth(userName, password, method) {
   return function (dispatch) {
-    _axios2.default.post('/auth/' + method, { userName: userName, email: email, password: password }).then(function (res) {
+    _axios2.default.post('/auth/' + method, { userName: userName, password: password }).then(function (res) {
       dispatch(getCurrentUser(res.data));
       _history2.default.push('/home');
     }, function (authError) {
