@@ -50,7 +50,7 @@ export const auth = (userName, password, method) => dispatch => {
 
   export const logout = () => {
     return dispatch =>
-    {axios.post('http://localhost:8080/auth/logout')
+    {axios.post('/auth/logout')
       .then(_ => {
         dispatch(removeUser())
         history.push('/')
