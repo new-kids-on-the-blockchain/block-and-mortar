@@ -6,14 +6,6 @@ import { postMessage } from '../store';
 class AddMessage extends Component {
   constructor() {
     super();
-    this.state = {
-      sender: "",
-      recipient: "",
-      subject: "",
-      message: "",
-      threadId: 0
-    }
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -26,6 +18,11 @@ class AddMessage extends Component {
 
     evt.preventDefault();
     this.props.postNewMessage(message)
+    document.getElementById("messageContent").value = "";
+  }
+
+  componentWillReceiveProps(nextProps){
+    console.log("nextProps: ", nextProps)
   }
 
   render() {
@@ -34,6 +31,7 @@ class AddMessage extends Component {
         <h2>New Message:</h2>
         <form onSubmit={this.handleSubmit}>
           <textarea
+            id="messageContent"
             name="content"
             type="text"
           />
