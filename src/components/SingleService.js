@@ -17,9 +17,9 @@ class SingleService extends Component {
     this.props.handleFetchServices()
     this.props.handleFetchContract()
     this.collectBlockchainInfo()
-    }
+  }
 
-    async collectBlockchainInfo() {
+  async collectBlockchainInfo() {
     // Get network provider, web3, and truffle contract instance and store them on state.
     try {
       await this.props.fetchWeb3();
@@ -40,7 +40,7 @@ class SingleService extends Component {
 
   handleComplete(evt) {
     evt.preventDefault()
-    this.props.contract.completeAgreement(this.props.singleService.contractId, { from: this.props.accounts[0], value: this.props.web3.toWei(this.props.singleService.price, 'ether')})
+    this.props.contract.completeAgreement(this.props.singleService.contractId, { from: this.props.accounts[0], value: this.props.web3.toWei(this.props.singleService.price, 'ether') })
       .then(agreementCompleted => { console.log(agreementCompleted, "COMPLETE AGREEMENT") })
       .then(() => this.props.handleCompleteService(evt, this.props.singleService))
       .catch(err => console.log('agreementCompleted failed....'))
@@ -68,34 +68,44 @@ class SingleService extends Component {
     return (
       this.props.singleService &&
       <div className="home" id="background">
-      <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
-        <h1 className="purple">{service.name} </h1>
-        <img alt={service.name} src={service.imgUrl} />
-        <p><b>Description:</b> {service.description} </p>
-        <p><b>Category:</b> {service.category} </p>
-        <p><b>Price:</b> {service.price} ether</p>
+        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
+          <div className="f2">{service.name} </div>
+          <img alt={service.name} src={service.imgUrl} />
+          <p><b>Description:</b> {service.description} </p>
+          <p><b>Category:</b> {service.category} </p>
+          <p><b>Price:</b> {service.price} ether</p>
 
-        <a href={`https://currencio.co/eth/usd/${service.price}`} target="_blank">How much is this in USD?</a>
+          <a className="dim" href={`https://currencio.co/eth/usd/${service.price}`} target="_blank">How much is this in USD?</a>
 
-        <p><b>Date Posted:</b> {toDate(service.createdAt)}</p>
-        <p><b>Offered By:</b> <Link to={`/users/${service.seller}`}>{service.Seller.userName}      </Link></p>
-        <Link to="/services"><button>Back to Services</button></Link>
-        <button onClick={this.handleMessage}>Message</button>
+          <p><b>Date Posted:</b> {toDate(service.createdAt)}</p>
+          <p><b>Offered By:</b> <Link to={`/users/${service.seller}`} className="dim">{service.Seller.userName}      </Link></p>
 
-        {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Place Order</button> : <div />}
-        {service.isAvailable && currentUser.id === service.Seller.id ? <button onClick={this.handleClose}>Remove from Marketplace</button> : <div />}
-        {!service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? <h3>You have closed this service.</h3> : <div />}
+          {service.isAvailable && currentUser.id !== service.Seller.id ?
+            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" onClick={this.handleClick}>Place Order</button> : <div />}
+     
+            {currentUser.id !== service.Seller.id ? <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue" onClick={this.handleMessage}>Message</button> : <div/> }
+       
 
-        {!service.isAvailable && service.status === "Pending" && (currentUser.id === service.Seller.id) ? <h3>Transaction in progress. {service.Buyer.userName} has purchased this service.</h3> : <div />}
+          {service.isAvailable && currentUser.id === service.Seller.id ?
+              <button className="f6 link dim br-pill ph3 pv2 mb2 dib black bg-highlighter-yellow" onClick={this.handleClose}>Remove from Marketplace</button>
+           : <div />}
 
-        {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? <div><button onClick={this.handleComplete}>Complete Order</button> <h3>Order placed successfully. Complete transaction when you have received your goods or services.</h3> </div> : <div />}
+          {!service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? <h3>You have closed this service.</h3> : <div />}
 
-        {!service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? <h3>Service no longer available.</h3> : <div />}
+          {!service.isAvailable && service.status === "Pending" && (currentUser.id === service.Seller.id) ? <h3>Transaction in progress. {service.Buyer.userName} has purchased this service.</h3> : <div />}
 
-        {!service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ?
-          <h3>Congrats, transaction completed! Your transaction ID on the blockchain is: {this.props.singleService.contractId}</h3>
-          : <div />}
-      </div>
+          {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ?
+            <div>
+                <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue" onClick={this.handleComplete}>Complete Order</button> <h3>Order placed successfully. Complete transaction when you have received your goods or services.</h3>
+              </div>
+            : <div />}
+
+          {!service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? <h3>Service no longer available.</h3> : <div />}
+
+          {!service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ?
+            <h3>Congrats, transaction completed! Your transaction ID on the blockchain is: {this.props.singleService.contractId}</h3>
+            : <div />}
+        </div>
       </div>
     )
   }
