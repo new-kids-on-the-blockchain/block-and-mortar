@@ -81931,17 +81931,17 @@ var AllServices = function (_Component) {
                 ),
                 _react2.default.createElement(
                   'button',
-                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-lime-green', value: 'All', onClick: this.handleClick },
+                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue', value: 'All', onClick: this.handleClick },
                   'Show All'
                 ),
                 _react2.default.createElement(
                   'button',
-                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-highlighter-yellow', value: 'Goods', onClick: this.handleClick },
+                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-gray', value: 'Goods', onClick: this.handleClick },
                   'Goods'
                 ),
                 _react2.default.createElement(
                   'button',
-                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink', value: 'Services', onClick: this.handleClick },
+                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-gray', value: 'Services', onClick: this.handleClick },
                   'Services'
                 )
               )

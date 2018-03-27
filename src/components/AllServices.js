@@ -44,9 +44,9 @@ class AllServices extends Component {
           
           <div className="ph3">
           <Link to="/services/new"> <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink">Create a Posting</button></Link>
-            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-lime-green" value="All" onClick={this.handleClick}>Show All</button>
-            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-highlighter-yellow" value="Goods" onClick={this.handleClick}>Goods</button>
-            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" value="Services" onClick={this.handleClick}>Services</button>
+            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue" value="All" onClick={this.handleClick}>Show All</button>
+            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-gray" value="Goods" onClick={this.handleClick}>Goods</button>
+            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-gray" value="Services" onClick={this.handleClick}>Services</button>
           </div>
           </div>
         </div>
