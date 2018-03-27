@@ -63,7 +63,8 @@ class AddService extends Component {
     const { name, description, category, price } = this.state;
     return (
       this.props.contract && (
-        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
+        <div className="home" id="background">
+        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
           <h1 className="avenir purple">New Service</h1>
         <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy">
           <p className="lh-title ml3"><b>Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:</b>
@@ -88,7 +89,7 @@ class AddService extends Component {
               max="100"
               step="0.0001"
               placeholder=".05"
-            /> 
+            />
             <a href={`https://currencio.co/eth/usd/`} target="_blank">ETH to USD Converter</a>
             <h3>Description:</h3>
             <textarea name="serviceDescription" rows="1" cols="50" placeholder="I'm a beekeeper. Only the freshest honey from local bees"/>
@@ -96,6 +97,7 @@ class AddService extends Component {
             <textarea name="imgUrl" rows="1" cols="50" placeholder="https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80"/>
             <button>Submit</button>
           </form>
+        </div>
         </div>
       )
     );

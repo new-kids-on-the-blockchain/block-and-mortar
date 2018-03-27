@@ -32,7 +32,8 @@ class AllServices extends Component {
 
     if (!services) return <div>Loading the Marketplace...</div>
     else return (
-      <div className="avenir center bg-light-gray pa3 ph5-ns">
+      <div className="home" id="background">
+      <div className="avenir center bg-light-gray pa3 ph5-ns" id="topMargin">
         <div>
           <h1 className="avenir purple">Marketplace</h1>
           <div>
@@ -62,6 +63,7 @@ class AllServices extends Component {
             })
           }
         </div>
+      </div>
       </div>
     )
   }

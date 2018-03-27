@@ -81524,102 +81524,106 @@ var AddService = function (_Component) {
 
       return this.props.contract && _react2.default.createElement(
         "div",
-        { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" },
-        _react2.default.createElement(
-          "h1",
-          { className: "avenir purple" },
-          "New Service"
-        ),
+        { className: "home", id: "background" },
         _react2.default.createElement(
           "div",
-          { className: "avenir flex items-center justify-center pa4 bg-lightest-blue navy" },
+          { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns", id: "topMargin" },
           _react2.default.createElement(
-            "p",
-            { className: "lh-title ml3" },
-            _react2.default.createElement(
-              "b",
-              null,
-              "Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:"
-            ),
-            _react2.default.createElement(
-              "li",
-              null,
-              "When you click \"submit,\" you are actually writing to the blockchain! A \"smart contract\" will record all of the important information about your product and sale."
-            ),
-            _react2.default.createElement(
-              "li",
-              null,
-              "Writing to the blockchain incurs a small transaction fee, charged in ether, which is called \"gas.\""
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "h2",
-          { className: "avenir" },
-          "Post Goods and Services"
-        ),
-        _react2.default.createElement(
-          "form",
-          { onSubmit: this.handleSubmit, className: "avenir" },
-          _react2.default.createElement(
-            "h3",
-            null,
-            "Title:"
-          ),
-          _react2.default.createElement("input", { name: "serviceName", placeholder: "3 Jars of Artisanal Honey", size: "50" }),
-          _react2.default.createElement(
-            "h3",
-            null,
-            "Category:"
+            "h1",
+            { className: "avenir purple" },
+            "New Service"
           ),
           _react2.default.createElement(
-            "select",
-            { name: "serviceCategory" },
+            "div",
+            { className: "avenir flex items-center justify-center pa4 bg-lightest-blue navy" },
             _react2.default.createElement(
-              "option",
-              { value: "Goods" },
-              "Goods"
-            ),
-            _react2.default.createElement(
-              "option",
-              { value: "Services" },
-              "Services"
+              "p",
+              { className: "lh-title ml3" },
+              _react2.default.createElement(
+                "b",
+                null,
+                "Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:"
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                "When you click \"submit,\" you are actually writing to the blockchain! A \"smart contract\" will record all of the important information about your product and sale."
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                "Writing to the blockchain incurs a small transaction fee, charged in ether, which is called \"gas.\""
+              )
             )
           ),
           _react2.default.createElement(
-            "h3",
-            null,
-            "Price (ether):"
-          ),
-          _react2.default.createElement("input", {
-            name: "servicePrice",
-            type: "number",
-            min: "0",
-            max: "100",
-            step: "0.0001",
-            placeholder: ".05"
-          }),
-          _react2.default.createElement(
-            "a",
-            { href: "https://currencio.co/eth/usd/", target: "_blank" },
-            "ETH to USD Converter"
+            "h2",
+            { className: "avenir" },
+            "Post Goods and Services"
           ),
           _react2.default.createElement(
-            "h3",
-            null,
-            "Description:"
-          ),
-          _react2.default.createElement("textarea", { name: "serviceDescription", rows: "1", cols: "50", placeholder: "I'm a beekeeper. Only the freshest honey from local bees" }),
-          _react2.default.createElement(
-            "h3",
-            null,
-            "Image URL (optional):"
-          ),
-          _react2.default.createElement("textarea", { name: "imgUrl", rows: "1", cols: "50", placeholder: "https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80" }),
-          _react2.default.createElement(
-            "button",
-            null,
-            "Submit"
+            "form",
+            { onSubmit: this.handleSubmit, className: "avenir" },
+            _react2.default.createElement(
+              "h3",
+              null,
+              "Title:"
+            ),
+            _react2.default.createElement("input", { name: "serviceName", placeholder: "3 Jars of Artisanal Honey", size: "50" }),
+            _react2.default.createElement(
+              "h3",
+              null,
+              "Category:"
+            ),
+            _react2.default.createElement(
+              "select",
+              { name: "serviceCategory" },
+              _react2.default.createElement(
+                "option",
+                { value: "Goods" },
+                "Goods"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "Services" },
+                "Services"
+              )
+            ),
+            _react2.default.createElement(
+              "h3",
+              null,
+              "Price (ether):"
+            ),
+            _react2.default.createElement("input", {
+              name: "servicePrice",
+              type: "number",
+              min: "0",
+              max: "100",
+              step: "0.0001",
+              placeholder: ".05"
+            }),
+            _react2.default.createElement(
+              "a",
+              { href: "https://currencio.co/eth/usd/", target: "_blank" },
+              "ETH to USD Converter"
+            ),
+            _react2.default.createElement(
+              "h3",
+              null,
+              "Description:"
+            ),
+            _react2.default.createElement("textarea", { name: "serviceDescription", rows: "1", cols: "50", placeholder: "I'm a beekeeper. Only the freshest honey from local bees" }),
+            _react2.default.createElement(
+              "h3",
+              null,
+              "Image URL (optional):"
+            ),
+            _react2.default.createElement("textarea", { name: "imgUrl", rows: "1", cols: "50", placeholder: "https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80" }),
+            _react2.default.createElement(
+              "button",
+              null,
+              "Submit"
+            )
           )
         )
       );
@@ -81726,42 +81730,46 @@ var AllMessages = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns' },
+        { className: 'home', id: 'background' },
         _react2.default.createElement(
           'div',
-          { className: 'allThreads' },
+          { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMarginLogin' },
           _react2.default.createElement(
-            'h2',
-            null,
-            'All Conversations'
+            'div',
+            { className: 'allThreads' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              'All Conversations'
+            ),
+            this.props.threads.map(function (thread) {
+              return _react2.default.createElement(
+                'div',
+                { key: thread.id, className: 'singleThread', onClick: function onClick() {
+                    return _this2.setCurrentThread(thread);
+                  } },
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  thread.service.name
+                ),
+                thread.buyer.id === _this2.props.currentUser.id ? _react2.default.createElement(
+                  'div',
+                  null,
+                  thread.seller.userName
+                ) : _react2.default.createElement(
+                  'div',
+                  null,
+                  thread.buyer.userName
+                )
+              );
+            })
           ),
-          this.props.threads.map(function (thread) {
-            return _react2.default.createElement(
-              'div',
-              { key: thread.id, className: 'singleThread', onClick: function onClick() {
-                  return _this2.setCurrentThread(thread);
-                } },
-              _react2.default.createElement(
-                'div',
-                null,
-                thread.service.name
-              ),
-              thread.buyer.id === _this2.props.currentUser.id ? _react2.default.createElement(
-                'div',
-                null,
-                thread.seller.userName
-              ) : _react2.default.createElement(
-                'div',
-                null,
-                thread.buyer.userName
-              )
-            );
-          })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'currentThread' },
-          _react2.default.createElement(_SingleThread2.default, { currentThread: this.state.currentThread })
+          _react2.default.createElement(
+            'div',
+            { className: 'currentThread' },
+            _react2.default.createElement(_SingleThread2.default, { currentThread: this.state.currentThread })
+          )
         )
       );
     }
@@ -81864,102 +81872,106 @@ var AllServices = function (_Component) {
         'Loading the Marketplace...'
       );else return _react2.default.createElement(
         'div',
-        { className: 'avenir center bg-light-gray pa3 ph5-ns' },
+        { className: 'home', id: 'background' },
         _react2.default.createElement(
           'div',
-          null,
-          _react2.default.createElement(
-            'h1',
-            { className: 'avenir purple' },
-            'Marketplace'
-          ),
+          { className: 'avenir center bg-light-gray pa3 ph5-ns', id: 'topMargin' },
           _react2.default.createElement(
             'div',
             null,
             _react2.default.createElement(
-              'div',
-              { className: 'avenir flex items-center justify-center pa4 bg-lightest-blue navy' },
-              _react2.default.createElement(
-                'p',
-                { className: 'avenir lh-title ml3' },
-                'When you place an order, you\'ll be charged a small transaction fee ("gas"); however you won\'t be charged the full amount until you\'ve received the order. ',
-                _react2.default.createElement('br', null),
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  _react2.default.createElement(
-                    'em',
-                    null,
-                    'Please click "Complete Agreement" once your order is fulfilled.'
-                  )
-                ),
-                ' At that time, the funds will be deducted from your digital wallet.'
-              )
+              'h1',
+              { className: 'avenir purple' },
+              'Marketplace'
             ),
             _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: '/services/new' },
-              ' ',
+              'div',
+              null,
+              _react2.default.createElement(
+                'div',
+                { className: 'avenir flex items-center justify-center pa4 bg-lightest-blue navy' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'avenir lh-title ml3' },
+                  'When you place an order, you\'ll be charged a small transaction fee ("gas"); however you won\'t be charged the full amount until you\'ve received the order. ',
+                  _react2.default.createElement('br', null),
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    _react2.default.createElement(
+                      'em',
+                      null,
+                      'Please click "Complete Agreement" once your order is fulfilled.'
+                    )
+                  ),
+                  ' At that time, the funds will be deducted from your digital wallet.'
+                )
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/services/new' },
+                ' ',
+                _react2.default.createElement(
+                  'button',
+                  { className: 'btn btn-info new' },
+                  'Create a Posting'
+                )
+              ),
               _react2.default.createElement(
                 'button',
-                { className: 'btn btn-info new' },
-                'Create a Posting'
-              )
-            ),
-            _react2.default.createElement(
-              'button',
-              { className: 'btn active', value: 'All', onClick: this.handleClick },
-              'Show All'
-            ),
-            _react2.default.createElement(
-              'button',
-              { className: 'btn', value: 'Goods', onClick: this.handleClick },
-              'Goods'
-            ),
-            _react2.default.createElement(
-              'button',
-              { className: 'btn', value: 'Services', onClick: this.handleClick },
-              'Services'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'container all-services' },
-          displayedServices && displayedServices.map(function (service) {
-            return _react2.default.createElement(
-              'div',
-              { className: 'list-item service', key: service.id },
+                { className: 'btn active', value: 'All', onClick: this.handleClick },
+                'Show All'
+              ),
               _react2.default.createElement(
-                _reactRouterDom.NavLink,
-                { key: service.id, to: '/services/' + service.id },
-                _react2.default.createElement('img', { className: 'thumbnail', src: service.imgUrl }),
+                'button',
+                { className: 'btn', value: 'Goods', onClick: this.handleClick },
+                'Goods'
+              ),
+              _react2.default.createElement(
+                'button',
+                { className: 'btn', value: 'Services', onClick: this.handleClick },
+                'Services'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'container all-services' },
+            displayedServices && displayedServices.map(function (service) {
+              return _react2.default.createElement(
+                'div',
+                { className: 'list-item service', key: service.id },
                 _react2.default.createElement(
-                  'div',
-                  null,
+                  _reactRouterDom.NavLink,
+                  { key: service.id, to: '/services/' + service.id },
+                  _react2.default.createElement('img', { className: 'thumbnail', src: service.imgUrl }),
                   _react2.default.createElement(
                     'div',
                     null,
-                    'Name: ',
-                    service.name
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    null,
-                    'Price: ',
-                    service.price,
-                    ' ether'
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    null,
-                    'Category: ',
-                    service.category
+                    _react2.default.createElement(
+                      'div',
+                      null,
+                      'Name: ',
+                      service.name
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      null,
+                      'Price: ',
+                      service.price,
+                      ' ether'
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      null,
+                      'Category: ',
+                      service.category
+                    )
                   )
                 )
-              )
-            );
-          })
+              );
+            })
+          )
         )
       );
     }
@@ -82011,100 +82023,104 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var FAQ = function FAQ(props) {
   return _react2.default.createElement(
     "div",
-    { className: "FAQ avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" },
-    _react2.default.createElement(
-      "h2",
-      null,
-      "Beginner\u2019s Guide to Blockchain"
-    ),
+    { className: "home", id: "background" },
     _react2.default.createElement(
       "div",
-      { className: "faq-question" },
+      { className: "FAQ avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns", id: "topMargin" },
       _react2.default.createElement(
-        "h4",
+        "h2",
         null,
-        "What is the blockchain?"
+        "Beginner\u2019s Guide to Blockchain"
       ),
       _react2.default.createElement(
-        "p",
-        null,
-        "A blockchain is a continuously growing list of records, called blocks, which are linked and secured using cryptography. It is an open, distributed ledger that can record transactions between two parties, and, by design, it is unchangeable. Blockchains are typically managed using a peer-to-peer network that collectively adheres to a set of rules for adding new blocks to the chain."
-      )
-    ),
-    _react2.default.createElement(
-      "div",
-      { className: "faq-question" },
-      _react2.default.createElement(
-        "h4",
-        null,
-        "What is a cryptocurrency?"
+        "div",
+        { className: "faq-question" },
+        _react2.default.createElement(
+          "h4",
+          null,
+          "What is the blockchain?"
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "A blockchain is a continuously growing list of records, called blocks, which are linked and secured using cryptography. It is an open, distributed ledger that can record transactions between two parties, and, by design, it is unchangeable. Blockchains are typically managed using a peer-to-peer network that collectively adheres to a set of rules for adding new blocks to the chain."
+        )
       ),
       _react2.default.createElement(
-        "p",
-        null,
-        "A cryptocurrency is a digital medium of exchange that uses cryptography to secure its transactions. Cryptocurrencies use decentralized control that works through a blockchain, functioning as a distributed ledger."
-      )
-    ),
-    _react2.default.createElement(
-      "div",
-      { className: "faq-question" },
-      _react2.default.createElement(
-        "h4",
-        null,
-        "Which cryptocurrency do you use?"
+        "div",
+        { className: "faq-question" },
+        _react2.default.createElement(
+          "h4",
+          null,
+          "What is a cryptocurrency?"
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "A cryptocurrency is a digital medium of exchange that uses cryptography to secure its transactions. Cryptocurrencies use decentralized control that works through a blockchain, functioning as a distributed ledger."
+        )
       ),
       _react2.default.createElement(
-        "p",
-        null,
-        "Block & Mortar is built on the Ethereum blockchain, using \"ether,\" a cryptocurrency, \"wei,\" a smaller denomination of ether, and \"gas,\" a measure of the cost of writing to the blockchain. Ethereum is a decentralized platform that runs smart contracts: applications that run exactly as programmed without any possibility of downtime, censorship, fraud or third-party interference."
-      )
-    ),
-    _react2.default.createElement(
-      "div",
-      { className: "faq-question" },
-      _react2.default.createElement(
-        "h4",
-        null,
-        "What is a digital wallet?"
+        "div",
+        { className: "faq-question" },
+        _react2.default.createElement(
+          "h4",
+          null,
+          "Which cryptocurrency do you use?"
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "Block & Mortar is built on the Ethereum blockchain, using \"ether,\" a cryptocurrency, \"wei,\" a smaller denomination of ether, and \"gas,\" a measure of the cost of writing to the blockchain. Ethereum is a decentralized platform that runs smart contracts: applications that run exactly as programmed without any possibility of downtime, censorship, fraud or third-party interference."
+        )
       ),
       _react2.default.createElement(
-        "p",
-        null,
-        "A digital wallet is an electronic address that allows an individual to make electronic transactions. A digital wallet can be linked to a user's bank account, and can be used to make transactions with a variety of cryptocurrencies like bitcoin or ether."
-      )
-    ),
-    _react2.default.createElement(
-      "div",
-      { className: "faq-question" },
-      _react2.default.createElement(
-        "h4",
-        null,
-        "How does this all work? What is a smart contract?"
+        "div",
+        { className: "faq-question" },
+        _react2.default.createElement(
+          "h4",
+          null,
+          "What is a digital wallet?"
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "A digital wallet is an electronic address that allows an individual to make electronic transactions. A digital wallet can be linked to a user's bank account, and can be used to make transactions with a variety of cryptocurrencies like bitcoin or ether."
+        )
       ),
       _react2.default.createElement(
-        "p",
-        null,
-        "This is how we facilitate transactions...MORE HERE"
-      )
-    ),
-    _react2.default.createElement(
-      "div",
-      { className: "faq-question" },
-      _react2.default.createElement(
-        "h4",
-        null,
-        "Why am I being charged to post a service?"
+        "div",
+        { className: "faq-question" },
+        _react2.default.createElement(
+          "h4",
+          null,
+          "How does this all work? What is a smart contract?"
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "This is how we facilitate transactions...MORE HERE"
+        )
       ),
       _react2.default.createElement(
-        "p",
+        "div",
+        { className: "faq-question" },
+        _react2.default.createElement(
+          "h4",
+          null,
+          "Why am I being charged to post a service?"
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "BECAUSE YOU GOTTA"
+        )
+      ),
+      _react2.default.createElement(
+        "h3",
         null,
-        "BECAUSE YOU GOTTA"
+        "Sign up and get started to learn more!"
       )
-    ),
-    _react2.default.createElement(
-      "h3",
-      null,
-      "Sign up and get started to learn more!"
     )
   );
 };
@@ -82682,90 +82698,94 @@ var AuthForm = function AuthForm(props) {
 
   return _react2.default.createElement(
     'div',
-    { className: 'avenir form-login' },
+    { className: 'home', id: 'background' },
     _react2.default.createElement(
       'div',
-      { className: 'avenir flex items-center justify-center pa4 bg-lightest-gray navy fl w-30' },
-      _react2.default.createElement(
-        'form',
-        { onSubmit: handleSubmit, name: name, className: 'avenir lh-title ml3' },
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'label',
-            { htmlFor: 'userName' },
-            _react2.default.createElement(
-              'large',
-              null,
-              'Username'
-            )
-          ),
-          _react2.default.createElement('input', { name: 'userName', type: 'text' })
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'label',
-            { htmlFor: 'password' },
-            _react2.default.createElement(
-              'large',
-              null,
-              'Password'
-            )
-          ),
-          _react2.default.createElement('input', { name: 'password', type: 'password' })
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'button',
-            { type: 'submit', className: 'btn btn-warning' },
-            displayName
-          )
-        ),
-        error && error.response && _react2.default.createElement(
-          'div',
-          null,
-          ' ',
-          error.response.data,
-          ' '
-        )
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'avenir flex items-center justify-center pa4 bg-lightest-blue navy fl w-70' },
+      { className: 'avenir form-login', id: 'topMarginLogin' },
       _react2.default.createElement(
         'div',
-        { className: 'avenir lh-title ml3' },
+        { className: 'avenir flex items-center justify-center pa4 bg-lightest-gray navy fl w-30' },
         _react2.default.createElement(
-          'h2',
-          null,
-          'Get started today: When you join Block & Mortar, you can start buying and selling goods immediately.'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'If you are new to blockchain technology, check out our beginner\'s guide.'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'If you\'re already familiar with Ethereum, be sure to log into your ',
+          'form',
+          { onSubmit: handleSubmit, name: name, className: 'avenir lh-title ml3' },
           _react2.default.createElement(
-            'a',
-            { href: 'https://metamask.io/' },
-            'Metamask account'
+            'div',
+            null,
+            _react2.default.createElement(
+              'label',
+              { htmlFor: 'userName' },
+              _react2.default.createElement(
+                'large',
+                null,
+                'Username'
+              )
+            ),
+            _react2.default.createElement('input', { name: 'userName', type: 'text' })
           ),
-          ', create an account or log in below, and you\u2019ll be ready to get started.'
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'label',
+              { htmlFor: 'password' },
+              _react2.default.createElement(
+                'large',
+                null,
+                'Password'
+              )
+            ),
+            _react2.default.createElement('input', { name: 'password', type: 'password' })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'button',
+              { type: 'submit', className: 'btn btn-warning' },
+              displayName
+            )
+          ),
+          error && error.response && _react2.default.createElement(
+            'div',
+            null,
+            ' ',
+            error.response.data,
+            ' '
+          )
         )
-      )
-    ),
-    _react2.default.createElement('br', null)
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'avenir flex items-center justify-center pa4 bg-lightest-blue navy fl w-70' },
+        _react2.default.createElement(
+          'div',
+          { className: 'avenir lh-title ml3' },
+          _react2.default.createElement(
+            'h2',
+            null,
+            'Get started today: When you join Block & Mortar, you can start buying and selling goods immediately.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'If you are new to blockchain technology, check out our beginner\'s guide.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'If you\'re already familiar with Ethereum, be sure to log into your ',
+            _react2.default.createElement(
+              'a',
+              { href: 'https://metamask.io/' },
+              'Metamask account'
+            ),
+            ', create an account or log in below, and you\u2019ll be ready to get started.'
+          )
+        )
+      ),
+      _react2.default.createElement('br', null)
+    )
   );
 };
 

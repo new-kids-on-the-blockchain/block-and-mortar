@@ -8,7 +8,8 @@ import { auth } from '../store'
 const AuthForm = props => {
   const { name, displayName, handleSubmit, error } = props
   return (
-    <div className="avenir form-login">
+    <div className="home" id="background">
+    <div className="avenir form-login" id="topMarginLogin">
 
     <div className="avenir flex items-center justify-center pa4 bg-lightest-gray navy fl w-30">
     <form onSubmit={handleSubmit} name={name} className="avenir lh-title ml3">
@@ -34,8 +35,9 @@ const AuthForm = props => {
         <p>If you're already familiar with Ethereum, be sure to log into your <a href="https://metamask.io/">Metamask account</a>, create an account or log in below, and you’ll be ready to get started.</p>
       </div>
         </div>
-      
+
       <br />
+    </div>
     </div>
   )
 }
