@@ -28,7 +28,7 @@ const AuthForm = props => {
         {error && error.response && <div> {error.response.data} </div>}
       </form>
       </div>
-      <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy fl w-70">
+      <div className="avenir flex items-center justify-center pa4 bg-teal navy fl w-70">
       <div className="avenir lh-title ml3">
         <h2>Get started today: When you join Block & Mortar, you can start buying and selling goods immediately.</h2>
         <p>If you are new to blockchain technology, check out our beginner's guide.</p>

@@ -65,8 +65,8 @@ class AddService extends Component {
         <div className="home" id="background">
         <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
           <h1 className="avenir purple">New Service</h1>
-        <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy">
-          <p className="lh-title ml3"><b>Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:</b>
+        <div className="avenir flex items-center justify-center pa4 bg-teal navy">
+          <p className="lh-title ml3"><b>Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:</b> <p/>
           <li>When you click "submit," you are actually writing to the blockchain! A "smart contract" will record all of the important information about your product and sale.</li>
           <li>Writing to the blockchain incurs a small transaction fee, charged in ether, which is called "gas."</li>
            </p>
