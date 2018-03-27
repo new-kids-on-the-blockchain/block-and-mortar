@@ -82037,100 +82037,124 @@ var FAQ = function FAQ(props) {
       'div',
       { className: 'FAQ avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMargin' },
       _react2.default.createElement(
-        'h2',
-        null,
-        'Beginner\u2019s Guide to Blockchain'
+        'div',
+        { className: 'f2' },
+        'Beginner\'s Guide to Blockchain'
       ),
       _react2.default.createElement(
         'div',
         { className: 'faq-question' },
         _react2.default.createElement(
-          'h4',
-          null,
-          'What is the blockchain?'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'A blockchain is a continuously growing list of records, called blocks, which are linked and secured using cryptography. It is an open, distributed ledger that can record transactions between two parties, and, by design, it is unchangeable. Blockchains are typically managed using a peer-to-peer network that collectively adheres to a set of rules for adding new blocks to the chain.'
+          'div',
+          { className: 'containerInner bt' },
+          _react2.default.createElement(
+            'div',
+            { className: 'f4 b' },
+            'What is the blockchain?'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'A blockchain is a continuously growing list of records, called blocks, which are linked and secured using cryptography. It is an open, distributed ledger that can record transactions between two parties, and, by design, it is unchangeable. Blockchains are typically managed using a peer-to-peer network that collectively adheres to a set of rules for adding new blocks to the chain.'
+          )
         )
       ),
       _react2.default.createElement(
         'div',
         { className: 'faq-question' },
         _react2.default.createElement(
-          'h4',
-          null,
-          'What is a cryptocurrency?'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'A cryptocurrency is a digital medium of exchange that uses cryptography to secure its transactions. Cryptocurrencies use decentralized control that works through a blockchain, functioning as a distributed ledger. Ether and bitcoin are examples of cryptocurrencies.'
+          'div',
+          { className: 'containerInner bt' },
+          _react2.default.createElement(
+            'div',
+            { className: 'f4 b' },
+            'What is a cryptocurrency?'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'A cryptocurrency is a digital medium of exchange that uses cryptography to secure its transactions. Cryptocurrencies use decentralized control that works through a blockchain, functioning as a distributed ledger. Ether and bitcoin are examples of cryptocurrencies.'
+          )
         )
       ),
       _react2.default.createElement(
         'div',
         { className: 'faq-question' },
         _react2.default.createElement(
-          'h4',
-          null,
-          'Which cryptocurrency do you use?'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Block & Mortar is built on the Ethereum blockchain, using "ether," a cryptocurrency, "wei," a smaller denomination of ether, and "gas," a measure of the cost of writing to the blockchain. Ethereum is a decentralized platform that runs smart contracts: applications that run exactly as programmed without any possibility of downtime, censorship, fraud or third-party interference.'
+          'div',
+          { className: 'containerInner bt' },
+          _react2.default.createElement(
+            'div',
+            { className: 'f4 b' },
+            'Which cryptocurrency do you use?'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Block & Mortar is built on the Ethereum blockchain, using "ether," a cryptocurrency, "wei," a smaller denomination of ether, and "gas," a measure of the cost of writing to the blockchain. Ethereum is a decentralized platform that runs smart contracts: applications that run exactly as programmed without any possibility of downtime, censorship, fraud or third-party interference.'
+          )
         )
       ),
       _react2.default.createElement(
         'div',
         { className: 'faq-question' },
         _react2.default.createElement(
-          'h4',
-          null,
-          'What is a digital wallet?'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'A digital wallet is an electronic address that allows an individual to make electronic transactions. A digital wallet can be linked to a user\'s bank account, and can be used to make transactions with a variety of cryptocurrencies like bitcoin or ether.'
+          'div',
+          { className: 'containerInner bt' },
+          _react2.default.createElement(
+            'div',
+            { className: 'f4 b' },
+            'What is a digital wallet?'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'A digital wallet is an electronic address that allows an individual to make electronic transactions. A digital wallet can be linked to a user\'s bank account, and can be used to make transactions with a variety of cryptocurrencies like bitcoin or ether.'
+          )
         )
       ),
       _react2.default.createElement(
         'div',
         { className: 'faq-question' },
         _react2.default.createElement(
-          'h4',
-          null,
-          'How does this all work? What is a smart contract?'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Smart contracts live on the blockchain, providing a set of rules that facilitate and codify interactions between two or more parties. Block and Mortar\'s smart contract, for example, provides a framework for interaction between buyers and sellers. The smart contract captures information about the sale, resulting in the transfer of ether from buyer to seller only upon receipt on the good or service in question.'
+          'div',
+          { className: 'containerInner bt' },
+          _react2.default.createElement(
+            'div',
+            { className: 'f4 b' },
+            'How does this all work? What is a smart contract?'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Smart contracts live on the blockchain, providing a set of rules that facilitate and codify interactions between two or more parties. Block and Mortar\'s smart contract, for example, provides a framework for interaction between buyers and sellers. The smart contract captures information about the sale, resulting in the transfer of ether from buyer to seller only upon receipt on the good or service in question.'
+          )
         )
       ),
       _react2.default.createElement(
         'div',
         { className: 'faq-question' },
         _react2.default.createElement(
-          'h4',
-          null,
-          'Why am I being charged a transaction fee to post or purchase a service?'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Blockchain operations require computational resources, as specific nodes across the blockchain network (called "miners") must validate, secure, and store transactions. "Gas" accounts for the cost of these computations. The tranasction fee is calculated by multiplying the gas limit (a unit of measurement) by the gas price (measured in a small denomination of ether called gwei); both of these are set by you, the user, when interacting with the blockchain through Metamask. '
+          'div',
+          { className: 'containerInner bt' },
+          _react2.default.createElement(
+            'div',
+            { className: 'f4 b' },
+            'Why am I being charged a transaction fee to post or purchase a service?'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Blockchain operations require computational resources, as specific nodes across the blockchain network (called "miners") must validate, secure, and store transactions. "Gas" accounts for the cost of these computations. The tranasction fee is calculated by multiplying the gas limit (a unit of measurement) by the gas price (measured in a small denomination of ether called gwei, or wei); both of these are set by you, the user, when interacting with the blockchain through Metamask. '
+          )
         )
       ),
       _react2.default.createElement(
-        'h3',
-        null,
+        'div',
+        { className: 'f4 b' },
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/signup' },
+          { className: 'dim', to: '/signup' },
           'Sign Up'
         ),
         ' and get started to learn more!'
