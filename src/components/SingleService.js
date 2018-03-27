@@ -67,12 +67,15 @@ class SingleService extends Component {
     if (!service) return <div className="avenir dark-red"><h2>Oh no! No service exists at this address.</h2></div>
     return (
       this.props.singleService &&
-      <div className="avenir center bg-light-gray pa3 ph5-ns">
+      <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
         <h1 className="purple">{service.name} </h1>
         <img alt={service.name} src={service.imgUrl} />
         <p><b>Description:</b> {service.description} </p>
         <p><b>Category:</b> {service.category} </p>
         <p><b>Price:</b> {service.price} ether</p>
+
+        <a href={`https://currencio.co/eth/usd/${service.price}`} target="_blank">How much is this in USD?</a>
+
         <p><b>Date Posted:</b> {toDate(service.createdAt)}</p>
         <p><b>Offered By:</b> <Link to={`/users/${service.seller}`}>{service.Seller.userName}      </Link></p>
         <Link to="/services"><button>Back to Services</button></Link>

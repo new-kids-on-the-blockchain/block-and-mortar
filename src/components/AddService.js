@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchWeb3, postService, fetchAccounts } from "../store";
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 class AddService extends Component {
   constructor() {
@@ -63,7 +63,7 @@ class AddService extends Component {
     const { name, description, category, price } = this.state;
     return (
       this.props.contract && (
-        <div>
+        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
           <h1 className="avenir purple">New Service</h1>
         <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy">
           <p className="lh-title ml3"><b>Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:</b>
@@ -72,7 +72,7 @@ class AddService extends Component {
            </p>
         </div>
         <h2 className="avenir">Post Goods and Services</h2>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className="avenir">
             <h3>Title:</h3>
             <input name="serviceName" placeholder="3 Jars of Artisanal Honey" size="50" />
             <h3>Category:</h3>
@@ -87,8 +87,9 @@ class AddService extends Component {
               min="0"
               max="100"
               step="0.0001"
-              placeholder=".004"
-            />
+              placeholder=".05"
+            /> 
+            <a href={`https://currencio.co/eth/usd/`} target="_blank">ETH to USD Converter</a>
             <h3>Description:</h3>
             <textarea name="serviceDescription" rows="1" cols="50" placeholder="I'm a beekeeper. Only the freshest honey from local bees"/>
             <h3>Image URL (optional):</h3>

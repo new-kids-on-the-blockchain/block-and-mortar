@@ -23,7 +23,7 @@ class AllMessages extends Component {
 
   render() {
     return (
-      <div>
+      <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
         <div className="allThreads">
           <h2>All Conversations</h2>
           {this.props.threads.map(thread => {

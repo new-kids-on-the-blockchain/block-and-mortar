@@ -3,18 +3,19 @@ import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchUserById, fetchServices } from "../store";
 
-class SingleUserPublic extends Component {
+class MyProfile extends Component {
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    this.props.handleFetchUserById(this.props.match.params.id);
+    this.props.handleFetchUserById(this.props.currentUser.id);
     this.props.fetchServices();
   }
 
   render() {
     const user = this.props.user;
+    console.log(user, "USERRRR")
     const boughtServices = this.props.user.Buyer || [];
     const soldServices = this.props.user.Seller || [];
     const availableServices = soldServices.filter(
@@ -75,7 +76,8 @@ class SingleUserPublic extends Component {
 const mapStateToProps = (state, ownProps) => {
   console.log(state, "CURRENT USER STATE PUBLIC");
   return {
-    user: state.singleUser
+    user: state.singleUser,
+    currentUser: state.currentUser,
   };
 };
 
@@ -89,6 +91,6 @@ const mapStateToDispatch = dispatch => {
 };
 
 export default withRouter(
-  connect(mapStateToProps, mapStateToDispatch)(SingleUserPublic)
+  connect(mapStateToProps, mapStateToDispatch)(MyProfile)
 );
 

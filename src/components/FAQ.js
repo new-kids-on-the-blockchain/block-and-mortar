@@ -2,7 +2,7 @@ import React from 'react'
 
 const FAQ = (props) => {
   return (
-    <div className="FAQ">
+    <div className="FAQ avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
       <h2>Beginner’s Guide to Blockchain</h2>
 
       <div className="faq-question">
