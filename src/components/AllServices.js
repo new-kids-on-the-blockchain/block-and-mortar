@@ -35,7 +35,7 @@ class AllServices extends Component {
       <div className="home" id="background">
       <div className="avenir center bg-light-gray pa3 ph5-ns" id="topMargin">
         <div>
-          <h1 className="avenir purple">Marketplace</h1>
+          <div className="f2 avenir purple">Marketplace</div>
           <div>
           <div className="avenir flex items-center justify-center pa4 bg-teal">
           <p className="avenir lh-title ml3">When you place an order, you'll be charged a small transaction fee ("gas"); however you won't be charged the full amount until you've received the order. <br/><b><em>Please click "Complete Agreement" once your order is fulfilled.</em></b> At that time, the funds will be deducted from your digital wallet.</p>

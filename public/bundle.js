@@ -81889,8 +81889,8 @@ var AllServices = function (_Component) {
             'div',
             null,
             _react2.default.createElement(
-              'h1',
-              { className: 'avenir purple' },
+              'div',
+              { className: 'f2 avenir purple' },
               'Marketplace'
             ),
             _react2.default.createElement(
