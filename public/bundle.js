@@ -23897,7 +23897,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "/* PAGE */\n\nbody,\n.pure-g [class*=pure-u] {\n  font-family: 'Open Sans', sans-serif;\n  background-color: #DDDDDD\n}\n\nh1, h2, h3 {\n  font-family: 'Avenir-Black', sans-serif;\n}\n\n.bg-dark-pink {\n  background-color: #E34383\n}\n\n.bg-lime-green {\n  background-color: #91D446\n}\n\n.bg-highlighter-yellow {\n  background-color: #D9EC2A \n}\n\n.bg-light-gray {\n  background-color: #F3F2F3\n}\n\n.bg-teal {\n  background-color: #59DABB\n}\n\n\ncode {\n  display: block;\n  margin: 20px 0 15px 0;\n  padding: 10px;\n  background: #eee;\n}\n\n.container {\n  box-sizing: border-box;\n  width: 100%;\n  padding: 45px 20px;\n}\n\n.pure-button-primary {\n  background-color: #0c1a2b;\n}\n\n.pure-button-primary:hover {\n  background-color: #233e5e;\n}\n\n.pure-form input[type=\"text\"]:focus {\n  border-color: #0c1a2b;\n}\n\n.allThreads {\n  width: 300px;\n}\n\n.singleThread {\n  padding: 10px;\n  border: solid 1px #000;\n}\n\n.currentThread {\n  padding: 10px;\n}\n\n.message {\n  padding: 10px;\n}\n", ""]);
+exports.push([module.i, "/* PAGE */\n\nbody,\n.pure-g [class*=pure-u] {\n  font-family: 'Open Sans', sans-serif;\n  background-color: #DDDDDD\n}\n\nh1, h2, h3 {\n  font-family: 'Avenir-Black', sans-serif;\n}\n\n.bg-dark-pink {\n  background-color: #E34383;\n}\n\n.dark-pink {\n  color:  #E34383;\n}\n\n.bg-lime-green {\n  background-color: #91D446;\n}\n\n.lime-green {\n  color: #91D446;\n}\n\n.bg-highlighter-yellow {\n  background-color: #D9EC2A;\n}\n\n.highlighter-yellow {\n  color: #D9EC2A;\n}\n\n.bg-light-gray {\n  background-color: #F3F2F3;\n}\n\n.light-gray {\n  color: #F3F2F3;\n}\n\n.bg-teal {\n  background-color: #59DABB;\n}\n\n.teal {\n  color: #59DABB;\n}\n\n.bg-main-blue {\n  background-color: #49B6BC;\n}\n\n.main-blue {\n  color: #49B6BC;\n}\n\n.bg-dark-gray {\n  background-color: #385B55;\n}\n\n.dark-gray {\n  color: #385B55;\n}\n\n.bg-darkest-color {\n  background-color: #0E1B1C;\n}\n\n.darkest-color {\n  color: #0E1B1C;\n}\n\ncode {\n  display: block;\n  margin: 20px 0 15px 0;\n  padding: 10px;\n  background: #eee;\n}\n\n.container {\n  box-sizing: border-box;\n  width: 100%;\n  padding: 45px 20px;\n}\n\n.pure-button-primary {\n  background-color: #0c1a2b;\n}\n\n.pure-button-primary:hover {\n  background-color: #233e5e;\n}\n\n.pure-form input[type=\"text\"]:focus {\n  border-color: #0c1a2b;\n}\n\n.allThreads {\n  width: 300px;\n}\n\n.singleThread {\n  padding: 10px;\n  border: solid 1px #000;\n}\n\n.currentThread {\n  padding: 10px;\n}\n\n.message {\n  padding: 10px;\n}\n", ""]);
 
 // exports
 
@@ -82781,7 +82781,7 @@ var AuthForm = function AuthForm(props) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'avenir flex items-center justify-center pa4 bg-lightest-blue navy fl w-70' },
+        { className: 'avenir flex items-center justify-center pa4 bg-teal navy fl w-70' },
         _react2.default.createElement(
           'div',
           { className: 'avenir lh-title ml3' },
