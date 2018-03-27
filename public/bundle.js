@@ -82469,7 +82469,7 @@ var Navbar = function Navbar(props) {
           null,
           _react2.default.createElement(
             'div',
-            { className: 'avenir white f1 siteTitle' },
+            { className: 'dim avenir white f1 siteTitle' },
             'Block & Mortar'
           )
         )
@@ -83041,8 +83041,8 @@ var SingleService = function (_Component) {
           'div',
           { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMargin' },
           _react2.default.createElement(
-            'h1',
-            { className: 'purple' },
+            'div',
+            { className: 'f2' },
             service.name,
             ' '
           ),
@@ -83085,7 +83085,7 @@ var SingleService = function (_Component) {
           ),
           _react2.default.createElement(
             'a',
-            { href: 'https://currencio.co/eth/usd/' + service.price, target: '_blank' },
+            { className: 'dim', href: 'https://currencio.co/eth/usd/' + service.price, target: '_blank' },
             'How much is this in USD?'
           ),
           _react2.default.createElement(
@@ -83110,33 +83110,24 @@ var SingleService = function (_Component) {
             ' ',
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/users/' + service.seller },
+              { to: '/users/' + service.seller, className: 'dim' },
               service.Seller.userName,
               '      '
             )
           ),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/services' },
-            _react2.default.createElement(
-              'button',
-              null,
-              'Back to Services'
-            )
-          ),
-          _react2.default.createElement(
-            'button',
-            { onClick: this.handleMessage },
-            'Message'
-          ),
           service.isAvailable && currentUser.id !== service.Seller.id ? _react2.default.createElement(
             'button',
-            { onClick: this.handleClick },
+            { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink', onClick: this.handleClick },
             'Place Order'
+          ) : _react2.default.createElement('div', null),
+          currentUser.id !== service.Seller.id ? _react2.default.createElement(
+            'button',
+            { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue', onClick: this.handleMessage },
+            'Message'
           ) : _react2.default.createElement('div', null),
           service.isAvailable && currentUser.id === service.Seller.id ? _react2.default.createElement(
             'button',
-            { onClick: this.handleClose },
+            { className: 'f6 link dim br-pill ph3 pv2 mb2 dib black bg-highlighter-yellow', onClick: this.handleClose },
             'Remove from Marketplace'
           ) : _react2.default.createElement('div', null),
           !service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? _react2.default.createElement(
@@ -83156,7 +83147,7 @@ var SingleService = function (_Component) {
             null,
             _react2.default.createElement(
               'button',
-              { onClick: this.handleComplete },
+              { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue', onClick: this.handleComplete },
               'Complete Order'
             ),
             ' ',
@@ -83164,8 +83155,7 @@ var SingleService = function (_Component) {
               'h3',
               null,
               'Order placed successfully. Complete transaction when you have received your goods or services.'
-            ),
-            ' '
+            )
           ) : _react2.default.createElement('div', null),
           !service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? _react2.default.createElement(
             'h3',
