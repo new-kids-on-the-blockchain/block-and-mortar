@@ -82407,7 +82407,7 @@ var Navbar = function Navbar(props) {
       ),
       _react2.default.createElement(
         'div',
-        null,
+        { id: 'subNav' },
         props.isLoggedIn ? _react2.default.createElement(
           'div',
           { className: 'dtc v-mid w-75 tr' },
@@ -82448,7 +82448,7 @@ var Navbar = function Navbar(props) {
           )
         ) : _react2.default.createElement(
           'div',
-          null,
+          { id: 'subNav' },
           _react2.default.createElement(
             _reactRouterDom.Link,
             { to: '/login', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },

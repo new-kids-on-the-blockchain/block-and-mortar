@@ -73,22 +73,12 @@ div#background {
 }
 nav {
   display: flex;
+  justify-content: space-between;
   position: fixed;
-  margin: 0 2em;
+  margin: 2em;
   padding: 10px;
-  width: calc(100vw - 2em);
+  width: calc(100vw - 1em);
   z-index: 2;
 }
 
 
-/* #about #aboutmockup {
-  flex: 2;
-  align-self: flex-end;
-  transform: translateX(500px);
-  opacity: 0;
-  transition: all 1s ease-in-out;
-}
-#about.active #aboutmockup {
-  transform: translateX(0px);
-  opacity: 1;
-} */
