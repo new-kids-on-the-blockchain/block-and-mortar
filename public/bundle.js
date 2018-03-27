@@ -81532,101 +81532,138 @@ var AddService = function (_Component) {
           "div",
           { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns", id: "topMargin" },
           _react2.default.createElement(
-            "h1",
-            { className: "avenir purple" },
+            "div",
+            { className: "avenir f2" },
             "New Service"
           ),
           _react2.default.createElement(
             "div",
-            { className: "avenir flex items-center justify-center pa4 bg-teal navy" },
+            { className: "avenir flex items-center justify-center ma3 pa4 bg-teal navy" },
             _react2.default.createElement(
-              "p",
-              { className: "lh-title ml3" },
+              "div",
+              { className: "avenir" },
               _react2.default.createElement(
-                "b",
-                null,
+                "div",
+                { className: "f4" },
                 "Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:"
               ),
-              " ",
-              _react2.default.createElement("p", null),
               _react2.default.createElement(
-                "li",
+                "div",
                 null,
-                "When you click \"submit,\" you are actually writing to the blockchain! A \"smart contract\" will record all of the important information about your product and sale."
-              ),
-              _react2.default.createElement(
-                "li",
-                null,
-                "Writing to the blockchain incurs a small transaction fee, charged in ether, which is called \"gas.\""
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "When you click \"submit,\" you are actually writing to the blockchain! A \"smart contract\" will record all of the important information about your product and sale."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "Writing to the blockchain incurs a small transaction fee, charged in ether, which is called \"gas.\""
+                )
               )
             )
           ),
           _react2.default.createElement(
-            "h2",
-            { className: "avenir" },
-            "Post Goods and Services"
-          ),
-          _react2.default.createElement(
             "form",
-            { onSubmit: this.handleSubmit, className: "avenir" },
+            { onSubmit: this.handleSubmit, className: "avenir containerInner bt pa4 black-80" },
             _react2.default.createElement(
-              "h3",
-              null,
-              "Title:"
-            ),
-            _react2.default.createElement("input", { name: "serviceName", placeholder: "3 Jars of Artisanal Honey", size: "50" }),
-            _react2.default.createElement(
-              "h3",
-              null,
-              "Category:"
+              "div",
+              { className: "avenir f3" },
+              "Post Goods and Services"
             ),
             _react2.default.createElement(
-              "select",
-              { name: "serviceCategory" },
+              "div",
+              { className: "pa3" },
               _react2.default.createElement(
-                "option",
-                { value: "Goods" },
-                "Goods"
+                "label",
+                { "for": "serviceName", className: "avenir f6 b db mb2" },
+                "Title"
+              ),
+              _react2.default.createElement("input", { className: "input-reset ba b--black-20 pa2 mb2 db w-100", id: "serviceName", name: "serviceName", placeholder: "3 Jars of Artisanal Honey", size: "50" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "pa3" },
+              _react2.default.createElement(
+                "label",
+                { "for": "serviceCategory", className: "avenir f6 b db mb2" },
+                "Category"
               ),
               _react2.default.createElement(
-                "option",
-                { value: "Services" },
-                "Services"
+                "select",
+                { id: "serviceCategory", name: "serviceCategory" },
+                _react2.default.createElement(
+                  "option",
+                  { value: "Goods" },
+                  "Goods"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  { value: "Services" },
+                  "Services"
+                )
               )
             ),
             _react2.default.createElement(
-              "h3",
-              null,
-              "Price (ether):"
+              "div",
+              { className: "pa3" },
+              _react2.default.createElement(
+                "label",
+                { "for": "servicePrice", className: "avenir f6 b db mb2" },
+                "Price ",
+                _react2.default.createElement(
+                  "span",
+                  { "class": "normal black-60" },
+                  "(ether)"
+                )
+              ),
+              _react2.default.createElement("input", {
+                id: "servicePrice",
+                name: "servicePrice",
+                type: "number",
+                min: "0",
+                max: "100",
+                step: "0.0001",
+                placeholder: ".05"
+              }),
+              _react2.default.createElement(
+                "div",
+                { className: "pv2" },
+                _react2.default.createElement(
+                  "a",
+                  { href: "https://currencio.co/eth/usd/", target: "_blank" },
+                  "ETH to USD Converter"
+                )
+              )
             ),
-            _react2.default.createElement("input", {
-              name: "servicePrice",
-              type: "number",
-              min: "0",
-              max: "100",
-              step: "0.0001",
-              placeholder: ".05"
-            }),
             _react2.default.createElement(
-              "a",
-              { href: "https://currencio.co/eth/usd/", target: "_blank" },
-              "ETH to USD Converter"
+              "div",
+              { className: "ph3 pv2" },
+              _react2.default.createElement(
+                "label",
+                { "for": "serviceDescription", className: "avenir f6 b db mb2" },
+                "Description"
+              ),
+              _react2.default.createElement("textarea", { className: "input-reset ba b--black-20 pa2 mb2 db w-100", id: "serviceDescription", name: "serviceDescription", placeholder: "I'm a beekeeper. Only the freshest honey from local bees" })
             ),
             _react2.default.createElement(
-              "h3",
-              null,
-              "Description:"
+              "div",
+              { className: "pa3" },
+              _react2.default.createElement(
+                "label",
+                { "for": "imgUrl", className: "avenir f6 b db mb2" },
+                "Image URL (optional):",
+                _react2.default.createElement(
+                  "span",
+                  { "class": "normal black-60" },
+                  "(optional)"
+                )
+              ),
+              _react2.default.createElement("input", { className: "input-reset ba b--black-20 pa2 mb2 db w-100", id: "imgUrl", name: "imgUrl", rows: "1", cols: "50", placeholder: "https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80" })
             ),
-            _react2.default.createElement("textarea", { name: "serviceDescription", rows: "1", cols: "50", placeholder: "I'm a beekeeper. Only the freshest honey from local bees" }),
-            _react2.default.createElement(
-              "h3",
-              null,
-              "Image URL (optional):"
-            ),
-            _react2.default.createElement("textarea", { name: "imgUrl", rows: "1", cols: "50", placeholder: "https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80" }),
             _react2.default.createElement(
               "button",
-              null,
+              { className: "f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" },
               "Submit"
             )
           )
@@ -81889,8 +81926,8 @@ var AllServices = function (_Component) {
             'div',
             null,
             _react2.default.createElement(
-              'h1',
-              { className: 'avenir purple' },
+              'div',
+              { className: 'f2 avenir purple' },
               'Marketplace'
             ),
             _react2.default.createElement(
@@ -81916,6 +81953,7 @@ var AllServices = function (_Component) {
                   ' At that time, the funds will be deducted from your digital wallet.'
                 )
               ),
+              _react2.default.createElement('br', null),
               _react2.default.createElement(
                 'div',
                 { className: 'ph3' },
@@ -81936,12 +81974,12 @@ var AllServices = function (_Component) {
                 ),
                 _react2.default.createElement(
                   'button',
-                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-gray', value: 'Goods', onClick: this.handleClick },
+                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue', value: 'Goods', onClick: this.handleClick },
                   'Goods'
                 ),
                 _react2.default.createElement(
                   'button',
-                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-gray', value: 'Services', onClick: this.handleClick },
+                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue', value: 'Services', onClick: this.handleClick },
                   'Services'
                 )
               )
@@ -81953,7 +81991,7 @@ var AllServices = function (_Component) {
             displayedServices && displayedServices.map(function (service) {
               return _react2.default.createElement(
                 'div',
-                { className: 'list-item service', key: service.id },
+                { className: 'dim list-item service', key: service.id },
                 _react2.default.createElement(
                   _reactRouterDom.NavLink,
                   { key: service.id, to: '/services/' + service.id },
@@ -81963,8 +82001,7 @@ var AllServices = function (_Component) {
                     null,
                     _react2.default.createElement(
                       'div',
-                      null,
-                      'Name: ',
+                      { className: 'f4 b pv2' },
                       service.name
                     ),
                     _react2.default.createElement(
@@ -81972,13 +82009,7 @@ var AllServices = function (_Component) {
                       null,
                       'Price: ',
                       service.price,
-                      ' ether'
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      null,
-                      'Category: ',
-                      service.category
+                      ' ETH'
                     )
                   )
                 )
@@ -82284,6 +82315,16 @@ var MyProfile = function (_Component) {
         _react2.default.createElement(
           "div",
           { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns", id: "topMargin" },
+          _react2.default.createElement(
+            "div",
+            { className: "avenir flex items-center justify-center pa1 bg-teal" },
+            _react2.default.createElement(
+              "p",
+              { className: "avenir lh-title ml3" },
+              "This is how your profile will appear to visitors!"
+            )
+          ),
+          _react2.default.createElement("br", null),
           _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
           _react2.default.createElement(
             "h1",
@@ -83453,7 +83494,7 @@ var SingleUser = function (_Component) {
             ' ',
             _react2.default.createElement(
               'button',
-              { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink' },
+              { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink flex' },
               'Create a Posting'
             )
           ),
@@ -83476,8 +83517,8 @@ var SingleUser = function (_Component) {
                     _reactRouterDom.Link,
                     { to: '/services/' + transaction.id },
                     _react2.default.createElement(
-                      'h2',
-                      null,
+                      'div',
+                      { className: 'f4 b dim' },
                       transaction.name
                     )
                   ),
@@ -83553,7 +83594,7 @@ var SingleUser = function (_Component) {
                     { to: '/services/' + transaction.id },
                     _react2.default.createElement(
                       'div',
-                      { className: 'f4 b' },
+                      { className: 'f4 b dim' },
                       transaction.name
                     )
                   ),
@@ -83629,7 +83670,7 @@ var SingleUser = function (_Component) {
                     { to: '/services/' + transaction.id },
                     _react2.default.createElement(
                       'div',
-                      { className: 'f4 b' },
+                      { className: 'f4 b dim' },
                       transaction.name
                     )
                   ),
@@ -83704,8 +83745,8 @@ var SingleUser = function (_Component) {
                     _reactRouterDom.Link,
                     { to: '/services/' + transaction.id },
                     _react2.default.createElement(
-                      'h2',
-                      null,
+                      'div',
+                      { className: 'f4 b dim' },
                       transaction.name
                     )
                   ),
