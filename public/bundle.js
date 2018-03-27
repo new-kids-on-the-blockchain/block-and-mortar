@@ -83911,15 +83911,6 @@ var SingleUserPublic = function (_Component) {
       });
       console.log(servicesCompleted, 'servicesCompleted');
 
-      if (!user.id) return _react2.default.createElement(
-        "div",
-        { className: "avenir dark-red" },
-        _react2.default.createElement(
-          "h2",
-          null,
-          "Oh no! No user found."
-        )
-      );
       return user.id ? _react2.default.createElement(
         "div",
         { className: "home", id: "background" },
@@ -84014,7 +84005,23 @@ var SingleUserPublic = function (_Component) {
             )
           )
         )
-      ) : _react2.default.createElement("div", null);
+      ) : _react2.default.createElement(
+        "div",
+        { className: "home", id: "background" },
+        _react2.default.createElement(
+          "div",
+          { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns", id: "topMargin" },
+          _react2.default.createElement(
+            "div",
+            { className: "avenir dark-red" },
+            _react2.default.createElement(
+              "h1",
+              null,
+              "Oh no! No user found."
+            )
+          )
+        )
+      );
     }
   }]);
 
