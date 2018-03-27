@@ -81500,7 +81500,7 @@ var AddService = function (_Component) {
         category: evt.target.serviceCategory.value,
         price: evt.target.servicePrice.value,
         description: evt.target.serviceDescription.value,
-        imgUrl: evt.target.imgUrl.value ? evt.target.imgUrl.value : "https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg",
+        imgUrl: evt.target.imgUrl.value ? evt.target.imgUrl.value : '/assets/items/service.png',
         contractId: null,
         seller: this.props.currentUser.id
       };

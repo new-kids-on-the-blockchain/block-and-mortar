@@ -29,7 +29,7 @@ const Service = db.define( "service", {
     },
   imgUrl: {
     type: Sequelize.STRING,
-    defaultValue: 'https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg'
+    defaultValue: '/assets/items/service.png'
   },
   contractId: {
     type: Sequelize.INTEGER,
