@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 
 const FAQ = props => {
   return (
-    <div className="FAQ avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
-      <h2>A Beginner’s Guide to Blockchain</h2>
+    <div className="home" id="background">
+    <div className="FAQ avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
+      <h2>Beginner’s Guide to Blockchain</h2>
 
       <div className="faq-question">
         <h4>What is the blockchain?</h4>
@@ -37,6 +38,7 @@ const FAQ = props => {
       </div>
 
       <h3><Link to="/signup">Sign Up</Link> and get started to learn more!</h3>
+    </div>
     </div>
   )
 }
