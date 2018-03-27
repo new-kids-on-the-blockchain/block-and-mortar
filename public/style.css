@@ -17,6 +17,7 @@ a {
 .f2 {
   color: #0E1B1C;
   font-weight: 400;
+  padding: 15px;
 }
 
 .f3 {
@@ -26,6 +27,12 @@ a {
 
 .bt {
   border-top-color: #91D446;
+}
+
+.siteTitle {
+  font-size: 4rem;
+  text-decoration: underline;
+  text-decoration-color: #E34383;
 }
 
 .containerInner {
@@ -100,6 +107,7 @@ div#background {
   background-size:  cover;
   background-color: #999;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -107,7 +115,6 @@ nav {
   margin: 2em;
   padding: 10px;
   width: calc(100vw - 1em);
-  z-index: 2;
 }
 
 #topMargin {
