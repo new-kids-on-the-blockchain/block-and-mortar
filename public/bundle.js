@@ -81315,11 +81315,7 @@ var AddMessage = function (_Component) {
     var _this = _possibleConstructorReturn(this, (AddMessage.__proto__ || Object.getPrototypeOf(AddMessage)).call(this));
 
     _this.state = {
-      sender: "",
-      recipient: "",
-      subject: "",
-      message: "",
-      threadId: 0
+      messages: []
     };
 
     _this.handleSubmit = _this.handleSubmit.bind(_this);
@@ -81327,16 +81323,23 @@ var AddMessage = function (_Component) {
   }
 
   _createClass(AddMessage, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.setState({ messages: this.props.currentThread.messages });
+    }
+  }, {
     key: 'handleSubmit',
     value: function handleSubmit(evt) {
+      evt.preventDefault();
+
       var message = {
         content: evt.target.content.value,
         senderId: this.props.currentUser.id,
         threadId: this.props.currentThread.id
       };
 
-      evt.preventDefault();
       this.props.postNewMessage(message);
+      document.getElementById("messageContent").value = "";
     }
   }, {
     key: 'render',
@@ -81353,6 +81356,7 @@ var AddMessage = function (_Component) {
           'form',
           { onSubmit: this.handleSubmit },
           _react2.default.createElement('textarea', {
+            id: 'messageContent',
             name: 'content',
             type: 'text'
           }),
@@ -81742,7 +81746,7 @@ var AllMessages = function (_Component) {
               null,
               'All Conversations'
             ),
-            this.props.threads.map(function (thread) {
+            this.props.threads.length ? this.props.threads.map(function (thread) {
               return _react2.default.createElement(
                 'div',
                 { key: thread.id, className: 'singleThread', onClick: function onClick() {
@@ -81763,7 +81767,11 @@ var AllMessages = function (_Component) {
                   thread.buyer.userName
                 )
               );
-            })
+            }) : _react2.default.createElement(
+              'div',
+              null,
+              'No Conversations Currently Exist'
+            )
           ),
           _react2.default.createElement(
             'div',
@@ -83209,6 +83217,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(/*! react */ "./node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
@@ -83217,42 +83227,112 @@ var _AddMessage = __webpack_require__(/*! ./AddMessage */ "./src/components/AddM
 
 var _AddMessage2 = _interopRequireDefault(_AddMessage);
 
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var SingleThread = function SingleThread(props) {
-  var messages = props.currentThread.messages;
-  console.log("current thread in single thread component: ", props.currentThread.id);
-  return _react2.default.createElement(
-    'div',
-    { className: 'avenir' },
-    !props.currentThread.id ? _react2.default.createElement(
-      'div',
-      null,
-      'No Conversation Selected'
-    ) : !messages.length ? _react2.default.createElement(
-      'div',
-      null,
-      'No Messages in this Conversation'
-    ) : _react2.default.createElement(
-      'div',
-      null,
-      messages.map(function (message) {
-        return _react2.default.createElement(
-          'div',
-          { className: 'message', key: message.id },
-          message.content
-        );
-      }),
-      _react2.default.createElement(
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SingleThread = function (_Component) {
+  _inherits(SingleThread, _Component);
+
+  function SingleThread() {
+    _classCallCheck(this, SingleThread);
+
+    var _this = _possibleConstructorReturn(this, (SingleThread.__proto__ || Object.getPrototypeOf(SingleThread)).call(this));
+
+    _this.state = {
+      messages: []
+    };
+    return _this;
+  }
+
+  _createClass(SingleThread, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      var newMessages = newProps.currentThread.messages;
+      var sortedMessages = void 0;
+
+      var sort = function sort(messages) {
+        return messages.sort(function (a, b) {
+          return new Date(b.updatedAt) - new Date(a.updatedAt);
+        });
+      };
+
+      //checks for newly submitted messages
+      if (newProps.messages.length) {
+        //this grabs only the most recent message, in case someone submits
+        //multiple messages without refreshing the page
+        newMessages.push(newProps.messages[newProps.messages.length - 1]);
+        sortedMessages = sort(newMessages);
+        this.setState({ messages: sortedMessages });
+      }
+      console.log("Added a new message: ", newMessages);
+
+      //this sorting function only runs if there are messages to sort
+      //It returns all messages sorted by date
+      if (newMessages.length !== this.state.messages.length) {
+        sortedMessages = sort(newMessages);
+        this.setState({ messages: sortedMessages });
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
         'div',
-        null,
-        _react2.default.createElement(_AddMessage2.default, { currentThread: props.currentThread })
-      )
-    )
-  );
+        { className: 'avenir' },
+        !this.props.currentThread.id ? _react2.default.createElement(
+          'div',
+          null,
+          'No Conversation Selected'
+        ) : !this.state.messages.length ? _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'div',
+            null,
+            'No Messages in this Conversation'
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(_AddMessage2.default, { currentThread: this.props.currentThread })
+          )
+        ) : _react2.default.createElement(
+          'div',
+          null,
+          this.state.messages.map(function (message) {
+            return _react2.default.createElement(
+              'div',
+              { className: 'message', key: message.id },
+              message.content
+            );
+          }),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(_AddMessage2.default, { currentThread: this.props.currentThread })
+          )
+        )
+      );
+    }
+  }]);
+
+  return SingleThread;
+}(_react.Component);
+
+var mapState = function mapState(state) {
+  return {
+    messages: state.messages
+  };
 };
 
-exports.default = SingleThread;
+exports.default = (0, _reactRedux.connect)(mapState)(SingleThread);
 
 /***/ }),
 
@@ -84753,7 +84833,7 @@ function reducer() {
 //HELPER FUNCTIONS
 function addThreadAndRedirect(thread, ownProps, dispatch) {
   dispatch(addThread(thread));
-  ownProps.history.push('/home');
+  ownProps.history.push('/messages');
 }
 
 /***/ }),
