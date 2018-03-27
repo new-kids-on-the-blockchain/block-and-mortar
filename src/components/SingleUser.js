@@ -22,81 +22,88 @@ class SingleUser extends Component {
     return (
       <div className="home" id="background">
       <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
-        <h1 className="purple">Welcome back, {currentUser.userName}! </h1>
+        <div className="f2">Welcome back, {currentUser.userName}! </div>
         <Link to="/services/new"> <button className="btn btn-info new">Create a Posting</button></Link>
-        <h1>Pending Sales</h1>
-        <ul>
-          {pendingSales.length ? (
-            pendingSales.map(transaction => {
-              return (
-                <div key={transaction.id}>
-                  <Link to={`/services/${transaction.id}`}>
-                    <h2>{transaction.name}</h2>
-                  </Link>
-                  <p><b>Buyer:</b> {transaction.Buyer.userName}</p>
-                  <p><b>Status:</b> {transaction.status}</p>
-                  <p><b>Category:</b> {transaction.category}</p>
-                  <p><b>Date Posted:</b> {toDate(transaction.createdAt)}</p>
-                </div>
-              );
-            })) : (<p>You have no transactions to fulfill.</p>)}
-        </ul>
 
+        <div className="containerInner bt">
+          <div className="f3">Pending Sales</div>
+          <ul>
+            {pendingSales.length ? (
+              pendingSales.map(transaction => {
+                return (
+                  <div key={transaction.id}>
+                    <Link to={`/services/${transaction.id}`}>
+                      <h2>{transaction.name}</h2>
+                    </Link>
+                    <p><b>Buyer:</b> {transaction.Buyer.userName}</p>
+                    <p><b>Status:</b> {transaction.status}</p>
+                    <p><b>Category:</b> {transaction.category}</p>
+                    <p><b>Date Posted:</b> {toDate(transaction.createdAt)}</p>
+                  </div>
+                );
+              })) : (<p>You have no transactions to fulfill.</p>)}
+          </ul>
+        </div>
 
-        <h1>Pending Purchases</h1>
-        <ul>
-          {pendingPurchases.length ? (
-            pendingPurchases.map(transaction => {
-              return (
-                <div key={transaction.id}>
-                  <Link to={`/services/${transaction.id}`}>
-                    <h2>{transaction.name}</h2>
-                  </Link>
-                  <p><b>Seller:</b> {transaction.Seller.userName}</p>
-                  <p><b>Status:</b> {transaction.status}</p>
-                  <p><b>Category:</b> {transaction.category}</p>
-                  <p><b>Date Posted:</b> {toDate(transaction.createdAt)}</p>
-                </div>
-              );
-            })) : (<p>You have no pending purchases.</p>)}
-        </ul>
+        <div className="containerInner bt">
+          <div className="f3">Pending Purchases</div>
+          <ul>
+            {pendingPurchases.length ? (
+              pendingPurchases.map(transaction => {
+                return (
+                  <div key={transaction.id}>
+                    <Link to={`/services/${transaction.id}`}>
+                      <div className="f4 b">{transaction.name}</div>
+                    </Link>
+                    <p><b>Seller:</b> {transaction.Seller.userName}</p>
+                    <p><b>Status:</b> {transaction.status}</p>
+                    <p><b>Category:</b> {transaction.category}</p>
+                    <p><b>Date Posted:</b> {toDate(transaction.createdAt)}</p>
+                  </div>
+                );
+              })) : (<p>You have no pending purchases.</p>)}
+          </ul>
+        </div>
 
-        <h1>Completed Sales</h1>
-        <ul>
-          {completedSales.length ? (
-            completedSales.map(transaction => {
-              return (
-                <div key={transaction.id}>
-                  <Link to={`/services/${transaction.id}`}>
-                    <h2>{transaction.name}</h2>
-                  </Link>
-                  <p><b>Buyer:</b> {transaction.Buyer.userName}</p>
-                  <p><b>Status:</b> {transaction.status}</p>
-                  <p><b>Category:</b> {transaction.category}</p>
-                  <p><b>Date Completed:</b> {toDate(transaction.updatedAt)}</p>
-                </div>
-              );
-            })) : (<p>You have no completed sales.</p>)}
-        </ul>
+        <div className="containerInner bt">
+          <div className="f3">Completed Sales</div>
+          <ul>
+            {completedSales.length ? (
+              completedSales.map(transaction => {
+                return (
+                  <div key={transaction.id}>
+                    <Link to={`/services/${transaction.id}`}>
+                      <div className="f4 b">{transaction.name}</div>
+                    </Link>
+                    <p><b>Buyer:</b> {transaction.Buyer.userName}</p>
+                    <p><b>Status:</b> {transaction.status}</p>
+                    <p><b>Category:</b> {transaction.category}</p>
+                    <p><b>Date Completed:</b> {toDate(transaction.updatedAt)}</p>
+                  </div>
+                );
+              })) : (<p>You have no completed sales.</p>)}
+          </ul>
+        </div>
 
-        <h1>Completed Purchases</h1>
-        <ul>
-          {completedPurchases.length ? (
-            completedPurchases.map(transaction => {
-              return (
-                <div key={transaction.id}>
-                  <Link to={`/services/${transaction.id}`}>
-                    <h2>{transaction.name}</h2>
-                  </Link>
-                  <p><b>Seller:</b> {transaction.Seller.userName}</p>
-                  <p><b>Status:</b> {transaction.status}</p>
-                  <p><b>Category:</b> {transaction.category}</p>
-                  <p><b>Date Completed:</b> {toDate(transaction.updatedAt)}</p>
-                </div>
-              );
-            })) : (<p>You have no completed purchases.</p>)}
-        </ul>
-
+        <div className="containerInner bt">
+          <div className="f3">Completed Purchases</div>
+          <ul className="purchase">
+            {completedPurchases.length ? (
+              completedPurchases.map(transaction => {
+                return (
+                  <div key={transaction.id}>
+                    <Link to={`/services/${transaction.id}`}>
+                      <h2>{transaction.name}</h2>
+                    </Link>
+                    <p><b>Seller:</b> {transaction.Seller.userName}</p>
+                    <p><b>Status:</b> {transaction.status}</p>
+                    <p><b>Category:</b> {transaction.category}</p>
+                    <p><b>Date Completed:</b> {toDate(transaction.updatedAt)}</p>
+                  </div>
+                );
+              })) : (<p>You have no completed purchases.</p>)}
+          </ul>
+        </div>
       </div>
       </div>
     )

@@ -7,14 +7,35 @@
 
 a {
   color: #E34383;
+  text-decoration-line: none;
 }
 
-.f1, .f2 {
+.f1 {
   font-weight: 200;
 }
 
-.f2, .f3 {
+.f2 {
   color: #0E1B1C;
+  font-weight: 400;
+}
+
+.f3 {
+  color: #0E1B1C;
+  font-weight: 700;
+}
+
+.bt {
+  border-top-color: #91D446;
+}
+
+.containerInner {
+  padding: 10px;
+  margin: 20px;
+  background-color: #fff;
+}
+
+.purchase {
+  width: 100%;
 }
 
 .container {
