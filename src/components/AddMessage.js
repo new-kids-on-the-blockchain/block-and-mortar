@@ -6,23 +6,29 @@ import { postMessage } from '../store';
 class AddMessage extends Component {
   constructor() {
     super();
+
+    this.state = {
+      messages: []
+    }
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    this.setState({messages: this.props.currentThread.messages})
+  }
+
   handleSubmit(evt){
+    evt.preventDefault();
+
     let message = {
       content: evt.target.content.value,
       senderId: this.props.currentUser.id,
       threadId: this.props.currentThread.id
     }
 
-    evt.preventDefault();
     this.props.postNewMessage(message)
     document.getElementById("messageContent").value = "";
-  }
-
-  componentWillReceiveProps(nextProps){
-    console.log("nextProps: ", nextProps)
   }
 
   render() {
