@@ -82254,97 +82254,101 @@ var MyProfile = function (_Component) {
       );
       return user.id ? _react2.default.createElement(
         "div",
-        { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" },
-        _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
-        _react2.default.createElement(
-          "h1",
-          { className: "dark-pink" },
-          "Hi, I'm ",
-          user.userName,
-          "!"
-        ),
-        _react2.default.createElement(
-          "h2",
-          null,
-          "My Available Goods & Services for Sale: "
-        ),
+        { className: "home", id: "background" },
         _react2.default.createElement(
           "div",
-          null,
-          availableServices.length ? availableServices.map(function (service) {
-            return _react2.default.createElement(
-              "div",
-              { key: service.id },
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: "/services/" + service.id },
-                _react2.default.createElement(
-                  "h2",
-                  null,
-                  service.name
-                )
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                _react2.default.createElement(
-                  "b",
-                  null,
-                  "Description:"
-                ),
-                " ",
-                service.description
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                _react2.default.createElement(
-                  "b",
-                  null,
-                  "Category:"
-                ),
-                " ",
-                service.category
-              )
-            );
-          }) : _react2.default.createElement(
-            "p",
-            null,
-            "No available goods and services."
-          )
-        ),
-        _react2.default.createElement(
-          "h2",
-          null,
-          " Seller History: "
-        ),
-        _react2.default.createElement(
-          "div",
-          null,
-          pastServices.length ? _react2.default.createElement(
-            "h3",
-            null,
-            pastServices.length,
-            " transactions, ",
-            servicesCompleted.length,
-            " fulfilled "
-          ) :
-          // (pastServices.map(pastService => {
-          //   return (
-          //     <li key={pastService.id}>
-          //       <Link to={`/services/${pastService.id}`}>
-          //         <h2>{pastService.name}</h2>
-          //       </Link>
-          //       <h3>{pastService.description}</h3>
-          //       <p>Category: {pastService.category}</p>
-          //       <p>Status: {pastService.status}</p>
-          //     </li>
-          // );
-          // }))
+          { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns", id: "topMargin" },
+          _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
           _react2.default.createElement(
-            "p",
+            "h1",
+            { className: "dark-pink" },
+            "Hi, I'm ",
+            user.userName,
+            "!"
+          ),
+          _react2.default.createElement(
+            "h2",
             null,
-            "No past transactions."
+            "My Available Goods & Services for Sale: "
+          ),
+          _react2.default.createElement(
+            "div",
+            null,
+            availableServices.length ? availableServices.map(function (service) {
+              return _react2.default.createElement(
+                "div",
+                { key: service.id },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: "/services/" + service.id },
+                  _react2.default.createElement(
+                    "h2",
+                    null,
+                    service.name
+                  )
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement(
+                    "b",
+                    null,
+                    "Description:"
+                  ),
+                  " ",
+                  service.description
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  _react2.default.createElement(
+                    "b",
+                    null,
+                    "Category:"
+                  ),
+                  " ",
+                  service.category
+                )
+              );
+            }) : _react2.default.createElement(
+              "p",
+              null,
+              "No available goods and services."
+            )
+          ),
+          _react2.default.createElement(
+            "h2",
+            null,
+            " Seller History: "
+          ),
+          _react2.default.createElement(
+            "div",
+            null,
+            pastServices.length ? _react2.default.createElement(
+              "h3",
+              null,
+              pastServices.length,
+              " transactions, ",
+              servicesCompleted.length,
+              " fulfilled "
+            ) :
+            // (pastServices.map(pastService => {
+            //   return (
+            //     <li key={pastService.id}>
+            //       <Link to={`/services/${pastService.id}`}>
+            //         <h2>{pastService.name}</h2>
+            //       </Link>
+            //       <h3>{pastService.description}</h3>
+            //       <p>Category: {pastService.category}</p>
+            //       <p>Status: {pastService.status}</p>
+            //     </li>
+            // );
+            // }))
+            _react2.default.createElement(
+              "p",
+              null,
+              "No past transactions."
+            )
           )
         )
       ) : _react2.default.createElement("div", null);
