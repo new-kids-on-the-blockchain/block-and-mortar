@@ -23897,7 +23897,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "/* PAGE */\n\nbody,\n.pure-g [class*=pure-u] {\n  font-family: 'Open Sans', sans-serif;\n  background-color: #DDDDDD\n}\n\nh1, h2, h3 {\n  font-family: 'Avenir-Black', sans-serif;\n}\n\ncode {\n  display: block;\n  margin: 20px 0 15px 0;\n  padding: 10px;\n  background: #eee;\n}\n\n.container {\n  box-sizing: border-box;\n  width: 100%;\n  padding: 45px 20px;\n}\n\n.pure-button-primary {\n  background-color: #0c1a2b;\n}\n\n.pure-button-primary:hover {\n  background-color: #233e5e;\n}\n\n.pure-form input[type=\"text\"]:focus {\n  border-color: #0c1a2b;\n}\n\n.allThreads {\n  width: 300px;\n}\n\n.singleThread {\n  padding: 10px;\n  border: solid 1px #000;\n}\n\n.currentThread {\n  padding: 10px;\n}\n\n.message {\n  padding: 10px;\n}\n", ""]);
+exports.push([module.i, "/* PAGE */\n\nbody,\n.pure-g [class*=pure-u] {\n  font-family: 'Open Sans', sans-serif;\n  background-color: #DDDDDD\n}\n\nh1, h2, h3 {\n  font-family: 'Avenir-Black', sans-serif;\n}\n\n.bg-dark-pink {\n  background-color: #E34383\n}\n\n.bg-lime-green {\n  background-color: #91D446\n}\n\n.bg-highlighter-yellow {\n  background-color: #D9EC2A \n}\n\n.bg-light-gray {\n  background-color: #F3F2F3\n}\n\n.bg-teal {\n  background-color: #59DABB\n}\n\n\ncode {\n  display: block;\n  margin: 20px 0 15px 0;\n  padding: 10px;\n  background: #eee;\n}\n\n.container {\n  box-sizing: border-box;\n  width: 100%;\n  padding: 45px 20px;\n}\n\n.pure-button-primary {\n  background-color: #0c1a2b;\n}\n\n.pure-button-primary:hover {\n  background-color: #233e5e;\n}\n\n.pure-form input[type=\"text\"]:focus {\n  border-color: #0c1a2b;\n}\n\n.allThreads {\n  width: 300px;\n}\n\n.singleThread {\n  padding: 10px;\n  border: solid 1px #000;\n}\n\n.currentThread {\n  padding: 10px;\n}\n\n.message {\n  padding: 10px;\n}\n", ""]);
 
 // exports
 
@@ -81538,7 +81538,7 @@ var AddService = function (_Component) {
           ),
           _react2.default.createElement(
             "div",
-            { className: "avenir flex items-center justify-center pa4 bg-lightest-blue navy" },
+            { className: "avenir flex items-center justify-center pa4 bg-teal navy" },
             _react2.default.createElement(
               "p",
               { className: "lh-title ml3" },
@@ -81547,6 +81547,8 @@ var AddService = function (_Component) {
                 null,
                 "Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:"
               ),
+              " ",
+              _react2.default.createElement("p", null),
               _react2.default.createElement(
                 "li",
                 null,
@@ -81896,7 +81898,7 @@ var AllServices = function (_Component) {
               null,
               _react2.default.createElement(
                 'div',
-                { className: 'avenir flex items-center justify-center pa4 bg-lightest-blue navy' },
+                { className: 'avenir flex items-center justify-center pa4 bg-teal' },
                 _react2.default.createElement(
                   'p',
                   { className: 'avenir lh-title ml3' },
@@ -81915,29 +81917,33 @@ var AllServices = function (_Component) {
                 )
               ),
               _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/services/new' },
-                ' ',
+                'div',
+                { className: 'ph3' },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/services/new' },
+                  ' ',
+                  _react2.default.createElement(
+                    'button',
+                    { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink' },
+                    'Create a Posting'
+                  )
+                ),
                 _react2.default.createElement(
                   'button',
-                  { className: 'btn btn-info new' },
-                  'Create a Posting'
+                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-lime-green', value: 'All', onClick: this.handleClick },
+                  'Show All'
+                ),
+                _react2.default.createElement(
+                  'button',
+                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-highlighter-yellow', value: 'Goods', onClick: this.handleClick },
+                  'Goods'
+                ),
+                _react2.default.createElement(
+                  'button',
+                  { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink', value: 'Services', onClick: this.handleClick },
+                  'Services'
                 )
-              ),
-              _react2.default.createElement(
-                'button',
-                { className: 'btn active', value: 'All', onClick: this.handleClick },
-                'Show All'
-              ),
-              _react2.default.createElement(
-                'button',
-                { className: 'btn', value: 'Goods', onClick: this.handleClick },
-                'Goods'
-              ),
-              _react2.default.createElement(
-                'button',
-                { className: 'btn', value: 'Services', onClick: this.handleClick },
-                'Services'
               )
             )
           ),

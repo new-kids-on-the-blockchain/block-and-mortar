@@ -10,6 +10,27 @@ h1, h2, h3 {
   font-family: 'Avenir-Black', sans-serif;
 }
 
+.bg-dark-pink {
+  background-color: #E34383
+}
+
+.bg-lime-green {
+  background-color: #91D446
+}
+
+.bg-highlighter-yellow {
+  background-color: #D9EC2A 
+}
+
+.bg-light-gray {
+  background-color: #F3F2F3
+}
+
+.bg-teal {
+  background-color: #59DABB
+}
+
+
 code {
   display: block;
   margin: 20px 0 15px 0;
