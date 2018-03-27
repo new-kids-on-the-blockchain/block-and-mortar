@@ -10,6 +10,70 @@ h1, h2, h3 {
   font-family: 'Avenir-Black', sans-serif;
 }
 
+.bg-dark-pink {
+  background-color: #E34383;
+}
+
+.dark-pink {
+  color:  #E34383;
+}
+
+.bg-lime-green {
+  background-color: #91D446;
+}
+
+.lime-green {
+  color: #91D446;
+}
+
+.bg-highlighter-yellow {
+  background-color: #D9EC2A;
+}
+
+.highlighter-yellow {
+  color: #D9EC2A;
+}
+
+.bg-light-gray {
+  background-color: #F3F2F3;
+}
+
+.light-gray {
+  color: #F3F2F3;
+}
+
+.bg-teal {
+  background-color: #59DABB;
+}
+
+.teal {
+  color: #59DABB;
+}
+
+.bg-main-blue {
+  background-color: #49B6BC;
+}
+
+.main-blue {
+  color: #49B6BC;
+}
+
+.bg-dark-gray {
+  background-color: #385B55;
+}
+
+.dark-gray {
+  color: #385B55;
+}
+
+.bg-darkest-color {
+  background-color: #0E1B1C;
+}
+
+.darkest-color {
+  color: #0E1B1C;
+}
+
 code {
   display: block;
   margin: 20px 0 15px 0;
