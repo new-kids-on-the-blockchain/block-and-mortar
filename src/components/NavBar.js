@@ -8,17 +8,17 @@ const Navbar = props => (
     <nav>
         <Link to="/">
           <div>
-            <h1 className="avenir white f1">Block &amp; Mortar</h1>
+            <div className="avenir white f1">Block &amp; Mortar</div>
           </div>
         </Link>
         <div id="subNav">
         {props.isLoggedIn ? (
           <div className="dtc v-mid w-75 tr">
-          <Link to="/home" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns ">Home</Link>
+          <Link to="/home" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns ">My Dashboard</Link>
           <Link to="/services" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Marketplace</Link>
           <Link to="/services/new" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Create a Posting</Link>
-          <Link to="/faq" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
           <Link to="/messages" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Inbox</Link>
+          <Link to="/faq" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
           <Link to="/my-profile" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">My Profile</Link>
           <a href="#" onClick={props.handleClick} className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">
           Logout</a>
