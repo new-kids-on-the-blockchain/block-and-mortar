@@ -67,29 +67,32 @@ class SingleService extends Component {
     if (!service) return <div className="avenir dark-red"><h2>Oh no! No service exists at this address.</h2></div>
     return (
       this.props.singleService &&
-      <div className="avenir center bg-light-gray pa3 ph5-ns">
+      <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
         <h1 className="purple">{service.name} </h1>
         <img alt={service.name} src={service.imgUrl} />
         <p><b>Description:</b> {service.description} </p>
         <p><b>Category:</b> {service.category} </p>
-        <p><b>Price:</b> {service.price} Ether</p>
+        <p><b>Price:</b> {service.price} ether</p>
+
+        <a href={`https://currencio.co/eth/usd/${service.price}`} target="_blank">How much is this in USD?</a>
+
         <p><b>Date Posted:</b> {toDate(service.createdAt)}</p>
         <p><b>Offered By:</b> <Link to={`/users/${service.seller}`}>{service.Seller.userName}      </Link></p>
         <Link to="/services"><button>Back to Services</button></Link>
         <button onClick={this.handleMessage}>Message</button>
 
-        {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Purchase</button> : <div />}
-        {service.isAvailable && currentUser.id === service.Seller.id ? <button onClick={this.handleClose}>Close Service</button> : <div />}
+        {service.isAvailable && currentUser.id !== service.Seller.id ? <button onClick={this.handleClick}>Place Order</button> : <div />}
+        {service.isAvailable && currentUser.id === service.Seller.id ? <button onClick={this.handleClose}>Remove from Marketplace</button> : <div />}
         {!service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? <h3>You have closed this service.</h3> : <div />}
 
         {!service.isAvailable && service.status === "Pending" && (currentUser.id === service.Seller.id) ? <h3>Transaction in progress. {service.Buyer.userName} has purchased this service.</h3> : <div />}
 
-        {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? <div><button onClick={this.handleComplete}>Complete Agreement</button> <h3>Transaction in progress. Click "Complete Agreement" when you have received your goods or services.</h3> </div> : <div />}
+        {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? <div><button onClick={this.handleComplete}>Complete Order</button> <h3>Order placed successfully. Complete transaction when you have received your goods or services.</h3> </div> : <div />}
 
         {!service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? <h3>Service no longer available.</h3> : <div />}
 
         {!service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ?
-          <h3>Congrats, transaction completed! Your blockchain contract ID is: {this.props.singleService.contractId}</h3>
+          <h3>Congrats, transaction completed! Your transaction ID on the blockchain is: {this.props.singleService.contractId}</h3>
           : <div />}
 
       </div>

@@ -30,18 +30,16 @@ class AllServices extends Component {
       displayedServices = services.filter(service => service.category === this.state.selectedCategory)
     }
 
-    if (!services) return <div>Available services in your community loading....</div>
+    if (!services) return <div>Loading the Marketplace...</div>
     else return (
       <div className="avenir center bg-light-gray pa3 ph5-ns">
         <div>
-          <h1 className="avenir purple">Available Services in Your Community </h1>
+          <h1 className="avenir purple">Marketplace</h1>
           <div>
           <div className="avenir flex items-center justify-center pa4 bg-lightest-blue navy">
-          <p className="avenir lh-title ml3">Transactions between you and sellers in your community will be facilitated by a "smart contract", a set of rules that govern the exchange of goods and services for ether.
-
-          Please note that you'll incur a small fee every time you write to the blockchain (called "gas"), but the advantage is that the transaction is immutable, public, and xxx. </p>
+          <p className="avenir lh-title ml3">When you place an order, you'll be charged a small transaction fee ("gas"); however you won't be charged the full amount until you've received the order. <br/><b><em>Please click "Complete Agreement" once your order is fulfilled.</em></b> At that time, the funds will be deducted from your digital wallet.</p>
           </div>
-          <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
+          <Link to="/services/new"> <button className="btn btn-info new">Create a Posting</button></Link>
             <button className="btn active" value="All" onClick={this.handleClick}>Show All</button>
             <button className="btn" value="Goods" onClick={this.handleClick}>Goods</button>
             <button className="btn" value="Services" onClick={this.handleClick}>Services</button>

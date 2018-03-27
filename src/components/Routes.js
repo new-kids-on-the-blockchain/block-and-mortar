@@ -11,6 +11,8 @@ import AddMessage from './AddMessage'
 import Homepage from './Homepage'
 import { Login, Signup } from './SignUp'
 import NavBar from './NavBar'
+import FAQ from './FAQ'
+import MyProfile from './MyProfile'
 import { me, fetchServices, fetchWeb3} from '../store'
 
 class Routes extends Component {
@@ -29,6 +31,7 @@ class Routes extends Component {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route exact path="/" component={Homepage} />
+          <Route exact path="/faq" component={FAQ} />
           {
             isLoggedIn &&
               <Switch>
@@ -40,6 +43,7 @@ class Routes extends Component {
                 <Route exact path='/services/:id' component={SingleService} />
                 <Route exact path='/messages' component={AllMessages} />
                 <Route exact path='/messages/new' component={AddMessage} />
+                <Route exact path='/my-profile' component={MyProfile} />
               </Switch>
           }
           {/* Displays our Login component as a fallback */}
