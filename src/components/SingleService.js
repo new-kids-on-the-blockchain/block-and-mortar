@@ -96,7 +96,7 @@ class SingleService extends Component {
 
           {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ?
             <div>
-                <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue" onClick={this.handleComplete}>Complete Order</button> <h3>Order placed successfully. Complete transaction when you have received your goods or services.</h3>
+                <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" onClick={this.handleComplete}>Complete Order</button> <h3>Order placed successfully. Complete transaction when you have received your goods or services.</h3>
               </div>
             : <div />}
 
