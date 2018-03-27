@@ -81954,7 +81954,7 @@ var AllServices = function (_Component) {
             displayedServices && displayedServices.map(function (service) {
               return _react2.default.createElement(
                 'div',
-                { className: 'list-item service', key: service.id },
+                { className: 'dim list-item service', key: service.id },
                 _react2.default.createElement(
                   _reactRouterDom.NavLink,
                   { key: service.id, to: '/services/' + service.id },
@@ -81964,8 +81964,7 @@ var AllServices = function (_Component) {
                     null,
                     _react2.default.createElement(
                       'div',
-                      null,
-                      'Name: ',
+                      { className: 'f4 b pv2' },
                       service.name
                     ),
                     _react2.default.createElement(
@@ -81973,13 +81972,7 @@ var AllServices = function (_Component) {
                       null,
                       'Price: ',
                       service.price,
-                      ' ether'
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      null,
-                      'Category: ',
-                      service.category
+                      ' ETH'
                     )
                   )
                 )

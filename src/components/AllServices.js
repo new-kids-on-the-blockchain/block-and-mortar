@@ -53,13 +53,12 @@ class AllServices extends Component {
         <div className="container all-services">
             {displayedServices && displayedServices.map(service => {
               return (
-                <div className="list-item service" key={service.id}>
+                <div className="dim list-item service" key={service.id}>
                 <NavLink key={service.id} to={`/services/${service.id}`}>
                   <img className="thumbnail" src={service.imgUrl} />
                   <div>
-                    <div>Name: {service.name}</div>
-                    <div>Price: {service.price} ether</div>
-                    <div>Category: {service.category}</div>
+                    <div className="f4 b pv2">{service.name}</div>
+                    <div>Price: {service.price} ETH</div>
                   </div>
                 </NavLink>
                 </div>
