@@ -82,80 +82,84 @@ class SingleService extends Component {
 
           {service.isAvailable && currentUser.id !== service.Seller.id ?
             <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" onClick={this.handleClick}>Place Order</button> : <div />}
-     
-            {currentUser.id !== service.Seller.id ? <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue" onClick={this.handleMessage}>Message</button> : <div/> }
-       
+
+          {currentUser.id !== service.Seller.id ? <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue" onClick={this.handleMessage}>Message</button> : <div />}
+
 
           {service.isAvailable && currentUser.id === service.Seller.id ?
-              <button className="f6 link dim br-pill ph3 pv2 mb2 dib black bg-highlighter-yellow" onClick={this.handleClose}>Remove from Marketplace</button>
-           : <div />}
+            <button className="f6 link dim br-pill ph3 pv2 mb2 dib black bg-highlighter-yellow" onClick={this.handleClose}>Remove from Marketplace</button>
+            : <div />}
 
-          {!service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? <h3>You have closed this service.</h3> : <div />}
+          {!service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? <div className="avenir flex items-center justify-center pa2 bg-teal"><div className="avenir lh-title ml3">You have removed this service from the Marketplace.</div></div> : <div />}
 
-          {!service.isAvailable && service.status === "Pending" && (currentUser.id === service.Seller.id) ? <h3>Transaction in progress. {service.Buyer.userName} has purchased this service.</h3> : <div />}
+          {!service.isAvailable && service.status === "Pending" && (currentUser.id === service.Seller.id) ? <div className="avenir flex items-center justify-center pa2 bg-teal"><div className="avenir lh-title ml3">Transaction in progress. {service.Buyer.userName} has purchased this service.</div></div> : <div />}
 
           {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ?
             <div>
-                <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" onClick={this.handleComplete}>Complete Order</button> <h3>Order placed successfully. Complete transaction when you have received your goods or services.</h3>
+              <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" onClick={this.handleComplete}>Complete Order</button> 
+              <div className="avenir flex items-center justify-center pa3 bg-teal">
+                  <div className="avenir lh-title ml3">Order placed successfully. Complete transaction when you have received your goods or services.
+                  </div>
               </div>
-            : <div />}
+              </div>
+              : <div />}
+  
+          {!service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? <div className="avenir flex items-center justify-center pa2 bg-teal"><div className="avenir lh-title ml3">Service no longer available.</div></div> : <div />}
 
-          {!service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? <h3>Service no longer available.</h3> : <div />}
-
-          {!service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ?
-            <h3>Congrats, transaction completed! Your transaction ID on the blockchain is: {this.props.singleService.contractId}</h3>
-            : <div />}
-        </div>
+              {!service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ?
+              <div className="avenir flex items-center justify-center pa2 bg-teal"><div className="avenir lh-title ml3">Congrats, transaction completed! Your transaction ID on the blockchain is: {this.props.singleService.contractId}</div></div>
+                : <div />}
+            </div>
       </div>
-    )
-  }
-
-}
-
-const mapStateToProps = ({ web3, services, users, contract, accounts, currentUser }, ownProps) => ({
-  singleService: services.find(
-    service => +service.id === +ownProps.match.params.id
-  ),
-  contract,
-  users,
-  accounts,
-  currentUser,
-  web3
-})
-
+        )
+      }
+    
+    }
+    
+const mapStateToProps = ({web3, services, users, contract, accounts, currentUser }, ownProps) => ({
+            singleService: services.find(
+            service => +service.id === +ownProps.match.params.id
+          ),
+          contract,
+          users,
+          accounts,
+          currentUser,
+          web3
+        })
+        
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  handleFetchServices() {
-    dispatch(fetchServices())
-  },
+            handleFetchServices() {
+          dispatch(fetchServices())
+        },
   handleFetchContract() {
-    dispatch(fetchContract())
-  },
+            dispatch(fetchContract())
+          },
   handleUpdateService(evt, service, userId) {
-    evt.preventDefault()
+            evt.preventDefault()
     service.isAvailable = false;
-    service.status = "Pending";
-    service.buyer = userId;
-    dispatch(updateService(service, ownProps))
-  },
+          service.status = "Pending";
+          service.buyer = userId;
+          dispatch(updateService(service, ownProps))
+        },
   handleCompleteService(evt, service) {
-    evt.preventDefault()
+            evt.preventDefault()
     service.status = "Completed";
-    dispatch(updateCompleteService(service, ownProps))
-  },
+          dispatch(updateCompleteService(service, ownProps))
+        },
   fetchWeb3: function () {
     return dispatch(fetchWeb3());
-  },
+        },
   fetchAccounts: function (web3) {
     return dispatch(fetchAccounts(web3));
-  },
+        },
   handleCloseService(evt, service) {
-    evt.preventDefault()
+            evt.preventDefault()
     service.isAvailable = false;
-    dispatch(updateService(service, ownProps))
-  },
+          dispatch(updateService(service, ownProps))
+        },
   postThread: function (thread) {
-    dispatch(postThread(thread, ownProps))
-  }
-})
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SingleService))
+            dispatch(postThread(thread, ownProps))
+          }
+          })
+          
+          export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SingleService))

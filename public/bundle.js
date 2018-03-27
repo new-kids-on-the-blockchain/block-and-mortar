@@ -83164,16 +83164,24 @@ var SingleService = function (_Component) {
             'Remove from Marketplace'
           ) : _react2.default.createElement('div', null),
           !service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? _react2.default.createElement(
-            'h3',
-            null,
-            'You have closed this service.'
+            'div',
+            { className: 'avenir flex items-center justify-center pa2 bg-teal' },
+            _react2.default.createElement(
+              'div',
+              { className: 'avenir lh-title ml3' },
+              'You have removed this service from the Marketplace.'
+            )
           ) : _react2.default.createElement('div', null),
           !service.isAvailable && service.status === "Pending" && currentUser.id === service.Seller.id ? _react2.default.createElement(
-            'h3',
-            null,
-            'Transaction in progress. ',
-            service.Buyer.userName,
-            ' has purchased this service.'
+            'div',
+            { className: 'avenir flex items-center justify-center pa2 bg-teal' },
+            _react2.default.createElement(
+              'div',
+              { className: 'avenir lh-title ml3' },
+              'Transaction in progress. ',
+              service.Buyer.userName,
+              ' has purchased this service.'
+            )
           ) : _react2.default.createElement('div', null),
           !service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? _react2.default.createElement(
             'div',
@@ -83183,23 +83191,34 @@ var SingleService = function (_Component) {
               { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink', onClick: this.handleComplete },
               'Complete Order'
             ),
-            ' ',
             _react2.default.createElement(
-              'h3',
-              null,
-              'Order placed successfully. Complete transaction when you have received your goods or services.'
+              'div',
+              { className: 'avenir flex items-center justify-center pa3 bg-teal' },
+              _react2.default.createElement(
+                'div',
+                { className: 'avenir lh-title ml3' },
+                'Order placed successfully. Complete transaction when you have received your goods or services.'
+              )
             )
           ) : _react2.default.createElement('div', null),
           !service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? _react2.default.createElement(
-            'h3',
-            null,
-            'Service no longer available.'
+            'div',
+            { className: 'avenir flex items-center justify-center pa2 bg-teal' },
+            _react2.default.createElement(
+              'div',
+              { className: 'avenir lh-title ml3' },
+              'Service no longer available.'
+            )
           ) : _react2.default.createElement('div', null),
           !service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ? _react2.default.createElement(
-            'h3',
-            null,
-            'Congrats, transaction completed! Your transaction ID on the blockchain is: ',
-            this.props.singleService.contractId
+            'div',
+            { className: 'avenir flex items-center justify-center pa2 bg-teal' },
+            _react2.default.createElement(
+              'div',
+              { className: 'avenir lh-title ml3' },
+              'Congrats, transaction completed! Your transaction ID on the blockchain is: ',
+              this.props.singleService.contractId
+            )
           ) : _react2.default.createElement('div', null)
         )
       );
