@@ -64,10 +64,10 @@ class SingleService extends Component {
   render() {
     const service = this.props.singleService
     const currentUser = this.props.currentUser
-    if (!service) return <div className="avenir dark-red"><h2>Oh no! No service exists at this address.</h2></div>
+    // if (!service) return <div className="avenir dark-red"><h2>Oh no! No service exists at this address.</h2></div>
     return (
-      this.props.singleService &&
-      <div className="home" id="background">
+      this.props.singleService ?
+      (<div className="home" id="background">
         <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
           <div className="f2">{service.name} </div>
           <img alt={service.name} src={service.imgUrl} />
@@ -111,7 +111,13 @@ class SingleService extends Component {
                 : <div />}
             </div>
       </div>
-        )
+        ) : 
+      
+        (<div className="home" id="background">
+       <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
+       <div className="avenir dark-red"><h1>Oh no! No service found.</h1></div>
+       </div>
+       </div>))
       }
     
     }
