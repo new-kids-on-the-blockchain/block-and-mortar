@@ -88,7 +88,8 @@ class AddService extends Component {
               max="100"
               step="0.0001"
               placeholder=".05"
-            />
+            /> 
+            <a href={`https://currencio.co/eth/usd/`} target="_blank">ETH to USD Converter</a>
             <h3>Description:</h3>
             <textarea name="serviceDescription" rows="1" cols="50" placeholder="I'm a beekeeper. Only the freshest honey from local bees"/>
             <h3>Image URL (optional):</h3>
