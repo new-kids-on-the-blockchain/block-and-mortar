@@ -64,39 +64,59 @@ class AddService extends Component {
       this.props.contract && (
         <div className="home" id="background">
         <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
-          <h1 className="avenir purple">New Service</h1>
-        <div className="avenir flex items-center justify-center pa4 bg-teal navy">
-          <p className="lh-title ml3"><b>Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:</b> <p/>
-          <li>When you click "submit," you are actually writing to the blockchain! A "smart contract" will record all of the important information about your product and sale.</li>
-          <li>Writing to the blockchain incurs a small transaction fee, charged in ether, which is called "gas."</li>
-           </p>
+          <div className="avenir f2">New Service</div>
+          <div className="avenir flex items-center justify-center ma3 pa4 bg-teal navy">
+          <div className="avenir">
+            <div className="f4">Posting a good or service for sale is as easy as filling out the form below, but a lot of exciting things are going on behind the scenes:</div>
+            <div>
+              <li>When you click "submit," you are actually writing to the blockchain! A "smart contract" will record all of the important information about your product and sale.</li>
+              <li>Writing to the blockchain incurs a small transaction fee, charged in ether, which is called "gas."</li>
+            </div>
+           </div>
         </div>
-        <h2 className="avenir">Post Goods and Services</h2>
-          <form onSubmit={this.handleSubmit} className="avenir">
-            <h3>Title:</h3>
-            <input name="serviceName" placeholder="3 Jars of Artisanal Honey" size="50" />
-            <h3>Category:</h3>
-            <select name="serviceCategory">
-              <option value="Goods">Goods</option>
-              <option value="Services">Services</option>
-            </select>
-            <h3>Price (ether):</h3>
-            <input
-              name="servicePrice"
-              type="number"
-              min="0"
-              max="100"
-              step="0.0001"
-              placeholder=".05"
-            />
-            <a href={`https://currencio.co/eth/usd/`} target="_blank">ETH to USD Converter</a>
-            <h3>Description:</h3>
-            <textarea name="serviceDescription" rows="1" cols="50" placeholder="I'm a beekeeper. Only the freshest honey from local bees"/>
-            <h3>Image URL (optional):</h3>
-            <textarea name="imgUrl" rows="1" cols="50" placeholder="https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80"/>
-            <button>Submit</button>
-          </form>
-        </div>
+            <form onSubmit={this.handleSubmit} className="avenir containerInner bt pa4 black-80">
+              <div className="avenir f3">Post Goods and Services</div>
+
+              <div className="pa3">
+                <label for="serviceName" className="avenir f6 b db mb2">Title</label>
+                <input className="input-reset ba b--black-20 pa2 mb2 db w-100" id="serviceName" name="serviceName" placeholder="3 Jars of Artisanal Honey" size="50" />
+              </div>
+
+              <div className="pa3">
+                <label for="serviceCategory" className="avenir f6 b db mb2">Category</label>
+                <select id="serviceCategory" name="serviceCategory">
+                  <option value="Goods">Goods</option>
+                  <option value="Services">Services</option>
+                </select>
+              </div>
+
+              <div className="pa3">
+                <label for="servicePrice" className="avenir f6 b db mb2">Price <span class="normal black-60">(ether)</span></label>
+                <input
+                  id="servicePrice"
+                  name="servicePrice"
+                  type="number"
+                  min="0"
+                  max="100"
+                  step="0.0001"
+                  placeholder=".05"
+                />
+                <div className="pv2"><a href={`https://currencio.co/eth/usd/`} target="_blank">ETH to USD Converter</a></div>
+              </div>
+
+              <div className="ph3 pv2">
+                <label for="serviceDescription" className="avenir f6 b db mb2">Description</label>
+                <textarea className="input-reset ba b--black-20 pa2 mb2 db w-100" id="serviceDescription" name="serviceDescription" placeholder="I'm a beekeeper. Only the freshest honey from local bees"/>
+              </div>
+
+              <div className="pa3">
+                <label for="imgUrl" className="avenir f6 b db mb2">Image URL (optional):<span class="normal black-60">(optional)</span></label>
+                <input className="input-reset ba b--black-20 pa2 mb2 db w-100" id="imgUrl" name="imgUrl" rows="1" cols="50" placeholder="https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80"/>
+              </div>
+
+              <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink">Submit</button>
+            </form>
+          </div>
         </div>
       )
     );
