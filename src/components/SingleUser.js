@@ -19,7 +19,7 @@ class SingleUser extends Component {
     return (
       <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
         <h1 className="purple">Welcome back, {currentUser.userName}! </h1>
-        <Link to="/services/new"> <button className="btn btn-info new">Add a Service</button></Link>
+        <Link to="/services/new"> <button className="btn btn-info new">Create a Posting</button></Link>
         <h1>Pending Sales</h1>
         <ul>
           {pendingSales.length ? (

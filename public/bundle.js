@@ -81597,7 +81597,7 @@ var AddService = function (_Component) {
             min: "0",
             max: "100",
             step: "0.0001",
-            placeholder: ".004"
+            placeholder: ".05"
           }),
           _react2.default.createElement(
             "h3",
@@ -82992,6 +82992,11 @@ var SingleService = function (_Component) {
           ' ether'
         ),
         _react2.default.createElement(
+          'a',
+          { href: 'https://currencio.co/eth/usd/' + service.price, target: '_blank' },
+          'How much is this in USD?'
+        ),
+        _react2.default.createElement(
           'p',
           null,
           _react2.default.createElement(
@@ -83297,7 +83302,7 @@ var SingleUser = function (_Component) {
           _react2.default.createElement(
             'button',
             { className: 'btn btn-info new' },
-            'Add a Service'
+            'Create a Posting'
           )
         ),
         _react2.default.createElement(

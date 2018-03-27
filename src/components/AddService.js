@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchWeb3, postService, fetchAccounts } from "../store";
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 class AddService extends Component {
   constructor() {
@@ -87,7 +87,7 @@ class AddService extends Component {
               min="0"
               max="100"
               step="0.0001"
-              placeholder=".004"
+              placeholder=".05"
             />
             <h3>Description:</h3>
             <textarea name="serviceDescription" rows="1" cols="50" placeholder="I'm a beekeeper. Only the freshest honey from local bees"/>

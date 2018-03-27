@@ -73,6 +73,9 @@ class SingleService extends Component {
         <p><b>Description:</b> {service.description} </p>
         <p><b>Category:</b> {service.category} </p>
         <p><b>Price:</b> {service.price} ether</p>
+
+        <a href={`https://currencio.co/eth/usd/${service.price}`} target="_blank">How much is this in USD?</a>
+
         <p><b>Date Posted:</b> {toDate(service.createdAt)}</p>
         <p><b>Offered By:</b> <Link to={`/users/${service.seller}`}>{service.Seller.userName}      </Link></p>
         <Link to="/services"><button>Back to Services</button></Link>
