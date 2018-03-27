@@ -5,6 +5,18 @@
   margin: auto;
 } */
 
+a {
+  color: #E34383;
+}
+
+.f1, .f2 {
+  font-weight: 200;
+}
+
+.f2, .f3 {
+  color: #0E1B1C;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -55,13 +67,9 @@
   line-height: 3em;
 }
 
-
-
 #homeImg {
   margin-top: 12%;
 }
-
-
 
 div#background {
   background: url(https://farm1.staticflickr.com/884/27171020888_d1b2986a8b_k.jpg);
@@ -81,7 +89,6 @@ nav {
   z-index: 2;
 }
 
-
 #topMargin {
   margin-top: 12em;
   margin-bottom: 10em;
@@ -90,4 +97,8 @@ nav {
 #topMarginLogin {
   margin-top: 12em;
   margin-bottom: 50em;
+}
+
+.bg-light-gray {
+  background-color: #f3f2f3;
 }
