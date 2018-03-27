@@ -81734,7 +81734,7 @@ var AllMessages = function (_Component) {
             null,
             'All Conversations'
           ),
-          this.props.threads.map(function (thread) {
+          this.props.threads.length ? this.props.threads.map(function (thread) {
             return _react2.default.createElement(
               'div',
               { key: thread.id, className: 'singleThread', onClick: function onClick() {
@@ -81755,7 +81755,11 @@ var AllMessages = function (_Component) {
                 thread.buyer.userName
               )
             );
-          })
+          }) : _react2.default.createElement(
+            'div',
+            null,
+            'No Conversations Currently Exist'
+          )
         ),
         _react2.default.createElement(
           'div',
@@ -84422,7 +84426,7 @@ function reducer() {
 //HELPER FUNCTIONS
 function addThreadAndRedirect(thread, ownProps, dispatch) {
   dispatch(addThread(thread));
-  ownProps.history.push('/home');
+  ownProps.history.push('/messages');
 }
 
 /***/ }),

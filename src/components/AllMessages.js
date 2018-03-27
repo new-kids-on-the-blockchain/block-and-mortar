@@ -26,18 +26,21 @@ class AllMessages extends Component {
       <div>
         <div className="allThreads">
           <h2>All Conversations</h2>
-          {this.props.threads.map(thread => {
-            return (
-              <div key={thread.id} className="singleThread" onClick={() => this.setCurrentThread(thread)}>
-                <div>{thread.service.name}</div>
-                {
-                  thread.buyer.id === this.props.currentUser.id
-                  ? <div>{thread.seller.userName}</div>
-                  : <div>{thread.buyer.userName}</div>
-                }
-              </div>
-            )
-          })}
+          { this.props.threads.length
+            ? this.props.threads.map(thread => {
+                return (
+                  <div key={thread.id} className="singleThread" onClick={() => this.setCurrentThread(thread)}>
+                    <div>{thread.service.name}</div>
+                    {
+                      thread.buyer.id === this.props.currentUser.id
+                      ? <div>{thread.seller.userName}</div>
+                      : <div>{thread.buyer.userName}</div>
+                    }
+                  </div>
+                )
+              })
+            : <div>No Conversations Currently Exist</div>
+          }
         </div>
         <div className="currentThread">
           <SingleThread currentThread={this.state.currentThread} />
