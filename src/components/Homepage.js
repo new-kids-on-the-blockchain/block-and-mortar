@@ -4,7 +4,7 @@ import React from "react";
 export default function Homepage() {
   return (
     <div className="home" id="background">
-      <div id="homeText" >
+      <div id="homeText">
         <h2>
           Aimed at local communities, Block &amp; Mortar allows for the
           grassroots sale of goods and services using the Ethereum blockchain.{" "}

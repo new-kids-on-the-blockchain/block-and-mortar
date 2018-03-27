@@ -83310,310 +83310,314 @@ var SingleUser = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns' },
+        { className: 'home', id: 'background' },
         _react2.default.createElement(
-          'h1',
-          { className: 'purple' },
-          'Welcome back, ',
-          currentUser.userName,
-          '! '
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/services/new' },
-          ' ',
+          'div',
+          { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMargin' },
           _react2.default.createElement(
-            'button',
-            { className: 'btn btn-info new' },
-            'Create a Posting'
-          )
-        ),
-        _react2.default.createElement(
-          'h1',
-          null,
-          'Pending Sales'
-        ),
-        _react2.default.createElement(
-          'ul',
-          null,
-          pendingSales.length ? pendingSales.map(function (transaction) {
-            return _react2.default.createElement(
-              'div',
-              { key: transaction.id },
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/services/' + transaction.id },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  transaction.name
-                )
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Buyer:'
-                ),
-                ' ',
-                transaction.Buyer.userName
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Status:'
-                ),
-                ' ',
-                transaction.status
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Category:'
-                ),
-                ' ',
-                transaction.category
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Date Posted:'
-                ),
-                ' ',
-                (0, _utils.toDate)(transaction.createdAt)
-              )
-            );
-          }) : _react2.default.createElement(
-            'p',
+            'h1',
+            { className: 'purple' },
+            'Welcome back, ',
+            currentUser.userName,
+            '! '
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/services/new' },
+            ' ',
+            _react2.default.createElement(
+              'button',
+              { className: 'btn btn-info new' },
+              'Create a Posting'
+            )
+          ),
+          _react2.default.createElement(
+            'h1',
             null,
-            'You have no transactions to fulfill.'
-          )
-        ),
-        _react2.default.createElement(
-          'h1',
-          null,
-          'Pending Purchases'
-        ),
-        _react2.default.createElement(
-          'ul',
-          null,
-          pendingPurchases.length ? pendingPurchases.map(function (transaction) {
-            return _react2.default.createElement(
-              'div',
-              { key: transaction.id },
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/services/' + transaction.id },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  transaction.name
-                )
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Seller:'
-                ),
-                ' ',
-                transaction.Seller.userName
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Status:'
-                ),
-                ' ',
-                transaction.status
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Category:'
-                ),
-                ' ',
-                transaction.category
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Date Posted:'
-                ),
-                ' ',
-                (0, _utils.toDate)(transaction.createdAt)
-              )
-            );
-          }) : _react2.default.createElement(
-            'p',
+            'Pending Sales'
+          ),
+          _react2.default.createElement(
+            'ul',
             null,
-            'You have no pending purchases.'
-          )
-        ),
-        _react2.default.createElement(
-          'h1',
-          null,
-          'Completed Sales'
-        ),
-        _react2.default.createElement(
-          'ul',
-          null,
-          completedSales.length ? completedSales.map(function (transaction) {
-            return _react2.default.createElement(
-              'div',
-              { key: transaction.id },
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/services/' + transaction.id },
+            pendingSales.length ? pendingSales.map(function (transaction) {
+              return _react2.default.createElement(
+                'div',
+                { key: transaction.id },
                 _react2.default.createElement(
-                  'h2',
+                  _reactRouterDom.Link,
+                  { to: '/services/' + transaction.id },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    transaction.name
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
                   null,
-                  transaction.name
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Buyer:'
+                  ),
+                  ' ',
+                  transaction.Buyer.userName
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Status:'
+                  ),
+                  ' ',
+                  transaction.status
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Category:'
+                  ),
+                  ' ',
+                  transaction.category
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Date Posted:'
+                  ),
+                  ' ',
+                  (0, _utils.toDate)(transaction.createdAt)
                 )
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Buyer:'
-                ),
-                ' ',
-                transaction.Buyer.userName
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Status:'
-                ),
-                ' ',
-                transaction.status
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Category:'
-                ),
-                ' ',
-                transaction.category
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Date Completed:'
-                ),
-                ' ',
-                (0, _utils.toDate)(transaction.updatedAt)
-              )
-            );
-          }) : _react2.default.createElement(
-            'p',
+              );
+            }) : _react2.default.createElement(
+              'p',
+              null,
+              'You have no transactions to fulfill.'
+            )
+          ),
+          _react2.default.createElement(
+            'h1',
             null,
-            'You have no completed sales.'
-          )
-        ),
-        _react2.default.createElement(
-          'h1',
-          null,
-          'Completed Purchases'
-        ),
-        _react2.default.createElement(
-          'ul',
-          null,
-          completedPurchases.length ? completedPurchases.map(function (transaction) {
-            return _react2.default.createElement(
-              'div',
-              { key: transaction.id },
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/services/' + transaction.id },
+            'Pending Purchases'
+          ),
+          _react2.default.createElement(
+            'ul',
+            null,
+            pendingPurchases.length ? pendingPurchases.map(function (transaction) {
+              return _react2.default.createElement(
+                'div',
+                { key: transaction.id },
                 _react2.default.createElement(
-                  'h2',
+                  _reactRouterDom.Link,
+                  { to: '/services/' + transaction.id },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    transaction.name
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
                   null,
-                  transaction.name
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Seller:'
+                  ),
+                  ' ',
+                  transaction.Seller.userName
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Status:'
+                  ),
+                  ' ',
+                  transaction.status
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Category:'
+                  ),
+                  ' ',
+                  transaction.category
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Date Posted:'
+                  ),
+                  ' ',
+                  (0, _utils.toDate)(transaction.createdAt)
                 )
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Seller:'
-                ),
-                ' ',
-                transaction.Seller.userName
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Status:'
-                ),
-                ' ',
-                transaction.status
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Category:'
-                ),
-                ' ',
-                transaction.category
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'b',
-                  null,
-                  'Date Completed:'
-                ),
-                ' ',
-                (0, _utils.toDate)(transaction.updatedAt)
-              )
-            );
-          }) : _react2.default.createElement(
-            'p',
+              );
+            }) : _react2.default.createElement(
+              'p',
+              null,
+              'You have no pending purchases.'
+            )
+          ),
+          _react2.default.createElement(
+            'h1',
             null,
-            'You have no completed purchases.'
+            'Completed Sales'
+          ),
+          _react2.default.createElement(
+            'ul',
+            null,
+            completedSales.length ? completedSales.map(function (transaction) {
+              return _react2.default.createElement(
+                'div',
+                { key: transaction.id },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/services/' + transaction.id },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    transaction.name
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Buyer:'
+                  ),
+                  ' ',
+                  transaction.Buyer.userName
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Status:'
+                  ),
+                  ' ',
+                  transaction.status
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Category:'
+                  ),
+                  ' ',
+                  transaction.category
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Date Completed:'
+                  ),
+                  ' ',
+                  (0, _utils.toDate)(transaction.updatedAt)
+                )
+              );
+            }) : _react2.default.createElement(
+              'p',
+              null,
+              'You have no completed sales.'
+            )
+          ),
+          _react2.default.createElement(
+            'h1',
+            null,
+            'Completed Purchases'
+          ),
+          _react2.default.createElement(
+            'ul',
+            null,
+            completedPurchases.length ? completedPurchases.map(function (transaction) {
+              return _react2.default.createElement(
+                'div',
+                { key: transaction.id },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/services/' + transaction.id },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    transaction.name
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Seller:'
+                  ),
+                  ' ',
+                  transaction.Seller.userName
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Status:'
+                  ),
+                  ' ',
+                  transaction.status
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Category:'
+                  ),
+                  ' ',
+                  transaction.category
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'b',
+                    null,
+                    'Date Completed:'
+                  ),
+                  ' ',
+                  (0, _utils.toDate)(transaction.updatedAt)
+                )
+              );
+            }) : _react2.default.createElement(
+              'p',
+              null,
+              'You have no completed purchases.'
+            )
           )
         )
       );
