@@ -7,14 +7,42 @@
 
 a {
   color: #E34383;
+  text-decoration-line: none;
 }
 
-.f1, .f2 {
+.f1 {
   font-weight: 200;
 }
 
-.f2, .f3 {
+.f2 {
   color: #0E1B1C;
+  font-weight: 400;
+  padding: 15px;
+}
+
+.f3 {
+  color: #0E1B1C;
+  font-weight: 700;
+}
+
+.bt {
+  border-top-color: #91D446;
+}
+
+.siteTitle {
+  font-size: 4rem;
+  text-decoration: underline;
+  text-decoration-color: #E34383;
+}
+
+.containerInner {
+  padding: 10px;
+  margin: 20px;
+  background-color: #fff;
+}
+
+.purchase {
+  width: 100%;
 }
 
 .container {
@@ -79,6 +107,7 @@ div#background {
   background-size:  cover;
   background-color: #999;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -86,7 +115,6 @@ nav {
   margin: 2em;
   padding: 10px;
   width: calc(100vw - 1em);
-  z-index: 2;
 }
 
 #topMargin {
