@@ -23,7 +23,7 @@ class SingleUser extends Component {
       <div className="home" id="background">
       <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
         <div className="f2">Welcome back, {currentUser.userName}! </div>
-          <Link to="/services/new"> <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink">Create a Posting</button></Link>
+          <Link to="/services/new"> <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink flex">Create a Posting</button></Link>
 
         <div className="containerInner bt">
           <div className="f3">Pending Sales</div>
@@ -33,7 +33,7 @@ class SingleUser extends Component {
                 return (
                   <div key={transaction.id}>
                     <Link to={`/services/${transaction.id}`}>
-                      <h2>{transaction.name}</h2>
+                      <div className="f4 b dim">{transaction.name}</div>
                     </Link>
                     <p><b>Buyer:</b> {transaction.Buyer.userName}</p>
                     <p><b>Status:</b> {transaction.status}</p>
@@ -53,7 +53,7 @@ class SingleUser extends Component {
                 return (
                   <div key={transaction.id}>
                     <Link to={`/services/${transaction.id}`}>
-                      <div className="f4 b">{transaction.name}</div>
+                      <div className="f4 b dim">{transaction.name}</div>
                     </Link>
                     <p><b>Seller:</b> {transaction.Seller.userName}</p>
                     <p><b>Status:</b> {transaction.status}</p>
@@ -73,7 +73,7 @@ class SingleUser extends Component {
                 return (
                   <div key={transaction.id}>
                     <Link to={`/services/${transaction.id}`}>
-                      <div className="f4 b">{transaction.name}</div>
+                      <div className="f4 b dim">{transaction.name}</div>
                     </Link>
                     <p><b>Buyer:</b> {transaction.Buyer.userName}</p>
                     <p><b>Status:</b> {transaction.status}</p>
@@ -93,7 +93,7 @@ class SingleUser extends Component {
                 return (
                   <div key={transaction.id}>
                     <Link to={`/services/${transaction.id}`}>
-                      <h2>{transaction.name}</h2>
+                      <div className="f4 b dim">{transaction.name}</div>
                     </Link>
                     <p><b>Seller:</b> {transaction.Seller.userName}</p>
                     <p><b>Status:</b> {transaction.status}</p>
