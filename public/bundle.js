@@ -78,7 +78,7 @@
 /*! exports provided: contractName, abi, bytecode, deployedBytecode, sourceMap, deployedSourceMap, source, sourcePath, ast, legacyAST, compiler, networks, schemaVersion, updatedAt, default */
 /***/ (function(module) {
 
-module.exports = {"contractName":"BarterAgreement","abi":[{"anonymous":false,"inputs":[{"indexed":false,"name":"owner","type":"address"},{"indexed":false,"name":"buyer","type":"address"},{"indexed":false,"name":"id","type":"uint256"},{"indexed":false,"name":"price","type":"uint256"},{"indexed":false,"name":"completed","type":"bool"},{"indexed":false,"name":"inProgress","type":"bool"}],"name":"AgreementLog","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"value","type":"uint256"}],"name":"PaymentLog","type":"event"},{"constant":false,"inputs":[{"name":"price","type":"uint256"}],"name":"newAgreement","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"agreementID","type":"uint256"}],"name":"getAgreement","outputs":[{"name":"owner","type":"address"},{"name":"buyer","type":"address"},{"name":"price","type":"uint256"},{"name":"completed","type":"bool"},{"name":"inProgress","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getAgreementLength","outputs":[{"name":"length","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"id","type":"uint256"}],"name":"updateAgreement","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"id","type":"uint256"}],"name":"completeAgreement","outputs":[],"payable":true,"stateMutability":"payable","type":"function"}],"bytecode":"0x6060604052341561000f57600080fd5b6109d08061001e6000396000f30060606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634f9f6fe6146100725780638458cf8e14610125578063ec4590831461013d578063f64e6b7614610160578063f685541b14610189575b600080fd5b341561007d57600080fd5b61009360048080359060200190919050506101ac565b604051808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183151515158152602001821515151581526020019550505050505060405180910390f35b61013b600480803590602001909190505061025b565b005b341561014857600080fd5b61015e60048080359060200190919050506104df565b005b341561016b57600080fd5b6101736106f3565b6040518082815260200191505060405180910390f35b341561019457600080fd5b6101aa60048080359060200190919050506106ff565b005b6000806000806000806000878154811015156101c457fe5b906000526020600020906004020190508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168160010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1682600201548360030160009054906101000a900460ff168460030160019054906101000a900460ff16955095509550955095505091939590929450565b6000808281548110151561026b57fe5b906000526020600020906004020190503373ffffffffffffffffffffffffffffffffffffffff168160010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156102d957600080fd5b8060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f19350505050151561033d57600080fd5b60018160030160006101000a81548160ff02191690831515021790555060008160030160016101000a81548160ff0219169083151502179055507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f728160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168260010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168484600201548560030160009054906101000a900460ff168660030160019054906101000a900460ff16604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a17f6e5e738ccc49ad7d5fb6e52e1e49ba8dbad47958a84c5784119d8660e59f0106346040518082815260200191505060405180910390a15050565b60006001600080548060010182816104f791906108d5565b9160005260206000209060040201600060a0604051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200187815260200160001515815260200160001515815250909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506040820151816002015560608201518160030160006101000a81548160ff02191690831515021790555060808201518160030160016101000a81548160ff02191690831515021790555050500390507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f723360008385600080604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a15050565b60008080549050905090565b6000808281548110151561070f57fe5b90600052602060002090600402019050600115158160030160009054906101000a900460ff1615151415151561074457600080fd5b338160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060018160030160016101000a81548160ff0219169083151502179055507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f728160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168260010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168484600201548560030160009054906101000a900460ff168660030160019054906101000a900460ff16604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a15050565b815481835581811511610902576004028160040283600052602060002091820191016109019190610907565b5b505050565b6109a191905b8082111561099d57600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff02191690556001820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560028201600090556003820160006101000a81549060ff02191690556003820160016101000a81549060ff02191690555060040161090d565b5090565b905600a165627a7a72305820ca25cc628caed8b820ac91cfbb9af4bbe2bf3078e065c695b77956db535623600029","deployedBytecode":"0x60606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634f9f6fe6146100725780638458cf8e14610125578063ec4590831461013d578063f64e6b7614610160578063f685541b14610189575b600080fd5b341561007d57600080fd5b61009360048080359060200190919050506101ac565b604051808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183151515158152602001821515151581526020019550505050505060405180910390f35b61013b600480803590602001909190505061025b565b005b341561014857600080fd5b61015e60048080359060200190919050506104df565b005b341561016b57600080fd5b6101736106f3565b6040518082815260200191505060405180910390f35b341561019457600080fd5b6101aa60048080359060200190919050506106ff565b005b6000806000806000806000878154811015156101c457fe5b906000526020600020906004020190508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168160010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1682600201548360030160009054906101000a900460ff168460030160019054906101000a900460ff16955095509550955095505091939590929450565b6000808281548110151561026b57fe5b906000526020600020906004020190503373ffffffffffffffffffffffffffffffffffffffff168160010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156102d957600080fd5b8060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f19350505050151561033d57600080fd5b60018160030160006101000a81548160ff02191690831515021790555060008160030160016101000a81548160ff0219169083151502179055507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f728160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168260010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168484600201548560030160009054906101000a900460ff168660030160019054906101000a900460ff16604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a17f6e5e738ccc49ad7d5fb6e52e1e49ba8dbad47958a84c5784119d8660e59f0106346040518082815260200191505060405180910390a15050565b60006001600080548060010182816104f791906108d5565b9160005260206000209060040201600060a0604051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200187815260200160001515815260200160001515815250909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506040820151816002015560608201518160030160006101000a81548160ff02191690831515021790555060808201518160030160016101000a81548160ff02191690831515021790555050500390507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f723360008385600080604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a15050565b60008080549050905090565b6000808281548110151561070f57fe5b90600052602060002090600402019050600115158160030160009054906101000a900460ff1615151415151561074457600080fd5b338160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060018160030160016101000a81548160ff0219169083151502179055507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f728160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168260010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168484600201548560030160009054906101000a900460ff168660030160019054906101000a900460ff16604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a15050565b815481835581811511610902576004028160040283600052602060002091820191016109019190610907565b5b505050565b6109a191905b8082111561099d57600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff02191690556001820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560028201600090556003820160006101000a81549060ff02191690556003820160016101000a81549060ff02191690555060040161090d565b5090565b905600a165627a7a72305820ca25cc628caed8b820ac91cfbb9af4bbe2bf3078e065c695b77956db535623600029","sourceMap":"52:2555:0:-;;;;;;;;;;;;;;;;;","deployedSourceMap":"52:2555:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1182:417;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2175:430;;;;;;;;;;;;;;;;;;621:447;;;;;;;;;;;;;;;;;;;;;;;;;;1667:105;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1801:344;;;;;;;;;;;;;;;;;;;;;;;;;;1182:417;1250:13;1271;1292:10;1310:14;1332:15;1368:27;1398:10;1409:11;1398:23;;;;;;;;;;;;;;;;;;;;1368:53;;1450:9;:15;;;;;;;;;;;;1477:9;:15;;;;;;;;;;;;1504:9;:15;;;1531:9;:19;;;;;;;;;;;;1562:9;:20;;;;;;;;;;;;1431:161;;;;;;;;;;1182:417;;;;;;;;:::o;2175:430::-;2236:27;2266:10;2277:2;2266:14;;;;;;;;;;;;;;;;;;;;2236:44;;2317:10;2298:29;;:9;:15;;;;;;;;;;;;:29;;;2290:38;;;;;;;;2338:9;:15;;;;;;;;;;;;:24;;:35;2363:9;2338:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2405:4;2383:9;:19;;;:26;;;;;;;;;;;;;;;;;;2442:5;2419:9;:20;;;:28;;;;;;;;;;;;;;;;;;2457:110;2470:9;:15;;;;;;;;;;;;2487:9;:15;;;;;;;;;;;;2504:2;2508:9;:15;;;2525:9;:19;;;;;;;;;;;;2546:9;:20;;;;;;;;;;;;2457:110;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2577:21;2588:9;2577:21;;;;;;;;;;;;;;;;;;2175:430;;:::o;621:447::-;675:7;763:1;685:10;:67;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;701:50;;;;;;;;;711:10;701:50;;;;;;723:6;701:50;;;;;;731:5;701:50;;;;738:5;701:50;;;;;;745:5;701:50;;;;;685:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:79;675:89;;774:57;787:10;799:6;807:2;811:5;818;825;774:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;621:447;;:::o;1667:105::-;1718:11;1748:10;:17;;;;1741:24;;1667:105;:::o;1801:344::-;1853:27;1883:10;1894:2;1883:14;;;;;;;;;;;;;;;;;;;;1853:44;;1938:4;1915:27;;:9;:19;;;;;;;;;;;;:27;;;;1907:36;;;;;;;;1971:10;1953:9;:15;;;:28;;;;;;;;;;;;;;;;;;2014:4;1991:9;:20;;;:27;;;;;;;;;;;;;;;;;;2028:110;2041:9;:15;;;;;;;;;;;;2058:9;:15;;;;;;;;;;;;2075:2;2079:9;:15;;;2096:9;:19;;;;;;;;;;;;2117:9;:20;;;;;;;;;;;;2028:110;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1801:344;;:::o;52:2555::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o","source":"pragma solidity ^0.4.18;\n// checked syntax in remix\ncontract BarterAgreement {\n    event AgreementLog(\n        address owner,\n        address buyer,\n        uint256 id,\n        uint256 price,\n        bool completed,\n        bool inProgress\n        );\n    event PaymentLog(\n        uint256 value\n        );\n    Agreement[] agreements;\n    // storage Agreement[] agreements; //\"Storage\" was causing errors\n    //event console(address sender)\n    struct Agreement {\n        address owner;\n        address buyer;\n        uint256 price;\n        bool completed;\n        bool inProgress;\n    }\n    // Create a new agreement\n    function newAgreement(uint256 price) public {\n        uint id = agreements.push(Agreement(msg.sender, 0x0000, price, false, false))\n        - 1;\n        AgreementLog(msg.sender, 0x0000, id, price, false, false);\n        //capital A agreement returns 1 instead of 0 because it's the next open spot\n        //Agreement invoked would return a new instance of that obj\n        // return id;\n        //explore returning agreements.length instead?\n    }\n    // Get existing agreement by ID. We can't return a struct so we can to return each data value one by one\n    function getAgreement(uint agreementID) public view returns (\n      address owner,\n      address buyer,\n      uint price,\n      bool completed,\n      bool inProgress\n    )\n    {\n        Agreement storage agreement = agreements[agreementID];\n        return (\n          agreement.owner,\n          agreement.buyer,\n          agreement.price,\n          agreement.completed,\n          agreement.inProgress\n        );\n    }\n    //Return number of agreements in storage on the blockchain\n    function getAgreementLength() public view returns (uint length) {\n        return agreements.length;\n    }\n    // Update agreement\n    function updateAgreement (uint id) public {\n        Agreement storage agreement = agreements[id];\n        require(agreement.completed != true);\n        agreement.buyer = msg.sender;\n        agreement.inProgress = true;\n        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price, agreement.completed, agreement.inProgress);\n    }\n    //Complete agreement\n    function completeAgreement(uint id) public payable {\n        Agreement storage agreement = agreements[id];\n        require(agreement.buyer == msg.sender);\n        agreement.owner.transfer(msg.value);\n        agreement.completed = true;\n        agreement.inProgress = false;\n        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price, agreement.completed, agreement.inProgress);\n        PaymentLog(msg.value);\n    }\n}\n","sourcePath":"/Users/claudia/GraceHopper/Senior/Capstone/new-kids-on-the-blockchain/contracts/BarterAgreement.sol","ast":{"absolutePath":"/Users/claudia/GraceHopper/Senior/Capstone/new-kids-on-the-blockchain/contracts/BarterAgreement.sol","exportedSymbols":{"BarterAgreement":[215]},"id":216,"nodeType":"SourceUnit","nodes":[{"id":1,"literals":["solidity","^","0.4",".18"],"nodeType":"PragmaDirective","src":"0:24:0"},{"baseContracts":[],"contractDependencies":[],"contractKind":"contract","documentation":null,"fullyImplemented":true,"id":215,"linearizedBaseContracts":[215],"name":"BarterAgreement","nodeType":"ContractDefinition","nodes":[{"anonymous":false,"id":15,"name":"AgreementLog","nodeType":"EventDefinition","parameters":{"id":14,"nodeType":"ParameterList","parameters":[{"constant":false,"id":3,"indexed":false,"name":"owner","nodeType":"VariableDeclaration","scope":15,"src":"111:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":2,"name":"address","nodeType":"ElementaryTypeName","src":"111:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":5,"indexed":false,"name":"buyer","nodeType":"VariableDeclaration","scope":15,"src":"134:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":4,"name":"address","nodeType":"ElementaryTypeName","src":"134:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":7,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":15,"src":"157:10:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":6,"name":"uint256","nodeType":"ElementaryTypeName","src":"157:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":9,"indexed":false,"name":"price","nodeType":"VariableDeclaration","scope":15,"src":"177:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":8,"name":"uint256","nodeType":"ElementaryTypeName","src":"177:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":11,"indexed":false,"name":"completed","nodeType":"VariableDeclaration","scope":15,"src":"200:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":10,"name":"bool","nodeType":"ElementaryTypeName","src":"200:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":13,"indexed":false,"name":"inProgress","nodeType":"VariableDeclaration","scope":15,"src":"224:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":12,"name":"bool","nodeType":"ElementaryTypeName","src":"224:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"101:148:0"},"src":"83:167:0"},{"anonymous":false,"id":19,"name":"PaymentLog","nodeType":"EventDefinition","parameters":{"id":18,"nodeType":"ParameterList","parameters":[{"constant":false,"id":17,"indexed":false,"name":"value","nodeType":"VariableDeclaration","scope":19,"src":"281:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":16,"name":"uint256","nodeType":"ElementaryTypeName","src":"281:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"271:33:0"},"src":"255:50:0"},{"constant":false,"id":22,"name":"agreements","nodeType":"VariableDeclaration","scope":215,"src":"310:22:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"},"typeName":{"baseType":{"contractScope":null,"id":20,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"310:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":21,"length":null,"nodeType":"ArrayTypeName","src":"310:11:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage_ptr","typeString":"struct BarterAgreement.Agreement storage ref[] storage pointer"}},"value":null,"visibility":"internal"},{"canonicalName":"BarterAgreement.Agreement","id":33,"members":[{"constant":false,"id":24,"name":"owner","nodeType":"VariableDeclaration","scope":33,"src":"471:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":23,"name":"address","nodeType":"ElementaryTypeName","src":"471:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":26,"name":"buyer","nodeType":"VariableDeclaration","scope":33,"src":"494:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":25,"name":"address","nodeType":"ElementaryTypeName","src":"494:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":28,"name":"price","nodeType":"VariableDeclaration","scope":33,"src":"517:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":27,"name":"uint256","nodeType":"ElementaryTypeName","src":"517:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":30,"name":"completed","nodeType":"VariableDeclaration","scope":33,"src":"540:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":29,"name":"bool","nodeType":"ElementaryTypeName","src":"540:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":32,"name":"inProgress","nodeType":"VariableDeclaration","scope":33,"src":"564:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":31,"name":"bool","nodeType":"ElementaryTypeName","src":"564:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"name":"Agreement","nodeType":"StructDefinition","scope":215,"src":"444:142:0","visibility":"public"},{"body":{"id":64,"nodeType":"Block","src":"665:403:0","statements":[{"assignments":[39],"declarations":[{"constant":false,"id":39,"name":"id","nodeType":"VariableDeclaration","scope":65,"src":"675:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":38,"name":"uint","nodeType":"ElementaryTypeName","src":"675:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":53,"initialValue":{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":52,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":43,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"711:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":44,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"711:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"hexValue":"307830303030","id":45,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"723:6:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0000"},{"argumentTypes":null,"id":46,"name":"price","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":35,"src":"731:5:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"hexValue":"66616c7365","id":47,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"738:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},{"argumentTypes":null,"hexValue":"66616c7365","id":48,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"745:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":42,"name":"Agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":33,"src":"701:9:0","typeDescriptions":{"typeIdentifier":"t_type$_t_struct$_Agreement_$33_storage_ptr_$","typeString":"type(struct BarterAgreement.Agreement storage pointer)"}},"id":49,"isConstant":false,"isLValue":false,"isPure":false,"kind":"structConstructorCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"701:50:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_memory","typeString":"struct BarterAgreement.Agreement memory"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_struct$_Agreement_$33_memory","typeString":"struct BarterAgreement.Agreement memory"}],"expression":{"argumentTypes":null,"id":40,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"685:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":41,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"push","nodeType":"MemberAccess","referencedDeclaration":null,"src":"685:15:0","typeDescriptions":{"typeIdentifier":"t_function_arraypush_nonpayable$_t_struct$_Agreement_$33_storage_$returns$_t_uint256_$","typeString":"function (struct BarterAgreement.Agreement storage ref) returns (uint256)"}},"id":50,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"685:67:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"argumentTypes":null,"hexValue":"31","id":51,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"763:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_1_by_1","typeString":"int_const 1"},"value":"1"},"src":"685:79:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"675:89:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":55,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"787:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":56,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"787:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"hexValue":"307830303030","id":57,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"799:6:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0000"},{"argumentTypes":null,"id":58,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":39,"src":"807:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":59,"name":"price","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":35,"src":"811:5:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"hexValue":"66616c7365","id":60,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"818:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},{"argumentTypes":null,"hexValue":"66616c7365","id":61,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"825:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":54,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"774:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":62,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"774:57:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":63,"nodeType":"ExpressionStatement","src":"774:57:0"}]},"id":65,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"newAgreement","nodeType":"FunctionDefinition","parameters":{"id":36,"nodeType":"ParameterList","parameters":[{"constant":false,"id":35,"name":"price","nodeType":"VariableDeclaration","scope":65,"src":"643:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":34,"name":"uint256","nodeType":"ElementaryTypeName","src":"643:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"642:15:0"},"payable":false,"returnParameters":{"id":37,"nodeType":"ParameterList","parameters":[],"src":"665:0:0"},"scope":215,"src":"621:447:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":98,"nodeType":"Block","src":"1358:241:0","statements":[{"assignments":[81],"declarations":[{"constant":false,"id":81,"name":"agreement","nodeType":"VariableDeclaration","scope":99,"src":"1368:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":80,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"1368:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":85,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":82,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1398:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":84,"indexExpression":{"argumentTypes":null,"id":83,"name":"agreementID","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":67,"src":"1409:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"1398:23:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"1368:53:0"},{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":86,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1450:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":87,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"1450:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":88,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1477:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":89,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"1477:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":90,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1504:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":91,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"1504:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":92,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1531:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":93,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"1531:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":94,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1562:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":95,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"1562:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":96,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"1438:154:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_address_$_t_address_$_t_uint256_$_t_bool_$_t_bool_$","typeString":"tuple(address,address,uint256,bool,bool)"}},"functionReturnParameters":79,"id":97,"nodeType":"Return","src":"1431:161:0"}]},"id":99,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getAgreement","nodeType":"FunctionDefinition","parameters":{"id":68,"nodeType":"ParameterList","parameters":[{"constant":false,"id":67,"name":"agreementID","nodeType":"VariableDeclaration","scope":99,"src":"1204:16:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":66,"name":"uint","nodeType":"ElementaryTypeName","src":"1204:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1203:18:0"},"payable":false,"returnParameters":{"id":79,"nodeType":"ParameterList","parameters":[{"constant":false,"id":70,"name":"owner","nodeType":"VariableDeclaration","scope":99,"src":"1250:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":69,"name":"address","nodeType":"ElementaryTypeName","src":"1250:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":72,"name":"buyer","nodeType":"VariableDeclaration","scope":99,"src":"1271:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":71,"name":"address","nodeType":"ElementaryTypeName","src":"1271:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":74,"name":"price","nodeType":"VariableDeclaration","scope":99,"src":"1292:10:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":73,"name":"uint","nodeType":"ElementaryTypeName","src":"1292:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":76,"name":"completed","nodeType":"VariableDeclaration","scope":99,"src":"1310:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":75,"name":"bool","nodeType":"ElementaryTypeName","src":"1310:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":78,"name":"inProgress","nodeType":"VariableDeclaration","scope":99,"src":"1332:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":77,"name":"bool","nodeType":"ElementaryTypeName","src":"1332:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"1242:111:0"},"scope":215,"src":"1182:417:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":107,"nodeType":"Block","src":"1731:41:0","statements":[{"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":104,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1748:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":105,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1748:17:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":103,"id":106,"nodeType":"Return","src":"1741:24:0"}]},"id":108,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getAgreementLength","nodeType":"FunctionDefinition","parameters":{"id":100,"nodeType":"ParameterList","parameters":[],"src":"1694:2:0"},"payable":false,"returnParameters":{"id":103,"nodeType":"ParameterList","parameters":[{"constant":false,"id":102,"name":"length","nodeType":"VariableDeclaration","scope":108,"src":"1718:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":101,"name":"uint","nodeType":"ElementaryTypeName","src":"1718:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1717:13:0"},"scope":215,"src":"1667:105:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":153,"nodeType":"Block","src":"1843:302:0","statements":[{"assignments":[114],"declarations":[{"constant":false,"id":114,"name":"agreement","nodeType":"VariableDeclaration","scope":154,"src":"1853:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":113,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"1853:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":118,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":115,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1883:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":117,"indexExpression":{"argumentTypes":null,"id":116,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":110,"src":"1894:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"1883:14:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"1853:44:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_bool","typeString":"bool"},"id":123,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":120,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1915:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":121,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"1915:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"BinaryOperation","operator":"!=","rightExpression":{"argumentTypes":null,"hexValue":"74727565","id":122,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"1938:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"1915:27:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":119,"name":"require","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":310,"src":"1907:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":124,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1907:36:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":125,"nodeType":"ExpressionStatement","src":"1907:36:0"},{"expression":{"argumentTypes":null,"id":131,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":126,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1953:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":128,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"1953:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":129,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"1971:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":130,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1971:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"1953:28:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":132,"nodeType":"ExpressionStatement","src":"1953:28:0"},{"expression":{"argumentTypes":null,"id":137,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":133,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1991:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":135,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"1991:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"74727565","id":136,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2014:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"1991:27:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":138,"nodeType":"ExpressionStatement","src":"1991:27:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":140,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2041:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":141,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2041:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":142,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2058:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":143,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2058:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":144,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":110,"src":"2075:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":145,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2079:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":146,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"2079:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":147,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2096:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":148,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2096:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":149,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2117:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":150,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2117:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":139,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"2028:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":151,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2028:110:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":152,"nodeType":"ExpressionStatement","src":"2028:110:0"}]},"id":154,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"updateAgreement","nodeType":"FunctionDefinition","parameters":{"id":111,"nodeType":"ParameterList","parameters":[{"constant":false,"id":110,"name":"id","nodeType":"VariableDeclaration","scope":154,"src":"1827:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":109,"name":"uint","nodeType":"ElementaryTypeName","src":"1827:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1826:9:0"},"payable":false,"returnParameters":{"id":112,"nodeType":"ParameterList","parameters":[],"src":"1843:0:0"},"scope":215,"src":"1801:344:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":213,"nodeType":"Block","src":"2226:379:0","statements":[{"assignments":[160],"declarations":[{"constant":false,"id":160,"name":"agreement","nodeType":"VariableDeclaration","scope":214,"src":"2236:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":159,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"2236:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":164,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":161,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"2266:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":163,"indexExpression":{"argumentTypes":null,"id":162,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":156,"src":"2277:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"2266:14:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"2236:44:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_address","typeString":"address"},"id":170,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":166,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2298:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":167,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2298:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"BinaryOperation","operator":"==","rightExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":168,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"2317:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":169,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2317:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"2298:29:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":165,"name":"require","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":310,"src":"2290:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":171,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2290:38:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":172,"nodeType":"ExpressionStatement","src":"2290:38:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":178,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"2363:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":179,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"value","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2363:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":173,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2338:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":176,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2338:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":177,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"transfer","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2338:24:0","typeDescriptions":{"typeIdentifier":"t_function_transfer_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":180,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2338:35:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":181,"nodeType":"ExpressionStatement","src":"2338:35:0"},{"expression":{"argumentTypes":null,"id":186,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":182,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2383:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":184,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2383:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"74727565","id":185,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2405:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"2383:26:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":187,"nodeType":"ExpressionStatement","src":"2383:26:0"},{"expression":{"argumentTypes":null,"id":192,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":188,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2419:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":190,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2419:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"66616c7365","id":191,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2442:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},"src":"2419:28:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":193,"nodeType":"ExpressionStatement","src":"2419:28:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":195,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2470:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":196,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2470:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":197,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2487:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":198,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2487:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":199,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":156,"src":"2504:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":200,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2508:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":201,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"2508:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":202,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2525:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":203,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2525:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":204,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2546:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":205,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2546:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":194,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"2457:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":206,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2457:110:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":207,"nodeType":"ExpressionStatement","src":"2457:110:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":209,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"2588:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":210,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"value","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2588:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":208,"name":"PaymentLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":19,"src":"2577:10:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":211,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2577:21:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":212,"nodeType":"ExpressionStatement","src":"2577:21:0"}]},"id":214,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"completeAgreement","nodeType":"FunctionDefinition","parameters":{"id":157,"nodeType":"ParameterList","parameters":[{"constant":false,"id":156,"name":"id","nodeType":"VariableDeclaration","scope":214,"src":"2202:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":155,"name":"uint","nodeType":"ElementaryTypeName","src":"2202:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2201:9:0"},"payable":true,"returnParameters":{"id":158,"nodeType":"ParameterList","parameters":[],"src":"2226:0:0"},"scope":215,"src":"2175:430:0","stateMutability":"payable","superFunction":null,"visibility":"public"}],"scope":216,"src":"52:2555:0"}],"src":"0:2608:0"},"legacyAST":{"absolutePath":"/Users/claudia/GraceHopper/Senior/Capstone/new-kids-on-the-blockchain/contracts/BarterAgreement.sol","exportedSymbols":{"BarterAgreement":[215]},"id":216,"nodeType":"SourceUnit","nodes":[{"id":1,"literals":["solidity","^","0.4",".18"],"nodeType":"PragmaDirective","src":"0:24:0"},{"baseContracts":[],"contractDependencies":[],"contractKind":"contract","documentation":null,"fullyImplemented":true,"id":215,"linearizedBaseContracts":[215],"name":"BarterAgreement","nodeType":"ContractDefinition","nodes":[{"anonymous":false,"id":15,"name":"AgreementLog","nodeType":"EventDefinition","parameters":{"id":14,"nodeType":"ParameterList","parameters":[{"constant":false,"id":3,"indexed":false,"name":"owner","nodeType":"VariableDeclaration","scope":15,"src":"111:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":2,"name":"address","nodeType":"ElementaryTypeName","src":"111:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":5,"indexed":false,"name":"buyer","nodeType":"VariableDeclaration","scope":15,"src":"134:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":4,"name":"address","nodeType":"ElementaryTypeName","src":"134:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":7,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":15,"src":"157:10:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":6,"name":"uint256","nodeType":"ElementaryTypeName","src":"157:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":9,"indexed":false,"name":"price","nodeType":"VariableDeclaration","scope":15,"src":"177:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":8,"name":"uint256","nodeType":"ElementaryTypeName","src":"177:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":11,"indexed":false,"name":"completed","nodeType":"VariableDeclaration","scope":15,"src":"200:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":10,"name":"bool","nodeType":"ElementaryTypeName","src":"200:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":13,"indexed":false,"name":"inProgress","nodeType":"VariableDeclaration","scope":15,"src":"224:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":12,"name":"bool","nodeType":"ElementaryTypeName","src":"224:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"101:148:0"},"src":"83:167:0"},{"anonymous":false,"id":19,"name":"PaymentLog","nodeType":"EventDefinition","parameters":{"id":18,"nodeType":"ParameterList","parameters":[{"constant":false,"id":17,"indexed":false,"name":"value","nodeType":"VariableDeclaration","scope":19,"src":"281:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":16,"name":"uint256","nodeType":"ElementaryTypeName","src":"281:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"271:33:0"},"src":"255:50:0"},{"constant":false,"id":22,"name":"agreements","nodeType":"VariableDeclaration","scope":215,"src":"310:22:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"},"typeName":{"baseType":{"contractScope":null,"id":20,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"310:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":21,"length":null,"nodeType":"ArrayTypeName","src":"310:11:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage_ptr","typeString":"struct BarterAgreement.Agreement storage ref[] storage pointer"}},"value":null,"visibility":"internal"},{"canonicalName":"BarterAgreement.Agreement","id":33,"members":[{"constant":false,"id":24,"name":"owner","nodeType":"VariableDeclaration","scope":33,"src":"471:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":23,"name":"address","nodeType":"ElementaryTypeName","src":"471:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":26,"name":"buyer","nodeType":"VariableDeclaration","scope":33,"src":"494:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":25,"name":"address","nodeType":"ElementaryTypeName","src":"494:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":28,"name":"price","nodeType":"VariableDeclaration","scope":33,"src":"517:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":27,"name":"uint256","nodeType":"ElementaryTypeName","src":"517:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":30,"name":"completed","nodeType":"VariableDeclaration","scope":33,"src":"540:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":29,"name":"bool","nodeType":"ElementaryTypeName","src":"540:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":32,"name":"inProgress","nodeType":"VariableDeclaration","scope":33,"src":"564:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":31,"name":"bool","nodeType":"ElementaryTypeName","src":"564:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"name":"Agreement","nodeType":"StructDefinition","scope":215,"src":"444:142:0","visibility":"public"},{"body":{"id":64,"nodeType":"Block","src":"665:403:0","statements":[{"assignments":[39],"declarations":[{"constant":false,"id":39,"name":"id","nodeType":"VariableDeclaration","scope":65,"src":"675:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":38,"name":"uint","nodeType":"ElementaryTypeName","src":"675:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":53,"initialValue":{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":52,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":43,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"711:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":44,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"711:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"hexValue":"307830303030","id":45,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"723:6:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0000"},{"argumentTypes":null,"id":46,"name":"price","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":35,"src":"731:5:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"hexValue":"66616c7365","id":47,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"738:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},{"argumentTypes":null,"hexValue":"66616c7365","id":48,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"745:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":42,"name":"Agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":33,"src":"701:9:0","typeDescriptions":{"typeIdentifier":"t_type$_t_struct$_Agreement_$33_storage_ptr_$","typeString":"type(struct BarterAgreement.Agreement storage pointer)"}},"id":49,"isConstant":false,"isLValue":false,"isPure":false,"kind":"structConstructorCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"701:50:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_memory","typeString":"struct BarterAgreement.Agreement memory"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_struct$_Agreement_$33_memory","typeString":"struct BarterAgreement.Agreement memory"}],"expression":{"argumentTypes":null,"id":40,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"685:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":41,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"push","nodeType":"MemberAccess","referencedDeclaration":null,"src":"685:15:0","typeDescriptions":{"typeIdentifier":"t_function_arraypush_nonpayable$_t_struct$_Agreement_$33_storage_$returns$_t_uint256_$","typeString":"function (struct BarterAgreement.Agreement storage ref) returns (uint256)"}},"id":50,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"685:67:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"argumentTypes":null,"hexValue":"31","id":51,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"763:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_1_by_1","typeString":"int_const 1"},"value":"1"},"src":"685:79:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"675:89:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":55,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"787:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":56,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"787:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"hexValue":"307830303030","id":57,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"799:6:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0000"},{"argumentTypes":null,"id":58,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":39,"src":"807:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":59,"name":"price","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":35,"src":"811:5:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"hexValue":"66616c7365","id":60,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"818:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},{"argumentTypes":null,"hexValue":"66616c7365","id":61,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"825:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":54,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"774:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":62,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"774:57:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":63,"nodeType":"ExpressionStatement","src":"774:57:0"}]},"id":65,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"newAgreement","nodeType":"FunctionDefinition","parameters":{"id":36,"nodeType":"ParameterList","parameters":[{"constant":false,"id":35,"name":"price","nodeType":"VariableDeclaration","scope":65,"src":"643:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":34,"name":"uint256","nodeType":"ElementaryTypeName","src":"643:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"642:15:0"},"payable":false,"returnParameters":{"id":37,"nodeType":"ParameterList","parameters":[],"src":"665:0:0"},"scope":215,"src":"621:447:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":98,"nodeType":"Block","src":"1358:241:0","statements":[{"assignments":[81],"declarations":[{"constant":false,"id":81,"name":"agreement","nodeType":"VariableDeclaration","scope":99,"src":"1368:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":80,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"1368:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":85,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":82,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1398:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":84,"indexExpression":{"argumentTypes":null,"id":83,"name":"agreementID","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":67,"src":"1409:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"1398:23:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"1368:53:0"},{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":86,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1450:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":87,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"1450:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":88,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1477:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":89,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"1477:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":90,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1504:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":91,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"1504:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":92,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1531:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":93,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"1531:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":94,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1562:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":95,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"1562:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":96,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"1438:154:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_address_$_t_address_$_t_uint256_$_t_bool_$_t_bool_$","typeString":"tuple(address,address,uint256,bool,bool)"}},"functionReturnParameters":79,"id":97,"nodeType":"Return","src":"1431:161:0"}]},"id":99,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getAgreement","nodeType":"FunctionDefinition","parameters":{"id":68,"nodeType":"ParameterList","parameters":[{"constant":false,"id":67,"name":"agreementID","nodeType":"VariableDeclaration","scope":99,"src":"1204:16:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":66,"name":"uint","nodeType":"ElementaryTypeName","src":"1204:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1203:18:0"},"payable":false,"returnParameters":{"id":79,"nodeType":"ParameterList","parameters":[{"constant":false,"id":70,"name":"owner","nodeType":"VariableDeclaration","scope":99,"src":"1250:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":69,"name":"address","nodeType":"ElementaryTypeName","src":"1250:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":72,"name":"buyer","nodeType":"VariableDeclaration","scope":99,"src":"1271:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":71,"name":"address","nodeType":"ElementaryTypeName","src":"1271:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":74,"name":"price","nodeType":"VariableDeclaration","scope":99,"src":"1292:10:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":73,"name":"uint","nodeType":"ElementaryTypeName","src":"1292:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":76,"name":"completed","nodeType":"VariableDeclaration","scope":99,"src":"1310:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":75,"name":"bool","nodeType":"ElementaryTypeName","src":"1310:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":78,"name":"inProgress","nodeType":"VariableDeclaration","scope":99,"src":"1332:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":77,"name":"bool","nodeType":"ElementaryTypeName","src":"1332:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"1242:111:0"},"scope":215,"src":"1182:417:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":107,"nodeType":"Block","src":"1731:41:0","statements":[{"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":104,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1748:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":105,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1748:17:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":103,"id":106,"nodeType":"Return","src":"1741:24:0"}]},"id":108,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getAgreementLength","nodeType":"FunctionDefinition","parameters":{"id":100,"nodeType":"ParameterList","parameters":[],"src":"1694:2:0"},"payable":false,"returnParameters":{"id":103,"nodeType":"ParameterList","parameters":[{"constant":false,"id":102,"name":"length","nodeType":"VariableDeclaration","scope":108,"src":"1718:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":101,"name":"uint","nodeType":"ElementaryTypeName","src":"1718:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1717:13:0"},"scope":215,"src":"1667:105:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":153,"nodeType":"Block","src":"1843:302:0","statements":[{"assignments":[114],"declarations":[{"constant":false,"id":114,"name":"agreement","nodeType":"VariableDeclaration","scope":154,"src":"1853:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":113,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"1853:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":118,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":115,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1883:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":117,"indexExpression":{"argumentTypes":null,"id":116,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":110,"src":"1894:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"1883:14:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"1853:44:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_bool","typeString":"bool"},"id":123,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":120,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1915:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":121,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"1915:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"BinaryOperation","operator":"!=","rightExpression":{"argumentTypes":null,"hexValue":"74727565","id":122,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"1938:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"1915:27:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":119,"name":"require","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":310,"src":"1907:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":124,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1907:36:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":125,"nodeType":"ExpressionStatement","src":"1907:36:0"},{"expression":{"argumentTypes":null,"id":131,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":126,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1953:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":128,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"1953:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":129,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"1971:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":130,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1971:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"1953:28:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":132,"nodeType":"ExpressionStatement","src":"1953:28:0"},{"expression":{"argumentTypes":null,"id":137,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":133,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1991:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":135,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"1991:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"74727565","id":136,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2014:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"1991:27:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":138,"nodeType":"ExpressionStatement","src":"1991:27:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":140,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2041:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":141,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2041:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":142,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2058:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":143,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2058:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":144,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":110,"src":"2075:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":145,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2079:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":146,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"2079:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":147,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2096:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":148,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2096:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":149,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2117:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":150,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2117:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":139,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"2028:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":151,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2028:110:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":152,"nodeType":"ExpressionStatement","src":"2028:110:0"}]},"id":154,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"updateAgreement","nodeType":"FunctionDefinition","parameters":{"id":111,"nodeType":"ParameterList","parameters":[{"constant":false,"id":110,"name":"id","nodeType":"VariableDeclaration","scope":154,"src":"1827:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":109,"name":"uint","nodeType":"ElementaryTypeName","src":"1827:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1826:9:0"},"payable":false,"returnParameters":{"id":112,"nodeType":"ParameterList","parameters":[],"src":"1843:0:0"},"scope":215,"src":"1801:344:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":213,"nodeType":"Block","src":"2226:379:0","statements":[{"assignments":[160],"declarations":[{"constant":false,"id":160,"name":"agreement","nodeType":"VariableDeclaration","scope":214,"src":"2236:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":159,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"2236:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":164,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":161,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"2266:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":163,"indexExpression":{"argumentTypes":null,"id":162,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":156,"src":"2277:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"2266:14:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"2236:44:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_address","typeString":"address"},"id":170,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":166,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2298:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":167,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2298:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"BinaryOperation","operator":"==","rightExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":168,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"2317:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":169,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2317:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"2298:29:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":165,"name":"require","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":310,"src":"2290:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":171,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2290:38:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":172,"nodeType":"ExpressionStatement","src":"2290:38:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":178,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"2363:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":179,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"value","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2363:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":173,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2338:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":176,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2338:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":177,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"transfer","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2338:24:0","typeDescriptions":{"typeIdentifier":"t_function_transfer_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":180,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2338:35:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":181,"nodeType":"ExpressionStatement","src":"2338:35:0"},{"expression":{"argumentTypes":null,"id":186,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":182,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2383:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":184,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2383:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"74727565","id":185,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2405:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"2383:26:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":187,"nodeType":"ExpressionStatement","src":"2383:26:0"},{"expression":{"argumentTypes":null,"id":192,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":188,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2419:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":190,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2419:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"66616c7365","id":191,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2442:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},"src":"2419:28:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":193,"nodeType":"ExpressionStatement","src":"2419:28:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":195,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2470:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":196,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2470:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":197,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2487:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":198,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2487:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":199,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":156,"src":"2504:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":200,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2508:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":201,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"2508:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":202,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2525:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":203,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2525:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":204,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2546:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":205,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2546:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":194,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"2457:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":206,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2457:110:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":207,"nodeType":"ExpressionStatement","src":"2457:110:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":209,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":307,"src":"2588:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":210,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"value","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2588:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":208,"name":"PaymentLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":19,"src":"2577:10:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":211,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2577:21:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":212,"nodeType":"ExpressionStatement","src":"2577:21:0"}]},"id":214,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"completeAgreement","nodeType":"FunctionDefinition","parameters":{"id":157,"nodeType":"ParameterList","parameters":[{"constant":false,"id":156,"name":"id","nodeType":"VariableDeclaration","scope":214,"src":"2202:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":155,"name":"uint","nodeType":"ElementaryTypeName","src":"2202:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2201:9:0"},"payable":true,"returnParameters":{"id":158,"nodeType":"ParameterList","parameters":[],"src":"2226:0:0"},"scope":215,"src":"2175:430:0","stateMutability":"payable","superFunction":null,"visibility":"public"}],"scope":216,"src":"52:2555:0"}],"src":"0:2608:0"},"compiler":{"name":"solc","version":"0.4.19+commit.c4cbbb05.Emscripten.clang"},"networks":{"4":{"events":{},"links":{},"address":"0x6e98b59b045f967a6c2cbe9932b8b6ea4bb746be","transactionHash":"0x49e086d092156ac5192ab568da68be8c5b1ac2ff5390b6813e6f09f26473278b"},"1521408462968":{"events":{},"links":{},"address":"0x8f0eb5b1db89be52ee074970ea0b06d9b13d57b5","transactionHash":"0xf7ce37d50f2f11f2a39189191f97eb45fd5f35ba91f85d48c840eb031c39b4ff"},"1521472295805":{"events":{},"links":{},"address":"0x88e7d07a69070acefffa723969119fbc83309d15","transactionHash":"0xf7ce37d50f2f11f2a39189191f97eb45fd5f35ba91f85d48c840eb031c39b4ff"},"1521476249415":{"events":{},"links":{},"address":"0xc5a5190abb538cba46b4c7d2a729a518d208507f","transactionHash":"0xf7ce37d50f2f11f2a39189191f97eb45fd5f35ba91f85d48c840eb031c39b4ff"},"1521490126819":{"events":{},"links":{},"address":"0xd8b77c9fd362d357425549590de816b8a204be7c","transactionHash":"0xf7ce37d50f2f11f2a39189191f97eb45fd5f35ba91f85d48c840eb031c39b4ff"},"1521498730249":{"events":{},"links":{},"address":"0x61603f1f27e520421f10c44c02ea4a9e758345ec","transactionHash":"0x90affd9e20e57cab27fe09d2c7cab17a3e5c14835763d82486ff88bcee329d28"},"1521511482370":{"events":{},"links":{},"address":"0xf52e5eede2a3f432733e1558843fa5865409d305","transactionHash":"0x9747a8bd6af2699ce42afdf459891314760354a12462d2f936afc7c6a6ec5aa6"},"1521520390005":{"events":{},"links":{},"address":"0x57f5dc550f5517dd8f9600c6add27fd487521872","transactionHash":"0x4651fde95ec2d48e0b61c50400146499efe8d96be25eaf7305121bce8d4526d8"},"1521558545002":{"events":{},"links":{},"address":"0x57f5dc550f5517dd8f9600c6add27fd487521872","transactionHash":"0x4651fde95ec2d48e0b61c50400146499efe8d96be25eaf7305121bce8d4526d8"},"1521588301877":{"events":{},"links":{},"address":"0x57f5dc550f5517dd8f9600c6add27fd487521872","transactionHash":"0x7e51b4185ac3b070ce9dd8988143e6effe6eee799246939a3cc4d81231264156"},"1521625737162":{"events":{},"links":{},"address":"0x57f5dc550f5517dd8f9600c6add27fd487521872","transactionHash":"0x7e51b4185ac3b070ce9dd8988143e6effe6eee799246939a3cc4d81231264156"},"1521626901790":{"events":{},"links":{},"address":"0xcdc99cab376b8ff8680189717d3ee0f3fea16945","transactionHash":"0xcbb5233d55a391f5e581a1ac09d56a93634cc7bc11011920f90804346e8f0314"},"1521730642726":{"events":{},"links":{},"address":"0xf66360efbdf243a492d0c7b64e4d649253996efc","transactionHash":"0x59dfa675ca63830b02b87164e9d0f7d4debc030c9db5369c2891a544f56f96cf"},"1521732394475":{"events":{},"links":{},"address":"0x163ae44ff6f646444d287403640bbc07d057b637","transactionHash":"0x59dfa675ca63830b02b87164e9d0f7d4debc030c9db5369c2891a544f56f96cf"},"1521734868489":{"events":{},"links":{},"address":"0xfdda06916b5b6b263d52fb0cdd6865426b403537","transactionHash":"0x08b7605beb6c0275ebea7c269dcf439954cc67bbf47d51eefcd0f2950329de1e"},"1521767842061":{"events":{},"links":{},"address":"0x1ea93d18a08c27ca6495b52416c26bfc61b0e78b","transactionHash":"0x59dfa675ca63830b02b87164e9d0f7d4debc030c9db5369c2891a544f56f96cf"},"1521815604323":{"events":{},"links":{},"address":"0x2ed0b467e6b0c584904b8ea5a0426aaa430ab567","transactionHash":"0x59dfa675ca63830b02b87164e9d0f7d4debc030c9db5369c2891a544f56f96cf"},"1521931481197":{"events":{},"links":{},"address":"0x1a4fc0e231da7f5d453ea44392f497095d06934b","transactionHash":"0x7aa2983647dcd76ce2952e5a38ed934e0a4f3cbff1b005c2ca38131eb6fd09bb"},"1521932207958":{"events":{},"links":{},"address":"0x588ca4177a6f433d0497ff0caf6d77199baf0cab","transactionHash":"0xa103fc392be435ca579fbd2e5ad6d4bcdfd2a7b9d5925d1cea75cbc5db173cb1"}},"schemaVersion":"2.0.0","updatedAt":"2018-03-25T02:58:47.839Z"};
+module.exports = {"contractName":"BarterAgreement","abi":[{"anonymous":false,"inputs":[{"indexed":false,"name":"owner","type":"address"},{"indexed":false,"name":"buyer","type":"address"},{"indexed":false,"name":"id","type":"uint256"},{"indexed":false,"name":"price","type":"uint256"},{"indexed":false,"name":"completed","type":"bool"},{"indexed":false,"name":"inProgress","type":"bool"}],"name":"AgreementLog","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"value","type":"uint256"}],"name":"PaymentLog","type":"event"},{"constant":false,"inputs":[{"name":"price","type":"uint256"}],"name":"newAgreement","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"agreementID","type":"uint256"}],"name":"getAgreement","outputs":[{"name":"owner","type":"address"},{"name":"buyer","type":"address"},{"name":"price","type":"uint256"},{"name":"completed","type":"bool"},{"name":"inProgress","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getAgreementLength","outputs":[{"name":"length","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"id","type":"uint256"}],"name":"updateAgreement","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"id","type":"uint256"}],"name":"completeAgreement","outputs":[],"payable":true,"stateMutability":"payable","type":"function"}],"bytecode":"0x6060604052341561000f57600080fd5b6109d08061001e6000396000f30060606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634f9f6fe6146100725780638458cf8e14610125578063ec4590831461013d578063f64e6b7614610160578063f685541b14610189575b600080fd5b341561007d57600080fd5b61009360048080359060200190919050506101ac565b604051808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183151515158152602001821515151581526020019550505050505060405180910390f35b61013b600480803590602001909190505061025b565b005b341561014857600080fd5b61015e60048080359060200190919050506104df565b005b341561016b57600080fd5b6101736106f3565b6040518082815260200191505060405180910390f35b341561019457600080fd5b6101aa60048080359060200190919050506106ff565b005b6000806000806000806000878154811015156101c457fe5b906000526020600020906004020190508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168160010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1682600201548360030160009054906101000a900460ff168460030160019054906101000a900460ff16955095509550955095505091939590929450565b6000808281548110151561026b57fe5b906000526020600020906004020190503373ffffffffffffffffffffffffffffffffffffffff168160010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156102d957600080fd5b8060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f19350505050151561033d57600080fd5b60018160030160006101000a81548160ff02191690831515021790555060008160030160016101000a81548160ff0219169083151502179055507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f728160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168260010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168484600201548560030160009054906101000a900460ff168660030160019054906101000a900460ff16604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a17f6e5e738ccc49ad7d5fb6e52e1e49ba8dbad47958a84c5784119d8660e59f0106346040518082815260200191505060405180910390a15050565b60006001600080548060010182816104f791906108d5565b9160005260206000209060040201600060a0604051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200187815260200160001515815260200160001515815250909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506040820151816002015560608201518160030160006101000a81548160ff02191690831515021790555060808201518160030160016101000a81548160ff02191690831515021790555050500390507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f723360008385600080604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a15050565b60008080549050905090565b6000808281548110151561070f57fe5b90600052602060002090600402019050600115158160030160009054906101000a900460ff1615151415151561074457600080fd5b338160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060018160030160016101000a81548160ff0219169083151502179055507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f728160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168260010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168484600201548560030160009054906101000a900460ff168660030160019054906101000a900460ff16604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a15050565b815481835581811511610902576004028160040283600052602060002091820191016109019190610907565b5b505050565b6109a191905b8082111561099d57600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff02191690556001820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560028201600090556003820160006101000a81549060ff02191690556003820160016101000a81549060ff02191690555060040161090d565b5090565b905600a165627a7a72305820709b28337c887202099c80413650831d529e8f9b69d752b82a11ac637b39db350029","deployedBytecode":"0x60606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634f9f6fe6146100725780638458cf8e14610125578063ec4590831461013d578063f64e6b7614610160578063f685541b14610189575b600080fd5b341561007d57600080fd5b61009360048080359060200190919050506101ac565b604051808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183151515158152602001821515151581526020019550505050505060405180910390f35b61013b600480803590602001909190505061025b565b005b341561014857600080fd5b61015e60048080359060200190919050506104df565b005b341561016b57600080fd5b6101736106f3565b6040518082815260200191505060405180910390f35b341561019457600080fd5b6101aa60048080359060200190919050506106ff565b005b6000806000806000806000878154811015156101c457fe5b906000526020600020906004020190508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168160010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1682600201548360030160009054906101000a900460ff168460030160019054906101000a900460ff16955095509550955095505091939590929450565b6000808281548110151561026b57fe5b906000526020600020906004020190503373ffffffffffffffffffffffffffffffffffffffff168160010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156102d957600080fd5b8060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f19350505050151561033d57600080fd5b60018160030160006101000a81548160ff02191690831515021790555060008160030160016101000a81548160ff0219169083151502179055507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f728160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168260010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168484600201548560030160009054906101000a900460ff168660030160019054906101000a900460ff16604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a17f6e5e738ccc49ad7d5fb6e52e1e49ba8dbad47958a84c5784119d8660e59f0106346040518082815260200191505060405180910390a15050565b60006001600080548060010182816104f791906108d5565b9160005260206000209060040201600060a0604051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200187815260200160001515815260200160001515815250909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506040820151816002015560608201518160030160006101000a81548160ff02191690831515021790555060808201518160030160016101000a81548160ff02191690831515021790555050500390507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f723360008385600080604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a15050565b60008080549050905090565b6000808281548110151561070f57fe5b90600052602060002090600402019050600115158160030160009054906101000a900460ff1615151415151561074457600080fd5b338160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060018160030160016101000a81548160ff0219169083151502179055507fb87aa4e3b62e0e2103581aff766467cb9be1a4e8d01b08adf77db2c25f098f728160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168260010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168484600201548560030160009054906101000a900460ff168660030160019054906101000a900460ff16604051808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018481526020018315151515815260200182151515158152602001965050505050505060405180910390a15050565b815481835581811511610902576004028160040283600052602060002091820191016109019190610907565b5b505050565b6109a191905b8082111561099d57600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff02191690556001820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560028201600090556003820160006101000a81549060ff02191690556003820160016101000a81549060ff02191690555060040161090d565b5090565b905600a165627a7a72305820709b28337c887202099c80413650831d529e8f9b69d752b82a11ac637b39db350029","sourceMap":"52:2555:0:-;;;;;;;;;;;;;;;;;","deployedSourceMap":"52:2555:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1182:417;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2175:430;;;;;;;;;;;;;;;;;;621:447;;;;;;;;;;;;;;;;;;;;;;;;;;1667:105;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1801:344;;;;;;;;;;;;;;;;;;;;;;;;;;1182:417;1250:13;1271;1292:10;1310:14;1332:15;1368:27;1398:10;1409:11;1398:23;;;;;;;;;;;;;;;;;;;;1368:53;;1450:9;:15;;;;;;;;;;;;1477:9;:15;;;;;;;;;;;;1504:9;:15;;;1531:9;:19;;;;;;;;;;;;1562:9;:20;;;;;;;;;;;;1431:161;;;;;;;;;;1182:417;;;;;;;;:::o;2175:430::-;2236:27;2266:10;2277:2;2266:14;;;;;;;;;;;;;;;;;;;;2236:44;;2317:10;2298:29;;:9;:15;;;;;;;;;;;;:29;;;2290:38;;;;;;;;2338:9;:15;;;;;;;;;;;;:24;;:35;2363:9;2338:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2405:4;2383:9;:19;;;:26;;;;;;;;;;;;;;;;;;2442:5;2419:9;:20;;;:28;;;;;;;;;;;;;;;;;;2457:110;2470:9;:15;;;;;;;;;;;;2487:9;:15;;;;;;;;;;;;2504:2;2508:9;:15;;;2525:9;:19;;;;;;;;;;;;2546:9;:20;;;;;;;;;;;;2457:110;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2577:21;2588:9;2577:21;;;;;;;;;;;;;;;;;;2175:430;;:::o;621:447::-;675:7;763:1;685:10;:67;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;701:50;;;;;;;;;711:10;701:50;;;;;;723:6;701:50;;;;;;731:5;701:50;;;;738:5;701:50;;;;;;745:5;701:50;;;;;685:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:79;675:89;;774:57;787:10;799:6;807:2;811:5;818;825;774:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;621:447;;:::o;1667:105::-;1718:11;1748:10;:17;;;;1741:24;;1667:105;:::o;1801:344::-;1853:27;1883:10;1894:2;1883:14;;;;;;;;;;;;;;;;;;;;1853:44;;1938:4;1915:27;;:9;:19;;;;;;;;;;;;:27;;;;1907:36;;;;;;;;1971:10;1953:9;:15;;;:28;;;;;;;;;;;;;;;;;;2014:4;1991:9;:20;;;:27;;;;;;;;;;;;;;;;;;2028:110;2041:9;:15;;;;;;;;;;;;2058:9;:15;;;;;;;;;;;;2075:2;2079:9;:15;;;2096:9;:19;;;;;;;;;;;;2117:9;:20;;;;;;;;;;;;2028:110;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1801:344;;:::o;52:2555::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o","source":"pragma solidity ^0.4.18;\n// checked syntax in remix\ncontract BarterAgreement {\n    event AgreementLog(\n        address owner,\n        address buyer,\n        uint256 id,\n        uint256 price,\n        bool completed,\n        bool inProgress\n        );\n    event PaymentLog(\n        uint256 value\n        );\n    Agreement[] agreements;\n    // storage Agreement[] agreements; //\"Storage\" was causing errors\n    //event console(address sender)\n    struct Agreement {\n        address owner;\n        address buyer;\n        uint256 price;\n        bool completed;\n        bool inProgress;\n    }\n    // Create a new agreement\n    function newAgreement(uint256 price) public {\n        uint id = agreements.push(Agreement(msg.sender, 0x0000, price, false, false))\n        - 1;\n        AgreementLog(msg.sender, 0x0000, id, price, false, false);\n        //capital A agreement returns 1 instead of 0 because it's the next open spot\n        //Agreement invoked would return a new instance of that obj\n        // return id;\n        //explore returning agreements.length instead?\n    }\n    // Get existing agreement by ID. We can't return a struct so we can to return each data value one by one\n    function getAgreement(uint agreementID) public view returns (\n      address owner,\n      address buyer,\n      uint price,\n      bool completed,\n      bool inProgress\n    )\n    {\n        Agreement storage agreement = agreements[agreementID];\n        return (\n          agreement.owner,\n          agreement.buyer,\n          agreement.price,\n          agreement.completed,\n          agreement.inProgress\n        );\n    }\n    //Return number of agreements in storage on the blockchain\n    function getAgreementLength() public view returns (uint length) {\n        return agreements.length;\n    }\n    // Update agreement\n    function updateAgreement (uint id) public {\n        Agreement storage agreement = agreements[id];\n        require(agreement.completed != true);\n        agreement.buyer = msg.sender;\n        agreement.inProgress = true;\n        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price, agreement.completed, agreement.inProgress);\n    }\n    //Complete agreement\n    function completeAgreement(uint id) public payable {\n        Agreement storage agreement = agreements[id];\n        require(agreement.buyer == msg.sender);\n        agreement.owner.transfer(msg.value);\n        agreement.completed = true;\n        agreement.inProgress = false;\n        AgreementLog(agreement.owner, agreement.buyer, id, agreement.price, agreement.completed, agreement.inProgress);\n        PaymentLog(msg.value);\n    }\n}\n","sourcePath":"/Users/manj/Desktop/GHA/Senior/blockchain/contracts/BarterAgreement.sol","ast":{"absolutePath":"/Users/manj/Desktop/GHA/Senior/blockchain/contracts/BarterAgreement.sol","exportedSymbols":{"BarterAgreement":[215]},"id":216,"nodeType":"SourceUnit","nodes":[{"id":1,"literals":["solidity","^","0.4",".18"],"nodeType":"PragmaDirective","src":"0:24:0"},{"baseContracts":[],"contractDependencies":[],"contractKind":"contract","documentation":null,"fullyImplemented":true,"id":215,"linearizedBaseContracts":[215],"name":"BarterAgreement","nodeType":"ContractDefinition","nodes":[{"anonymous":false,"id":15,"name":"AgreementLog","nodeType":"EventDefinition","parameters":{"id":14,"nodeType":"ParameterList","parameters":[{"constant":false,"id":3,"indexed":false,"name":"owner","nodeType":"VariableDeclaration","scope":15,"src":"111:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":2,"name":"address","nodeType":"ElementaryTypeName","src":"111:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":5,"indexed":false,"name":"buyer","nodeType":"VariableDeclaration","scope":15,"src":"134:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":4,"name":"address","nodeType":"ElementaryTypeName","src":"134:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":7,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":15,"src":"157:10:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":6,"name":"uint256","nodeType":"ElementaryTypeName","src":"157:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":9,"indexed":false,"name":"price","nodeType":"VariableDeclaration","scope":15,"src":"177:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":8,"name":"uint256","nodeType":"ElementaryTypeName","src":"177:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":11,"indexed":false,"name":"completed","nodeType":"VariableDeclaration","scope":15,"src":"200:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":10,"name":"bool","nodeType":"ElementaryTypeName","src":"200:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":13,"indexed":false,"name":"inProgress","nodeType":"VariableDeclaration","scope":15,"src":"224:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":12,"name":"bool","nodeType":"ElementaryTypeName","src":"224:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"101:148:0"},"src":"83:167:0"},{"anonymous":false,"id":19,"name":"PaymentLog","nodeType":"EventDefinition","parameters":{"id":18,"nodeType":"ParameterList","parameters":[{"constant":false,"id":17,"indexed":false,"name":"value","nodeType":"VariableDeclaration","scope":19,"src":"281:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":16,"name":"uint256","nodeType":"ElementaryTypeName","src":"281:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"271:33:0"},"src":"255:50:0"},{"constant":false,"id":22,"name":"agreements","nodeType":"VariableDeclaration","scope":215,"src":"310:22:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"},"typeName":{"baseType":{"contractScope":null,"id":20,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"310:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":21,"length":null,"nodeType":"ArrayTypeName","src":"310:11:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage_ptr","typeString":"struct BarterAgreement.Agreement storage ref[] storage pointer"}},"value":null,"visibility":"internal"},{"canonicalName":"BarterAgreement.Agreement","id":33,"members":[{"constant":false,"id":24,"name":"owner","nodeType":"VariableDeclaration","scope":33,"src":"471:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":23,"name":"address","nodeType":"ElementaryTypeName","src":"471:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":26,"name":"buyer","nodeType":"VariableDeclaration","scope":33,"src":"494:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":25,"name":"address","nodeType":"ElementaryTypeName","src":"494:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":28,"name":"price","nodeType":"VariableDeclaration","scope":33,"src":"517:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":27,"name":"uint256","nodeType":"ElementaryTypeName","src":"517:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":30,"name":"completed","nodeType":"VariableDeclaration","scope":33,"src":"540:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":29,"name":"bool","nodeType":"ElementaryTypeName","src":"540:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":32,"name":"inProgress","nodeType":"VariableDeclaration","scope":33,"src":"564:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":31,"name":"bool","nodeType":"ElementaryTypeName","src":"564:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"name":"Agreement","nodeType":"StructDefinition","scope":215,"src":"444:142:0","visibility":"public"},{"body":{"id":64,"nodeType":"Block","src":"665:403:0","statements":[{"assignments":[39],"declarations":[{"constant":false,"id":39,"name":"id","nodeType":"VariableDeclaration","scope":65,"src":"675:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":38,"name":"uint","nodeType":"ElementaryTypeName","src":"675:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":53,"initialValue":{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":52,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":43,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"711:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":44,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"711:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"hexValue":"307830303030","id":45,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"723:6:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0000"},{"argumentTypes":null,"id":46,"name":"price","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":35,"src":"731:5:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"hexValue":"66616c7365","id":47,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"738:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},{"argumentTypes":null,"hexValue":"66616c7365","id":48,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"745:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":42,"name":"Agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":33,"src":"701:9:0","typeDescriptions":{"typeIdentifier":"t_type$_t_struct$_Agreement_$33_storage_ptr_$","typeString":"type(struct BarterAgreement.Agreement storage pointer)"}},"id":49,"isConstant":false,"isLValue":false,"isPure":false,"kind":"structConstructorCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"701:50:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_memory","typeString":"struct BarterAgreement.Agreement memory"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_struct$_Agreement_$33_memory","typeString":"struct BarterAgreement.Agreement memory"}],"expression":{"argumentTypes":null,"id":40,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"685:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":41,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"push","nodeType":"MemberAccess","referencedDeclaration":null,"src":"685:15:0","typeDescriptions":{"typeIdentifier":"t_function_arraypush_nonpayable$_t_struct$_Agreement_$33_storage_$returns$_t_uint256_$","typeString":"function (struct BarterAgreement.Agreement storage ref) returns (uint256)"}},"id":50,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"685:67:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"argumentTypes":null,"hexValue":"31","id":51,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"763:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_1_by_1","typeString":"int_const 1"},"value":"1"},"src":"685:79:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"675:89:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":55,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"787:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":56,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"787:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"hexValue":"307830303030","id":57,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"799:6:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0000"},{"argumentTypes":null,"id":58,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":39,"src":"807:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":59,"name":"price","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":35,"src":"811:5:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"hexValue":"66616c7365","id":60,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"818:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},{"argumentTypes":null,"hexValue":"66616c7365","id":61,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"825:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":54,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"774:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":62,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"774:57:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":63,"nodeType":"ExpressionStatement","src":"774:57:0"}]},"id":65,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"newAgreement","nodeType":"FunctionDefinition","parameters":{"id":36,"nodeType":"ParameterList","parameters":[{"constant":false,"id":35,"name":"price","nodeType":"VariableDeclaration","scope":65,"src":"643:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":34,"name":"uint256","nodeType":"ElementaryTypeName","src":"643:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"642:15:0"},"payable":false,"returnParameters":{"id":37,"nodeType":"ParameterList","parameters":[],"src":"665:0:0"},"scope":215,"src":"621:447:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":98,"nodeType":"Block","src":"1358:241:0","statements":[{"assignments":[81],"declarations":[{"constant":false,"id":81,"name":"agreement","nodeType":"VariableDeclaration","scope":99,"src":"1368:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":80,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"1368:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":85,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":82,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1398:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":84,"indexExpression":{"argumentTypes":null,"id":83,"name":"agreementID","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":67,"src":"1409:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"1398:23:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"1368:53:0"},{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":86,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1450:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":87,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"1450:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":88,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1477:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":89,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"1477:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":90,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1504:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":91,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"1504:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":92,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1531:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":93,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"1531:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":94,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1562:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":95,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"1562:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":96,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"1438:154:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_address_$_t_address_$_t_uint256_$_t_bool_$_t_bool_$","typeString":"tuple(address,address,uint256,bool,bool)"}},"functionReturnParameters":79,"id":97,"nodeType":"Return","src":"1431:161:0"}]},"id":99,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getAgreement","nodeType":"FunctionDefinition","parameters":{"id":68,"nodeType":"ParameterList","parameters":[{"constant":false,"id":67,"name":"agreementID","nodeType":"VariableDeclaration","scope":99,"src":"1204:16:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":66,"name":"uint","nodeType":"ElementaryTypeName","src":"1204:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1203:18:0"},"payable":false,"returnParameters":{"id":79,"nodeType":"ParameterList","parameters":[{"constant":false,"id":70,"name":"owner","nodeType":"VariableDeclaration","scope":99,"src":"1250:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":69,"name":"address","nodeType":"ElementaryTypeName","src":"1250:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":72,"name":"buyer","nodeType":"VariableDeclaration","scope":99,"src":"1271:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":71,"name":"address","nodeType":"ElementaryTypeName","src":"1271:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":74,"name":"price","nodeType":"VariableDeclaration","scope":99,"src":"1292:10:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":73,"name":"uint","nodeType":"ElementaryTypeName","src":"1292:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":76,"name":"completed","nodeType":"VariableDeclaration","scope":99,"src":"1310:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":75,"name":"bool","nodeType":"ElementaryTypeName","src":"1310:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":78,"name":"inProgress","nodeType":"VariableDeclaration","scope":99,"src":"1332:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":77,"name":"bool","nodeType":"ElementaryTypeName","src":"1332:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"1242:111:0"},"scope":215,"src":"1182:417:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":107,"nodeType":"Block","src":"1731:41:0","statements":[{"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":104,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1748:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":105,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1748:17:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":103,"id":106,"nodeType":"Return","src":"1741:24:0"}]},"id":108,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getAgreementLength","nodeType":"FunctionDefinition","parameters":{"id":100,"nodeType":"ParameterList","parameters":[],"src":"1694:2:0"},"payable":false,"returnParameters":{"id":103,"nodeType":"ParameterList","parameters":[{"constant":false,"id":102,"name":"length","nodeType":"VariableDeclaration","scope":108,"src":"1718:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":101,"name":"uint","nodeType":"ElementaryTypeName","src":"1718:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1717:13:0"},"scope":215,"src":"1667:105:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":153,"nodeType":"Block","src":"1843:302:0","statements":[{"assignments":[114],"declarations":[{"constant":false,"id":114,"name":"agreement","nodeType":"VariableDeclaration","scope":154,"src":"1853:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":113,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"1853:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":118,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":115,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1883:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":117,"indexExpression":{"argumentTypes":null,"id":116,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":110,"src":"1894:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"1883:14:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"1853:44:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_bool","typeString":"bool"},"id":123,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":120,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1915:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":121,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"1915:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"BinaryOperation","operator":"!=","rightExpression":{"argumentTypes":null,"hexValue":"74727565","id":122,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"1938:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"1915:27:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":119,"name":"require","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":230,"src":"1907:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":124,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1907:36:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":125,"nodeType":"ExpressionStatement","src":"1907:36:0"},{"expression":{"argumentTypes":null,"id":131,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":126,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1953:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":128,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"1953:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":129,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"1971:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":130,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1971:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"1953:28:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":132,"nodeType":"ExpressionStatement","src":"1953:28:0"},{"expression":{"argumentTypes":null,"id":137,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":133,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1991:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":135,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"1991:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"74727565","id":136,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2014:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"1991:27:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":138,"nodeType":"ExpressionStatement","src":"1991:27:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":140,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2041:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":141,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2041:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":142,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2058:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":143,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2058:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":144,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":110,"src":"2075:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":145,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2079:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":146,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"2079:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":147,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2096:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":148,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2096:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":149,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2117:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":150,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2117:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":139,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"2028:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":151,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2028:110:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":152,"nodeType":"ExpressionStatement","src":"2028:110:0"}]},"id":154,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"updateAgreement","nodeType":"FunctionDefinition","parameters":{"id":111,"nodeType":"ParameterList","parameters":[{"constant":false,"id":110,"name":"id","nodeType":"VariableDeclaration","scope":154,"src":"1827:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":109,"name":"uint","nodeType":"ElementaryTypeName","src":"1827:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1826:9:0"},"payable":false,"returnParameters":{"id":112,"nodeType":"ParameterList","parameters":[],"src":"1843:0:0"},"scope":215,"src":"1801:344:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":213,"nodeType":"Block","src":"2226:379:0","statements":[{"assignments":[160],"declarations":[{"constant":false,"id":160,"name":"agreement","nodeType":"VariableDeclaration","scope":214,"src":"2236:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":159,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"2236:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":164,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":161,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"2266:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":163,"indexExpression":{"argumentTypes":null,"id":162,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":156,"src":"2277:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"2266:14:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"2236:44:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_address","typeString":"address"},"id":170,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":166,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2298:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":167,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2298:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"BinaryOperation","operator":"==","rightExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":168,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"2317:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":169,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2317:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"2298:29:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":165,"name":"require","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":230,"src":"2290:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":171,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2290:38:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":172,"nodeType":"ExpressionStatement","src":"2290:38:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":178,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"2363:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":179,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"value","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2363:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":173,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2338:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":176,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2338:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":177,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"transfer","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2338:24:0","typeDescriptions":{"typeIdentifier":"t_function_transfer_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":180,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2338:35:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":181,"nodeType":"ExpressionStatement","src":"2338:35:0"},{"expression":{"argumentTypes":null,"id":186,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":182,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2383:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":184,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2383:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"74727565","id":185,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2405:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"2383:26:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":187,"nodeType":"ExpressionStatement","src":"2383:26:0"},{"expression":{"argumentTypes":null,"id":192,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":188,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2419:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":190,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2419:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"66616c7365","id":191,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2442:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},"src":"2419:28:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":193,"nodeType":"ExpressionStatement","src":"2419:28:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":195,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2470:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":196,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2470:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":197,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2487:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":198,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2487:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":199,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":156,"src":"2504:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":200,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2508:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":201,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"2508:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":202,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2525:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":203,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2525:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":204,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2546:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":205,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2546:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":194,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"2457:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":206,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2457:110:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":207,"nodeType":"ExpressionStatement","src":"2457:110:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":209,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"2588:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":210,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"value","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2588:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":208,"name":"PaymentLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":19,"src":"2577:10:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":211,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2577:21:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":212,"nodeType":"ExpressionStatement","src":"2577:21:0"}]},"id":214,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"completeAgreement","nodeType":"FunctionDefinition","parameters":{"id":157,"nodeType":"ParameterList","parameters":[{"constant":false,"id":156,"name":"id","nodeType":"VariableDeclaration","scope":214,"src":"2202:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":155,"name":"uint","nodeType":"ElementaryTypeName","src":"2202:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2201:9:0"},"payable":true,"returnParameters":{"id":158,"nodeType":"ParameterList","parameters":[],"src":"2226:0:0"},"scope":215,"src":"2175:430:0","stateMutability":"payable","superFunction":null,"visibility":"public"}],"scope":216,"src":"52:2555:0"}],"src":"0:2608:0"},"legacyAST":{"absolutePath":"/Users/manj/Desktop/GHA/Senior/blockchain/contracts/BarterAgreement.sol","exportedSymbols":{"BarterAgreement":[215]},"id":216,"nodeType":"SourceUnit","nodes":[{"id":1,"literals":["solidity","^","0.4",".18"],"nodeType":"PragmaDirective","src":"0:24:0"},{"baseContracts":[],"contractDependencies":[],"contractKind":"contract","documentation":null,"fullyImplemented":true,"id":215,"linearizedBaseContracts":[215],"name":"BarterAgreement","nodeType":"ContractDefinition","nodes":[{"anonymous":false,"id":15,"name":"AgreementLog","nodeType":"EventDefinition","parameters":{"id":14,"nodeType":"ParameterList","parameters":[{"constant":false,"id":3,"indexed":false,"name":"owner","nodeType":"VariableDeclaration","scope":15,"src":"111:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":2,"name":"address","nodeType":"ElementaryTypeName","src":"111:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":5,"indexed":false,"name":"buyer","nodeType":"VariableDeclaration","scope":15,"src":"134:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":4,"name":"address","nodeType":"ElementaryTypeName","src":"134:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":7,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":15,"src":"157:10:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":6,"name":"uint256","nodeType":"ElementaryTypeName","src":"157:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":9,"indexed":false,"name":"price","nodeType":"VariableDeclaration","scope":15,"src":"177:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":8,"name":"uint256","nodeType":"ElementaryTypeName","src":"177:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":11,"indexed":false,"name":"completed","nodeType":"VariableDeclaration","scope":15,"src":"200:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":10,"name":"bool","nodeType":"ElementaryTypeName","src":"200:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":13,"indexed":false,"name":"inProgress","nodeType":"VariableDeclaration","scope":15,"src":"224:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":12,"name":"bool","nodeType":"ElementaryTypeName","src":"224:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"101:148:0"},"src":"83:167:0"},{"anonymous":false,"id":19,"name":"PaymentLog","nodeType":"EventDefinition","parameters":{"id":18,"nodeType":"ParameterList","parameters":[{"constant":false,"id":17,"indexed":false,"name":"value","nodeType":"VariableDeclaration","scope":19,"src":"281:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":16,"name":"uint256","nodeType":"ElementaryTypeName","src":"281:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"271:33:0"},"src":"255:50:0"},{"constant":false,"id":22,"name":"agreements","nodeType":"VariableDeclaration","scope":215,"src":"310:22:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"},"typeName":{"baseType":{"contractScope":null,"id":20,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"310:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":21,"length":null,"nodeType":"ArrayTypeName","src":"310:11:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage_ptr","typeString":"struct BarterAgreement.Agreement storage ref[] storage pointer"}},"value":null,"visibility":"internal"},{"canonicalName":"BarterAgreement.Agreement","id":33,"members":[{"constant":false,"id":24,"name":"owner","nodeType":"VariableDeclaration","scope":33,"src":"471:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":23,"name":"address","nodeType":"ElementaryTypeName","src":"471:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":26,"name":"buyer","nodeType":"VariableDeclaration","scope":33,"src":"494:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":25,"name":"address","nodeType":"ElementaryTypeName","src":"494:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":28,"name":"price","nodeType":"VariableDeclaration","scope":33,"src":"517:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":27,"name":"uint256","nodeType":"ElementaryTypeName","src":"517:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":30,"name":"completed","nodeType":"VariableDeclaration","scope":33,"src":"540:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":29,"name":"bool","nodeType":"ElementaryTypeName","src":"540:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":32,"name":"inProgress","nodeType":"VariableDeclaration","scope":33,"src":"564:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":31,"name":"bool","nodeType":"ElementaryTypeName","src":"564:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"name":"Agreement","nodeType":"StructDefinition","scope":215,"src":"444:142:0","visibility":"public"},{"body":{"id":64,"nodeType":"Block","src":"665:403:0","statements":[{"assignments":[39],"declarations":[{"constant":false,"id":39,"name":"id","nodeType":"VariableDeclaration","scope":65,"src":"675:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":38,"name":"uint","nodeType":"ElementaryTypeName","src":"675:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":53,"initialValue":{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":52,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":43,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"711:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":44,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"711:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"hexValue":"307830303030","id":45,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"723:6:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0000"},{"argumentTypes":null,"id":46,"name":"price","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":35,"src":"731:5:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"hexValue":"66616c7365","id":47,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"738:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},{"argumentTypes":null,"hexValue":"66616c7365","id":48,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"745:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":42,"name":"Agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":33,"src":"701:9:0","typeDescriptions":{"typeIdentifier":"t_type$_t_struct$_Agreement_$33_storage_ptr_$","typeString":"type(struct BarterAgreement.Agreement storage pointer)"}},"id":49,"isConstant":false,"isLValue":false,"isPure":false,"kind":"structConstructorCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"701:50:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_memory","typeString":"struct BarterAgreement.Agreement memory"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_struct$_Agreement_$33_memory","typeString":"struct BarterAgreement.Agreement memory"}],"expression":{"argumentTypes":null,"id":40,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"685:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":41,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"push","nodeType":"MemberAccess","referencedDeclaration":null,"src":"685:15:0","typeDescriptions":{"typeIdentifier":"t_function_arraypush_nonpayable$_t_struct$_Agreement_$33_storage_$returns$_t_uint256_$","typeString":"function (struct BarterAgreement.Agreement storage ref) returns (uint256)"}},"id":50,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"685:67:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"argumentTypes":null,"hexValue":"31","id":51,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"763:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_1_by_1","typeString":"int_const 1"},"value":"1"},"src":"685:79:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"675:89:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":55,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"787:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":56,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"787:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"hexValue":"307830303030","id":57,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"799:6:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0000"},{"argumentTypes":null,"id":58,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":39,"src":"807:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":59,"name":"price","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":35,"src":"811:5:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"hexValue":"66616c7365","id":60,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"818:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},{"argumentTypes":null,"hexValue":"66616c7365","id":61,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"825:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":54,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"774:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":62,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"774:57:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":63,"nodeType":"ExpressionStatement","src":"774:57:0"}]},"id":65,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"newAgreement","nodeType":"FunctionDefinition","parameters":{"id":36,"nodeType":"ParameterList","parameters":[{"constant":false,"id":35,"name":"price","nodeType":"VariableDeclaration","scope":65,"src":"643:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":34,"name":"uint256","nodeType":"ElementaryTypeName","src":"643:7:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"642:15:0"},"payable":false,"returnParameters":{"id":37,"nodeType":"ParameterList","parameters":[],"src":"665:0:0"},"scope":215,"src":"621:447:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":98,"nodeType":"Block","src":"1358:241:0","statements":[{"assignments":[81],"declarations":[{"constant":false,"id":81,"name":"agreement","nodeType":"VariableDeclaration","scope":99,"src":"1368:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":80,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"1368:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":85,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":82,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1398:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":84,"indexExpression":{"argumentTypes":null,"id":83,"name":"agreementID","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":67,"src":"1409:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"1398:23:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"1368:53:0"},{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":86,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1450:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":87,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"1450:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":88,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1477:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":89,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"1477:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":90,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1504:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":91,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"1504:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":92,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1531:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":93,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"1531:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":94,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":81,"src":"1562:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":95,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"1562:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":96,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"1438:154:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_address_$_t_address_$_t_uint256_$_t_bool_$_t_bool_$","typeString":"tuple(address,address,uint256,bool,bool)"}},"functionReturnParameters":79,"id":97,"nodeType":"Return","src":"1431:161:0"}]},"id":99,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getAgreement","nodeType":"FunctionDefinition","parameters":{"id":68,"nodeType":"ParameterList","parameters":[{"constant":false,"id":67,"name":"agreementID","nodeType":"VariableDeclaration","scope":99,"src":"1204:16:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":66,"name":"uint","nodeType":"ElementaryTypeName","src":"1204:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1203:18:0"},"payable":false,"returnParameters":{"id":79,"nodeType":"ParameterList","parameters":[{"constant":false,"id":70,"name":"owner","nodeType":"VariableDeclaration","scope":99,"src":"1250:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":69,"name":"address","nodeType":"ElementaryTypeName","src":"1250:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":72,"name":"buyer","nodeType":"VariableDeclaration","scope":99,"src":"1271:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":71,"name":"address","nodeType":"ElementaryTypeName","src":"1271:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":74,"name":"price","nodeType":"VariableDeclaration","scope":99,"src":"1292:10:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":73,"name":"uint","nodeType":"ElementaryTypeName","src":"1292:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":76,"name":"completed","nodeType":"VariableDeclaration","scope":99,"src":"1310:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":75,"name":"bool","nodeType":"ElementaryTypeName","src":"1310:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"},{"constant":false,"id":78,"name":"inProgress","nodeType":"VariableDeclaration","scope":99,"src":"1332:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":77,"name":"bool","nodeType":"ElementaryTypeName","src":"1332:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"1242:111:0"},"scope":215,"src":"1182:417:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":107,"nodeType":"Block","src":"1731:41:0","statements":[{"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":104,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1748:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":105,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1748:17:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":103,"id":106,"nodeType":"Return","src":"1741:24:0"}]},"id":108,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getAgreementLength","nodeType":"FunctionDefinition","parameters":{"id":100,"nodeType":"ParameterList","parameters":[],"src":"1694:2:0"},"payable":false,"returnParameters":{"id":103,"nodeType":"ParameterList","parameters":[{"constant":false,"id":102,"name":"length","nodeType":"VariableDeclaration","scope":108,"src":"1718:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":101,"name":"uint","nodeType":"ElementaryTypeName","src":"1718:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1717:13:0"},"scope":215,"src":"1667:105:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":153,"nodeType":"Block","src":"1843:302:0","statements":[{"assignments":[114],"declarations":[{"constant":false,"id":114,"name":"agreement","nodeType":"VariableDeclaration","scope":154,"src":"1853:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":113,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"1853:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":118,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":115,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"1883:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":117,"indexExpression":{"argumentTypes":null,"id":116,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":110,"src":"1894:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"1883:14:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"1853:44:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_bool","typeString":"bool"},"id":123,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":120,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1915:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":121,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"1915:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"BinaryOperation","operator":"!=","rightExpression":{"argumentTypes":null,"hexValue":"74727565","id":122,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"1938:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"1915:27:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":119,"name":"require","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":230,"src":"1907:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":124,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1907:36:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":125,"nodeType":"ExpressionStatement","src":"1907:36:0"},{"expression":{"argumentTypes":null,"id":131,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":126,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1953:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":128,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"1953:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":129,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"1971:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":130,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1971:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"1953:28:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":132,"nodeType":"ExpressionStatement","src":"1953:28:0"},{"expression":{"argumentTypes":null,"id":137,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":133,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"1991:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":135,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"1991:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"74727565","id":136,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2014:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"1991:27:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":138,"nodeType":"ExpressionStatement","src":"1991:27:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":140,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2041:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":141,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2041:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":142,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2058:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":143,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2058:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":144,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":110,"src":"2075:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":145,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2079:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":146,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"2079:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":147,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2096:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":148,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2096:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":149,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":114,"src":"2117:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":150,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2117:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":139,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"2028:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":151,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2028:110:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":152,"nodeType":"ExpressionStatement","src":"2028:110:0"}]},"id":154,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"updateAgreement","nodeType":"FunctionDefinition","parameters":{"id":111,"nodeType":"ParameterList","parameters":[{"constant":false,"id":110,"name":"id","nodeType":"VariableDeclaration","scope":154,"src":"1827:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":109,"name":"uint","nodeType":"ElementaryTypeName","src":"1827:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1826:9:0"},"payable":false,"returnParameters":{"id":112,"nodeType":"ParameterList","parameters":[],"src":"1843:0:0"},"scope":215,"src":"1801:344:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":213,"nodeType":"Block","src":"2226:379:0","statements":[{"assignments":[160],"declarations":[{"constant":false,"id":160,"name":"agreement","nodeType":"VariableDeclaration","scope":214,"src":"2236:27:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"},"typeName":{"contractScope":null,"id":159,"name":"Agreement","nodeType":"UserDefinedTypeName","referencedDeclaration":33,"src":"2236:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"value":null,"visibility":"internal"}],"id":164,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":161,"name":"agreements","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":22,"src":"2266:10:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Agreement_$33_storage_$dyn_storage","typeString":"struct BarterAgreement.Agreement storage ref[] storage ref"}},"id":163,"indexExpression":{"argumentTypes":null,"id":162,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":156,"src":"2277:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"2266:14:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage","typeString":"struct BarterAgreement.Agreement storage ref"}},"nodeType":"VariableDeclarationStatement","src":"2236:44:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_address","typeString":"address"},"id":170,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":166,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2298:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":167,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2298:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"BinaryOperation","operator":"==","rightExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":168,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"2317:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":169,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2317:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"2298:29:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":165,"name":"require","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":230,"src":"2290:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":171,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2290:38:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":172,"nodeType":"ExpressionStatement","src":"2290:38:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":178,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"2363:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":179,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"value","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2363:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":173,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2338:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":176,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2338:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":177,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"transfer","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2338:24:0","typeDescriptions":{"typeIdentifier":"t_function_transfer_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":180,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2338:35:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":181,"nodeType":"ExpressionStatement","src":"2338:35:0"},{"expression":{"argumentTypes":null,"id":186,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":182,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2383:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":184,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2383:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"74727565","id":185,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2405:4:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"},"src":"2383:26:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":187,"nodeType":"ExpressionStatement","src":"2383:26:0"},{"expression":{"argumentTypes":null,"id":192,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":188,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2419:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":190,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2419:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"hexValue":"66616c7365","id":191,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"2442:5:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"},"src":"2419:28:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":193,"nodeType":"ExpressionStatement","src":"2419:28:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":195,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2470:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":196,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"owner","nodeType":"MemberAccess","referencedDeclaration":24,"src":"2470:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":197,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2487:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":198,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"buyer","nodeType":"MemberAccess","referencedDeclaration":26,"src":"2487:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":199,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":156,"src":"2504:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":200,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2508:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":201,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"price","nodeType":"MemberAccess","referencedDeclaration":28,"src":"2508:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":202,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2525:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":203,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"completed","nodeType":"MemberAccess","referencedDeclaration":30,"src":"2525:19:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":204,"name":"agreement","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":160,"src":"2546:9:0","typeDescriptions":{"typeIdentifier":"t_struct$_Agreement_$33_storage_ptr","typeString":"struct BarterAgreement.Agreement storage pointer"}},"id":205,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"inProgress","nodeType":"MemberAccess","referencedDeclaration":32,"src":"2546:20:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"},{"typeIdentifier":"t_bool","typeString":"bool"}],"id":194,"name":"AgreementLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15,"src":"2457:12:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$_t_bool_$_t_bool_$returns$__$","typeString":"function (address,address,uint256,uint256,bool,bool)"}},"id":206,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2457:110:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":207,"nodeType":"ExpressionStatement","src":"2457:110:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":209,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":227,"src":"2588:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":210,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"value","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2588:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":208,"name":"PaymentLog","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":19,"src":"2577:10:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":211,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2577:21:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":212,"nodeType":"ExpressionStatement","src":"2577:21:0"}]},"id":214,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"completeAgreement","nodeType":"FunctionDefinition","parameters":{"id":157,"nodeType":"ParameterList","parameters":[{"constant":false,"id":156,"name":"id","nodeType":"VariableDeclaration","scope":214,"src":"2202:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":155,"name":"uint","nodeType":"ElementaryTypeName","src":"2202:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2201:9:0"},"payable":true,"returnParameters":{"id":158,"nodeType":"ParameterList","parameters":[],"src":"2226:0:0"},"scope":215,"src":"2175:430:0","stateMutability":"payable","superFunction":null,"visibility":"public"}],"scope":216,"src":"52:2555:0"}],"src":"0:2608:0"},"compiler":{"name":"solc","version":"0.4.19+commit.c4cbbb05.Emscripten.clang"},"networks":{"1521660849083":{"events":{},"links":{},"address":"0x9e40475c6e8cf2205b30b4d5439941fc1290059d","transactionHash":"0x3aec176941bcbc360265906060fc475b144c95e3ef83f214ad8383a752dadef5"},"1521753372888":{"events":{},"links":{},"address":"0xd665ac3ceb31a4a35fbfb933884dc8545193d456","transactionHash":"0xbb42c06cb26cb41733067eee7578e561d362d7d239d700315a5321d5ba1cb112"},"1522075869121":{"events":{},"links":{},"address":"0xbe8a4c2e08d170ed9dbecd479f72f488b6ede6b2","transactionHash":"0xabc428af0ac675663439bbe348210ad1432a01bfa11595abb554f327e39bb49a"}},"schemaVersion":"2.0.0","updatedAt":"2018-03-26T14:51:36.816Z"};
 
 /***/ }),
 
@@ -28211,7 +28211,7 @@ module.exports = camelizeStyleName;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 var isTextNode = __webpack_require__(/*! ./isTextNode */ "./node_modules/fbjs/lib/isTextNode.js");
@@ -28486,7 +28486,7 @@ module.exports = createNodesFromMarkup;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 function makeEmptyFunction(arg) {
@@ -29009,7 +29009,7 @@ module.exports = isTextNode;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  * @typechecks static-only
  */
 
@@ -29121,7 +29121,7 @@ module.exports = performanceNow;
  * LICENSE file in the root directory of this source tree.
  *
  * @typechecks
- * 
+ *
  */
 
 /*eslint-disable no-self-compare */
@@ -31601,7 +31601,7 @@ __webpack_require__.r(__webpack_exports__);
     undefined;
 }(this, (function () {
     'use strict';
-    
+
     var REACT_STATICS = {
         childContextTypes: true,
         contextTypes: true,
@@ -31613,7 +31613,7 @@ __webpack_require__.r(__webpack_exports__);
         propTypes: true,
         type: true
     };
-    
+
     var KNOWN_STATICS = {
         name: true,
         length: true,
@@ -31623,30 +31623,30 @@ __webpack_require__.r(__webpack_exports__);
         arguments: true,
         arity: true
     };
-    
+
     var defineProperty = Object.defineProperty;
     var getOwnPropertyNames = Object.getOwnPropertyNames;
     var getOwnPropertySymbols = Object.getOwnPropertySymbols;
     var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
     var getPrototypeOf = Object.getPrototypeOf;
     var objectPrototype = getPrototypeOf && getPrototypeOf(Object);
-    
+
     return function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
         if (typeof sourceComponent !== 'string') { // don't hoist over string (html) components
-            
+
             if (objectPrototype) {
                 var inheritedComponent = getPrototypeOf(sourceComponent);
                 if (inheritedComponent && inheritedComponent !== objectPrototype) {
                     hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
                 }
             }
-            
+
             var keys = getOwnPropertyNames(sourceComponent);
-            
+
             if (getOwnPropertySymbols) {
                 keys = keys.concat(getOwnPropertySymbols(sourceComponent));
             }
-            
+
             for (var i = 0; i < keys.length; ++i) {
                 var key = keys[i];
                 if (!REACT_STATICS[key] && !KNOWN_STATICS[key] && (!blacklist || !blacklist[key])) {
@@ -31656,10 +31656,10 @@ __webpack_require__.r(__webpack_exports__);
                     } catch (e) {}
                 }
             }
-            
+
             return targetComponent;
         }
-        
+
         return targetComponent;
     };
 })));
@@ -31924,8 +31924,8 @@ module.exports = Array.isArray || function (arr) {
   var PADDING = [6, 1536, 393216, 100663296];
   var SHIFT = [0, 8, 16, 24];
   var RC = [1, 0, 32898, 0, 32906, 2147483648, 2147516416, 2147483648, 32907, 0, 2147483649,
-            0, 2147516545, 2147483648, 32777, 2147483648, 138, 0, 136, 0, 2147516425, 0, 
-            2147483658, 0, 2147516555, 0, 139, 2147483648, 32905, 2147483648, 32771, 
+            0, 2147516545, 2147483648, 32777, 2147483648, 138, 0, 136, 0, 2147516425, 0,
+            2147483658, 0, 2147516555, 0, 139, 2147483648, 32905, 2147483648, 32771,
             2147483648, 32770, 2147483648, 128, 2147483648, 32778, 0, 2147483658, 2147483648,
             2147516545, 2147483648, 32896, 2147483648, 2147483649, 0, 2147516424, 2147483648];
   var BITS = [224, 256, 384, 512];
@@ -32013,9 +32013,9 @@ module.exports = Array.isArray || function (arr) {
     if (notString && message.constructor == root.ArrayBuffer) {
       message = new Uint8Array(message);
     }
-    var length = message.length, blocks = this.blocks, byteCount = this.byteCount, 
+    var length = message.length, blocks = this.blocks, byteCount = this.byteCount,
         blockCount = this.blockCount, index = 0, s = this.s, i, code;
-    
+
     while (index < length) {
       if (this.reset) {
         this.reset = false;
@@ -32084,7 +32084,7 @@ module.exports = Array.isArray || function (arr) {
   Keccak.prototype.toString = Keccak.prototype.hex = function () {
     this.finalize();
 
-    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks, 
+    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks,
         extraBytes = this.extraBytes, i = 0, j = 0;
     var hex = '', block;
     while (j < outputBlocks) {
@@ -32118,7 +32118,7 @@ module.exports = Array.isArray || function (arr) {
   Keccak.prototype.arrayBuffer = function () {
     this.finalize();
 
-    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks, 
+    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks,
         extraBytes = this.extraBytes, i = 0, j = 0;
     var bytes = this.outputBits >> 3;
     var buffer;
@@ -32148,7 +32148,7 @@ module.exports = Array.isArray || function (arr) {
   Keccak.prototype.digest = Keccak.prototype.array = function () {
     this.finalize();
 
-    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks, 
+    var blockCount = this.blockCount, s = this.s, outputBlocks = this.outputBlocks,
         extraBytes = this.extraBytes, i = 0, j = 0;
     var array = [], offset, block;
     while (j < outputBlocks) {
@@ -32181,9 +32181,9 @@ module.exports = Array.isArray || function (arr) {
   };
 
   var f = function (s) {
-    var h, l, n, c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, 
-        b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, 
-        b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, b33, 
+    var h, l, n, c0, c1, c2, c3, c4, c5, c6, c7, c8, c9,
+        b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17,
+        b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, b33,
         b34, b35, b36, b37, b38, b39, b40, b41, b42, b43, b44, b45, b46, b47, b48, b49;
     for (n = 0;n < 48;n += 2) {
       c0 = s[0] ^ s[10] ^ s[20] ^ s[30] ^ s[40];
@@ -38167,7 +38167,7 @@ module.exports = CSSPropertyOperations;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -39938,7 +39938,7 @@ module.exports = EventPluginHub;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -40923,7 +40923,7 @@ module.exports = HTMLDOMPropertyConfig;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -41136,7 +41136,7 @@ module.exports = LinkedValueUtils;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -41784,7 +41784,7 @@ module.exports = ReactComponentBrowserEnvironment;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -45874,7 +45874,7 @@ module.exports = ReactDOMUnknownPropertyHook;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -46413,7 +46413,7 @@ module.exports = {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -46479,7 +46479,7 @@ module.exports = ReactEmptyComponent;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -46768,7 +46768,7 @@ module.exports = ReactEventListener;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -46874,7 +46874,7 @@ module.exports = ReactHostComponent;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -47143,7 +47143,7 @@ module.exports = ReactInstanceMap;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -47175,7 +47175,7 @@ module.exports = { debugTool: debugTool };
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -48278,7 +48278,7 @@ module.exports = ReactMultiChild;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -48326,7 +48326,7 @@ module.exports = ReactNodeTypes;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -48427,7 +48427,7 @@ module.exports = ReactOwner;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -48460,7 +48460,7 @@ module.exports = ReactPropTypeLocationNames;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -48845,7 +48845,7 @@ module.exports = ReactReconciler;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -49040,7 +49040,7 @@ module.exports = ReactServerRenderingTransaction;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -50216,7 +50216,7 @@ module.exports = SelectEventPlugin;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -51395,7 +51395,7 @@ module.exports = SyntheticWheelEvent;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -51664,7 +51664,7 @@ module.exports = ViewportMetrics;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -51730,7 +51730,7 @@ module.exports = accumulateInto;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -52203,7 +52203,7 @@ module.exports = findDOMNode;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -52286,7 +52286,7 @@ module.exports = flattenChildren;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -52635,7 +52635,7 @@ module.exports = getHostComponentFromComposite;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -53252,7 +53252,7 @@ module.exports = isEventSupported;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -53345,7 +53345,7 @@ module.exports = quoteAttributeValueForBrowser;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -54716,7 +54716,7 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
   selectorFactory, which has the signature:
 
     (dispatch, options) => (nextState, nextOwnProps) => nextFinalProps
-  
+
   connect passes its args to connectAdvanced as options, which will in turn pass them to
   selectorFactory each time a Connect component instance is instantiated or hot reloaded.
 
@@ -55112,7 +55112,7 @@ function wrapMapToPropsConstant(getConstant) {
 // dependsOnOwnProps is used by createMapToPropsProxy to determine whether to pass props as args
 // to the mapToProps function being wrapped. It is also used by makePurePropsSelector to determine
 // whether mapToProps needs to be invoked when props have changed.
-// 
+//
 // A length of one signals that mapToProps does not depend on props from the parent component.
 // A length of zero is assumed to mean mapToProps is getting args via arguments or ...args and
 // therefore not reporting its length accurately..
@@ -55122,16 +55122,16 @@ function getDependsOnOwnProps(mapToProps) {
 
 // Used by whenMapStateToPropsIsFunction and whenMapDispatchToPropsIsFunction,
 // this function wraps mapToProps in a proxy function which does several things:
-// 
+//
 //  * Detects whether the mapToProps function being called depends on props, which
 //    is used by selectorFactory to decide if it should reinvoke on props changes.
-//    
+//
 //  * On first call, handles mapToProps if returns another function, and treats that
 //    new function as the true mapToProps for subsequent calls.
-//    
+//
 //  * On first call, verifies the first result is a plain object, in order to warn
 //    the developer that their mapToProps function is not returning a valid result.
-//    
+//
 function wrapMapToPropsFunc(mapToProps, methodName) {
   return function initProxySelector(dispatch, _ref) {
     var displayName = _ref.displayName;
@@ -57458,7 +57458,7 @@ function pathToRegexp (path, keys, options) {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -57525,7 +57525,7 @@ module.exports = KeyEscapeUtils;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -58135,7 +58135,7 @@ module.exports = ReactChildren;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -58522,7 +58522,7 @@ module.exports = ReactComponentTreeHook;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59085,7 +59085,7 @@ module.exports = ReactElement;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59479,7 +59479,7 @@ module.exports = ReactNoopUpdateQueue;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59539,7 +59539,7 @@ module.exports = factory(isValidElement);
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59586,7 +59586,7 @@ module.exports = '15.6.2';
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59747,7 +59747,7 @@ module.exports = factory(Component, isValidElement, ReactNoopUpdateQueue);
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59796,7 +59796,7 @@ module.exports = getIteratorFn;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -59944,7 +59944,7 @@ module.exports = onlyChild;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * 
+ *
  */
 
 
@@ -63291,7 +63291,7 @@ module.exports = SolidityTypeInt;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file param.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -63310,7 +63310,7 @@ var SolidityParam = function (value, offset) {
 
 /**
  * This method should be used to get length of params's dynamic part
- * 
+ *
  * @method dynamicPartLength
  * @returns {Number} length of dynamic part (in bytes)
  */
@@ -63338,7 +63338,7 @@ SolidityParam.prototype.withOffset = function (offset) {
  * @param {SolidityParam} result of combination
  */
 SolidityParam.prototype.combine = function (param) {
-    return new SolidityParam(this.value + param.value); 
+    return new SolidityParam(this.value + param.value);
 };
 
 /**
@@ -63370,8 +63370,8 @@ SolidityParam.prototype.offsetAsBytes = function () {
  */
 SolidityParam.prototype.staticPart = function () {
     if (!this.isDynamic()) {
-        return this.value; 
-    } 
+        return this.value;
+    }
     return this.offsetAsBytes();
 };
 
@@ -63403,7 +63403,7 @@ SolidityParam.prototype.encode = function () {
  * @returns {String}
  */
 SolidityParam.encodeList = function (params) {
-    
+
     // updating offsets
     var totalOffset = params.length * 32;
     var offsetParams = params.map(function (param) {
@@ -63909,13 +63909,13 @@ if (typeof XMLHttpRequest === 'undefined') {
 
 /**
  * Utils
- * 
+ *
  * @module utils
  */
 
 /**
  * Utility functions
- * 
+ *
  * @class [utils] config
  * @constructor
  */
@@ -63991,7 +63991,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file sha3.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -64065,7 +64065,7 @@ var sha3 = __webpack_require__(/*! ./sha3.js */ "./node_modules/truffle-blockcha
 var utf8 = __webpack_require__(/*! utf8 */ "./node_modules/utf8/utf8.js");
 
 var unitMap = {
-    'noether':      '0',    
+    'noether':      '0',
     'wei':          '1',
     'kwei':         '1000',
     'Kwei':         '1000',
@@ -64446,18 +64446,18 @@ var isAddress = function (address) {
  * @param {String} address the given HEX adress
  * @return {Boolean}
 */
-var isChecksumAddress = function (address) {    
+var isChecksumAddress = function (address) {
     // Check each case
     address = address.replace('0x','');
     var addressHash = sha3(address.toLowerCase());
 
-    for (var i = 0; i < 40; i++ ) { 
+    for (var i = 0; i < 40; i++ ) {
         // the nth letter should be uppercase if the nth digit of casemap is 1
         if ((parseInt(addressHash[i], 16) > 7 && address[i].toUpperCase() !== address[i]) || (parseInt(addressHash[i], 16) <= 7 && address[i].toLowerCase() !== address[i])) {
             return false;
         }
     }
-    return true;    
+    return true;
 };
 
 
@@ -64469,15 +64469,15 @@ var isChecksumAddress = function (address) {
  * @param {String} address the given HEX adress
  * @return {String}
 */
-var toChecksumAddress = function (address) { 
+var toChecksumAddress = function (address) {
     if (typeof address === 'undefined') return '';
 
     address = address.toLowerCase().replace('0x','');
     var addressHash = sha3(address);
     var checksumAddress = '0x';
 
-    for (var i = 0; i < address.length; i++ ) { 
-        // If ith character is 9 to f then make it uppercase 
+    for (var i = 0; i < address.length; i++ ) {
+        // If ith character is 9 to f then make it uppercase
         if (parseInt(addressHash[i], 16) > 7) {
           checksumAddress += address[i].toUpperCase();
         } else {
@@ -64601,7 +64601,7 @@ var isBloom = function (bloom) {
         return false;
     } else if (/^(0x)?[0-9a-f]{512}$/.test(bloom) || /^(0x)?[0-9A-F]{512}$/.test(bloom)) {
         return true;
-    } 
+    }
     return false;
 };
 
@@ -64617,7 +64617,7 @@ var isTopic = function (topic) {
         return false;
     } else if (/^(0x)?[0-9a-f]{64}$/.test(topic) || /^(0x)?[0-9A-F]{64}$/.test(topic)) {
         return true;
-    } 
+    }
     return false;
 };
 
@@ -64852,7 +64852,7 @@ module.exports = Web3;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file allevents.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2014
@@ -64951,7 +64951,7 @@ module.exports = AllSolidityEvents;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file batch.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -64996,7 +64996,7 @@ Batch.prototype.execute = function () {
                 requests[index].callback(null, (requests[index].format ? requests[index].format(result.result) : result.result));
             }
         });
-    }); 
+    });
 };
 
 module.exports = Batch;
@@ -65192,7 +65192,7 @@ var ContractFactory = function (eth, abi) {
      */
     this.new = function () {
         /*jshint maxcomplexity: 7 */
-        
+
         var contract = new Contract(this.eth, this.abi);
 
         // parse arguments
@@ -65349,7 +65349,7 @@ module.exports = ContractFactory;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file errors.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -65400,7 +65400,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file event.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2014
@@ -65471,7 +65471,7 @@ SolidityEvent.prototype.signature = function () {
 
 /**
  * Should be used to encode indexed params and options to one final object
- * 
+ *
  * @method encode
  * @param {Object} indexed
  * @param {Object} options
@@ -65502,7 +65502,7 @@ SolidityEvent.prototype.encode = function (indexed, options) {
         if (value === undefined || value === null) {
             return null;
         }
-        
+
         if (utils.isArray(value)) {
             return value.map(function (v) {
                 return '0x' + coder.encodeParam(i.type, v);
@@ -65524,17 +65524,17 @@ SolidityEvent.prototype.encode = function (indexed, options) {
  * @return {Object} result object with decoded indexed && not indexed params
  */
 SolidityEvent.prototype.decode = function (data) {
- 
+
     data.data = data.data || '';
     data.topics = data.topics || [];
 
     var argTopics = this._anonymous ? data.topics : data.topics.slice(1);
     var indexedData = argTopics.map(function (topics) { return topics.slice(2); }).join("");
-    var indexedParams = coder.decodeParams(this.types(true), indexedData); 
+    var indexedParams = coder.decodeParams(this.types(true), indexedData);
 
     var notIndexedData = data.data.slice(2);
     var notIndexedParams = coder.decodeParams(this.types(false), notIndexedData);
-    
+
     var result = formatters.outputLogFormatter(data);
     result.event = this.displayName();
     result.address = data.address;
@@ -65569,7 +65569,7 @@ SolidityEvent.prototype.execute = function (indexed, options, callback) {
             indexed = {};
         }
     }
-    
+
     var o = this.encode(indexed, options);
     var formatter = this.decode.bind(this);
     return new Filter(this._requestManager, o, watches.eth(), formatter, callback);
@@ -65639,7 +65639,7 @@ var extend = function (web3) {
         }
     };
 
-    ex.formatters = formatters; 
+    ex.formatters = formatters;
     ex.utils = utils;
     ex.Method = Method;
     ex.Property = Property;
@@ -66675,7 +66675,7 @@ module.exports = HttpProvider;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file iban.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -66875,7 +66875,7 @@ Iban.prototype.address = function () {
         var base36 = this._iban.substr(4);
         var asBn = new BigNumber(base36, 36);
         return padLeft(asBn.toString(16), 20);
-    } 
+    }
 
     return '';
 };
@@ -66930,7 +66930,7 @@ var IpcProvider = function (path, net) {
     var _this = this;
     this.responseCallbacks = {};
     this.path = path;
-    
+
     this.connection = net.connect({path: this.path});
 
     this.connection.on('error', function(e){
@@ -66940,7 +66940,7 @@ var IpcProvider = function (path, net) {
 
     this.connection.on('end', function(){
         _this._timeout();
-    }); 
+    });
 
 
     // LISTEN FOR CONNECTION RESPONSES
@@ -66979,7 +66979,7 @@ Will parse the response and make an array out of it.
 IpcProvider.prototype._parseResponse = function(data) {
     var _this = this,
         returnValues = [];
-    
+
     // DE-CHUNKER
     var dechunkedData = data
         .replace(/\}[\n\r]?\{/g,'}|--|{') // }{
@@ -67083,7 +67083,7 @@ IpcProvider.prototype.send = function (payload) {
         try {
             result = JSON.parse(data);
         } catch(e) {
-            throw errors.InvalidResponse(data);                
+            throw errors.InvalidResponse(data);
         }
 
         return result;
@@ -67276,7 +67276,7 @@ Method.prototype.extractCallback = function (args) {
 
 /**
  * Should be called to check if the number of arguments is correct
- * 
+ *
  * @method validateArgs
  * @param {Array} arguments
  * @throws {Error} if it is not
@@ -67289,7 +67289,7 @@ Method.prototype.validateArgs = function (args) {
 
 /**
  * Should be called to format input args of method
- * 
+ *
  * @method formatInput
  * @param {Array}
  * @return {Array}
@@ -67343,7 +67343,7 @@ Method.prototype.attachToObject = function (obj) {
         obj[name[0]] = obj[name[0]] || {};
         obj[name[0]][name[1]] = func;
     } else {
-        obj[name[0]] = func; 
+        obj[name[0]] = func;
     }
 };
 
@@ -67416,8 +67416,8 @@ var DB = function (web3) {
     this._requestManager = web3._requestManager;
 
     var self = this;
-    
-    methods().forEach(function(method) { 
+
+    methods().forEach(function(method) {
         method.attachToObject(self);
         method.setRequestManager(web3._requestManager);
     });
@@ -67861,7 +67861,7 @@ var Net = function (web3) {
 
     var self = this;
 
-    properties().forEach(function(p) { 
+    properties().forEach(function(p) {
         p.attachToObject(self);
         p.setRequestManager(web3._requestManager);
     });
@@ -68031,7 +68031,7 @@ var Shh = function (web3) {
 
     var self = this;
 
-    methods().forEach(function(method) { 
+    methods().forEach(function(method) {
         method.attachToObject(self);
         method.setRequestManager(self._requestManager);
     });
@@ -68041,11 +68041,11 @@ Shh.prototype.filter = function (fil, callback) {
     return new Filter(this._requestManager, fil, watches.shh(), formatters.outputPostFormatter, callback);
 };
 
-var methods = function () { 
+var methods = function () {
 
     var post = new Method({
-        name: 'post', 
-        call: 'shh_post', 
+        name: 'post',
+        call: 'shh_post',
         params: 1,
         inputFormatter: [formatters.inputPostFormatter]
     });
@@ -68394,7 +68394,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file namereg.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -68599,7 +68599,7 @@ module.exports = Property;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file requestmanager.js
  * @author Jeffrey Wilcke <jeff@ethdev.com>
  * @author Marek Kotewicz <marek@ethdev.com>
@@ -68666,7 +68666,7 @@ RequestManager.prototype.sendAsync = function (data, callback) {
         if (err) {
             return callback(err);
         }
-        
+
         if (!Jsonrpc.isValidResponse(result)) {
             return callback(errors.InvalidResponse(result));
         }
@@ -68699,7 +68699,7 @@ RequestManager.prototype.sendBatch = function (data, callback) {
         }
 
         callback(err, results);
-    }); 
+    });
 };
 
 /**
@@ -68803,7 +68803,7 @@ RequestManager.prototype.poll = function () {
     }
 
     var payload = Jsonrpc.toBatchPayload(pollsData);
-    
+
     // map the request id to they poll id
     var pollsIdMap = {};
     payload.forEach(function(load, index){
@@ -68833,7 +68833,7 @@ RequestManager.prototype.poll = function () {
             } else
                 return false;
         }).filter(function (result) {
-            return !!result; 
+            return !!result;
         }).filter(function (result) {
             var valid = Jsonrpc.isValidResponse(result);
             if (!valid) {
@@ -68926,16 +68926,16 @@ var pollSyncing = function(self) {
 
         self.callbacks.forEach(function (callback) {
             if (self.lastSyncState !== sync) {
-                
+
                 // call the callback with true first so the app can stop anything, before receiving the sync data
                 if(!self.lastSyncState && utils.isObject(sync))
                     callback(null, true);
-                
+
                 // call on the next CPU cycle, so the actions of the sync stop can be processes first
                 setTimeout(function() {
                     callback(null, sync);
                 }, 0);
-                
+
                 self.lastSyncState = sync;
             }
         });
@@ -68999,7 +68999,7 @@ module.exports = IsSyncing;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file transfer.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -69018,7 +69018,7 @@ var exchangeAbi = __webpack_require__(/*! ../contracts/SmartExchange.json */ "./
  * @param {Function} callback, callback
  */
 var transfer = function (eth, from, to, value, callback) {
-    var iban = new Iban(to); 
+    var iban = new Iban(to);
     if (!iban.isValid()) {
         throw new Error('invalid iban address');
     }
@@ -69026,7 +69026,7 @@ var transfer = function (eth, from, to, value, callback) {
     if (iban.isDirect()) {
         return transferToAddress(eth, from, iban.address(), value, callback);
     }
-    
+
     if (!callback) {
         var address = eth.icapNamereg().addr(iban.institution());
         return deposit(eth, from, address, value, iban.client());
@@ -69035,7 +69035,7 @@ var transfer = function (eth, from, to, value, callback) {
     eth.icapNamereg().addr(iban.institution(), function (err, address) {
         return deposit(eth, from, address, value, iban.client(), callback);
     });
-    
+
 };
 
 /**
@@ -70674,7 +70674,11 @@ module.exports = TruffleSchema;
 /*! exports provided: _args, _development, _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _spec, _where, author, bugs, dependencies, description, devDependencies, homepage, keywords, license, main, name, repository, scripts, version, default */
 /***/ (function(module) {
 
+<<<<<<< HEAD
 module.exports = {"_args":[["truffle-contract-schema@0.0.5","/Users/claudia/GraceHopper/Senior/Capstone/new-kids-on-the-blockchain"]],"_development":true,"_from":"truffle-contract-schema@0.0.5","_id":"truffle-contract-schema@0.0.5","_inBundle":false,"_integrity":"sha1-Xp0gvQvyon/pQxB0gknUhO7kmWE=","_location":"/truffle-contract-schema","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"truffle-contract-schema@0.0.5","name":"truffle-contract-schema","escapedName":"truffle-contract-schema","rawSpec":"0.0.5","saveSpec":null,"fetchSpec":"0.0.5"},"_requiredBy":["/truffle-contract"],"_resolved":"https://registry.npmjs.org/truffle-contract-schema/-/truffle-contract-schema-0.0.5.tgz","_spec":"0.0.5","_where":"/Users/claudia/GraceHopper/Senior/Capstone/new-kids-on-the-blockchain","author":{"name":"Tim Coulter","email":"tim.coulter@consensys.net"},"bugs":{"url":"https://github.com/trufflesuite/truffle-schema/issues"},"dependencies":{"crypto-js":"^3.1.9-1"},"description":"JSON schema for contract artifacts","devDependencies":{"mocha":"^3.2.0"},"homepage":"https://github.com/trufflesuite/truffle-schema#readme","keywords":["ethereum","json","schema","contract","artifacts"],"license":"MIT","main":"index.js","name":"truffle-contract-schema","repository":{"type":"git","url":"git+https://github.com/trufflesuite/truffle-schema.git"},"scripts":{"test":"mocha"},"version":"0.0.5"};
+=======
+module.exports = {"_args":[["truffle-contract-schema@0.0.5","/Users/manj/Desktop/GHA/Senior/blockchain"]],"_development":true,"_from":"truffle-contract-schema@0.0.5","_id":"truffle-contract-schema@0.0.5","_inBundle":false,"_integrity":"sha1-Xp0gvQvyon/pQxB0gknUhO7kmWE=","_location":"/truffle-contract-schema","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"truffle-contract-schema@0.0.5","name":"truffle-contract-schema","escapedName":"truffle-contract-schema","rawSpec":"0.0.5","saveSpec":null,"fetchSpec":"0.0.5"},"_requiredBy":["/truffle-contract"],"_resolved":"https://registry.npmjs.org/truffle-contract-schema/-/truffle-contract-schema-0.0.5.tgz","_spec":"0.0.5","_where":"/Users/manj/Desktop/GHA/Senior/blockchain","author":{"name":"Tim Coulter","email":"tim.coulter@consensys.net"},"bugs":{"url":"https://github.com/trufflesuite/truffle-schema/issues"},"dependencies":{"crypto-js":"^3.1.9-1"},"description":"JSON schema for contract artifacts","devDependencies":{"mocha":"^3.2.0"},"homepage":"https://github.com/trufflesuite/truffle-schema#readme","keywords":["ethereum","json","schema","contract","artifacts"],"license":"MIT","main":"index.js","name":"truffle-contract-schema","repository":{"type":"git","url":"git+https://github.com/trufflesuite/truffle-schema.git"},"scripts":{"test":"mocha"},"version":"0.0.5"};
+>>>>>>> master
 
 /***/ }),
 
@@ -72132,7 +72136,7 @@ module.exports = SolidityTypeBytes;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file coder.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -72162,7 +72166,7 @@ var SolidityCoder = function (types) {
  *
  * @method _requireType
  * @param {String} type
- * @returns {SolidityType} 
+ * @returns {SolidityType}
  * @throws {Error} throws if no matching type is found
  */
 SolidityCoder.prototype._requireType = function (type) {
@@ -72210,7 +72214,7 @@ SolidityCoder.prototype.encodeParams = function (types, params) {
         return acc + roundedStaticPartLength;
     }, 0);
 
-    var result = this.encodeMultiWithOffset(types, solidityTypes, encodeds, dynamicOffset); 
+    var result = this.encodeMultiWithOffset(types, solidityTypes, encodeds, dynamicOffset);
 
     return result;
 };
@@ -72235,7 +72239,7 @@ SolidityCoder.prototype.encodeMultiWithOffset = function (types, solidityTypes, 
 
         // TODO: figure out nested arrays
     });
-    
+
     types.forEach(function (type, i) {
         if (isDynamic(i)) {
             var e = self.encodeWithOffset(types[i], solidityTypes[i], encodeds[i], dynamicOffset);
@@ -72255,7 +72259,7 @@ SolidityCoder.prototype.encodeWithOffset = function (type, solidityType, encoded
             var nestedName = solidityType.nestedName(type);
             var nestedStaticPartLength = solidityType.staticPartLength(nestedName);
             var result = encoded[0];
-            
+
             (function () {
                 var previousLength = 2; // in int
                 if (solidityType.isDynamicArray(nestedName)) {
@@ -72265,7 +72269,7 @@ SolidityCoder.prototype.encodeWithOffset = function (type, solidityType, encoded
                     }
                 }
             })();
-            
+
             // first element is length, skip it
             (function () {
                 for (var i = 0; i < encoded.length - 1; i++) {
@@ -72276,7 +72280,7 @@ SolidityCoder.prototype.encodeWithOffset = function (type, solidityType, encoded
 
             return result;
         })();
-       
+
     } else if (solidityType.isStaticArray(type)) {
         return (function () {
             var nestedName = solidityType.nestedName(type);
@@ -72289,7 +72293,7 @@ SolidityCoder.prototype.encodeWithOffset = function (type, solidityType, encoded
                     var previousLength = 0; // in int
                     for (var i = 0; i < encoded.length; i++) {
                         // calculate length of previous item
-                        previousLength += +(encoded[i - 1] || [])[0] || 0; 
+                        previousLength += +(encoded[i - 1] || [])[0] || 0;
                         result += f.formatInputInt(offset + i * nestedStaticPartLength + previousLength * 32).encode();
                     }
                 })();
@@ -72332,7 +72336,7 @@ SolidityCoder.prototype.decodeParam = function (type, bytes) {
 SolidityCoder.prototype.decodeParams = function (types, bytes) {
     var solidityTypes = this.getSolidityTypes(types);
     var offsets = this.getOffsets(types, solidityTypes);
-        
+
     return solidityTypes.map(function (solidityType, index) {
         return solidityType.decode(bytes, offsets[index],  types[index], index);
     });
@@ -72342,16 +72346,16 @@ SolidityCoder.prototype.getOffsets = function (types, solidityTypes) {
     var lengths =  solidityTypes.map(function (solidityType, index) {
         return solidityType.staticPartLength(types[index]);
     });
-    
+
     for (var i = 1; i < lengths.length; i++) {
          // sum with length of previous element
-        lengths[i] += lengths[i - 1]; 
+        lengths[i] += lengths[i - 1];
     }
 
     return lengths.map(function (length, index) {
         // remove the current length, so the length is sum of previous elements
         var staticPartLength = solidityTypes[index].staticPartLength(types[index]);
-        return length - staticPartLength; 
+        return length - staticPartLength;
     });
 };
 
@@ -72439,7 +72443,7 @@ module.exports = SolidityTypeDynamicBytes;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file formatters.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -72583,7 +72587,7 @@ var formatOutputUInt = function (param) {
  * @returns {BigNumber} input bytes formatted to real
  */
 var formatOutputReal = function (param) {
-    return formatOutputInt(param).dividedBy(new BigNumber(2).pow(128)); 
+    return formatOutputInt(param).dividedBy(new BigNumber(2).pow(128));
 };
 
 /**
@@ -72594,7 +72598,7 @@ var formatOutputReal = function (param) {
  * @returns {BigNumber} input bytes formatted to ureal
  */
 var formatOutputUReal = function (param) {
-    return formatOutputUInt(param).dividedBy(new BigNumber(2).pow(128)); 
+    return formatOutputUInt(param).dividedBy(new BigNumber(2).pow(128));
 };
 
 /**
@@ -72747,7 +72751,7 @@ module.exports = SolidityTypeInt;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file param.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -72766,7 +72770,7 @@ var SolidityParam = function (value, offset) {
 
 /**
  * This method should be used to get length of params's dynamic part
- * 
+ *
  * @method dynamicPartLength
  * @returns {Number} length of dynamic part (in bytes)
  */
@@ -72794,7 +72798,7 @@ SolidityParam.prototype.withOffset = function (offset) {
  * @param {SolidityParam} result of combination
  */
 SolidityParam.prototype.combine = function (param) {
-    return new SolidityParam(this.value + param.value); 
+    return new SolidityParam(this.value + param.value);
 };
 
 /**
@@ -72826,8 +72830,8 @@ SolidityParam.prototype.offsetAsBytes = function () {
  */
 SolidityParam.prototype.staticPart = function () {
     if (!this.isDynamic()) {
-        return this.value; 
-    } 
+        return this.value;
+    }
     return this.offsetAsBytes();
 };
 
@@ -72859,7 +72863,7 @@ SolidityParam.prototype.encode = function () {
  * @returns {String}
  */
 SolidityParam.encodeList = function (params) {
-    
+
     // updating offsets
     var totalOffset = params.length * 32;
     var offsetParams = params.map(function (param) {
@@ -73012,13 +73016,13 @@ SolidityType.prototype.staticPartLength = function (name) {
 
 /**
  * Should be used to determine if type is dynamic array
- * eg: 
+ * eg:
  * "type[]" => true
  * "type[4]" => false
  *
  * @method isDynamicArray
  * @param {String} name
- * @return {Bool} true if the type is dynamic array 
+ * @return {Bool} true if the type is dynamic array
  */
 SolidityType.prototype.isDynamicArray = function (name) {
     var nestedTypes = this.nestedTypes(name);
@@ -73027,13 +73031,13 @@ SolidityType.prototype.isDynamicArray = function (name) {
 
 /**
  * Should be used to determine if type is static array
- * eg: 
+ * eg:
  * "type[]" => false
  * "type[4]" => true
  *
  * @method isStaticArray
  * @param {String} name
- * @return {Bool} true if the type is static array 
+ * @return {Bool} true if the type is static array
  */
 SolidityType.prototype.isStaticArray = function (name) {
     var nestedTypes = this.nestedTypes(name);
@@ -73042,7 +73046,7 @@ SolidityType.prototype.isStaticArray = function (name) {
 
 /**
  * Should return length of static array
- * eg. 
+ * eg.
  * "int[32]" => 32
  * "int256[14]" => 14
  * "int[2][3]" => 3
@@ -73117,7 +73121,7 @@ SolidityType.prototype.nestedTypes = function (name) {
  * Should be used to encode the value
  *
  * @method encode
- * @param {Object} value 
+ * @param {Object} value
  * @param {String} name
  * @return {String} encoded value
  */
@@ -73131,7 +73135,7 @@ SolidityType.prototype.encode = function (value, name) {
 
             var result = [];
             result.push(f.formatInputInt(length).encode());
-            
+
             value.forEach(function (v) {
                 result.push(self.encode(v, nestedName));
             });
@@ -73207,12 +73211,12 @@ SolidityType.prototype.decode = function (bytes, offset, name) {
             return result;
         })();
     } else if (this.isDynamicType(name)) {
-        
+
         return (function () {
             var dynamicOffset = parseInt('0x' + bytes.substr(offset * 2, 64));      // in bytes
             var length = parseInt('0x' + bytes.substr(dynamicOffset * 2, 64));      // in bytes
             var roundedLength = Math.floor((length + 31) / 32);                     // in int
-        
+
             return self._outputFormatter(new SolidityParam(bytes.substr(dynamicOffset * 2, ( 1 + roundedLength) * 64), 0));
         })();
     }
@@ -73372,13 +73376,13 @@ if (typeof XMLHttpRequest === 'undefined') {
 
 /**
  * Utils
- * 
+ *
  * @module utils
  */
 
 /**
  * Utility functions
- * 
+ *
  * @class [utils] config
  * @constructor
  */
@@ -73454,7 +73458,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file sha3.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -73528,7 +73532,7 @@ var sha3 = __webpack_require__(/*! ./sha3.js */ "./node_modules/web3/lib/utils/s
 var utf8 = __webpack_require__(/*! utf8 */ "./node_modules/utf8/utf8.js");
 
 var unitMap = {
-    'noether':      '0',    
+    'noether':      '0',
     'wei':          '1',
     'kwei':         '1000',
     'Kwei':         '1000',
@@ -73911,18 +73915,18 @@ var isAddress = function (address) {
  * @param {String} address the given HEX adress
  * @return {Boolean}
 */
-var isChecksumAddress = function (address) {    
+var isChecksumAddress = function (address) {
     // Check each case
     address = address.replace('0x','');
     var addressHash = sha3(address.toLowerCase());
 
-    for (var i = 0; i < 40; i++ ) { 
+    for (var i = 0; i < 40; i++ ) {
         // the nth letter should be uppercase if the nth digit of casemap is 1
         if ((parseInt(addressHash[i], 16) > 7 && address[i].toUpperCase() !== address[i]) || (parseInt(addressHash[i], 16) <= 7 && address[i].toLowerCase() !== address[i])) {
             return false;
         }
     }
-    return true;    
+    return true;
 };
 
 
@@ -73934,15 +73938,15 @@ var isChecksumAddress = function (address) {
  * @param {String} address the given HEX adress
  * @return {String}
 */
-var toChecksumAddress = function (address) { 
+var toChecksumAddress = function (address) {
     if (typeof address === 'undefined') return '';
 
     address = address.toLowerCase().replace('0x','');
     var addressHash = sha3(address);
     var checksumAddress = '0x';
 
-    for (var i = 0; i < address.length; i++ ) { 
-        // If ith character is 9 to f then make it uppercase 
+    for (var i = 0; i < address.length; i++ ) {
+        // If ith character is 9 to f then make it uppercase
         if (parseInt(addressHash[i], 16) > 7) {
           checksumAddress += address[i].toUpperCase();
         } else {
@@ -74279,7 +74283,7 @@ module.exports = Web3;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file allevents.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2014
@@ -74378,7 +74382,7 @@ module.exports = AllSolidityEvents;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file batch.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -74423,7 +74427,7 @@ Batch.prototype.execute = function () {
                 requests[index].callback(null, (requests[index].format ? requests[index].format(result.result) : result.result));
             }
         });
-    }); 
+    });
 };
 
 module.exports = Batch;
@@ -74764,7 +74768,7 @@ module.exports = ContractFactory;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file errors.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -74813,7 +74817,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file event.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2014
@@ -74884,7 +74888,7 @@ SolidityEvent.prototype.signature = function () {
 
 /**
  * Should be used to encode indexed params and options to one final object
- * 
+ *
  * @method encode
  * @param {Object} indexed
  * @param {Object} options
@@ -74915,7 +74919,7 @@ SolidityEvent.prototype.encode = function (indexed, options) {
         if (value === undefined || value === null) {
             return null;
         }
-        
+
         if (utils.isArray(value)) {
             return value.map(function (v) {
                 return '0x' + coder.encodeParam(i.type, v);
@@ -74937,17 +74941,17 @@ SolidityEvent.prototype.encode = function (indexed, options) {
  * @return {Object} result object with decoded indexed && not indexed params
  */
 SolidityEvent.prototype.decode = function (data) {
- 
+
     data.data = data.data || '';
     data.topics = data.topics || [];
 
     var argTopics = this._anonymous ? data.topics : data.topics.slice(1);
     var indexedData = argTopics.map(function (topics) { return topics.slice(2); }).join("");
-    var indexedParams = coder.decodeParams(this.types(true), indexedData); 
+    var indexedParams = coder.decodeParams(this.types(true), indexedData);
 
     var notIndexedData = data.data.slice(2);
     var notIndexedParams = coder.decodeParams(this.types(false), notIndexedData);
-    
+
     var result = formatters.outputLogFormatter(data);
     result.event = this.displayName();
     result.address = data.address;
@@ -74982,7 +74986,7 @@ SolidityEvent.prototype.execute = function (indexed, options, callback) {
             indexed = {};
         }
     }
-    
+
     var o = this.encode(indexed, options);
     var formatter = this.decode.bind(this);
     return new Filter(this._requestManager, o, watches.eth(), formatter, callback);
@@ -75052,7 +75056,7 @@ var extend = function (web3) {
         }
     };
 
-    ex.formatters = formatters; 
+    ex.formatters = formatters;
     ex.utils = utils;
     ex.Method = Method;
     ex.Property = Property;
@@ -75332,7 +75336,7 @@ module.exports = Filter;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file formatters.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @author Fabian Vogelsteller <fabian@ethdev.com>
@@ -75399,7 +75403,7 @@ var inputCallFormatter = function (options){
         options[key] = utils.fromDecimal(options[key]);
     });
 
-    return options; 
+    return options;
 };
 
 /**
@@ -75424,12 +75428,12 @@ var inputTransactionFormatter = function (options){
         options[key] = utils.fromDecimal(options[key]);
     });
 
-    return options; 
+    return options;
 };
 
 /**
  * Formats the output of a transaction to its proper values
- * 
+ *
  * @method outputTransactionFormatter
  * @param {Object} tx
  * @returns {Object}
@@ -75448,7 +75452,7 @@ var outputTransactionFormatter = function (tx){
 
 /**
  * Formats the output of a transaction receipt to its proper values
- * 
+ *
  * @method outputTransactionReceiptFormatter
  * @param {Object} receipt
  * @returns {Object}
@@ -75474,7 +75478,7 @@ var outputTransactionReceiptFormatter = function (receipt){
  * Formats the output of a block to its proper values
  *
  * @method outputBlockFormatter
- * @param {Object} block 
+ * @param {Object} block
  * @returns {Object}
 */
 var outputBlockFormatter = function(block) {
@@ -75502,7 +75506,7 @@ var outputBlockFormatter = function(block) {
 
 /**
  * Formats the output of a log
- * 
+ *
  * @method outputLogFormatter
  * @param {Object} log object
  * @returns {Object} log
@@ -75543,7 +75547,7 @@ var inputPostFormatter = function(post) {
         return (topic.indexOf('0x') === 0) ? topic : utils.fromUtf8(topic);
     });
 
-    return post; 
+    return post;
 };
 
 /**
@@ -75739,8 +75743,8 @@ SolidityFunction.prototype.call = function () {
     if (!callback) {
         var output = this._eth.call(payload, defaultBlock);
         return this.unpackOutput(output);
-    } 
-        
+    }
+
     var self = this;
     this._eth.call(payload, defaultBlock, function (error, output) {
         callback(error, self.unpackOutput(output));
@@ -75825,11 +75829,11 @@ SolidityFunction.prototype.request = function () {
     var callback = this.extractCallback(args);
     var payload = this.toPayload(args);
     var format = this.unpackOutput.bind(this);
-    
+
     return {
         method: this._constant ? 'eth_call' : 'eth_sendTransaction',
         callback: callback,
-        params: [payload], 
+        params: [payload],
         format: format
     };
 };
@@ -75971,7 +75975,7 @@ HttpProvider.prototype.send = function (payload) {
     try {
         result = JSON.parse(result);
     } catch(e) {
-        throw errors.InvalidResponse(request.responseText);                
+        throw errors.InvalidResponse(request.responseText);
     }
 
     return result;
@@ -75985,7 +75989,7 @@ HttpProvider.prototype.send = function (payload) {
  * @param {Function} callback triggered on end with (err, result)
  */
 HttpProvider.prototype.sendAsync = function (payload, callback) {
-    var request = this.prepareRequest(true); 
+    var request = this.prepareRequest(true);
 
     request.onreadystatechange = function() {
         if (request.readyState === 4) {
@@ -75995,13 +75999,13 @@ HttpProvider.prototype.sendAsync = function (payload, callback) {
             try {
                 result = JSON.parse(result);
             } catch(e) {
-                error = errors.InvalidResponse(request.responseText);                
+                error = errors.InvalidResponse(request.responseText);
             }
 
             callback(error, result);
         }
     };
-    
+
     try {
         request.send(JSON.stringify(payload));
     } catch(error) {
@@ -76058,7 +76062,7 @@ module.exports = HttpProvider;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file iban.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -76258,7 +76262,7 @@ Iban.prototype.address = function () {
         var base36 = this._iban.substr(4);
         var asBn = new BigNumber(base36, 36);
         return padLeft(asBn.toString(16), 20);
-    } 
+    }
 
     return '';
 };
@@ -76313,7 +76317,7 @@ var IpcProvider = function (path, net) {
     var _this = this;
     this.responseCallbacks = {};
     this.path = path;
-    
+
     this.connection = net.connect({path: this.path});
 
     this.connection.on('error', function(e){
@@ -76323,7 +76327,7 @@ var IpcProvider = function (path, net) {
 
     this.connection.on('end', function(){
         _this._timeout();
-    }); 
+    });
 
 
     // LISTEN FOR CONNECTION RESPONSES
@@ -76362,7 +76366,7 @@ Will parse the response and make an array out of it.
 IpcProvider.prototype._parseResponse = function(data) {
     var _this = this,
         returnValues = [];
-    
+
     // DE-CHUNKER
     var dechunkedData = data
         .replace(/\}[\n\r]?\{/g,'}|--|{') // }{
@@ -76466,7 +76470,7 @@ IpcProvider.prototype.send = function (payload) {
         try {
             result = JSON.parse(data);
         } catch(e) {
-            throw errors.InvalidResponse(data);                
+            throw errors.InvalidResponse(data);
         }
 
         return result;
@@ -76665,7 +76669,7 @@ Method.prototype.extractCallback = function (args) {
 
 /**
  * Should be called to check if the number of arguments is correct
- * 
+ *
  * @method validateArgs
  * @param {Array} arguments
  * @throws {Error} if it is not
@@ -76678,7 +76682,7 @@ Method.prototype.validateArgs = function (args) {
 
 /**
  * Should be called to format input args of method
- * 
+ *
  * @method formatInput
  * @param {Array}
  * @return {Array}
@@ -76732,7 +76736,7 @@ Method.prototype.attachToObject = function (obj) {
         obj[name[0]] = obj[name[0]] || {};
         obj[name[0]][name[1]] = func;
     } else {
-        obj[name[0]] = func; 
+        obj[name[0]] = func;
     }
 };
 
@@ -76805,8 +76809,8 @@ var DB = function (web3) {
     this._requestManager = web3._requestManager;
 
     var self = this;
-    
-    methods().forEach(function(method) { 
+
+    methods().forEach(function(method) {
         method.attachToObject(self);
         method.setRequestManager(web3._requestManager);
     });
@@ -76918,12 +76922,12 @@ function Eth(web3) {
 
     var self = this;
 
-    methods().forEach(function(method) { 
+    methods().forEach(function(method) {
         method.attachToObject(self);
         method.setRequestManager(self._requestManager);
     });
 
-    properties().forEach(function(p) { 
+    properties().forEach(function(p) {
         p.attachToObject(self);
         p.setRequestManager(self._requestManager);
     });
@@ -77239,7 +77243,7 @@ var Net = function (web3) {
 
     var self = this;
 
-    properties().forEach(function(p) { 
+    properties().forEach(function(p) {
         p.attachToObject(self);
         p.setRequestManager(web3._requestManager);
     });
@@ -77401,7 +77405,7 @@ var Shh = function (web3) {
 
     var self = this;
 
-    methods().forEach(function(method) { 
+    methods().forEach(function(method) {
         method.attachToObject(self);
         method.setRequestManager(self._requestManager);
     });
@@ -77411,11 +77415,11 @@ Shh.prototype.filter = function (fil, callback) {
     return new Filter(this._requestManager, fil, watches.shh(), formatters.outputPostFormatter, callback);
 };
 
-var methods = function () { 
+var methods = function () {
 
     var post = new Method({
-        name: 'post', 
-        call: 'shh_post', 
+        name: 'post',
+        call: 'shh_post',
         params: 1,
         inputFormatter: [formatters.inputPostFormatter]
     });
@@ -77607,7 +77611,7 @@ module.exports = {
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file namereg.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -77681,7 +77685,7 @@ Property.prototype.setRequestManager = function (rm) {
 
 /**
  * Should be called to format input args of method
- * 
+ *
  * @method formatInput
  * @param {Array}
  * @return {Array}
@@ -77717,7 +77721,7 @@ Property.prototype.extractCallback = function (args) {
 
 /**
  * Should attach function to method
- * 
+ *
  * @method attachToObject
  * @param {Object}
  * @param {Function}
@@ -77725,7 +77729,7 @@ Property.prototype.extractCallback = function (args) {
 Property.prototype.attachToObject = function (obj) {
     var proto = {
         get: this.buildGet(),
-        enumerable: true 
+        enumerable: true
     };
 
     var names = this.name.split('.');
@@ -77749,7 +77753,7 @@ Property.prototype.buildGet = function () {
     return function get() {
         return property.formatOutput(property.requestManager.send({
             method: property.getter
-        })); 
+        }));
     };
 };
 
@@ -77812,7 +77816,7 @@ module.exports = Property;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file requestmanager.js
  * @author Jeffrey Wilcke <jeff@ethdev.com>
  * @author Marek Kotewicz <marek@ethdev.com>
@@ -77879,7 +77883,7 @@ RequestManager.prototype.sendAsync = function (data, callback) {
         if (err) {
             return callback(err);
         }
-        
+
         if (!Jsonrpc.getInstance().isValidResponse(result)) {
             return callback(errors.InvalidResponse(result));
         }
@@ -77912,7 +77916,7 @@ RequestManager.prototype.sendBatch = function (data, callback) {
         }
 
         callback(err, results);
-    }); 
+    });
 };
 
 /**
@@ -78016,7 +78020,7 @@ RequestManager.prototype.poll = function () {
     }
 
     var payload = Jsonrpc.getInstance().toBatchPayload(pollsData);
-    
+
     // map the request id to they poll id
     var pollsIdMap = {};
     payload.forEach(function(load, index){
@@ -78046,7 +78050,7 @@ RequestManager.prototype.poll = function () {
             } else
                 return false;
         }).filter(function (result) {
-            return !!result; 
+            return !!result;
         }).filter(function (result) {
             var valid = Jsonrpc.getInstance().isValidResponse(result);
             if (!valid) {
@@ -78139,16 +78143,16 @@ var pollSyncing = function(self) {
 
         self.callbacks.forEach(function (callback) {
             if (self.lastSyncState !== sync) {
-                
+
                 // call the callback with true first so the app can stop anything, before receiving the sync data
                 if(!self.lastSyncState && utils.isObject(sync))
                     callback(null, true);
-                
+
                 // call on the next CPU cycle, so the actions of the sync stop can be processes first
                 setTimeout(function() {
                     callback(null, sync);
                 }, 0);
-                
+
                 self.lastSyncState = sync;
             }
         });
@@ -78212,7 +78216,7 @@ module.exports = IsSyncing;
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/** 
+/**
  * @file transfer.js
  * @author Marek Kotewicz <marek@ethdev.com>
  * @date 2015
@@ -78231,7 +78235,7 @@ var exchangeAbi = __webpack_require__(/*! ../contracts/SmartExchange.json */ "./
  * @param {Function} callback, callback
  */
 var transfer = function (eth, from, to, value, callback) {
-    var iban = new Iban(to); 
+    var iban = new Iban(to);
     if (!iban.isValid()) {
         throw new Error('invalid iban address');
     }
@@ -78239,7 +78243,7 @@ var transfer = function (eth, from, to, value, callback) {
     if (iban.isDirect()) {
         return transferToAddress(eth, from, iban.address(), value, callback);
     }
-    
+
     if (!callback) {
         var address = eth.icapNamereg().addr(iban.institution());
         return deposit(eth, from, address, value, iban.client());
@@ -78248,7 +78252,7 @@ var transfer = function (eth, from, to, value, callback) {
     eth.icapNamereg().addr(iban.institution(), function (err, address) {
         return deposit(eth, from, address, value, iban.client(), callback);
     });
-    
+
 };
 
 /**
@@ -81449,7 +81453,6 @@ var AddService = function (_Component) {
   _createClass(AddService, [{
     key: "componentWillMount",
     value: function componentWillMount() {
-      //Jon insisted on this
       this.collectBlockchainInfo();
     }
   }, {
@@ -82026,10 +82029,13 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var FAQ = function FAQ(props) {
   return _react2.default.createElement(
+<<<<<<< HEAD
     "div",
     { className: "home", id: "background" },
     _react2.default.createElement(
@@ -82129,6 +82135,108 @@ var FAQ = function FAQ(props) {
         null,
         "Sign up and get started to learn more!"
       )
+=======
+    'div',
+    { className: 'FAQ avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns' },
+    _react2.default.createElement(
+      'h2',
+      null,
+      'A Beginner\u2019s Guide to Blockchain'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'faq-question' },
+      _react2.default.createElement(
+        'h4',
+        null,
+        'What is the blockchain?'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'A blockchain is a continuously growing list of records, called blocks, which are linked and secured using cryptography. It is an open, distributed ledger that can record transactions between two parties, and, by design, it is unchangeable. Blockchains are typically managed using a peer-to-peer network that collectively adheres to a set of rules for adding new blocks to the chain.'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'faq-question' },
+      _react2.default.createElement(
+        'h4',
+        null,
+        'What is a cryptocurrency?'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'A cryptocurrency is a digital medium of exchange that uses cryptography to secure its transactions. Cryptocurrencies use decentralized control that works through a blockchain, functioning as a distributed ledger. Ether and bitcoin are examples of cryptocurrencies.'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'faq-question' },
+      _react2.default.createElement(
+        'h4',
+        null,
+        'Which cryptocurrency do you use?'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'Block & Mortar is built on the Ethereum blockchain, using "ether," a cryptocurrency, "wei," a smaller denomination of ether, and "gas," a measure of the cost of writing to the blockchain. Ethereum is a decentralized platform that runs smart contracts: applications that run exactly as programmed without any possibility of downtime, censorship, fraud or third-party interference.'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'faq-question' },
+      _react2.default.createElement(
+        'h4',
+        null,
+        'What is a digital wallet?'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'A digital wallet is an electronic address that allows an individual to make electronic transactions. A digital wallet can be linked to a user\'s bank account, and can be used to make transactions with a variety of cryptocurrencies like bitcoin or ether.'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'faq-question' },
+      _react2.default.createElement(
+        'h4',
+        null,
+        'How does this all work? What is a smart contract?'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'Smart contracts live on the blockchain, providing a set of rules that facilitate and codify interactions between two or more parties. Block and Mortar\'s smart contract, for example, provides a framework for interaction between buyers and sellers. The smart contract captures information about the sale, resulting in the transfer of ether from buyer to seller only upon receipt on the good or service in question.'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'faq-question' },
+      _react2.default.createElement(
+        'h4',
+        null,
+        'Why am I being charged a transaction fee to post or purchase a service?'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'Blockchain operations require computational resources, as specific nodes across the blockchain network (called "miners") must validate, secure, and store transactions. "Gas" accounts for the cost of these computations. The tranasction fee is calculated by multiplying the gas limit (a unit of measurement) by the gas price (measured in a small denomination of ether called gwei); both of these are set by you, the user, when interacting with the blockchain through Metamask. '
+      )
+    ),
+    _react2.default.createElement(
+      'h3',
+      null,
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { to: '/signup' },
+        'Sign Up'
+      ),
+      ' and get started to learn more!'
+>>>>>>> master
     )
   );
 };

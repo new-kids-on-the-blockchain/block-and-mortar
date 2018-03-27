@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const FAQ = (props) => {
+const FAQ = props => {
   return (
     <div className="home" id="background">
     <div className="FAQ avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
@@ -13,7 +14,7 @@ const FAQ = (props) => {
 
       <div className="faq-question">
         <h4>What is a cryptocurrency?</h4>
-        <p>A cryptocurrency is a digital medium of exchange that uses cryptography to secure its transactions. Cryptocurrencies use decentralized control that works through a blockchain, functioning as a distributed ledger.</p>
+        <p>A cryptocurrency is a digital medium of exchange that uses cryptography to secure its transactions. Cryptocurrencies use decentralized control that works through a blockchain, functioning as a distributed ledger. Ether and bitcoin are examples of cryptocurrencies.</p>
       </div>
 
       <div className="faq-question">
@@ -28,15 +29,15 @@ const FAQ = (props) => {
 
       <div className="faq-question">
         <h4>How does this all work? What is a smart contract?</h4>
-        <p>This is how we facilitate transactions...MORE HERE</p>
+        <p>Smart contracts live on the blockchain, providing a set of rules that facilitate and codify interactions between two or more parties. Block and Mortar's smart contract, for example, provides a framework for interaction between buyers and sellers. The smart contract captures information about the sale, resulting in the transfer of ether from buyer to seller only upon receipt on the good or service in question.</p>
       </div>
 
       <div className="faq-question">
-        <h4>Why am I being charged to post a service?</h4>
-        <p>BECAUSE YOU GOTTA</p>
+        <h4>Why am I being charged a transaction fee to post or purchase a service?</h4>
+        <p>Blockchain operations require computational resources, as specific nodes across the blockchain network (called "miners") must validate, secure, and store transactions. "Gas" accounts for the cost of these computations. The tranasction fee is calculated by multiplying the gas limit (a unit of measurement) by the gas price (measured in a small denomination of ether called gwei); both of these are set by you, the user, when interacting with the blockchain through Metamask. </p>
       </div>
 
-      <h3>Sign up and get started to learn more!</h3>
+      <h3><Link to="/signup">Sign Up</Link> and get started to learn more!</h3>
     </div>
     </div>
   )
