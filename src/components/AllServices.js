@@ -41,12 +41,12 @@ class AllServices extends Component {
           <p className="avenir lh-title ml3">When you place an order, you'll be charged a small transaction fee ("gas"); however you won't be charged the full amount until you've received the order. <br/><b><em>Please click "Complete Agreement" once your order is fulfilled.</em></b> At that time, the funds will be deducted from your digital wallet.</p>
           </div>
           
-          
+          <br/>
           <div className="ph3">
           <Link to="/services/new"> <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink">Create a Posting</button></Link>
             <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue" value="All" onClick={this.handleClick}>Show All</button>
-            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-gray" value="Goods" onClick={this.handleClick}>Goods</button>
-            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-gray" value="Services" onClick={this.handleClick}>Services</button>
+            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue" value="Goods" onClick={this.handleClick}>Goods</button>
+            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue" value="Services" onClick={this.handleClick}>Services</button>
           </div>
           </div>
         </div>

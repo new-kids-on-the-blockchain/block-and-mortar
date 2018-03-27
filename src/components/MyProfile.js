@@ -30,7 +30,11 @@ class MyProfile extends Component {
       user.id ? (
         <div className="home" id="background">
         <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
-          <img alt="profile img" src={user.imageURL} />
+        <div className="avenir flex items-center justify-center pa1 bg-teal">
+        <p className="avenir lh-title ml3">This is how your profile will appear to visitors!</p>
+        </div>
+        <br/>
+        <img alt="profile img" src={user.imageURL} />
           <h1 className="dark-pink">Hi, I'm {user.userName}!</h1>
           <h2>My Available Goods & Services for Sale: </h2>
           <div>
