@@ -45,25 +45,26 @@ class SingleThread extends Component {
     const messages = this.state.messages
 
     return (
-      <div className="avenir">
+      <div className="avenir ph4 fl w-60 bl">
         {!this.props.currentThread.id ? (
-          <div>No Conversation Selected</div>
+          <div className="f3">No Conversation Selected</div>
         ) : !this.state.messages.length ? (
           <div>
-            <div>No Messages in this Conversation</div>
+            <div className="f3">No Messages in this Conversation</div>
             <div>
               <AddMessage currentThread={this.props.currentThread} />
             </div>
           </div>
         ) : (
-          <div>
+          <div className="pa3">
+            <div className="f3">Selected Conversation</div>
             {this.state.messages && this.state.messages.map(message => {
               return (
-                <div className="message" key={message.id}>
-         
-                <b>{message.senderId === this.props.currentThread.buyerId ? (<b>{this.props.currentThread.buyer.userName}: </b>) 
-                
-                  : (<b>{this.props.currentThread.seller.userName}: </b>)}</b>
+                <div className="message pa2" key={message.id}>
+
+                <span className="pa3">{message.senderId === this.props.currentThread.buyerId ? (<span className="b">{this.props.currentThread.buyer.userName}: </span>)
+
+                  : (<span className="b">{this.props.currentThread.seller.userName}: </span>)}</span>
 
                   {message.content}
                 </div>
