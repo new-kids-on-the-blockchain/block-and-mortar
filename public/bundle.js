@@ -82269,11 +82269,10 @@ var Homepage = function Homepage(props) {
           _react2.default.createElement("br", null),
           _react2.default.createElement(
             "span",
-            { className: "b f1 lh-title white" },
+            { className: "b" },
             "Block & Mortar"
           ),
-          " ",
-          "allows for the grassroots sale of goods and services using the Ethereum blockchain."
+          " allows for the grassroots sale of goods and services using the Ethereum blockchain."
         ),
         _react2.default.createElement(_SignUpModal.Signup, { className: "modal" })
       ),
