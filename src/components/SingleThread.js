@@ -42,6 +42,12 @@ class SingleThread extends Component {
   render() {
     console.log(this.props.currentThread, "CURRENT THREAD!!!!")
     console.log(this.props.currentUser, "CURRENT USER!!!!")
+    console.log(this.state.messages, "MESSAGES!!!!")
+    const currentThread = this.props.currentThread
+    const buyerId = currentThread.buyerId
+    const sellerId = currentThread.sellerId
+    const messages = this.state.messages
+
     return (
       <div className="avenir">
         {!this.props.currentThread.id ? (
@@ -58,7 +64,11 @@ class SingleThread extends Component {
             {this.state.messages && this.state.messages.map(message => {
               return (
                 <div className="message" key={message.id}>
-                  <b>{this.props.currentThread.buyer.userName}: </b>
+         
+                <b>{message.senderId === this.props.currentThread.buyerId ? (<b>{this.props.currentThread.buyer.userName}: </b>) 
+                
+                  : (<b>{this.props.currentThread.seller.userName}: </b>)}</b>
+
                   {message.content}
                 </div>
               );

@@ -83580,6 +83580,12 @@ var SingleThread = function (_Component) {
 
       console.log(this.props.currentThread, "CURRENT THREAD!!!!");
       console.log(this.props.currentUser, "CURRENT USER!!!!");
+      console.log(this.state.messages, "MESSAGES!!!!");
+      var currentThread = this.props.currentThread;
+      var buyerId = currentThread.buyerId;
+      var sellerId = currentThread.sellerId;
+      var messages = this.state.messages;
+
       return _react2.default.createElement(
         "div",
         { className: "avenir" },
@@ -83610,8 +83616,17 @@ var SingleThread = function (_Component) {
               _react2.default.createElement(
                 "b",
                 null,
-                _this2.props.currentThread.buyer.userName,
-                ": "
+                message.senderId === _this2.props.currentThread.buyerId ? _react2.default.createElement(
+                  "b",
+                  null,
+                  _this2.props.currentThread.buyer.userName,
+                  ": "
+                ) : _react2.default.createElement(
+                  "b",
+                  null,
+                  _this2.props.currentThread.seller.userName,
+                  ": "
+                )
               ),
               message.content
             );
