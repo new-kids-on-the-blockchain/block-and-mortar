@@ -222,3 +222,7 @@ nav {
   padding-left: 7em;
   padding-right: 7em;
 }
+
+.msgBox {
+  min-height: 400px;
+}
