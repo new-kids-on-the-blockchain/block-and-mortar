@@ -27,7 +27,7 @@ class SingleUserPublic extends Component {
     return (
       user.id ? (
         <div className="home" id="background">
-          <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
+          <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMarginLogin">
 
           <div id="profileVisual">
           <img alt="profile img" src={user.imageURL} />

@@ -5,7 +5,7 @@ import { logout } from '../store'
 
 const Navbar = props => (
   <div>
-    <nav>
+    <nav className="navBar">
         <Link to="/" >
           <div id="logoTitle">
           <img id="logo" className="" src="/assets/logo1.png" />
@@ -14,7 +14,7 @@ const Navbar = props => (
         </Link>
         <div id="subNav" >
         {props.isLoggedIn ? (
-          <div className="dtc v-mid w-75 tr">
+          <div className="dtc v-mid w-75 tr" id="subNavItem">
           <Link to="/home" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns ">My Dashboard</Link>
           <Link to="/services" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Marketplace</Link>
           <Link to="/services/new" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Create a Post</Link>
