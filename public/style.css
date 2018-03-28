@@ -140,3 +140,20 @@ nav {
 .bg-light-gray {
   background-color: #f3f2f3;
 }
+
+#logo {
+  position: absolute;
+  top:8px;
+  left:-1em;
+  width: 5em;
+  height: 5em;
+  z-index: 3;
+}
+
+#logoTitle{
+  /* display: flex; */
+  margin-left:4em;
+  width: 550px;
+}
+
+

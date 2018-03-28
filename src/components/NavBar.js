@@ -6,12 +6,13 @@ import { logout } from '../store'
 const Navbar = props => (
   <div>
     <nav>
-        <Link to="/">
-          <div>
-            <div className="dim avenir white f1 siteTitle">Block &amp; Mortar</div>
+        <Link to="/" >
+          <div id="logoTitle">
+          <img id="logo" className="" src="/assets/logo1.png" />
+          <div className="dim avenir white f1 siteTitle"  >Block &amp; Mortar</div>
           </div>
         </Link>
-        <div id="subNav">
+        <div id="subNav" >
         {props.isLoggedIn ? (
           <div className="dtc v-mid w-75 tr">
           <Link to="/home" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns ">My Dashboard</Link>
