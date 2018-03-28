@@ -22,8 +22,12 @@ class SingleUser extends Component {
     return (
       <div className="home" id="background">
       <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
-        <div className="f2">Welcome back, {currentUser.userName}! </div>
-          <Link to="/services/new"> <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink flex">Create a Posting</button></Link>
+        <div className="f2">Welcome back, {currentUser.userName}!</div>
+        <div className="pv2 ph2 tc-l">
+          <Link to="/services/new">
+            <button className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4">Create a Post</button>
+          </Link>
+        </div>
 
         <div className="containerInner bt">
           <div className="f3">Pending Sales</div>
