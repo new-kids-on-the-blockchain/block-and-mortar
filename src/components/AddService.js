@@ -38,7 +38,7 @@ class AddService extends Component {
       category: evt.target.serviceCategory.value,
       price: evt.target.servicePrice.value,
       description: evt.target.serviceDescription.value,
-      imgUrl: evt.target.imgUrl.value ? evt.target.imgUrl.value : "https://st.depositphotos.com/1742172/1490/v/950/depositphotos_14907315-stock-illustration-cartoon-bricks.jpg",
+      imgUrl: evt.target.imgUrl.value ? evt.target.imgUrl.value : '/assets/items/service.png',
       contractId: null,
       seller: this.props.currentUser.id
     };
@@ -110,7 +110,7 @@ class AddService extends Component {
               </div>
 
               <div className="pa3">
-                <label for="imgUrl" className="avenir f6 b db mb2">Image URL (optional):<span class="normal black-60">(optional)</span></label>
+                <label for="imgUrl" className="avenir f6 b db mb2">Image URL (optional)<span class="normal black-60"></span></label>
                 <input className="input-reset ba b--black-20 pa2 mb2 db w-100" id="imgUrl" name="imgUrl" rows="1" cols="50" placeholder="https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80"/>
               </div>
 

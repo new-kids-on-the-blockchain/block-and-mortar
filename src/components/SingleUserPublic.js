@@ -24,7 +24,6 @@ class SingleUserPublic extends Component {
     const servicesCompleted = pastServices.filter(item => item.status === "Completed")
     console.log(servicesCompleted, 'servicesCompleted')
 
-    if (!user.id) return <div className="avenir dark-red"><h2>Oh no! No user found.</h2></div>;
     return (
       user.id ? (
         <div className="home" id="background">
@@ -58,7 +57,13 @@ class SingleUserPublic extends Component {
             </div>
           </div>
         </div>
-      ) : (<div />
+      ) : (
+        
+        <div className="home" id="background">
+          <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
+          <div className="avenir dark-red"><h1>Oh no! No user found.</h1></div>
+          </div>
+          </div>
 
         )
 
