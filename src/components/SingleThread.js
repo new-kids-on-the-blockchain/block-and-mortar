@@ -17,7 +17,7 @@ class SingleThread extends Component {
 
     const sort = messages => {
       return messages.sort(function(a, b) {
-        return new Date(b.updatedAt) - new Date(a.updatedAt);
+        return new Date(a.updatedAt) - new Date(b.updatedAt);
       });
     };
 
@@ -40,6 +40,8 @@ class SingleThread extends Component {
   }
 
   render() {
+    console.log(this.props.currentThread, "CURRENT THREAD!!!!")
+    console.log(this.props.currentUser, "CURRENT USER!!!!")
     return (
       <div className="avenir">
         {!this.props.currentThread.id ? (
@@ -53,10 +55,10 @@ class SingleThread extends Component {
           </div>
         ) : (
           <div>
-            {this.state.messages.map(message => {
+            {this.state.messages && this.state.messages.map(message => {
               return (
                 <div className="message" key={message.id}>
-                  {message.Sender.userName}:
+                  <b>{this.props.currentThread.buyer.userName}: </b>
                   {message.content}
                 </div>
               );
@@ -72,10 +74,9 @@ class SingleThread extends Component {
 }
 
 const mapState = state => {
-  console.log("STTTATETTEE", state);
   return {
     messages: state.messages,
-    users: state.users
+    currentUser: state.currentUser
   };
 };
 
