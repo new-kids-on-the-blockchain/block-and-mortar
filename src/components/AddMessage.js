@@ -33,15 +33,16 @@ class AddMessage extends Component {
 
   render() {
     return (
-      <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
-        <h2>New Message:</h2>
+      <div className="avenir bg-light-gray pv3">
         <form onSubmit={this.handleSubmit}>
+          <label for="messageContent" className="avenir f6 b db mb2">New Message</label>
           <textarea
             id="messageContent"
             name="content"
             type="text"
+            className="input-reset ba b--black-20 pa2 mb2 db w-100"
           />
-          <button>Submit</button>
+          <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink">Submit</button>
         </form>
       </div>
     )

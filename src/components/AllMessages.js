@@ -23,19 +23,19 @@ class AllMessages extends Component {
 
   render() {
     return (
-      <div className="home" id="background">
-      <div className="avenir mw10 center bg-light-gray pa3 ph5-ns" id="topMargin2">
-        <div className="allThreads">
-          <h2>All Conversations</h2>
+      <div className="home pa2 fl w-100" id="background">
+      <div className="avenir bg-light-gray pv2 ph4 fl w-100" id="topMargin2">
+          <div className="allThreads ph4 fl w-40">
+          <div className="f2">All Conversations</div>
           { this.props.threads.length
             ? this.props.threads.map(thread => {
                 return (
-                  <div key={thread.id} className="containerInner bt" onClick={() => this.setCurrentThread(thread)}>
-                    <div>{thread.service.name}</div>
+                  <div key={thread.id} className="containerInner bt dim" onClick={() => this.setCurrentThread(thread)}>
+                    <div><span className="b">Topic:</span> {thread.service.name}</div>
                     {
                       thread.buyer.id === this.props.currentUser.id
-                      ? <div>{thread.seller.userName}</div>
-                      : <div>{thread.buyer.userName}</div>
+                        ? <div><span className="b">Sender:</span> {thread.seller.userName}</div>
+                      : <div><span className="b">Sender:</span> {thread.buyer.userName}</div>
                     }
                   </div>
                 )

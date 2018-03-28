@@ -26,7 +26,7 @@ class SingleService extends Component {
       const web3 = this.props.web3
       this.props.fetchAccounts(web3);
     } catch (e) {
-      console.log(e, 'AWAIT collectBlockchainInfo DIDN"T WORK');
+      console.log(e, 'await collectBlockchainInfo did not succeed');
     }
   }
 
@@ -71,6 +71,7 @@ class SingleService extends Component {
         <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMarginLogin">
           <div className="f2">{service.name} </div>
           <img alt={service.name} src={service.imgUrl} />
+          </div>
           <p><b>Description:</b> {service.description} </p>
           <p><b>Category:</b> {service.category} </p>
           <p><b>Price:</b> {service.price} ether</p>
