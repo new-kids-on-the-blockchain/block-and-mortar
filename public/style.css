@@ -161,7 +161,8 @@ nav {
 
 
 #homeText {
-  margin-top:-200px;
+  margin-top:-20px;
+  padding-top: -200px;
   display: flex;
   flex-direction: column;
   /* justify-content: space-between */
@@ -190,8 +191,10 @@ nav {
 }
 
 #text{
-  top: 40em;
-  font-size: 29px;
+  /* margin-top: 10em; */
+  margin-bottom: -5em;
+  font-size: 32px;
   line-height: normal;
   color: white;
+  font-weight: lighter;
 }
