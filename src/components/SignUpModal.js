@@ -32,7 +32,8 @@ const AuthFormModal = props => {
             <div>
               <button
                 type="submit"
-                className="f4 link dim br-pill ph4 pv2 mb2 dib white bg-main-blue b"
+                className="f4 link dim br-pill pv2 mb2 dib white bg-main-blue b"
+                id="signUpButton"
               >
 
                 {displayName}

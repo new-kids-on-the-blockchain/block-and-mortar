@@ -170,12 +170,13 @@ nav {
   padding-top: -200px;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between */
+  /* justify-content: space-between  */
 }
 
 #homeText > .modal{
   flex:1;
   /* position: absolute; */
+  margin-top: -10em;
 }
 
 #text{
@@ -199,7 +200,7 @@ nav {
   opacity: 1;
 }
 
-.ph4 {
+#signUpButton {
   padding-left: 6em;
   padding-right: 6em;
 }
