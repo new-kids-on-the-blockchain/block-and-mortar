@@ -8,7 +8,7 @@ const Navbar = props => (
     <nav>
         <Link to="/">
           <div>
-            <div className="avenir white f1 siteTitle">Block &amp; Mortar</div>
+            <div className="dim avenir white f1 siteTitle">Block &amp; Mortar</div>
           </div>
         </Link>
         <div id="subNav">
