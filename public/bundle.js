@@ -83265,11 +83265,15 @@ var SingleService = function (_Component) {
           { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMargin' },
           _react2.default.createElement(
             'div',
-            { className: 'f2' },
-            service.name,
-            ' '
+            { id: 'profileVisual' },
+            _react2.default.createElement(
+              'div',
+              { className: 'f2' },
+              service.name,
+              ' '
+            ),
+            _react2.default.createElement('img', { alt: service.name, src: service.imgUrl })
           ),
-          _react2.default.createElement('img', { alt: service.name, src: service.imgUrl }),
           _react2.default.createElement(
             'p',
             null,
