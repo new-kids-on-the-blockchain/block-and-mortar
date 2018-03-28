@@ -82364,7 +82364,7 @@ var MyProfile = function (_Component) {
       var servicesCompleted = pastServices.filter(function (item) {
         return item.status === "Completed";
       });
-      console.log(servicesCompleted, 'servicesCompleted');
+      console.log(servicesCompleted, "servicesCompleted");
 
       if (!user.id) return _react2.default.createElement(
         "div",
@@ -82380,24 +82380,31 @@ var MyProfile = function (_Component) {
         { className: "home", id: "background" },
         _react2.default.createElement(
           "div",
-          { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns", id: "topMargin" },
+          {
+            className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns",
+            id: "topMargin"
+          },
           _react2.default.createElement(
             "div",
-            { className: "avenir flex items-center justify-center pa1 bg-teal" },
+            { id: "profileVisual" },
             _react2.default.createElement(
-              "p",
-              { className: "avenir lh-title ml3" },
-              "This is how your profile will appear to visitors!"
+              "div",
+              { className: "avenir flex items-center justify-center pa1 bg-teal", id: "calloutBox" },
+              _react2.default.createElement(
+                "p",
+                { className: "avenir lh-title ml3" },
+                "This is how your profile will appear to visitors!"
+              )
+            ),
+            _react2.default.createElement("br", null),
+            _react2.default.createElement("img", { alt: "profile img", className: "tc", src: user.imageURL }),
+            _react2.default.createElement(
+              "div",
+              { className: "f2" },
+              "Hi, I'm ",
+              user.userName,
+              "!"
             )
-          ),
-          _react2.default.createElement("br", null),
-          _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
-          _react2.default.createElement(
-            "div",
-            { className: "f2" },
-            "Hi, I'm ",
-            user.userName,
-            "!"
           ),
           _react2.default.createElement(
             "div",
@@ -82470,7 +82477,9 @@ var MyProfile = function (_Component) {
                 pastServices.length,
                 " transactions, ",
                 servicesCompleted.length,
-                " fulfilled "
+                " ",
+                "fulfilled",
+                " "
               ) : _react2.default.createElement(
                 "p",
                 null,
@@ -83536,7 +83545,7 @@ var SingleThread = function (_Component) {
   }
 
   _createClass(SingleThread, [{
-    key: 'componentWillReceiveProps',
+    key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(newProps) {
       var newMessages = newProps.currentThread.messages;
       var sortedMessages = void 0;
@@ -83565,40 +83574,42 @@ var SingleThread = function (_Component) {
       }
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return _react2.default.createElement(
-        'div',
-        { className: 'avenir' },
+        "div",
+        { className: "avenir" },
         !this.props.currentThread.id ? _react2.default.createElement(
-          'div',
+          "div",
           null,
-          'No Conversation Selected'
+          "No Conversation Selected"
         ) : !this.state.messages.length ? _react2.default.createElement(
-          'div',
+          "div",
           null,
           _react2.default.createElement(
-            'div',
+            "div",
             null,
-            'No Messages in this Conversation'
+            "No Messages in this Conversation"
           ),
           _react2.default.createElement(
-            'div',
+            "div",
             null,
             _react2.default.createElement(_AddMessage2.default, { currentThread: this.props.currentThread })
           )
         ) : _react2.default.createElement(
-          'div',
+          "div",
           null,
           this.state.messages.map(function (message) {
             return _react2.default.createElement(
-              'div',
-              { className: 'message', key: message.id },
+              "div",
+              { className: "message", key: message.id },
+              message.Sender.userName,
+              ":",
               message.content
             );
           }),
           _react2.default.createElement(
-            'div',
+            "div",
             null,
             _react2.default.createElement(_AddMessage2.default, { currentThread: this.props.currentThread })
           )
@@ -83611,8 +83622,10 @@ var SingleThread = function (_Component) {
 }(_react.Component);
 
 var mapState = function mapState(state) {
+  console.log("STTTATETTEE", state);
   return {
-    messages: state.messages
+    messages: state.messages,
+    users: state.users
   };
 };
 
@@ -84117,13 +84130,17 @@ var SingleUserPublic = function (_Component) {
         _react2.default.createElement(
           "div",
           { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns", id: "topMargin" },
-          _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
           _react2.default.createElement(
             "div",
-            { className: "f2" },
-            "Hi, I'm ",
-            user.userName,
-            "!"
+            { id: "profileVisual" },
+            _react2.default.createElement("img", { alt: "profile img", src: user.imageURL }),
+            _react2.default.createElement(
+              "div",
+              { className: "f2" },
+              "Hi, I'm ",
+              user.userName,
+              "!"
+            )
           ),
           _react2.default.createElement(
             "div",
