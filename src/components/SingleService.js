@@ -68,7 +68,8 @@ class SingleService extends Component {
     return (
       this.props.singleService ?
       (<div className="home" id="background">
-        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMarginLogin">
+        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
+        <div id="topMarginLogin">
           <div className="f2">{service.name} </div>
           <img alt={service.name} src={service.imgUrl} />
           </div>
