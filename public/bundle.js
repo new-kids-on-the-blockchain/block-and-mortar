@@ -83608,7 +83608,7 @@ var SingleThread = function (_Component) {
 
       return _react2.default.createElement(
         "div",
-        { className: "avenir ph4 fl w-60 bl" },
+        { className: "avenir ph4 fl w-60 bl h-100 msgBox" },
         !this.props.currentThread.id ? _react2.default.createElement(
           "div",
           { className: "f3" },
