@@ -173,6 +173,15 @@ nav {
   /* position: absolute; */
 }
 
+#text{
+  /* margin-top: 10em; */
+  margin-bottom: -5em;
+  font-size: 32px;
+  line-height: normal;
+  color: white;
+  font-weight: lighter;
+}
+
 
 .modalBox {
   flex:1;
@@ -190,11 +199,3 @@ nav {
   padding-right: 6em;
 }
 
-#text{
-  /* margin-top: 10em; */
-  margin-bottom: -5em;
-  font-size: 32px;
-  line-height: normal;
-  color: white;
-  font-weight: lighter;
-}
