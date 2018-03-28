@@ -98,20 +98,3 @@ code {
 .pure-form input[type="text"]:focus {
   border-color: #0c1a2b;
 }
-
-.allThreads {
-  width: 300px;
-}
-
-.singleThread {
-  padding: 10px;
-  border: solid 1px #000;
-}
-
-.currentThread {
-  padding: 10px;
-}
-
-.message {
-  padding: 10px;
-}
