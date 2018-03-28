@@ -82264,7 +82264,7 @@ var Homepage = function Homepage(props) {
         { id: "homeText" },
         _react2.default.createElement(
           "div",
-          { id: "text" },
+          { id: "text", className: "f1" },
           "Aimed at local communities,",
           _react2.default.createElement("br", null),
           _react2.default.createElement(

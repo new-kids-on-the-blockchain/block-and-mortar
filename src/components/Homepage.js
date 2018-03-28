@@ -20,7 +20,7 @@ const Homepage = props => (
     ) : (
       <div className="home" id="background">
         <div id="homeText">
-          <div id="text">
+          <div id="text" className="f1">
             Aimed at local communities,<br />
             <span className="b f1 lh-title white">Block &amp; Mortar</span>{" "}
             allows for the grassroots sale of goods and services using the
