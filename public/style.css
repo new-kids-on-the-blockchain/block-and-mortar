@@ -118,22 +118,26 @@ button.f4 {
 }
 
 div#background {
+  display: flex;
   background: url(https://farm1.staticflickr.com/884/27171020888_d1b2986a8b_k.jpg);
   background-position: center center;
   background-repeat:  no-repeat;
   background-attachment: fixed;
   background-size:  cover;
   background-color: #999;
+  justify-content: center;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   position: fixed;
-  margin: 2em;
-  padding: 10px;
+  /* margin: 2em; */
+  padding: 24px;
   width: calc(100vw - 1em);
-  background-color: #49b6bd
+  background-color: #49b6bd;
+  height: 129px;
+  z-index: 5;
 }
 
 #topMargin {
@@ -146,14 +150,19 @@ nav {
   margin-bottom: 50em;
 }
 
+#topMargin2 {
+  margin-top: 12em;
+  margin-bottom: 70em;
+}
+
 .bg-light-gray {
   background-color: #f3f2f3;
 }
 
 #logo {
   position: absolute;
-  top:8px;
-  left:-1em;
+  top: 16px;
+  left: 9px;
   width: 5em;
   height: 5em;
   z-index: 3;
@@ -218,4 +227,8 @@ nav {
 #calloutBox {
   padding-left: 7em;
   padding-right: 7em;
+}
+
+#subNavItem {
+  padding-top: 35px;
 }

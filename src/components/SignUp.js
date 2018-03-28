@@ -9,7 +9,7 @@ const AuthForm = props => {
   const { name, displayName, handleSubmit, error } = props
   return (
     <div className="home" id="background">
-      <div className="avenir form-login" id="topMarginLogin">
+      <div className="avenir form-login" id="topMargin2">
         <div className="avenir flex items-center justify-center pw4 pv2 bg-lightest-gray navy fl w-30">
           <form onSubmit={handleSubmit} name={name}>
             <div className="avenir f2 pa4 tc">{displayName}</div>
@@ -32,7 +32,7 @@ const AuthForm = props => {
           <div className="avenir lh-title ml3">
             <div className="avenir f2">Get started today</div>
             <div className="avenir f3">When you join Block & Mortar, you can start buying and selling goods immediately.</div>
-            <div className="avenir f5 pv2">If you are new to blockchain technology, check out our beginner's guide.</div>
+            <div className="avenir f5 pv2">If you are new to blockchain technology, check out our <a href="/faq">beginner's guide</a>.</div>
             <div className="avenir f5 pv2">If you're already familiar with Ethereum, be sure to log into your <a href="https://metamask.io/">Metamask account</a>, create an account or log in below, and you’ll be ready to get started.</div>
           </div>
         </div>

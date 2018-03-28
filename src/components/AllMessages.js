@@ -24,7 +24,7 @@ class AllMessages extends Component {
   render() {
     return (
       <div className="home" id="background">
-      <div className="avenir mw10 center bg-light-gray pa3 ph5-ns" id="topMarginLogin">
+      <div className="avenir mw10 center bg-light-gray pa3 ph5-ns" id="topMargin2">
         <div className="allThreads">
           <h2>All Conversations</h2>
           { this.props.threads.length

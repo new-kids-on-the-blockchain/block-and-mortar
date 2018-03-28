@@ -81771,7 +81771,7 @@ var AllMessages = function (_Component) {
         { className: 'home', id: 'background' },
         _react2.default.createElement(
           'div',
-          { className: 'avenir mw10 center bg-light-gray pa3 ph5-ns', id: 'topMarginLogin' },
+          { className: 'avenir mw10 center bg-light-gray pa3 ph5-ns', id: 'topMargin2' },
           _react2.default.createElement(
             'div',
             { className: 'allThreads' },
@@ -81959,23 +81959,23 @@ var AllServices = function (_Component) {
                   ' ',
                   _react2.default.createElement(
                     'button',
-                    { className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4' },
+                    { className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4', id: 'signUpButton' },
                     'Create a Post'
                   )
                 ),
                 _react2.default.createElement(
                   'button',
-                  { className: 'f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4', value: 'All', onClick: this.handleClick },
+                  { className: 'f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4', id: 'signUpButton', value: 'All', onClick: this.handleClick },
                   'Show All'
                 ),
                 _react2.default.createElement(
                   'button',
-                  { className: 'f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4', value: 'Goods', onClick: this.handleClick },
+                  { className: 'f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4', id: 'signUpButton', value: 'Goods', onClick: this.handleClick },
                   'Goods'
                 ),
                 _react2.default.createElement(
                   'button',
-                  { className: 'f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4', value: 'Services', onClick: this.handleClick },
+                  { className: 'f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4', id: 'signUpButton', value: 'Services', onClick: this.handleClick },
                   'Services'
                 )
               )
@@ -82381,7 +82381,7 @@ var MyProfile = function (_Component) {
           "div",
           {
             className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns",
-            id: "topMargin"
+            id: "topMarginLogin"
           },
           _react2.default.createElement(
             "div",
@@ -82567,7 +82567,7 @@ var Navbar = function Navbar(props) {
         { id: 'subNav' },
         props.isLoggedIn ? _react2.default.createElement(
           'div',
-          { className: 'dtc v-mid w-75 tr' },
+          { className: 'dtc v-mid w-75 tr', id: 'subNavItem' },
           _react2.default.createElement(
             _reactRouterDom.Link,
             { to: '/home', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns ' },
@@ -82842,7 +82842,7 @@ var AuthForm = function AuthForm(props) {
     { className: 'home', id: 'background' },
     _react2.default.createElement(
       'div',
-      { className: 'avenir form-login', id: 'topMarginLogin' },
+      { className: 'avenir form-login', id: 'topMargin2' },
       _react2.default.createElement(
         'div',
         { className: 'avenir flex items-center justify-center pw4 pv2 bg-lightest-gray navy fl w-30' },
@@ -82919,7 +82919,13 @@ var AuthForm = function AuthForm(props) {
           _react2.default.createElement(
             'div',
             { className: 'avenir f5 pv2' },
-            'If you are new to blockchain technology, check out our beginner\'s guide.'
+            'If you are new to blockchain technology, check out our ',
+            _react2.default.createElement(
+              'a',
+              { href: '/faq' },
+              'beginner\'s guide'
+            ),
+            '.'
           ),
           _react2.default.createElement(
             'div',
@@ -83016,7 +83022,7 @@ var AuthFormModal = function AuthFormModal(props) {
         _react2.default.createElement(
           "h2",
           null,
-          "Sign Up and Get started today! "
+          "Sign up and get started today! "
         ),
         _react2.default.createElement(
           "form",
@@ -83261,7 +83267,7 @@ var SingleService = function (_Component) {
         { className: 'home', id: 'background' },
         _react2.default.createElement(
           'div',
-          { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMargin' },
+          { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMarginLogin' },
           _react2.default.createElement(
             'div',
             { className: 'f2' },
@@ -83713,7 +83719,7 @@ var SingleUser = function (_Component) {
         { className: 'home', id: 'background' },
         _react2.default.createElement(
           'div',
-          { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMargin' },
+          { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMarginLogin' },
           _react2.default.createElement(
             'div',
             { className: 'f2' },
@@ -84128,7 +84134,7 @@ var SingleUserPublic = function (_Component) {
         { className: "home", id: "background" },
         _react2.default.createElement(
           "div",
-          { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns", id: "topMargin" },
+          { className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns", id: "topMarginLogin" },
           _react2.default.createElement(
             "div",
             { id: "profileVisual" },

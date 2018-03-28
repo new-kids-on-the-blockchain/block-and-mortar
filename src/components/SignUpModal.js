@@ -11,7 +11,7 @@ const AuthFormModal = props => {
     <div className="avenir form-login" id="topMarginLogin">
       <div className="modalBox">
         <div className="avenir lh-title tc">
-          <h2>Sign Up and Get started today! </h2>
+          <h2>Sign up and get started today! </h2>
           <form
             onSubmit={handleSubmit}
             name={name}
@@ -56,6 +56,7 @@ const AuthFormModal = props => {
     </div>
   );
 };
+
 
 const mapSignup = state => {
   return {
