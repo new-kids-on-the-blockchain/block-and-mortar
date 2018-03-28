@@ -28,8 +28,12 @@ class SingleUserPublic extends Component {
       user.id ? (
         <div className="home" id="background">
           <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
-            <img alt="profile img" src={user.imageURL} />
+
+          <div id="profileVisual">
+          <img alt="profile img" src={user.imageURL} />
             <div className="f2">Hi, I'm {user.userName}!</div>
+</div>
+
             <div className="containerInner bt">
               <div className="f3">My Goods & Services: </div>
               <div>
@@ -58,7 +62,7 @@ class SingleUserPublic extends Component {
           </div>
         </div>
       ) : (
-        
+
         <div className="home" id="background">
           <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
           <div className="avenir dark-red"><h1>Oh no! No user found.</h1></div>

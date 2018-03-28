@@ -212,3 +212,13 @@ nav {
   padding-right: 6em;
 }
 
+#profileVisual {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#calloutBox {
+  padding-left: 7em;
+  padding-right: 7em;
+}
