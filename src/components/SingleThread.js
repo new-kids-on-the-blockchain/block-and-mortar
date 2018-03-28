@@ -45,7 +45,7 @@ class SingleThread extends Component {
     const messages = this.state.messages
 
     return (
-      <div className="avenir ph4 fl w-60 bl">
+      <div className="avenir ph4 fl w-60 bl h-100 msgBox">
         {!this.props.currentThread.id ? (
           <div className="f3">No Conversation Selected</div>
         ) : !this.state.messages.length ? (

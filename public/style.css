@@ -232,3 +232,7 @@ nav {
 #subNavItem {
   padding-top: 35px;
 }
+
+.msgBox {
+  min-height: 400px;
+}
