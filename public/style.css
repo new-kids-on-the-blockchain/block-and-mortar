@@ -188,6 +188,13 @@ nav {
   font-weight: lighter;
 }
 
+#textSignedIn {
+  margin-bottom: 0em;
+  color: white;
+  padding-top: 137px;
+  line-height: 68px;
+}
+
 
 .modalBox {
   flex:1;

@@ -82231,28 +82231,57 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Homepage = function Homepage(props) {
   return _react2.default.createElement(
     "div",
-    { className: "home", id: "background" },
-    _react2.default.createElement(
+    null,
+    props.isLoggedIn ? _react2.default.createElement(
       "div",
-      { id: "homeText" },
+      { className: "home", id: "background" },
       _react2.default.createElement(
         "div",
-        { id: "text" },
-        "Aimed at local communities,",
-        _react2.default.createElement("br", null),
+        { id: "homeText" },
         _react2.default.createElement(
-          "span",
-          { className: "b f1 lh-title white" },
-          "Block & Mortar"
-        ),
-        " allows for the grassroots sale of goods and services using the Ethereum blockchain."
+          "div",
+          { className: "f1", id: "textSignedIn" },
+          "Aimed at local communities,",
+          _react2.default.createElement("br", null),
+          _react2.default.createElement(
+            "span",
+            { className: "b" },
+            "Block & Mortar"
+          ),
+          " allows for the grassroots sale of goods and services using the Ethereum blockchain."
+        )
       ),
-      props.isLoggedIn ? _react2.default.createElement("div", null) : _react2.default.createElement(_SignUpModal.Signup, { className: "modal" })
-    ),
-    _react2.default.createElement(
+      _react2.default.createElement(
+        "div",
+        { id: "homeImg" },
+        _react2.default.createElement("img", { role: "presentation", src: "/assets/bgimg/phone2.png" })
+      )
+    ) : _react2.default.createElement(
       "div",
-      { id: "homeImg" },
-      _react2.default.createElement("img", { role: "presentation", src: "/assets/bgimg/phone2.png" })
+      { className: "home", id: "background" },
+      _react2.default.createElement(
+        "div",
+        { id: "homeText" },
+        _react2.default.createElement(
+          "div",
+          { id: "text" },
+          "Aimed at local communities,",
+          _react2.default.createElement("br", null),
+          _react2.default.createElement(
+            "span",
+            { className: "b f1 lh-title white" },
+            "Block & Mortar"
+          ),
+          " ",
+          "allows for the grassroots sale of goods and services using the Ethereum blockchain."
+        ),
+        _react2.default.createElement(_SignUpModal.Signup, { className: "modal" })
+      ),
+      _react2.default.createElement(
+        "div",
+        { id: "homeImg" },
+        _react2.default.createElement("img", { role: "presentation", src: "/assets/bgimg/phone2.png" })
+      )
     )
   );
 };
@@ -82571,17 +82600,17 @@ var Navbar = function Navbar(props) {
           { id: 'subNav' },
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/login', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
+            { to: '/login', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
             'Login'
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/signup', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
+            { to: '/signup', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
             'Sign Up'
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/faq', className: 'avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns' },
+            { to: '/faq', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
             'FAQs'
           )
         )
@@ -83018,7 +83047,13 @@ var AuthFormModal = function AuthFormModal(props) {
         _react2.default.createElement(
           "p",
           { className: "w-80 center" },
-          "If you are new to blockchain technology, check out our beginner's guide."
+          "If you are new to blockchain technology, check out our  ",
+          _react2.default.createElement(
+            "a",
+            { href: "/faq", className: "b" },
+            "beginner's guide"
+          ),
+          "."
         ),
         _react2.default.createElement(
           "p",
@@ -83027,7 +83062,7 @@ var AuthFormModal = function AuthFormModal(props) {
           " ",
           _react2.default.createElement(
             "a",
-            { href: "https://metamask.io/" },
+            { href: "https://metamask.io/", className: "b" },
             "Metamask account"
           ),
           ", create an account or log in below, and you\u2019ll be ready to get started."
