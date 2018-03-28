@@ -29,7 +29,6 @@ class SingleThread extends Component {
       sortedMessages = sort(newMessages)
       this.setState({ messages: sortedMessages })
     }
-    console.log("Added a new message: ", newMessages)
 
     //this sorting function only runs if there are messages to sort
     //It returns all messages sorted by date

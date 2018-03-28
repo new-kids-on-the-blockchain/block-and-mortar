@@ -19,7 +19,7 @@ window.addEventListener('load', function() {
     } else {
       // Fallback to localhost if no web3 injection. We've configured this to
       // use the development console's port by default.
-      var provider = new Web3.providers.HttpProvider('http://172.16.27.239:8545')
+      var provider = new Web3.providers.HttpProvider('http://172.16.27.73:8545')
 
       web3 = new Web3(provider)
 

@@ -26,7 +26,7 @@ class SingleService extends Component {
       const web3 = this.props.web3
       this.props.fetchAccounts(web3);
     } catch (e) {
-      console.log(e, 'AWAIT collectBlockchainInfo DIDN"T WORK');
+      console.log(e, 'await collectBlockchainInfo did not succeed');
     }
   }
 
@@ -96,14 +96,14 @@ class SingleService extends Component {
 
           {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ?
             <div>
-              <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" onClick={this.handleComplete}>Complete Order</button> 
+              <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" onClick={this.handleComplete}>Complete Order</button>
               <div className="avenir flex items-center justify-center pa3 bg-teal">
                   <div className="avenir lh-title ml3">Order placed successfully. Complete transaction when you have received your goods or services.
                   </div>
               </div>
               </div>
               : <div />}
-  
+
           {!service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? <div className="avenir flex items-center justify-center pa2 bg-teal"><div className="avenir lh-title ml3">Service no longer available.</div></div> : <div />}
 
               {!service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ?
@@ -111,17 +111,17 @@ class SingleService extends Component {
                 : <div />}
             </div>
       </div>
-        ) : 
-      
+        ) :
+
         (<div className="home" id="background">
        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
        <div className="avenir dark-red"><h1>Oh no! No service found.</h1></div>
        </div>
        </div>))
       }
-    
+
     }
-    
+
 const mapStateToProps = ({web3, services, users, contract, accounts, currentUser }, ownProps) => ({
             singleService: services.find(
             service => +service.id === +ownProps.match.params.id
@@ -132,7 +132,7 @@ const mapStateToProps = ({web3, services, users, contract, accounts, currentUser
           currentUser,
           web3
         })
-        
+
 const mapDispatchToProps = (dispatch, ownProps) => ({
             handleFetchServices() {
           dispatch(fetchServices())
@@ -167,5 +167,5 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
             dispatch(postThread(thread, ownProps))
           }
           })
-          
+
           export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SingleService))

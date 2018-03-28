@@ -1,10 +1,5 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
-// const op = Sequelize.Op;
-// const operatorsAliases = {
-//    $eq: op.eq,
-//    $or: op.or
-// }
 
 const Thread = db.define("thread");
 
