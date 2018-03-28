@@ -5,6 +5,12 @@
   margin: auto;
 } */
 
+.siteTitle {
+  font-size: 3.5rem;
+  text-decoration: underline;
+  text-decoration-color: #E34383;
+}
+
 a {
   color: #E34383;
   text-decoration-line: none;
@@ -19,9 +25,10 @@ li {
 }
 
 .f2 {
+  font-size: 2.5rem;
   color: #0E1B1C;
   font-weight: 400;
-  padding: 15px;
+  padding: 15px 0px 15px 0px;
 }
 
 .f3 {
@@ -34,14 +41,12 @@ li {
   padding: 15px 0px 15px 0px;
 }
 
-.bt {
-  border-top-color: #91D446;
+button.f4 {
+  padding: 15px 15px 15px 15px;
 }
 
-.siteTitle {
-  font-size: 4rem;
-  text-decoration: underline;
-  text-decoration-color: #E34383;
+.bt {
+  border-top-color: #91D446;
 }
 
 .containerInner {
