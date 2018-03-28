@@ -49,7 +49,7 @@ const FAQ = props => {
         </div>
         </div>
 
-        <div className="f4 b"><Link className="dim" to="/signup">Sign Up</Link> and get started to learn more!</div>
+        <div className="f4 b tc-l"><span className="inline-flex items-center"><Link className="dim ph1" to="/signup">Sign Up</Link> and get started to learn more!</span></div>
       </div>
     </div>
   )
