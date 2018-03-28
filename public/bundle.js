@@ -82547,7 +82547,7 @@ var Navbar = function Navbar(props) {
     null,
     _react2.default.createElement(
       'nav',
-      null,
+      { className: 'navBar' },
       _react2.default.createElement(
         _reactRouterDom.Link,
         { to: '/' },

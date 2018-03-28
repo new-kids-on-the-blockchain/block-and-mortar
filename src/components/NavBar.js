@@ -5,7 +5,7 @@ import { logout } from '../store'
 
 const Navbar = props => (
   <div>
-    <nav>
+    <nav className="navBar">
         <Link to="/" >
           <div id="logoTitle">
           <img id="logo" className="" src="/assets/logo1.png" />
