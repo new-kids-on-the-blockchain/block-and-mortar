@@ -180,13 +180,10 @@ nav {
 }
 
 #text{
-  /* margin-top: 10em; */
-  margin-bottom: -3em;
-  /* font-size: 32px; */
-  /* line-height: normal; */
+  margin-bottom: -5em;
   color: white;
   line-height: 60px;
-  /* font-weight: lighter; */
+  font-size: 34px;
 }
 
 #textSignedIn {
@@ -198,7 +195,6 @@ nav {
 
 .modalBox {
   flex:1;
-  /* position: absolute; */
   top: 4em;
   width: 100%;
   background-color: white;
