@@ -18,14 +18,14 @@ router.post('/', (req, res, next) => {
       serviceId: req.body.serviceId
     }})
     .spread(function (thread, createdThreadBool) {
-      return Thread.findById(thread.id, {include: [{ all: true }]})
+      return Thread.findById(thread.id, {include: [{ all: true, include: [{all: true}] }]})
       .then(foundThread => res.json(foundThread))
   })
   .catch(next);
 })
 
 router.get('/:id', (req, res, next) => {
-    Thread.findById(req.params.id, { include: [{ all: true }] })
+    Thread.findById(req.params.id, {include: [{ all: true, include: [{all: true}] }]})
       .then(thread => res.json(thread))
       .catch(next)
   })
