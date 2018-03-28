@@ -31,7 +31,6 @@ router.post('/signup', (req, res, next) => {
 })
 
 router.post('/logout', (req, res) => {
-  console.log('in the log out')
   req.logout()
   req.session.destroy()
   res.redirect('/')

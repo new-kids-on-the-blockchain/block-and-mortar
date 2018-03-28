@@ -19,8 +19,10 @@ window.addEventListener('load', function() {
     } else {
       // Fallback to localhost if no web3 injection. We've configured this to
       // use the development console's port by default.
+
       // Kait's IP: 172.16.27.73
       // Digital Ocean IP: 159.65.218.69
+
       var provider = new Web3.providers.HttpProvider('http://172.16.27.73:8545')
 
       web3 = new Web3(provider)
