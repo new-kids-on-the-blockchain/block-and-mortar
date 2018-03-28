@@ -103,15 +103,18 @@ button.f4 {
 }
 
 .home > div#homeText {
-  /* flex: 2; */
-  margin-top: 15%;
-  margin-left: 6%;
-  padding: 40px;
-  line-height: 3em;
+    flex: 1;
+    margin-top: 9%;
+    margin-left: 5%;
+    margin-right:3%;
+    padding: 40px;
+    line-height: 3em;
 }
 
 #homeImg {
-  margin-top: 12%;
+  flex:2;
+  margin-top: 8%;
+  width: 140%;
 }
 
 div#background {
@@ -145,3 +148,67 @@ nav {
 .bg-light-gray {
   background-color: #f3f2f3;
 }
+
+#logo {
+  position: absolute;
+  top:8px;
+  left:-1em;
+  width: 5em;
+  height: 5em;
+  z-index: 3;
+}
+
+#logoTitle{
+  /* display: flex; */
+  margin-left:4em;
+  width: 550px;
+}
+
+
+#homeText {
+  margin-top:-20px;
+  padding-top: -200px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between  */
+}
+
+#homeText > .modal{
+  flex:1;
+  /* position: absolute; */
+  margin-top: -10em;
+}
+
+#text{
+  /* margin-top: 10em; */
+  margin-bottom: -5em;
+  font-size: 32px;
+  line-height: normal;
+  color: white;
+  font-weight: lighter;
+}
+
+#textSignedIn {
+  margin-bottom: 0em;
+  color: white;
+  padding-top: 137px;
+  line-height: 68px;
+}
+
+
+.modalBox {
+  flex:1;
+  /* position: absolute; */
+  top: 4em;
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  opacity: 1;
+}
+
+#signUpButton {
+  padding-left: 6em;
+  padding-right: 6em;
+}
+
