@@ -89,7 +89,7 @@ class SingleService extends Component {
 
 
           {service.isAvailable && currentUser.id === service.Seller.id ?
-            <button id="signUpButton" className="f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-highlighter-yellow" onClick={this.handleClose}>Remove from Marketplace</button>
+            <button id="signUpButton" className="f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-dark-gray" onClick={this.handleClose}>Remove from Marketplace</button>
             : <div />}
 
           {!service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? <div className="avenir flex items-center justify-center pa2 bg-teal"><div className="avenir lh-title ml3">You have removed this service from the Marketplace.</div></div> : <div />}

@@ -22,11 +22,11 @@ async function seed () {
   ])
 
   const services = await Promise.all([
-    Service.create({name: 'Cleaning your car', description: 'I will polish your car any weekend!', category: 'Services', buyer: null, seller: 6, isAvailable: true, price: 0.08, status: 'Posted', imgUrl: '/assets/items/car_wash.png'}),
+    Service.create({name: 'Cleaning your car', description: 'I will polish your car any weekend!', category: 'Services', buyer: null, seller: 3, isAvailable: true, price: 0.08, status: 'Posted', imgUrl: '/assets/items/car_wash.png'}),
     Service.create({name: 'Babysitting', description: 'I am great with children, I can watch your kids for 3 hours', category: 'Services', buyer: null, seller: 6, isAvailable: true, price: 0.1, status: 'Posted', imgUrl: '/assets/items/babysitting.png'}),
     Service.create({name: 'Dog walking', description: 'I will walk your dog for 30 mins', category: 'Services', buyer: null, seller: 6,  isAvailable: true, price: 0.05, status: 'Posted', imgUrl: '/assets/items/dog_walking.png'}),
     Service.create({name: 'Fresh Jam', description: 'I can offer you 3 jars of homemade jams', category: 'Goods', buyer: null, seller: 7, isAvailable: true, price: 0.02, status: 'Posted', imgUrl: '/assets/items/jam.png'}),
-    Service.create({name: 'Web Design', description: 'I can build your website', category: 'Services', buyer: 4, seller: 7, isAvailable: false, price: 0.9, status: 'Pending', imgUrl: '/assets/items/painting.png'}),
+    Service.create({name: 'Web Design', description: 'I can build your website', category: 'Services', buyer: 4, seller: 5, isAvailable: false, price: 0.9, status: 'Pending', imgUrl: '/assets/items/painting.png'}),
     Service.create({name: 'Basil', description: 'I grow fresh basil from my garden', category: 'Goods', buyer: 5, seller: 7, isAvailable: false, price: 0.05, status: 'Completed', imgUrl: '/assets/items/root_vegi.png'}),
     Service.create({name: 'Ironing', description: 'I can iron your clothes!', category: 'Services', buyer: null, seller: 7, isAvailable: true, price: 0.15, status: 'Posted', imgUrl: '/assets/items/iron.png'}),
     Service.create({name: 'Fixing roof', description: 'I am a professional at roof fixing! Great value!', category: 'Services', buyer: 6, seller: 8, isAvailable: false, price: 0.3, status: 'Pending', imgUrl: '/assets/items/service.png'}),
@@ -37,7 +37,8 @@ async function seed () {
     Service.create({name: 'Lawn Mowing', description: 'On summer holiday and willing to do landscaping working', category: 'Services', buyer: null, seller: 9, isAvailable: true, price: 0.05, status: 'Posted', imgUrl: '/assets/items/lawn.png'}),
     Service.create({name: 'Mattress', description: 'Moving to Cambridge and need to sell my mattress', category: 'Goods', buyer: null, seller: 2, isAvailable: true, price: 0.5, status: 'Posted', imgUrl: '/assets/items/bed.png'}),
     Service.create({name: 'Record player and speaker system', description: '2 large speakers and one turntable available', category: 'Goods', buyer: null, seller: 4, isAvailable: true, price: 0.15, status: 'Posted', imgUrl: '/assets/items/record_player.png'}),
-    Service.create({name: 'Burmese artwork', description: 'Moving to Cambridge and need to sell my artwork. Purchased in Myanmar', category: 'Goods', buyer: null, seller: 2, isAvailable: true, price: 0.05, status: 'Posted', imgUrl: '/assets/items/painting.png'})
+    Service.create({name: 'Burmese artwork', description: 'Moving to Cambridge and need to sell my artwork. Purchased in Myanmar', category: 'Goods', buyer: null, seller: 2, isAvailable: true, price: 0.05, status: 'Posted', imgUrl: '/assets/items/painting.png'}),
+    Service.create({name: 'Portrait Painting', description: 'I\'m an artist! I can paint you a portrait of whatever you want.', category: 'Services', buyer: null, seller: 11, isAvailable: true, price: 0.9, status: 'Posted', imgUrl: '/assets/items/painting.png'}),
   ])
 
   const thread = await Promise.all([
@@ -46,11 +47,11 @@ async function seed () {
   ])
 
 const message = await Promise.all([
-    Message.create({content: 'messsage1 content', senderId: 6, threadId: 1}),
-    Message.create({content: 'messsage2 content', senderId: 8, threadId: 1}),
-    Message.create({content: 'messsage3 content', senderId: 6, threadId: 1}),
-    Message.create({content: 'messsage4 content', senderId: 5, threadId: 2}),
-    Message.create({content: 'messsage4 content', senderId: 7, threadId: 2}),
+    Message.create({content: 'Hey! I am interested in this.', senderId: 6, threadId: 1}),
+    Message.create({content: 'Hi, I\'m interested! Where are you based?', senderId: 8, threadId: 1}),
+    Message.create({content: 'Hi!', senderId: 6, threadId: 1}),
+    Message.create({content: 'Hello! Is this still available?', senderId: 5, threadId: 2}),
+    Message.create({content: 'Hello!!', senderId: 7, threadId: 2}),
   ])
 
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
