@@ -81819,7 +81819,7 @@ var AllMessages = function (_Component) {
                   _react2.default.createElement(
                     'span',
                     { className: 'b' },
-                    'Sender:'
+                    'To:'
                   ),
                   ' ',
                   thread.seller.userName
@@ -81829,7 +81829,7 @@ var AllMessages = function (_Component) {
                   _react2.default.createElement(
                     'span',
                     { className: 'b' },
-                    'Sender:'
+                    'From:'
                   ),
                   ' ',
                   thread.buyer.userName
@@ -82956,7 +82956,7 @@ var AuthForm = function AuthForm(props) {
             'If you are new to blockchain technology, check out our ',
             _react2.default.createElement(
               'a',
-              { href: '/faq' },
+              { className: 'dim', href: '/faq' },
               'beginner\'s guide'
             ),
             '.'
@@ -83098,7 +83098,7 @@ var AuthFormModal = function AuthFormModal(props) {
           "If you are new to blockchain technology, check out our  ",
           _react2.default.createElement(
             "a",
-            { href: "/faq", className: "b" },
+            { href: "/faq", className: "b dim" },
             "beginner's guide"
           ),
           "."
@@ -83110,7 +83110,7 @@ var AuthFormModal = function AuthFormModal(props) {
           " ",
           _react2.default.createElement(
             "a",
-            { href: "https://metamask.io/", className: "b" },
+            { href: "https://metamask.io/", className: "b dim" },
             "Metamask account"
           ),
           ", create an account or log in below, and you\u2019ll be ready to get started."

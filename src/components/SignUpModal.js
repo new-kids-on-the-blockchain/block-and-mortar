@@ -41,12 +41,12 @@ const AuthFormModal = props => {
             </div>
           </form>
           <p className="w-80 center">
-            If you are new to blockchain technology, check out our  <a href="/faq" className="b" >beginner's
+            If you are new to blockchain technology, check out our  <a href="/faq" className="b dim" >beginner's
             guide</a>.
           </p>
           <p className="w-80 center">
             If you're already familiar with Ethereum, be sure to log into your{" "}
-            <a href="https://metamask.io/" className="b" >Metamask account</a>, create an
+            <a href="https://metamask.io/" className="b dim" >Metamask account</a>, create an
             account or log in below, and you’ll be ready to get started.
           </p>
         </div>
