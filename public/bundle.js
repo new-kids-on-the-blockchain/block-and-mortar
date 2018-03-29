@@ -70690,10 +70690,10 @@ module.exports = TruffleSchema;
 /*!***********************************************************!*\
   !*** ./node_modules/truffle-contract-schema/package.json ***!
   \***********************************************************/
-/*! exports provided: _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _shasum, _spec, _where, author, bugs, bundleDependencies, dependencies, deprecated, description, devDependencies, homepage, keywords, license, main, name, repository, scripts, version, default */
+/*! exports provided: _args, _development, _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _spec, _where, author, bugs, dependencies, description, devDependencies, homepage, keywords, license, main, name, repository, scripts, version, default */
 /***/ (function(module) {
 
-module.exports = {"_from":"truffle-contract-schema@0.0.5","_id":"truffle-contract-schema@0.0.5","_inBundle":false,"_integrity":"sha1-Xp0gvQvyon/pQxB0gknUhO7kmWE=","_location":"/truffle-contract-schema","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"truffle-contract-schema@0.0.5","name":"truffle-contract-schema","escapedName":"truffle-contract-schema","rawSpec":"0.0.5","saveSpec":null,"fetchSpec":"0.0.5"},"_requiredBy":["/truffle-contract"],"_resolved":"https://registry.npmjs.org/truffle-contract-schema/-/truffle-contract-schema-0.0.5.tgz","_shasum":"5e9d20bd0bf2a27fe94310748249d484eee49961","_spec":"truffle-contract-schema@0.0.5","_where":"/Users/khoehne/Documents/Fullstack/Senior/new-kids-on-the-blockchain/node_modules/truffle-contract","author":{"name":"Tim Coulter","email":"tim.coulter@consensys.net"},"bugs":{"url":"https://github.com/trufflesuite/truffle-schema/issues"},"bundleDependencies":false,"dependencies":{"crypto-js":"^3.1.9-1"},"deprecated":false,"description":"JSON schema for contract artifacts","devDependencies":{"mocha":"^3.2.0"},"homepage":"https://github.com/trufflesuite/truffle-schema#readme","keywords":["ethereum","json","schema","contract","artifacts"],"license":"MIT","main":"index.js","name":"truffle-contract-schema","repository":{"type":"git","url":"git+https://github.com/trufflesuite/truffle-schema.git"},"scripts":{"test":"mocha"},"version":"0.0.5"};
+module.exports = {"_args":[["truffle-contract-schema@0.0.5","/Users/annabellau/Grace-Hopper/senior-phase/new-kids-on-the-blockchain"]],"_development":true,"_from":"truffle-contract-schema@0.0.5","_id":"truffle-contract-schema@0.0.5","_inBundle":false,"_integrity":"sha1-Xp0gvQvyon/pQxB0gknUhO7kmWE=","_location":"/truffle-contract-schema","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"truffle-contract-schema@0.0.5","name":"truffle-contract-schema","escapedName":"truffle-contract-schema","rawSpec":"0.0.5","saveSpec":null,"fetchSpec":"0.0.5"},"_requiredBy":["/truffle-contract"],"_resolved":"https://registry.npmjs.org/truffle-contract-schema/-/truffle-contract-schema-0.0.5.tgz","_spec":"0.0.5","_where":"/Users/annabellau/Grace-Hopper/senior-phase/new-kids-on-the-blockchain","author":{"name":"Tim Coulter","email":"tim.coulter@consensys.net"},"bugs":{"url":"https://github.com/trufflesuite/truffle-schema/issues"},"dependencies":{"crypto-js":"^3.1.9-1"},"description":"JSON schema for contract artifacts","devDependencies":{"mocha":"^3.2.0"},"homepage":"https://github.com/trufflesuite/truffle-schema#readme","keywords":["ethereum","json","schema","contract","artifacts"],"license":"MIT","main":"index.js","name":"truffle-contract-schema","repository":{"type":"git","url":"git+https://github.com/trufflesuite/truffle-schema.git"},"scripts":{"test":"mocha"},"version":"0.0.5"};
 
 /***/ }),
 
@@ -81378,7 +81378,7 @@ var AddMessage = function (_Component) {
           }),
           _react2.default.createElement(
             'button',
-            { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink' },
+            { className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4' },
             'Submit'
           )
         )
@@ -81647,7 +81647,7 @@ var AddService = function (_Component) {
                 { className: "pv2" },
                 _react2.default.createElement(
                   "a",
-                  { href: "https://currencio.co/eth/usd/", target: "_blank" },
+                  { className: "dim", href: "https://currencio.co/eth/usd/", target: "_blank" },
                   "ETH to USD Converter"
                 )
               )
@@ -81675,7 +81675,7 @@ var AddService = function (_Component) {
             ),
             _react2.default.createElement(
               "button",
-              { className: "f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" },
+              { id: "signUpButton", className: "f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4 " },
               "Submit"
             )
           )
@@ -81819,7 +81819,7 @@ var AllMessages = function (_Component) {
                   _react2.default.createElement(
                     'span',
                     { className: 'b' },
-                    'Sender:'
+                    'To:'
                   ),
                   ' ',
                   thread.seller.userName
@@ -81829,7 +81829,7 @@ var AllMessages = function (_Component) {
                   _react2.default.createElement(
                     'span',
                     { className: 'b' },
-                    'Sender:'
+                    'From:'
                   ),
                   ' ',
                   thread.buyer.userName
@@ -82921,7 +82921,7 @@ var AuthForm = function AuthForm(props) {
             { className: 'tc' },
             _react2.default.createElement(
               'button',
-              { type: 'submit', className: 'f5 b link dim br-pill dib white bg-dark-pink pv2 w-80 tc' },
+              { type: 'submit', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4' },
               displayName
             )
           ),
@@ -82956,7 +82956,7 @@ var AuthForm = function AuthForm(props) {
             'If you are new to blockchain technology, check out our ',
             _react2.default.createElement(
               'a',
-              { href: '/faq' },
+              { className: 'dim', href: '/faq' },
               'beginner\'s guide'
             ),
             '.'
@@ -83098,7 +83098,7 @@ var AuthFormModal = function AuthFormModal(props) {
           "If you are new to blockchain technology, check out our  ",
           _react2.default.createElement(
             "a",
-            { href: "/faq", className: "b" },
+            { href: "/faq", className: "b dim" },
             "beginner's guide"
           ),
           "."
@@ -83110,7 +83110,7 @@ var AuthFormModal = function AuthFormModal(props) {
           " ",
           _react2.default.createElement(
             "a",
-            { href: "https://metamask.io/", className: "b" },
+            { href: "https://metamask.io/", className: "b dim" },
             "Metamask account"
           ),
           ", create an account or log in below, and you\u2019ll be ready to get started."
@@ -83304,7 +83304,7 @@ var SingleService = function (_Component) {
           { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMargin' },
           _react2.default.createElement(
             'div',
-            { id: 'topMarginLogin' },
+            { id: 'profileVisual' },
             _react2.default.createElement(
               'div',
               { className: 'f2' },
@@ -83383,17 +83383,17 @@ var SingleService = function (_Component) {
           ),
           service.isAvailable && currentUser.id !== service.Seller.id ? _react2.default.createElement(
             'button',
-            { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink', onClick: this.handleClick },
+            { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4', onClick: this.handleClick },
             'Place Order'
           ) : _react2.default.createElement('div', null),
           currentUser.id !== service.Seller.id ? _react2.default.createElement(
             'button',
-            { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue', onClick: this.handleMessage },
+            { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-main-blue', onClick: this.handleMessage },
             'Message'
           ) : _react2.default.createElement('div', null),
           service.isAvailable && currentUser.id === service.Seller.id ? _react2.default.createElement(
             'button',
-            { className: 'f6 link dim br-pill ph3 pv2 mb2 dib black bg-highlighter-yellow', onClick: this.handleClose },
+            { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-highlighter-yellow', onClick: this.handleClose },
             'Remove from Marketplace'
           ) : _react2.default.createElement('div', null),
           !service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? _react2.default.createElement(
@@ -83421,7 +83421,7 @@ var SingleService = function (_Component) {
             null,
             _react2.default.createElement(
               'button',
-              { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink', onClick: this.handleComplete },
+              { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4', onClick: this.handleComplete },
               'Complete Order'
             ),
             _react2.default.createElement(
@@ -83795,7 +83795,7 @@ var SingleUser = function (_Component) {
               { to: '/services/new' },
               _react2.default.createElement(
                 'button',
-                { className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4' },
+                { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4' },
                 'Create a Post'
               )
             )

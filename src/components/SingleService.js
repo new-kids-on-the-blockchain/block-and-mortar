@@ -69,7 +69,7 @@ class SingleService extends Component {
       this.props.singleService ?
       (<div className="home" id="background">
         <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
-        <div id="topMarginLogin">
+        <div id="profileVisual">
           <div className="f2">{service.name} </div>
           <img alt={service.name} src={service.imgUrl} />
           </div>
@@ -83,13 +83,13 @@ class SingleService extends Component {
           <p><b>Offered By:</b> <Link to={`/users/${service.seller}`} className="dim">{service.Seller.userName}      </Link></p>
 
           {service.isAvailable && currentUser.id !== service.Seller.id ?
-            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" onClick={this.handleClick}>Place Order</button> : <div />}
+            <button id="signUpButton" className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4" onClick={this.handleClick}>Place Order</button> : <div />}
 
-          {currentUser.id !== service.Seller.id ? <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue" onClick={this.handleMessage}>Message</button> : <div />}
+          {currentUser.id !== service.Seller.id ? <button id="signUpButton" className="f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-main-blue" onClick={this.handleMessage}>Message</button> : <div />}
 
 
           {service.isAvailable && currentUser.id === service.Seller.id ?
-            <button className="f6 link dim br-pill ph3 pv2 mb2 dib black bg-highlighter-yellow" onClick={this.handleClose}>Remove from Marketplace</button>
+            <button id="signUpButton" className="f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-highlighter-yellow" onClick={this.handleClose}>Remove from Marketplace</button>
             : <div />}
 
           {!service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? <div className="avenir flex items-center justify-center pa2 bg-teal"><div className="avenir lh-title ml3">You have removed this service from the Marketplace.</div></div> : <div />}
@@ -98,7 +98,7 @@ class SingleService extends Component {
 
           {!service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ?
             <div>
-              <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" onClick={this.handleComplete}>Complete Order</button>
+              <button id="signUpButton" className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4" onClick={this.handleComplete}>Complete Order</button>
               <div className="avenir flex items-center justify-center pa3 bg-teal">
                   <div className="avenir lh-title ml3">Order placed successfully. Complete transaction when you have received your goods or services.
                   </div>
