@@ -104,10 +104,9 @@ button.f4 {
 
 .home > div#homeText {
     flex: 1;
-    margin-top: 9%;
-    margin-left: 5%;
-    margin-right:3%;
-    padding: 40px;
+    margin-top: 7%;
+    margin-left: 3%;
+    padding: 20px 40px 20px 40px;
     line-height: 3em;
 }
 
@@ -118,21 +117,25 @@ button.f4 {
 }
 
 div#background {
+  display: flex;
   background: url(https://farm1.staticflickr.com/884/27171020888_d1b2986a8b_k.jpg);
   background-position: center center;
   background-repeat:  no-repeat;
   background-attachment: fixed;
   background-size:  cover;
   background-color: #999;
+  justify-content: center;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   position: fixed;
-  margin: 2em;
-  padding: 10px;
+  padding: 24px 24px 0px 24px;
   width: calc(100vw - 1em);
+  background-color: #49b6bd;
+  height: 100px;
+  z-index: 5;
 }
 
 #topMargin {
@@ -145,14 +148,19 @@ nav {
   margin-bottom: 50em;
 }
 
+#topMargin2 {
+  margin-top: 12em;
+  margin-bottom: 70em;
+}
+
 .bg-light-gray {
   background-color: #f3f2f3;
 }
 
 #logo {
   position: absolute;
-  top:8px;
-  left:-1em;
+  top: 16px;
+  left: 9px;
   width: 5em;
   height: 5em;
   z-index: 3;
@@ -180,25 +188,21 @@ nav {
 }
 
 #text{
-  /* margin-top: 10em; */
   margin-bottom: -5em;
-  font-size: 32px;
-  line-height: normal;
   color: white;
-  font-weight: lighter;
+  line-height: 40px;
+  font-size: 34px;
 }
 
 #textSignedIn {
-  margin-bottom: 0em;
   color: white;
-  padding-top: 137px;
-  line-height: 68px;
+  padding-top: 90px;
+  line-height: 60px;
 }
 
 
 .modalBox {
   flex:1;
-  /* position: absolute; */
   top: 4em;
   width: 100%;
   background-color: white;
@@ -221,4 +225,12 @@ nav {
 #calloutBox {
   padding-left: 7em;
   padding-right: 7em;
+}
+
+#subNavItem {
+  padding-top: 35px;
+}
+
+.msgBox {
+  min-height: 400px;
 }

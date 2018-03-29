@@ -36,10 +36,11 @@ class MyProfile extends Component {
         </div>
       );
     return user.id ? (
+
       <div className="home" id="background">
         <div
           className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns"
-          id="topMargin"
+          id="topMarginLogin"
         >
         <div id="profileVisual">
           <div className="avenir flex items-center justify-center pa1 bg-teal" id="calloutBox">
