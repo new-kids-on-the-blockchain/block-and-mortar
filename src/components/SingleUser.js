@@ -25,7 +25,7 @@ class SingleUser extends Component {
         <div className="f2">{currentUser.userName}'s Dashboard</div>
         <div className="pv2 ph2 tc-l">
           <Link to="/services/new">
-            <button className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4">Create a Post</button>
+            <button id="signUpButton" className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4">Create a Post</button>
           </Link>
         </div>
 

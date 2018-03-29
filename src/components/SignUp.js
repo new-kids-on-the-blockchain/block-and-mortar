@@ -23,7 +23,7 @@ const AuthForm = props => {
               <input name="password" type="password" className="input-reset ba b--black-20 pa2 mb2 db w-100" />
             </div>
             <div className="tc">
-              <button type="submit" className="f5 b link dim br-pill dib white bg-dark-pink pv2 w-80 tc">{displayName}</button>
+              <button type="submit" className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4">{displayName}</button>
             </div>
             {error && error.response && <div> {error.response.data} </div>}
           </form>

@@ -81378,7 +81378,7 @@ var AddMessage = function (_Component) {
           }),
           _react2.default.createElement(
             'button',
-            { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink' },
+            { className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4' },
             'Submit'
           )
         )
@@ -81647,7 +81647,7 @@ var AddService = function (_Component) {
                 { className: "pv2" },
                 _react2.default.createElement(
                   "a",
-                  { href: "https://currencio.co/eth/usd/", target: "_blank" },
+                  { className: "dim", href: "https://currencio.co/eth/usd/", target: "_blank" },
                   "ETH to USD Converter"
                 )
               )
@@ -81675,7 +81675,7 @@ var AddService = function (_Component) {
             ),
             _react2.default.createElement(
               "button",
-              { className: "f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink" },
+              { id: "signUpButton", className: "f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4 " },
               "Submit"
             )
           )
@@ -82921,7 +82921,7 @@ var AuthForm = function AuthForm(props) {
             { className: 'tc' },
             _react2.default.createElement(
               'button',
-              { type: 'submit', className: 'f5 b link dim br-pill dib white bg-dark-pink pv2 w-80 tc' },
+              { type: 'submit', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4' },
               displayName
             )
           ),
@@ -83383,17 +83383,17 @@ var SingleService = function (_Component) {
           ),
           service.isAvailable && currentUser.id !== service.Seller.id ? _react2.default.createElement(
             'button',
-            { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink', onClick: this.handleClick },
+            { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4', onClick: this.handleClick },
             'Place Order'
           ) : _react2.default.createElement('div', null),
           currentUser.id !== service.Seller.id ? _react2.default.createElement(
             'button',
-            { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-main-blue', onClick: this.handleMessage },
+            { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-main-blue', onClick: this.handleMessage },
             'Message'
           ) : _react2.default.createElement('div', null),
           service.isAvailable && currentUser.id === service.Seller.id ? _react2.default.createElement(
             'button',
-            { className: 'f6 link dim br-pill ph3 pv2 mb2 dib black bg-highlighter-yellow', onClick: this.handleClose },
+            { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-highlighter-yellow', onClick: this.handleClose },
             'Remove from Marketplace'
           ) : _react2.default.createElement('div', null),
           !service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? _react2.default.createElement(
@@ -83421,7 +83421,7 @@ var SingleService = function (_Component) {
             null,
             _react2.default.createElement(
               'button',
-              { className: 'f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink', onClick: this.handleComplete },
+              { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4', onClick: this.handleComplete },
               'Complete Order'
             ),
             _react2.default.createElement(
@@ -83795,7 +83795,7 @@ var SingleUser = function (_Component) {
               { to: '/services/new' },
               _react2.default.createElement(
                 'button',
-                { className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4' },
+                { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4' },
                 'Create a Post'
               )
             )
