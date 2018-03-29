@@ -5,15 +5,16 @@ import { logout } from '../store'
 
 const Navbar = props => (
   <div>
-    <nav>
-        <Link to="/">
-          <div>
-            <div className="dim avenir white f1 siteTitle">Block &amp; Mortar</div>
+    <nav className="navBar">
+        <Link to="/" >
+          <div id="logoTitle">
+          <img id="logo" className="" src="/assets/logo1.png" />
+          <div className="dim avenir white f1 siteTitle"  >Block &amp; Mortar</div>
           </div>
         </Link>
-        <div id="subNav">
+        <div id="subNav" >
         {props.isLoggedIn ? (
-          <div className="dtc v-mid w-75 tr">
+          <div className="dtc v-mid w-75 tr" id="subNavItem">
           <Link to="/home" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns ">My Dashboard</Link>
           <Link to="/services" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Marketplace</Link>
           <Link to="/services/new" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Create a Post</Link>
@@ -25,9 +26,9 @@ const Navbar = props => (
         </div>
         ) : (
         <div id="subNav">
-          <Link to="/login" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Login</Link>
-          <Link to="/signup" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">Sign Up</Link>
-          <Link to="/faq" className="avenir link dim dark-gray f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
+          <Link to="/login" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Login</Link>
+          <Link to="/signup" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Sign Up</Link>
+          <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
         </div>
         )}
        </div>

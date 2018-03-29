@@ -29,22 +29,12 @@ const Service = db.define( "service", {
     },
   imgUrl: {
     type: Sequelize.STRING,
-    defaultValue: '/assets/items/service.png'
+    defaultValue: '/assets/items/placeholder.png'
   },
   contractId: {
     type: Sequelize.INTEGER,
     defaultValue: null
   }
-}
-// {
-//     hooks: {
-//       afterUpdate: function(service) {
-//         if (service.status === 'Pending') {
-//             service.isAvailable = false;
-//         }
-//       }
-//     }
-  // }
-);
+});
 
 module.exports = Service;

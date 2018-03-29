@@ -5,11 +5,8 @@ import { fetchContract } from './store/contract'
 import { fetchAccounts } from './store/accounts'
 import Routes from './components/Routes'
 import { withRouter } from 'react-router-dom'
-
-// import './css/oswald.css'
-// import './css/open-sans.css'
-// import './css/pure-min.css'
 import './App.css'
+import './index.css'
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +15,6 @@ class App extends Component {
   }
 
   componentWillMount() {
-    //Jon insisted on this
     this.collectBlockchainInfo()
   }
 
@@ -30,7 +26,7 @@ class App extends Component {
       this.props.getContract(web3);
       this.props.getAccounts(web3);
     } catch (e) {
-      console.log(e, 'AWAIT collectBlockchainInfo DIDN"T WORK');
+      console.log(e, 'await collectBlockchainInfo did not succeed');
     }
   }
 

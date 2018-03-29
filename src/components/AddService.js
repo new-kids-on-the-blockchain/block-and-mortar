@@ -38,7 +38,7 @@ class AddService extends Component {
       category: evt.target.serviceCategory.value,
       price: evt.target.servicePrice.value,
       description: evt.target.serviceDescription.value,
-      imgUrl: evt.target.imgUrl.value ? evt.target.imgUrl.value : '/assets/items/service.png',
+      imgUrl: evt.target.imgUrl.value ? evt.target.imgUrl.value : '/assets/items/placeholder.png',
       contractId: null,
       seller: this.props.currentUser.id
     };

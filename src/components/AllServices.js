@@ -43,10 +43,10 @@ class AllServices extends Component {
 
           <br/>
               <div className="pv2 ph2 tc-l">
-                <Link to="/services/new"> <button className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4">Create a Post</button></Link>
-                <button className="f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4" value="All" onClick={this.handleClick}>Show All</button>
-                <button className="f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4" value="Goods" onClick={this.handleClick}>Goods</button>
-                <button className="f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4" value="Services" onClick={this.handleClick}>Services</button>
+                <Link to="/services/new"> <button className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4" id="signUpButton">Create a Post</button></Link>
+                <button className="f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4" id="signUpButton" value="All" onClick={this.handleClick}>Show All</button>
+                <button className="f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4" id="signUpButton" value="Goods" onClick={this.handleClick}>Goods</button>
+                <button className="f4 link dim br-pill mb2 dib white bg-main-blue inline-flex items-center ma2 pv2 pw4" id="signUpButton" value="Services" onClick={this.handleClick}>Services</button>
           </div>
           </div>
         </div>
