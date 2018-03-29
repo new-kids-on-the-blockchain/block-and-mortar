@@ -34,8 +34,8 @@ class AllMessages extends Component {
                     <div><span className="b">Topic:</span> {thread.service.name}</div>
                     {
                       thread.buyer.id === this.props.currentUser.id
-                        ? <div><span className="b">Sender:</span> {thread.seller.userName}</div>
-                      : <div><span className="b">Sender:</span> {thread.buyer.userName}</div>
+                        ? <div><span className="b">To:</span> {thread.seller.userName}</div>
+                      : <div><span className="b">From:</span> {thread.buyer.userName}</div>
                     }
                   </div>
                 )

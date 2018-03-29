@@ -101,7 +101,7 @@ class AddService extends Component {
                   step="0.0001"
                   placeholder=".05"
                 />
-                <div className="pv2"><a href={`https://currencio.co/eth/usd/`} target="_blank">ETH to USD Converter</a></div>
+                <div className="pv2"><a className="dim" href={`https://currencio.co/eth/usd/`} target="_blank">ETH to USD Converter</a></div>
               </div>
 
               <div className="ph3 pv2">
@@ -114,7 +114,7 @@ class AddService extends Component {
                 <input className="input-reset ba b--black-20 pa2 mb2 db w-100" id="imgUrl" name="imgUrl" rows="1" cols="50" placeholder="https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80"/>
               </div>
 
-              <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink">Submit</button>
+              <button id="signUpButton" className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4 ">Submit</button>
             </form>
           </div>
         </div>

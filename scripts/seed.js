@@ -17,7 +17,8 @@ async function seed () {
     User.create({userName: 'esteban', password: '123', accountAddress: '0x2363935a4aa889c9d9f594c9a85fa680ead942ef', isAdmin: false, imageURL: '/assets/avatars/avatars_0009_10-copy.png'}),
     User.create({userName: 'irene', password: '123', accountAddress: '0x9fa899e5477a10f13206774d1e88cabafe747de7', isAdmin: false, imageURL: '/assets/avatars/avatars_0008_9-copy.png'}),
     User.create({userName: 'leigh', password: '123', accountAddress: '0x103bec78cd3679b723422369643a1e9474702c4a', isAdmin: false, imageURL: '/assets/avatars/avatars_0006_7-copy.png'}),
-    User.create({userName: 'kate', password: '123', accountAddress: '0x4cbed4db7330ede5569ea2461304388cd88d697b', isAdmin: false, imageURL: '/assets/avatars/avatars_0004_5-copy.png'})
+    User.create({userName: 'kate', password: '123', accountAddress: '0x4cbed4db7330ede5569ea2461304388cd88d697b', isAdmin: false, imageURL: '/assets/avatars/avatars_0004_5-copy.png'}),
+    User.create({userName: 'jane', password: '123', accountAddress: '0x2cbed4db7330ede5569ea2461304388cd88d697b', isAdmin: false, imageURL: '/assets/avatars/avatars_0001_2-copy.png'})
   ])
 
   const services = await Promise.all([

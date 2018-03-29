@@ -42,7 +42,7 @@ class AddMessage extends Component {
             type="text"
             className="input-reset ba b--black-20 pa2 mb2 db w-100"
           />
-          <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink">Submit</button>
+          <button className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4">Submit</button>
         </form>
       </div>
     )
