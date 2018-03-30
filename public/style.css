@@ -234,3 +234,8 @@ nav {
 .msgBox {
   min-height: 400px;
 }
+
+#centerBox {
+  display: flex;
+  justify-content: center;
+}
