@@ -14,6 +14,7 @@ class SingleService extends Component {
   }
 
   componentDidMount() {
+    window.scroll(0,0)
     this.props.handleFetchServices()
     this.props.handleFetchContract()
     this.collectBlockchainInfo()

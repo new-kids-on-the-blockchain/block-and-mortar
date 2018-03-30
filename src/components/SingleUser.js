@@ -5,9 +5,9 @@ import { toDate } from '../../utils'
 
 class SingleUser extends Component {
 
-  // componentDidMount() {
-  //   this.props.handleCurrentUser()
-  // }
+  componentDidMount() {
+    window.scroll(0,0)
+  }
 
   render() {
     const { currentUser, services } = this.props

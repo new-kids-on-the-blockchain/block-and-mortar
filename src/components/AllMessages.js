@@ -14,6 +14,7 @@ class AllMessages extends Component {
   }
 
   componentDidMount(){
+    window.scroll(0,0)
     this.props.fetchThreads()
   }
 

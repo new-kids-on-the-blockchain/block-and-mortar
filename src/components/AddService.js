@@ -15,6 +15,10 @@ class AddService extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    window.scroll(0,0)
+  }
+
   componentWillMount() {
     this.collectBlockchainInfo()
     }

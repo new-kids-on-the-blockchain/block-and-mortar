@@ -9,6 +9,7 @@ class SingleUserPublic extends Component {
   }
 
   componentDidMount() {
+    window.scroll(0,0)
     this.props.handleFetchUserById(this.props.match.params.id);
     this.props.fetchServices();
   }

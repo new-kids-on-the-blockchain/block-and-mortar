@@ -81202,6 +81202,11 @@ var App = function (_Component) {
   }
 
   _createClass(App, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      window.scroll(0, 0);
+    }
+  }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
       this.collectBlockchainInfo();
@@ -81340,6 +81345,7 @@ var AddMessage = function (_Component) {
   _createClass(AddMessage, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.setState({ messages: this.props.currentThread.messages });
     }
   }, {
@@ -81463,6 +81469,11 @@ var AddService = function (_Component) {
   }
 
   _createClass(AddService, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.scroll(0, 0);
+    }
+  }, {
     key: "componentWillMount",
     value: function componentWillMount() {
       this.collectBlockchainInfo();
@@ -81770,6 +81781,7 @@ var AllMessages = function (_Component) {
   _createClass(AllMessages, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.fetchThreads();
     }
   }, {
@@ -81919,6 +81931,7 @@ var AllServices = function (_Component) {
   _createClass(AllServices, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.fetchServices();
     }
   }, {
@@ -82378,6 +82391,7 @@ var MyProfile = function (_Component) {
   _createClass(MyProfile, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.handleFetchUserById(this.props.currentUser.id);
       this.props.fetchServices();
     }
@@ -82774,6 +82788,7 @@ var Routes = function (_Component) {
   _createClass(Routes, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.loadInitialData();
     }
   }, {
@@ -83201,6 +83216,7 @@ var SingleService = function (_Component) {
   _createClass(SingleService, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.handleFetchServices();
       this.props.handleFetchContract();
       this.collectBlockchainInfo();
@@ -83743,13 +83759,12 @@ var SingleUser = function (_Component) {
   }
 
   _createClass(SingleUser, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      window.scroll(0, 0);
+    }
+  }, {
     key: 'render',
-
-
-    // componentDidMount() {
-    //   this.props.handleCurrentUser()
-    // }
-
     value: function render() {
       var _props = this.props,
           currentUser = _props.currentUser,
@@ -84169,6 +84184,7 @@ var SingleUserPublic = function (_Component) {
   _createClass(SingleUserPublic, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.handleFetchUserById(this.props.match.params.id);
       this.props.fetchServices();
     }

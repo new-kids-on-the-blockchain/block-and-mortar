@@ -18,6 +18,7 @@ import { me, fetchServices, fetchWeb3} from '../store'
 class Routes extends Component {
 
   componentDidMount () {
+    window.scroll(0,0)
     this.props.loadInitialData()
   }
 
