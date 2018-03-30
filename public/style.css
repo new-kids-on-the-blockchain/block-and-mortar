@@ -103,6 +103,7 @@ button.f4 {
 }
 
 .home > div#homeText {
+    -moz-margin-top: 100px;
     flex: 1;
     margin-top: 7%;
     margin-left: 3%;
@@ -174,6 +175,7 @@ nav {
 
 
 #homeText {
+  -moz-margin-top: 100px;
   margin-top:-20px;
   padding-top: -200px;
   display: flex;
@@ -188,6 +190,7 @@ nav {
 }
 
 #text{
+  margin-top: 45px;
   margin-bottom: -5em;
   color: white;
   line-height: 40px;
