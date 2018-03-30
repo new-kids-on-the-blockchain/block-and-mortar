@@ -242,3 +242,34 @@ nav {
   display: flex;
   justify-content: center;
 }
+
+
+
+
+/* MOBILE */
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (device-width : 414px)
+and (device-height : 736px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 3)
+and (-webkit-device-pixel-ratio : 3)
+{
+  .siteTitle {
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-color: #E34383;
+    margin-left: -2rem;
+
+  }
+
+  #logo {
+    position: absolute;
+    top: 16px;
+    left: 9px;
+    width: 3em;
+    height: 3em;
+    z-index: 3;
+  }
+}
