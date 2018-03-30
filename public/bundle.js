@@ -70693,7 +70693,7 @@ module.exports = TruffleSchema;
 /*! exports provided: _args, _development, _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _spec, _where, author, bugs, dependencies, description, devDependencies, homepage, keywords, license, main, name, repository, scripts, version, default */
 /***/ (function(module) {
 
-module.exports = {"_args":[["truffle-contract-schema@0.0.5","/Users/annabellau/Grace-Hopper/senior-phase/new-kids-on-the-blockchain"]],"_development":true,"_from":"truffle-contract-schema@0.0.5","_id":"truffle-contract-schema@0.0.5","_inBundle":false,"_integrity":"sha1-Xp0gvQvyon/pQxB0gknUhO7kmWE=","_location":"/truffle-contract-schema","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"truffle-contract-schema@0.0.5","name":"truffle-contract-schema","escapedName":"truffle-contract-schema","rawSpec":"0.0.5","saveSpec":null,"fetchSpec":"0.0.5"},"_requiredBy":["/truffle-contract"],"_resolved":"https://registry.npmjs.org/truffle-contract-schema/-/truffle-contract-schema-0.0.5.tgz","_spec":"0.0.5","_where":"/Users/annabellau/Grace-Hopper/senior-phase/new-kids-on-the-blockchain","author":{"name":"Tim Coulter","email":"tim.coulter@consensys.net"},"bugs":{"url":"https://github.com/trufflesuite/truffle-schema/issues"},"dependencies":{"crypto-js":"^3.1.9-1"},"description":"JSON schema for contract artifacts","devDependencies":{"mocha":"^3.2.0"},"homepage":"https://github.com/trufflesuite/truffle-schema#readme","keywords":["ethereum","json","schema","contract","artifacts"],"license":"MIT","main":"index.js","name":"truffle-contract-schema","repository":{"type":"git","url":"git+https://github.com/trufflesuite/truffle-schema.git"},"scripts":{"test":"mocha"},"version":"0.0.5"};
+module.exports = {"_args":[["truffle-contract-schema@0.0.5","/Users/claudia/GraceHopper/Senior/Capstone/new-kids-on-the-blockchain"]],"_development":true,"_from":"truffle-contract-schema@0.0.5","_id":"truffle-contract-schema@0.0.5","_inBundle":false,"_integrity":"sha1-Xp0gvQvyon/pQxB0gknUhO7kmWE=","_location":"/truffle-contract-schema","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"truffle-contract-schema@0.0.5","name":"truffle-contract-schema","escapedName":"truffle-contract-schema","rawSpec":"0.0.5","saveSpec":null,"fetchSpec":"0.0.5"},"_requiredBy":["/truffle-contract"],"_resolved":"https://registry.npmjs.org/truffle-contract-schema/-/truffle-contract-schema-0.0.5.tgz","_spec":"0.0.5","_where":"/Users/claudia/GraceHopper/Senior/Capstone/new-kids-on-the-blockchain","author":{"name":"Tim Coulter","email":"tim.coulter@consensys.net"},"bugs":{"url":"https://github.com/trufflesuite/truffle-schema/issues"},"dependencies":{"crypto-js":"^3.1.9-1"},"description":"JSON schema for contract artifacts","devDependencies":{"mocha":"^3.2.0"},"homepage":"https://github.com/trufflesuite/truffle-schema#readme","keywords":["ethereum","json","schema","contract","artifacts"],"license":"MIT","main":"index.js","name":"truffle-contract-schema","repository":{"type":"git","url":"git+https://github.com/trufflesuite/truffle-schema.git"},"scripts":{"test":"mocha"},"version":"0.0.5"};
 
 /***/ }),
 
@@ -81202,6 +81202,11 @@ var App = function (_Component) {
   }
 
   _createClass(App, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      window.scroll(0, 0);
+    }
+  }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
       this.collectBlockchainInfo();
@@ -81340,6 +81345,7 @@ var AddMessage = function (_Component) {
   _createClass(AddMessage, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.setState({ messages: this.props.currentThread.messages });
     }
   }, {
@@ -81463,6 +81469,11 @@ var AddService = function (_Component) {
   }
 
   _createClass(AddService, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.scroll(0, 0);
+    }
+  }, {
     key: "componentWillMount",
     value: function componentWillMount() {
       this.collectBlockchainInfo();
@@ -81674,9 +81685,13 @@ var AddService = function (_Component) {
               _react2.default.createElement("input", { className: "input-reset ba b--black-20 pa2 mb2 db w-100", id: "imgUrl", name: "imgUrl", rows: "1", cols: "50", placeholder: "https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80" })
             ),
             _react2.default.createElement(
-              "button",
-              { id: "signUpButton", className: "f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4 " },
-              "Submit"
+              "div",
+              { id: "centerBox" },
+              _react2.default.createElement(
+                "button",
+                { id: "signUpButton", className: "f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4 " },
+                "Submit"
+              )
             )
           )
         )
@@ -81770,6 +81785,7 @@ var AllMessages = function (_Component) {
   _createClass(AllMessages, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.fetchThreads();
     }
   }, {
@@ -81919,6 +81935,7 @@ var AllServices = function (_Component) {
   _createClass(AllServices, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.fetchServices();
     }
   }, {
@@ -82378,6 +82395,7 @@ var MyProfile = function (_Component) {
   _createClass(MyProfile, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.handleFetchUserById(this.props.currentUser.id);
       this.props.fetchServices();
     }
@@ -82774,6 +82792,7 @@ var Routes = function (_Component) {
   _createClass(Routes, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.loadInitialData();
     }
   }, {
@@ -83199,14 +83218,15 @@ var SingleService = function (_Component) {
   }
 
   _createClass(SingleService, [{
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.handleFetchServices();
       this.props.handleFetchContract();
       this.collectBlockchainInfo();
     }
   }, {
-    key: 'collectBlockchainInfo',
+    key: "collectBlockchainInfo",
     value: function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
         var web3;
@@ -83227,12 +83247,12 @@ var SingleService = function (_Component) {
 
               case 7:
                 _context.prev = 7;
-                _context.t0 = _context['catch'](0);
+                _context.t0 = _context["catch"](0);
 
-                console.log(_context.t0, 'await collectBlockchainInfo did not succeed');
+                console.log(_context.t0, "await collectBlockchainInfo did not succeed");
 
               case 10:
-              case 'end':
+              case "end":
                 return _context.stop();
             }
           }
@@ -83246,42 +83266,47 @@ var SingleService = function (_Component) {
       return collectBlockchainInfo;
     }()
   }, {
-    key: 'handleClick',
+    key: "handleClick",
     value: function handleClick(evt) {
       var _this2 = this;
 
       evt.preventDefault();
-      this.props.contract.updateAgreement(this.props.singleService.contractId, { from: this.props.accounts[0] }).then(function (agreementUpdated) {
+      this.props.contract.updateAgreement(this.props.singleService.contractId, {
+        from: this.props.accounts[0]
+      }).then(function (agreementUpdated) {
         console.log(agreementUpdated, "AGREEMENT UPDATED");
       }).then(function () {
         return _this2.props.handleUpdateService(evt, _this2.props.singleService, _this2.props.currentUser.id);
       }).catch(function (err) {
-        return console.log('agreementUpdated failed....');
+        return console.log("agreementUpdated failed....");
       });
     }
   }, {
-    key: 'handleComplete',
+    key: "handleComplete",
     value: function handleComplete(evt) {
       var _this3 = this;
 
       evt.preventDefault();
-      this.props.contract.completeAgreement(this.props.singleService.contractId, { from: this.props.accounts[0], value: this.props.web3.toWei(this.props.singleService.price, 'ether') }).then(function (agreementCompleted) {
+      this.props.contract.completeAgreement(this.props.singleService.contractId, {
+        from: this.props.accounts[0],
+        value: this.props.web3.toWei(this.props.singleService.price, "ether")
+      }).then(function (agreementCompleted) {
         console.log(agreementCompleted, "COMPLETE AGREEMENT");
       }).then(function () {
         return _this3.props.handleCompleteService(evt, _this3.props.singleService);
       }).catch(function (err) {
-        return console.log('agreementCompleted failed....');
+        return console.log("agreementCompleted failed....");
       });
     }
   }, {
-    key: 'handleClose',
+    key: "handleClose",
     value: function handleClose(evt) {
       this.props.handleCloseService(evt, this.props.singleService).catch(function (err) {
         return console.log(err);
       });
     }
   }, {
-    key: 'handleMessage',
+    key: "handleMessage",
     value: function handleMessage(evt) {
       var thread = {
         sellerId: this.props.singleService.Seller.id,
@@ -83291,182 +83316,220 @@ var SingleService = function (_Component) {
       this.props.postThread(thread);
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       var service = this.props.singleService;
       var currentUser = this.props.currentUser;
       // if (!service) return <div className="avenir dark-red"><h2>Oh no! No service exists at this address.</h2></div>
       return this.props.singleService ? _react2.default.createElement(
-        'div',
-        { className: 'home', id: 'background' },
+        "div",
+        { className: "home", id: "background" },
         _react2.default.createElement(
-          'div',
-          { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMargin' },
+          "div",
+          {
+            className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns",
+            id: "topMargin"
+          },
           _react2.default.createElement(
-            'div',
-            { id: 'profileVisual' },
+            "div",
+            { id: "profileVisual" },
             _react2.default.createElement(
-              'div',
-              { className: 'f2' },
+              "div",
+              { className: "f2" },
               service.name,
-              ' '
+              " "
             ),
-            _react2.default.createElement('img', { alt: service.name, src: service.imgUrl })
+            _react2.default.createElement("img", { alt: service.name, src: service.imgUrl })
           ),
           _react2.default.createElement(
-            'p',
+            "p",
             null,
             _react2.default.createElement(
-              'b',
+              "b",
               null,
-              'Description:'
+              "Description:"
             ),
-            ' ',
+            " ",
             service.description,
-            ' '
+            " "
           ),
           _react2.default.createElement(
-            'p',
+            "p",
             null,
             _react2.default.createElement(
-              'b',
+              "b",
               null,
-              'Category:'
+              "Category:"
             ),
-            ' ',
+            " ",
             service.category,
-            ' '
+            " "
           ),
           _react2.default.createElement(
-            'p',
+            "p",
             null,
             _react2.default.createElement(
-              'b',
+              "b",
               null,
-              'Price:'
+              "Price:"
             ),
-            ' ',
+            " ",
             service.price,
-            ' ether'
+            " ether"
           ),
           _react2.default.createElement(
-            'a',
-            { className: 'dim', href: 'https://currencio.co/eth/usd/' + service.price, target: '_blank' },
-            'How much is this in USD?'
+            "a",
+            {
+              className: "dim",
+              href: "https://currencio.co/eth/usd/" + service.price,
+              target: "_blank"
+            },
+            "How much is this in USD?"
           ),
           _react2.default.createElement(
-            'p',
+            "p",
             null,
             _react2.default.createElement(
-              'b',
+              "b",
               null,
-              'Date Posted:'
+              "Date Posted:"
             ),
-            ' ',
+            " ",
             (0, _utils.toDate)(service.createdAt)
           ),
           _react2.default.createElement(
-            'p',
+            "p",
             null,
             _react2.default.createElement(
-              'b',
+              "b",
               null,
-              'Offered By:'
+              "Offered By:"
             ),
-            ' ',
+            " ",
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/users/' + service.seller, className: 'dim' },
+              { to: "/users/" + service.seller, className: "dim" },
               service.Seller.userName,
-              '      '
+              " "
             )
           ),
-          service.isAvailable && currentUser.id !== service.Seller.id ? _react2.default.createElement(
-            'button',
-            { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4', onClick: this.handleClick },
-            'Place Order'
-          ) : _react2.default.createElement('div', null),
-          currentUser.id !== service.Seller.id ? _react2.default.createElement(
-            'button',
-            { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-main-blue', onClick: this.handleMessage },
-            'Message'
-          ) : _react2.default.createElement('div', null),
-          service.isAvailable && currentUser.id === service.Seller.id ? _react2.default.createElement(
-            'button',
-            { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-dark-gray', onClick: this.handleClose },
-            'Remove from Marketplace'
-          ) : _react2.default.createElement('div', null),
+          _react2.default.createElement(
+            "div",
+            { id: "centerBox" },
+            service.isAvailable && currentUser.id !== service.Seller.id ? _react2.default.createElement(
+              "button",
+              {
+                id: "signUpButton",
+                className: "f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4",
+                onClick: this.handleClick
+              },
+              "Place Order"
+            ) : _react2.default.createElement("div", null)
+          ),
+          _react2.default.createElement(
+            "div",
+            { id: "centerBox" },
+            currentUser.id !== service.Seller.id ? _react2.default.createElement(
+              "button",
+              {
+                id: "signUpButton",
+                className: "f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-main-blue",
+                onClick: this.handleMessage
+              },
+              "Message"
+            ) : _react2.default.createElement("div", null),
+            _react2.default.createElement(
+              "div",
+              { id: "centerBox" },
+              service.isAvailable && currentUser.id === service.Seller.id ? _react2.default.createElement(
+                "button",
+                {
+                  id: "signUpButton",
+                  className: "f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-dark-gray",
+                  onClick: this.handleClose
+                },
+                "Remove from Marketplace"
+              ) : _react2.default.createElement("div", null)
+            )
+          ),
           !service.isAvailable && service.status === "Posted" && currentUser.id === service.Seller.id ? _react2.default.createElement(
-            'div',
-            { className: 'avenir flex items-center justify-center pa2 bg-teal' },
+            "div",
+            { className: "avenir flex items-center justify-center pa2 bg-teal" },
             _react2.default.createElement(
-              'div',
-              { className: 'avenir lh-title ml3' },
-              'You have removed this service from the Marketplace.'
+              "div",
+              { className: "avenir lh-title ml3" },
+              "You have removed this service from the Marketplace."
             )
-          ) : _react2.default.createElement('div', null),
+          ) : _react2.default.createElement("div", null),
           !service.isAvailable && service.status === "Pending" && currentUser.id === service.Seller.id ? _react2.default.createElement(
-            'div',
-            { className: 'avenir flex items-center justify-center pa2 bg-teal' },
+            "div",
+            { className: "avenir flex items-center justify-center pa2 bg-teal" },
             _react2.default.createElement(
-              'div',
-              { className: 'avenir lh-title ml3' },
-              'Transaction in progress. ',
+              "div",
+              { className: "avenir lh-title ml3" },
+              "Transaction in progress. ",
               service.Buyer.userName,
-              ' has purchased this service.'
+              " has purchased this service."
             )
-          ) : _react2.default.createElement('div', null),
+          ) : _react2.default.createElement("div", null),
           !service.isAvailable && service.status === "Pending" && currentUser.id === service.Buyer.id ? _react2.default.createElement(
-            'div',
+            "div",
             null,
             _react2.default.createElement(
-              'button',
-              { id: 'signUpButton', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4', onClick: this.handleComplete },
-              'Complete Order'
+              "button",
+              {
+                id: "signUpButton",
+                className: "f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4",
+                onClick: this.handleComplete
+              },
+              "Complete Order"
             ),
             _react2.default.createElement(
-              'div',
-              { className: 'avenir flex items-center justify-center pa3 bg-teal' },
+              "div",
+              { className: "avenir flex items-center justify-center pa3 bg-teal" },
               _react2.default.createElement(
-                'div',
-                { className: 'avenir lh-title ml3' },
-                'Order placed successfully. Complete transaction when you have received your goods or services.'
+                "div",
+                { className: "avenir lh-title ml3" },
+                "Order placed successfully. Complete transaction when you have received your goods or services."
               )
             )
-          ) : _react2.default.createElement('div', null),
+          ) : _react2.default.createElement("div", null),
           !service.isAvailable && (service.status === "Pending" || service.status === "Completed") && currentUser.id !== service.Seller.id && currentUser.id !== service.Buyer.id ? _react2.default.createElement(
-            'div',
-            { className: 'avenir flex items-center justify-center pa2 bg-teal' },
+            "div",
+            { className: "avenir flex items-center justify-center pa2 bg-teal" },
             _react2.default.createElement(
-              'div',
-              { className: 'avenir lh-title ml3' },
-              'Service no longer available.'
+              "div",
+              { className: "avenir lh-title ml3" },
+              "Service no longer available."
             )
-          ) : _react2.default.createElement('div', null),
+          ) : _react2.default.createElement("div", null),
           !service.isAvailable && service.status === "Completed" && (currentUser.id === service.Seller.id || currentUser.id === service.Buyer.id) ? _react2.default.createElement(
-            'div',
-            { className: 'avenir flex items-center justify-center pa2 bg-teal' },
+            "div",
+            { className: "avenir flex items-center justify-center pa2 bg-teal" },
             _react2.default.createElement(
-              'div',
-              { className: 'avenir lh-title ml3' },
-              'Congrats, transaction completed! Your transaction ID on the blockchain is: ',
+              "div",
+              { className: "avenir lh-title ml3" },
+              "Congrats, transaction completed! Your transaction ID on the blockchain is: ",
               this.props.singleService.contractId
             )
-          ) : _react2.default.createElement('div', null)
+          ) : _react2.default.createElement("div", null)
         )
       ) : _react2.default.createElement(
-        'div',
-        { className: 'home', id: 'background' },
+        "div",
+        { className: "home", id: "background" },
         _react2.default.createElement(
-          'div',
-          { className: 'avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns', id: 'topMargin' },
+          "div",
+          {
+            className: "avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns",
+            id: "topMargin"
+          },
           _react2.default.createElement(
-            'div',
-            { className: 'avenir dark-red' },
+            "div",
+            { className: "avenir dark-red" },
             _react2.default.createElement(
-              'h1',
+              "h1",
               null,
-              'Oh no! No service found.'
+              "Oh no! No service found."
             )
           )
         )
@@ -83743,13 +83806,12 @@ var SingleUser = function (_Component) {
   }
 
   _createClass(SingleUser, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      window.scroll(0, 0);
+    }
+  }, {
     key: 'render',
-
-
-    // componentDidMount() {
-    //   this.props.handleCurrentUser()
-    // }
-
     value: function render() {
       var _props = this.props,
           currentUser = _props.currentUser,
@@ -84169,6 +84231,7 @@ var SingleUserPublic = function (_Component) {
   _createClass(SingleUserPublic, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      window.scroll(0, 0);
       this.props.handleFetchUserById(this.props.match.params.id);
       this.props.fetchServices();
     }

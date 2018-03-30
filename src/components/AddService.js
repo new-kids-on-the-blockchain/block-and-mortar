@@ -15,6 +15,10 @@ class AddService extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    window.scroll(0,0)
+  }
+
   componentWillMount() {
     this.collectBlockchainInfo()
     }
@@ -113,8 +117,9 @@ class AddService extends Component {
                 <label for="imgUrl" className="avenir f6 b db mb2">Image URL (optional)<span class="normal black-60"></span></label>
                 <input className="input-reset ba b--black-20 pa2 mb2 db w-100" id="imgUrl" name="imgUrl" rows="1" cols="50" placeholder="https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80"/>
               </div>
-
+              <div id="centerBox">
               <button id="signUpButton" className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4 ">Submit</button>
+              </div>
             </form>
           </div>
         </div>

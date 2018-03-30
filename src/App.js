@@ -14,6 +14,10 @@ class App extends Component {
     this.collectBlockchainInfo = this.collectBlockchainInfo.bind(this)
   }
 
+  componentDidMount(){
+    window.scroll(0,0)
+  }
+
   componentWillMount() {
     this.collectBlockchainInfo()
   }
