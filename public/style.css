@@ -245,8 +245,8 @@ nav {
 
 
 
-
-/* MOBILE */
+/* MOBILE *//* MOBILE *//* MOBILE */
+/* MOBILE *//* MOBILE *//* MOBILE */
 @media only screen
 and (min-device-width : 414px)
 and (max-device-width : 736px)
@@ -255,6 +255,7 @@ and (device-height : 736px)
 and (orientation : portrait)
 and (-webkit-min-device-pixel-ratio : 3)
 and (-webkit-device-pixel-ratio : 3)
+
 {
   .siteTitle {
     font-size: 2rem;
@@ -272,4 +273,217 @@ and (-webkit-device-pixel-ratio : 3)
     height: 3em;
     z-index: 3;
   }
+
+ #hamburgerLogo {
+    max-width:20%;
+  }
+  .home {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .home > div#homeText {
+      -moz-margin-top: 100px;
+      flex: 2;
+      margin-top: 122%;
+      margin-left: 3%;
+      padding: 20px 40px 20px 40px;
+      line-height: 3em;
+  }
+
+  #homeImg {
+    flex: 1;
+    width: 100%;
+    margin-top: 50px;
+    position: absolute;
+    top: 27px;
+  }
+  #homeText {
+    margin-top:-20px;
+    padding-top: -150px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between  */
+  }
+
+  #homeText > .modal{
+    flex:1;
+    /* position: absolute; */
+    margin-top: -10em;
+  }
+
+  #text{
+    margin-top:-104px;
+    margin-bottom: -5em;
+    color: white;
+    line-height: 40px;
+    font-size: 28px;
+  }
+
+  #textSignedIn {
+    color: white;
+    margin-top:-104px;
+    line-height: 40px;
+    font-size: 28px;
+  }
+
+
+  .modalBox {
+    flex:1;
+    top: 4em;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    opacity: 1;
+  }
+
+  #signUpButton {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+  #profileVisual {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #calloutBox {
+    padding-left: 7em;
+    padding-right: 7em;
+  }
+
+  #subNavItem {
+    padding-top: 35px;
+  }
+
+  .msgBox {
+    min-height: 400px;
+  }
+}
+
+
+
+
+
+
+/* IPHONE 6 */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (orientation: portrait)
+and (-webkit-min-device-pixel-ratio: 2)
+
+
+{
+
+    .siteTitle {
+      font-size: 2rem;
+      text-decoration: underline;
+      text-decoration-color: #E34383;
+      margin-left: -2rem;
+
+    }
+
+    #logo {
+      position: absolute;
+      top: 16px;
+      left: 9px;
+      width: 3em;
+      height: 3em;
+      z-index: 3;
+    }
+
+   #hamburgerLogo {
+      max-width:20%;
+    }
+    .home {
+      display: flex;
+      align-items: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .home > div#homeText {
+        -moz-margin-top: 100px;
+        flex: 2;
+        margin-top: 100%;
+        margin-left: 3%;
+        padding: 20px 40px 20px 40px;
+        line-height: 3em;
+    }
+
+    #homeImg {
+      flex: 1;
+      width: 100%;
+      margin-top: 50px;
+      position: absolute;
+      top: 27px;
+    }
+    #homeText {
+      margin-top:-20px;
+      padding-top: -150px;
+      display: flex;
+      flex-direction: column;
+      /* justify-content: space-between  */
+    }
+
+    #homeText > .modal{
+      flex:1;
+      /* position: absolute; */
+      margin-top: -10em;
+    }
+
+    #text{
+      margin-top:-104px;
+      margin-bottom: -5em;
+      color: white;
+      line-height: 40px;
+      font-size: 28px;
+    }
+
+    #textSignedIn {
+      color: white;
+      margin-top:-104px;
+      line-height: 40px;
+      font-size: 28px;
+    }
+
+
+    .modalBox {
+      flex:1;
+      top: 4em;
+      width: 100%;
+      background-color: white;
+      border-radius: 15px;
+      padding: 10px;
+      opacity: 1;
+    }
+
+    #signUpButton {
+      padding-left: 3em;
+      padding-right: 3em;
+    }
+
+    #profileVisual {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #calloutBox {
+      padding-left: 7em;
+      padding-right: 7em;
+    }
+
+    #subNavItem {
+      padding-top: 35px;
+    }
+
+    .msgBox {
+      min-height: 400px;
+    }
 }
