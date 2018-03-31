@@ -274,6 +274,12 @@ and (-webkit-device-pixel-ratio : 3)
     z-index: 3;
   }
 
+  #logoTitle{
+    /* display: flex; */
+    margin-left:4em;
+    width: 365px;
+  }
+
  #hamburgerLogo {
     max-width:20%;
   }
@@ -366,10 +372,7 @@ and (-webkit-device-pixel-ratio : 3)
     min-height: 400px;
   }
 
-  #logoTitle{
-    /* display: flex; */
-    margin-left:4em;
-  }
+
 }
 
 
