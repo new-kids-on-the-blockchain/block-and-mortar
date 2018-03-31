@@ -261,17 +261,64 @@ and (-webkit-device-pixel-ratio : 3)
     font-size: 2rem;
     text-decoration: underline;
     text-decoration-color: #E34383;
-    margin-left: -2rem;
+    margin-left: 1rem;
 
   }
 
   #logo {
     position: absolute;
-    top: 16px;
+    top: -6px;
     left: 9px;
     width: 3em;
     height: 3em;
     z-index: 3;
+  }
+
+  .nav_container {
+    display: flex;
+    position: absolute;
+    top: 1em;
+    /* margin-top: -2em; */
+    padding-top: -3em;
+    /* align-self: right; */
+    /* justify-content: flex-end; */
+    height: 84px;
+    padding-top: -26px;
+    width: 414px;
+  }
+
+  #link {
+    width:300px;
+  }
+
+  .navBar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    padding: 24px 24px 0px 24px;
+    width: 414px;
+    background-color: #49b6bd;
+    height: 75px;
+    z-index: 5;
+    position: absolute;
+    /* justify-items: right; */
+    left: -344px;
+    top: 54px
+}
+
+  .nav_container2 {
+    /* display: flex; */
+    position: absolute;
+    top: -17px;
+    left: 346px;
+    /* margin-top: -2em; */
+    padding-top: -3em;
+    align-self: right;
+    justify-content: flex-end;
+    height: 84px;
+    width: 380px;
+    z-index: 9;
+    padding-top: -26px;
   }
 
   #logoTitle{

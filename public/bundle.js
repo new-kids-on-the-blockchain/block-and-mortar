@@ -82724,20 +82724,20 @@ var Navbar = function (_React$Component) {
     key: 'renderNavigation',
     value: function renderNavigation() {
       if (this.state.windowWidth <= 414) {
-        return [_react2.default.createElement(
+        return _react2.default.createElement(
           'div',
-          { className: 'mobile_nav' },
+          { className: 'nav_container2' },
           _react2.default.createElement('img', {
             role: 'presentation',
             id: 'hamburgerLogo', src: 'https://www.screeninnovations.com/wp-content/themes/screeninnovations/images/icons/menu-icons/misc/icon-hamburger-menu.svg', onClick: this.handleNavClick.bind(this) }),
           this.renderMobileNav()
-        )];
+        );
       } else {
-        return [_react2.default.createElement(
+        return _react2.default.createElement(
           'div',
           { key: 9, className: 'nav_menu' },
           this.navigationLinks()
-        )];
+        );
       }
     }
   }, {
@@ -82748,14 +82748,14 @@ var Navbar = function (_React$Component) {
         { className: 'nav_container' },
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/' },
+          { to: '/', id: 'link' },
           _react2.default.createElement(
             'div',
             { id: 'logoTitle' },
             _react2.default.createElement('img', { id: 'logo', className: '', src: '/assets/logo1.png' }),
             _react2.default.createElement(
               'div',
-              { className: 'dim avenir white f1 siteTitle' },
+              { className: 'dim avenir white f1 siteTitle', id: 'link' },
               'Block & Mortar'
             )
           )

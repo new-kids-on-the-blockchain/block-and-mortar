@@ -72,30 +72,30 @@ class Navbar extends React.Component {
 
     renderNavigation() {
       if(this.state.windowWidth <= 414) {
-        return [
-          <div className="mobile_nav">
+        return (
+       <div className="nav_container2">
             <img
             role="presentation"
             id="hamburgerLogo" src="https://www.screeninnovations.com/wp-content/themes/screeninnovations/images/icons/menu-icons/misc/icon-hamburger-menu.svg" onClick={this.handleNavClick.bind(this)} />
             {this.renderMobileNav()}
-          </div>
-        ];
+</div>
+        );
       } else {
-        return [
+        return (
           <div key={9} className="nav_menu">
             {this.navigationLinks()}
           </div>
-        ];
+        );
       }
     }
 
   render() {
     return(
       <div className="nav_container">
-      <Link to="/" >
+      <Link to="/" id="link" >
       <div id="logoTitle">
       <img id="logo" className="" src="/assets/logo1.png" />
-      <div className="dim avenir white f1 siteTitle"  >Block &amp; Mortar</div>
+      <div className="dim avenir white f1 siteTitle" id="link"  >Block &amp; Mortar</div>
       </div>
     </Link>
         {this.renderNavigation()}
