@@ -83080,13 +83080,13 @@ var AuthForm = function AuthForm(props) {
     { className: 'home', id: 'background' },
     _react2.default.createElement(
       'div',
-      { className: 'avenir form-login', id: 'topMargin2' },
+      { className: 'avenir form-login loginBox2', id: 'topMargin2' },
       _react2.default.createElement(
         'div',
-        { className: 'avenir flex items-center justify-center pw4 pv2 bg-lightest-gray navy fl w-30' },
+        { className: 'avenir flex items-center justify-center pw4 pv22 bg-lightest-gray navy fl w-30' },
         _react2.default.createElement(
           'form',
-          { onSubmit: handleSubmit, name: name },
+          { onSubmit: handleSubmit, name: name, className: 'loginBox' },
           _react2.default.createElement(
             'div',
             { className: 'avenir f2 pa4 tc' },
@@ -83125,7 +83125,7 @@ var AuthForm = function AuthForm(props) {
             { className: 'tc' },
             _react2.default.createElement(
               'button',
-              { type: 'submit', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4' },
+              { type: 'submit', className: 'f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv22 pw4' },
               displayName
             )
           ),
