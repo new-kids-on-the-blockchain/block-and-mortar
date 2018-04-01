@@ -19,6 +19,7 @@ When an order is fulfilled, the buyer can complete the order, which will update 
 Users can also access all of their pending orders and completed transactions easily from their user dashboard.
 
 ## Technologies Used
+
 * [Node.js](https://nodejs.org/en/)
 * [Solidity](http://solidity.readthedocs.io/en/latest/): language for writing our smart contract
 * [Web3](https://web3js.readthedocs.io/en/1.0/): allows us to talk to our smart contract on the blockchain
