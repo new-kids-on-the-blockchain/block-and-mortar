@@ -46,4 +46,4 @@ With scalability in mind, we made the conscious choice to keep only the most per
 * [Claudia Baik](https://github.com/clacla826)
 * [Kait Hoehne](https://github.com/k-vosswinkel)
 
-This project was built in 20 days as a capstone project for the [Grace Hopper Program](https://www.gracehopper.com/) at Fullstack Academy.
+This project was built in 18 days as a capstone project for the [Grace Hopper Program](https://www.gracehopper.com/) at Fullstack Academy.
