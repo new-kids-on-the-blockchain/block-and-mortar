@@ -82634,7 +82634,7 @@ var Navbar = function (_React$Component) {
   }, {
     key: 'navigationLinks',
     value: function navigationLinks() {
-      return [_react2.default.createElement(
+      return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
@@ -82702,7 +82702,7 @@ var Navbar = function (_React$Component) {
             )
           )
         )
-      )];
+      );
     }
   }, {
     key: 'renderMobileNav',
@@ -82735,8 +82735,72 @@ var Navbar = function (_React$Component) {
       } else {
         return _react2.default.createElement(
           'div',
-          { key: 9, className: 'nav_menu' },
-          this.navigationLinks()
+          null,
+          _react2.default.createElement(
+            'nav',
+            { className: 'navBar' },
+            _react2.default.createElement(
+              'div',
+              { id: 'subNav' },
+              this.props.isLoggedIn ? _react2.default.createElement(
+                'div',
+                { className: 'dtc v-mid w-75 tr', id: 'subNavItem' },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/home', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns ' },
+                  'My Dashboard'
+                ),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/services', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
+                  'Marketplace'
+                ),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/services/new', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
+                  'Create a Post'
+                ),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/messages', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
+                  'Inbox'
+                ),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/faq', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
+                  'FAQs'
+                ),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/my-profile', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
+                  'My Profile'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { href: '#', onClick: this.props.handleClick, className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
+                  'Logout'
+                )
+              ) : _react2.default.createElement(
+                'div',
+                { id: 'subNav' },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/login', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
+                  'Login'
+                ),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/signup', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
+                  'Sign Up'
+                ),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/faq', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
+                  'FAQs'
+                )
+              )
+            )
+          )
         );
       }
     }

@@ -24,7 +24,7 @@ class Navbar extends React.Component {
       window.removeEventListener('resize', this.handleResize.bind(this));
     }
     navigationLinks() {
-      return [
+      return (
   <div>
     <nav className="navBar">
         <div id="subNav" >
@@ -53,7 +53,7 @@ class Navbar extends React.Component {
 
 
   </div>
-      ];
+      );
     }
 
     renderMobileNav() {
@@ -82,9 +82,34 @@ class Navbar extends React.Component {
         );
       } else {
         return (
-          <div key={9} className="nav_menu">
-            {this.navigationLinks()}
-          </div>
+          <div>
+          <nav className="navBar">
+              <div id="subNav" >
+              {this.props.isLoggedIn ? (
+                <div className="dtc v-mid w-75 tr" id="subNavItem">
+                <Link to="/home" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns ">My Dashboard</Link>
+                <Link to="/services" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Marketplace</Link>
+                <Link to="/services/new" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Create a Post</Link>
+                <Link to="/messages" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Inbox</Link>
+                <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
+                <Link to="/my-profile" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">My Profile</Link>
+                <a href="#" onClick={this.props.handleClick} className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
+                Logout</a>
+              </div>
+              ) : (
+              <div id="subNav">
+                <Link to="/login" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Login</Link>
+                <Link to="/signup" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Sign Up</Link>
+                <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
+              </div>
+              )}
+             </div>
+          </nav>
+
+
+
+
+        </div>
         );
       }
     }
