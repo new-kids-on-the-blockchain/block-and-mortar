@@ -70693,7 +70693,7 @@ module.exports = TruffleSchema;
 /*! exports provided: _args, _development, _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _spec, _where, author, bugs, dependencies, description, devDependencies, homepage, keywords, license, main, name, repository, scripts, version, default */
 /***/ (function(module) {
 
-module.exports = {"_args":[["truffle-contract-schema@0.0.5","/Users/annabellau/Grace-Hopper/senior-phase/new-kids-on-the-blockchain"]],"_development":true,"_from":"truffle-contract-schema@0.0.5","_id":"truffle-contract-schema@0.0.5","_inBundle":false,"_integrity":"sha1-Xp0gvQvyon/pQxB0gknUhO7kmWE=","_location":"/truffle-contract-schema","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"truffle-contract-schema@0.0.5","name":"truffle-contract-schema","escapedName":"truffle-contract-schema","rawSpec":"0.0.5","saveSpec":null,"fetchSpec":"0.0.5"},"_requiredBy":["/truffle-contract"],"_resolved":"https://registry.npmjs.org/truffle-contract-schema/-/truffle-contract-schema-0.0.5.tgz","_spec":"0.0.5","_where":"/Users/annabellau/Grace-Hopper/senior-phase/new-kids-on-the-blockchain","author":{"name":"Tim Coulter","email":"tim.coulter@consensys.net"},"bugs":{"url":"https://github.com/trufflesuite/truffle-schema/issues"},"dependencies":{"crypto-js":"^3.1.9-1"},"description":"JSON schema for contract artifacts","devDependencies":{"mocha":"^3.2.0"},"homepage":"https://github.com/trufflesuite/truffle-schema#readme","keywords":["ethereum","json","schema","contract","artifacts"],"license":"MIT","main":"index.js","name":"truffle-contract-schema","repository":{"type":"git","url":"git+https://github.com/trufflesuite/truffle-schema.git"},"scripts":{"test":"mocha"},"version":"0.0.5"};
+module.exports = {"_args":[["truffle-contract-schema@0.0.5","/Users/manj/Desktop/GHA/Senior/blockchain"]],"_development":true,"_from":"truffle-contract-schema@0.0.5","_id":"truffle-contract-schema@0.0.5","_inBundle":false,"_integrity":"sha1-Xp0gvQvyon/pQxB0gknUhO7kmWE=","_location":"/truffle-contract-schema","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"truffle-contract-schema@0.0.5","name":"truffle-contract-schema","escapedName":"truffle-contract-schema","rawSpec":"0.0.5","saveSpec":null,"fetchSpec":"0.0.5"},"_requiredBy":["/truffle-contract"],"_resolved":"https://registry.npmjs.org/truffle-contract-schema/-/truffle-contract-schema-0.0.5.tgz","_spec":"0.0.5","_where":"/Users/manj/Desktop/GHA/Senior/blockchain","author":{"name":"Tim Coulter","email":"tim.coulter@consensys.net"},"bugs":{"url":"https://github.com/trufflesuite/truffle-schema/issues"},"dependencies":{"crypto-js":"^3.1.9-1"},"description":"JSON schema for contract artifacts","devDependencies":{"mocha":"^3.2.0"},"homepage":"https://github.com/trufflesuite/truffle-schema#readme","keywords":["ethereum","json","schema","contract","artifacts"],"license":"MIT","main":"index.js","name":"truffle-contract-schema","repository":{"type":"git","url":"git+https://github.com/trufflesuite/truffle-schema.git"},"scripts":{"test":"mocha"},"version":"0.0.5"};
 
 /***/ }),
 
@@ -81292,6 +81292,164 @@ exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapSt
 
 /***/ }),
 
+/***/ "./src/components/About.js":
+/*!*********************************!*\
+  !*** ./src/components/About.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var About = function About(props) {
+  return _react2.default.createElement(
+    "div",
+    { className: "home", id: "background" },
+    _react2.default.createElement(
+      "div",
+      { className: "FAQ avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns", id: "topMargin" },
+      _react2.default.createElement(
+        "div",
+        { className: "f2" },
+        "About Block & Mortar"
+      ),
+      _react2.default.createElement(
+        "div",
+        { className: "faq-question" },
+        _react2.default.createElement(
+          "div",
+          { className: "containerInner bt" },
+          _react2.default.createElement(
+            "div",
+            { className: "f4 b" },
+            "What is Block & Mortar?"
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "Block & Mortar is an app that allows local communities to buy and sell their goods and services, featuring an intuitive user interface backed by the security and transparency of the Ethereum blockchain."
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "Users can post an item or service for sale and set a price in ether. (A link to a currency converter is available.) Upon doing so, the seller creates a transaction on the blockchain, and the item or service is posted to the Marketplace."
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "Interested buyers can browse goods or services for sale, view specific item details, view the seller's public profile (which includes a transaction history), as well as message a seller regarding an item. Once a buyer places an order, the existing transaction on the blockchain is updated to include the buyer's information, along with the status of the order."
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "When an order is fulfilled, the buyer can complete the order, which will update the status on the blockchain one final time and trigger the transfer of funds. Both the buyer and seller will then be able to view their transaction ID on the blockchain."
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "Users can also access all of their pending orders and completed transactions easily from their user dashboard."
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "div",
+        { className: "faq-question" },
+        _react2.default.createElement(
+          "div",
+          { className: "containerInner bt" },
+          _react2.default.createElement(
+            "div",
+            { className: "f4 b" },
+            "Project Information"
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "This project was built in 18 days as a capstone project for the ",
+            _react2.default.createElement(
+              "a",
+              { href: "https://www.gracehopper.com/" },
+              "Grace Hopper Program"
+            ),
+            " at Fullstack Academy. Check out the project's ",
+            _react2.default.createElement(
+              "a",
+              { href: "https://github.com/new-kids-on-the-blockchain/block-and-mortar" },
+              "GitHub repository"
+            ),
+            " and demo video (link forthcoming)."
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "b" },
+            "Contributors"
+          ),
+          _react2.default.createElement(
+            "ul",
+            null,
+            _react2.default.createElement(
+              "li",
+              null,
+              _react2.default.createElement(
+                "a",
+                { href: "https://github.com/anjiemerchant" },
+                "Anjali Merchant"
+              )
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              _react2.default.createElement(
+                "a",
+                { href: "https://github.com/annabelnlau" },
+                "Annabel Lau"
+              )
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              _react2.default.createElement(
+                "a",
+                { href: "https://github.com/clacla826" },
+                "Claudia Baik"
+              )
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              _react2.default.createElement(
+                "a",
+                { href: "https://github.com/k-vosswinkel" },
+                "Kait Hoehne"
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "A special thanks to Jon Schwartz, Leigh Steiner, Kate Humphery, and John MacDonald."
+          )
+        )
+      )
+    )
+  );
+};
+
+exports.default = About;
+
+/***/ }),
+
 /***/ "./src/components/AddMessage.js":
 /*!**************************************!*\
   !*** ./src/components/AddMessage.js ***!
@@ -82670,8 +82828,13 @@ var Navbar = function Navbar(props) {
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
+            { to: '/about', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
+            'About'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
             { to: '/faq', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-            'FAQs'
+            'Blockchain FAQs'
           )
         )
       )
@@ -82766,6 +82929,10 @@ var _FAQ = __webpack_require__(/*! ./FAQ */ "./src/components/FAQ.js");
 
 var _FAQ2 = _interopRequireDefault(_FAQ);
 
+var _About = __webpack_require__(/*! ./About */ "./src/components/About.js");
+
+var _About2 = _interopRequireDefault(_About);
+
 var _MyProfile = __webpack_require__(/*! ./MyProfile */ "./src/components/MyProfile.js");
 
 var _MyProfile2 = _interopRequireDefault(_MyProfile);
@@ -82811,6 +82978,7 @@ var Routes = function (_Component) {
           _react2.default.createElement(_reactRouterDom.Route, { path: '/signup', component: _SignUp.Signup }),
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Homepage2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/faq', component: _FAQ2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/about', component: _About2.default }),
           isLoggedIn && _react2.default.createElement(
             _reactRouterDom.Switch,
             null,

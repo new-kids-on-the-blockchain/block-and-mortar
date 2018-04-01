@@ -12,6 +12,7 @@ import Homepage from './Homepage'
 import { Login, Signup } from './SignUp'
 import NavBar from './NavBar'
 import FAQ from './FAQ'
+import About from './About'
 import MyProfile from './MyProfile'
 import { me, fetchServices, fetchWeb3} from '../store'
 
@@ -33,6 +34,7 @@ class Routes extends Component {
           <Route path="/signup" component={Signup} />
           <Route exact path="/" component={Homepage} />
           <Route exact path="/faq" component={FAQ} />
+          <Route exact path="/about" component={About} />
           {
             isLoggedIn &&
               <Switch>

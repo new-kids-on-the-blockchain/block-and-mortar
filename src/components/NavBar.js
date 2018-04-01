@@ -28,7 +28,8 @@ const Navbar = props => (
         <div id="subNav">
           <Link to="/login" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Login</Link>
           <Link to="/signup" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Sign Up</Link>
-          <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
+          <Link to="/about" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">About</Link>
+          <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Blockchain FAQs</Link>
         </div>
         )}
        </div>
