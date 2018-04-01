@@ -1,12 +1,10 @@
-import React, { Component } from "react";
-import AddMessage from "./AddMessage";
-import { connect } from "react-redux";
-// import { fetchMessages } from "../store";
+import React, { Component } from "react"
+import AddMessage from "./AddMessage"
+import { connect } from "react-redux"
 
 class SingleThread extends Component {
   constructor(){
     super();
-
     this.sort = this.sort.bind(this)
   }
 
@@ -17,18 +15,10 @@ class SingleThread extends Component {
     });
   };
 
-  componentWillReceiveProps(nextProps){
-    console.log("I'm receiving new messages: ", this.props.currentThread)
-
-    console.log("Here are our nextProps: ", nextProps.currentThread)
-  }
-
   render() {
     let thread = this.props.currentThread
     let messages = this.props.currentThread.messages
-    console.log('my messages: ', messages)
-    let sortedMessages;
-
+    let sortedMessages
     if (messages){
       sortedMessages = this.sort(messages);
     }
