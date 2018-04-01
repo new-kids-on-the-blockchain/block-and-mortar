@@ -14,10 +14,9 @@ import NavBar from './NavBar'
 import FAQ from './FAQ'
 import About from './About'
 import MyProfile from './MyProfile'
-import { me, fetchServices, fetchWeb3} from '../store'
+import { me, fetchServices } from '../store'
 
 class Routes extends Component {
-
   componentDidMount () {
     window.scroll(0,0)
     this.props.loadInitialData()
@@ -75,7 +74,6 @@ const mapDispatch = (dispatch) => {
   }
 }
 
-// The `withRouter` wrapper makes sure that updates are not blocked
-// when the url changes
+// The `withRouter` wrapper makes sure that updates are not blocked when the url changes
 export default withRouter(connect(mapState, mapDispatch)(Routes))
 

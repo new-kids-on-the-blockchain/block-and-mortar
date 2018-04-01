@@ -13,7 +13,6 @@ import singleService from './singleService'
 import currentUser from './currentUser'
 import singleUser from './singleUser'
 
-
 export const reducer = combineReducers({ web3, accounts, contract, services, threads, currentThread, users, singleService, currentUser, singleUser })
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,

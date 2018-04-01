@@ -24,29 +24,20 @@ const User = db.define('user', {
       return () => this.getDataValue('salt')
     }
   },
-  // isAdmin: {
-  //   type: Sequelize.BOOLEAN,
-  //   defaultValue: false
-  // },
   imageURL: {
     type: Sequelize.STRING,
     defaultValue: 'https://thesocietypages.org/socimages/files/2009/05/vimeo.jpg'
   }
 })
 
-
 module.exports = User
 
-/**
- * instanceMethods
- */
+//Instance Methods
 User.prototype.correctPassword = function (candidatePwd) {
   return User.encryptPassword(candidatePwd, this.salt()) === this.password()
 }
 
-/**
- * classMethods
- */
+//Class Methods
 User.generateSalt = function () {
   return crypto.randomBytes(16).toString('base64')
 }
@@ -59,9 +50,7 @@ User.encryptPassword = function (plainText, salt) {
     .digest('hex')
 }
 
-/**
- * hooks
- */
+//Hooks
 const setSaltAndPassword = user => {
   if (user.changed('password')) {
     user.salt = User.generateSalt()

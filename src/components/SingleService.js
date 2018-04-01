@@ -1,17 +1,16 @@
-import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { connect } from "react-redux";
+import React, { Component } from "react"
+import { Link, withRouter } from "react-router-dom"
+import { connect } from "react-redux"
 import {
   fetchWeb3,
-  fetchServiceById,
   fetchServices,
   fetchAccounts,
   fetchContract,
   updateService,
   updateCompleteService,
   postThread
-} from "../store";
-import { toDate } from "../../utils";
+} from "../store"
+import { toDate } from "../../utils"
 
 class SingleService extends Component {
   constructor() {
@@ -46,9 +45,6 @@ class SingleService extends Component {
       .updateAgreement(this.props.singleService.contractId, {
         from: this.props.accounts[0]
       })
-      .then(agreementUpdated => {
-        console.log(agreementUpdated, "AGREEMENT UPDATED");
-      })
       .then(() =>
         this.props.handleUpdateService(
           evt,
@@ -65,9 +61,6 @@ class SingleService extends Component {
       .completeAgreement(this.props.singleService.contractId, {
         from: this.props.accounts[0],
         value: this.props.web3.toWei(this.props.singleService.price, "ether")
-      })
-      .then(agreementCompleted => {
-        console.log(agreementCompleted, "COMPLETE AGREEMENT");
       })
       .then(() =>
         this.props.handleCompleteService(evt, this.props.singleService)
@@ -91,42 +84,24 @@ class SingleService extends Component {
   }
 
   render() {
-    const service = this.props.singleService;
-    const currentUser = this.props.currentUser;
-    // if (!service) return <div className="avenir dark-red"><h2>Oh no! No service exists at this address.</h2></div>
+    const service = this.props.singleService
+    const currentUser = this.props.currentUser
+
     return this.props.singleService ? (
       <div className="home" id="background">
-        <div
-          className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns"
-          id="topMargin"
-        >
+        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
           <div id="profileVisual">
-            <div className="f2">{service.name} </div>
+            <div className="f2">{service.name}</div>
             <img alt={service.name} src={service.imgUrl} />
           </div>
-          <p>
-            <b>Description:</b> {service.description}{" "}
-          </p>
-          <p>
-            <b>Category:</b> {service.category}{" "}
-          </p>
-          <p>
-            <b>Price:</b> {service.price} ether
-          </p>
-
-          <a
-            className="dim"
-            href={`https://currencio.co/eth/usd/${service.price}`}
-            target="_blank"
-          >
+          <p><b>Description:</b> {service.description}{" "}</p>
+          <p><b>Category:</b> {service.category}{" "}</p>
+          <p><b>Price:</b> {service.price} ether</p>
+          <a className="dim" href={`https://currencio.co/eth/usd/${service.price}`} target="_blank">
             How much is this in USD?
           </a>
-
-          <p>
-            <b>Date Posted:</b> {toDate(service.createdAt)}
-          </p>
-          <p>
-            <b>Offered By:</b>{" "}
+          <p><b>Date Posted:</b> {toDate(service.createdAt)}</p>
+          <p><b>Offered By:</b>{" "}
             <Link to={`/users/${service.seller}`} className="dim">
               {service.Seller.userName}{" "}
             </Link>
@@ -134,11 +109,7 @@ class SingleService extends Component {
 
           <div id="centerBox">
             {service.isAvailable && currentUser.id !== service.Seller.id ? (
-              <button
-                id="signUpButton"
-                className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4"
-                onClick={this.handleClick}
-              >
+              <button id="signUpButton" className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4" onClick={this.handleClick}>
                 Place Order
               </button>
             ) : (
@@ -148,11 +119,7 @@ class SingleService extends Component {
 
           <div id="centerBox">
             {currentUser.id !== service.Seller.id ? (
-              <button
-                id="signUpButton"
-                className="f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-main-blue"
-                onClick={this.handleMessage}
-              >
+              <button id="signUpButton" className="f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-main-blue" onClick={this.handleMessage}>
                 Message
               </button>
             ) : (
@@ -160,19 +127,15 @@ class SingleService extends Component {
             )}
 
             <div id="centerBox">
-          {service.isAvailable && currentUser.id === service.Seller.id ? (
-            <button
-              id="signUpButton"
-              className="f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-dark-gray"
-              onClick={this.handleClose}
-            >
-              Remove from Marketplace
-            </button>
-          ) : (
-            <div />
-          )}
+              {service.isAvailable && currentUser.id === service.Seller.id ? (
+                <button id="signUpButton" className="f4 link dim br-pill mb2 dib white inline-flex items-center ma2 pv2 pw4 bg-dark-gray" onClick={this.handleClose}>
+                  Remove from Marketplace
+                </button>
+              ) : (
+                <div />
+              )}
+            </div>
           </div>
-</div>
 
           {!service.isAvailable &&
           service.status === "Posted" &&
@@ -203,11 +166,7 @@ class SingleService extends Component {
           service.status === "Pending" &&
           currentUser.id === service.Buyer.id ? (
             <div>
-              <button
-                id="signUpButton"
-                className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4"
-                onClick={this.handleComplete}
-              >
+              <button id="signUpButton" className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4" onClick={this.handleComplete}>
                 Complete Order
               </button>
               <div className="avenir flex items-center justify-center pa3 bg-teal">
@@ -221,8 +180,9 @@ class SingleService extends Component {
             <div />
           )}
 
-          {!service.isAvailable &&
-          (service.status === "Pending" || service.status === "Completed") &&
+          {!service.isAvailable && (
+          service.status === "Pending" ||
+          service.status === "Completed") &&
           currentUser.id !== service.Seller.id &&
           currentUser.id !== service.Buyer.id ? (
             <div className="avenir flex items-center justify-center pa2 bg-teal">
@@ -236,25 +196,22 @@ class SingleService extends Component {
 
           {!service.isAvailable &&
           service.status === "Completed" &&
-          (currentUser.id === service.Seller.id ||
+            (currentUser.id === service.Seller.id ||
             currentUser.id === service.Buyer.id) ? (
-            <div className="avenir flex items-center justify-center pa2 bg-teal">
-              <div className="avenir lh-title ml3">
-                Congrats, transaction completed! Your transaction ID on the
-                blockchain is: {this.props.singleService.contractId}
+              <div className="avenir flex items-center justify-center pa2 bg-teal">
+                <div className="avenir lh-title ml3">
+                  Congrats, transaction completed! Your transaction ID on the
+                  blockchain is: {this.props.singleService.contractId}
+                </div>
               </div>
-            </div>
-          ) : (
-            <div />
-          )}
+            ) : (
+              <div />
+            )}
         </div>
       </div>
     ) : (
       <div className="home" id="background">
-        <div
-          className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns"
-          id="topMargin"
-        >
+        <div className="avenir mw5 mw7-ns center bg-light-gray pa3 ph5-ns" id="topMargin">
           <div className="avenir dark-red">
             <h1>Oh no! No service found.</h1>
           </div>
@@ -264,10 +221,7 @@ class SingleService extends Component {
   }
 }
 
-const mapStateToProps = (
-  { web3, services, users, contract, accounts, currentUser },
-  ownProps
-) => ({
+const mapStateToProps = ({ web3, services, users, contract, accounts, currentUser }, ownProps) => ({
   singleService: services.find(
     service => +service.id === +ownProps.match.params.id
   ),

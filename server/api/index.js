@@ -6,7 +6,6 @@ router.use('/messages', require('./messages'))
 router.use('/users', require('./users'))
 router.use('/threads', require('./threads'))
 
-
 router.use((req, res, next) => {
   const error = new Error('Not Found')
   error.status = 404

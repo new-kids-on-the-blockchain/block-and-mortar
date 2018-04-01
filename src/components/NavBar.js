@@ -6,15 +6,15 @@ import { logout } from '../store'
 const Navbar = props => (
   <div>
     <nav className="navBar">
-        <Link to="/" >
-          <div id="logoTitle">
-          <img id="logo" className="" src="/assets/logo1.png" />
-          <div className="dim avenir white f1 siteTitle"  >Block &amp; Mortar</div>
-          </div>
-        </Link>
-        <div id="subNav" >
-        {props.isLoggedIn ? (
-          <div className="dtc v-mid w-75 tr" id="subNavItem">
+      <Link to="/">
+        <div id="logoTitle">
+        <img alt="blockAndMortarLogo" id="logo" className="" src="/assets/logo1.png" />
+        <div className="dim avenir white f1 siteTitle">Block &amp; Mortar</div>
+        </div>
+      </Link>
+      <div id="subNav" >
+      {props.isLoggedIn ? (
+        <div className="dtc v-mid w-75 tr" id="subNavItem">
           <Link to="/home" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns ">My Dashboard</Link>
           <Link to="/services" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Marketplace</Link>
           <Link to="/services/new" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Create a Post</Link>
@@ -24,22 +24,19 @@ const Navbar = props => (
           <a href="#" onClick={props.handleClick} className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
           Logout</a>
         </div>
-        ) : (
+      ) : (
         <div id="subNav">
           <Link to="/login" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Login</Link>
           <Link to="/signup" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Sign Up</Link>
           <Link to="/about" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">About</Link>
           <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Blockchain FAQs</Link>
         </div>
-        )}
-       </div>
+      )}
+      </div>
     </nav>
   </div>
 )
 
-/**
- * CONTAINER
- */
 const mapState = state => {
   return {
     isLoggedIn: !!state.currentUser.id,

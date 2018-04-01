@@ -1,24 +1,21 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { postMessage } from '../store';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import { postMessage } from '../store'
 
 class AddMessage extends Component {
   constructor() {
     super();
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(evt){
     evt.preventDefault();
-
     let message = {
       content: evt.target.content.value,
       senderId: this.props.currentUser.id,
       threadId: this.props.currentThread.id
     }
-
     this.props.postNewMessage(message)
     document.getElementById("messageContent").value = "";
   }
