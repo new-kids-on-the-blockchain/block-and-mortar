@@ -442,16 +442,16 @@ nav {
 
   .navBar {
     display: flex;
-    justify-content: space-between;
-    position: fixed;
-    padding: 24px 24px 0px 24px;
+    /* justify-content: space-between; */
+    /* position: fixed; */
+    /* padding: 24px 24px 0px 24px; */
     width: 375px;
     background-color: #49b6bd;
     height: 85px;
     z-index: 5;
     position: absolute;
-    /* justify-items: right; */
-    left: -285px;
+    /* justify-items: center; */
+    left: -305px;
     top: 54px;
   }
 
@@ -632,6 +632,12 @@ nav {
 
 .msgBox {
   width: 100%;
+  text-align: center;
+}
+
+#calloutBox {
+  padding-left: 1em;
+  padding-right: 1em;
   text-align: center;
 }
 }
