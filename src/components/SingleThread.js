@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AddMessage from "./AddMessage";
 import { connect } from "react-redux";
+import { fetchMessages } from "../store";
 
 class SingleThread extends Component {
   constructor(){
@@ -20,20 +21,18 @@ class SingleThread extends Component {
     });
   };
 
-  componentWillReceiveProps(newProps){
-    this.setState({newMessages: newProps.messages})
+  componentWillMount(){
+    console.log("our current thread on mount is: ", this.props.currentThread)
+    this.props.fetchMessages(this.props.currentThread)
   }
 
   render() {
     let thread = this.props.currentThread
     let messages = this.props.currentThread.messages
+    console.log('my new messages: ', this.props.messages)
     let sortedMessages;
 
     if (messages){
-      if (this.state.newMessages) {
-        console.log("new messages: ", this.state.newMessages)
-        messages.push(this.state.newMessages[this.state.newMessages.length - 1])
-      }
       sortedMessages = this.sort(messages);
     }
 
@@ -79,4 +78,6 @@ const mapState = state => {
   };
 };
 
-export default connect(mapState)(SingleThread);
+const mapDispatch = { fetchMessages }
+
+export default connect(mapState, mapDispatch)(SingleThread);

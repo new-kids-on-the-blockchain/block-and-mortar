@@ -83612,6 +83612,8 @@ var _AddMessage2 = _interopRequireDefault(_AddMessage);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
+var _store = __webpack_require__(/*! ../store */ "./src/store/index.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -83646,22 +83648,20 @@ var SingleThread = function (_Component) {
 
 
   _createClass(SingleThread, [{
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(newProps) {
-      this.setState({ newMessages: newProps.messages });
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      console.log("our current thread on mount is: ", this.props.currentThread);
+      this.props.fetchMessages(this.props.currentThread);
     }
   }, {
     key: "render",
     value: function render() {
       var thread = this.props.currentThread;
       var messages = this.props.currentThread.messages;
+      console.log('my new messages: ', this.props.messages);
       var sortedMessages = void 0;
 
       if (messages) {
-        if (this.state.newMessages) {
-          console.log("new messages: ", this.state.newMessages);
-          messages.push(this.state.newMessages[this.state.newMessages.length - 1]);
-        }
         sortedMessages = this.sort(messages);
       }
 
@@ -83735,7 +83735,9 @@ var mapState = function mapState(state) {
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapState)(SingleThread);
+var mapDispatch = { fetchMessages: _store.fetchMessages };
+
+exports.default = (0, _reactRedux.connect)(mapState, mapDispatch)(SingleThread);
 
 /***/ }),
 
@@ -84962,6 +84964,7 @@ exports.default = store;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.fetchMessages = fetchMessages;
 exports.postMessage = postMessage;
 exports.default = reducer;
 
@@ -84975,21 +84978,28 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 //ACTION TYPES
 var ADD_MESSAGE = 'ADD_MESSAGE';
+var GET_MESSAGES = 'GET_MESSAGES';
 
 //ACTION CREATORS
 var addMessage = function addMessage(message) {
   return { type: ADD_MESSAGE, message: message };
 };
+var getMessages = function getMessages(messages) {
+  return { type: GET_MESSAGES, messages: messages };
+};
 
 //THUNK CREATORS
-// export function fetchMessages() {
-//   return function thunk(dispatch) {
-//     return axios.get('/api/messages')
-//       .then(res => res.data)
-//       .then(messages => dispatch(getMessages(messages)))
-//       .catch(err => console.err('error fetching messages', err))
-//   }
-// }
+function fetchMessages(thread) {
+  return function thunk(dispatch) {
+    return _axios2.default.get('/api/messages', thread).then(function (res) {
+      return res.data;
+    }).then(function (messages) {
+      return dispatch(getMessages(messages));
+    }).catch(function (err) {
+      return console.err('error fetching messages', err);
+    });
+  };
+}
 
 function postMessage(message, ownProps) {
   return function thunk(dispatch) {
@@ -85009,6 +85019,8 @@ function reducer() {
   switch (action.type) {
     case ADD_MESSAGE:
       return [].concat(_toConsumableArray(messages), [action.message]);
+    case GET_MESSAGES:
+      return action.messages;
     default:
       return messages;
   }
