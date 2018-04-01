@@ -87,7 +87,7 @@ class AddService extends Component {
               </div>
 
               <div className="pa3">
-                <label for="serviceCategory" className="avenir f6 b db mb2">Category</label>
+                <label htmlFor="serviceCategory" className="avenir f6 b db mb2">Category</label>
                 <select id="serviceCategory" name="serviceCategory">
                   <option value="Goods">Goods</option>
                   <option value="Services">Services</option>
@@ -95,7 +95,7 @@ class AddService extends Component {
               </div>
 
               <div className="pa3">
-                <label for="servicePrice" className="avenir f6 b db mb2">Price <span class="normal black-60">(ether)</span></label>
+                <label htmlFor="servicePrice" className="avenir f6 b db mb2">Price <span class="normal black-60">(ether)</span></label>
                 <input
                   id="servicePrice"
                   name="servicePrice"
@@ -109,12 +109,12 @@ class AddService extends Component {
               </div>
 
               <div className="ph3 pv2">
-                <label for="serviceDescription" className="avenir f6 b db mb2">Description</label>
+                <label htmlFor="serviceDescription" className="avenir f6 b db mb2">Description</label>
                 <textarea className="input-reset ba b--black-20 pa2 mb2 db w-100" id="serviceDescription" name="serviceDescription" placeholder="I'm a beekeeper. Only the freshest honey from local bees"/>
               </div>
 
               <div className="pa3">
-                <label for="imgUrl" className="avenir f6 b db mb2">Image URL (optional)<span class="normal black-60"></span></label>
+                <label htmlFor="imgUrl" className="avenir f6 b db mb2">Image URL (optional)<span class="normal black-60"></span></label>
                 <input className="input-reset ba b--black-20 pa2 mb2 db w-100" id="imgUrl" name="imgUrl" rows="1" cols="50" placeholder="https://images.unsplash.com/33/IR8nDBZETv6aM6HdJ7RD_IMG_5784.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea2c67c054b77631dc2fb1ec0d7b074&auto=format&fit=crop&w=1650&q=80"/>
               </div>
               <div id="centerBox">

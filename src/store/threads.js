@@ -19,7 +19,6 @@ export function fetchThreads() {
 }
 
 export function postThread(thread, ownProps) {
-  console.log("this thread is in the thunk:", thread)
   return function thunk(dispatch) {
     return axios.post('/api/threads', thread)
     .then(res => addThreadAndRedirect(res.data, ownProps, dispatch))

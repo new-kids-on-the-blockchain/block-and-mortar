@@ -1,25 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SingleThread from './SingleThread'
-import { fetchThreads, fetchCurrentUser } from '../store'
+import { fetchThreads, fetchCurrentUser, setCurrentThread } from '../store'
 
-class AllMessages extends Component {
-  constructor(){
-    super();
-    this.state = {
-      currentThread: {}
-    }
-
-    this.setCurrentThread = this.setCurrentThread.bind(this);
-  }
-
+//Here, we're fetching all of the threads based on the current user
+//on component mount
+class AllThreads extends Component {
   componentDidMount(){
     window.scroll(0,0)
     this.props.fetchThreads()
-  }
-
-  setCurrentThread(thread){
-    this.setState({currentThread: thread})
   }
 
   render() {
@@ -31,7 +20,8 @@ class AllMessages extends Component {
           { this.props.threads.length
             ? this.props.threads.map(thread => {
                 return (
-                  <div key={thread.id} className="containerInner bt dim" onClick={() => this.setCurrentThread(thread)}>
+                  //Here, we're setting our current thread to our store on click
+                  <div key={thread.id} className="containerInner bt dim" onClick={() => this.props.setCurrentThread(thread)}>
                     <div><span className="b">Topic:</span> {thread.service.name}</div>
                     {
                       thread.buyer.id === this.props.currentUser.id
@@ -45,7 +35,7 @@ class AllMessages extends Component {
           }
         </div>
         <div className="currentThread">
-          <SingleThread currentThread={this.state.currentThread} />
+          <SingleThread />
         </div>
       </div>
       </div>
@@ -56,10 +46,11 @@ class AllMessages extends Component {
 const mapState = state => {
   return {
     threads: state.threads,
+    currentThread: state.currentThread,
     currentUser: state.currentUser
   }
 }
 
-const mapDispatch = { fetchThreads, fetchCurrentUser }
+const mapDispatch = { fetchThreads, fetchCurrentUser, setCurrentThread }
 
-export default connect(mapState, mapDispatch)(AllMessages)
+export default connect(mapState, mapDispatch)(AllThreads)

@@ -1,77 +1,69 @@
 import React, { Component } from "react";
 import AddMessage from "./AddMessage";
 import { connect } from "react-redux";
+// import { fetchMessages } from "../store";
 
 class SingleThread extends Component {
-  constructor() {
+  constructor(){
     super();
 
-    this.state = {
-      messages: []
-    };
+    this.sort = this.sort.bind(this)
   }
 
-  componentWillReceiveProps(newProps) {
-    let newMessages = newProps.currentThread.messages;
-    let sortedMessages;
+  //sort messages by timestamp
+  sort = messages => {
+    return messages.sort(function (a, b) {
+      return new Date(a.updatedAt) - new Date(b.updatedAt);
+    });
+  };
 
-    const sort = messages => {
-      return messages.sort(function(a, b) {
-        return new Date(a.updatedAt) - new Date(b.updatedAt);
-      });
-    };
+  // componentDidUpdate(){
+  //   console.log("I'm receiving new messages on update: ", this.props.currentThread.messages)
+  // }
 
-    //checks for newly submitted messages
-    if (newProps.messages.length) {
-      //this grabs only the most recent message, in case someone submits
-      //multiple messages without refreshing the page
-      newMessages.push(newProps.messages[newProps.messages.length - 1]);
-      sortedMessages = sort(newMessages);
-      this.setState({ messages: sortedMessages });
-    }
+  componentWillReceiveProps(nextProps){
+    console.log("I'm receiving new messages: ", this.props.currentThread)
 
-    //this sorting function only runs if there are messages to sort
-    //It returns all messages sorted by date
-    if (newMessages.length !== this.state.messages.length) {
-      sortedMessages = sort(newMessages);
-      this.setState({ messages: sortedMessages });
-    }
+    console.log("Here are our nextProps: ", nextProps.currentThread)
   }
 
   render() {
-    const currentThread = this.props.currentThread
-    const buyerId = currentThread.buyerId
-    const sellerId = currentThread.sellerId
-    const messages = this.state.messages
+    let thread = this.props.currentThread
+    let messages = this.props.currentThread.messages
+    console.log('my messages: ', messages)
+    let sortedMessages;
+
+    if (messages){
+      sortedMessages = this.sort(messages);
+    }
 
     return (
       <div className="avenir ph4 fl w-60 bl h-100 msgBox">
-        {!this.props.currentThread.id ? (
+        {!thread.id ? (
           <div className="f3">No Conversation Selected</div>
-        ) : !this.state.messages.length ? (
+        ) : !sortedMessages ? (
           <div>
             <div className="f3">No Messages in this Conversation</div>
             <div>
-              <AddMessage currentThread={this.props.currentThread} />
+              <AddMessage currentThread={thread} />
             </div>
           </div>
         ) : (
           <div className="pa3">
             <div className="f3">Selected Conversation</div>
-            {this.state.messages && this.state.messages.map(message => {
+            {sortedMessages && sortedMessages.map(message => {
               return (
                 <div className="message pa2" key={message.id}>
-
-                <span className="pa3">{message.senderId === this.props.currentThread.buyerId ? (<span className="b">{this.props.currentThread.buyer.userName}: </span>)
-
-                  : (<span className="b">{this.props.currentThread.seller.userName}: </span>)}</span>
-
+                  <span className="pa3">{message.senderId === thread.buyerId
+                    ? (<span className="b">{thread.buyer.userName}: </span>)
+                    : (<span className="b">{thread.seller.userName}: </span>)}
+                  </span>
                   {message.content}
                 </div>
               );
             })}
             <div>
-              <AddMessage currentThread={this.props.currentThread} />
+              <AddMessage currentThread={thread} />
             </div>
           </div>
         )}
@@ -82,8 +74,7 @@ class SingleThread extends Component {
 
 const mapState = state => {
   return {
-    messages: state.messages,
-    currentUser: state.currentUser
+    currentThread: state.currentThread
   };
 };
 
