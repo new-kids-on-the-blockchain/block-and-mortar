@@ -35,7 +35,7 @@ class AllThreads extends Component {
           }
         </div>
         <div className="currentThread">
-          <SingleThread currentThread={this.props.currentThread} />
+          <SingleThread />
         </div>
       </div>
       </div>

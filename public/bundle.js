@@ -82051,7 +82051,7 @@ var AllThreads = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'currentThread' },
-            _react2.default.createElement(_SingleThread2.default, { currentThread: this.props.currentThread })
+            _react2.default.createElement(_SingleThread2.default, null)
           )
         )
       );
@@ -83645,8 +83645,16 @@ var SingleThread = function (_Component) {
 
   _createClass(SingleThread, [{
     key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps() {
-      console.log("I'm receiving new messages: ", this.props.currentThread.messages);
+
+
+    // componentDidUpdate(){
+    //   console.log("I'm receiving new messages on update: ", this.props.currentThread.messages)
+    // }
+
+    value: function componentWillReceiveProps(nextProps) {
+      console.log("I'm receiving new messages: ", this.props.currentThread);
+
+      console.log("Here are our nextProps: ", nextProps.currentThread);
     }
   }, {
     key: "render",
@@ -84668,7 +84676,7 @@ function reducer() {
     case UPDATE_CURRENT_THREAD:
       return action.currentThread;
     case UPDATE_THREAD_MESSAGES:
-      return [].concat(_toConsumableArray(currentThread.messages), [action.message]);
+      return Object.assign({}, currentThread, { messages: [].concat(_toConsumableArray(currentThread.messages), [action.message]) });
     default:
       return currentThread;
   }

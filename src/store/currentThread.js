@@ -29,7 +29,7 @@ export default function reducer(currentThread = {}, action) {
     case UPDATE_CURRENT_THREAD:
       return action.currentThread;
     case UPDATE_THREAD_MESSAGES:
-      return [...currentThread.messages, action.message];
+      return Object.assign({}, currentThread, { messages: [...currentThread.messages, action.message]})
     default:
       return currentThread
   }
