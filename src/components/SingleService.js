@@ -45,9 +45,6 @@ class SingleService extends Component {
       .updateAgreement(this.props.singleService.contractId, {
         from: this.props.accounts[0]
       })
-      .then(agreementUpdated => {
-        console.log(agreementUpdated, "AGREEMENT UPDATED");
-      })
       .then(() =>
         this.props.handleUpdateService(
           evt,
@@ -64,9 +61,6 @@ class SingleService extends Component {
       .completeAgreement(this.props.singleService.contractId, {
         from: this.props.accounts[0],
         value: this.props.web3.toWei(this.props.singleService.price, "ether")
-      })
-      .then(agreementCompleted => {
-        console.log(agreementCompleted, "COMPLETE AGREEMENT");
       })
       .then(() =>
         this.props.handleCompleteService(evt, this.props.singleService)

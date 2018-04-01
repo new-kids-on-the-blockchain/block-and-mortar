@@ -10,11 +10,8 @@ window.addEventListener('load', function() {
     if (typeof web3 !== 'undefined') {
       // Use Mist/MetaMask's provider.
       web3 = new Web3(web3.currentProvider)
-
       results = { web3 }
-      //web3.eth.getAccounts((accounts) => console.log('!!!!!!', accounts))
       console.log('Injected web3 detected.', web3.currentProvider);
-
       resolve(results)
     } else {
       // Fallback to localhost if no web3 injection. We've configured this to
@@ -22,13 +19,9 @@ window.addEventListener('load', function() {
       // Kait's IP: 172.16.27.73
       // Digital Ocean IP: 159.65.218.69
       var provider = new Web3.providers.HttpProvider('http://172.16.27.73:8545')
-
       web3 = new Web3(provider)
-
       results = {web3}
-
       console.log('No web3 instance injected, using Local web3.');
-
       resolve(results)
     }
   })

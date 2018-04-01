@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from "axios"
 
 //action type
-const GET_SINGLE_USER = "GET_SINGLE_USER";
+const GET_SINGLE_USER = "GET_SINGLE_USER"
 
 //creators
 export function getUserById(user) {
@@ -15,9 +15,9 @@ export function getUserById(user) {
 export function fetchUserById(id) {
   return function thunk(dispatch) {
     return axios.get(`/api/users/${id}`)
-      .then(res => res.data)
-      .then(user => dispatch(getUserById(user)))
-      .catch(err => console.log(err));
+    .then(res => res.data)
+    .then(user => dispatch(getUserById(user)))
+    .catch(err => console.log(err));
   }
 }
 

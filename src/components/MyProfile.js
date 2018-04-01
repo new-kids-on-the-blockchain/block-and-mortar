@@ -83,7 +83,6 @@ class MyProfile extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state, "CURRENT USER STATE PUBLIC");
   return {
     user: state.singleUser,
     currentUser: state.currentUser
