@@ -11,6 +11,5 @@ Thread.getAllByUser = function(userId) {
     include: [{ all: true }] })
 }
 
-
 module.exports = Thread;
 

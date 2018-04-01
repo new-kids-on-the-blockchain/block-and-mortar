@@ -226,9 +226,6 @@ class Navbar extends React.Component {
   }
 }
 
-/**
- * CONTAINER
- */
 const mapState = state => {
   return {
     isLoggedIn: !!state.currentUser.id

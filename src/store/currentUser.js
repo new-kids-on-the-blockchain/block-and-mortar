@@ -1,29 +1,15 @@
-import axios from "axios";
-import history from '../history';
+import axios from "axios"
+import history from '../history'
 
-// action types
-const GET_CURRENT_USER = 'GET_CURRENT_USER';
-const REMOVE_USER = 'REMOVE_USER';
+//Action Types
+const GET_CURRENT_USER = 'GET_CURRENT_USER'
+const REMOVE_USER = 'REMOVE_USER'
 
-// action creator
-const getCurrentUser = user => ({ type: GET_CURRENT_USER, user });
-const removeUser = userId => ({type: REMOVE_USER, userId});
+//Action Creators
+const getCurrentUser = user => ({ type: GET_CURRENT_USER, user })
+const removeUser = userId => ({type: REMOVE_USER, userId})
 
-/**
- * REDUCER
- */
-export default function (currentUser = {}, action) {
-  switch (action.type) {
-    case GET_CURRENT_USER:
-      return action.user;
-    case REMOVE_USER:
-      return {};
-    default:
-      return currentUser;
-  }
-}
-
-// thunks
+//Thunk Creators
 export const fetchCurrentUser = id => dispatch => {
   axios.get(`/api/users/${id}`)
   .then(user => dispatch(getCurrentUser(user.data)))
@@ -38,7 +24,6 @@ export const me = () => dispatch => {
 
 export const auth = (userName, password, method) => dispatch => {
   axios.post(`/auth/${method}`, {userName, password})
-
   .then(res => {
     dispatch(getCurrentUser(res.data))
     history.push('/home')
@@ -48,13 +33,23 @@ export const auth = (userName, password, method) => dispatch => {
   .catch(dispatchOrHistoryErr => console.error(dispatchOrHistoryErr))
 }
 
-  export const logout = () => {
-    return dispatch =>
-    {axios.post('/auth/logout')
-      .then(_ => {
-        dispatch(removeUser())
-        history.push('/')
-      })
-      .catch(err => console.log(err))
-    }
+export const logout = () => dispatch => {
+  axios.post('/auth/logout')
+  .then(_ => {
+    dispatch(removeUser())
+    history.push('/')
+  })
+  .catch(err => console.log(err))
+}
+
+//Reducer
+export default function(currentUser = {}, action) {
+  switch (action.type) {
+    case GET_CURRENT_USER:
+      return action.user;
+    case REMOVE_USER:
+      return {};
+    default:
+      return currentUser;
   }
+}

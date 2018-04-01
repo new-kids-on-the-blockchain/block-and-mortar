@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from "axios"
 
 //ACTION TYPES
-const GET_THREADS = 'GET_THREADS';
-const ADD_THREAD = 'ADD_THREAD';
+const GET_THREADS = 'GET_THREADS'
+const ADD_THREAD = 'ADD_THREAD'
 
 //ACTION CREATORS
 const getThreads = threads => ({ type: GET_THREADS, threads })
@@ -12,14 +12,13 @@ const addThread = thread => ({ type: ADD_THREAD, thread})
 export function fetchThreads() {
   return function thunk(dispatch) {
     return axios.get('/api/threads')
-      .then(res => res.data)
-      .then(threads => dispatch(getThreads(threads)))
-      .catch(err => console.err('error fetching threads', err))
+    .then(res => res.data)
+    .then(threads => dispatch(getThreads(threads)))
+    .catch(err => console.err('error fetching threads', err))
   }
 }
 
 export function postThread(thread, ownProps) {
-  console.log("this thread is in the thunk:", thread)
   return function thunk(dispatch) {
     return axios.post('/api/threads', thread)
     .then(res => addThreadAndRedirect(res.data, ownProps, dispatch))
