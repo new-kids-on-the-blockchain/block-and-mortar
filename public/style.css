@@ -270,7 +270,7 @@ nav {
     /* justify-content: flex-end; */
     height: 84px;
     padding-top: -26px;
-    width: 414px;
+    width: 375px;
   }
 
   #link {
@@ -279,16 +279,16 @@ nav {
 
   .navBar {
     display: flex;
-    justify-content: space-between;
-    position: fixed;
-    padding: 24px 24px 0px 24px;
-    width: 414px;
+    /* justify-content: space-between; */
+    /* position: fixed; */
+    /* padding: 24px 24px 0px 24px; */
+    width: 375px;
     background-color: #49b6bd;
-    height: 75px;
+    height: 85px;
     z-index: 5;
     position: absolute;
-    /* justify-items: right; */
-    left: -344px;
+    /* justify-items: center; */
+    left: -305px;
     top: 54px;
   }
 
@@ -296,7 +296,7 @@ nav {
     /* display: flex; */
     position: absolute;
     top: -17px;
-    left: 346px;
+    left: 304px;
     /* margin-top: -2em; */
     padding-top: -3em;
     align-self: right;
@@ -315,6 +315,7 @@ nav {
 
   #hamburgerLogo {
     max-width: 20%;
+    padding-left: 2rem;
   }
   .home {
     display: flex;
@@ -397,12 +398,13 @@ nav {
   }
 
   #subNavItem {
-    padding-top: 35px;
+    padding-top: 0px;
   }
 
   .msgBox {
     min-height: 400px;
   }
+
   .all-services {
     justify-content: center;
     width: 80%;
@@ -422,13 +424,27 @@ nav {
     width: 100%;
     padding: 4px 20px;
   }
-
   .pv2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    flex-direction: column;
+}
+  .pv22 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
+    width: 12em;
+}
+
+
+.ml3 {
+  margin-left: 0rem;
+}
+.pa4 {
+  padding: 2rem;
 }
 
   .mw5 {
@@ -441,6 +457,13 @@ nav {
     font-weight: 400;
     padding: 15px 0px 15px 0px;
     text-align: center;
+  }
+
+  .loginBox2 {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 2em; */
+    text-align: -webkit-center;
   }
   #topMarginLogin {
     margin-top: 10em;
