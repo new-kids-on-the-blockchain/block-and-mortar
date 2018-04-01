@@ -82617,87 +82617,118 @@ var Navbar = function (_React$Component) {
   }
 
   _createClass(Navbar, [{
-    key: 'handleResize',
+    key: "handleResize",
     value: function handleResize() {
       this.setState({ windowWidth: window.innerWidth });
     }
   }, {
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function componentDidMount() {
-      window.addEventListener('resize', this.handleResize.bind(this));
+      window.addEventListener("resize", this.handleResize.bind(this));
     }
   }, {
-    key: 'componentWillUnmount',
+    key: "componentWillUnmount",
     value: function componentWillUnmount() {
-      window.removeEventListener('resize', this.handleResize.bind(this));
+      window.removeEventListener("resize", this.handleResize.bind(this));
     }
   }, {
-    key: 'navigationLinks',
+    key: "navigationLinks",
     value: function navigationLinks() {
       return _react2.default.createElement(
-        'div',
+        "div",
         null,
         _react2.default.createElement(
-          'nav',
-          { className: 'navBar' },
+          "nav",
+          { className: "navBar" },
           _react2.default.createElement(
-            'div',
-            { id: 'subNav' },
+            "div",
+            { id: "subNav" },
             this.props.isLoggedIn ? _react2.default.createElement(
-              'div',
-              { className: 'dtc v-mid w-75 tr', id: 'subNavItem' },
+              "div",
+              { className: "dtc v-mid w-75 tr", id: "subNavItem" },
               _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/home', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns ' },
-                'My Dashboard'
+                {
+                  to: "/home",
+                  className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns "
+                },
+                "My Dashboard"
               ),
               _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/services', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                'Marketplace'
+                {
+                  to: "/services",
+                  className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                },
+                "Marketplace"
               ),
               _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/services/new', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                'Create a Post'
+                {
+                  to: "/services/new",
+                  className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                },
+                "Create a Post"
               ),
               _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/messages', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                'Inbox'
+                {
+                  to: "/messages",
+                  className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                },
+                "Inbox"
               ),
               _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/faq', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                'FAQs'
+                {
+                  to: "/faq",
+                  className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                },
+                "FAQs"
               ),
               _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/my-profile', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                'My Profile'
+                {
+                  to: "/my-profile",
+                  className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                },
+                "My Profile"
               ),
               _react2.default.createElement(
-                'a',
-                { href: '#', onClick: this.props.handleClick, className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                'Logout'
+                "a",
+                {
+                  href: "#",
+                  onClick: this.props.handleClick,
+                  className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                },
+                "Logout"
               )
             ) : _react2.default.createElement(
-              'div',
-              { id: 'subNav' },
+              "div",
+              { id: "subNav" },
               _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/login', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                'Login'
+                {
+                  to: "/login",
+                  className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                },
+                "Login"
               ),
               _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/signup', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                'Sign Up'
+                {
+                  to: "/signup",
+                  className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                },
+                "Sign Up"
               ),
               _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/faq', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                'FAQs'
+                {
+                  to: "/faq",
+                  className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                },
+                "FAQs"
               )
             )
           )
@@ -82705,14 +82736,14 @@ var Navbar = function (_React$Component) {
       );
     }
   }, {
-    key: 'renderMobileNav',
+    key: "renderMobileNav",
     value: function renderMobileNav() {
       if (this.state.mobileNavVisible) {
         return this.navigationLinks();
       }
     }
   }, {
-    key: 'handleNavClick',
+    key: "handleNavClick",
     value: function handleNavClick() {
       if (!this.state.mobileNavVisible) {
         this.setState({ mobileNavVisible: true });
@@ -82721,82 +82752,116 @@ var Navbar = function (_React$Component) {
       }
     }
   }, {
-    key: 'renderNavigation',
+    key: "renderNavigation",
     value: function renderNavigation() {
       if (this.state.windowWidth <= 414) {
         return _react2.default.createElement(
-          'div',
-          { className: 'nav_container2' },
-          _react2.default.createElement('img', {
-            role: 'presentation',
-            id: 'hamburgerLogo', src: 'https://www.screeninnovations.com/wp-content/themes/screeninnovations/images/icons/menu-icons/misc/icon-hamburger-menu.svg', onClick: this.handleNavClick.bind(this) }),
+          "div",
+          { className: "nav_container2" },
+          _react2.default.createElement("img", {
+            role: "presentation",
+            id: "hamburgerLogo",
+            src: "https://www.screeninnovations.com/wp-content/themes/screeninnovations/images/icons/menu-icons/misc/icon-hamburger-menu.svg",
+            onClick: this.handleNavClick.bind(this)
+          }),
           this.renderMobileNav()
         );
       } else {
         return _react2.default.createElement(
-          'div',
+          "div",
           null,
           _react2.default.createElement(
-            'nav',
-            { className: 'navBar' },
+            "nav",
+            { className: "navBar" },
             _react2.default.createElement(
-              'div',
-              { id: 'subNav' },
+              "div",
+              { id: "subNav" },
               this.props.isLoggedIn ? _react2.default.createElement(
-                'div',
-                { className: 'dtc v-mid w-75 tr', id: 'subNavItem' },
+                "div",
+                { className: "dtc v-mid w-75 tr", id: "subNavItem" },
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { to: '/home', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns ' },
-                  'My Dashboard'
+                  {
+                    to: "/home",
+                    className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns "
+                  },
+                  "My Dashboard"
                 ),
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { to: '/services', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                  'Marketplace'
+                  {
+                    to: "/services",
+                    className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                  },
+                  "Marketplace"
                 ),
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { to: '/services/new', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                  'Create a Post'
+                  {
+                    to: "/services/new",
+                    className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                  },
+                  "Create a Post"
                 ),
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { to: '/messages', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                  'Inbox'
+                  {
+                    to: "/messages",
+                    className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                  },
+                  "Inbox"
                 ),
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { to: '/faq', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                  'FAQs'
+                  {
+                    to: "/faq",
+                    className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                  },
+                  "FAQs"
                 ),
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { to: '/my-profile', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                  'My Profile'
+                  {
+                    to: "/my-profile",
+                    className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                  },
+                  "My Profile"
                 ),
                 _react2.default.createElement(
-                  'a',
-                  { href: '#', onClick: this.props.handleClick, className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                  'Logout'
+                  "a",
+                  {
+                    href: "#",
+                    onClick: this.props.handleClick,
+                    className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                  },
+                  "Logout"
                 )
               ) : _react2.default.createElement(
-                'div',
-                { id: 'subNav' },
+                "div",
+                { id: "subNav" },
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { to: '/login', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                  'Login'
+                  {
+                    to: "/login",
+                    className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                  },
+                  "Login"
                 ),
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { to: '/signup', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                  'Sign Up'
+                  {
+                    to: "/signup",
+                    className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                  },
+                  "Sign Up"
                 ),
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { to: '/faq', className: 'avenir link dim white f6 f5-ns dib mr3 mr4-ns' },
-                  'FAQs'
+                  {
+                    to: "/faq",
+                    className: "avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                  },
+                  "FAQs"
                 )
               )
             )
@@ -82805,22 +82870,22 @@ var Navbar = function (_React$Component) {
       }
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return _react2.default.createElement(
-        'div',
-        { className: 'nav_container' },
+        "div",
+        { className: "nav_container" },
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/', id: 'link' },
+          { to: "/", id: "link" },
           _react2.default.createElement(
-            'div',
-            { id: 'logoTitle' },
-            _react2.default.createElement('img', { id: 'logo', className: '', src: '/assets/logo1.png' }),
+            "div",
+            { id: "logoTitle" },
+            _react2.default.createElement("img", { id: "logo", className: "", src: "/assets/logo1.png" }),
             _react2.default.createElement(
-              'div',
-              { className: 'dim avenir white f1 siteTitle', id: 'link' },
-              'Block & Mortar'
+              "div",
+              { className: "dim avenir white f1 siteTitle", id: "link" },
+              "Block & Mortar"
             )
           )
         ),
@@ -82831,41 +82896,6 @@ var Navbar = function (_React$Component) {
 
   return Navbar;
 }(_react2.default.Component);
-
-// const Navbar = props => (
-//   <div>
-//     <nav className="navBar">
-//         <Link to="/" >
-//           <div id="logoTitle">
-//           <img id="logo" className="" src="/assets/logo1.png" />
-//           <div className="dim avenir white f1 siteTitle"  >Block &amp; Mortar</div>
-//           </div>
-//         </Link>
-//         <div id="subNav" >
-//         {props.isLoggedIn ? (
-//           <div className="dtc v-mid w-75 tr" id="subNavItem">
-//           <Link to="/home" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns ">My Dashboard</Link>
-//           <Link to="/services" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Marketplace</Link>
-//           <Link to="/services/new" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Create a Post</Link>
-//           <Link to="/messages" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Inbox</Link>
-//           <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
-//           <Link to="/my-profile" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">My Profile</Link>
-//           <a href="#" onClick={props.handleClick} className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
-//           Logout</a>
-//         </div>
-//         ) : (
-//         <div id="subNav">
-//           <Link to="/login" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Login</Link>
-//           <Link to="/signup" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Sign Up</Link>
-//           <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
-//         </div>
-//         )}
-//        </div>
-//     </nav>
-
-
-//   </div>
-// )
 
 /**
  * CONTAINER
@@ -82887,65 +82917,6 @@ var mapDispatch = function mapDispatch(dispatch) {
 };
 
 exports.default = (0, _reactRedux.connect)(mapState, mapDispatch)(Navbar);
-
-// import React from 'react'
-// import { connect } from 'react-redux'
-// import { Link } from 'react-router-dom'
-// import { logout } from '../store'
-
-// const Navbar = props => (
-//   <div>
-//     <nav className="navBar">
-//         <Link to="/" >
-//           <div id="logoTitle">
-//           <img id="logo" className="" src="/assets/logo1.png" />
-//           <div className="dim avenir white f1 siteTitle"  >Block &amp; Mortar</div>
-//           </div>
-//         </Link>
-//         <div id="subNav" >
-//         {props.isLoggedIn ? (
-//           <div className="dtc v-mid w-75 tr" id="subNavItem">
-//           <Link to="/home" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns ">My Dashboard</Link>
-//           <Link to="/services" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Marketplace</Link>
-//           <Link to="/services/new" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Create a Post</Link>
-//           <Link to="/messages" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Inbox</Link>
-//           <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
-//           <Link to="/my-profile" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">My Profile</Link>
-//           <a href="#" onClick={props.handleClick} className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
-//           Logout</a>
-//         </div>
-//         ) : (
-//         <div id="subNav">
-//           <Link to="/login" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Login</Link>
-//           <Link to="/signup" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">Sign Up</Link>
-//           <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">FAQs</Link>
-//         </div>
-//         )}
-//        </div>
-//     </nav>
-
-
-//   </div>
-// )
-
-// /**
-//  * CONTAINER
-//  */
-// const mapState = state => {
-//   return {
-//     isLoggedIn: !!state.currentUser.id,
-//   }
-// }
-
-// const mapDispatch = dispatch => {
-//   return {
-//     handleClick() {
-//       dispatch(logout())
-//     }
-//   }
-// }
-
-// export default connect(mapState, mapDispatch)(Navbar)
 
 /***/ }),
 

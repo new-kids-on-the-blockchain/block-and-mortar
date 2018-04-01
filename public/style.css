@@ -153,7 +153,7 @@ nav {
   margin-bottom: 70em;
 }
 
-#link{
+#link {
   /* width: 80%; */
 }
 
@@ -162,9 +162,9 @@ nav {
 }
 
 .nav_container {
-    /* display: flex; */
-    /* position: absolute; */
-    /* top: 1em;
+  /* display: flex; */
+  /* position: absolute; */
+  /* top: 1em;
     margin-top: -2em;
     padding-top: -3em;
     height: 84px;
@@ -178,14 +178,14 @@ nav {
     height: 112px;
     z-index: 5; */
 
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    padding: 24px 24px 0px 24px;
-    width: calc(100vw - 1em);
-    background-color: #49b6bd;
-    height: 100px;
-    z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  padding: 24px 24px 0px 24px;
+  width: calc(100vw - 1em);
+  background-color: #49b6bd;
+  height: 100px;
+  z-index: 5;
 }
 
 #logo {
@@ -384,7 +384,6 @@ nav {
     position: absolute;
     /* top: 27px; */
     top: -5px;
-    z-index: 5;
   }
   #homeText {
     margin-top: -20px;
@@ -473,7 +472,7 @@ nav {
     padding-bottom: 0.5rem;
     text-align: center;
     flex-direction: column;
-}
+  }
   .pv22 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -481,15 +480,14 @@ nav {
     display: flex;
     flex-direction: column;
     width: 12em;
-}
+  }
 
-
-.ml3 {
-  margin-left: 0rem;
-}
-.pa4 {
-  padding: 2rem;
-}
+  .ml3 {
+    margin-left: 0rem;
+  }
+  .pa4 {
+    padding: 2rem;
+  }
 
   .mw5 {
     max-width: 22rem;
@@ -528,24 +526,23 @@ nav {
     flex-direction: column;
     padding: inherit;
     text-align: unset;
-}
+  }
 
-.allThreads {
-  width: 100%;
-  text-align: center;
-}
+  .allThreads {
+    width: 100%;
+    text-align: center;
+  }
 
-.msgBox {
-  width: 100%;
-  text-align: center;
-}
+  .msgBox {
+    width: 100%;
+    text-align: center;
+  }
 
-#calloutBox {
-  padding-left: 1em;
-  padding-right: 1em;
-  text-align: center;
-}
-
+  #calloutBox {
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+  }
 }
 
 /* IPHONE 6 */
@@ -555,6 +552,9 @@ nav {
     text-decoration: underline;
     text-decoration-color: #e34383;
     margin-left: 1rem;
+    top: 0px;
+    position: absolute;
+    left: 44px;
   }
 
   #logo {
@@ -645,7 +645,6 @@ nav {
     position: absolute;
     /* top: 27px; */
     top: -5px;
-    z-index: 5;
   }
   #homeText {
     margin-top: -20px;
@@ -734,7 +733,7 @@ nav {
     padding-bottom: 0.5rem;
     text-align: center;
     flex-direction: column;
-}
+  }
   .pv22 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -742,15 +741,14 @@ nav {
     display: flex;
     flex-direction: column;
     width: 12em;
-}
+  }
 
-
-.ml3 {
-  margin-left: 0rem;
-}
-.pa4 {
-  padding: 2rem;
-}
+  .ml3 {
+    margin-left: 0rem;
+  }
+  .pa4 {
+    padding: 2rem;
+  }
 
   .mw5 {
     max-width: 22rem;
@@ -789,35 +787,26 @@ nav {
     flex-direction: column;
     padding: inherit;
     text-align: unset;
+  }
+
+  .allThreads {
+    width: 100%;
+    text-align: center;
+  }
+
+  .msgBox {
+    width: 100%;
+    text-align: center;
+  }
+
+  #calloutBox {
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+  }
 }
 
-.allThreads {
-  width: 100%;
-  text-align: center;
-}
-
-.msgBox {
-  width: 100%;
-  text-align: center;
-}
-
-#calloutBox {
-  padding-left: 1em;
-  padding-right: 1em;
-  text-align: center;
-}
-}
-
-
-
-
-
-
-@media only screen
-and (device-width : 375px)
-and (device-height : 812px)
-and (-webkit-device-pixel-ratio : 3) {
-
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .siteTitle {
     font-size: 2rem;
     text-decoration: underline;
@@ -914,7 +903,6 @@ and (-webkit-device-pixel-ratio : 3) {
     position: absolute;
     /* top: 27px; */
     top: -5px;
-    z-index: 5;
   }
   #homeText {
     margin-top: -20px;
@@ -1003,7 +991,7 @@ and (-webkit-device-pixel-ratio : 3) {
     padding-bottom: 0.5rem;
     text-align: center;
     flex-direction: column;
-}
+  }
   .pv22 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -1011,15 +999,14 @@ and (-webkit-device-pixel-ratio : 3) {
     display: flex;
     flex-direction: column;
     width: 12em;
-}
+  }
 
-
-.ml3 {
-  margin-left: 0rem;
-}
-.pa4 {
-  padding: 2rem;
-}
+  .ml3 {
+    margin-left: 0rem;
+  }
+  .pa4 {
+    padding: 2rem;
+  }
 
   .mw5 {
     max-width: 22rem;
@@ -1058,22 +1045,21 @@ and (-webkit-device-pixel-ratio : 3) {
     flex-direction: column;
     padding: inherit;
     text-align: unset;
-}
+  }
 
-.allThreads {
-  width: 100%;
-  text-align: center;
-}
+  .allThreads {
+    width: 100%;
+    text-align: center;
+  }
 
-.msgBox {
-  width: 100%;
-  text-align: center;
-}
+  .msgBox {
+    width: 100%;
+    text-align: center;
+  }
 
-#calloutBox {
-  padding-left: 1em;
-  padding-right: 1em;
-  text-align: center;
+  #calloutBox {
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+  }
 }
-
- }
