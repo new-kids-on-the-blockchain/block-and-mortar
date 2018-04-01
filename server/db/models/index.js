@@ -17,7 +17,6 @@ Thread.belongsTo(User, {as: 'buyer'})
 Thread.belongsTo(User, {as: 'seller'})
 Thread.belongsTo(Service, {as: 'service'})
 
-
 module.exports = {
   User,
   Message,

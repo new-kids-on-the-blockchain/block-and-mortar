@@ -17,10 +17,6 @@ class SingleThread extends Component {
     });
   };
 
-  // componentDidUpdate(){
-  //   console.log("I'm receiving new messages on update: ", this.props.currentThread.messages)
-  // }
-
   componentWillReceiveProps(nextProps){
     console.log("I'm receiving new messages: ", this.props.currentThread)
 

@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const {Thread} = require('../db/models')
-
 module.exports = router
 
 // this route gets all threads by a specific user, threads on which they are the initiator and threads on which they are the recipient. for loading of the "inbox" component
