@@ -1,6 +1,7 @@
 # Block & Mortar
 
 [Block & Mortar Beta Site](http://blockandmortar.nyc/)
+
 Video Demo: Link to come
 
 Aimed at local communities, Block & Mortar allows for the grassroots sale of goods and services using the Ethereum blockchain.
