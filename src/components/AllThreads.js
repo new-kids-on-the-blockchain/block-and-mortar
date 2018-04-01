@@ -5,7 +5,7 @@ import { fetchThreads, fetchCurrentUser, setCurrentThread } from '../store'
 
 //Here, we're fetching all of the threads based on the current user
 //on component mount
-class AllMessages extends Component {
+class AllThreads extends Component {
   componentDidMount(){
     window.scroll(0,0)
     this.props.fetchThreads()
@@ -53,4 +53,4 @@ const mapState = state => {
 
 const mapDispatch = { fetchThreads, fetchCurrentUser, setCurrentThread }
 
-export default connect(mapState, mapDispatch)(AllMessages)
+export default connect(mapState, mapDispatch)(AllThreads)

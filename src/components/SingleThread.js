@@ -1,15 +1,11 @@
 import React, { Component } from "react";
 import AddMessage from "./AddMessage";
 import { connect } from "react-redux";
-import { fetchMessages } from "../store";
+// import { fetchMessages } from "../store";
 
 class SingleThread extends Component {
   constructor(){
     super();
-
-    this.state = {
-      newMessages: []
-    }
 
     this.sort = this.sort.bind(this)
   }
@@ -21,15 +17,14 @@ class SingleThread extends Component {
     });
   };
 
-  componentWillMount(){
-    console.log("our current thread on mount is: ", this.props.currentThread)
-    this.props.fetchMessages(this.props.currentThread)
+  componentWillReceiveProps(){
+    console.log("I'm receiving new messages: ", this.props.currentThread.messages)
   }
 
   render() {
     let thread = this.props.currentThread
     let messages = this.props.currentThread.messages
-    console.log('my new messages: ', this.props.messages)
+    console.log('my messages: ', messages)
     let sortedMessages;
 
     if (messages){
@@ -73,11 +68,8 @@ class SingleThread extends Component {
 
 const mapState = state => {
   return {
-    currentThread: state.currentThread,
-    messages: state.messages
+    currentThread: state.currentThread
   };
 };
 
-const mapDispatch = { fetchMessages }
-
-export default connect(mapState, mapDispatch)(SingleThread);
+export default connect(mapState)(SingleThread);
