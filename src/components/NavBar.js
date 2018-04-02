@@ -77,6 +77,13 @@ class Navbar extends React.Component {
             ) : (
               <div id="subNav">
                 <Link
+                  to="/about"
+                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                >
+                  About
+                </Link>
+
+                <Link
                   to="/login"
                   className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
                 >
@@ -183,6 +190,12 @@ class Navbar extends React.Component {
               ) : (
                 <div id="subNav">
                   <Link
+                    to="/about"
+                    className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
+                  >
+                    About
+                  </Link>
+                  <Link
                     to="/login"
                     className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
                   >
@@ -241,4 +254,3 @@ const mapDispatch = dispatch => {
 };
 
 export default connect(mapState, mapDispatch)(Navbar);
-
