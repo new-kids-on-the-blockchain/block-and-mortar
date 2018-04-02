@@ -49,6 +49,16 @@ const FAQ = props => {
           </div>
         </div>
 
+        <div className="faq-question">
+        <div className="containerInner bt">
+          <div className="f4 b">How do I log into MetaMask?</div>
+          <p>Download instructions for using Metamask <a
+          className="dim"
+          href="/assets/metamask-instructions.pdf">here.</a>
+        </p>
+        </div>
+      </div>
+
         <div className="f4 b tc-l"><span className="inline-flex items-center"><Link className="dim ph1" to="/signup">Sign Up</Link> and get started to learn more!</span></div>
       </div>
     </div>
