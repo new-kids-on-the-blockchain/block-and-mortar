@@ -6,18 +6,19 @@ import SingleService from './SingleService'
 import AddService from './AddService'
 import SingleUser from './SingleUser'
 import SingleUserPublic from './SingleUserPublic'
-import AllMessages from './AllMessages'
+import AllThreads from './AllThreads'
 import AddMessage from './AddMessage'
 import Homepage from './Homepage'
 import { Login, Signup } from './SignUp'
 import NavBar from './NavBar'
 import FAQ from './FAQ'
+import About from './About'
 import MyProfile from './MyProfile'
-import { me, fetchServices, fetchWeb3} from '../store'
+import { me, fetchServices } from '../store'
 
 class Routes extends Component {
-
   componentDidMount () {
+    window.scroll(0,0)
     this.props.loadInitialData()
   }
 
@@ -32,6 +33,7 @@ class Routes extends Component {
           <Route path="/signup" component={Signup} />
           <Route exact path="/" component={Homepage} />
           <Route exact path="/faq" component={FAQ} />
+          <Route exact path="/about" component={About} />
           {
             isLoggedIn &&
               <Switch>
@@ -41,7 +43,7 @@ class Routes extends Component {
                 <Route exact path='/services' component={AllServices} />
                 <Route exact path='/services/new' component={AddService} />
                 <Route exact path='/services/:id' component={SingleService} />
-                <Route exact path='/messages' component={AllMessages} />
+                <Route exact path='/messages' component={AllThreads} />
                 <Route exact path='/messages/new' component={AddMessage} />
                 <Route exact path='/my-profile' component={MyProfile} />
               </Switch>
@@ -72,7 +74,6 @@ const mapDispatch = (dispatch) => {
   }
 }
 
-// The `withRouter` wrapper makes sure that updates are not blocked
-// when the url changes
+// The `withRouter` wrapper makes sure that updates are not blocked when the url changes
 export default withRouter(connect(mapState, mapDispatch)(Routes))
 

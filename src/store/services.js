@@ -1,28 +1,22 @@
-import axios from "axios";
+import axios from "axios"
 
-/**
- * ACTION TYPES
- */
-const GET_SERVICES = 'GET_SERVICES';
-const ADD_SERVICE = 'ADD_SERVICE';
-const EDIT_SERVICE = 'EDIT_SERVICE';
+//Action Types
+const GET_SERVICES = 'GET_SERVICES'
+const ADD_SERVICE = 'ADD_SERVICE'
+const EDIT_SERVICE = 'EDIT_SERVICE'
 
-/**
- * ACTION CREATORS
- */
+//Action Creators
 const getServices = services => ({type: GET_SERVICES, services})
 const addService = service => ({type: ADD_SERVICE, service})
 const editService = service => ({type: EDIT_SERVICE, service})
 
-/**
- * THUNK CREATORS
- */
+//Thunk Creators
 export function fetchServices() {
   return function thunk(dispatch) {
     return axios.get('/api/services')
-      .then(res => res.data)
-      .then(services => dispatch(getServices(services)))
-      .catch(err => console.log(err, 'fetchingService thunk failed'))
+    .then(res => res.data)
+    .then(services => dispatch(getServices(services)))
+    .catch(err => console.log(err, 'fetchingService thunk failed'))
   }
 }
 
@@ -50,9 +44,7 @@ export function updateCompleteService(service, ownProps) {
   }
 }
 
-/**
- * REDUCER
- */
+//Reducer
 export default function reducer(services = [], action) {
   switch (action.type) {
     case GET_SERVICES:

@@ -1,30 +1,20 @@
-/**
- * INITIAL STATE
- */
+//Initial State
 const defaultAccounts = []
 
-/**
- * ACTION TYPES
- */
-const GET_ACCOUNTS = 'GET_ACCOUNTS';
+//Action Types
+const GET_ACCOUNTS = 'GET_ACCOUNTS'
 
-/**
- * ACTION CREATORS
- */
+//Action Creators
 const setAccounts = accounts => ({type: GET_ACCOUNTS, accounts})
 
-/**
- * THUNK CREATORS
- */
+//Thunk Creators
 export const fetchAccounts = web3  => {
-    return dispatch =>
-      web3.eth.getAccounts((err, accounts) => dispatch(setAccounts(accounts)))
+  return dispatch =>
+    web3.eth.getAccounts((err, accounts) => dispatch(setAccounts(accounts)))
 }
 
-/**
- * REDUCER
- */
-export default function (state = defaultAccounts, action) {
+//Reducer
+export default function(state = defaultAccounts, action) {
   switch (action.type) {
     case GET_ACCOUNTS:
       return action.accounts;

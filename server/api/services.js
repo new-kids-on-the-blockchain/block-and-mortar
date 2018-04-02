@@ -24,8 +24,8 @@ router.get('/:id', (req, res, next) => {
 
 router.get('/buyer/:buyerId', (req, res, next) => {
   Service.findAll({where: {sellerId: req.params.sellerId}, include: [{ all: true }]})
-      .then(services => res.send(services))
-      .catch(next)
+    .then(services => res.send(services))
+    .catch(next)
 })
 
 router.get('/seller/:sellerId', (req, res, next) => {

@@ -8,11 +8,11 @@
 .siteTitle {
   font-size: 3.5rem;
   text-decoration: underline;
-  text-decoration-color: #E34383;
+  text-decoration-color: #e34383;
 }
 
 a {
-  color: #E34383;
+  color: #e34383;
   text-decoration-line: none;
 }
 
@@ -26,13 +26,13 @@ li {
 
 .f2 {
   font-size: 2.5rem;
-  color: #0E1B1C;
+  color: #0e1b1c;
   font-weight: 400;
   padding: 15px 0px 15px 0px;
 }
 
 .f3 {
-  color: #0E1B1C;
+  color: #0e1b1c;
   font-weight: 700;
   padding: 15px 0px 15px 0px;
 }
@@ -46,7 +46,7 @@ button.f4 {
 }
 
 .bt {
-  border-top-color: #91D446;
+  border-top-color: #91d446;
 }
 
 .containerInner {
@@ -84,17 +84,17 @@ button.f4 {
   border: none;
   text-decoration: none;
   color: black;
-  box-shadow: 2px 2px 10px #CCC;
+  box-shadow: 2px 2px 10px #ccc;
 }
 
 .service {
-  background-color: #F3F2F3;
+  background-color: #f3f2f3;
   padding: 10px;
   border: solid 1px #84848496;
 }
 
 .service a {
-  color: #385B55;
+  color: #385b55;
   margin-top: 1em;
 }
 
@@ -103,15 +103,16 @@ button.f4 {
 }
 
 .home > div#homeText {
-    flex: 1;
-    margin-top: 7%;
-    margin-left: 3%;
-    padding: 20px 40px 20px 40px;
-    line-height: 3em;
+  -moz-margin-top: 100px;
+  flex: 1;
+  margin-top: 7%;
+  margin-left: 3%;
+  padding: 20px 40px 20px 40px;
+  line-height: 3em;
 }
 
 #homeImg {
-  flex:2;
+  flex: 2;
   margin-top: 8%;
   width: 140%;
 }
@@ -120,21 +121,20 @@ div#background {
   display: flex;
   background: url(https://farm1.staticflickr.com/884/27171020888_d1b2986a8b_k.jpg);
   background-position: center center;
-  background-repeat:  no-repeat;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size:  cover;
+  background-size: cover;
   background-color: #999;
   justify-content: center;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
   position: fixed;
+  justify-content: center;
   padding: 24px 24px 0px 24px;
-  width: calc(100vw - 1em);
-  background-color: #49b6bd;
-  height: 100px;
+  width: auto;
+  height: 61px;
   z-index: 5;
 }
 
@@ -153,8 +153,39 @@ nav {
   margin-bottom: 70em;
 }
 
+#link {
+  /* width: 80%; */
+}
+
 .bg-light-gray {
   background-color: #f3f2f3;
+}
+
+.nav_container {
+  /* display: flex; */
+  /* position: absolute; */
+  /* top: 1em;
+    margin-top: -2em;
+    padding-top: -3em;
+    height: 84px;
+    padding-top: -26px;
+    display: flex;
+    position: fixed;
+    justify-content: space-evenly;
+    padding: 24px 24px 0px 24px;
+    width: calc(100vw - 1em);
+    background-color: #49b6bd;
+    height: 112px;
+    z-index: 5; */
+
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  padding: 24px 24px 0px 24px;
+  width: calc(100vw - 1em);
+  background-color: #49b6bd;
+  height: 100px;
+  z-index: 5;
 }
 
 #logo {
@@ -166,28 +197,43 @@ nav {
   z-index: 3;
 }
 
-#logoTitle{
-  /* display: flex; */
-  margin-left:4em;
+#logoTitle {
+  margin-left: 4em;
   width: 550px;
+
+  /* position: absolute;
+  margin-left: -31em;
+  margin-top: 2em;
+  width: 550px; */
+
+  /* display: flex;
+  margin-left: 4em;
+  margin-top: 0em;
+  width: 550px; */
 }
 
+.navBar {
+  position: absolute;
+  right: 1em;
+}
 
 #homeText {
-  margin-top:-20px;
+  -moz-margin-top: 100px;
+  margin-top: -20px;
   padding-top: -200px;
   display: flex;
   flex-direction: column;
   /* justify-content: space-between  */
 }
 
-#homeText > .modal{
-  flex:1;
+#homeText > .modal {
+  flex: 1;
   /* position: absolute; */
   margin-top: -10em;
 }
 
-#text{
+#text {
+  margin-top: 45px;
   margin-bottom: -5em;
   color: white;
   line-height: 40px;
@@ -200,9 +246,8 @@ nav {
   line-height: 60px;
 }
 
-
 .modalBox {
-  flex:1;
+  flex: 1;
   top: 4em;
   width: 100%;
   background-color: white;
@@ -228,9 +273,804 @@ nav {
 }
 
 #subNavItem {
-  padding-top: 35px;
+  /* padding-top: 35px; */
 }
 
 .msgBox {
   min-height: 400px;
+}
+
+#centerBox {
+  display: flex;
+  justify-content: center;
+}
+
+.completeBtn {
+  display: flex;
+  flex-direction: column;
+}
+
+.completeBtn2 {
+      margin: auto;
+      margin-bottom: 1em;
+      margin-top: 0.5em;
+}
+
+/* MOBILE */ /* MOBILE */ /* MOBILE */
+/* MOBILE */ /* MOBILE */ /* MOBILE */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) and (-webkit-device-pixel-ratio: 3) {
+  .siteTitle {
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-color: #e34383;
+    margin-left: 1rem;
+  }
+
+  #logo {
+    position: absolute;
+    top: -6px;
+    left: 9px;
+    width: 3em;
+    height: 3em;
+    z-index: 3;
+  }
+
+  .nav_container {
+    display: flex;
+    position: absolute;
+    top: 1em;
+    /* margin-top: -2em; */
+    padding-top: -3em;
+    /* align-self: right; */
+    /* justify-content: flex-end; */
+    height: 84px;
+    padding-top: -26px;
+    width: 375px;
+  }
+
+  #link {
+    width: 300px;
+  }
+
+  .navBar {
+    display: flex;
+    /* justify-content: space-between; */
+    /* position: fixed; */
+    /* padding: 24px 24px 0px 24px; */
+    width: 375px;
+    background-color: #49b6bd;
+    height: 85px;
+    z-index: 5;
+    position: absolute;
+    /* justify-items: center; */
+    left: -305px;
+    top: 54px;
+  }
+
+  .nav_container2 {
+    /* display: flex; */
+    position: absolute;
+    top: -17px;
+    left: 304px;
+    /* margin-top: -2em; */
+    padding-top: -3em;
+    align-self: right;
+    justify-content: flex-end;
+    height: 84px;
+    width: 380px;
+    z-index: 9;
+    padding-top: -26px;
+  }
+
+  #logoTitle {
+    /* display: flex; */
+    margin-left: 4em;
+    width: 365px;
+  }
+
+  #hamburgerLogo {
+    max-width: 20%;
+    padding-left: 2rem;
+  }
+  .home {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .home > div#homeText {
+    -moz-margin-top: 100px;
+    flex: 2;
+    margin-top: 122%;
+    margin-left: 3%;
+    padding: 20px 40px 20px 40px;
+    line-height: 3em;
+  }
+
+  #homeImg {
+    flex: 1;
+    width: 100%;
+    margin-top: 50px;
+    position: absolute;
+    /* top: 27px; */
+    top: -5px;
+  }
+  #homeText {
+    margin-top: -20px;
+    padding-top: -150px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between  */
+  }
+
+  #homeText > .modal {
+    flex: 1;
+    /* position: absolute; */
+    margin-top: -10em;
+  }
+
+  #text {
+    margin-top: -104px;
+    margin-bottom: -5em;
+    color: white;
+    line-height: 40px;
+    font-size: 28px;
+  }
+
+  #textSignedIn {
+    color: white;
+    margin-top: -104px;
+    line-height: 40px;
+    font-size: 28px;
+  }
+
+  .modalBox {
+    flex: 1;
+    top: 4em;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    opacity: 1;
+  }
+
+  #signUpButton {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+  #profileVisual {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #calloutBox {
+    padding-left: 7em;
+    padding-right: 7em;
+  }
+
+  #subNavItem {
+    padding-top: 0px;
+  }
+
+  .msgBox {
+    min-height: 400px;
+  }
+
+  .all-services {
+    justify-content: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service {
+    background-color: #f3f2f3;
+    padding: 10px;
+    border: solid 1px #84848496;
+    width: 100%;
+  }
+
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px 20px;
+  }
+  .pv2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    flex-direction: column;
+  }
+  .pv22 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 12em;
+  }
+
+  .ml3 {
+    margin-left: 0rem;
+  }
+  .pa4 {
+    padding: 2rem;
+  }
+
+  .mw5 {
+    max-width: 22rem;
+  }
+
+  .f2 {
+    font-size: 2.5rem;
+    color: #0e1b1c;
+    font-weight: 400;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+  }
+
+  .loginBox2 {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 2em; */
+    text-align: -webkit-center;
+  }
+  #topMarginLogin {
+    margin-top: 10em;
+    margin-bottom: 50em;
+  }
+  #topMargin {
+    margin-top: 10em;
+    margin-bottom: 10em;
+  }
+
+  #topMargin2 {
+    margin-top: 9em;
+    margin-bottom: 67em;
+  }
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    padding: inherit;
+    text-align: unset;
+  }
+
+  .allThreads {
+    width: 100%;
+    text-align: center;
+  }
+
+  .msgBox {
+    width: 100%;
+    text-align: center;
+  }
+
+  #calloutBox {
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+  }
+}
+
+/* IPHONE 6 */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .siteTitle {
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-color: #e34383;
+    margin-left: 1rem;
+    top: 0px;
+    position: absolute;
+    left: 44px;
+  }
+
+  #logo {
+    position: absolute;
+    top: -6px;
+    left: 9px;
+    width: 3em;
+    height: 3em;
+    z-index: 3;
+  }
+
+  .nav_container {
+    display: flex;
+    position: absolute;
+    top: 1em;
+    /* margin-top: -2em; */
+    padding-top: -3em;
+    /* align-self: right; */
+    /* justify-content: flex-end; */
+    height: 84px;
+    padding-top: -26px;
+    width: 375px;
+  }
+
+  #link {
+    width: 300px;
+  }
+
+  .navBar {
+    display: flex;
+    /* justify-content: space-between; */
+    /* position: fixed; */
+    /* padding: 24px 24px 0px 24px; */
+    width: 375px;
+    background-color: #49b6bd;
+    height: 85px;
+    z-index: 5;
+    position: absolute;
+    /* justify-items: center; */
+    left: -305px;
+    top: 54px;
+  }
+
+  .nav_container2 {
+    /* display: flex; */
+    position: absolute;
+    top: -17px;
+    left: 304px;
+    /* margin-top: -2em; */
+    padding-top: -3em;
+    align-self: right;
+    justify-content: flex-end;
+    height: 84px;
+    width: 380px;
+    z-index: 9;
+    padding-top: -26px;
+  }
+
+  #logoTitle {
+    /* display: flex; */
+    margin-left: 4em;
+    width: 365px;
+  }
+
+  #hamburgerLogo {
+    max-width: 20%;
+  }
+  .home {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .home > div#homeText {
+    -moz-margin-top: 100px;
+    flex: 2;
+    margin-top: 122%;
+    margin-left: 3%;
+    padding: 20px 40px 20px 40px;
+    line-height: 3em;
+  }
+
+  #homeImg {
+    flex: 1;
+    width: 100%;
+    margin-top: 50px;
+    position: absolute;
+    /* top: 27px; */
+    top: -5px;
+  }
+  #homeText {
+    margin-top: -20px;
+    padding-top: -150px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between  */
+  }
+
+  #homeText > .modal {
+    flex: 1;
+    /* position: absolute; */
+    margin-top: -10em;
+  }
+
+  #text {
+    margin-top: -104px;
+    margin-bottom: -5em;
+    color: white;
+    line-height: 40px;
+    font-size: 28px;
+  }
+
+  #textSignedIn {
+    color: white;
+    margin-top: -104px;
+    line-height: 40px;
+    font-size: 28px;
+  }
+
+  .modalBox {
+    flex: 1;
+    top: 4em;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    opacity: 1;
+  }
+
+  #signUpButton {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+  #profileVisual {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #calloutBox {
+    padding-left: 7em;
+    padding-right: 7em;
+  }
+
+  #subNavItem {
+    padding-top: 0px;
+  }
+
+  .msgBox {
+    min-height: 400px;
+  }
+
+  .all-services {
+    justify-content: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service {
+    background-color: #f3f2f3;
+    padding: 10px;
+    border: solid 1px #84848496;
+    width: 100%;
+  }
+
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px 20px;
+  }
+  .pv2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    flex-direction: column;
+  }
+  .pv22 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 12em;
+  }
+
+  .ml3 {
+    margin-left: 0rem;
+  }
+  .pa4 {
+    padding: 2rem;
+  }
+
+  .mw5 {
+    max-width: 22rem;
+  }
+
+  .f2 {
+    font-size: 2.5rem;
+    color: #0e1b1c;
+    font-weight: 400;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+  }
+
+  .loginBox2 {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 2em; */
+    text-align: -webkit-center;
+  }
+  #topMarginLogin {
+    margin-top: 10em;
+    margin-bottom: 50em;
+  }
+  #topMargin {
+    margin-top: 10em;
+    margin-bottom: 10em;
+  }
+
+  #topMargin2 {
+    margin-top: 9em;
+    margin-bottom: 67em;
+  }
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    padding: inherit;
+    text-align: unset;
+  }
+
+  .allThreads {
+    width: 100%;
+    text-align: center;
+  }
+
+  .msgBox {
+    width: 100%;
+    text-align: center;
+  }
+
+  #calloutBox {
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .siteTitle {
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-color: #e34383;
+    margin-left: 1rem;
+  }
+
+  #logo {
+    position: absolute;
+    top: -6px;
+    left: 9px;
+    width: 3em;
+    height: 3em;
+    z-index: 3;
+  }
+
+  .nav_container {
+    display: flex;
+    position: absolute;
+    top: 1em;
+    /* margin-top: -2em; */
+    padding-top: -3em;
+    /* align-self: right; */
+    /* justify-content: flex-end; */
+    height: 84px;
+    padding-top: -26px;
+    width: 375px;
+  }
+
+  #link {
+    width: 300px;
+  }
+
+  .navBar {
+    display: flex;
+    /* justify-content: space-between; */
+    /* position: fixed; */
+    /* padding: 24px 24px 0px 24px; */
+    width: 375px;
+    background-color: #49b6bd;
+    height: 85px;
+    z-index: 5;
+    position: absolute;
+    /* justify-items: center; */
+    left: -305px;
+    top: 54px;
+  }
+
+  .nav_container2 {
+    /* display: flex; */
+    position: absolute;
+    top: -17px;
+    left: 304px;
+    /* margin-top: -2em; */
+    padding-top: -3em;
+    align-self: right;
+    justify-content: flex-end;
+    height: 84px;
+    width: 380px;
+    z-index: 9;
+    padding-top: -26px;
+  }
+
+  #logoTitle {
+    /* display: flex; */
+    margin-left: 4em;
+    width: 365px;
+  }
+
+  #hamburgerLogo {
+    max-width: 20%;
+    margin-left: -1em;
+  }
+  .home {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .home > div#homeText {
+    -moz-margin-top: 100px;
+    flex: 2;
+    margin-top: 122%;
+    /* margin-left: -4%; */
+    padding: 20px 40px 20px 40px;
+    line-height: 3em;
+  }
+
+  #homeImg {
+    flex: 1;
+    width: 100%;
+    margin-top: 50px;
+    position: absolute;
+    /* top: 27px; */
+    top: -5px;
+  }
+  #homeText {
+    margin-top: -20px;
+    padding-top: -150px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between  */
+  }
+
+  #homeText > .modal {
+    flex: 1;
+    /* position: absolute; */
+    margin-top: -10em;
+  }
+
+  #text {
+    margin-top: -104px;
+    margin-bottom: -5em;
+    color: white;
+    line-height: 40px;
+    font-size: 28px;
+  }
+
+  #textSignedIn {
+    color: white;
+    margin-top: -104px;
+    line-height: 40px;
+    font-size: 28px;
+  }
+
+  .modalBox {
+    flex: 1;
+    top: 4em;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    opacity: 1;
+  }
+
+  #signUpButton {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+  #profileVisual {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #calloutBox {
+    padding-left: 7em;
+    padding-right: 7em;
+  }
+
+  #subNavItem {
+    padding-top: 0px;
+  }
+
+  .msgBox {
+    min-height: 400px;
+  }
+
+  .all-services {
+    justify-content: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service {
+    background-color: #f3f2f3;
+    padding: 10px;
+    border: solid 1px #84848496;
+    width: 100%;
+  }
+
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px 20px;
+  }
+  .pv2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    flex-direction: column;
+  }
+  .pv22 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 12em;
+  }
+
+  .ml3 {
+    margin-left: 0rem;
+  }
+  .pa4 {
+    padding: 2rem;
+  }
+
+  .mw5 {
+    max-width: 22rem;
+  }
+
+  .f2 {
+    font-size: 2.5rem;
+    color: #0e1b1c;
+    font-weight: 400;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+  }
+
+  .loginBox2 {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 2em; */
+    text-align: -webkit-center;
+  }
+  #topMarginLogin {
+    margin-top: 10em;
+    margin-bottom: 50em;
+  }
+  #topMargin {
+    margin-top: 10em;
+    margin-bottom: 10em;
+  }
+
+  #topMargin2 {
+    margin-top: 9em;
+    margin-bottom: 67em;
+  }
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    padding: inherit;
+    text-align: unset;
+  }
+
+  .allThreads {
+    width: 100%;
+    text-align: center;
+  }
+
+  .msgBox {
+    width: 100%;
+    text-align: center;
+  }
+
+  #calloutBox {
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+  }
 }

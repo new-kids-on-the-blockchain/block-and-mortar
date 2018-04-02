@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Signup } from "./SignUpModal";
+import React from "react"
+import { connect } from "react-redux"
+import { Signup } from "./SignUpModal"
 
 const Homepage = props => (
   <div>
@@ -28,7 +28,6 @@ const Homepage = props => (
 
           <Signup className="modal" />
         </div>
-
         <div id="homeImg">
           <img role="presentation" src="/assets/bgimg/phone2.png" />
         </div>
@@ -37,9 +36,6 @@ const Homepage = props => (
   </div>
 );
 
-/**
- * CONTAINER
- */
 const mapState = state => {
   return {
     isLoggedIn: !!state.currentUser.id
