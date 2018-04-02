@@ -31,6 +31,12 @@ class Navbar extends React.Component {
             {this.props.isLoggedIn ? (
               <div className="dtc v-mid w-75 tr" id="subNavItem">
                 <Link
+                  to="/assets/metamask-instructions.pdf"
+                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns "
+                >
+                  Getting Started
+                </Link>
+                <Link
                   to="/home"
                   className="avenir link dim white f6 f5-ns dib mr3 mr4-ns "
                 >
