@@ -6,9 +6,9 @@ const AuthForm = props => {
   const { name, displayName, handleSubmit, error } = props
   return (
     <div className="home" id="background">
-      <div className="avenir form-login" id="topMargin2">
-        <div className="avenir flex items-center justify-center pw4 pv2 bg-lightest-gray navy fl w-30">
-          <form onSubmit={handleSubmit} name={name}>
+      <div className="avenir form-login loginBox2" id="topMargin2">
+        <div className="avenir flex items-center justify-center pw4 pv22 bg-lightest-gray navy fl w-30">
+          <form onSubmit={handleSubmit} name={name} className="loginBox">
             <div className="avenir f2 pa4 tc">{displayName}</div>
             <div className="pa3">
               <label htmlFor="userName" className="avenir f6 b db mb2"><large>Username</large></label>
@@ -20,7 +20,7 @@ const AuthForm = props => {
               <input name="password" type="password" className="input-reset ba b--black-20 pa2 mb2 db w-100" />
             </div>
             <div className="tc">
-              <button type="submit" className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4">{displayName}</button>
+              <button type="submit" className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv22 pw4">{displayName}</button>
             </div>
             {error && error.response && <div> {error.response.data} </div>}
           </form>
