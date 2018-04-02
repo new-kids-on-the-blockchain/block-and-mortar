@@ -165,8 +165,8 @@ class SingleService extends Component {
           {!service.isAvailable &&
           service.status === "Pending" &&
           currentUser.id === service.Buyer.id ? (
-            <div>
-              <button id="signUpButton" className="f4 link dim br-pill mb2 dib white bg-dark-pink inline-flex items-center ma2 pv2 pw4" onClick={this.handleComplete}>
+            <div className="completeBtn">
+              <button id="signUpButton" className="f4 link dim br-pill mb2 dib white bg-dark-pink  items-center ma2 pv2 pw4 completeBtn2" onClick={this.handleComplete}>
                 Complete Order
               </button>
               <div className="avenir flex items-center justify-center pa3 bg-teal">

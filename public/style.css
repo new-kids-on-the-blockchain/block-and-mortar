@@ -285,6 +285,17 @@ nav {
   justify-content: center;
 }
 
+.completeBtn {
+  display: flex;
+  flex-direction: column;
+}
+
+.completeBtn2 {
+      margin: auto;
+      margin-bottom: 1em;
+      margin-top: 0.5em;
+}
+
 /* MOBILE */ /* MOBILE */ /* MOBILE */
 /* MOBILE */ /* MOBILE */ /* MOBILE */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) and (-webkit-device-pixel-ratio: 3) {
