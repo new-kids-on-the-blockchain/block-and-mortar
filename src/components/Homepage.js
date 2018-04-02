@@ -20,12 +20,11 @@ const Homepage = props => (
     ) : (
       <div className="home" id="background">
         <div id="homeText">
-          <div id="avenir text">
+          <div className="f1" id="text">
           Aimed at local communities,<br />
           <span className="b">Block &amp; Mortar</span> allows for the
           grassroots sale of goods and services using the Ethereum blockchain.
           </div>
-
           <Signup className="modal" />
         </div>
         <div id="homeImg">
