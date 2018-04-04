@@ -14,7 +14,7 @@ class AddMessage extends Component {
     let message = {
       content: evt.target.content.value,
       senderId: this.props.currentUser.id,
-      threadId: this.props.currentThread.id
+      threadId: +this.props.currentThread
     }
     this.props.postNewMessage(message)
     document.getElementById("messageContent").value = "";

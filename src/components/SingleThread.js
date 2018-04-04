@@ -3,8 +3,8 @@ import AddMessage from "./AddMessage"
 import { connect } from "react-redux"
 
 class SingleThread extends Component {
-  constructor(){
-    super();
+  constructor() {
+    super()
     this.sort = this.sort.bind(this)
   }
 
@@ -17,7 +17,7 @@ class SingleThread extends Component {
 
   render() {
     let thread = this.props.currentThread
-    let messages = this.props.currentThread.messages
+    let messages = this.props.currentThread ? this.props.currentThread.messages : []
     let sortedMessages
     if (messages){
       sortedMessages = this.sort(messages);
@@ -25,7 +25,7 @@ class SingleThread extends Component {
 
     return (
       <div className="avenir ph4 fl w-60 bl h-100 msgBox">
-        {!thread.id ? (
+        {!thread ? (
           <div className="f3">No Conversation Selected</div>
         ) : !sortedMessages ? (
           <div>
@@ -58,9 +58,12 @@ class SingleThread extends Component {
   }
 }
 
+// take the currentThread id that is stored on state, also take the list of allThreads,
 const mapState = state => {
+  let selectedThread = state.currentThread ? state.threads.filter(thread => thread.id === +state.currentThread)[0] : null
+
   return {
-    currentThread: state.currentThread
+    currentThread: selectedThread
   };
 };
 
