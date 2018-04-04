@@ -48,7 +48,7 @@ const About = props => {
           <div className="containerInner bt">
             <div className="f4 b">A Note on Deployment:</div>
             <p>
-              Because of the technical limitations of Truffle and Ganache, the testing environments we used for our smart contract, our site is still in development. Feel free to explore the site as-is, but be aware that posting or purchasing goods and services are not currently available. Our team is expoloring deployment to one of Ethereum's test networks, and will have more updates coming soon!
+              Because of the technical limitations of Truffle and Ganache, the testing environments we used for our smart contract, our site is still in development. Feel free to explore the site as-is, but be aware that posting or purchasing goods and services are not currently available. Our team is exploring deployment to one of Ethereum's test networks, and will have more updates coming soon!
             </p>
           </div>
         </div>
