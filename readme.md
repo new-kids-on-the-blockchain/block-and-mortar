@@ -1,7 +1,7 @@
 # Block & Mortar
 
 [Block & Mortar Beta Site](http://blockandmortar.nyc/)
-Because of the technical limitations of Truffle and Ganache, the testing environment we used for our smart contract, our site is still in development. Feel free to explore the site as-is, but be aware that posting or purchasing goods and services are not currently available. Our team is expoloring deployment to one of Ethereum's test networks, and will have more updates coming soon!
+Because of the technical limitations of Truffle and Ganache, the testing environments we used for our smart contract, our site is still in development. Feel free to explore the site as-is, but be aware that posting or purchasing goods and services are not currently available. Our team is expoloring deployment to one of Ethereum's test networks, and will have more updates coming soon!
 
 [Video Demo](https://www.youtube.com/watch?v=VZP-U8pChKI&amp;index=2)
 
