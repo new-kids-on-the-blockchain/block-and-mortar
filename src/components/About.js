@@ -48,28 +48,16 @@ const About = props => {
           <div className="containerInner bt">
             <div className="f4 b">A Note on Deployment:</div>
             <p>
-              Because of the technical limitations of Truffle and Ganache, the testing environments we used for our smart contract, our site is still in development. Feel free to explore the site as-is, but be aware that posting or purchasing goods and services are not currently available. Our team is exploring deployment to one of Ethereum's test networks, and will have more updates coming soon!
+              This site was built in 18 days as a capstone project for the <a className="dim" href="https://www.gracehopper.com/">Grace Hopper Program</a> at Fullstack Academy. Because Block & Mortar is not intended for commercial use, the development team chose not to deploy to the Ethereum Main Network, where transactions require “gas” payment. Instead, we used the Ganache test blockchain for development.
+            </p>
+            <p>
+              Our team is exploring deployment to one of Ethereum’s test networks as next steps and will have more updates coming soon. In the meantime, feel free to explore the site as-is, but be aware that posting and purchasing goods and services using the Ethereum blockchain is unavailable on the live site. Check out the project’s <a className="dim" href="https://github.com/new-kids-on-the-blockchain/block-and-mortar">GitHub repository</a> and <a className="dim" href="https://www.youtube.com/watch?v=VZP-U8pChKI&amp;index=2" target="_blank">demo video</a> for more information.
             </p>
           </div>
         </div>
         <div className="faq-question">
           <div className="containerInner bt">
-            <div className="f4 b">Project Information</div>
-            <p>
-              This project was built in 18 days as a capstone project for the{" "}
-              <a className="dim" href="https://www.gracehopper.com/">
-                Grace Hopper Program
-              </a>{" "}
-              at Fullstack Academy. Check out the project's{" "}
-              <a
-                className="dim"
-                href="https://github.com/new-kids-on-the-blockchain/block-and-mortar"
-              >
-                GitHub repository
-              </a>{" "}
-              and <a className="dim" href="https://www.youtube.com/watch?v=VZP-U8pChKI&amp;index=2" target="_blank">demo video</a>.
-            </p>
-            <div className="b">Contributors</div>
+            <div className="f4 b">Project Contributors</div>
             <ul>
               <li>
                 <a className="dim" href="https://github.com/anjiemerchant">
