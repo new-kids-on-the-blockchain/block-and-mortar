@@ -20,7 +20,7 @@ class AllThreads extends Component {
             ? this.props.threads.map(thread => {
               return (
                 //Here, we're setting our current thread to our store on click
-                <div key={thread.id} className="containerInner bt dim" onClick={() => this.props.setCurrentThread(thread)}>
+                <div key={thread.id} className="containerInner bt dim" onClick={() => this.props.setCurrentThread(thread.id)}>
                   <div><span className="b">Topic:</span> {thread.service.name}</div>
                   {
                     thread.buyer.id === this.props.currentUser.id
