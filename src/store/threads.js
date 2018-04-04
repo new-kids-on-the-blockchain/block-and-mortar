@@ -42,13 +42,8 @@ export default function reducer(threads = [], action) {
     case GET_THREADS:
       return action.threads;
     case ADD_THREAD:
-      return action.thread;
+      return [...threads, action.thread];
     case UPDATE_THREAD_MESSAGES:
-      // let filteredThreads = threads.filter(thread => thread.id !== action.message.threadId)
-      // let threadToUpdate = threads.filter(thread => thread.id === action.message.threadId)[0]
-      // let updatedThread = {...threadToUpdate,
-      //   messages: [...threadToUpdate.messages, action.message]
-      // }
       let threadToUpdate = threads.filter(thread => thread.id === action.message.threadId)[0]
       let updatedThread = {...threadToUpdate,
         messages: [...threadToUpdate.messages, action.message]
