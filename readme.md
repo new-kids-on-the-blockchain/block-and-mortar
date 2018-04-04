@@ -1,12 +1,11 @@
 # Block & Mortar
 
 [Block & Mortar Beta Site](http://blockandmortar.nyc/)
-Because of the technical limitations of Truffle and Ganache, the testing environments we used for our smart contract, our site is still in development. Feel free to explore the site as-is, but be aware that posting or purchasing goods and services are not currently available. Our team is expoloring deployment to one of Ethereum's test networks, and will have more updates coming soon!
+This project was built in 18 days as a capstone project for the Grace Hopper Program at Fullstack Academy. Check out the project's GitHub repository and demo video. Because of the project's tight timeline, we used the Ganache test blockchain for development. Our team is exploring deployment to one of Ethereum's test networks, and will have more updates coming soon! In the meantime, feel free to explore the site as-is, but be aware that posting and purchasing goods and services is currently available. 
 
 [Video Demo](https://www.youtube.com/watch?v=VZP-U8pChKI&amp;index=2)
 
 Aimed at local communities, Block & Mortar allows for the grassroots sale of goods and services using the Ethereum blockchain.
-
 
 ## App Functionality
 
