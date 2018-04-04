@@ -67,7 +67,7 @@ const About = props => {
               >
                 GitHub repository
               </a>{" "}
-              and <a href="https://www.youtube.com/watch?v=VZP-U8pChKI&amp;index=2" target="_blank">demo video</a>.
+              and <a className="dim" href="https://www.youtube.com/watch?v=VZP-U8pChKI&amp;index=2" target="_blank">demo video</a>.
             </p>
             <div className="b">Contributors</div>
             <ul>
