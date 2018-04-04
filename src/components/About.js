@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react'
+import { Link } from 'react-router-dom'
+
 const About = props => {
   return (
     <div className="home" id="background">
@@ -57,7 +59,7 @@ const About = props => {
               >
                 GitHub repository
               </a>{" "}
-              and demo video (link forthcoming).
+              and <a href="https://www.youtube.com/watch?v=VZP-U8pChKI&amp;index=2" target="_blank">demo video</a>.
             </p>
             <div className="b">Contributors</div>
             <ul>
