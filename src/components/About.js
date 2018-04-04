@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react'
+import { Link } from 'react-router-dom'
+
 const About = props => {
   return (
     <div className="home" id="background">
@@ -44,6 +46,14 @@ const About = props => {
         </div>
         <div className="faq-question">
           <div className="containerInner bt">
+            <div className="f4 b">A Note on Deployment:</div>
+            <p>
+              Because of the technical limitations of Truffle and Ganache, the testing environments we used for our smart contract, our site is still in development. Feel free to explore the site as-is, but be aware that posting or purchasing goods and services are not currently available. Our team is exploring deployment to one of Ethereum's test networks, and will have more updates coming soon!
+            </p>
+          </div>
+        </div>
+        <div className="faq-question">
+          <div className="containerInner bt">
             <div className="f4 b">Project Information</div>
             <p>
               This project was built in 18 days as a capstone project for the{" "}
@@ -57,7 +67,7 @@ const About = props => {
               >
                 GitHub repository
               </a>{" "}
-              and demo video (link forthcoming).
+              and <a className="dim" href="https://www.youtube.com/watch?v=VZP-U8pChKI&amp;index=2" target="_blank">demo video</a>.
             </p>
             <div className="b">Contributors</div>
             <ul>

@@ -30,76 +30,44 @@ class Navbar extends React.Component {
           <div id="subNav">
             {this.props.isLoggedIn ? (
               <div className="dtc v-mid w-75 tr" id="subNavItem">
-                <Link
-                  to="/home"
-                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns "
-                >
+                <Link to="/home" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns ">
                   My Dashboard
                 </Link>
-                <Link
-                  to="/services"
-                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
-                >
+                <Link to="/services" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
                   Marketplace
                 </Link>
-                <Link
-                  to="/services/new"
-                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
-                >
+                <Link to="/services/new" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
                   Create a Post
                 </Link>
-                <Link
-                  to="/messages"
-                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
-                >
+                <Link to="/messages" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
                   Inbox
                 </Link>
-                <Link
-                  to="/faq"
-                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
-                >
-                  FAQs
-                </Link>
-                <Link
-                  to="/my-profile"
-                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
-                >
+                <Link to="/my-profile" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
                   My Profile
                 </Link>
-                <a
-                  href="#"
-                  onClick={this.props.handleClick}
-                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
-                >
+                <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
+                  FAQs
+                </Link>
+                <Link to="/about" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
+                  About the Project
+                </Link>
+                <a href="#" onClick={this.props.handleClick} className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
                   Logout
                 </a>
               </div>
             ) : (
               <div id="subNav">
-                <Link
-                  to="/about"
-                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
-                >
-                  About
-                </Link>
-
-                <Link
-                  to="/login"
-                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
-                >
-                  Login
-                </Link>
-                <Link
-                  to="/signup"
-                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
-                >
+                <Link to="/signup" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
                   Sign Up
                 </Link>
-                <Link
-                  to="/faq"
-                  className="avenir link dim white f6 f5-ns dib mr3 mr4-ns"
-                >
+                <Link to="/faq" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
                   FAQs
+                </Link>
+                <Link to="/about" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
+                  About the Project
+                </Link>
+                <Link to="/login" className="avenir link dim white f6 f5-ns dib mr3 mr4-ns">
+                  Login
                 </Link>
               </div>
             )}
