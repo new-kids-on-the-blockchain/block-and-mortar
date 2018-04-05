@@ -48,7 +48,7 @@ const About = props => {
           <div className="containerInner bt">
             <div className="f4 b">A Note on Deployment:</div>
             <p>
-              Because of the technical limitations of Truffle and Ganache, the testing environments we used for our smart contract, our site is still in development. Feel free to explore the site as-is, but be aware that posting or purchasing goods and services are not currently available. Our team is exploring deployment to one of Ethereum's test networks, and will have more updates coming soon!
+              This site was developed in 18 days as a capstone project for the Grace Hopper Program at Fullstack Academy. Because Block & Mortar was built for educational, rather than commerical use, the development team chose not to deploy to the Ethereum Main Network, where transactions require “gas” payment. Instead, we used the Ganache test blockchain for development. Our team is currently exploring deployment to one of the Ethereum test networks and will have more updates coming soon. In the meantime, feel free to explore the site as-is, but be aware that posting and purchasing goods and services using the Ethereum blockchain is unavailable.  Check out the project’s GitHub repository and demo video for more information.
             </p>
           </div>
         </div>
