@@ -1,8 +1,7 @@
 # Block & Mortar
 
 [Block & Mortar Beta Site](http://blockandmortar.nyc/)
-
-     This site was developed in 18 days as a capstone project for the Grace Hopper Program at Fullstack Academy. Because Block & Mortar was built for educational, rather than commerical use, the development team chose not to deploy to the Ethereum Main Network, where transactions require “gas” payment. Instead, we used the Ganache test blockchain for development. Our team is currently exploring deployment to one of the Ethereum test networks and will have more updates coming soon. In the meantime, feel free to explore the live site as-is, but be aware that posting and purchasing goods and services using the Ethereum blockchain is unavailable.  Check out the project’s GitHub repository and demo video for more information.
+This site was built in 18 days as a capstone project for the Grace Hopper Program at Fullstack Academy. Because Block & Mortar is not intended for commercial use, the development team chose not to deploy to the Ethereum Main Network, where transactions require “gas” payment. Instead, we used the Ganache test blockchain for development. Our team is exploring deployment to one of Ethereum’s test networks as next steps and will have more updates coming soon. In the meantime, feel free to explore the site as-is, but be aware that posting and purchasing goods and services using the Ethereum blockchain is unavailable on the live site.  Check out the project’s GitHub repository and demo video for more information.
 
 [Video Demo](https://www.youtube.com/watch?v=VZP-U8pChKI&amp;index=2)
 
